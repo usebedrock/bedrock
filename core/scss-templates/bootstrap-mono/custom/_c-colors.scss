@@ -1,0 +1,47 @@
+/* ==========================================================================
+  Colors
+  Only define colors here.
+    * Try to describe your color, for example soft-yellow, mid-blue
+    * Don't use sass color functions, stick to hex values, or the colors
+      component in styleguide won't regenerate automatically anymore
+ ========================================================================== */
+
+/* Grays/whites/blacks
+ ========================================================================== */
+
+$black                  : #000;
+$gray-darker            : #373737;
+$gray-dark              : #4d4d4d;
+$gray                   : #858585;
+$gray-light-shift-extra : #bababa;
+$gray-light-shift       : #c9c9c9;
+$gray-light             : #d5d5d5;
+$gray-lighter           : #eee;
+$gray-lightest          : #f9f9f9;
+$white                  : #fff;
+
+/* Cool colors
+ ========================================================================== */
+
+$aqua                   : #7fdbff;
+$blue                   : #0074d9;
+$navy                   : #001f3f;
+$teal                   : #39cccc;
+$green                  : #2ecc40;
+$olive                  : #3d9970;
+$lime                   : #01ff70;
+
+/* Warm colors
+ ========================================================================== */
+
+$yellow                 : #ffdc00;
+$orange                 : #ff851b;
+$red                    : #ff4136;
+$fuchsia                : #f012be;
+$purple                 : #b10dc9;
+$maroon                 : #85144b;
+
+/* Pastel colors
+ ========================================================================== */
+
+$yellow-pastel          : #ffc;

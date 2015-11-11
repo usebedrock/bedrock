@@ -1,0 +1,39 @@
+/* ==========================================================================
+  Additions to bootstrap/table
+   ========================================================================== */
+
+.table-actions-column .btn-toolbar {
+  float: right;
+}
+
+/* Table modifiers
+   ========================================================================== */
+
+.table {
+  &.table-align-middle {
+    td {
+      vertical-align: middle;
+    }
+  }
+  .table-selected {
+    background-color: $selected-row-color;
+    &:hover {
+      background-color: lighten($selected-row-color, 4%);
+    }
+  }
+}
+
+/* Columns with specific widths
+   ========================================================================== */
+
+.table-checkbox-column {
+  width: 30px;
+}
+
+.table-thumbnail-column {
+  width: 100px;
+}
+
+.table-thumbnail-column-sm {
+  width: 30px;
+}

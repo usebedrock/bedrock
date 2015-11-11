@@ -1,0 +1,69 @@
+/* Samples
+   ========================================================================== */
+
+.c-sample-clearfix:before,
+.c-sample-clearfix:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.c-sample-clearfix:after {
+  clear: both;
+}
+
+.c-sample-btn {
+  background: #FFF;
+  border: 1px solid #CDCDCD;
+  display: inline-block;
+  padding: 5px 8px;
+  border-radius: 4px;
+  margin: 0 0 10px;
+  font-size: 12px;
+  &:hover {
+    background: #FFF;
+  }
+}
+
+.c-sample-code {
+  position: relative;
+}
+.c-sample-copy-code-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.c-sample-markup {
+  font-size: 11px;
+  background: #EEE;
+  border: 1px solid #DDD;
+  padding: 10px;
+}
+
+.c-sample-content {
+  padding: 40px;
+  border: 1px solid #DDD;
+  margin: 0 0 10px;
+  background: #FFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.c-sample-content-is-layout {
+  min-height: 500px;
+}
+
+.c-sample-header .c-sample-header-link {
+  float: right;
+  color: rgba(0,0,0,0.45);
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 0 2px 0 0;
+}
+
+.c-sample-header .c-sample-heading {
+  float: left;
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 0;
+}

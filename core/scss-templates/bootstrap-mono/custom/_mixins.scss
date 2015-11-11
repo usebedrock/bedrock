@@ -1,0 +1,19 @@
+/* Navbar variant
+   ========================================================================== */
+
+@mixin navbar-variant($bg,$border,$btn-bg,$btn-border,$btn-border-hover) {
+  background-color: $bg;
+  border-color: $border;
+  .navbar-divider.bordered {
+    border-color: $border;
+  }
+  .btn-default {
+    background-color: $btn-bg;
+    border-color: $btn-border;
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: $btn-border-hover;
+    }
+  }
+}

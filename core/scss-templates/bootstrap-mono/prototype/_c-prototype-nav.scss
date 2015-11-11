@@ -1,0 +1,25 @@
+/* Global navigation
+   ========================================================================== */
+
+// We are supposing this is true
+body, html {
+  margin: 0;
+}
+
+.c-prototype-nav {
+  background-color: #FFF;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2000;
+  transform: translateX(-100%);
+  width: 300px;
+  .c-prototype-nav-inner {
+    padding: 20px;
+  }
+  &.c-prototype-nav-open {
+    transform: translateX(0);
+    box-shadow: 2px 0 5px rgba(#000, 0.3);
+  }
+}
+

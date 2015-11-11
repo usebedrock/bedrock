@@ -1,0 +1,53 @@
+extends layouts/master
+
+block append pagevariables
+    - var bodyclass = 'c-styleguide c-type'
+
+block body
+
+    .c-styleguide-container
+        .c-styleguide-navigation-holder
+            .c-styleguide-sidebar
+                h4 Indexes
+                ul.c-bordered-list-links
+                    li:  a(href="#colors") Colors
+                    li:  a(href="#icons") Icons
+                h4 Patterns
+                ul.c-bordered-list-links
+                    each pattern in patterns.base
+                        li: a(href='#' + slugify(pattern.filename))= pattern.name
+                    each category in patterns.categories
+                        li
+                          span.c-bordered-list-label #{category.name}
+                          ul
+                            each pattern in category.patterns
+                                li: a(href='#' + slugify(pattern.filename))= pattern.name
+
+        .c-styleguide-content
+
+            .c-content
+                h1 #{projecttitle} - Style Guide
+                p This page contains common elements that occur in #{projecttitle}.
+
+            .c-sample(id="colors")
+                .c-sample-header.c-sample-clearfix
+                    h3.c-sample-heading
+                        | Colors
+                    a.c-sample-header-link(href="#colors") #
+                .c-sample-content
+                    each category in colorCategories
+                        h4= category.name
+                        ul.c-color-swatch-list
+                            each color in category.colors
+                                li.c-color-swatch-item
+                                    .c-color-swatch-preview(style='background-color: #{color.value}')
+                                    .c-color-swatch-data
+                                        .swatch-name= color.name
+                                        .swatch-value= color.value
+
+            each pattern in patterns.base
+                +sample(pattern.filename)
+
+            each category in patterns.categories
+                each pattern in category.patterns
+                    +sample(pattern.filename)

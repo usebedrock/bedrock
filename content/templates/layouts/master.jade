@@ -1,0 +1,24 @@
+doctype html
+html(lang='en')
+    block pagevariables
+        // Use this block to append page variables in templates
+        - var projecttitle = "Project title"
+        - var moduletitle = "Module"
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+
+        title #{moduletitle} - #{projecttitle}
+
+        link(rel='stylesheet', href='/css/main.css')
+        link(rel='stylesheet', href='/css/prototype.css')
+
+body(class="#{bodyclass ? bodyclass : ''}")
+
+    block body
+
+    include ../../../core/templates/includes/prototype-nav
+
+    = "\n"
+    script(src='/js/bundle.js')

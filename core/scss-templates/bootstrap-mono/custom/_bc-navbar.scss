@@ -1,0 +1,309 @@
+/* ==========================================================================
+   Navbars
+   ========================================================================== */
+
+.bc-navbar {
+  position: relative;
+  min-height: $navbar-height; // Ensure a navbar always shows (e.g., without a .bc-navbar-brand in collapsed mode)
+
+  // Prevent floats from breaking the navbar
+  @include clearfix();
+
+  > .bc-navbar-left {
+    margin-left: $grid-gutter-width / 2;
+    float: left;
+  }
+  > .bc-navbar-right {
+    margin-right: $grid-gutter-width / 2;
+    float: right;
+  }
+}
+
+.bc-navbar-small {
+  min-height: $navbar-small-height;
+}
+
+.bc-navbar-medium {
+  min-height: $navbar-height;
+}
+
+.bc-navbar-large {
+  min-height: $navbar-large-height;
+}
+
+// This is for when there are no left/right divisions but for example the navbar contains a single justified btn group
+.bc-navbar-padded {
+  padding-left: $grid-gutter-width / 2;
+  padding-right: $grid-gutter-width / 2;
+}
+
+.bc-navbar-padded-mini {
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+.bc-navbar-fixed-top {
+  box-shadow: 0 0 3px rgba(0,0,0,0.15);
+}
+
+.bc-navbar-fixed-bottom {
+  box-shadow: 0 0 3px rgba(0,0,0,0.15);
+}
+
+.bc-navbar-top {
+  border-bottom: 1px solid darken($gray-lighter, 10%);
+}
+
+.bc-navbar-bottom {
+  border-top: 1px solid darken($gray-lighter, 10%);
+}
+
+/* Navbar brand
+   ========================================================================== */
+
+.bc-navbar-brand {
+  display: block;
+  color: $gray-dark;
+  font-size: 21px;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.bc-navbar-brand-small {
+  font-size: 17px;
+}
+
+/* Element positioning (vertical)
+   ========================================================================== */
+
+
+// Element positioning in small navbars (vertical)
+
+.bc-navbar.bc-navbar-small {
+  height: $navbar-small-height;
+  min-height: $navbar-small-height;
+}
+
+.bc-navbar-small {
+  .btn-xs {
+    margin-top: 5px;
+  }
+  .mini-bar-chart {
+    margin-top: 6px;
+  }
+}
+
+.bc-navbar.bc-navbar-small .bc-navbar-divider {
+  margin-top: 0;
+}
+
+// Element positioning in normal and large navbars
+
+.bc-navbar-medium,
+.bc-navbar-large {
+  
+  .bc-navbar-brand {
+    margin-top: 10px;
+  }
+  
+  .bc-navbar-brand-small {
+    margin-top: 14px;
+  }
+
+  .bc-navbar-btn {
+    margin-top: 8.5px;
+    &.btn-xs {
+      margin-top: 11px;
+    }
+  }
+  
+  .bc-navbar-form {
+    margin-top: 8.5px;
+  }
+
+  .checkbox {
+    margin-top: 15.5px;
+    input {
+      margin-right: 4px;
+    }
+  }
+  
+  .btn-link {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .tag,
+  .tag-simple {
+    margin-top: 12.5px;
+  }
+  
+  .bordered-list--horizontal {
+    margin-top: 12.5px;
+  }
+  
+  .btn-group-justified {
+    padding-top: 8.5px;
+  }
+
+  .nav-pills {
+    margin-top: 10px;
+  }
+  
+  .nav-tabs {
+    margin-top: 8.5px;
+  }
+
+  .bc-navbar-btn {
+    margin-top: 8.5px;
+  }
+
+  .form-inline {
+    padding-top: 8px;
+  }
+  
+  .panel-controls {
+    margin-top: 2px;
+  }
+  
+  .dropdown .btn {
+    margin-top: 8.5px;
+  }
+  
+  .bc-navbar-text {
+    margin: 15px 0 0;
+    abbr {
+      border-color: $gray;
+    }
+  }
+
+}
+
+// Element positioning in large navbars (vertical)
+
+.bc-navbar.bc-navbar-large {
+  height: $navbar-large-height;
+}
+
+.bc-navbar.bc-navbar-large .bc-navbar-divider {
+  margin-top: 14px;
+}
+
+.bc-navbar.bc-navbar-large .bc-navbar-divider__no-spacing {
+  margin-top: 0;
+}
+
+/* Component alignment
+   ========================================================================== */
+
+.bc-navbar-left {
+  float: left !important;
+  max-height: ($navbar-height - 1px); // stability fix
+}
+
+.bc-navbar-right {
+  float: right !important;
+  max-height: ($navbar-height - 1px); // stability fix
+}
+
+/* Divide navbars
+   ========================================================================== */
+
+.bc-navbar-divider {
+  &:first-child {
+    margin-left: 0;
+  }
+  float: left;
+  margin-left: $grid-gutter-width/2;
+  .bc-navbar-medium & {
+    height: $navbar-height;
+  }
+  .bc-navbar-small & {
+    height: $navbar-small-height;
+  }
+  // Bordered means there is a single border
+  &.bordered {
+    padding-left: $grid-gutter-width/2;
+    border-left: 1px solid darken($gray-lighter, 15%);
+    &:first-child {
+      padding: 0;
+      border: none;
+    }
+  }
+  // Extra bordered means there is an extra border on the other side as well
+  &.extra-bordered {
+    border-right: 1px solid darken($gray-lighter, 15%);
+    padding-right: $grid-gutter-width/2;
+    &:last-child {
+      // Repeat for specificity
+      border-right: 1px solid darken($gray-lighter, 15%);
+    }
+  }
+}
+
+.bc-navbar-right {
+  .bc-navbar-divider {
+    &:last-child {
+      margin-right: 0;
+    }
+    // Reset above
+    margin-left: 0;
+    padding-left: 0;
+    margin-right: $grid-gutter-width/2;
+    border-left: none;
+    // Bordered means there is a single border
+    &.bordered {
+      padding-right: $grid-gutter-width/2;
+      border-right: 1px solid darken($gray-lighter, 15%);
+      &:last-child {
+        padding: 0;
+        border: none;
+      }
+    }
+    // Extra bordered means there is an extra border on the other side as well
+    &.extra-bordered {
+      border-left: 1px solid darken($gray-lighter, 15%);
+      padding-left: $grid-gutter-width/2;
+      &:last-child {
+        // Repeat for specificity
+        border-left: 1px solid darken($gray-lighter, 15%);
+      }
+    }
+  }
+}
+
+.bc-navbar > .bc-navbar-right-no-spacing {
+  margin: 0;
+}
+
+.bc-navbar > .bc-navbar-left-no-spacing {
+  margin: 0;
+}
+
+.bc-navbar.bc-navbar .bc-navbar-divider-no-spacing { // Stupid trick to get more specifity
+  padding: 0;
+  margin: 0;
+}
+
+.bc-navbar.bc-navbar .bc-navbar-divider-no-spacing-half { // Stupid trick to get more specifity
+  margin: 0;
+}
+
+.bc-navbar > .bc-navbar-left .bc-navbar-divider-little-spacing {
+  margin-left: 5px;
+}
+
+.bc-navbar > .bc-navbar-right .bc-navbar-divider-little-spacing {
+  margin-right: 5px;
+}
+
+// Links in navbars
+// Add a class to ensure links outside the navbar nav are colored correctly.
+
+.bc-navbar .btn-link {
+  color: $navbar-default-link-color;
+  &:hover {
+    color: $navbar-default-link-hover-color;
+  }
+}

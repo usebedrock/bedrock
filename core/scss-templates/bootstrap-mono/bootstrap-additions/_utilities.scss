@@ -1,0 +1,15 @@
+/* ==========================================================================
+  Additions to bootstrap/utilities
+   ========================================================================== */
+
+.is-scrollable {
+  overflow: scroll;
+}
+
+@media (min-width: $screen-sm) {
+
+  .is-scrollable-sm {
+    overflow: scroll;
+  }
+
+}

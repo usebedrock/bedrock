@@ -1,0 +1,93 @@
+html, body {
+  height: 100%;
+}
+
+/* Content layouts
+   ========================================================================== */
+
+.bc-scrollable-container-content-layout {
+  
+}
+
+.bc-scrollable-container-content-layout-default {
+  padding: $grid-gutter-width/2;
+  height: calc(100% - #{$grid-gutter-width}/2);
+}
+
+/* Calculate scrollable areas for different navbar layouts
+   ========================================================================== */
+
+.bc-scrollable-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.bc-scrollable-container-content {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: scroll;
+}
+
+.bc-scrollable-container > .bc-navbar-fixed-top {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+// Calculations for navbar positions
+
+.bc-scrollable-container > .bc-navbar-medium + .bc-navbar-medium,
+.bc-scrollable-container > .bc-navbar-medium + .bc-navbar-small {
+  top: $navbar-height;
+}
+
+.bc-scrollable-container > .bc-navbar-medium + .bc-navbar-medium + .bc-navbar-small {
+  top: $navbar-height + $navbar-height;
+}
+
+// Calculations for scrollable content area positions
+
+// 1 medium bar
+.bc-scrollable-container > .bc-navbar-medium + .bc-scrollable-container-content {
+  top: $navbar-height;
+  height: calc(100% - #{$navbar-height});
+}
+
+// 1 medium bars + 1 small bar
+.bc-scrollable-container > .bc-navbar-medium + .bc-navbar-small + .bc-scrollable-container-content {
+  top: $navbar-height + $navbar-small-height;
+  height: calc(100% - #{$navbar-height + $navbar-small-height});
+}
+
+// 2 medium bars
+.bc-scrollable-container > .bc-navbar-medium + .bc-navbar-medium + .bc-scrollable-container-content {
+  top: $navbar-height + $navbar-height;
+  height: calc(100% - #{$navbar-height + $navbar-height});
+}
+
+// 2 medium bars + 1 small bar
+.bc-scrollable-container > .bc-navbar-medium + .bc-navbar-medium + .bc-navbar-small + .bc-scrollable-container-content {
+  top: $navbar-height + $navbar-height + $navbar-small-height;
+  height: calc(100% - #{$navbar-height + $navbar-height + $navbar-small-height});
+}
+
+// 1 navbar, large size
+.bc-scrollable-container > .bc-navbar-large + .bc-scrollable-container-content {
+  top: $navbar-large-height;
+}
+
+/* Z-index
+   ========================================================================== */
+
+.bc-scrollable-container > .bc-navbar:first-child {
+  z-index: 3;
+}
+
+.bc-scrollable-container > .bc-navbar:nth-child(2) {
+  z-index: 2;
+}

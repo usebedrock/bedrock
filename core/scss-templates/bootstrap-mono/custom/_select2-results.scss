@@ -1,0 +1,26 @@
+/* Styling for custom Select2 dropdown results
+   ========================================================================== */
+
+$thumbnail-size: 40px;
+
+.select2-result {
+  @include clearfix;
+
+  .thumb {
+    width: $thumbnail-size;
+    height: $thumbnail-size;
+    float: left;
+    margin-right: 10px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+    color: #999;
+  }
+
+  .select2-results__option--highlighted & {
+    .subtitle {
+      color: #fff;
+    }
+  }
+}
