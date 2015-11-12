@@ -1,3 +1,3 @@
 module.exports = {
-  SNIPPET_LANGUAGE: 'jade'
+  snippetLanguage: 'jade'
 };

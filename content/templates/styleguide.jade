@@ -9,15 +9,15 @@ mixin sample(pattern, isLayoutClass, hideCodeSamples)
             != render(pattern.filename, 'html')
         if !hideCodeSamples
             .c-sample-footer
-                if config.SNIPPET_LANGUAGE === 'html'
+                if config.snippetLanguage === 'html'
                     span.c-sample-btn.c-sample-show-code-btn Show HTML code
-                if config.SNIPPET_LANGUAGE === 'jade'
+                if config.snippetLanguage === 'jade'
                     span.c-sample-btn.c-sample-show-code-btn Show Jade code
                 .c-sample-code
                     button.c-sample-btn.c-sample-copy-code-btn Copy to clipboard
-                    if config.SNIPPET_LANGUAGE === 'html'
+                    if config.snippetLanguage === 'html'
                         pre.c-sample-markup= render(pattern.filename, 'html')
-                    if config.SNIPPET_LANGUAGE === 'jade'
+                    if config.snippetLanguage === 'jade'
                         pre.c-sample-markup= render(pattern.filename, 'jade')
 
 block append pagevariables
