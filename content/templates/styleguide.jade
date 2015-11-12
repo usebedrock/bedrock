@@ -5,7 +5,7 @@ mixin sample(pattern, isLayoutClass, hideCodeSamples)
         .c-sample-header.c-sample-clearfix
             h3.c-sample-heading= pattern.name
             a.c-sample-header-link(href="##{pattern.filename}") #
-        .c-sample-content(class="#{isLayoutClass || ''}")
+        .c-sample-content(class=pattern.extraClasses)
             != render(pattern.filename, 'html')
         if !hideCodeSamples
             .c-sample-footer

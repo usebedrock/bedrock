@@ -1,6 +1,7 @@
 var glob = require('glob');
 var path = require('path');
 var _ = require('lodash');
+var config = require('../config');
 
 var TEMPLATES_BASE_DIRECTORY = 'content/templates/patterns/';
 
@@ -38,11 +39,27 @@ function discover() {
         filemap.categories.push(category);
       }
 
-      category.patterns.push({
+      var patternData = {
         filename,
         name: patternName,
-        url: '/styleguide.html#' + patternName
-      });
+        url: '/styleguide.html#' + patternName,
+        extraClasses: []
+      };
+
+      var patternCategoryClass = config.patternClasses[categoryName];
+      var patternSpecificClass = config.patternClasses[categoryName + '.' + patternName];
+
+      if (patternCategoryClass) {
+        patternData.extraClasses.push(patternCategoryClass);
+      }
+
+      if (patternSpecificClass) {
+        patternData.extraClasses.push(patternSpecificClass);
+      }
+
+      patternData.extraClasses = patternData.extraClasses.join(' ');
+
+      category.patterns.push(patternData);
     }
   });
 
