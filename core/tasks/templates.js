@@ -41,6 +41,7 @@ module.exports = {
       .pipe(data(function (file) {
         return {
           filename: path.basename(file.path).replace('jade', 'html'),
+          pathname: file.path.replace(path.join(process.cwd(), 'content/'), '').replace('.jade', '.html'),
           patterns: patterns.discover(),
           pages: pages.discover(),
           icons: icons.discover(),
