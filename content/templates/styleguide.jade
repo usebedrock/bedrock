@@ -1,5 +1,25 @@
 extends layouts/master
 
+mixin sample(pattern, isLayoutClass, hideCodeSamples)
+    .c-sample(id=slugify(pattern.filename))
+        .c-sample-header.c-sample-clearfix
+            h3.c-sample-heading= pattern.name
+            a.c-sample-header-link(href="##{pattern.filename}") #
+        .c-sample-content(class="#{isLayoutClass || ''}")
+            != render(pattern.filename, 'html')
+        if !hideCodeSamples
+            .c-sample-footer
+                if config.SNIPPET_LANGUAGE === 'html'
+                    span.c-sample-btn.c-sample-show-code-btn Show HTML code
+                if config.SNIPPET_LANGUAGE === 'jade'
+                    span.c-sample-btn.c-sample-show-code-btn Show Jade code
+                .c-sample-code
+                    button.c-sample-btn.c-sample-copy-code-btn Copy to clipboard
+                    if config.SNIPPET_LANGUAGE === 'html'
+                        pre.c-sample-markup= render(pattern.filename, 'html')
+                    if config.SNIPPET_LANGUAGE === 'jade'
+                        pre.c-sample-markup= render(pattern.filename, 'jade')
+
 block append pagevariables
     - var bodyclass = 'c-styleguide c-type'
 
@@ -46,8 +66,9 @@ block body
                                         .swatch-value= color.value
 
             each pattern in patterns.base
-                +sample(pattern.filename)
+                +sample(pattern)
 
             each category in patterns.categories
+                h2= category.name
                 each pattern in category.patterns
-                    +sample(pattern.filename)
+                    +sample(pattern)
