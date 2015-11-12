@@ -46,18 +46,20 @@ function discover() {
         extraClasses: []
       };
 
-      var patternCategoryClass = config.patternClasses[categoryName];
-      var patternSpecificClass = config.patternClasses[categoryName + '.' + patternName];
+      if (config.patternClasses) {
+        var patternCategoryClass = config.patternClasses[categoryName];
+        var patternSpecificClass = config.patternClasses[categoryName + '.' + patternName];
 
-      if (patternCategoryClass) {
-        patternData.extraClasses.push(patternCategoryClass);
+        if (patternCategoryClass) {
+          patternData.extraClasses.push(patternCategoryClass);
+        }
+
+        if (patternSpecificClass) {
+          patternData.extraClasses.push(patternSpecificClass);
+        }
+
+        patternData.extraClasses = patternData.extraClasses.join(' ');
       }
-
-      if (patternSpecificClass) {
-        patternData.extraClasses.push(patternSpecificClass);
-      }
-
-      patternData.extraClasses = patternData.extraClasses.join(' ');
 
       category.patterns.push(patternData);
     }
