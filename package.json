@@ -24,6 +24,7 @@
     "browser-sync": "^2.9.11",
     "browserify": "^12.0.1",
     "clipboard": "^1.5.3",
+    "codemirror": "^5.8.0",
     "del": "^2.0.2",
     "faker": "^3.0.1",
     "glob": "^5.0.15",

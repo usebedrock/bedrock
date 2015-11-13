@@ -1,6 +1,10 @@
 const $ = require('jquery');
 const Clipboard = require('clipboard');
-
+const Codemirror = require('codemirror');
+const config = require('../../core/config');
+require('codemirror/mode/javascript/javascript');
+require('codemirror/mode/jade/jade');
+require('codemirror/mode/xml/xml');
 
 const $codeBlocks = $('.c-sample-code .c-sample-markup');
 const $codeButtons = $('.c-sample-show-code-btn');
@@ -16,16 +20,35 @@ $codeBlocks.hide();
 $copyButtons.hide();
 
 $codeButtons.on('click', function () {
-  $(this).parents('.c-sample').find('.c-sample-markup').toggle();
+  var $codeBlock = $(this).parents('.c-sample').find('.c-sample-markup');
+  $codeBlock.toggle();
+  $codeBlock.find('.CodeMirror').each(function (i, el) {
+    el.CodeMirror.refresh();
+  });
   $(this).parents('.c-sample').find('.c-sample-copy-code-btn').toggle();
 });
 
-// Manually highlight code blocks since we don't use <pre> tags
-$codeBlocks.each(function (i, e) {
-  hljs.highlightBlock(e);
-});
-
-// Trim trailing newline space
 $codeBlocks.each(function () {
-  $(this).html($(this).html().trim());
+  const code = $(this).text();
+
+  $(this).empty();
+
+  let editorOptions = {
+    value: code,
+    readOnly: true
+  };
+
+  switch (config.snippetLanguage) {
+    case 'jade':
+      editorOptions.mode = 'jade';
+      break;
+    case 'html':
+      editorOptions.mode = 'xml';
+      editorOptions.htmlMode = true;
+      break;
+  }
+
+  const editor = Codemirror(this, editorOptions);
+
+  $(this).editor = editor;
 });
