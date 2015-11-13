@@ -14,6 +14,7 @@ var colors = require('../discovery/colors');
 var icons = require('../discovery/icons');
 var pages = require('../discovery/pages');
 var patterns = require('../discovery/patterns');
+var paths = require('./paths');
 
 function isModuleTemplate(file) {
   return file.path.indexOf('templates/modules/') > -1;
@@ -35,13 +36,13 @@ module.exports = {
     // TODO: add fixture loading
 
     return gulp.src([
-        './content/templates/*.jade',
-        './content/templates/modules/**/*.jade'
+        paths.content.templates.baseTemplates,
+        paths.content.templates.moduleTemplates
       ])
       .pipe(data(function (file) {
         return {
           filename: path.basename(file.path).replace('jade', 'html'),
-          pathname: file.path.replace(path.join(process.cwd(), 'content/'), '').replace('.jade', '.html'),
+          pathname: file.path.replace(path.join(process.cwd(), paths.content.path), '').replace('.jade', '.html'),
           patterns: patterns.discover(),
           pages: pages.discover(),
           icons: icons.discover(),
@@ -51,7 +52,7 @@ module.exports = {
             return input.replace(/\//g, '-');
           },
           render: function (id, language) {
-            var patternFileLocation = path.join('./content/templates/patterns/', id + '.jade');
+            var patternFileLocation = path.join(paths.content.templates.patterns, id + '.jade');
             var jadeMarkup = fs.readFileSync(patternFileLocation, 'utf8');
 
             if (!language || language === 'jade') {
@@ -88,6 +89,6 @@ module.exports = {
         unformatted: ['pre'],
         extraLiners: ['body']
       }))
-      .pipe(gulpIf(isModuleTemplate, gulp.dest('./dist/modules'), gulp.dest('./dist')));
+      .pipe(gulpIf(isModuleTemplate, gulp.dest(paths.dist.modules), gulp.dest(paths.dist.path)));
   }
 };

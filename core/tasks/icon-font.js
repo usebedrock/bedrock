@@ -4,13 +4,14 @@ var rename = require('gulp-rename');
 var replace = require('gulp-replace');
 var del = require('del');
 var path = require('path');
+var paths = require('./paths');
 
 var FONT_NAME = 'c-icon-font';
 var TMP_DIRECTORY = './icon-font-tmp';
 
 module.exports = function (done) {
   console.log('Generating font...');
-  gulp.src(['./content/icon-font-source'])
+  gulp.src(paths.content.icons.sourceDirectory)
     .pipe(fontcustom({
       font_name: FONT_NAME,
       'css-selector': '.glyphicon-{{glyph}}'
@@ -24,7 +25,7 @@ module.exports = function (done) {
           path.extname = '.scss';
         }))
         .pipe(replace('./', '/fonts/'))
-        .pipe(gulp.dest('./content/scss/base'))
+        .pipe(gulp.dest(paths.content.scss.base))
         .on('end', function () {
           console.log('Copying generated fonts...');
           gulp.src([
@@ -33,7 +34,7 @@ module.exports = function (done) {
               path.join(TMP_DIRECTORY, FONT_NAME + '.ttf'),
               path.join(TMP_DIRECTORY, FONT_NAME + '.woff')
             ])
-            .pipe(gulp.dest('./dist/fonts'))
+            .pipe(gulp.dest(paths.dist.fonts))
             .on('end', function () {
               del([TMP_DIRECTORY, '.fontcustom-manifest.json']).then(function () {
                 done();

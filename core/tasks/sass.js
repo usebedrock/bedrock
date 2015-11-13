@@ -5,6 +5,7 @@ var notifier = require('node-notifier');
 var sourcemaps = require('gulp-sourcemaps');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
+var paths = require('./paths');
 
 module.exports = function () {
   var processors = [
@@ -12,8 +13,8 @@ module.exports = function () {
   ];
 
   return gulp.src([
-      './content/scss/main.scss',
-      './core/scss/prototype.scss'
+      paths.content.scss.main,
+      paths.core.scss.prototype
     ])
     .pipe(sourcemaps.init())
     .pipe(sass())
@@ -29,5 +30,5 @@ module.exports = function () {
     })
     .pipe(postcss(processors))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./dist/css'));
+    .pipe(gulp.dest(paths.dist.css));
 };

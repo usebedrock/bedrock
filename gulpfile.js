@@ -10,6 +10,8 @@ var iconFont = require('./core/tasks/icon-font');
 var templates = require('./core/tasks/templates');
 var copy = require('./core/tasks/copy');
 
+var paths = require('./core/tasks/paths');
+
 gulp.task('sass', sass);
 gulp.task('copy:images', copy.images);
 gulp.task('copy:js', copy.js);
@@ -20,17 +22,17 @@ gulp.task('templates:compile', ['templates:clean'], templates.compile);
 gulp.task('jade-reload', ['templates:compile'], reload);
 
 gulp.task('watch', function () {
-  watch('./content/scss/**/*.scss', function () {
+  watch(paths.content.scss.all, function () {
     gulp.start('sass');
   });
 
-  watch('./content/scss/settings/_colors.scss', function () {
+  watch(paths.content.scss.colorsDefinition, function () {
     gulp.start('jade-reload');
   });
 
   watch([
-    './content/templates/**/*.jade',
-    './content/data/*'
+    paths.content.templates.all,
+    paths.content.templates.data
   ], function () {
     gulp.start('jade-reload');
   });

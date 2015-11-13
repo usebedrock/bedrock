@@ -7,10 +7,11 @@ var gutil = require('gulp-util');
 var sourcemaps = require('gulp-sourcemaps');
 var babelify = require('babelify');
 var _ = require('lodash');
+var paths = require('./paths');
 
 // add custom browserify options here
 var customOpts = {
-  entries: ['./content/js/index.js'],
+  entries: [paths.content.js.entryFile],
   debug: true
 };
 
@@ -34,7 +35,7 @@ function bundler() {
     .pipe(sourcemaps.init({loadMaps: true})) // loads map from browserify file
     // Add transformation tasks to the pipeline here.
     .pipe(sourcemaps.write('./')) // writes .map file
-    .pipe(gulp.dest('./dist/js'));
+    .pipe(gulp.dest(paths.dist.js));
 }
 
 module.exports = bundler;
