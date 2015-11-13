@@ -17,11 +17,13 @@ module.exports = {
       colorsDefinition: path.join(contentPath, 'scss/settings/_colors.scss'),
     },
     templates: {
+      path: path.join(contentPath, 'templates'),
+      modulesPath: path.join(contentPath, 'templates/modules'),
       all: path.join(contentPath, 'templates/**/*.jade'),
       baseTemplates: path.join(contentPath, 'templates/*.jade'),
       moduleTemplates: path.join(contentPath, 'templates/modules/**/*.jade'),
       patterns: path.join(contentPath, 'templates/patterns'),
-      data: path.join(contentPath, 'data/*'),
+      data: path.join(contentPath, 'data/*')
     },
     js: {
       entryFile: path.join(contentPath, 'js/index.js')

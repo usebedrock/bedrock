@@ -10,7 +10,7 @@ var iconFont = require('./core/tasks/icon-font');
 var templates = require('./core/tasks/templates');
 var copy = require('./core/tasks/copy');
 
-var paths = require('./core/tasks/paths');
+var paths = require('./core/paths');
 
 gulp.task('sass', sass);
 gulp.task('copy:images', copy.images);

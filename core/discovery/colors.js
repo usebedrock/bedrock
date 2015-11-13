@@ -1,10 +1,11 @@
 var fs = require('fs');
 var _ = require('lodash');
+var paths = require('../paths');
 
 function discover() {
   var CATEGORY_REGEX = /\/\*\s(.*)/g;
 
-  var scss = fs.readFileSync('content/scss/settings/_colors.scss', 'utf-8');
+  var scss = fs.readFileSync(paths.content.scss.colorsDefinition, 'utf-8');
   var colorCategories = [];
   var currentCategory;
 

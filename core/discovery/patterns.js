@@ -2,8 +2,9 @@ var glob = require('glob');
 var path = require('path');
 var _ = require('lodash');
 var config = require('../config');
+var paths = require('../paths');
 
-var TEMPLATES_BASE_DIRECTORY = 'content/templates/patterns/';
+var TEMPLATES_BASE_DIRECTORY = paths.content.templates.patterns;
 
 function discover() {
   var files = glob.sync(path.join(TEMPLATES_BASE_DIRECTORY, '**/*.jade'));

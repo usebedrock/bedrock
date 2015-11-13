@@ -1,9 +1,10 @@
 var path = require('path');
 var glob = require('glob');
 var _ = require('lodash');
+var paths = require('../paths');
 
-var TEMPLATES_BASE_DIRECTORY = 'content/templates/';
-var TEMPLATES_MODULE_DIRECTORY = TEMPLATES_BASE_DIRECTORY + 'modules/';
+var TEMPLATES_BASE_DIRECTORY = paths.content.templates.path;
+var TEMPLATES_MODULE_DIRECTORY = paths.content.templates.modulesPath;
 
 function discover() {
   var basePageTemplates = glob.sync(path.join(TEMPLATES_BASE_DIRECTORY, '*.jade'));
