@@ -5,7 +5,7 @@ var notifier = require('node-notifier');
 var sourcemaps = require('gulp-sourcemaps');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
-var paths = require('./paths');
+var paths = require('../paths');
 
 module.exports = function () {
   var processors = [

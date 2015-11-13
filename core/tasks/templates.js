@@ -14,7 +14,7 @@ var colors = require('../discovery/colors');
 var icons = require('../discovery/icons');
 var pages = require('../discovery/pages');
 var patterns = require('../discovery/patterns');
-var paths = require('./paths');
+var paths = require('../paths');
 
 function isModuleTemplate(file) {
   return file.path.indexOf('templates/modules/') > -1;

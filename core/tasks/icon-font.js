@@ -4,7 +4,7 @@ var rename = require('gulp-rename');
 var replace = require('gulp-replace');
 var del = require('del');
 var path = require('path');
-var paths = require('./paths');
+var paths = require('../paths');
 
 var FONT_NAME = 'c-icon-font';
 var TMP_DIRECTORY = './icon-font-tmp';

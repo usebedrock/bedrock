@@ -7,7 +7,7 @@ var gutil = require('gulp-util');
 var sourcemaps = require('gulp-sourcemaps');
 var babelify = require('babelify');
 var _ = require('lodash');
-var paths = require('./paths');
+var paths = require('../paths');
 
 // add custom browserify options here
 var customOpts = {

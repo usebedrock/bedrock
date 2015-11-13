@@ -1,6 +1,6 @@
 var browserSync = require('browser-sync');
 var path = require('path');
-var paths = require('./paths');
+var paths = require('../paths');
 
 var DEFAULT_PORT = 3000;
 
