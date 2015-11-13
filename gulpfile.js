@@ -24,7 +24,7 @@ gulp.task('watch', function () {
     gulp.start('sass');
   });
 
-  watch('./content/scss/custom/_c-colors.scss', function () {
+  watch('./content/scss/settings/_colors.scss', function () {
     gulp.start('jade-reload');
   });
 
