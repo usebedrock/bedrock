@@ -2,7 +2,7 @@ var path = require('path');
 var glob = require('glob');
 var _ = require('lodash');
 
-var TEMPLATES_BASE_DIRECTORY = 'src/templates/';
+var TEMPLATES_BASE_DIRECTORY = 'content/templates/';
 var TEMPLATES_MODULE_DIRECTORY = TEMPLATES_BASE_DIRECTORY + 'modules/';
 
 function discover() {
