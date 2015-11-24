@@ -18,12 +18,12 @@ function saveNavState(isOpen) {
 }
 
 function open() {
-  $prototypeNav.addClass('c-prototype-nav-open');
+  $prototypeNav.addClass('b-prototype-nav-open');
   saveNavState(true);
 }
 
 function close() {
-  $prototypeNav.removeClass('c-prototype-nav-open');
+  $prototypeNav.removeClass('b-prototype-nav-open');
   saveNavState(false);
 }
 

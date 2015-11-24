@@ -6,12 +6,12 @@ require('codemirror/mode/javascript/javascript');
 require('codemirror/mode/jade/jade');
 require('codemirror/mode/xml/xml');
 
-const $codeBlocks = $('.c-sample-code .c-sample-markup');
-const $codeButtons = $('.c-sample-show-code-btn');
-const $copyButtons = $('.c-sample-copy-code-btn');
-const clipboard = new Clipboard('.c-sample-copy-code-btn', {
+const $codeBlocks = $('.b-sample-code .b-sample-markup');
+const $codeButtons = $('.b-sample-show-code-btn');
+const $copyButtons = $('.b-sample-copy-code-btn');
+const clipboard = new Clipboard('.b-sample-copy-code-btn', {
   target: function (trigger) {
-    return $(trigger).parents('.c-sample-footer').find('.c-sample-code').get(0);
+    return $(trigger).parents('.b-sample-footer').find('.b-sample-code').get(0);
   }
 });
 
@@ -20,12 +20,12 @@ $codeBlocks.hide();
 $copyButtons.hide();
 
 $codeButtons.on('click', function () {
-  var $codeBlock = $(this).parents('.c-sample').find('.c-sample-markup');
+  var $codeBlock = $(this).parents('.b-sample').find('.b-sample-markup');
   $codeBlock.toggle();
   $codeBlock.find('.CodeMirror').each(function (i, el) {
     el.CodeMirror.refresh();
   });
-  $(this).parents('.c-sample').find('.c-sample-copy-code-btn').toggle();
+  $(this).parents('.b-sample').find('.b-sample-copy-code-btn').toggle();
 });
 
 $codeBlocks.each(function () {

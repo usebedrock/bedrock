@@ -1,0 +1,190 @@
+/* ==========================================================================
+  Bordered list
+   ========================================================================== */
+
+/* ==========================================================================
+  Component variables
+  Requires Bootstrap variables
+   ========================================================================== */
+
+$b-bordered-list-accent:                        blue;
+
+// Sizing
+$b-bordered-list-indent-spacing:                15px  !default;
+$b-bordered-list-item-padding:                  4px  !default;
+
+// Regular colors
+$b-bordered-list-color:                         #333 !default; // The text color
+$b-bordered-list-border-color:                  #DDD !default; // The border color
+$b-bordered-list-hover-bg:                      #666 !default; // Background when hovered
+$b-bordered-list-hover-color:                   #FFF!default; // Text color when hovered
+$b-bordered-list-active-color:                  #FFF !default; // Text color when it has class .active
+$b-bordered-list-active-bg:                     $b-bordered-list-accent !default; // Background color when it has class .active
+$b-bordered-list-subtle-icon-color:             rgba($b-bordered-list-accent, 0.5) !default;
+
+// Colors for neutral variant
+$b-bordered-list-color-neutral:                 rgba($b-bordered-list-accent, 0.75) !default;
+$b-bordered-list-hover-bg-neutral:              rgba($b-bordered-list-accent, 0.75) !default;
+$b-bordered-list-hover-color-neutral:           #FFF !default;
+$b-bordered-list-active-bg-color-neutral:       rgba($b-bordered-list-accent, 0.75) !default;
+$b-bordered-list-active-color-neutral:          #FFF !default;
+
+// Separate icon color for variant with subtle icon color
+$b-bordered-list-subtle-icon-color:             $b-bordered-list-accent !default;
+
+/* Bordered list
+   ========================================================================== */
+
+.b-bordered-list-title {
+  font-weight: 700;
+  padding: $b-bordered-list-item-padding;
+}
+
+.b-bordered-list-title-inverse {
+  color: #FFF;
+}
+
+.b-bordered-list {
+  margin: 0;
+  padding: 0 0 10px;
+  li {
+    padding: $b-bordered-list-item-padding;
+    display: block;
+    border-bottom: 1px solid $b-bordered-list-border-color;
+    &:last-child {
+      border: none;
+    }
+  }
+}
+
+/* Bordered list links
+   Support for <nav><a>... as wel ass <ul><li><a> markup patterns
+   ========================================================================== */
+
+.b-bordered-list-links {
+  margin: 0;
+  padding: 0;
+  > a,
+  > .b-bordered-list-label,
+  li > a,
+  li > .b-bordered-list-label {
+    color: $b-bordered-list-color;
+    text-decoration: none;
+    padding: $b-bordered-list-item-padding;
+    display: block;
+    border-bottom: 1px solid $b-bordered-list-border-color;
+  }
+  > .b-bordered-list-label,
+  li > .b-bordered-list-label {
+    color: lighten($b-bordered-list-color, 15%);
+    font-weight: 700;
+  }
+  > a,
+  li > a {
+    &:hover,
+    &:active,
+    &:focus {
+      transition: 0.2s background ease-in-out, 0.2s color ease-in-out;
+      text-decoration: none;
+      background: $b-bordered-list-hover-bg; 
+      border-color: $b-bordered-list-hover-bg;
+      color: $b-bordered-list-hover-color;
+    }
+  }
+  > a.active,
+  li > a.active {
+    text-decoration: none;
+    background: $b-bordered-list-active-bg; 
+    border-color: $b-bordered-list-active-bg;
+    color: $b-bordered-list-active-color;
+  }
+  // Remove border on last item
+  > a:last-child {
+    border: none;
+  }
+  li {
+    list-style: none;
+    &:last-child > a,
+    &:last-child > .b-bordered-list-label {
+      border: none;
+    }
+  }
+  ul, ol {
+    padding-left: $b-bordered-list-indent-spacing;
+  }
+}
+
+.b-bordered-list-links-inverse {
+  > a,
+  li > a {
+    color: $b-bordered-list-border-color;
+    border-bottom: 1px solid rgba(#FFF,0.33);
+  }
+}
+
+/* Variants 
+   ========================================================================== */
+
+.b-bordered-list-links-spaced {
+  margin-bottom: 20px;
+}
+
+// Neutral looking variant
+.b-bordered-list-links-text-color-neutral {
+  > a,
+  li > a {
+    color: $b-bordered-list-color-neutral;
+    &:hover,
+    &:active,
+    &:focus {
+      color: $b-bordered-list-hover-color-neutral;
+      background: $b-bordered-list-hover-bg-neutral; 
+      border-color: $b-bordered-list-hover-bg-neutral;
+      .glyphicon {
+        color: $b-bordered-list-hover-color-neutral;
+      }
+    }
+    &.active {
+      color: $b-bordered-list-active-color-neutral;
+      background: lighten($b-bordered-list-active-bg-color-neutral, 10%); 
+      border-color: lighten($b-bordered-list-active-bg-color-neutral, 10%);
+      .glyphicon {
+        color: $b-bordered-list-active-color-neutral;
+      }
+    }
+    &.active {
+      cursor: default;
+    }
+  }
+  li li > a {
+    &.active {
+      background: rgba($b-bordered-list-active-bg-color-neutral, 0.5); 
+      border-color: rgba($b-bordered-list-active-bg-color-neutral, 0.5);
+    }
+  }
+}
+
+/* Horizontal version
+   ========================================================================== */
+
+.b-bordered-list-horizontal {
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  li {
+    padding: 2px 6px;
+    display: inline-block;
+    border: none;
+    border-right: 1px solid $b-bordered-list-border-color;
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      border: none;
+    }
+  }
+}
+
+.b-bordered-list-horizontal-centered {
+  text-align: center;
+}
