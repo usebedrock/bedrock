@@ -17,7 +17,7 @@ module.exports = {
       main: path.join(contentPath, 'scss/main.scss'),
       base: path.join(contentPath, 'scss/base/'),
       custom: path.join(contentPath, 'scss/custom/'),
-      colorsDefinition: path.join(contentPath, 'scss/custom/_c-colors.scss')
+      colorsDefinition: path.join(contentPath, 'scss/settings/_colors.scss')
     },
     templates: {
       path: path.join(contentPath, 'templates/'),
