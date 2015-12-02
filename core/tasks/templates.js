@@ -14,6 +14,7 @@ var colors = require('../discovery/colors');
 var icons = require('../discovery/icons');
 var pages = require('../discovery/pages');
 var patterns = require('../discovery/patterns');
+var contentData = require('../discovery/content-data');
 var paths = require('../paths');
 
 function isModuleTemplate(file) {
@@ -27,14 +28,6 @@ module.exports = {
     });
   },
   compile: function () {
-    for (var key in require.cache) {
-      if (key.indexOf('fixtures') > -1) {
-        delete require.cache[key];
-      }
-    }
-
-    // TODO: add fixture loading
-
     return gulp.src([
         paths.content.templates.baseTemplates,
         paths.content.templates.moduleTemplates
@@ -42,7 +35,8 @@ module.exports = {
       .pipe(data(function (file) {
         return {
           filename: path.basename(file.path).replace('jade', 'html'),
-          pathname: file.path.replace(path.join(process.cwd(), paths.content.path), '').replace('.jade', '.html'),
+          pathname: file.path.replace(path.join(process.cwd(), paths.content.templates.path), '').replace('.jade', ''),
+          contentData: contentData.discover(),
           patterns: patterns.discover(),
           pages: pages.discover(),
           icons: icons.discover(),

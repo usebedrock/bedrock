@@ -21,11 +21,11 @@ module.exports = function (done) {
       console.log('Copying generated CSS file...');
       gulp.src(path.join(TMP_DIRECTORY, FONT_NAME + '.css'))
         .pipe(rename(function (path) {
-          path.basename = '_icon-font';
+          path.basename = '_c-icon-font';
           path.extname = '.scss';
         }))
         .pipe(replace('./', '/fonts/'))
-        .pipe(gulp.dest(paths.content.scss.base))
+        .pipe(gulp.dest(paths.content.scss.custom))
         .on('end', function () {
           console.log('Copying generated fonts...');
           gulp.src([
