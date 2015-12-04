@@ -1,2 +1,4 @@
 node_modules/
 dist/
+__tmp__
+.font-custom.manifest.json
