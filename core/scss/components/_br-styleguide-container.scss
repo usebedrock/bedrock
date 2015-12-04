@@ -3,7 +3,7 @@ body, html {
   height: 100%;
 }
 
-body.b-styleguide {
+body.br-styleguide {
   overflow: hidden;
   height: 100%;
   width: 100%;
@@ -12,17 +12,17 @@ body.b-styleguide {
   background: #FFF;
 }
 
-.b-styleguide *,
-.b-styleguide *:before,
-.b-styleguide *:after {
+.br-styleguide *,
+.br-styleguide *:before,
+.br-styleguide *:after {
   box-sizing: border-box;
 }
 
-.b-styleguide-container {
+.br-styleguide-container {
   height: 100%;
 }
 
-.b-styleguide-navigation-holder {
+.br-styleguide-navigation-holder {
   background: #EEE;
   height: 100%;
   overflow: scroll;
@@ -32,7 +32,7 @@ body.b-styleguide {
   -webkit-overflow-scrolling: touch;
 }
 
-.b-styleguide-content {
+.br-styleguide-content {
   height: 100%;
   width: 80%;
   padding: 40px;
@@ -47,7 +47,7 @@ body.b-styleguide {
    that are hidden by defaults or positioned by default in styleguide
    ========================================================================== */
 
-.b-styleguide-container {
+.br-styleguide-container {
   // Bootstrap
   .navbar-fixed-top {
     position: static;

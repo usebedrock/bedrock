@@ -1,18 +1,18 @@
-#__prototype-nav.b-prototype-nav
-    .b-prototype-nav-inner
+#__prototype-nav.br-prototype-nav
+    .br-prototype-nav-inner
         h4 Prototype navigation
         p Press Ctrl + M to toggle this navigation.
         h4 Base pages
-        ul.b-bordered-list
+        ul.br-bordered-list
             each page in pages.base
                 li
                     a(href=page.url)
                         span= page.name
                         if page.state
                             span (#{page.state})
-        each module, key in pages.modules
-            h4= key
-            ul.b-bordered-list
+        each module, moduleName in pages.modules
+            h4= moduleName
+            ul.br-bordered-list
                 each page in module
                     li
                         a(href=page.url)

@@ -9,12 +9,14 @@ module.exports = function () {
     files: [
       path.join(paths.dist.css, '*.css'),
       path.join(paths.dist.js, 'bundle.js'),
+      paths.content.templates.all,
+      paths.content.scss.colorsDefinition,
+      paths.content.templates.data
     ],
+    ui: false,
     ghostMode: false,
     notify: false,
     port: process.env.C9_PORT || DEFAULT_PORT,
-    server: {
-      baseDir: paths.dist.path
-    }
+    proxy: 'localhost:9090'
   });
 };

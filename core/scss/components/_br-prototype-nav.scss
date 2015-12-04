@@ -6,7 +6,17 @@ body, html {
   margin: 0;
 }
 
-.b-prototype-nav {
+body.br-prototype-nav-is-open {
+  .br-scrollable-container {
+    left: 300px;
+  }
+
+  .br-styleguide-container {
+    padding-left: 300px !important;
+  }
+}
+
+.br-prototype-nav {
   background-color: #FFF;
   position: absolute;
   top: 0;
@@ -14,11 +24,15 @@ body, html {
   z-index: 2000;
   transform: translateX(-100%);
   width: 300px;
-  .b-prototype-nav-inner {
+  overflow-y: auto;
+
+  .br-prototype-nav-inner {
     padding: 20px;
   }
-  &.b-prototype-nav-open {
+
+  &.br-prototype-nav-open {
     transform: translateX(0);
     box-shadow: 2px 0 5px rgba(#000, 0.3);
   }
 }
+

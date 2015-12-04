@@ -21,7 +21,38 @@ function isModuleTemplate(file) {
   return file.path.indexOf('templates/modules/') > -1;
 }
 
+function getDefaultLocals() {
+  return {
+    contentData: contentData.discover(),
+    patterns: patterns.discover(),
+    pages: pages.discover(),
+    icons: icons.discover(),
+    config,
+    colorCategories: colors.discover(),
+    slugify: function (input) {
+      return input.replace(/\//g, '-');
+    },
+    render: function (id, language) {
+      var patternFileLocation = path.join(paths.content.templates.patterns, id + '.jade');
+      var jadeMarkup = fs.readFileSync(patternFileLocation, 'utf8');
+
+      if (!language || language === 'jade') {
+        return jadeMarkup;
+      }
+
+      else if (language === 'html') {
+        return jade.compile(jadeMarkup, {
+          pretty: true,
+          basedir: 'content',
+          filename: patternFileLocation
+        })({icons: icons.discover(), config});
+      }
+    }
+  };
+}
+
 module.exports = {
+  getDefaultLocals: getDefaultLocals,
   clean: function (done) {
     del(['./dist/*.html', './dist/modules']).then(function () {
       done();
@@ -33,36 +64,10 @@ module.exports = {
         paths.content.templates.moduleTemplates
       ])
       .pipe(data(function (file) {
-        return {
+        return Object.assign({}, getDefaultLocals(), {
           filename: path.basename(file.path).replace('jade', 'html'),
           pathname: file.path.replace(path.join(process.cwd(), paths.content.templates.path), '').replace('.jade', ''),
-          contentData: contentData.discover(),
-          patterns: patterns.discover(),
-          pages: pages.discover(),
-          icons: icons.discover(),
-          config,
-          colorCategories: colors.discover(),
-          slugify: function (input) {
-            return input.replace(/\//g, '-');
-          },
-          render: function (id, language) {
-            var patternFileLocation = path.join(paths.content.templates.patterns, id + '.jade');
-            var jadeMarkup = fs.readFileSync(patternFileLocation, 'utf8');
-
-            if (!language || language === 'jade') {
-              return jadeMarkup;
-            }
-
-            else if (language === 'html') {
-              return jade.compile(jadeMarkup, {
-                pretty: true,
-                basedir: 'content',
-                filename: patternFileLocation
-              })({icons: icons.discover(), config});
-            }
-
-          }
-        };
+        });
       }))
       .pipe(gulpJade({
         pretty: true

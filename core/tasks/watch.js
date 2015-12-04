@@ -4,6 +4,8 @@ var path = require('path');
 var paths = require('../paths');
 
 module.exports = function () {
+  global.isWatching = true;
+
   watch([
     paths.content.scss.all,
     paths.core.scss.all
@@ -25,13 +27,5 @@ module.exports = function () {
 
   watch(path.join(paths.content.icons.sourceDirectory, '*.svg'), function () {
     gulp.start('icon-font');
-  });
-
-  watch([
-    paths.content.scss.colorsDefinition,
-    paths.content.templates.all,
-    paths.content.templates.data
-  ], function () {
-    gulp.start('jade-reload');
   });
 };

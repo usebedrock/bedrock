@@ -1,27 +1,26 @@
-/* b-color-swatch
-  Color swatches in styleguide
+/* Color swatches 
    ========================================================================== */
 
-.b-color-swatch-list {
+.br-color-swatch-list {
   list-style-type: none;
   padding: 0;
 }
 
-.b-color-swatch-item {
+.br-color-swatch-item {
   display: inline-block;
   margin-right: 10px;
   padding: 10px;
   text-align: center;
 }
 
-.b-color-swatch-preview {
+.br-color-swatch-preview {
   width: 80px;
   height: 80px;
   margin-bottom: 5px;
   display: inline-block;
 }
 
-.b-color-swatch-data {
+.br-color-swatch-data {
   color: #888;
   font-size: 11px;
 }

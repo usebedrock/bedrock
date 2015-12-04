@@ -1,67 +1,67 @@
 extends layouts/master
 
 mixin sample(pattern, isLayoutClass, hideCodeSamples)
-    .b-sample(id=slugify(pattern.filename))
-        .b-sample-header.b-sample-clearfix
-            h3.b-sample-heading= pattern.name
-            a.b-sample-header-link(href="##{pattern.filename}") #
-        .b-sample-content(class=pattern.extraClasses)
+    .br-sample(id=slugify(pattern.filename))
+        .br-sample-header.br-sample-clearfix
+            h3.br-sample-heading= pattern.name
+            a.c-sample-header-link(href="##{slugify(pattern.filename)}") #
+        .br-sample-content(class=pattern.extraClasses)
             != render(pattern.filename, 'html')
         if !hideCodeSamples
-            .b-sample-footer
+            .br-sample-footer
                 if config.snippetLanguage === 'html'
-                    span.b-sample-btn.b-sample-show-code-btn Show HTML code
+                    span.br-sample-btn.br-sample-show-code-btn Show HTML code
                 if config.snippetLanguage === 'jade'
-                    span.b-sample-btn.b-sample-show-code-btn Show Jade code
-                .b-sample-code
-                    button.b-sample-btn.b-sample-copy-code-btn Copy to clipboard
+                    span.br-sample-btn.br-sample-show-code-btn Show Jade code
+                .br-sample-code
+                    button.br-sample-btn.br-sample-copy-code-btn Copy to clipboard
                     if config.snippetLanguage === 'html'
-                        pre.b-sample-markup= render(pattern.filename, 'html')
+                        pre.br-sample-markup= render(pattern.filename, 'html')
                     if config.snippetLanguage === 'jade'
-                        pre.b-sample-markup= render(pattern.filename, 'jade')
+                        pre.br-sample-markup= render(pattern.filename, 'jade')
 
 block append pagevariables
-    - var bodyclass = 'b-styleguide b-type'
+    - var bodyclass = 'br-styleguide br-type'
 
 block body
 
-    .b-styleguide-container
-        .b-styleguide-navigation-holder
-            .b-styleguide-sidebar
+    .br-styleguide-container
+        .br-styleguide-navigation-holder
+            .br-styleguide-sidebar
                 h4 Indexes
-                ul.b-bordered-list-links
+                ul.br-bordered-list-links
                     li:  a(href="#colors") Colors
                     li:  a(href="#icons") Icons
                 h4 Patterns
-                ul.b-bordered-list-links
+                ul.br-bordered-list-links
                     each pattern in patterns.base
                         li: a(href='#' + slugify(pattern.filename))= pattern.name
                     each category in patterns.categories
                         li
-                          span.b-bordered-list-label #{category.name}
+                          span.br-bordered-list-label #{category.name}
                           ul
                             each pattern in category.patterns
                                 li: a(href='#' + slugify(pattern.filename))= pattern.name
 
-        .b-styleguide-content
+        .br-styleguide-content
 
-            .b-content
+            .br-content
                 h1 #{projecttitle} - Style Guide
                 p This page contains common elements that occur in #{projecttitle}.
 
-            .b-sample(id="colors")
-                .b-sample-header.b-sample-clearfix
-                    h3.b-sample-heading
+            .br-sample(id="colors")
+                .br-sample-header.br-sample-clearfix
+                    h3.br-sample-heading
                         | Colors
-                    a.b-sample-header-link(href="#colors") #
-                .b-sample-content
+                    a.br-sample-header-link(href="#colors") #
+                .br-sample-content
                     each category in colorCategories
                         h4= category.name
-                        ul.b-color-swatch-list
+                        ul.br-color-swatch-list
                             each color in category.colors
-                                li.b-color-swatch-item
-                                    .b-color-swatch-preview(style='background-color: #{color.value}')
-                                    .b-color-swatch-data
+                                li.br-color-swatch-item
+                                    .br-color-swatch-preview(style='background-color: #{color.value}')
+                                    .br-color-swatch-data
                                         .swatch-name= color.name
                                         .swatch-value= color.value
 

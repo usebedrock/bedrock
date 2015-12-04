@@ -1,18 +1,17 @@
-/* b-sample
-   Samples in styleguide
+/* Samples
    ========================================================================== */
 
-.b-sample-clearfix:before,
-.b-sample-clearfix:after {
+.br-sample-clearfix:before,
+.br-sample-clearfix:after {
   content: " "; /* 1 */
   display: table; /* 2 */
 }
 
-.b-sample-clearfix:after {
+.br-sample-clearfix:after {
   clear: both;
 }
 
-.b-sample-btn {
+.br-sample-btn {
   background: #FFF;
   border: 1px solid #CDCDCD;
   display: inline-block;
@@ -25,24 +24,23 @@
   }
 }
 
-.b-sample-code {
+.br-sample-code {
   position: relative;
 }
-
-.b-sample-copy-code-btn {
+.br-sample-copy-code-btn {
   position: absolute;
   top: 10px;
   right: 10px;
 }
 
-.b-sample-markup {
+.br-sample-markup {
   font-size: 11px;
   background: #EEE;
   border: 1px solid #DDD;
   padding: 10px;
 }
 
-.b-sample-content {
+.br-sample-content {
   padding: 40px;
   border: 1px solid #DDD;
   margin: 0 0 10px;
@@ -51,11 +49,11 @@
   overflow: hidden;
 }
 
-.b-sample-content-is-layout {
+.br-sample-content-is-layout {
   min-height: 500px;
 }
 
-.b-sample-header .b-sample-header-link {
+.br-sample-header .br-sample-header-link {
   float: right;
   color: rgba(0,0,0,0.45);
   font-size: 16px;
@@ -63,7 +61,7 @@
   padding: 0 2px 0 0;
 }
 
-.b-sample-header .b-sample-heading {
+.br-sample-header .br-sample-heading {
   float: left;
   font-size: 16px;
   margin: 10px 0;

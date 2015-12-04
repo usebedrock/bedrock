@@ -23,7 +23,7 @@ function discover() {
       filemap.base.push({
         filename,
         name: patternName,
-        url: '/styleguide.html#' + patternName
+        url: '/styleguide#' + patternName
       });
     }
     else {
@@ -43,7 +43,7 @@ function discover() {
       var patternData = {
         filename,
         name: patternName,
-        url: '/styleguide.html#' + patternName,
+        url: '/styleguide#' + patternName,
         extraClasses: []
       };
 
