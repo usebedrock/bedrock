@@ -1,4 +1,4 @@
-# Bedrock 1.0.0alpha
+# Bedrock
 
 Welcome to Bedrock.
 
