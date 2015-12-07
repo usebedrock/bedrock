@@ -4,7 +4,7 @@ mixin sample(pattern, isLayoutClass, hideCodeSamples)
     .br-sample(id=slugify(pattern.filename))
         .br-sample-header.br-sample-clearfix
             h3.br-sample-heading= pattern.name
-            a.c-sample-header-link(href="##{slugify(pattern.filename)}") #
+            a.br-sample-header-link(href="##{slugify(pattern.filename)}") #
         .br-sample-content(class=pattern.extraClasses)
             != render(pattern.filename, 'html')
         if !hideCodeSamples
