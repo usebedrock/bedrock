@@ -11,7 +11,7 @@ $br-prototype-nav-width: 250px;
 html.br-prototype-nav-is-open {
   body {
     position: relative;
-    padding-left: $br-prototype-nav-width;
+    left: $br-prototype-nav-width;
     width: calc(100% - #{$br-prototype-nav-width});
   }
 }
