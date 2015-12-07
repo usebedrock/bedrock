@@ -24,12 +24,14 @@
   }
 }
 
-.br-sample-code {
+.br-sample-footer {
   position: relative;
 }
+
 .br-sample-copy-code-btn {
   position: absolute;
-  top: 10px;
+  z-index: 2;
+  top: 50px;
   right: 10px;
 }
 
@@ -38,6 +40,12 @@
   background: #EEE;
   border: 1px solid #DDD;
   padding: 10px;
+  position: relative;
+  z-index: -1;
+  .CodeMirror {
+    width: 80%;
+    background: transparent;
+  }
 }
 
 .br-sample-content {

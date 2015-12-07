@@ -4,12 +4,12 @@
 
 /* ==========================================================================
   Component variables
-  Requires Bootstrap variables
    ========================================================================== */
 
-$br-bordered-list-accent:                        blue;
+$br-bordered-list-accent:                        blue !default;
 
 // Sizing
+$br-bordered-list-font-size:                     13px  !default;
 $br-bordered-list-indent-spacing:                15px  !default;
 $br-bordered-list-item-padding:                  4px  !default;
 
@@ -21,13 +21,6 @@ $br-bordered-list-hover-color:                   #FFF!default; // Text color whe
 $br-bordered-list-active-color:                  #FFF !default; // Text color when it has class .active
 $br-bordered-list-active-bg:                     $br-bordered-list-accent !default; // Background color when it has class .active
 $br-bordered-list-subtle-icon-color:             rgba($br-bordered-list-accent, 0.5) !default;
-
-// Colors for neutral variant
-$br-bordered-list-color-neutral:                 rgba($br-bordered-list-accent, 0.75) !default;
-$br-bordered-list-hover-bg-neutral:              rgba($br-bordered-list-accent, 0.75) !default;
-$br-bordered-list-hover-color-neutral:           #FFF !default;
-$br-bordered-list-active-bg-color-neutral:       rgba($br-bordered-list-accent, 0.75) !default;
-$br-bordered-list-active-color-neutral:          #FFF !default;
 
 // Separate icon color for variant with subtle icon color
 $br-bordered-list-subtle-icon-color:             $br-bordered-list-accent !default;
@@ -72,6 +65,7 @@ $br-bordered-list-subtle-icon-color:             $br-bordered-list-accent !defau
     text-decoration: none;
     padding: $br-bordered-list-item-padding;
     display: block;
+    font-size: $br-bordered-list-font-size;
     border-bottom: 1px solid $br-bordered-list-border-color;
   }
   > .br-bordered-list-label,
@@ -127,41 +121,6 @@ $br-bordered-list-subtle-icon-color:             $br-bordered-list-accent !defau
 
 .br-bordered-list-links-spaced {
   margin-bottom: 20px;
-}
-
-// Neutral looking variant
-.br-bordered-list-links-text-color-neutral {
-  > a,
-  li > a {
-    color: $br-bordered-list-color-neutral;
-    &:hover,
-    &:active,
-    &:focus {
-      color: $br-bordered-list-hover-color-neutral;
-      background: $br-bordered-list-hover-bg-neutral; 
-      border-color: $br-bordered-list-hover-bg-neutral;
-      .glyphicon {
-        color: $br-bordered-list-hover-color-neutral;
-      }
-    }
-    &.active {
-      color: $br-bordered-list-active-color-neutral;
-      background: lighten($br-bordered-list-active-bg-color-neutral, 10%); 
-      border-color: lighten($br-bordered-list-active-bg-color-neutral, 10%);
-      .glyphicon {
-        color: $br-bordered-list-active-color-neutral;
-      }
-    }
-    &.active {
-      cursor: default;
-    }
-  }
-  li li > a {
-    &.active {
-      background: rgba($br-bordered-list-active-bg-color-neutral, 0.5); 
-      border-color: rgba($br-bordered-list-active-bg-color-neutral, 0.5);
-    }
-  }
 }
 
 /* Horizontal version

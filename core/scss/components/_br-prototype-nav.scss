@@ -6,24 +6,25 @@ body, html {
   margin: 0;
 }
 
-body.br-prototype-nav-is-open {
-  .br-scrollable-container {
-    left: 300px;
-  }
+$br-prototype-nav-width: 250px;
 
-  .br-styleguide-container {
-    padding-left: 300px !important;
+html.br-prototype-nav-is-open {
+  body {
+    position: relative;
+    padding-left: $br-prototype-nav-width;
+    width: calc(100% - #{$br-prototype-nav-width});
   }
 }
 
 .br-prototype-nav {
   background-color: #FFF;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
+  left: 0;
   z-index: 2000;
   transform: translateX(-100%);
-  width: 300px;
+  width: $br-prototype-nav-width;
   overflow-y: auto;
 
   .br-prototype-nav-inner {
@@ -36,3 +37,12 @@ body.br-prototype-nav-is-open {
   }
 }
 
+.br-prototype-nav-main-heading {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.br-prototype-nav-sub-heading {
+  font-size: 13px;
+  font-weight: 400;
+}

@@ -5,7 +5,7 @@ const ACTIVATION_KEYCODE = 77; // 'M' key
 const ESC_KEYCODE = 27;
 const NAV_STATE_COOKIE_KEY = 'prototypenav.cookie';
 
-const $body = $('body');
+const $html = $('html');
 const $prototypeNav = $('#__prototype-nav');
 let isPrototypeNavOpen = Cookies.get(NAV_STATE_COOKIE_KEY) === 'true' || false;
 
@@ -20,13 +20,13 @@ function saveNavState(isOpen) {
 
 function open() {
   $prototypeNav.addClass('br-prototype-nav-open');
-  $body.addClass('br-prototype-nav-is-open');
+  $html.addClass('br-prototype-nav-is-open');
   saveNavState(true);
 }
 
 function close() {
   $prototypeNav.removeClass('br-prototype-nav-open');
-  $body.removeClass('br-prototype-nav-is-open');
+  $html.removeClass('br-prototype-nav-is-open');
   saveNavState(false);
 }
 
