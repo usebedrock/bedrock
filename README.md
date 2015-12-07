@@ -24,9 +24,6 @@ Bedrock is a static site generator to easily make HTML prototypes.
 * Install the project's dependencies: `$ npm install`
 * To run the prototype: `$ npm start`. All files are automatically compiled before they are served.
 
-*If you are running `tmux`, be sure to follow [these instructions](https://github.com/julienXX/terminal-notifier/issues/115#issuecomment-104214742)
-to enable notification errors, or the build system will hang.*
-
 ## Running specific Gulp tasks
 
 This project uses an npm script to trigger Gulp. To run a specific Gulp task, run `$ npm run gulp TASK_NAME`.
