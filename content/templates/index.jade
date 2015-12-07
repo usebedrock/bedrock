@@ -5,11 +5,12 @@ block body
         .bc-scrollable-container-content
             .br-prototype-nav-inner
                 div(style="padding: 20px;")
-                    h3.br-prototype-nav-main-heading Prototype navigation
-                    p Press Ctrl + M to toggle this navigation.
+                    h3.br-prototype-nav-main-heading #{projecttitle} Prototype
                     div(style="-webkit-column-count: 3; -moz-column-count: 3; column-count: 3;")
                         h4.br-prototype-nav-sub-heading Base pages
+
                         ul.br-bordered-list
+                            li: a(href="/styleguide") Styleguide
                             each page in pages.base
                                 li
                                     a(href=page.url)
