@@ -16,33 +16,32 @@ Bedrock is a static site generator to easily make HTML prototypes.
 ## Choices
 
 * Jade as a template language
-* Freedom of SCSS framework, but we are supposing you are starting from Bootstrap, Foundation or your own framework
+* Freedom of SCSS framework
 
 ## Installation and usage
 
 * First, make sure you have Node installed
-* Install the project's dependencies: `$ npm install`
-* To run the prototype: `$ npm start`. All files are automatically compiled before they are served.
+* Install the project's dependencies: `npm install`
+* To run the prototype: `gulp`. All files are automatically compiled before they are served.
 
 ## Running specific Gulp tasks
 
-This project uses an npm script to trigger Gulp. To run a specific Gulp task, run `$ npm run gulp TASK_NAME`.
+This project uses an npm script to trigger Gulp. To run a specific Gulp task, run `npm TASK_NAME`.
 
 ## Deploying the prototype
 
-Before deploying the prototype to a remote server, make sure you run `$ npm run build` to generate the required CSS,
-HTML, JS and fonts.
+Before deploying the prototype to a remote server, make sure you run `gulp build` to generate the required CSS, HTML, JS and fonts.
 
 ## Icon font compilation
 
 ### Installing dependencies
 
-* OSX: `$ brew install fontforge eot-utils` and `$ gem install fontcustom`
+* OSX: `brew install fontforge eot-utils` and `gem install fontcustom`
 * Linux/Windows: to be investigated!
 
 ### Compiling the font
 
-To compile the icon font based on the SVG icons, run `$ npm run icon-font`.
+To compile the icon font based on the SVG icons, run `gulp icon-font`.
 
 ## License
 
