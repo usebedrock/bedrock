@@ -1,0 +1,57 @@
+extends ../../../content/templates/layouts/master
+
+mixin sample(pattern, isLayoutClass, hideCodeSamples)
+    .br-sample(id=slugify(pattern.filename))
+        .br-sample-header.br-sample-clearfix
+            h3.br-sample-heading= pattern.name
+            a.br-sample-header-link(href="##{slugify(pattern.filename)}") #
+        .br-sample-content(class=pattern.extraClasses)
+            != render(pattern.filename, 'html')
+        if !hideCodeSamples
+            .br-sample-footer
+                if config.snippetLanguage === 'html'
+                    span.br-sample-btn.br-sample-show-code-btn Show HTML code
+                if config.snippetLanguage === 'jade'
+                    span.br-sample-btn.br-sample-show-code-btn Show Jade code
+                .br-sample-code
+                    button.br-sample-btn.br-sample-copy-code-btn Copy to clipboard
+                    if config.snippetLanguage === 'html'
+                        pre.br-sample-markup= render(pattern.filename, 'html')
+                    if config.snippetLanguage === 'jade'
+                        pre.br-sample-markup= render(pattern.filename, 'jade')
+
+block append pagevariables
+    - var bodyclass = 'br-styleguide br-type'
+
+block body
+
+    .br-styleguide-container
+        include ../includes/styleguide-nav
+
+        .br-styleguide-content
+            .br-sample(id="colors")
+                .br-sample-header.br-sample-clearfix
+                    h3.br-sample-heading
+                        | Colors
+                    a.br-sample-header-link(href="#colors") #
+                .br-sample-content
+                    each category in colorCategories
+                        h4= category.name
+                        ul.br-color-swatch-list
+                            each color in category.colors
+                                li.br-color-swatch-item
+                                    .br-color-swatch-preview(style='background-color: #{color.value}')
+                                    .br-color-swatch-data
+                                        .swatch-name= color.name
+                                        .swatch-value= color.value
+
+            .br-sample(id="icons")
+                .br-sample-header.br-sample-clearfix
+                    h3.br-sample-heading
+                        | Icons
+                    a.br-sample-header-link(href="#icons") #
+                .br-sample-content
+                    each icon in icons
+                        div
+                            span(class=icon.htmlClasses)
+                            code= icon.jadeClasses

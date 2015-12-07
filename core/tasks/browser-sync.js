@@ -10,6 +10,7 @@ module.exports = function () {
       path.join(paths.dist.css, '*.css'),
       path.join(paths.dist.js, 'bundle.js'),
       paths.content.templates.all,
+      './core/templates/**/*.jade',
       paths.content.scss.colorsDefinition,
       paths.content.templates.data
     ],

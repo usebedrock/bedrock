@@ -1,5 +1,27 @@
 extends layouts/master
 
 block body
-
-    p This is the starting page. Start here.
+    .bc-scrollable-container
+        .bc-scrollable-container-content
+            .br-prototype-nav-inner
+                div(style="padding: 20px;")
+                    h3.br-prototype-nav-main-heading Prototype navigation
+                    p Press Ctrl + M to toggle this navigation.
+                    div(style="-webkit-column-count: 3; -moz-column-count: 3; column-count: 3;")
+                        h4.br-prototype-nav-sub-heading Base pages
+                        ul.br-bordered-list
+                            each page in pages.base
+                                li
+                                    a(href=page.url)
+                                        span= page.name
+                                        if page.state
+                                            span (#{page.state})
+                        each module, moduleName in pages.modules
+                            h4.br-prototype-nav-sub-heading= moduleName
+                            ul.br-bordered-list
+                                each page in module
+                                    li
+                                        a(href=page.url)
+                                            span= page.name
+                                            if page.state
+                                                span (#{page.state})

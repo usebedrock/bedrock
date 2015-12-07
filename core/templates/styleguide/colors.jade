@@ -1,0 +1,28 @@
+extends ../../../content/templates/layouts/master
+
+block append pagevariables
+    - var bodyclass = 'br-styleguide br-type'
+
+block body
+
+    .br-styleguide-container
+        include ../includes/styleguide-nav
+
+        .br-styleguide-content
+            h1 Colors
+
+            .br-sample
+                .br-sample-header.br-sample-clearfix
+                    h3.br-sample-heading
+                        | Colors
+                    a.br-sample-header-link(href="#colors") #
+                .br-sample-content
+                    each category in colorCategories
+                        h4= category.name
+                        ul.br-color-swatch-list
+                            each color in category.colors
+                                li.br-color-swatch-item
+                                    .br-color-swatch-preview(style='background-color: #{color.value}')
+                                    .br-color-swatch-data
+                                        .swatch-name= color.name
+                                        .swatch-value= color.value

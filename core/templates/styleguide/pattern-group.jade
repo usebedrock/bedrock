@@ -1,0 +1,36 @@
+extends ../../../content/templates/layouts/master
+
+mixin sample(pattern, isLayoutClass, hideCodeSamples)
+    .br-sample(id=pattern.name)
+        .br-sample-header.br-sample-clearfix
+            h3.br-sample-heading= pattern.name
+            a.br-sample-header-link(href="##{pattern.name}") #
+        .br-sample-content(class=pattern.extraClasses)
+            != render(pattern.filename, 'html')
+        if !hideCodeSamples
+            .br-sample-footer
+                if config.snippetLanguage === 'html'
+                    span.br-sample-btn.br-sample-show-code-btn Show HTML code
+                if config.snippetLanguage === 'jade'
+                    span.br-sample-btn.br-sample-show-code-btn Show Jade code
+                .br-sample-code
+                    button.br-sample-btn.br-sample-copy-code-btn Copy to clipboard
+                    if config.snippetLanguage === 'html'
+                        pre.br-sample-markup= render(pattern.filename, 'html')
+                    if config.snippetLanguage === 'jade'
+                        pre.br-sample-markup= render(pattern.filename, 'jade')
+
+block append pagevariables
+    - var bodyclass = 'br-styleguide br-type'
+
+block body
+
+    .br-styleguide-container
+        include ../includes/styleguide-nav
+
+        .br-styleguide-content
+            h1= patternGroup.group.id
+
+            each pattern in patternGroup.patterns
+                +sample(pattern)
+

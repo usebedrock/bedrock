@@ -1,0 +1,41 @@
+/*
+  Icon Font: c-icon-font
+*/
+
+@font-face {
+  font-family: "c-icon-font";
+  src: url("/fonts/c-icon-font.eot");
+  src: url("/fonts/c-icon-font.eot?#iefix") format("embedded-opentype"),
+       url("/fonts/c-icon-font.woff") format("woff"),
+       url("/fonts/c-icon-font.ttf") format("truetype"),
+       url("/fonts/c-icon-font.svg#c-icon-font") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "c-icon-font";
+    src: url("/fonts/c-icon-font.svg#c-icon-font") format("svg");
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.glyphicon-add:before {
+  display: inline-block;
+  font-family: "c-icon-font";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.glyphicon-add:before { content: "\f100"; }

@@ -1,0 +1,14 @@
+.br-styleguide-navigation-holder
+    h4.br-bordered-list-title Component styleguide
+    ul.br-bordered-list-links
+        li: a(href="/styleguide.html#colors") Color index
+        li: a(href="/styleguide.html#icons") Icon index
+    each category, categoryName in patterns.byCategory
+        h4.br-bordered-list-title= categoryName
+        each group in category
+            ul.br-bordered-list-links
+                li
+                    a(href="/styleguide/#{group.group.id}.html"): span.br-bordered-list-label= group.group.id
+                    ul
+                        each pattern in group.patterns
+                            li: a(href="/styleguide/#{group.group.id}.html##{pattern.name}")= pattern.name
