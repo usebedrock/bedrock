@@ -6,7 +6,7 @@ var del = require('del');
 var path = require('path');
 var paths = require('../paths');
 
-var FONT_NAME = 'c-icon-font';
+var FONT_NAME = 'icon-font';
 var TMP_DIRECTORY = './icon-font-tmp';
 
 module.exports = function (done) {
@@ -21,11 +21,11 @@ module.exports = function (done) {
       console.log('Copying generated CSS file...');
       gulp.src(path.join(TMP_DIRECTORY, FONT_NAME + '.css'))
         .pipe(rename(function (path) {
-          path.basename = '_c-icon-font';
+          path.basename = '_icon-font';
           path.extname = '.scss';
         }))
         .pipe(replace('./', '/fonts/'))
-        .pipe(gulp.dest(paths.content.scss.custom))
+        .pipe(gulp.dest(paths.content.scss.settings))
         .on('end', function () {
           console.log('Copying generated fonts...');
           gulp.src([
