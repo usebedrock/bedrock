@@ -23,7 +23,8 @@
 [data-icon]:before { content: attr(data-icon); }
 
 [data-icon]:before,
-.glyphicon-add:before {
+.glyphicon-add:before,
+.glyphicon-arrow-down:before {
   display: inline-block;
   font-family: "c-icon-font";
   font-style: normal;
@@ -39,3 +40,4 @@
 }
 
 .glyphicon-add:before { content: "\f100"; }
+.glyphicon-arrow-down:before { content: "\f101"; }
