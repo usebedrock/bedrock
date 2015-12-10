@@ -19,8 +19,13 @@ function discover() {
     return {
       name: filenameWords[0].charAt(0).toUpperCase() + filenameWords[0].slice(1),
       state: filenameWords.splice(1, filenameWords.length - 1).join(' '),
-      url: '/' + filename.replace('.jade', '')
+      url: '/' + filename.replace('.jade', '.html')
     };
+  });
+
+  basePages.push({
+    name: 'Styleguide',
+    url: '/styleguide.html'
   });
 
   var modules = _.chain(moduleTemplates)
@@ -32,7 +37,7 @@ function discover() {
       return {
         moduleName,
         name: templateFilename.replace('.jade', ''),
-        url: '/modules/' + moduleName + '/' + templateFilename.replace('.jade', '')
+        url: '/modules/' + moduleName + '/' + templateFilename.replace('.jade', '.html')
       };
     })
     .groupBy('moduleName')

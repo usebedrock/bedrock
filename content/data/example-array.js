@@ -1,12 +1,11 @@
 'use strict';
 
-let something = [
-  user,
+let exampleArray = [
   {
     "id": 0,
     "firstName": "Tomasa",
     "lastName": "Lesch"
-  },
+  }
 ];
 
 module.exports = exampleArray;

@@ -1,12 +1,19 @@
-/* Global navigation
+/* ==========================================================================
+  br-prototype-nav
+   ========================================================================== */
+
+/* Variables
+   ========================================================================== */
+
+$br-prototype-nav-width: 250px;
+
+/* Sidebar
    ========================================================================== */
 
 // We are supposing this is true
 body, html {
   margin: 0;
 }
-
-$br-prototype-nav-width: 250px;
 
 html.br-prototype-nav-is-open {
   body {
@@ -26,6 +33,7 @@ html.br-prototype-nav-is-open {
   transform: translateX(-100%);
   width: $br-prototype-nav-width;
   overflow-y: auto;
+  font-size: 13px;
 
   .br-prototype-nav-inner {
     padding: 20px;
@@ -37,12 +45,37 @@ html.br-prototype-nav-is-open {
   }
 }
 
+.br-prototype-nav-text {
+  color: #999;
+}
+
+/* Headings (both on index page and in sidebar)
+   ========================================================================== */
+
 .br-prototype-nav-main-heading {
   font-size: 15px;
   font-weight: 400;
+  margin: 0;
+  padding: 0 0 12px;
 }
 
 .br-prototype-nav-sub-heading {
   font-size: 13px;
   font-weight: 400;
+  margin: 0;
+  padding: 0 0 12px;
+}
+
+/* Index page
+   ========================================================================== */
+
+.br-prototype-nav-index {
+  padding: 20px;
+}
+
+.br-prototype-nav-index-cols {
+  column-count: 3;
+  li {
+    break-inside: avoid;
+  }
 }

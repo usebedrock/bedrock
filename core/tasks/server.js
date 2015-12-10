@@ -65,10 +65,6 @@ module.exports = function () {
   });
 
   app.get('*', function (req, res) {
-    if (req.path === '/favicon.ico') {
-      return;
-    }
-
     renderView(req, res, req.path.replace('/', '').replace('.html', ''), {
       pathname: req.path.replace('/', '').replace('.html', '')
     });

@@ -17,6 +17,10 @@ module.exports = function () {
     gulp.start('copy:images');
   });
 
+  watch(paths.content.assets.favicon, function () {
+    gulp.start('copy:favicon');
+  });
+
   watch(paths.content.assets.fonts, function () {
     gulp.start('copy:fonts');
   });

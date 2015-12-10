@@ -13,5 +13,9 @@ module.exports = {
   resources: function () {
     return gulp.src(paths.content.assets.resources)
       .pipe(gulp.dest(paths.dist.assets.resources));
+  },
+  favicon: function () {
+    return gulp.src(paths.content.assets.favicon)
+      .pipe(gulp.dest(paths.dist.path));
   }
 };

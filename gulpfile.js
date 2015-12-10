@@ -15,6 +15,7 @@ gulp.task('sass', sass);
 gulp.task('server', server);
 gulp.task('copy:images', copy.images);
 gulp.task('copy:fonts', copy.fonts);
+gulp.task('copy:favicon', copy.favicon);
 gulp.task('copy:resources', copy.resources);
 gulp.task('bundle', bundle);
 gulp.task('icon-font', iconFont);
@@ -24,7 +25,7 @@ gulp.task('templates:compile', ['templates:clean'], templates.compile);
 
 gulp.task('watch', watch);
 
-gulp.task('copy', ['copy:images', 'copy:fonts', 'copy:resources']);
+gulp.task('copy', ['copy:images', 'copy:fonts', 'copy:resources', 'copy:favicon']);
 gulp.task('compile-all', ['icon-font', 'bundle', 'sass', 'copy']);
 gulp.task('build', ['compile-all', 'templates:compile'], function () {
   console.log('Build finished. Compiled files can be found in the dist/ directory.');

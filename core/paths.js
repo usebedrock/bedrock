@@ -10,13 +10,15 @@ module.exports = {
     assets: {
       images: path.join(contentPath, 'images/**/*'),
       fonts: path.join(contentPath, 'fonts/**/*'),
-      resources: path.join(contentPath, 'resources/**/*')
+      resources: path.join(contentPath, 'resources/**/*'),
+      favicon: path.join(contentPath, 'favicon*')
     },
     scss: {
       all: path.join(contentPath, 'scss/**/*.scss'),
       main: path.join(contentPath, 'scss/main.scss'),
       base: path.join(contentPath, 'scss/base/'),
       custom: path.join(contentPath, 'scss/custom/'),
+      settings: path.join(contentPath, 'scss/settings/'),
       colorsDefinition: path.join(contentPath, 'scss/settings/_colors.scss')
     },
     templates: {

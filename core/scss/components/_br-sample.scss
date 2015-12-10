@@ -75,3 +75,9 @@
   margin: 10px 0;
   padding: 0;
 }
+
+#icons .br-sample-content {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+}
