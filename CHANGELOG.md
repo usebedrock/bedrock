@@ -1,3 +1,7 @@
+# 1.0.4
+
+* Do not clean up whitespace within a `textarea` with `js-beautify`
+
 # 1.0.3
 
 * Remember scroll position bugfix

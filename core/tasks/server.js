@@ -36,7 +36,7 @@ function renderView(req, res, viewName, customLocals) {
       html = beautify(html, {
         logSuccess: false,
         indentSize: 2,
-        unformatted: ['pre'],
+        unformatted: ['pre','textarea'],
         extraLiners: ['body']
       });
 
