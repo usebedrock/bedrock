@@ -1,4 +1,5 @@
 var path = require('path');
+var config = require('./config');
 
 var contentPath = 'content/';
 var corePath = 'core/';
@@ -19,7 +20,7 @@ module.exports = {
       base: path.join(contentPath, 'scss/base/'),
       custom: path.join(contentPath, 'scss/custom/'),
       settings: path.join(contentPath, 'scss/settings/'),
-      colorsDefinition: path.join(contentPath, 'scss/settings/_colors.scss')
+      colorsDefinition: config.styleguide.colors
     },
     templates: {
       path: path.join(contentPath, 'templates/'),
