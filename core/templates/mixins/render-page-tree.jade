@@ -1,0 +1,22 @@
+mixin renderPageTree
+    ul.br-bordered-list
+        li
+            span.br-bordered-list-label Base pages
+        each page in pages.base
+            if(page.name !== 'index')
+                li
+                    a(href=page.href)= page.name
+    ul.br-bordered-list
+        each module in pages.modules
+            +renderModule(module)
+
+mixin renderModule(module)
+    li
+        span.br-bordered-list-label #{module.name}
+        ul
+            each child in module.children
+                if !child.children
+                    li
+                        a(href="#{'/modules/' + child.href}")= child.name
+                else
+                    +renderModule(child)

@@ -1,19 +1,20 @@
-var fs = require('fs');
-var _ = require('lodash');
-var paths = require('../paths');
+'use strict';
+
+const fs = require('fs');
+const _ = require('lodash');
+const paths = require('../paths');
 
 function discover() {
-  var CATEGORY_REGEX = /\/\*\s(.*)/g;
+  const CATEGORY_REGEX = /\/\*\s(.*)/g;
 
-  var scss = fs.readFileSync(paths.content.scss.colorsDefinition, 'utf-8');
-  var colorCategories = [];
-  var currentCategory;
+  const scss = fs.readFileSync(paths.content.scss.colorsDefinition, 'utf-8');
+  let colorCategories = [];
+  let currentCategory;
 
-  for (var i = 0; i < scss.split('\n').length; i++) {
-    var scssLine = scss.split('\n')[i];
-    var categoryData = CATEGORY_REGEX.exec(scssLine);
-    var colorLine = scssLine.split(':');
-    var colorData = null;
+  for (const scssLine of scss.split('\n')) {
+    const categoryData = CATEGORY_REGEX.exec(scssLine);
+    const colorLine = scssLine.split(':');
+    let colorData = null;
 
     if (colorLine.length === 2) {
       colorData = {
