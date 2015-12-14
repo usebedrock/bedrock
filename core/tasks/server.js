@@ -70,8 +70,8 @@ module.exports = function () {
     });
   });
 
-  app.listen(9090, function () {
-    console.log('Express server listening on port 9090');
+  app.listen(config.ports.express, function () {
+    console.log(`Express server listening on port ${config.ports.express}`);
   });
 };
 

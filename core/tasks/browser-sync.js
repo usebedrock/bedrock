@@ -1,8 +1,7 @@
 var browserSync = require('browser-sync');
 var path = require('path');
 var paths = require('../paths');
-
-var DEFAULT_PORT = 3000;
+var config = require('../config');
 
 module.exports = function () {
   return browserSync.init({
@@ -17,7 +16,6 @@ module.exports = function () {
     ui: false,
     ghostMode: false,
     notify: false,
-    port: process.env.C9_PORT || DEFAULT_PORT,
-    proxy: 'localhost:9090'
+    proxy: `localhost:${config.ports.express}`
   });
 };
