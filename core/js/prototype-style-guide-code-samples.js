@@ -38,7 +38,7 @@ $codeBlocks.each(function () {
     readOnly: true
   };
 
-  switch (config.snippetLanguage) {
+  switch (config.styleguide.snippetLanguage) {
     case 'jade':
       editorOptions.mode = 'jade';
       break;
