@@ -1,27 +1,6 @@
 extends layouts/master
 
+include ../../core/templates/mixins/render-page-tree
+
 block body
-    .bc-scrollable-container
-        .bc-scrollable-container-content
-            .br-prototype-nav-index
-                .br-prototype-nav-index-cols
-                    h4.br-prototype-nav-sub-heading Base pages
-                    ul.br-bordered-list
-                        each page in pages.base
-                            if(page.name !== 'Index')
-                                li
-                                    a(href=page.url)
-                                        span= page.name
-                                        if page.state
-                                            span (#{page.state})
-                    ul.br-bordered-list
-                        each module, moduleName in pages.modules
-                            li
-                                span.br-bordered-list-label #{moduleName}
-                                ul
-                                    each page in module
-                                        li
-                                            a(href=page.url)
-                                                | #{page.name}
-                                                if page.state
-                                                    | (#{page.state})
+    +renderPageTree
