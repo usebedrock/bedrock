@@ -4,7 +4,8 @@
         li: a(href="/styleguide.html#colors") Color index
         li: a(href="/styleguide.html#icons") Icon index
     each category, categoryName in patterns.byCategory
-        h4.br-bordered-list-title= categoryName
+        if Object.keys(patterns.byCategory).length > 1
+            h4.br-bordered-list-title= categoryName
         each group in category
             ul.br-bordered-list
                 li
