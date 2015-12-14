@@ -1,7 +1,7 @@
-var browserSync = require('browser-sync');
-var path = require('path');
-var paths = require('../paths');
-var config = require('../config');
+const browserSync = require('browser-sync');
+const path = require('path');
+const paths = require('../paths');
+const config = require('../config');
 
 module.exports = function () {
   return browserSync.init({

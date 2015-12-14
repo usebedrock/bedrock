@@ -1,5 +1,3 @@
-'use strict';
-
 const gulp = require('gulp');
 const gulpJade = require('gulp-jade');
 const prettify = require('gulp-jsbeautifier');
@@ -38,18 +36,16 @@ function getDefaultLocals() {
     icons: icons.discover(),
     config,
     colorCategories: colors.discover(),
-    slugify: function (input) {
+    slugify(input) {
       return input.replace(/\//g, '-');
     },
-    render: function (id, language) {
+    render(id, language) {
       var patternFileLocation = path.join(paths.content.templates.patterns, id + '.jade');
       var jadeMarkup = fs.readFileSync(patternFileLocation, 'utf8');
 
       if (!language || language === 'jade') {
         return jadeMarkup;
-      }
-
-      else if (language === 'html') {
+      } else if (language === 'html') {
         return jade.compile(jadeMarkup, {
           pretty: true,
           basedir: 'content',
@@ -62,12 +58,12 @@ function getDefaultLocals() {
 
 module.exports = {
   getDefaultLocals: getDefaultLocals,
-  clean: function (done) {
+  clean(done) {
     del(['./dist/*.html', './dist/modules']).then(function () {
       done();
     });
   },
-  compile: function () {
+  compile() {
     return gulp.src([
         paths.content.templates.baseTemplates,
         paths.content.templates.moduleTemplates
@@ -82,12 +78,11 @@ module.exports = {
         pretty: true
       }))
       .on('error', function (err) {
-        var displayErr = gutil.colors.red(err);
         notifier.notify({
           title: 'Jade error',
           message: err.message
         });
-        gutil.log(displayErr);
+        gutil.log(gutil.colors.red(err));
         gutil.beep();
         this.emit('end');
       })

@@ -1,20 +1,20 @@
-var gulp = require('gulp');
-var paths = require('../paths');
+const gulp = require('gulp');
+const paths = require('../paths');
 
 module.exports = {
-  images: function () {
+  images() {
     return gulp.src(paths.content.assets.images)
       .pipe(gulp.dest(paths.dist.assets.images));
   },
-  fonts: function () {
+  fonts() {
     return gulp.src(paths.content.assets.fonts)
       .pipe(gulp.dest(paths.dist.assets.fonts));
   },
-  resources: function () {
+  resources() {
     return gulp.src(paths.content.assets.resources)
       .pipe(gulp.dest(paths.dist.assets.resources));
   },
-  favicon: function () {
+  favicon() {
     return gulp.src(paths.content.assets.favicon)
       .pipe(gulp.dest(paths.dist.path));
   }

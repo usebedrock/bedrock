@@ -1,15 +1,15 @@
-var gulp = require('gulp');
+'use strict';
 
-var browserSync = require('./core/tasks/browser-sync');
-var sass = require('./core/tasks/sass');
-var bundle = require('./core/tasks/bundle');
-var iconFont = require('./core/tasks/icon-font');
-var templates = require('./core/tasks/templates');
-var copy = require('./core/tasks/copy');
-var watch = require('./core/tasks/watch');
-var server = require('./core/tasks/server');
+const gulp = require('gulp');
 
-var paths = require('./core/paths');
+const browserSync = require('./core/tasks/browser-sync');
+const sass = require('./core/tasks/sass');
+const bundle = require('./core/tasks/bundle');
+const iconFont = require('./core/tasks/icon-font');
+const templates = require('./core/tasks/templates');
+const copy = require('./core/tasks/copy');
+const watch = require('./core/tasks/watch');
+const server = require('./core/tasks/server');
 
 gulp.task('sass', sass);
 gulp.task('server', server);
