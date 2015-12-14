@@ -6,8 +6,7 @@ var config = require('../config');
 module.exports = function () {
   return browserSync.init({
     files: [
-      path.join(paths.dist.css, '*.css'),
-      path.join(paths.dist.js, 'bundle.js'),
+      path.join(paths.dist.path, '**/*'),
       paths.content.templates.all,
       './core/templates/**/*.jade',
       paths.content.scss.colorsDefinition,
