@@ -1,3 +1,8 @@
+const $ = require('jquery');
+
+const rememberScroll = require('./remember-scroll');
+
 require('./prototype-nav');
 require('./prototype-style-guide-code-samples');
-require('./remember-scroll');
+
+rememberScroll($('.br-styleguide-content'));

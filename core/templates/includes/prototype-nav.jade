@@ -1,21 +1,7 @@
+include ../mixins/render-page-tree
+
 #__prototype-nav.br-prototype-nav
     .br-prototype-nav-inner
         h3.br-prototype-nav-main-heading Prototype navigation
-        p Press Ctrl + M to toggle this navigation.
-        h4.br-prototype-nav-sub-heading Base pages
-        ul.br-bordered-list
-            each page in pages.base
-                li
-                    a(href=page.url)
-                        span= page.name
-                        if page.state
-                            span (#{page.state})
-        each module, moduleName in pages.modules
-            h4.br-prototype-nav-sub-heading= moduleName
-            ul.br-bordered-list
-                each page in module
-                    li
-                        a(href=page.url)
-                            span= page.name
-                            if page.state
-                                span (#{page.state})
+        p.br-prototype-nav-text Press Ctrl + M to toggle this navigation.
+        +renderPageTree

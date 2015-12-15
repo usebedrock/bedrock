@@ -1,51 +1,51 @@
-var path = require('path');
-var glob = require('glob');
-var _ = require('lodash');
-var paths = require('../paths');
+'use strict';
 
-var TEMPLATES_BASE_DIRECTORY = paths.content.templates.path;
-var TEMPLATES_MODULE_DIRECTORY = paths.content.templates.modulesPath;
+const dirTree = require('directory-tree');
+const paths = require('../paths');
+
+const TEMPLATES_BASE_DIRECTORY = paths.content.templates.path;
+const TEMPLATES_MODULE_DIRECTORY = paths.content.templates.modulesPath;
+
+function mapChildren(children) {
+  children = children.map((obj) => {
+    obj.href = obj.path.replace('.jade', '.html');
+    obj.name = obj.name.replace('.jade', '');
+
+    if (obj.children) {
+      mapChildren(obj.children);
+    }
+
+    return obj;
+  });
+
+  return children;
+}
 
 function discover() {
-  var basePageTemplates = glob.sync(path.join(TEMPLATES_BASE_DIRECTORY, '*.jade'));
-  var moduleTemplates = glob.sync(path.join(TEMPLATES_MODULE_DIRECTORY, '*/*.jade'));
-
-  var basePages = basePageTemplates.map(filename => {
-    filename = filename.replace(TEMPLATES_BASE_DIRECTORY, '');
-    var filenameWords = filename
-      .replace('.jade', '')
-      .split('-');
-
-    return {
-      name: filenameWords[0].charAt(0).toUpperCase() + filenameWords[0].slice(1),
-      state: filenameWords.splice(1, filenameWords.length - 1).join(' '),
-      url: '/' + filename.replace('.jade', '.html')
-    };
-  });
-
-  basePages.push({
-    name: 'Styleguide',
-    url: '/styleguide.html'
-  });
-
-  var modules = _.chain(moduleTemplates)
-    .map((path) => {
-      var splitPath = path.replace(TEMPLATES_MODULE_DIRECTORY, '').split('/');
-      var moduleName = splitPath[0];
-      var templateFilename = splitPath[1];
-
-      return {
-        moduleName,
-        name: templateFilename.replace('.jade', ''),
-        url: '/modules/' + moduleName + '/' + templateFilename.replace('.jade', '.html')
-      };
+  const baseTree = dirTree.directoryTree(TEMPLATES_BASE_DIRECTORY, ['.jade']).children
+    .filter(obj => obj.type === 'file')
+    .map(obj => {
+      obj.href = obj.path.replace('.jade', '.html');
+      obj.name = obj.name.replace('.jade', '');
+      return obj;
     })
-    .groupBy('moduleName')
-    .value();
+    .concat([{
+      path: 'styleguide.jade',
+      href: 'styleguide.html',
+      name: 'Styleguide'
+    }]);
+
+  const modulesTree = dirTree.directoryTree(TEMPLATES_MODULE_DIRECTORY, ['.jade']).children
+    .map(obj => {
+      if (obj.children) {
+        obj.children = mapChildren(obj.children);
+      }
+      return obj;
+    });
 
   return {
-    base: basePages,
-    modules: modules
+    base: baseTree,
+    modules: modulesTree
   };
 }
 

@@ -1,19 +1,19 @@
-'use strict';
+const glob = require('glob');
+const path = require('path');
+const express = require('express');
+const jade = require('jade');
+const beautify = require('js-beautify').html;
+const fs = require('fs');
 
-var glob = require('glob');
-var path = require('path');
-var express = require('express');
-var jade = require('jade');
-var beautify = require('js-beautify').html;
-var fs = require('fs');
+const config = require('../config');
+const colors = require('../discovery/colors');
+const pages = require('../discovery/pages');
+const patterns = require('../discovery/patterns');
+const paths = require('../paths');
+const getDefaultLocals = require('./templates').getDefaultLocals;
 
-var config = require('../config');
-var colors = require('../discovery/colors');
-var pages = require('../discovery/pages');
-var patterns = require('../discovery/patterns');
-var paths = require('../paths');
+const app = express();
 
-var app = express();
 app.use(express.static('dist'));
 app.set('view engine', 'jade');
 app.set('views', [
@@ -21,10 +21,9 @@ app.set('views', [
   path.join(process.cwd(), './core/templates')
 ]);
 
-const getDefaultLocals = require('./templates').getDefaultLocals;
-
 function renderView(req, res, viewName, customLocals) {
   const locals = Object.assign({}, getDefaultLocals(), customLocals);
+
   app.render(viewName, locals, function (err, html) {
     if (err) {
       if (err.message.includes('Failed to lookup view')) {
@@ -36,7 +35,7 @@ function renderView(req, res, viewName, customLocals) {
       html = beautify(html, {
         logSuccess: false,
         indentSize: 2,
-        unformatted: ['pre','textarea'],
+        unformatted: ['pre', 'textarea'],
         extraLiners: ['body']
       });
 
@@ -65,13 +64,14 @@ module.exports = function () {
   });
 
   app.get('*', function (req, res) {
-    renderView(req, res, req.path.replace('/', '').replace('.html', ''), {
-      pathname: req.path.replace('/', '').replace('.html', '')
+    const viewName = req.path.replace('/', '').replace('.html', '');
+    renderView(req, res, viewName, {
+      pathname: viewName
     });
   });
 
-  app.listen(9090, function () {
-    console.log('Express server listening on port 9090');
+  app.listen(config.ports.express, function () {
+    console.log(`Express server listening on port ${config.ports.express}`);
   });
 };
 

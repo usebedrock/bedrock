@@ -1,14 +1,14 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var gutil = require('gulp-util');
-var notifier = require('node-notifier');
-var sourcemaps = require('gulp-sourcemaps');
-var postcss = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
-var paths = require('../paths');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const gutil = require('gulp-util');
+const notifier = require('node-notifier');
+const sourcemaps = require('gulp-sourcemaps');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const paths = require('../paths');
 
 module.exports = function () {
-  var processors = [
+  const processors = [
     autoprefixer({browsers: ['last 2 versions']}) // IE10+
   ];
 
@@ -19,12 +19,11 @@ module.exports = function () {
     .pipe(sourcemaps.init())
     .pipe(sass())
     .on('error', function (err) {
-      var displayErr = gutil.colors.red(err);
       notifier.notify({
         title: 'SASS error',
         message: err.message
       });
-      gutil.log(displayErr);
+      gutil.log(gutil.colors.red(err));
       gutil.beep();
       this.emit('end');
     })

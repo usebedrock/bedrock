@@ -1,35 +1,15 @@
-var gulp = require('gulp');
-var watch = require('gulp-watch');
-var path = require('path');
-var paths = require('../paths');
+const gulp = require('gulp');
+const watch = require('gulp-watch');
+const path = require('path');
+const paths = require('../paths');
 
 module.exports = function () {
   global.isWatching = true;
 
-  watch([
-    paths.content.scss.all,
-    paths.core.scss.all
-  ], function () {
-    gulp.start('sass');
-  });
-
-  watch(paths.content.assets.images, function () {
-    gulp.start('copy:images');
-  });
-
-  watch(paths.content.assets.favicon, function () {
-    gulp.start('copy:favicon');
-  });
-
-  watch(paths.content.assets.fonts, function () {
-    gulp.start('copy:fonts');
-  });
-
-  watch(paths.content.assets.resources, function () {
-    gulp.start('copy:resources');
-  });
-
-  watch(path.join(paths.content.icons.sourceDirectory, '*.svg'), function () {
-    gulp.start('icon-font');
-  });
+  watch([paths.content.scss.all, paths.core.scss.all], () => gulp.start('sass'));
+  watch(paths.content.assets.images, () => gulp.start('copy:images'));
+  watch(paths.content.assets.favicon, () => gulp.start('copy:favicon'));
+  watch(paths.content.assets.fonts, () => gulp.start('copy:fonts'));
+  watch(paths.content.assets.resources, () => gulp.start('copy:resources'));
+  watch(paths.content.icons.sourceFiles, () => gulp.start('icon-font'));
 };

@@ -1,14 +1,12 @@
-var browserSync = require('browser-sync');
-var path = require('path');
-var paths = require('../paths');
-
-var DEFAULT_PORT = 3000;
+const browserSync = require('browser-sync');
+const path = require('path');
+const paths = require('../paths');
+const config = require('../config');
 
 module.exports = function () {
   return browserSync.init({
     files: [
-      path.join(paths.dist.css, '*.css'),
-      path.join(paths.dist.js, 'bundle.js'),
+      path.join(paths.dist.path, '**/*'),
       paths.content.templates.all,
       './core/templates/**/*.jade',
       paths.content.scss.colorsDefinition,
@@ -17,7 +15,6 @@ module.exports = function () {
     ui: false,
     ghostMode: false,
     notify: false,
-    port: process.env.C9_PORT || DEFAULT_PORT,
-    proxy: 'localhost:9090'
+    proxy: `localhost:${config.ports.express}`
   });
 };

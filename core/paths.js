@@ -1,8 +1,9 @@
-var path = require('path');
+const path = require('path');
+const config = require('./config');
 
-var contentPath = 'content/';
-var corePath = 'core/';
-var distPath = 'dist/';
+const contentPath = 'content/';
+const corePath = 'core/';
+const distPath = 'dist/';
 
 module.exports = {
   content: {
@@ -19,7 +20,7 @@ module.exports = {
       base: path.join(contentPath, 'scss/base/'),
       custom: path.join(contentPath, 'scss/custom/'),
       settings: path.join(contentPath, 'scss/settings/'),
-      colorsDefinition: path.join(contentPath, 'scss/settings/_colors.scss')
+      colorsDefinition: config.styleguide.colors
     },
     templates: {
       path: path.join(contentPath, 'templates/'),
@@ -34,7 +35,8 @@ module.exports = {
       entryFile: path.join(contentPath, 'js/index.js')
     },
     icons: {
-      sourceDirectory: path.join(contentPath, 'icon-font-source')
+      sourceDirectory: path.join(contentPath, 'icon-font-source'),
+      sourceFiles: path.join(contentPath, 'icon-font-source', '*.svg')
     }
   },
   core: {

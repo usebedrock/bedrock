@@ -15,16 +15,16 @@ const PATTERN_CATEGORIES = {
 };
 
 function discover() {
-  var files = glob.sync(path.join(TEMPLATES_BASE_DIRECTORY, '**/*.jade'));
-  var patternGroups = {};
+  const files = glob.sync(path.join(TEMPLATES_BASE_DIRECTORY, '**/*.jade'));
+  let patternGroups = {};
 
-  files.forEach(function (file) {
-    var filename = file.replace(TEMPLATES_BASE_DIRECTORY, '').replace('.jade', '');
-    var parts = filename.split('/');
-    var groupId = parts[0];
-    var patternName = parts[1];
+  for (const file of files) {
+    const filename = file.replace(TEMPLATES_BASE_DIRECTORY, '').replace('.jade', '');
+    const parts = filename.split('/');
+    const groupId = parts[0];
+    const patternName = parts[1];
 
-    var category = patternGroups[groupId];
+    const category = patternGroups[groupId];
 
     if (!category) {
       patternGroups[groupId] = {
@@ -62,7 +62,7 @@ function discover() {
     }
 
     patternGroups[groupId].patterns.push(patternData);
-  });
+  }
 
   return {
     byGroup: patternGroups,

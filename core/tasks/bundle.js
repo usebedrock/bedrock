@@ -1,39 +1,32 @@
-var watchify = require('watchify');
-var browserify = require('browserify');
-var gulp = require('gulp');
-var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
-var gutil = require('gulp-util');
-var sourcemaps = require('gulp-sourcemaps');
-var babelify = require('babelify');
-var _ = require('lodash');
-var paths = require('../paths');
+const watchify = require('watchify');
+const browserify = require('browserify');
+const gulp = require('gulp');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+const gutil = require('gulp-util');
+const sourcemaps = require('gulp-sourcemaps');
+const babelify = require('babelify');
+const _ = require('lodash');
+const paths = require('../paths');
 
-// add custom browserify options here
-var customOpts = {
+const opts = _.assign({}, watchify.args, {
   entries: [paths.content.js.entryFile],
   debug: true
-};
-
-var opts = _.assign({}, watchify.args, customOpts);
+});
 
 function bundler() {
   var bundle = watchify(browserify(opts));;
 
   bundle.transform(babelify, {presets: ['es2015']});
 
-  bundle.on('update', bundler); // on any dep update, runs the bundler
-  bundle.on('log', gutil.log); // output build logs to terminal
+  bundle.on('update', bundler);
+  bundle.on('log', gutil.log);
 
   return bundle.bundle()
-    // log errors if they happen
     .on('error', gutil.log.bind(gutil, 'Browserify Error'))
     .pipe(source('bundle.js'))
-    // optional, remove if you don't need to buffer file contents
     .pipe(buffer())
-    // optional, remove if you dont want sourcemaps
     .pipe(sourcemaps.init({loadMaps: true})) // loads map from browserify file
-    // Add transformation tasks to the pipeline here.
     .pipe(sourcemaps.write('./')) // writes .map file
     .pipe(gulp.dest(paths.dist.js));
 }
