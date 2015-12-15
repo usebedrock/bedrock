@@ -1,6 +1,7 @@
 const glob = require('glob');
 const path = require('path');
 const express = require('express');
+const portfinder = require('portfinder');
 const jade = require('jade');
 const beautify = require('js-beautify').html;
 const fs = require('fs');
@@ -44,7 +45,7 @@ function renderView(req, res, viewName, customLocals) {
   });
 }
 
-module.exports = function () {
+module.exports = function (done) {
   app.get('/styleguide', function (req, res) {
     renderView(req, res, 'styleguide/index');
   });
@@ -70,8 +71,12 @@ module.exports = function () {
     });
   });
 
-  app.listen(config.ports.express, function () {
-    console.log(`Express server listening on port ${config.ports.express}`);
+  portfinder.getPort((err, port) => {
+    app.listen(port, function () {
+      global.expressPort = port;
+      console.log(`Express server listening on port ${port}`);
+      done();
+    });
   });
 };
 

@@ -15,6 +15,6 @@ module.exports = function () {
     ui: false,
     ghostMode: false,
     notify: false,
-    proxy: `localhost:${config.ports.express}`
+    proxy: `localhost:${global.expressPort}`
   });
 };
