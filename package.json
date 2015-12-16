@@ -50,6 +50,7 @@
     "jade": "^1.11.0",
     "js-beautify": "^1.5.10",
     "lodash": "^3.10.1",
+    "mkdirp": "^0.5.1",
     "moment": "^2.10.6",
     "node-notifier": "^4.3.1",
     "portfinder": "^0.4.0",
@@ -63,6 +64,7 @@
     "bootstrap-sass": "^3.3.5",
     "jquery": "^2.1.4",
     "jquery.mousewheel": "^3.1.9",
+    "modernizr": "^3.2.0",
     "pikaday": "^1.4.0",
     "select2": "^4.0.0",
     "select2-bootstrap-theme": "0.1.0-beta.4"
