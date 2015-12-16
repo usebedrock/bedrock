@@ -1,0 +1,16 @@
+h1 Loop examples
+
+h2 Looping an array
+ul
+    each person in contentData.exampleArray
+        li
+            span= person.id
+            span Hello, my name is #{person.firstName} #{person.lastName}!
+
+h2 Looping an object
+each type, typeName in contentData.exampleObject
+    ul
+        li= typeName
+        ul
+            each product in type
+                li= product
