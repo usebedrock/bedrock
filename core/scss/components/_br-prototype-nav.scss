@@ -49,6 +49,12 @@ html.br-prototype-nav-is-open {
   color: #999;
 }
 
+.br-prototype-nav-item-is-collapsed {
+  ul {
+    display: none;
+  }
+}
+
 /* Headings (both on index page and in sidebar)
    ========================================================================== */
 
