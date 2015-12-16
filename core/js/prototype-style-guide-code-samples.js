@@ -10,8 +10,8 @@ const $codeBlocks = $('.br-sample-code .br-sample-markup');
 const $codeButtons = $('.br-sample-show-code-btn');
 const $copyButtons = $('.br-sample-copy-code-btn');
 const clipboard = new Clipboard('.br-sample-copy-code-btn', {
-  target: function (trigger) {
-    return $(trigger).parents('.br-sample-footer').find('.br-sample-code').get(0);
+  text: function (trigger) {
+    return $(trigger).siblings('.br-sample-markup').find('.CodeMirror').get(0).CodeMirror.getValue();
   }
 });
 
