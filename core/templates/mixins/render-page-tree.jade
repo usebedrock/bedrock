@@ -13,7 +13,7 @@ mixin renderPageTree
 
 mixin renderModule(module)
     li
-        span.br-bordered-list-label(data-module=module.name) #{module.name}
+        span.br-bordered-list-label(data-module=module.id) #{module.name}
         ul
             each child in module.children
                 if !child.children

@@ -10,6 +10,7 @@ function mapChildren(children) {
   children = children.map((obj) => {
     obj.href = obj.path.replace('.jade', '.html');
     obj.name = obj.name.replace('.jade', '');
+    obj.id = obj.path.replace('.jade', '');
 
     if (obj.children) {
       mapChildren(obj.children);
@@ -27,6 +28,7 @@ function discover() {
     .map(obj => {
       obj.href = '/' + obj.path.replace('.jade', '.html');
       obj.name = obj.name.replace('.jade', '');
+      obj.id = obj.path.replace('.jade', '');
       return obj;
     })
     .concat([{
@@ -37,9 +39,12 @@ function discover() {
 
   const modulesTree = dirTree.directoryTree(TEMPLATES_MODULE_DIRECTORY, ['.jade']).children
     .map(obj => {
+      obj.id = obj.path.replace('.jade', '');
+
       if (obj.children) {
         obj.children = mapChildren(obj.children);
       }
+
       return obj;
     });
 
