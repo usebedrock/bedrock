@@ -31,7 +31,7 @@ function discover() {
     })
     .concat([{
       path: 'styleguide.jade',
-      href: '/styleguide.html',
+      href: '/styleguide',
       name: 'Styleguide'
     }]);
 
