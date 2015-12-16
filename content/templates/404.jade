@@ -1,4 +1,7 @@
 extends ./layouts/master
 
+include ../../core/templates/mixins/render-page-tree
+
 block body
-    p Page not found.
+    p Page not found. Here's a listing of all available pages:
+    +renderPageTree
