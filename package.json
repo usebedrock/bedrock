@@ -27,6 +27,7 @@
     "codemirror": "^5.8.0",
     "del": "^2.0.2",
     "directory-tree": "^0.1.1",
+    "event-stream": "^3.3.2",
     "express": "^4.13.3",
     "faker": "^3.0.1",
     "glob": "^5.0.15",

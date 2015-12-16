@@ -3,12 +3,14 @@ const gulpJade = require('gulp-jade');
 const prettify = require('gulp-jsbeautifier');
 const notifier = require('node-notifier');
 const gutil = require('gulp-util');
+const rename = require('gulp-rename');
 const data = require('gulp-data');
 const gulpIf = require('gulp-if');
 const path = require('path');
 const fs = require('fs');
 const jade = require('jade');
 const del = require('del');
+const es = require('event-stream');
 const config = require('../config');
 const paths = require('../paths');
 
@@ -63,35 +65,85 @@ module.exports = {
       done();
     });
   },
-  compile() {
-    return gulp.src([
-        paths.content.templates.baseTemplates,
-        paths.content.templates.moduleTemplates
-      ])
-      .pipe(data(function (file) {
-        return Object.assign({}, getDefaultLocals(), {
-          filename: path.basename(file.path).replace('jade', 'html'),
-          pathname: file.path.replace(path.join(process.cwd(), paths.content.templates.path), '').replace('.jade', ''),
-        });
-      }))
-      .pipe(gulpJade({
-        pretty: true
-      }))
-      .on('error', function (err) {
-        notifier.notify({
-          title: 'Jade error',
-          message: err.message
-        });
-        gutil.log(gutil.colors.red(err));
-        gutil.beep();
-        this.emit('end');
-      })
-      .pipe(prettify({
-        logSuccess: false,
-        indentSize: 2,
-        unformatted: ['pre'],
-        extraLiners: ['body']
-      }))
-      .pipe(gulpIf(isModuleTemplate, gulp.dest(paths.dist.modules), gulp.dest(paths.dist.path)));
+  compile: {
+    styleguide() {
+      const defaultLocals = getDefaultLocals();
+
+      const tasks = Object.keys(defaultLocals.patterns.byGroup).map(patternGroup => {
+        return gulp.src([
+            paths.core.templates.styleguide.patternGroup
+          ])
+          .pipe(data(function (file) {
+            return Object.assign({}, getDefaultLocals(), {
+              patternGroup: defaultLocals.patterns.byGroup[patternGroup]
+            });
+          }))
+          .pipe(gulpJade({
+            pretty: true
+          }))
+          .pipe(prettify({
+            logSuccess: false,
+            indentSize: 2,
+            unformatted: ['pre'],
+            extraLiners: ['body']
+          }))
+          .pipe(rename(function (path) {
+            path.basename = patternGroup;
+          }))
+          .pipe(gulp.dest(paths.dist.styleguide));
+      });
+
+      tasks.push(
+        gulp.src([
+            paths.core.templates.styleguide.index
+          ])
+          .pipe(data(function (file) {
+            return getDefaultLocals();
+          }))
+          .pipe(gulpJade({
+            pretty: true
+          }))
+          .pipe(prettify({
+            logSuccess: false,
+            indentSize: 2,
+            unformatted: ['pre'],
+            extraLiners: ['body']
+          }))
+          .pipe(gulp.dest(paths.dist.styleguide))
+      );
+
+      return es.merge.apply(null, tasks);
+    },
+    content() {
+      return gulp.src([
+          paths.content.templates.baseTemplates,
+          paths.content.templates.moduleTemplates
+        ])
+        .pipe(data(function (file) {
+          return Object.assign({}, getDefaultLocals(), {
+            filename: path.basename(file.path).replace('jade', 'html'),
+            pathname: file.path.replace(path.join(process.cwd(), paths.content.templates.path), '').replace('.jade', ''),
+          });
+        }))
+        .pipe(gulpJade({
+          pretty: true
+        }))
+        .on('error', function (err) {
+          notifier.notify({
+            title: 'Jade error',
+            message: err.message
+          });
+          gutil.log(gutil.colors.red(err));
+          gutil.beep();
+          this.emit('end');
+        })
+        .pipe(prettify({
+          logSuccess: false,
+          indentSize: 2,
+          unformatted: ['pre'],
+          extraLiners: ['body']
+        }))
+        .pipe(gulpIf(isModuleTemplate, gulp.dest(paths.dist.modules), gulp.dest(paths.dist.path)));
+    }
   }
 };

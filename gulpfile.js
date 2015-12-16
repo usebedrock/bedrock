@@ -23,7 +23,9 @@ gulp.task('bundle', bundle);
 gulp.task('icon-font', iconFont);
 
 gulp.task('templates:clean', templates.clean);
-gulp.task('templates:compile', ['templates:clean'], templates.compile);
+gulp.task('templates:compile', ['templates:clean', 'templates:compile:content', 'templates:compile:styleguide']);
+gulp.task('templates:compile:content', templates.compile.content);
+gulp.task('templates:compile:styleguide', templates.compile.styleguide);
 
 gulp.task('watch', watch);
 

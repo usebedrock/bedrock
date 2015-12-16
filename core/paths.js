@@ -44,6 +44,13 @@ module.exports = {
     scss: {
       all: path.join(corePath, 'scss/**/*.scss'),
       prototype: path.join(corePath, 'scss/prototype.scss')
+    },
+    templates: {
+      styleguide: {
+        index: path.join(corePath, 'templates/styleguide/index.jade'),
+        colors: path.join(corePath, 'templates/styleguide/colors.jade'),
+        patternGroup: path.join(corePath, 'templates/styleguide/pattern-group.jade')
+      }
     }
   },
   dist: {
@@ -52,6 +59,7 @@ module.exports = {
     modules: path.join(distPath, 'modules/'),
     js: path.join(distPath, 'js/'),
     css: path.join(distPath, 'css/'),
+    styleguide: path.join(distPath, 'styleguide/'),
     assets: {
       images: path.join(distPath, 'images/'),
       fonts: path.join(distPath, 'fonts/'),
