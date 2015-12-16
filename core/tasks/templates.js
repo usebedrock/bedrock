@@ -14,6 +14,18 @@ const es = require('event-stream');
 const config = require('../config');
 const paths = require('../paths');
 
+const options = {
+  jade: {
+    pretty: true
+  },
+  prettify: {
+    logSuccess: false,
+    indentSize: 2,
+    unformatted: ['pre', 'textarea'],
+    extraLiners: ['body']
+  }
+};
+
 function isModuleTemplate(file) {
   return file.path.indexOf('templates/modules/') > -1;
 }
@@ -78,15 +90,8 @@ module.exports = {
               patternGroup: defaultLocals.patterns.byGroup[patternGroup]
             });
           }))
-          .pipe(gulpJade({
-            pretty: true
-          }))
-          .pipe(prettify({
-            logSuccess: false,
-            indentSize: 2,
-            unformatted: ['pre'],
-            extraLiners: ['body']
-          }))
+          .pipe(gulpJade(options.jade))
+          .pipe(prettify(options.prettify))
           .pipe(rename(function (path) {
             path.basename = patternGroup;
           }))
@@ -100,15 +105,8 @@ module.exports = {
           .pipe(data(function (file) {
             return getDefaultLocals();
           }))
-          .pipe(gulpJade({
-            pretty: true
-          }))
-          .pipe(prettify({
-            logSuccess: false,
-            indentSize: 2,
-            unformatted: ['pre'],
-            extraLiners: ['body']
-          }))
+          .pipe(gulpJade(options.jade))
+          .pipe(prettify(options.prettify))
           .pipe(gulp.dest(paths.dist.styleguide))
       );
 
@@ -125,9 +123,7 @@ module.exports = {
             pathname: file.path.replace(path.join(process.cwd(), paths.content.templates.path), '').replace('.jade', ''),
           });
         }))
-        .pipe(gulpJade({
-          pretty: true
-        }))
+        .pipe(gulpJade(options.jade))
         .on('error', function (err) {
           notifier.notify({
             title: 'Jade error',
@@ -137,12 +133,7 @@ module.exports = {
           gutil.beep();
           this.emit('end');
         })
-        .pipe(prettify({
-          logSuccess: false,
-          indentSize: 2,
-          unformatted: ['pre'],
-          extraLiners: ['body']
-        }))
+        .pipe(prettify(options.prettify))
         .pipe(gulpIf(isModuleTemplate, gulp.dest(paths.dist.modules), gulp.dest(paths.dist.path)));
     }
   }
