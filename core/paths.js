@@ -17,6 +17,7 @@ module.exports = {
     scss: {
       all: path.join(contentPath, 'scss/**/*.scss'),
       main: path.join(contentPath, 'scss/main.scss'),
+      allMainFiles: path.join(contentPath, 'scss/*.scss'),
       base: path.join(contentPath, 'scss/base/'),
       custom: path.join(contentPath, 'scss/custom/'),
       settings: path.join(contentPath, 'scss/settings/'),

@@ -13,7 +13,7 @@ module.exports = function () {
   ];
 
   return gulp.src([
-      paths.content.scss.main,
+      paths.content.scss.allMainFiles,
       paths.core.scss.prototype
     ])
     .pipe(sourcemaps.init())
