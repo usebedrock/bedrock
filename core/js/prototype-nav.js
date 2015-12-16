@@ -1,5 +1,4 @@
 const $ = require('jquery');
-const Cookies = require('js-cookie');
 
 const ACTIVATION_KEYCODE = 77; // 'M' key
 const ESC_KEYCODE = 27;
