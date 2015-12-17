@@ -1,5 +1,7 @@
 'use strict';
 
+const _ = require('lodash');
+
 const dirTree = require('directory-tree');
 const paths = require('../paths');
 
@@ -19,7 +21,7 @@ function mapChildren(children) {
     return obj;
   });
 
-  return children;
+  return _.sortBy(children, 'type');
 }
 
 function discover() {
@@ -37,7 +39,7 @@ function discover() {
       name: 'Styleguide'
     }]);
 
-  const modulesTree = dirTree.directoryTree(TEMPLATES_MODULE_DIRECTORY, ['.jade']).children
+  const modulesTree = _.chain(dirTree.directoryTree(TEMPLATES_MODULE_DIRECTORY, ['.jade']).children)
     .map(obj => {
       obj.id = obj.path.replace('.jade', '');
 
@@ -46,7 +48,9 @@ function discover() {
       }
 
       return obj;
-    });
+    })
+    .sortBy('type')
+    .value();
 
   return {
     base: baseTree,
