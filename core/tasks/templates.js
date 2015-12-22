@@ -73,7 +73,7 @@ function getDefaultLocals() {
 module.exports = {
   getDefaultLocals: getDefaultLocals,
   clean(done) {
-    del(['./dist/*.html', './dist/modules']).then(function () {
+    del(['./dist/**.html', './dist/modules', './dist/styleguide']).then(function () {
       done();
     });
   },
