@@ -2,7 +2,7 @@
 
 Welcome to Bedrock.
 
-<img src="http://cl.ly/image/0P431F2v341t/flintstones-the-flintstones-7558485-302-225.jpg">
+<img src="http://f.cl.ly/items/413y2M3N1w231a3o3X09/bedrock-icon.png" width="250">
 
 Bedrock is a static site generator to easily make HTML prototypes.
 
