@@ -54,3 +54,31 @@ $br-bordered-list-title-font-size:               15px  !default;
     }
   }
 }
+
+// Arrow styling
+
+.br-prototype-nav { // Only on side menu version
+  .br-bordered-list-label:before {
+    content: "▼";
+    width: 12px;
+    height: 12px;
+    font-size: 12px;
+    color: #999;
+    margin-right: 4px;
+    display: inline-block;
+  }
+
+  .br-prototype-nav-item-is-collapsed {
+    .br-bordered-list-label:before {
+      content: "▶";
+    }
+    ul {
+      display: none;
+    }
+  }
+  .br-bordered-list {
+    ul {
+      padding: 0 0 0 16px;
+    }
+  }
+}
