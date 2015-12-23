@@ -4,19 +4,7 @@ Welcome to Bedrock.
 
 <img src="http://f.cl.ly/items/413y2M3N1w231a3o3X09/bedrock-icon.png" width="250">
 
-Bedrock is a static site generator to easily make HTML prototypes.
-
-## Features
-
-* Automatic index of pages
-* Style guide that gets generated from a set of files
-* Automatic color documentation based on SCSS file
-* Icon font compilation
-
-## Choices
-
-* Jade as a template language
-* Freedom of SCSS framework
+Bedrock is a static site generator to easily make HTML prototypes. For more information, please check out <a href="http://bedrock.mono.company/">the Bedrock homepage</a>.
 
 ## Installation and usage
 
@@ -27,13 +15,11 @@ Bedrock is a static site generator to easily make HTML prototypes.
   * `gem install fontcustom`
 * To run the prototype: `gulp`. All files are automatically compiled before they are served.
 
-## Running specific Gulp tasks
+## Available gulp tasks
 
-This project uses an npm script to trigger Gulp. To run a specific Gulp task, run `npm TASK_NAME`.
-
-## Deploying the prototype
-
-Before deploying the prototype to a remote server, make sure you run `gulp build` to generate the required CSS, HTML, JS and fonts.
+* `gulp`: runs the prototype
+* `gulp icon-font`: manually run the icon font
+* `gulp build`: create a build (which ends up in the `dist` folder) that can be deployed to a server
 
 ## Windows
 
