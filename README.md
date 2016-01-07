@@ -14,6 +14,7 @@ Bedrock is a static site generator to easily make HTML prototypes. For more info
 * Install the project's dependencies:
   * `npm install`
   * `gem install fontcustom`
+    * You might also need to install fontforge. For download instructions see the <a href="https://github.com/fontforge/fontforge">Fontforge</a> repo.
 * To run the prototype: `gulp`. All files are automatically compiled before they are served.
 
 ## Available gulp tasks
