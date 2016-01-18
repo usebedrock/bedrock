@@ -1,4 +1,10 @@
 .br-styleguide-navigation-holder
+    if docs.length > 0
+        h4.br-bordered-list-title Documentation
+        ul.br-bordered-list
+            each doc in docs
+                li: a(href="/styleguide/docs/#{doc.attributes.filename}.html")= doc.attributes.title
+
     h4.br-bordered-list-title Component styleguide
     ul.br-bordered-list
         li: a(href="/styleguide.html#colors") Color index

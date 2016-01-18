@@ -5,11 +5,13 @@ const portfinder = require('portfinder');
 const jade = require('jade');
 const beautify = require('js-beautify').html;
 const fs = require('fs');
+const _ = require('lodash');
 
 const config = require('../config');
 const colors = require('../discovery/colors');
 const pages = require('../discovery/pages');
 const patterns = require('../discovery/patterns');
+const docs = require('../discovery/docs');
 const paths = require('../paths');
 const getDefaultLocals = require('./templates').getDefaultLocals;
 
@@ -52,6 +54,13 @@ module.exports = function (done) {
 
   app.get('/styleguide/colors.html', function (req, res) {
     renderView(req, res, 'styleguide/colors');
+  });
+
+  app.get('/styleguide/docs/:doc', function (req, res) {
+    const docFilename = req.params.doc.replace('.html', '');
+    const doc = _.find(docs.discover(), doc => doc.attributes.filename === docFilename);
+
+    renderView(req, res, 'styleguide/doc', { doc });
   });
 
   app.get('/styleguide/:group', function (req, res) {

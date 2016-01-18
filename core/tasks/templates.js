@@ -36,18 +36,21 @@ function getDefaultLocals() {
   delete require.cache[require.resolve('../discovery/icons')];
   delete require.cache[require.resolve('../discovery/patterns')];
   delete require.cache[require.resolve('../discovery/content-data')];
+  delete require.cache[require.resolve('../discovery/docs')];
 
   const pages = require('../discovery/pages');
   const colors = require('../discovery/colors');
   const icons = require('../discovery/icons');
   const patterns = require('../discovery/patterns');
   const contentData = require('../discovery/content-data');
+  const docs = require('../discovery/docs');
 
   return {
     contentData: contentData.discover(),
     patterns: patterns.discover(),
     pages: pages.discover(),
     icons: icons.discover(),
+    docs: docs.discover(),
     config,
     colorCategories: colors.discover(),
     slugify(input) {
