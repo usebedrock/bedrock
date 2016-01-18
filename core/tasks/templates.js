@@ -115,6 +115,26 @@ module.exports = {
 
       return es.merge.apply(null, tasks);
     },
+    docs() {
+      const defaultLocals = getDefaultLocals();
+
+      const tasks = defaultLocals.docs.map(doc => {
+        return gulp.src(paths.core.templates.styleguide.doc)
+          .pipe(data(function (file) {
+            return Object.assign({}, getDefaultLocals(), {
+              doc
+            });
+          }))
+          .pipe(gulpJade(options.jade))
+          .pipe(prettify(options.prettify))
+          .pipe(rename(function (path) {
+            path.basename = doc.attributes.filename;
+          }))
+          .pipe(gulp.dest(paths.dist.docs));
+      });
+
+      return es.merge.apply(null, tasks);
+    },
     content() {
       return gulp.src([
           paths.content.templates.baseTemplates,

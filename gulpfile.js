@@ -23,9 +23,10 @@ gulp.task('copy:resources', copy.resources);
 gulp.task('bundle', bundle);
 gulp.task('icon-font', iconFont);
 
-gulp.task('templates:compile', ['templates:compile:content', 'templates:compile:styleguide']);
+gulp.task('templates:compile', ['templates:compile:content', 'templates:compile:styleguide', 'templates:compile:docs']);
 gulp.task('templates:compile:content', templates.compile.content);
 gulp.task('templates:compile:styleguide', templates.compile.styleguide);
+gulp.task('templates:compile:docs', templates.compile.docs);
 
 gulp.task('watch', watch);
 

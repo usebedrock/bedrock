@@ -50,6 +50,7 @@ module.exports = {
     templates: {
       styleguide: {
         index: path.join(corePath, 'templates/styleguide/index.jade'),
+        doc: path.join(corePath, 'templates/styleguide/doc.jade'),
         colors: path.join(corePath, 'templates/styleguide/colors.jade'),
         patternGroup: path.join(corePath, 'templates/styleguide/pattern-group.jade')
       }
@@ -62,6 +63,7 @@ module.exports = {
     js: path.join(distPath, 'js/'),
     css: path.join(distPath, 'css/'),
     styleguide: path.join(distPath, 'styleguide/'),
+    docs: path.join(distPath, 'styleguide/docs/'),
     assets: {
       images: path.join(distPath, 'images/'),
       fonts: path.join(distPath, 'fonts/'),
