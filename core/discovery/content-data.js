@@ -16,13 +16,13 @@ function clearContentDataCache() {
 }
 
 function discover() {
-  const dataFilePaths = glob.sync(path.join(DATA_DIRECTORY, '*.js'));
+  const dataFilePaths = glob.sync(path.join(DATA_DIRECTORY, '*')).filter(p => path.parse(p).ext);
   let data = {};
 
   clearContentDataCache();
 
   for (const filepath of dataFilePaths) {
-    const fileName = filepath.replace(DATA_DIRECTORY, '').replace('.js', '');
+    const fileName = path.parse(filepath).name;
     const camelCasedName = _camelCase(fileName);
 
     try {
