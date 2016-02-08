@@ -1,5 +1,6 @@
 ---
 title: Styleguide objective
+order: 1
 ---
 
 An h1 header

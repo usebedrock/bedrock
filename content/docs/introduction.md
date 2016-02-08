@@ -1,5 +1,6 @@
 ---
 title: An Introduction
+order: 2
 ---
 
 An h1 header
