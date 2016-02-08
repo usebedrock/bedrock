@@ -1,7 +1,8 @@
 module.exports = {
   styleguide: {
     snippetLanguage: 'jade',
-    colors: './content/scss/settings/_colors.scss'
+    colors: './content/scss/settings/_colors.scss',
+    showIndividualComponentsInNav: false,
   },
   patternClasses: {
     'bc-scrollable-container': ['c-sample-content-tall'],
