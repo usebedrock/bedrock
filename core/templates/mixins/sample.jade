@@ -1,7 +1,10 @@
 mixin sample(pattern, isLayoutClass, hideCodeSamples)
     .br-sample(id=pattern.name)
         .br-sample-header.br-sample-clearfix
-            h3.br-sample-heading= pattern.name
+            if pattern.docs
+                h3.br-sample-heading= pattern.docs.attributes.title || pattern.name
+            else
+                h3.br-sample-heading= pattern.name
             a.br-sample-header-link(href="##{pattern.name}") #
         .br-sample-content(class=pattern.extraClasses)
             != render(pattern.filename, 'html')

@@ -11,7 +11,11 @@ block body
         include ../includes/styleguide-nav
 
         .br-styleguide-content
-            h1= patternGroup.group.id
+            if !patternGroup.docs
+                h1= patternGroup.group.id
+            else
+                h1= patternGroup.docs.attributes.title || patternGroup.group.id
+                != patternGroup.docs.body
 
             each pattern in patternGroup.patterns
                 +sample(pattern)

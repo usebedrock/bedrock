@@ -3,6 +3,9 @@
 const glob = require('glob');
 const path = require('path');
 const _ = require('lodash');
+const fs = require('fs');
+const frontMatter = require('front-matter');
+const marked = require('marked');
 const config = require('../config');
 const paths = require('../paths');
 
@@ -23,7 +26,6 @@ function discover() {
     const parts = filename.split('/');
     const groupId = parts[0];
     const patternName = parts[1];
-
     const category = patternGroups[groupId];
 
     if (!category) {
@@ -37,18 +39,41 @@ function discover() {
         },
         patterns: []
       };
+
+      try {
+        const docsPath = path.join(TEMPLATES_BASE_DIRECTORY, groupId, '_docs.md');
+        const docsContent = fs.readFileSync(docsPath, 'utf8');
+        const parsedDocs = frontMatter(docsContent);
+
+        parsedDocs.body = marked(parsedDocs.body);
+        patternGroups[groupId].docs = parsedDocs;
+      } catch (err) {
+
+      }
     }
 
-    var patternData = {
+    const patternData = {
       filename,
       name: patternName,
       //url: '/styleguide#' + patternName,
-      extraClasses: []
+      extraClasses: [],
     };
 
+
+    try {
+      const patternDocsPath = path.join(TEMPLATES_BASE_DIRECTORY, groupId, patternName + '.md');
+      const patternDocsContent = fs.readFileSync(patternDocsPath, 'utf8');
+      const parsedDocs = frontMatter(patternDocsContent);
+
+      parsedDocs.body = marked(parsedDocs.body);
+      patternData.docs = parsedDocs;
+    } catch (err) {
+
+    }
+
     if (config.patternClasses) {
-      var patternCategoryClass = config.patternClasses[groupId];
-      var patternSpecificClass = config.patternClasses[groupId + '.' + patternName];
+      const patternCategoryClass = config.patternClasses[groupId];
+      const patternSpecificClass = config.patternClasses[groupId + '.' + patternName];
 
       if (patternCategoryClass) {
         patternData.extraClasses.push(patternCategoryClass);
