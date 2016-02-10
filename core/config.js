@@ -4,6 +4,9 @@ module.exports = {
     colors: './content/scss/settings/_colors.scss',
     showIndividualComponentsInNav: false,
   },
+  icons: {
+    generateIconsFromSource: true,
+  },
   patternClasses: {
     'bc-scrollable-container': ['c-sample-content-tall'],
     'b-tooltip': ['c-sample-tooltip-visible'],

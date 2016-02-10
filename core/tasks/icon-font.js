@@ -6,6 +6,7 @@ const path = require('path');
 const es = require('event-stream');
 const exec = require('child_process').exec;
 const paths = require('../paths');
+const config = require('../config');
 
 const FONT_NAME = 'icon-font';
 const TMP_DIRECTORY = './icon-font-tmp';
@@ -13,7 +14,11 @@ const TMP_DIRECTORY = './icon-font-tmp';
 const cmd = `fontcustom compile content/icon-font-source --name ${FONT_NAME} --selector=".glyphicon-{{glyph}}" -h -o ${TMP_DIRECTORY}`;
 
 module.exports = function (done) {
-  console.log('Generating font...');
+
+  if (!config.icons.generateIconsFromSource) {
+    return done();
+  }
+
   exec(cmd, function (err, stdout, stderr) {
     console.log('Done generating');
     const tasks = [
