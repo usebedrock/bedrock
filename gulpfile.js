@@ -13,7 +13,7 @@ const watch = require('./core/tasks/watch');
 const server = require('./core/tasks/server');
 const modernizr = require('./core/tasks/modernizr');
 
-gulp.task('sass', sass);
+gulp.task('sass', ['icon-font'], sass);
 gulp.task('modernizr', modernizr);
 gulp.task('server', server);
 gulp.task('copy:images', copy.images);
