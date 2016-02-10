@@ -12,13 +12,13 @@
     each category, categoryName in patterns.byCategory
         if Object.keys(patterns.byCategory).length > 1
             h4.br-bordered-list-title= categoryName
-        each group in category
-            - var groupName = group.docs ? group.docs.attributes.title || group.group.id : group.group.id
-            ul.br-bordered-list
-                li
-                    a(href="/styleguide/#{group.group.id}.html")= groupName
-                    if config.styleguide.showIndividualComponentsInNav
-                        ul
-                            each pattern in group.patterns
-                                - var patternName = pattern.docs ? pattern.docs.attributes.title || pattern.name : pattern.name;
-                                li: a(href="/styleguide/#{group.group.id}.html##{pattern.docs.attributes.title || pattern.name}")= patternName
+        ul.br-bordered-list
+            each group in category
+                - var groupName = group.docs ? group.docs.attributes.title || group.group.id : group.group.id
+                    li
+                        a(href="/styleguide/#{group.group.id}.html")= groupName
+                        if config.styleguide.showIndividualComponentsInNav
+                            ul
+                                each pattern in group.patterns
+                                    - var patternName = pattern.docs ? pattern.docs.attributes.title || pattern.name : pattern.name;
+                                    li: a(href="/styleguide/#{group.group.id}.html##{pattern.docs.attributes.title || pattern.name}")= patternName
