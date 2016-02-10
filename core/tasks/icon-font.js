@@ -37,9 +37,7 @@ module.exports = function (done) {
     const taskStream = es.merge.apply(null, tasks);
 
     taskStream.on('end', function () {
-      del([TMP_DIRECTORY, '.fontcustom-manifest.json']).then(function () {
-        done();
-      });
+      done();
     });
   });
 };
