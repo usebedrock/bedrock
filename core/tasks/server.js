@@ -2,7 +2,6 @@ const glob = require('glob');
 const path = require('path');
 const express = require('express');
 const portfinder = require('portfinder');
-const jade = require('jade');
 const beautify = require('js-beautify').html;
 const fs = require('fs');
 const _ = require('lodash');

@@ -10,7 +10,8 @@ module.exports = function () {
       paths.content.templates.all,
       './core/templates/**/*.jade',
       paths.content.scss.colorsDefinition,
-      paths.content.templates.data
+      paths.content.templates.data,
+      paths.content.docs,
     ],
     ui: false,
     ghostMode: false,

@@ -8,7 +8,7 @@ const distPath = 'dist/';
 module.exports = {
   content: {
     path: contentPath,
-    docs: path.join(contentPath, 'docs/**/*.md'),
+    docs: path.join(contentPath, 'docs/**/*'),
     assets: {
       images: path.join(contentPath, 'images/**/*'),
       fonts: path.join(contentPath, 'fonts/**/*'),
