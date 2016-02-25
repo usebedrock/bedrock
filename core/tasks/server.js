@@ -12,7 +12,7 @@ const pages = require('../discovery/pages');
 const patterns = require('../discovery/patterns');
 const docs = require('../discovery/docs');
 const paths = require('../paths');
-const getDefaultLocals = require('./templates').getDefaultLocals;
+const locals = require('../templates/locals');
 
 const app = express();
 
@@ -24,22 +24,17 @@ app.set('views', [
 ]);
 
 function renderView(req, res, viewName, customLocals) {
-  const locals = Object.assign({}, getDefaultLocals(), customLocals);
+  const viewLocals = Object.assign({}, locals.getDefaultLocals(), {docs: docs.discover()}, customLocals);
 
-  app.render(viewName, locals, function (err, html) {
+  app.render(viewName, viewLocals, function (err, html) {
     if (err) {
       if (err.message.includes('Failed to lookup view')) {
-        res.render('404', locals);
+        res.render('404', viewLocals);
       } else {
         res.send(`<pre>${err}</pre>`);
       }
     } else {
-      html = beautify(html, {
-        logSuccess: false,
-        indentSize: 2,
-        unformatted: ['pre', 'textarea'],
-        extraLiners: ['body']
-      });
+      html = beautify(html, config.prettify);
 
       res.send(html);
     }

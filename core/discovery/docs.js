@@ -10,63 +10,11 @@ const paths = require('../paths');
 const jade = require('jade');
 const beautify = require('js-beautify').html;
 const config = require('../config');
-
-const options = {
-  jade: {
-    pretty: true
-  },
-  prettify: {
-    logSuccess: false,
-    indentSize: 2,
-    unformatted: ['pre', 'textarea'],
-    extraLiners: ['body']
-  }
-};
-
-function getDefaultLocals() {
-  delete require.cache[require.resolve('../discovery/pages')];
-  delete require.cache[require.resolve('../discovery/colors')];
-  delete require.cache[require.resolve('../discovery/icons')];
-  delete require.cache[require.resolve('../discovery/patterns')];
-  delete require.cache[require.resolve('../discovery/content-data')];
-
-  const pages = require('../discovery/pages');
-  const colors = require('../discovery/colors');
-  const icons = require('../discovery/icons');
-  const patterns = require('../discovery/patterns');
-  const contentData = require('../discovery/content-data');
-
-  return {
-    contentData: contentData.discover(),
-    patterns: patterns.discover(),
-    pages: pages.discover(),
-    icons: icons.discover(),
-    config,
-    colorCategories: colors.discover(),
-    slugify(input) {
-      return input.replace(/\//g, '-');
-    },
-    render(id, language) {
-      var patternFileLocation = path.join(paths.content.templates.patterns, id + '.jade');
-      var jadeMarkup = fs.readFileSync(patternFileLocation, 'utf8');
-
-      if (!language || language === 'jade') {
-        return jadeMarkup;
-      } else if (language === 'html') {
-        return jade.compile(jadeMarkup, {
-          pretty: true,
-          basedir: 'content',
-          filename: patternFileLocation
-        })({icons: icons.discover(), config});
-      }
-    }
-  };
-}
+const locals = require('../templates/locals');
 
 function compileJade(jadeContent) {
-  const compiler = jade.compile(jadeContent, options.jade);
-  const locals = getDefaultLocals();
-  return compiler(locals);
+  const compiler = jade.compile(jadeContent, config.jade);
+  return compiler(locals.getDefaultLocals());
 }
 
 module.exports = {
