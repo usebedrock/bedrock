@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const rename = require('gulp-rename');
 const replace = require('gulp-replace');
-const del = require('del');
 const path = require('path');
 const es = require('event-stream');
 const exec = require('child_process').exec;
