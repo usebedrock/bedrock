@@ -1,0 +1,11 @@
+mixin iconsOverview
+    .br-sample(id="icons")
+        .br-sample-header.br-sample-clearfix
+            h3.br-sample-heading
+                | Icons
+            a.br-sample-header-link(href="#icons") #
+        .br-sample-content
+            each icon in icons
+                div
+                    span(class=icon.htmlClasses)
+                    code= icon.jadeClasses

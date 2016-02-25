@@ -12,25 +12,25 @@ const beautify = require('js-beautify').html;
 const config = require('../config');
 const locals = require('../templates/locals');
 
-function compileJade(jadeContent) {
-  const compiler = jade.compile(jadeContent, config.jade);
-  return compiler(locals.getDefaultLocals());
-}
-
 module.exports = {
   discover: function () {
     const docFiles = glob.sync(paths.content.docs)
+      .filter((docPath) => path.parse(docPath).ext) // Filter out directories
       .map(function (docPath) {
+        const parsedPath = path.parse(docPath);
         const fileContent = fs.readFileSync(docPath, 'utf8');
         const parsedFile = frontMatter(fileContent);
-        const filename = path.parse(docPath).name;
-        const extension = path.parse(docPath).ext;
+        const filename = parsedPath.name;
+        const extension = parsedPath.ext;
         parsedFile.attributes.filename = filename;
 
         if (extension === '.md') {
           parsedFile.body = marked(parsedFile.body);
         } else if (extension === '.jade') {
-          parsedFile.body = compileJade(parsedFile.body);
+          const compiler = jade.compile(parsedFile.body, Object.assign({}, config.jade, {
+            filename: docPath
+          }));
+          parsedFile.body = compiler(locals.getDefaultLocals());
         }
 
         if (!parsedFile.attributes.title) {
