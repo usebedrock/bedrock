@@ -7,6 +7,15 @@ module.exports = {
   icons: {
     generateIconsFromSource: true,
   },
+  jade: {
+    pretty: true
+  },
+  prettify: {
+    logSuccess: false,
+      indentSize: 2,
+      unformatted: ['pre', 'textarea'],
+      extraLiners: ['body']
+  },
   patternClasses: {
     'bc-scrollable-container': ['c-sample-content-tall'],
     'b-tooltip': ['c-sample-tooltip-visible'],

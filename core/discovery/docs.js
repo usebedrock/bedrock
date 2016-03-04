@@ -7,6 +7,15 @@ const path = require('path');
 const glob = require('glob');
 const _ = require('lodash');
 const paths = require('../paths');
+const jade = require('jade');
+const beautify = require('js-beautify').html;
+const config = require('../config');
+const locals = require('../templates/locals');
+
+function compileJade(jadeContent) {
+  const compiler = jade.compile(jadeContent, config.jade);
+  return compiler(locals.getDefaultLocals());
+}
 
 module.exports = {
   discover: function () {
@@ -15,8 +24,14 @@ module.exports = {
         const fileContent = fs.readFileSync(docPath, 'utf8');
         const parsedFile = frontMatter(fileContent);
         const filename = path.parse(docPath).name;
-        parsedFile.body = marked(parsedFile.body);
+        const extension = path.parse(docPath).ext;
         parsedFile.attributes.filename = filename;
+
+        if (extension === '.md') {
+          parsedFile.body = marked(parsedFile.body);
+        } else if (extension === '.jade') {
+          parsedFile.body = compileJade(parsedFile.body);
+        }
 
         if (!parsedFile.attributes.title) {
           parsedFile.attributes.title = filename.replace(/-/g, ' ');
