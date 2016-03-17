@@ -20,11 +20,11 @@ html(lang='en')
         link(rel='stylesheet', href='/css/main.css')
         link(rel='stylesheet', href='/css/prototype.css')
 
-body(class="#{bodyclass ? bodyclass : ''}")
+    body(class="#{bodyclass ? bodyclass : ''}")
 
-    block body
+        block body
 
-    include ../../../core/templates/includes/prototype-nav
+        include ../../../core/templates/includes/prototype-nav
 
-    = "\n"
-    script(src='/js/bundle.js')
+        = "\n"
+        script(src='/js/bundle.js')
