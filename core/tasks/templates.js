@@ -71,7 +71,7 @@ module.exports = {
     docs() {
       const defaultLocals = getDefaultLocals();
 
-      const tasks = defaultLocals.docs.map(doc => {
+      const tasks = defaultLocals.docs.allDocs.map(doc => {
         return gulp.src(paths.core.templates.styleguide.doc)
           .pipe(data(function (file) {
             return Object.assign({}, getDefaultLocals(), {

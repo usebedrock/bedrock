@@ -12,26 +12,26 @@ const beautify = require('js-beautify').html;
 const config = require('../config');
 const locals = require('../templates/locals');
 
-function compileJade(jadeContent) {
-  const compiler = jade.compile(jadeContent, config.jade);
-  return compiler(locals.getDefaultLocals());
-}
-
 module.exports = {
   discover: function () {
     const docFiles = glob.sync(paths.content.docs)
       .filter(g => path.parse(g).ext === '.jade' || path.parse(g).ext === '.md')
       .map(function (docPath) {
+        const parsedPath = path.parse(docPath);
         const fileContent = fs.readFileSync(docPath, 'utf8');
         const parsedFile = frontMatter(fileContent);
-        const filename = path.parse(docPath).name;
-        const extension = path.parse(docPath).ext;
+        const filename = parsedPath.name;
+        const extension = parsedPath.ext;
+
         parsedFile.attributes.filename = filename;
 
         if (extension === '.md') {
           parsedFile.body = marked(parsedFile.body);
         } else if (extension === '.jade') {
-          parsedFile.body = compileJade(parsedFile.body);
+          const compiler = jade.compile(parsedFile.body, Object.assign({}, config.jade, {
+            filename: docPath
+          }));
+          parsedFile.body = compiler(locals.getDefaultLocals());
         }
 
         if (!parsedFile.attributes.title) {
@@ -41,6 +41,14 @@ module.exports = {
         return parsedFile;
       });
 
-    return _.sortBy(docFiles, (d) => d.attributes.order);
+    return {
+      allDocs: docFiles,
+      byCategory: _.chain(docFiles)
+        .groupBy((d) => d.attributes.category)
+        .mapValues((docsInCategory) => {
+          return _.sortBy(docsInCategory, (d) => d.attributes.order)
+        })
+        .value()
+    };
   }
 };

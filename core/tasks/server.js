@@ -52,7 +52,7 @@ module.exports = function (done) {
 
   app.get('/styleguide/docs/:doc', function (req, res) {
     const docFilename = req.params.doc.replace('.html', '');
-    const doc = _.find(docs.discover(), doc => doc.attributes.filename === docFilename);
+    const doc = _.find(docs.discover().allDocs, doc => doc.attributes.filename === docFilename);
 
     renderView(req, res, 'styleguide/doc', { doc });
   });
