@@ -15,13 +15,14 @@ const locals = require('../templates/locals');
 module.exports = {
   discover: function () {
     const docFiles = glob.sync(paths.content.docs)
-      .filter((docPath) => path.parse(docPath).ext) // Filter out directories
+      .filter(g => path.parse(g).ext === '.jade' || path.parse(g).ext === '.md')
       .map(function (docPath) {
         const parsedPath = path.parse(docPath);
         const fileContent = fs.readFileSync(docPath, 'utf8');
         const parsedFile = frontMatter(fileContent);
         const filename = parsedPath.name;
         const extension = parsedPath.ext;
+        
         parsedFile.attributes.filename = filename;
 
         if (extension === '.md') {
@@ -40,6 +41,14 @@ module.exports = {
         return parsedFile;
       });
 
-    return _.sortBy(docFiles, (d) => d.attributes.order);
+    return {
+      allDocs: docFiles,
+      byCategory: _.chain(docFiles)
+        .groupBy((d) => d.attributes.category)
+        .mapValues((docsInCategory) => {
+          return _.sortBy(docsInCategory, (d) => d.attributes.order)
+        })
+        .value()
+    };
   }
 };

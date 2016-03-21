@@ -1,8 +1,14 @@
 module.exports = {
   styleguide: {
-    snippetLanguage: 'jade',
+    snippetLanguage: 'html',
     colors: './content/scss/settings/_colors.scss',
     showIndividualComponentsInNav: false,
+    categoryOrder: [
+      'Style guide',
+      'Patterns',
+      'Overviews',
+      'Components',
+    ]
   },
   icons: {
     generateIconsFromSource: true,
@@ -18,8 +24,10 @@ module.exports = {
   },
   patternClasses: {
     'bc-scrollable-container': ['c-sample-content-tall'],
-    'b-tooltip': ['c-sample-tooltip-visible'],
-    'b-modal': ['c-sample-modal-visible']
+    'bc-navbar': ['c-sample-content-tall'],
+    'tooltip': ['c-sample-tooltip-visible'],
+    'modal': ['c-sample-modal-visible'],
+    'tables': ['c-sample-overflow']
   },
   modernizr: {
     minify: true,

@@ -1,4 +1,8 @@
+const path = require('path');
+const fs = require('fs');
+const jade = require('jade');
 const config = require('../config');
+const paths = require('../paths');
 
 function getDefaultLocals() {
   delete require.cache[require.resolve('../discovery/pages')];
