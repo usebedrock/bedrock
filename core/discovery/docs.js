@@ -20,6 +20,7 @@ function compileJade(jadeContent) {
 module.exports = {
   discover: function () {
     const docFiles = glob.sync(paths.content.docs)
+      .filter(g => path.parse(g).ext === '.jade' || path.parse(g).ext === '.md')
       .map(function (docPath) {
         const fileContent = fs.readFileSync(docPath, 'utf8');
         const parsedFile = frontMatter(fileContent);
