@@ -3,3 +3,4 @@ dist/
 __tmp__
 .fontcustom-manifest.json
 icon-font-tmp
+content/scss/settings/_icon-font.scss

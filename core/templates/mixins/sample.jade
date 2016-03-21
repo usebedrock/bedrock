@@ -1,5 +1,5 @@
 mixin sample(pattern, isLayoutClass, hideCodeSamples)
-    .br-sample(id=pattern.name)
+    .br-sample(id='component-' + pattern.name)
         .br-sample-header.br-sample-clearfix
             if pattern.docs
                 h3.br-sample-heading= pattern.docs.attributes.title || pattern.name
