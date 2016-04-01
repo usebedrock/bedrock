@@ -18,6 +18,7 @@ function getDefaultLocals() {
   const contentData = require('../discovery/content-data');
 
   const locals = {
+    basedir: './content/',
     contentData: contentData.discover(),
     patterns: patterns.discover(),
     pages: pages.discover(),
