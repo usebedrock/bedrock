@@ -22,7 +22,7 @@ module.exports = {
         const parsedFile = frontMatter(fileContent);
         const filename = parsedPath.name;
         const extension = parsedPath.ext;
-
+        
         parsedFile.attributes.filename = filename;
 
         if (extension === '.md') {
