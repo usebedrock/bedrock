@@ -2,5 +2,6 @@ node_modules/
 dist/
 __tmp__
 .fontcustom-manifest.json
+Gemfile.lock
 icon-font-tmp
 content/scss/settings/_icon-font.scss

@@ -9,15 +9,14 @@ Bedrock is a static site generator to easily make HTML prototypes. For more info
 ## Installation and usage
 
 * First, make sure you have Node 4.2.1 installed. You can find the latest version of Node at <a href="https://nodejs.org/en/">NodeJS.org</a>.
-* Then, make sure you have root access to your machine. You will need it to install a ruby gem to create icon fonts called `fontcustom`
+* Then, install the required ruby gems. At the moment, icon font generation depends on a gem called `fontcustom`. Install the required gems using `bundle install`. You will need <a href="http://bundler.io">Bundler</a> for this.
 * You need to have `gulp` installed globally to use Bedrock. `npm install -g gulp`.
 * Install the project's dependencies:
   * `npm install`
-  * `gem install fontcustom`
-    * You might also need to install fontforge. For download instructions see the <a href="https://github.com/fontforge/fontforge">Fontforge</a> repo.
-* To run the prototype: `gulp`. All files are automatically compiled before they are served.
+  * `bundle install`
+    * You might also need to install fontforge using <a href="http://brew.sh/">brew</a>. For download instructions see the <a href="https://github.com/FontCustom/fontcustom">fontcustom</a> repo.
 
-## Available gulp tasks
+## Available commands
 
 * `gulp`: runs the prototype
 * `gulp icon-font`: manually run the icon font
