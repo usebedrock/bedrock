@@ -1,29 +1,29 @@
 .br-typography-overview {
-  td {
-    padding: 10px;
+
+  th, td {
     vertical-align: top;
   }
+  
+  tr td {
+    border-bottom: 1px solid rgba(#000,0.05);
+  }
 
-  tr {
-    &:hover {
-      .br-typography-sample-code {
-        display: block;
-      }
-    }
+  td {
+    padding: 10px 0;
   }
 
   td:first-child {
-    color: #ABABAB;
-    font-size: 14px;
+    opacity: 0.5;
+    font-size: 11px;
     padding-right: 40px;
     min-width: 200px;
   }
 }
 
-.br-typography-sample-code {
+pre.br-typography-sample-code {
+  padding: 0;
   background: transparent;
   border: 0;
   color: #999;
   white-space: pre-wrap;
-  display: none;
 }
