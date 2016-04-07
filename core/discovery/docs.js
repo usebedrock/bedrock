@@ -22,7 +22,7 @@ module.exports = {
         const parsedFile = frontMatter(fileContent);
         const filename = parsedPath.name;
         const extension = parsedPath.ext;
-        
+
         parsedFile.attributes.filename = filename;
 
         if (extension === '.md') {
@@ -31,7 +31,9 @@ module.exports = {
           const compiler = jade.compile(parsedFile.body, Object.assign({}, config.jade, {
             filename: docPath
           }));
-          parsedFile.body = compiler(locals.getDefaultLocals());
+          parsedFile.body = compiler(Object.assign({}, locals.getDefaultLocals(), {
+            pathname: `styleguide/docs/${filename}`
+          }));
         }
 
         if (!parsedFile.attributes.title) {
