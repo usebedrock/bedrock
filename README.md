@@ -43,6 +43,10 @@ The configuration lives in `core/config.js`. Available options are:
   * feature-detects (array)
     * which feature detects should be included when building a custom version of modernizr
 
+## Upgrading bedrock
+
+See the README at https://github.com/mono-company/bedrock-cli .
+
 ## Windows
 
 Windows usage is not supported at the moment.
