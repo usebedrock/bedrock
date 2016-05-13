@@ -36,14 +36,14 @@ if (navState.isOpen) {
   open();
 }
 
-for (const moduleId of navState.closedModules) {
+navState.closedModules.forEach(function (moduleId) {
   const $moduleParent = $prototypeNav
     .find(`.${MODULE_LABEL_CLASS}[data-module="${moduleId}"]`)
     .parents('li')
     .eq(0);
 
   $moduleParent.addClass(MODULE_IS_COLLAPSED_CLASS);
-}
+});
 
 function saveNavState() {
   localStorage.setItem(NAV_STATE_STORAGE_KEY, JSON.stringify(navState));
