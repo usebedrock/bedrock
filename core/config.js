@@ -26,7 +26,7 @@ module.exports = {
     'bc-scrollable-container': ['c-sample-content-tall'],
     'bc-navbar': ['c-sample-content-tall'],
     'tooltip': ['c-sample-tooltip-visible'],
-    'modal': ['c-sample-modal-visible'],
+    'b-modal': ['c-sample-modal-visible'],
     'tables': ['c-sample-overflow']
   },
   modernizr: {
