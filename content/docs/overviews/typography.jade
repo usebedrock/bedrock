@@ -24,7 +24,7 @@ table.br-typography-overview
             td
                 = sample.name
                 br
-                = sample.size
+                span.typography-sample-size= sample.size
             td.br-typography-sample(class=sample.extraClass)
-                != sample.code
+                .br-typography-sample-content!= sample.code
                 pre.br-typography-sample-code= sample.code
