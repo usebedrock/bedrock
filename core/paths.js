@@ -37,8 +37,8 @@ module.exports = {
       entryFile: path.join(contentPath, 'js/index.js')
     },
     icons: {
-      sourceDirectory: path.join(contentPath, 'icon-font-source'),
-      sourceFiles: path.join(contentPath, 'icon-font-source', '*.svg')
+      sourceDirectory: path.join(contentPath, 'icons'),
+      sourceFiles: path.join(contentPath, 'icons', '*.svg')
     }
   },
   core: {
