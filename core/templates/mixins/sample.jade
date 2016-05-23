@@ -8,8 +8,7 @@ mixin sample(pattern, isLayoutClass, hideCodeSamples)
             a.br-sample-header-link(href="##{pattern.name}") #
         if pattern.docs
             .br-sample-documentation!= pattern.docs.body
-        .br-sample-content(class=pattern.extraClasses)
-            != render(pattern.filename, 'html')
+        .br-sample-content(class=pattern.extraClasses)!= render(pattern.filename, 'html')
         if !hideCodeSamples
             .br-sample-footer
                 if config.styleguide.snippetLanguage === 'html'
