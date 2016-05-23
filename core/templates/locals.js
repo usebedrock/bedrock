@@ -27,9 +27,13 @@ function getDefaultLocals() {
     colorCategories: colors.discover()
   };
 
+  locals.renderSvgIcon = function (name) {
+    const svgFileLocation = path.join(paths.content.icons.sourceDirectory, name + '.svg');
+    return fs.readFileSync(svgFileLocation, 'utf8');
+  };
+
   locals.render = function (id, language) {
     const patternFileLocation = path.join(paths.content.templates.patterns, id + '.jade');
-    const locals = Object.assign({}, locals);
     const jadeMarkup = fs.readFileSync(patternFileLocation, 'utf8');
 
     if (!language || language === 'jade') {

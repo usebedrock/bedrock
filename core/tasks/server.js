@@ -25,6 +25,7 @@ app.set('views', [
 
 function renderView(req, res, viewName, customLocals) {
   const viewLocals = Object.assign({}, locals.getDefaultLocals(), {docs: docs.discover()}, customLocals);
+  viewLocals.locals = Object.assign({}, locals.getDefaultLocals(), {docs: docs.discover()}, customLocals);
 
   app.render(viewName, viewLocals, function (err, html) {
     if (err) {
@@ -89,4 +90,3 @@ module.exports = function (done) {
     });
   });
 };
-
