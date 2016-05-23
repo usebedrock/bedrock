@@ -1,3 +1,5 @@
+include icon
+
 mixin iconsOverview
     .br-sample(id="icons")
         .br-sample-header.br-sample-clearfix
@@ -7,5 +9,5 @@ mixin iconsOverview
         .br-sample-content
             each icon in icons
                 div
-                    span(class=icon.htmlClasses)
-                    code= icon.jadeClasses
+                    +icon(icon)
+                    code= icon

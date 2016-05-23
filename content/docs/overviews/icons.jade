@@ -10,10 +10,12 @@ include ../../../core/templates/mixins/icon-overview
 
     h2 Icons
 
-    p The icon font contains a selection of icons. We provide a custom icon font because it is a lighter approach, and would like to limit the amount of icons used across applications.
+    p
+        | The icon system is based on directly embedding SVG files into the markup. Within Bedrock, we use Jade to render these SVG's instead of
+        | having to inline them. You can either inline them, or build a solution that does it for you.
 
-    h4 Q: How to add an icon to the font?
-
-    p Add an .svg file the <code>content/icon-font-source</code> folder in the application styleguide project and rebuild the CSS.
+    p
+        | The SVG content should be contained in a <code>.svg-icon</code> div that also get an icon-specific class based on its
+        | name (for example: <code>.svg-icon.svg-icon-add</code>. This allows us to style and colorize specific icons.
 
     +iconsOverview
