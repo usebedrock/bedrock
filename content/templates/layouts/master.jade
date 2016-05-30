@@ -2,10 +2,10 @@ include ../../../core/templates/mixins/icon
 
 doctype html
 html(lang='en')
-    block pagevariables
+    block pageVariables
         // Use this block to append page variables in templates
-        - var projecttitle = "Project title"
-        - var moduletitle = "Module"
+        - var projectTitle = "Project title"
+        - var moduleTitle = "Module"
     head
         meta(charset='UTF-8')
         meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
@@ -13,16 +13,16 @@ html(lang='en')
         script(src='/js/modernizr.js')
 
         title
-            if moduletitle
-                | #{moduletitle} -
-                | #{projecttitle}
+            if moduleTitle
+                | #{moduleTitle} -
+                | #{projectTitle}
             else
-                | #{projecttitle}
+                | #{projectTitle}
 
         link(rel='stylesheet', href='/css/main.css')
         link(rel='stylesheet', href='/css/prototype.css')
 
-    body(class="#{bodyclass ? bodyclass : ''}")
+    body(class="#{bodyClass ? bodyClass : ''}")
 
         block body
 
