@@ -6,7 +6,7 @@ const _ = require('lodash');
 const fs = require('fs');
 const frontMatter = require('front-matter');
 const marked = require('marked');
-const config = require('../config');
+const config = require('../../bedrock.config');
 const paths = require('../paths');
 
 const TEMPLATES_BASE_DIRECTORY = paths.content.templates.patterns;

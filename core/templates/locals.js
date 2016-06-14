@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const jade = require('jade');
-const config = require('../config');
+const config = require('../../bedrock.config');
 const paths = require('../paths');
 
 function getDefaultLocals() {

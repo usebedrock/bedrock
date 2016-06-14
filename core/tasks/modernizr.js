@@ -3,7 +3,7 @@ const path = require('path');
 const Modernizr = require('modernizr');
 const mkdirp = require('mkdirp');
 const paths = require('../paths');
-const config = require('../config');
+const config = require('../../bedrock.config');
 
 module.exports = function (done) {
   Modernizr.build(config.modernizr, function (output) {
