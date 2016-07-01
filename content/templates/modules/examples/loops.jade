@@ -1,16 +1,20 @@
-h1 Loop examples
+extends ../../layouts/master
 
-h2 Looping an array
-ul
-    each person in contentData.exampleArray
-        li
-            span= person.id
-            span Hello, my name is #{person.firstName} #{person.lastName}!
+block body
 
-h2 Looping an object
-each type, typeName in contentData.exampleObject
+    h1 Loop examples
+
+    h2 Looping an array
     ul
-        li= typeName
+        each person in contentData.exampleArray
+            li
+                span= person.id
+                span Hello, my name is #{person.firstName} #{person.lastName}!
+
+    h2 Looping an object
+    each type, typeName in contentData.exampleObject
         ul
-            each product in type
-                li= product
+            li= typeName
+            ul
+                each product in type
+                    li= product
