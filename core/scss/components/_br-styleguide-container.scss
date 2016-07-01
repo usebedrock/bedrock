@@ -1,10 +1,15 @@
+$br-switch-breakpoint: 800px;
+
 // For our height calculations we are supposing body and html are 100% of the height
 body, html {
   height: 100%;
 }
 
 body.br-styleguide {
-  overflow: hidden;
+  // Only kill the body scroll from a certain mq
+  @media (min-width: $br-switch-breakpoint) {
+    overflow: hidden;
+  }
   height: 100%;
   width: 100%;
   margin: 0;
@@ -23,24 +28,30 @@ body.br-styleguide {
 }
 
 .br-styleguide-navigation-holder {
-  height: 100%;
-  overflow: scroll;
-  width: 20%;
   padding: 20px;
-  float: left;
-  -webkit-overflow-scrolling: touch;
+  // Only init 2 columns and scroll from a certain mq
+  @media (min-width: $br-switch-breakpoint) {
+    height: 100%;
+    width: 20%;
+    float: left;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 .br-styleguide-content {
   background: #FFF;
-  height: 100%;
-  width: 80%;
-  padding: 40px;
-  float: left;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
+  padding: 20px;
+  // Only init 2 columns and scroll from a certain mq
+  @media (min-width: $br-switch-breakpoint) {
+    height: 100%;
+    padding: 40px;
+    width: 80%;
+    float: left;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
 }
-
 
 /* Additions to styleguide
    To make pattern code copy/pastable but still have ability to display elements
