@@ -6,7 +6,7 @@ const beautify = require('js-beautify').html;
 const fs = require('fs');
 const _ = require('lodash');
 
-const config = require('../config');
+const config = require('../../bedrock.config');
 const colors = require('../discovery/colors');
 const pages = require('../discovery/pages');
 const patterns = require('../discovery/patterns');

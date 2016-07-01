@@ -1,5 +1,5 @@
 const path = require('path');
-const config = require('./config');
+const config = require('./../bedrock.config');
 
 const contentPath = 'content/';
 const corePath = 'core/';
