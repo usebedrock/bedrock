@@ -17,7 +17,6 @@ const clipboard = new Clipboard('.br-sample-copy-code-btn', {
 
 // Hide on init
 $codeBlocks.hide();
-$copyButtons.hide();
 
 $codeButtons.on('click', function () {
   var $codeBlock = $(this).parents('.br-sample').find('.br-sample-markup');
@@ -25,7 +24,6 @@ $codeButtons.on('click', function () {
   $codeBlock.find('.CodeMirror').each(function (i, el) {
     el.CodeMirror.refresh();
   });
-  $(this).parents('.br-sample').find('.br-sample-copy-code-btn').toggle();
 });
 
 $codeBlocks.each(function () {

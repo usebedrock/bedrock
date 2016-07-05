@@ -39,8 +39,18 @@
 .br-sample-copy-code-btn {
   position: absolute;
   z-index: 2;
-  top: 50px;
+  top: 55px;
   right: 10px;
+  display: none;
+  .br-sample-code:hover & {
+    display: block;
+    // Hide clipboard function since it's not supported in Safari
+    // @see http://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari-only-not-chrome
+    @supports (overflow:-webkit-marquee) and (justify-content:inherit) {
+      display: none;
+    }
+  }
+
 }
 
 .br-sample-markup {
@@ -50,7 +60,6 @@
   padding: 10px;
   position: relative;
   .CodeMirror {
-    width: 80%;
     background: transparent;
   }
 }
