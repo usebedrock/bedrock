@@ -6,6 +6,7 @@ body, html {
 }
 
 body.br-styleguide {
+  overflow: visible !important; // Override any utility classes killing scroll
   // Only kill the body scroll from a certain mq
   @media (min-width: $br-switch-breakpoint) {
     overflow: hidden;
