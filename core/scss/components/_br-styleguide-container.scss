@@ -1,11 +1,12 @@
 $br-switch-breakpoint: 800px;
 
 // For our height calculations we are supposing body and html are 100% of the height
-body, html {
+html.br-styleguide {
   height: 100%;
 }
 
-body.br-styleguide {
+html.br-styleguide body {
+  height: 100%;
   overflow: visible !important; // Override any utility classes killing scroll
   // Only kill the body scroll from a certain mq
   @media (min-width: $br-switch-breakpoint) {
