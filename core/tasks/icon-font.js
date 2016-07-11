@@ -5,7 +5,7 @@ const path = require('path');
 const es = require('event-stream');
 const exec = require('child_process').exec;
 const paths = require('../paths');
-const config = require('../config');
+const config = require('../../bedrock.config');
 
 const FONT_NAME = 'icon-font';
 const TMP_DIRECTORY = './icon-font-tmp';
