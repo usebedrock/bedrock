@@ -7,10 +7,13 @@ mixin iconsOverview(mode)
                 | Icon list
             a.br-sample-header-link(href="#icons") #
         .br-sample-content
-            each icon in icons
-                div
-                    if mode === 'svg'
+            if mode === 'svg'
+                each icon in icons.svg
+                    div
                         +icon(icon)
-                    if mode === 'icon-font'
+                        code= icon
+            if mode === 'icon-font'
+                each icon in icons.iconFont
+                    div
                         i.glyphicon(class="glyphicon-#{icon}")
-                    code= icon
+                        code= icon
