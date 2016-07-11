@@ -31,7 +31,7 @@ gulp.task('templates:compile:docs', templates.compile.docs);
 gulp.task('watch', watch);
 
 gulp.task('copy', ['copy:images', 'copy:fonts', 'copy:resources', 'copy:favicon']);
-gulp.task('compile-all', ['modernizr', 'bundle', 'sass', 'copy']);
+gulp.task('compile-all', ['modernizr', 'icon-font', 'bundle', 'sass', 'copy']);
 
 gulp.task('build', ['compile-all', 'templates:compile'], function (done) {
   console.log('------------\n');
