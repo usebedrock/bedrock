@@ -13,7 +13,7 @@ const server = require('./core/tasks/server');
 const modernizr = require('./core/tasks/modernizr');
 const iconFont = require('./core/tasks/icon-font');
 
-gulp.task('sass', ['icon-font'], sass);
+gulp.task('sass', sass);
 gulp.task('modernizr', modernizr);
 gulp.task('server', server);
 gulp.task('copy:images', copy.images);
