@@ -5,7 +5,7 @@ mixin sample(pattern, isLayoutClass, hideCodeSamples)
                 h3.br-sample-heading= pattern.docs.attributes.title || pattern.name
             else
                 h3.br-sample-heading= pattern.name
-            a.br-sample-header-link(href="##{pattern.name}") #
+            a.br-sample-header-link(href="#component-#{pattern.name}") #
         if pattern.docs
             .br-sample-documentation!= pattern.docs.body
         .br-sample-content(class=pattern.extraClasses)!= render(pattern.filename, 'html')
