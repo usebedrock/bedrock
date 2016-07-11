@@ -6,11 +6,12 @@ const es = require('event-stream');
 const exec = require('child_process').exec;
 const paths = require('../paths');
 const config = require('../../bedrock.config');
+const browserSync = require('browser-sync');
 
 const FONT_NAME = 'icon-font';
 const TMP_DIRECTORY = './icon-font-tmp';
 
-const cmd = `fontcustom compile content/icon-font-source --name ${FONT_NAME} --selector=".glyphicon-{{glyph}}" -h -o ${TMP_DIRECTORY}`;
+const cmd = `fontcustom compile ${paths.content.iconFont.sourceDirectory} --name ${FONT_NAME} --selector=".glyphicon-{{glyph}}" -h -o ${TMP_DIRECTORY}`;
 
 module.exports = function (done) {
 
@@ -44,6 +45,7 @@ module.exports = function (done) {
     const taskStream = es.merge.apply(null, tasks);
 
     taskStream.on('end', function () {
+      browserSync.reload();
       done();
     });
   });

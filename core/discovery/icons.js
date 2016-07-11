@@ -11,9 +11,9 @@ function discover() {
     .filter(file => file.indexOf('.svg') !== -1)
     .map(filename => filename.replace(ICONS_DIRECTORY + '/', '').replace('.svg', ''));
 
-  const iconFontIcons = glob.sync('content/icon-font-source/*.svg')
+  const iconFontIcons = glob.sync(paths.content.iconFont.sourceFiles)
     .filter(file => file.indexOf('.svg') !== -1)
-    .map(filename => filename.replace('content/icon-font-source/', '').replace('.svg', ''));
+    .map(filename => filename.replace(paths.content.iconFont.sourceDirectory, '').replace('.svg', ''));
 
   return {
     svg: svgIcons,
