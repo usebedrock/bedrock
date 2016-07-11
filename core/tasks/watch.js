@@ -11,4 +11,5 @@ module.exports = function () {
   watch(paths.content.assets.favicon, () => gulp.start('copy:favicon'));
   watch(paths.content.assets.fonts, () => gulp.start('copy:fonts'));
   watch(paths.content.assets.resources, () => gulp.start('copy:resources'));
+  watch(paths.content.icons.sourceFiles, () => gulp.start('icon-font'));
 };
