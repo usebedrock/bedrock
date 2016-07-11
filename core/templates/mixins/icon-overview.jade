@@ -1,13 +1,16 @@
 include icon
 
-mixin iconsOverview
+mixin iconsOverview(mode)
     .br-sample(id="icons")
         .br-sample-header.br-sample-clearfix
             h3.br-sample-heading
-                | Icons
+                | Icon list
             a.br-sample-header-link(href="#icons") #
         .br-sample-content
             each icon in icons
                 div
-                    +icon(icon)
+                    if mode === 'svg'
+                        +icon(icon)
+                    if mode === 'icon-font'
+                        i.glyphicon(class="glyphicon-#{icon}")
                     code= icon
