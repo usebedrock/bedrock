@@ -19,7 +19,10 @@ module.exports = function (done) {
   }
 
   exec(cmd, function (err, stdout, stderr) {
-    console.log('Done generating');
+    if (stdout.includes('error')) {
+      throw new Error(stdout);
+    }
+
     const tasks = [
       gulp
         .src(path.join(TMP_DIRECTORY, FONT_NAME + '.css'))
