@@ -13,7 +13,7 @@ function discover() {
 
   const iconFontIcons = glob.sync(paths.content.iconFont.sourceFiles)
     .filter(file => file.indexOf('.svg') !== -1)
-    .map(filename => filename.replace(paths.content.iconFont.sourceDirectory, '').replace('.svg', ''));
+    .map(filename => filename.split(/[\\|/]/).slice(-1).pop().split('.').slice(0, -1).join('.'));
 
   return {
     svg: svgIcons,
