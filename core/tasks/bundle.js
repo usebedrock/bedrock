@@ -15,7 +15,7 @@ const opts = _.assign({}, watchify.args, {
 });
 
 function bundler() {
-  var bundle = watchify(browserify(opts));;
+  var bundle = watchify(browserify(opts));
 
   bundle.transform(babelify, {presets: ['es2015']});
 
@@ -28,7 +28,7 @@ function bundler() {
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true})) // loads map from browserify file
     .pipe(sourcemaps.write('./')) // writes .map file
-    .pipe(gulp.dest(paths.dist.js));
+    .pipe(gulp.dest(paths.compiled.js));
 }
 
 module.exports = bundler;

@@ -29,5 +29,5 @@ module.exports = function () {
     })
     .pipe(postcss(processors))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(paths.dist.css));
+    .pipe(gulp.dest(paths.compiled.css));
 };

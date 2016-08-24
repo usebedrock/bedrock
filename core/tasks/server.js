@@ -16,7 +16,7 @@ const locals = require('../templates/locals');
 
 const app = express();
 
-app.use(express.static('dist'));
+app.use(express.static('compiled'));
 app.set('view engine', 'jade');
 app.set('views', [
   path.join(process.cwd(), './content/templates'),

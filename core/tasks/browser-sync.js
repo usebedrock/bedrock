@@ -6,7 +6,7 @@ const config = require('../../bedrock.config');
 module.exports = function () {
   return browserSync.init({
     files: [
-      path.join(paths.dist.path, '**/*'),
+      path.join(paths.compiled.path, '**/*'),
       paths.content.templates.all,
       './core/templates/**/*.jade',
       paths.content.scss.colorsDefinition,

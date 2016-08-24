@@ -3,6 +3,7 @@ const config = require('./../bedrock.config');
 
 const contentPath = 'content/';
 const corePath = 'core/';
+const compiledPath = 'compiled/';
 const distPath = 'dist/';
 
 module.exports = {
@@ -58,6 +59,20 @@ module.exports = {
         colors: path.join(corePath, 'templates/styleguide/colors.jade'),
         patternGroup: path.join(corePath, 'templates/styleguide/pattern-group.jade')
       }
+    }
+  },
+  compiled: {
+    path: compiledPath,
+    fonts: path.join(compiledPath, 'fonts/'),
+    modules: path.join(compiledPath, 'modules/'),
+    js: path.join(compiledPath, 'js/'),
+    css: path.join(compiledPath, 'css/'),
+    styleguide: path.join(compiledPath, 'styleguide/'),
+    docs: path.join(compiledPath, 'styleguide/docs/'),
+    assets: {
+      images: path.join(compiledPath, 'images/'),
+      fonts: path.join(compiledPath, 'fonts/'),
+      resources: path.join(compiledPath, 'resources/')
     }
   },
   dist: {

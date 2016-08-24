@@ -39,7 +39,7 @@ module.exports = function (done) {
           path.join(TMP_DIRECTORY, FONT_NAME + '.ttf'),
           path.join(TMP_DIRECTORY, FONT_NAME + '.woff')
         ])
-        .pipe(gulp.dest(paths.dist.fonts)),
+        .pipe(gulp.dest(paths.compiled.fonts)),
     ];
 
     const taskStream = es.merge.apply(null, tasks);

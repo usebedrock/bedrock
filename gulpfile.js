@@ -20,6 +20,7 @@ gulp.task('copy:images', copy.images);
 gulp.task('copy:fonts', copy.fonts);
 gulp.task('copy:favicon', copy.favicon);
 gulp.task('copy:resources', copy.resources);
+gulp.task('copy:compiledToDist', copy.compiledToDist);
 gulp.task('bundle', bundle);
 gulp.task('icon-font', iconFont);
 
@@ -33,25 +34,10 @@ gulp.task('watch', watch);
 gulp.task('copy', ['copy:images', 'copy:fonts', 'copy:resources', 'copy:favicon']);
 gulp.task('compile-all', ['modernizr', 'icon-font', 'bundle', 'sass', 'copy']);
 
-gulp.task('build', ['compile-all', 'templates:compile'], function (done) {
+gulp.task('build', ['compile-all', 'templates:compile', 'copy:compiledToDist'], function () {
   console.log('------------\n');
   console.log('Build finished. Compiled files can be found in the dist/ directory.');
-  inquirer.prompt([
-    {
-      type: 'confirm',
-      name: 'clean',
-      message: 'Would you like to clean the dist/ directory?',
-      default: true
-    }
-  ], function (answers) {
-    if (answers.clean) {
-      templates.clean(function () {
-        process.exit(0);
-      });
-    } else {
-      process.exit(0);
-    }
-  });
+  process.exit(0);
 });
 gulp.task('browser-sync', ['server', 'compile-all', 'watch'], browserSync);
 gulp.task('default', ['browser-sync']);

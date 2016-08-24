@@ -7,8 +7,8 @@ const config = require('../../bedrock.config');
 
 module.exports = function (done) {
   Modernizr.build(config.modernizr, function (output) {
-    mkdirp(paths.dist.js, function (err) {
-      fs.writeFileSync(path.join(paths.dist.js, 'modernizr.js'), output);
+    mkdirp(paths.compiled.js, function (err) {
+      fs.writeFileSync(path.join(paths.compiled.js, 'modernizr.js'), output);
       done();
     });
   });
