@@ -3,7 +3,7 @@ const Clipboard = require('clipboard');
 const Codemirror = require('codemirror');
 const config = require('../../bedrock.config');
 require('codemirror/mode/javascript/javascript');
-require('codemirror/mode/jade/jade');
+require('codemirror/mode/pug/pug');
 require('codemirror/mode/xml/xml');
 
 const $codeBlocks = $('.br-sample-code .br-sample-markup');
@@ -38,7 +38,7 @@ $codeBlocks.each(function () {
 
   switch (config.styleguide.snippetLanguage) {
     case 'jade':
-      editorOptions.mode = 'jade';
+      editorOptions.mode = 'pug';
       break;
     case 'html':
       editorOptions.mode = 'xml';
