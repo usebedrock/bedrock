@@ -22,9 +22,9 @@ include ../../../core/templates/mixins/icon-overview
 
     +iconsOverview('svg')
 
-    h3 Icon font
+    if config.icons.generateIconsFromSource
+        h3 Icon font
+        p
+            | The icon font system creates an icon font based on SVG images in the <code>content/icon-font-source/</code> directory.
 
-    p
-        | The icon font system creates an icon font based on SVG images in the <code>content/icons/</code> directory.
-
-    +iconsOverview('icon-font')
+        +iconsOverview('icon-font')

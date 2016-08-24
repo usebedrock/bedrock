@@ -6,33 +6,40 @@ Welcome to Bedrock.
 
 Bedrock is a static site generator to easily make HTML prototypes. For more information, please check out <a href="http://bedrock.mono.company/">the Bedrock homepage</a>.
 
-## Installation and usage
+## Basic installation & first run
 
 * First, make sure you have Node 4.2.1 installed. You can find the latest version of Node at <a href="https://nodejs.org/en/">NodeJS.org</a>.
-* Then, install the required ruby gems. At the moment, icon font generation depends on a gem called `fontcustom`. Install the required gems using `bundle install`. You will need <a href="http://bundler.io">Bundler</a> for this.
 * You need to have `gulp` installed globally to use Bedrock. `npm install -g gulp`.
 * Install the project's dependencies:
   * `npm install`
-  * `bundle install`
+* Run `gulp` to start your project.
+
+## Installation with icon font generation
+
+* If you want to use icon fonts you need more dependencies than just node. Icon font generation is optional. Set `icons.generateIconsFromSource` to `true` in `bedrock.config.js` to activate icon fonts.
+* In order for the icon font generation to work, install the required gems using `bundle install`. You will need <a href="http://bundler.io">Bundler</a> for this. We depend on a Ruby gem called `fontcustom`. Bundler will install the required dependencies.
     * You might also need to install fontforge using <a href="http://brew.sh/">brew</a>. For download instructions see the <a href="https://github.com/FontCustom/fontcustom">fontcustom</a> repo.
 
-## Available commands
+## Major commands
 
 * `gulp`: runs the prototype
+* `gulp build`: create a build (which ends up in the `dist` folder) that can be deployed to a server
+
+## Other commands
+
 * `gulp icon-font`: manually run the icon font
 * `gulp modernizr`: create a custom Modernizr file using the feature specified in the configuration
-* `gulp build`: create a build (which ends up in the `dist` folder) that can be deployed to a server
 
 ## Configuration
 
-The configuration lives in `core/config.js`. Available options are:
+The configuration lives in `bedrock.config.js`. Available options are:
 
 * styleguide
   * snippetLanguage
-    * This influences the snippets shown in the styleguide. 
+    * This modifies the language snippets shown in the styleguide. 
     * `jade` or `html`
   * colors
-    * path to CSS file specifying colors
+    * path to the SCSS file specifying colors (for the color feature in the styleguide which shows the project's colors in a visual way)
 * patternClasses
   * which patterns should get extra CSS classes
   * this is useful for customizing the styleguide while keeping your main CSS file clean e.g. to show elements that are hidden by default
@@ -49,7 +56,7 @@ See the README at https://github.com/mono-company/bedrock-cli .
 
 ## Windows
 
-Windows usage is not supported at the moment.
+Windows usage is not supported at the moment. We have used Bedrock on Windows succesfully though. If you encounter any Windows related bugs, please log them.
 
 ## License
 
@@ -57,4 +64,4 @@ Bedrock is MIT licensed.
 
 ## Credits
 
-Bedrock was made by the team at <a href="http://mono.company">Mono</a>.
+Bedrock was made by the team at <a href="http://mono.company">Mono</a> with most major contributions by <a href="http://thomastuts.com/">Thomas Tuts</a>.

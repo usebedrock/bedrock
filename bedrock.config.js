@@ -14,7 +14,8 @@ module.exports = {
     generateIconsFromSource: true,
   },
   jade: {
-    pretty: true
+    pretty: true,
+    basedir: "./content"
   },
   prettify: {
     logSuccess: false,
