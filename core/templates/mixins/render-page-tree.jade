@@ -1,6 +1,6 @@
 mixin renderPage(entry)
     li
-        a(href="#")= entry.name.replace('.jade', '')
+        a(href=entry.href)= entry.name
 
 mixin renderDirectory(entry)
     li
