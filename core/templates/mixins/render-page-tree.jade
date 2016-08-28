@@ -1,23 +1,22 @@
+mixin renderPage(entry)
+    li
+        a(href="#")= entry.name.replace('.jade', '')
+
+mixin renderDirectory(entry)
+    li
+        .br-bordered-list-title= entry.name.replace('.jade', '')
+        ul
+            each subEntry in entry.children
+                if subEntry.type === 'directory'
+                    +renderDirectory(subEntry)
+                else if subEntry.type === 'file'
+                    +renderPage(subEntry)
+
 mixin renderPageTree
     ul.br-bordered-list
-        li
-            span.br-bordered-list-label(data-module="base-pages") Base pages
-            ul
-                each page in pages.base
-                    if(page.name !== 'index')
-                        li
-                            a(href=page.href)= page.name
-    ul.br-bordered-list
-        each module in pages.modules
-            +renderModule(module)
-
-mixin renderModule(module)
-    li
-        span.br-bordered-list-label(data-module=module.id) #{module.name}
-        ul
-            each child in module.children
-                if !child.children
-                    li
-                        a(href="#{'/modules/' + child.href}")= child.name
-                else
-                    +renderModule(child)
+        li: a(href="/styleguide") Styleguide
+        each entry in pages
+            if entry.type === 'directory'
+                +renderDirectory(entry)
+            else if entry.type === 'file'
+                +renderPage(entry)

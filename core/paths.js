@@ -31,7 +31,7 @@ module.exports = {
       all: path.join(contentPath, 'templates/**/*.jade'),
       baseTemplates: path.join(contentPath, 'templates/*.jade'),
       moduleTemplates: path.join(contentPath, 'templates/modules/**/*.jade'),
-      patterns: path.join(contentPath, 'templates/patterns/'),
+      patterns: path.join(contentPath, 'templates/_patterns/'),
       data: path.join(contentPath, 'data/*')
     },
     js: {

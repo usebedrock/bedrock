@@ -1,0 +1,58 @@
+[
+  {
+    "path": "products",
+    "name": "products",
+    "type": "directory",
+    "children": [
+      {
+        "path": "products/fruit",
+        "name": "fruit",
+        "type": "directory",
+        "children": [
+          {
+            "path": "products/fruit/orange.jade",
+            "name": "orange",
+            "type": "file",
+            "href": "products/fruit/orange.html",
+            "id": "products/fruit/orange"
+          }
+        ],
+        "href": "products/fruit",
+        "id": "products/fruit"
+      },
+      {
+        "path": "products/bike.jade",
+        "name": "bike",
+        "type": "file",
+        "href": "products/bike.html",
+        "id": "products/bike"
+      },
+      {
+        "path": "products/car.jade",
+        "name": "car",
+        "type": "file",
+        "href": "products/car.html",
+        "id": "products/car"
+      }
+    ],
+    "id": "products"
+  },
+  {
+    "path": "404.jade",
+    "name": "404.jade",
+    "type": "file",
+    "id": "404"
+  },
+  {
+    "path": "about.jade",
+    "name": "about.jade",
+    "type": "file",
+    "id": "about"
+  },
+  {
+    "path": "index.jade",
+    "name": "index.jade",
+    "type": "file",
+    "id": "index"
+  }
+]
