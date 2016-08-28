@@ -34,20 +34,20 @@ Bedrock is a static site generator to easily make HTML prototypes. For more info
 
 The configuration lives in `bedrock.config.js`. Available options are:
 
-* styleguide
-  * snippetLanguage
+* `styleguide`
+  * `snippetLanguage`
     * This modifies the language snippets shown in the styleguide. 
     * `jade` or `html`
-  * colors
+  * `colors`
     * path to the SCSS file specifying colors (for the color feature in the styleguide which shows the project's colors in a visual way)
-* patternClasses
+* `patternClasses`
   * which patterns should get extra CSS classes
   * this is useful for customizing the styleguide while keeping your main CSS file clean e.g. to show elements that are hidden by default
   * specify the pattern as a string and 1 or more classes as an array
-* modernizr
-  * minify (boolean)
+* `modernizr`
+  * `minify` (boolean)
     * whether modernizr output should be minified 
-  * feature-detects (array)
+  * `feature-detects` (array)
     * which feature detects should be included when building a custom version of modernizr
 
 ## Upgrading bedrock
