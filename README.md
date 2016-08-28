@@ -52,7 +52,7 @@ See the README at https://github.com/mono-company/bedrock-cli .
 
 ## Windows
 
-Windows usage is not supported at the moment. We have used Bedrock on Windows succesfully though. If you encounter any Windows related bugs, please log them.
+Windows usage is not supported at the moment. We have used Bedrock on Windows successfully though. If you encounter any Windows related bugs, please log them.
 
 ## License
 
