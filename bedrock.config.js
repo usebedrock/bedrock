@@ -23,13 +23,6 @@ module.exports = {
       unformatted: ['pre', 'textarea'],
       extraLiners: ['body']
   },
-  patternClasses: {
-    'bc-scrollable-container': ['c-sample-content-tall'],
-    'bc-navbar': ['c-sample-content-tall'],
-    'tooltip': ['c-sample-tooltip-visible'],
-    'b-modal': ['c-sample-modal-visible'],
-    'tables': ['c-sample-overflow']
-  },
   modernizr: {
     minify: true,
     options: [

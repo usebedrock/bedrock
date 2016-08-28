@@ -40,10 +40,6 @@ The configuration lives in `bedrock.config.js`. Available options are:
     * `jade` or `html`
   * `colors`
     * path to the SCSS file specifying colors (for the color feature in the styleguide which shows the project's colors in a visual way)
-* `patternClasses`
-  * which patterns should get extra CSS classes
-  * this is useful for customizing the styleguide while keeping your main CSS file clean e.g. to show elements that are hidden by default
-  * specify the pattern as a string and 1 or more classes as an array
 * `modernizr`
   * `minify` (boolean)
     * whether modernizr output should be minified 

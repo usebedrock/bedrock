@@ -55,8 +55,6 @@ function discover() {
     const patternData = {
       filename,
       name: patternName,
-      //url: '/styleguide#' + patternName,
-      extraClasses: [],
     };
 
 
@@ -69,21 +67,6 @@ function discover() {
       patternData.docs = parsedDocs;
     } catch (err) {
 
-    }
-
-    if (config.patternClasses) {
-      const patternCategoryClass = config.patternClasses[groupId];
-      const patternSpecificClass = config.patternClasses[groupId + '.' + patternName];
-
-      if (patternCategoryClass) {
-        patternData.extraClasses.push(patternCategoryClass);
-      }
-
-      if (patternSpecificClass) {
-        patternData.extraClasses.push(patternSpecificClass);
-      }
-
-      patternData.extraClasses = patternData.extraClasses.join(' ');
     }
 
     patternGroups[groupId].patterns.push(patternData);
