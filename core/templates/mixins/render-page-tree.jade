@@ -4,7 +4,7 @@ mixin renderPage(entry)
 
 mixin renderDirectory(entry)
     li
-        .br-bordered-list-title= entry.name.replace('.jade', '')
+        h4.br-tree-dir-title= entry.name.replace('.jade', '')
         ul
             each subEntry in entry.children
                 if subEntry.type === 'directory'

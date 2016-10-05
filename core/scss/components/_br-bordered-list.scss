@@ -28,6 +28,11 @@ $br-bordered-list-title-font-size:               15px  !default;
   padding: $br-bordered-list-item-padding;
 }
 
+.br-tree-dir-title {
+  margin: 0;
+  padding: $br-bordered-list-item-padding;
+}
+
 .br-bordered-list {
   margin: 0;
   padding: 0 0 10px;
