@@ -5,6 +5,11 @@
    ========================================================================== */
 
 .br-content {
+  line-height: 1.5;
+
+  p {
+    padding: 0 0 12px;
+  }
 
   h1, h2, h3, h4 {
     margin: 0;
@@ -16,19 +21,28 @@
   }
 
   h2 {
+    font-size: 24px;
+    font-weight: 700;
     padding: 0 0 10px;
   }
 
   h3 {
+    font-size: 18px;
+    font-weight: 700;
     padding: 0 0 10px;
   }
 
   h4 {
     padding: 0 0 10px;
+    font-weight: 700;
   }
 
-  ul {
+  ul, ol {
     padding: 0 0 10px 20px;
+  }
+
+  code {
+    font-family: monospace;
   }
 
 }

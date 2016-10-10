@@ -12,9 +12,9 @@ block body
 
         .br-styleguide-content
             if !patternGroup.docs
-                h1= patternGroup.group.id
+                h1.br-patterngroup-header= patternGroup.group.id
             else
-                h1= patternGroup.docs.attributes.title || patternGroup.group.id
+                h1.br-patterngroup-header= patternGroup.docs.attributes.title || patternGroup.group.id
                 != patternGroup.docs.body
 
             each pattern in patternGroup.patterns
