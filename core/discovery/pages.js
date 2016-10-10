@@ -23,7 +23,7 @@ function mapChildren(children) {
 }
 
 function addPageInfo(page) {
-  page.href = page.path.replace('.jade', '.html').replace('index.html', '');
+  page.href = '/' + page.path.replace('.jade', '.html').replace('index.html', '');
   page.name = page.name.replace('.jade', '');
   page.id = page.path.replace('.jade', '');
 
