@@ -8,7 +8,7 @@ Bedrock is a static site generator to easily make HTML prototypes. For more info
 
 ## Basic installation & first run
 
-* First, make sure you have Node 4.2.1 installed. You can find the latest version of Node at [Nodejs.org](https://nodejs.org/en/).
+* First, make sure you have Node 6.3.1 installed. You can find the latest version of Node at [Nodejs.org](https://nodejs.org/en/).
 * You need to have `gulp` installed globally to use Bedrock. `npm install -g gulp`.
 * Install the project's dependencies:
   * `npm install`
