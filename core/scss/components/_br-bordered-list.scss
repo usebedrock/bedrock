@@ -30,7 +30,7 @@ $br-bordered-list-title-font-size:               15px  !default;
 
 .br-tree-dir-title {
   margin: 0;
-  font-size: $br-bordered-list-title-font-size;
+  font-size: $br-bordered-list-font-size;
   padding: $br-bordered-list-item-padding;
 }
 
@@ -61,12 +61,10 @@ $br-bordered-list-title-font-size:               15px  !default;
   }
 }
 
-// Arrow styling
-
 .br-prototype-nav { // Only on side menu version
-  .br-bordered-list > li {
+  .br-bordered-list li li {
     position: relative;
-    padding-left: 15px;
+    padding-left: 10px;
   }
   .br-bordered-list-label:before {
     position: absolute;
@@ -90,11 +88,6 @@ $br-bordered-list-title-font-size:               15px  !default;
     }
     ul {
       display: none;
-    }
-  }
-  .br-bordered-list {
-    ul {
-      padding: 0 0 0 10px;
     }
   }
 }
