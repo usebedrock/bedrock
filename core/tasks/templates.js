@@ -5,7 +5,7 @@ const notifier = require('node-notifier');
 const gutil = require('gulp-util');
 const rename = require('gulp-rename');
 const data = require('gulp-data');
-const gulpIf = require('gulp-if');
+const filter = require('gulp-filter');
 const path = require('path');
 const fs = require('fs');
 const jade = require('jade');
@@ -16,9 +16,6 @@ const paths = require('../paths');
 const locals = require('../templates/locals');
 const docs = require('../discovery/docs');
 
-function isModuleTemplate(file) {
-  return file.path.indexOf('templates/modules/') > -1;
-}
 
 function getDefaultLocals() {
   const defaultLocals = locals.getDefaultLocals();
@@ -89,10 +86,12 @@ module.exports = {
       return es.merge.apply(null, tasks);
     },
     content() {
-      return gulp.src([
-          paths.content.templates.baseTemplates,
-          paths.content.templates.moduleTemplates
-        ])
+      const templateFilter = filter(function (file) {
+        const folderNameInTemplates = file.path.replace(process.cwd(), '').replace('/content/templates/', '');
+        return path.parse(folderNameInTemplates).dir.charAt(0) !== '_';
+      });
+      return gulp.src(paths.content.templates.all)
+        .pipe(templateFilter)
         .pipe(data(function (file) {
           return Object.assign({}, getDefaultLocals(), {
             filename: path.basename(file.path).replace('jade', 'html'),
@@ -110,7 +109,7 @@ module.exports = {
           this.emit('end');
         })
         .pipe(prettify(config.prettify))
-        .pipe(gulpIf(isModuleTemplate, gulp.dest(paths.dist.modules), gulp.dest(paths.dist.path)));
+        .pipe(gulp.dest(paths.dist.path));
     }
   }
 };
