@@ -12,6 +12,7 @@ module.exports = {
   },
   icons: {
     generateIconsFromSource: true,
+    hasSvgIcons: true
   },
   jade: {
     pretty: true,
