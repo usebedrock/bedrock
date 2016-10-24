@@ -61,15 +61,5 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.6.0"
-  },
-  "dependencies": {
-    "autosize": "^3.0.14",
-    "bootstrap-sass": "^3.3.5",
-    "jquery": "^2.1.4",
-    "jquery.mousewheel": "^3.1.9",
-    "modernizr": "^3.2.0",
-    "pikaday": "^1.4.0",
-    "select2": "^4.0.0",
-    "select2-bootstrap-theme": "0.1.0-beta.4"
   }
 }
