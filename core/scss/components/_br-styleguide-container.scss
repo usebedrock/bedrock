@@ -30,7 +30,7 @@ html.br-styleguide body {
 }
 
 .br-styleguide-navigation-holder {
-  padding: 20px;
+  padding: 40px 20px;
   // Only init 2 columns and scroll from a certain mq
   @media (min-width: $br-switch-breakpoint) {
     height: 100%;
@@ -43,11 +43,10 @@ html.br-styleguide body {
 
 .br-styleguide-content {
   background: #FFF;
-  padding: 20px;
+  padding: 40px;
   // Only init 2 columns and scroll from a certain mq
   @media (min-width: $br-switch-breakpoint) {
     height: 100%;
-    padding: 40px;
     width: 80%;
     float: left;
     overflow: scroll;
@@ -67,10 +66,11 @@ html.br-styleguide body {
   }
 }
 
-/* Some typography
+/* Some typographical fixes
    ========================================================================== */
 
-.br-patterngroup-header {
+.br-patterngroup-header,
+.br-documentation-header {
   font-size: 20px;
   font-weight: 700;
   margin: 0 0 12px;
