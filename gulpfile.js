@@ -2,6 +2,7 @@
 
 const gulp = require('gulp');
 const inquirer = require('inquirer');
+const runSequence = require('run-sequence');
 
 const browserSync = require('./core/tasks/browser-sync');
 const sass = require('./core/tasks/sass');
@@ -34,10 +35,16 @@ gulp.task('watch', watch);
 gulp.task('copy', ['copy:images', 'copy:fonts', 'copy:resources', 'copy:favicon']);
 gulp.task('compile-all', ['modernizr', 'icon-font', 'bundle', 'sass', 'copy']);
 
-gulp.task('build', ['compile-all', 'templates:compile', 'copy:compiledToDist'], function () {
-  console.log('------------\n');
-  console.log('Build finished. Compiled files can be found in the dist/ directory.');
-  process.exit(0);
+gulp.task('build', function () {
+  runSequence(
+    ['compile-all', 'templates:compile'],
+    'copy:compiledToDist',
+    function () {
+      console.log('------------\n');
+      console.log('Build finished. Compiled files can be found in the dist/ directory.');
+      process.exit(0);
+    }
+  )
 });
 gulp.task('browser-sync', ['server', 'compile-all', 'watch'], browserSync);
 gulp.task('default', ['browser-sync']);
