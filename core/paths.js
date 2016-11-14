@@ -3,7 +3,7 @@ const config = require('./../bedrock.config');
 
 const contentPath = 'content/';
 const corePath = 'core/';
-const compiledPath = 'compiled/';
+const compiledPath = 'tmp/';
 const distPath = 'dist/';
 
 module.exports = {
