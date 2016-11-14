@@ -28,6 +28,6 @@ module.exports = function () {
       this.emit('end');
     })
     .pipe(postcss(processors))
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(paths.compiled.css));
 };
