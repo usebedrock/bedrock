@@ -3,7 +3,7 @@ mixin renderPage(entry)
         a(href=entry.href)= entry.name
 
 mixin renderDirectory(entry)
-    li
+    li.br-tree-dir
         h4.br-tree-dir-title= entry.name.replace('.jade', '')
         ul
             each subEntry in entry.children

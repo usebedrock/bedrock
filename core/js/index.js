@@ -1,4 +1,5 @@
 const $ = require('jquery');
+window.$ = $;
 
 const rememberScroll = require('./remember-scroll');
 

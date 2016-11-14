@@ -80,3 +80,31 @@ html.br-prototype-nav-is-open {
     break-inside: avoid;
   }
 }
+
+/* Expanded/collapsed states for directories
+   ========================================================================== */
+
+.br-tree-dir {
+  .br-tree-dir-title {
+    &:before {
+      content: '▼';
+      margin-right: 5px;
+      font-size: 10px;
+      color: #999;
+    }
+  }
+}
+
+.br-tree-dir--is-collapsed {
+  * {
+    display: none;
+  }
+
+  > .br-tree-dir-title {
+    display: block;
+    &:before {
+      content: '▶';
+    }
+  }
+}
+
