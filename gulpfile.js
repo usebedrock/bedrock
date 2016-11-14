@@ -11,11 +11,9 @@ const templates = require('./core/tasks/templates');
 const copy = require('./core/tasks/copy');
 const watch = require('./core/tasks/watch');
 const server = require('./core/tasks/server');
-const modernizr = require('./core/tasks/modernizr');
 const iconFont = require('./core/tasks/icon-font');
 
 gulp.task('sass', sass);
-gulp.task('modernizr', modernizr);
 gulp.task('server', server);
 gulp.task('copy:images', copy.images);
 gulp.task('copy:fonts', copy.fonts);
@@ -33,7 +31,7 @@ gulp.task('templates:compile:docs', templates.compile.docs);
 gulp.task('watch', watch);
 
 gulp.task('copy', ['copy:images', 'copy:fonts', 'copy:resources', 'copy:favicon']);
-gulp.task('compile-all', ['modernizr', 'icon-font', 'bundle', 'sass', 'copy']);
+gulp.task('compile-all', ['icon-font', 'bundle', 'sass', 'copy']);
 
 gulp.task('build', function () {
   runSequence(

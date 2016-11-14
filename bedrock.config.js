@@ -24,13 +24,4 @@ module.exports = {
       unformatted: ['pre', 'textarea'],
       extraLiners: ['body']
   },
-  modernizr: {
-    minify: true,
-    options: [
-      'setClasses'
-    ],
-    'feature-detects': [
-      'test/css/flexbox'
-    ]
-  }
 };

@@ -28,7 +28,6 @@ Bedrock is a static site generator to easily make HTML prototypes. For more info
 ## Other commands
 
 * `gulp icon-font`: manually run the icon font
-* `gulp modernizr`: create a custom Modernizr file using the feature specified in the configuration
 
 ## Configuration
 
@@ -40,11 +39,6 @@ The configuration lives in `bedrock.config.js`. Available options are:
     * `jade` or `html`
   * `colors`
     * path to the SCSS file specifying colors (for the color feature in the styleguide which shows the project's colors in a visual way)
-* `modernizr`
-  * `minify` (boolean)
-    * whether modernizr output should be minified 
-  * `feature-detects` (array)
-    * which feature detects should be included when building a custom version of modernizr
 
 ## Upgrading bedrock
 
