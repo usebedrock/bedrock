@@ -8,6 +8,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const babelify = require('babelify');
 const _ = require('lodash');
 const paths = require('../paths');
+const errors = require('../util/errors');
 
 const opts = _.assign({}, watchify.args, {
   entries: [paths.content.js.entryFile],
@@ -23,7 +24,23 @@ function bundler() {
   bundle.on('log', gutil.log);
 
   return bundle.bundle()
-    .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+    .on('error', function (err) {
+      gutil.log(gutil.colors.red(err));
+      this.err = err;
+      this.emit('end');
+    })
+    .on('end', function () {
+      console.log('END!');
+      if (this.err) {
+        errors.updateError('js', {
+          message: this.err.message,
+        });
+      } else {
+        errors.clearError('js');
+      }
+
+      this.err = null;
+    })
     .pipe(source('bundle.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true})) // loads map from browserify file

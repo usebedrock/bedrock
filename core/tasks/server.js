@@ -13,6 +13,7 @@ const patterns = require('../discovery/patterns');
 const docs = require('../discovery/docs');
 const paths = require('../paths');
 const locals = require('../templates/locals');
+const errors = require('../util/errors');
 
 const app = express();
 
@@ -26,20 +27,25 @@ app.set('views', [
 function renderView(req, res, viewName, customLocals) {
   const viewLocals = Object.assign({}, locals.getDefaultLocals(), {docs: docs.discover()}, customLocals);
   viewLocals.locals = Object.assign({}, locals.getDefaultLocals(), {docs: docs.discover()}, customLocals);
+  const appErrors = errors.getErrors();
 
-  app.render(viewName, viewLocals, function (err, html) {
-    if (err) {
-      if (err.message.includes('Failed to lookup view')) {
-        res.render('404', viewLocals);
+  if (Object.keys(appErrors).length > 0) {
+    res.render('error', Object.assign({}, { errors: appErrors }));
+  } else {
+    app.render(viewName, viewLocals, function (err, html) {
+      if (err) {
+        if (err.message.includes('Failed to lookup view')) {
+          res.render('404', viewLocals);
+        } else {
+          res.send(`<pre>${err}</pre>`);
+        }
       } else {
-        res.send(`<pre>${err}</pre>`);
-      }
-    } else {
-      html = beautify(html, config.prettify);
+        html = beautify(html, config.prettify);
 
-      res.send(html);
-    }
-  });
+        res.send(html);
+      }
+    });
+  }
 }
 
 module.exports = function (done) {

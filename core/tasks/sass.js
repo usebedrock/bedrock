@@ -6,6 +6,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const paths = require('../paths');
+const errors = require('../util/errors');
 
 module.exports = function () {
   const processors = [
@@ -18,6 +19,9 @@ module.exports = function () {
     ])
     .pipe(sourcemaps.init())
     .pipe(sass())
+    .on('start', function () {
+      console.log('START!');
+    })
     .on('error', function (err) {
       notifier.notify({
         title: 'SASS error',
@@ -25,7 +29,16 @@ module.exports = function () {
       });
       gutil.log(gutil.colors.red(err));
       gutil.beep();
+      this.err = err;
       this.emit('end');
+    })
+    .on('end', function () {
+      if (this.err) {
+        errors.updateError('sass', this.err);
+      } else {
+        errors.clearError('sass');
+      }
+      this.err = null;
     })
     .pipe(postcss(processors))
     .pipe(sourcemaps.write('./'))

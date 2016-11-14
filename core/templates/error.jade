@@ -1,0 +1,9 @@
+p An error occurred during the compilation of your Bedrock project. Please fix the following issues and refresh the page:
+
+if errors.sass
+    h2 SASS error:
+    pre= errors.sass.message
+
+if errors.js
+    h2 JavaScript error:
+    pre= errors.js.message
