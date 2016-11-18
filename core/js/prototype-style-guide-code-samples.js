@@ -11,6 +11,16 @@ const $codeButtons = $('.br-sample-show-code-btn');
 const $copyButtons = $('.br-sample-copy-code-btn');
 const clipboard = new Clipboard('.br-sample-copy-code-btn', {
   text: function (trigger) {
+    const originalButtonText = $(trigger).text();
+
+    $(trigger).prop('disabled', true);
+    $(trigger).text('Copied!');
+
+    setTimeout(function () {
+      $(trigger).text(originalButtonText);
+      $(trigger).prop('disabled', false);
+    }, 1500);
+
     return $(trigger).siblings('.br-sample-markup').find('.CodeMirror').get(0).CodeMirror.getValue();
   }
 });
