@@ -60,34 +60,3 @@ $br-bordered-list-title-font-size:               15px  !default;
     }
   }
 }
-
-.br-prototype-nav { // Only on side menu version
-  .br-bordered-list li li {
-    position: relative;
-    padding-left: 10px;
-  }
-  .br-bordered-list-label:before {
-    position: absolute;
-    left: 4px;
-    top: 10px;
-    content: " ";
-    width: 0; 
-    height: 0;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 6px solid #999;
-  }
-
-  .br-prototype-nav-item-is-collapsed {
-    .br-bordered-list-label:before {
-      border-top: 4px solid transparent;
-      border-bottom: 4px solid transparent;
-      border-left: 6px solid #999;
-      left: 6px;
-      top: 9px;
-    }
-    ul {
-      display: none;
-    }
-  }
-}
