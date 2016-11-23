@@ -11,23 +11,26 @@
   .br-tree-dir {
 
     .br-tree-dir-title {
+      cursor: default;
+
       &:before {
         content: '';
-        width: 0; 
-        height: 0; 
-      
-        // CSS triangle
-        border: none;
-        border-top: 4px solid transparent;
-        border-bottom: 4px solid transparent;
-        border-left: 4px solid #999;
-
+        width: 0;
+        height: 0;
         display: inline-block;
         text-align: center;
-      
-        margin-left: 3.5px;
-        margin-right: 6.5px;
 
+        // CSS triangle
+        border: 0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid #999;
+
+        margin-left: 2px;
+        margin-right: 4px;
+
+        position: relative;
+        top: -3px;
       }
     }
   }
@@ -39,18 +42,17 @@
 
     > .br-tree-dir-title {
       display: block;
+
       &:before {
-          margin-left: 2px;
-          margin-right: 4px;
+        // CSS triangle
+        border: 0;
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        border-left: 4px solid #999;
 
-          position: relative;
-          bottom: 1px;
-
-          // CSS triangle
-          border: none;
-          border-left: 4px solid transparent;
-          border-right: 4px solid transparent;
-          border-top: 4px solid #999;
+        margin-left: 3.5px;
+        margin-right: 6.5px;
+        top: 0;
       }
     }
   }
