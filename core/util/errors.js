@@ -10,7 +10,11 @@ module.exports = {
     browserSync.reload();
   },
   clearError: function (key) {
+    const shouldReload = errors[key] !== undefined;
     delete errors[key];
-    browserSync.reload();
+
+    if (shouldReload) {
+      browserSync.reload();
+    }
   },
 };
