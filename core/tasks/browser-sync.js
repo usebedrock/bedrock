@@ -5,7 +5,6 @@ const config = require('../../bedrock.config');
 
 module.exports = function () {
   return browserSync.init({
-    logLevel: "debug",
     files: [
       path.join(paths.compiled.path, '**/*'),
       '!**/*.map',
