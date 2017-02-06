@@ -17,9 +17,11 @@ function discover() {
     let colorData = null;
 
     if (colorLine.length === 2) {
+      const value = colorLine[1].trim().match(/(.+);/g)[0].replace(';', '');
+
       colorData = {
         name: colorLine[0].trim(),
-        value: colorLine[1].trim().replace(';', '')
+        value
       };
     }
 
