@@ -2,7 +2,6 @@ module.exports = {
   styleguide: {
     snippetLanguage: 'html',
     colors: './content/scss/settings/_colors.scss',
-    showIndividualComponentsInNav: false,
     categoryOrder: [
       'Style guide',
       'Patterns',
