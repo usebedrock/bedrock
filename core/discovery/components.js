@@ -6,6 +6,7 @@ const _ = require('lodash');
 const fs = require('fs');
 const frontMatter = require('front-matter');
 const marked = require('marked');
+const chalk = require('chalk');
 const config = require('../../bedrock.config');
 const paths = require('../paths');
 
@@ -20,6 +21,11 @@ const COMPONENT_CATEGORIES = {
 function discover() {
   const files = glob.sync(path.join(TEMPLATES_BASE_DIRECTORY, '**/*.jade'));
   let componentGroups = {};
+
+  // Check if old `_patterns/` directory is still in use
+  if (fs.existsSync(paths.content.templates.patterns)) {
+    console.log(chalk.white.bgRed.bold('This project still uses the old `_patterns/` directory. This directory has been renamed to `_components/`.\n'));
+  }
 
   for (const file of files) {
     const filename = file.replace(TEMPLATES_BASE_DIRECTORY, '').replace('.jade', '');
