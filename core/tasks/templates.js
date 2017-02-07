@@ -34,19 +34,19 @@ module.exports = {
     styleguide() {
       const defaultLocals = getDefaultLocals();
 
-      const tasks = Object.keys(defaultLocals.patterns.byGroup).map(patternGroup => {
+      const tasks = Object.keys(defaultLocals.components.byGroup).map(componentGroup => {
         return gulp.src([
-            paths.core.templates.styleguide.patternGroup
+            paths.core.templates.styleguide.componentGroup
           ])
           .pipe(data(function (file) {
             return Object.assign({}, getDefaultLocals(), {
-              patternGroup: defaultLocals.patterns.byGroup[patternGroup]
+              componentGroup: defaultLocals.components.byGroup[componentGroup]
             });
           }))
           .pipe(gulpJade(config.jade))
           .pipe(prettify(config.prettify))
           .pipe(rename(function (path) {
-            path.basename = patternGroup;
+            path.basename = componentGroup;
           }))
           .pipe(gulp.dest(paths.dist.styleguide));
       });

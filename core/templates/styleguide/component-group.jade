@@ -1,0 +1,23 @@
+extends ../../../content/templates/_layouts/master
+
+include ../mixins/sample
+
+block append pageVariables
+    - var htmlClass = 'br-styleguide'
+
+block body
+
+    .br-styleguide-container
+        include ../includes/styleguide-nav
+
+        .br-styleguide-content
+            if !componentGroup.docs
+                h1.br-componentgroup-header= componentGroup.group.id
+            else
+                h1.br-componentgroup-header= componentGroup.docs.attributes.title || componentGroup.group.id
+                .br-content
+                    != componentGroup.docs.body
+
+            each component in componentGroup.components
+                +sample(component)
+

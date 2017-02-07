@@ -9,7 +9,7 @@ const _ = require('lodash');
 const config = require('../../bedrock.config');
 const colors = require('../discovery/colors');
 const pages = require('../discovery/pages');
-const patterns = require('../discovery/patterns');
+const components = require('../discovery/components');
 const docs = require('../discovery/docs');
 const paths = require('../paths');
 const locals = require('../templates/locals');
@@ -72,12 +72,12 @@ module.exports = function (done) {
   });
 
   app.get('/styleguide/:group', function (req, res) {
-    const patternGroups = patterns.discover();
-    const patternGroup = req.params.group.replace('.html', '');
+    const componentGroups = components.discover();
+    const componentGroup = req.params.group.replace('.html', '');
 
-    renderView(req, res, 'styleguide/pattern-group', {
+    renderView(req, res, 'styleguide/component-group', {
       pathname: req.path.replace('/', '').replace('.html', ''),
-      patternGroup: patternGroups.byGroup[patternGroup]
+      componentGroup: componentGroups.byGroup[componentGroup]
     });
   });
 

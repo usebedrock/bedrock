@@ -32,6 +32,7 @@ module.exports = {
       baseTemplates: path.join(contentPath, 'templates/*.jade'),
       moduleTemplates: path.join(contentPath, 'templates/modules/**/*.jade'),
       patterns: path.join(contentPath, 'templates/_patterns/'),
+      components: path.join(contentPath, 'templates/_components/'),
       data: path.join(contentPath, 'data/*')
     },
     js: {
@@ -57,7 +58,7 @@ module.exports = {
         index: path.join(corePath, 'templates/styleguide/index.jade'),
         doc: path.join(corePath, 'templates/styleguide/doc.jade'),
         colors: path.join(corePath, 'templates/styleguide/colors.jade'),
-        patternGroup: path.join(corePath, 'templates/styleguide/pattern-group.jade')
+        componentGroup: path.join(corePath, 'templates/styleguide/component-group.jade')
       }
     }
   },
