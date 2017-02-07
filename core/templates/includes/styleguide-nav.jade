@@ -2,8 +2,8 @@
     each docsCategoryName in config.styleguide.categoryOrder
         if docsCategoryName === 'Components'
             h4.br-bordered-list-title Components
-            each category, categoryName in patterns.byCategory
-                if Object.keys(patterns.byCategory).length > 1
+            each category, categoryName in components.byCategory
+                if Object.keys(components.byCategory).length > 1
                     h4.br-bordered-list-title= categoryName
                 ul.br-bordered-list
                     each group in category

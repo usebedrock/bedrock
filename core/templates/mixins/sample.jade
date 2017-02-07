@@ -1,14 +1,14 @@
-mixin sample(pattern, isLayoutClass, hideCodeSamples)
-    .br-sample(id='component-' + pattern.name)
+mixin sample(component, isLayoutClass, hideCodeSamples)
+    .br-sample(id='component-' + component.name)
         .br-sample-header.br-sample-clearfix
-            if pattern.docs
-                h3.br-sample-heading= pattern.docs.attributes.title || pattern.name
+            if component.docs
+                h3.br-sample-heading= component.docs.attributes.title || component.name
             else
-                h3.br-sample-heading= pattern.name
-            a.br-sample-header-link(href="#component-#{pattern.name}") #
-        if pattern.docs
-            .br-sample-documentation!= pattern.docs.body
-        .br-sample-content!= render(pattern.filename, 'html')
+                h3.br-sample-heading= component.name
+            a.br-sample-header-link(href="#component-#{component.name}") #
+        if component.docs
+            .br-sample-documentation!= component.docs.body
+        .br-sample-content!= render(component.filename, 'html')
         if !hideCodeSamples
             .br-sample-footer
                 if config.styleguide.snippetLanguage === 'html'
@@ -18,6 +18,6 @@ mixin sample(pattern, isLayoutClass, hideCodeSamples)
                 .br-sample-code
                     button.br-sample-btn.br-sample-copy-code-btn Copy to clipboard
                     if config.styleguide.snippetLanguage === 'html'
-                        pre.br-sample-markup= render(pattern.filename, 'html')
+                        pre.br-sample-markup= render(component.filename, 'html')
                     if config.styleguide.snippetLanguage === 'jade'
-                        pre.br-sample-markup= render(pattern.filename, 'jade')
+                        pre.br-sample-markup= render(component.filename, 'jade')

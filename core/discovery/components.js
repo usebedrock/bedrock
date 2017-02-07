@@ -6,11 +6,12 @@ const _ = require('lodash');
 const fs = require('fs');
 const frontMatter = require('front-matter');
 const marked = require('marked');
+const chalk = require('chalk');
 const config = require('../../bedrock.config');
 const paths = require('../paths');
 
-const TEMPLATES_BASE_DIRECTORY = paths.content.templates.patterns;
-const PATTERN_CATEGORIES = {
+const TEMPLATES_BASE_DIRECTORY = paths.content.templates.components;
+const COMPONENT_CATEGORIES = {
   b: 'Bootstrap additions',
   bc: 'Bootstrap custom components',
   br: 'Bedrock components',
@@ -19,25 +20,30 @@ const PATTERN_CATEGORIES = {
 
 function discover() {
   const files = glob.sync(path.join(TEMPLATES_BASE_DIRECTORY, '**/*.jade'));
-  let patternGroups = {};
+  let componentGroups = {};
+
+  // Check if old `_patterns/` directory is still in use
+  if (fs.existsSync(paths.content.templates.patterns)) {
+    console.log(chalk.white.bgRed.bold('This project still uses the old `content/templates/_patterns/` directory.\nThis directory has been renamed to `content/templates/_components/`.\nPlease rename the folder in this project.\n'));
+  }
 
   for (const file of files) {
     const filename = file.replace(TEMPLATES_BASE_DIRECTORY, '').replace('.jade', '');
     const parts = filename.split('/');
     const groupId = parts[0];
-    const patternName = parts[1];
-    const category = patternGroups[groupId];
+    const componentName = parts[1];
+    const category = componentGroups[groupId];
 
     if (!category) {
-      patternGroups[groupId] = {
+      componentGroups[groupId] = {
         category: {
           id: groupId.split('-')[0],
-          humanized: PATTERN_CATEGORIES[groupId.split('-')[0]]
+          humanized: COMPONENT_CATEGORIES[groupId.split('-')[0]]
         },
         group: {
           id: groupId
         },
-        patterns: []
+        components: []
       };
 
       try {
@@ -46,35 +52,35 @@ function discover() {
         const parsedDocs = frontMatter(docsContent);
 
         parsedDocs.body = marked(parsedDocs.body);
-        patternGroups[groupId].docs = parsedDocs;
+        componentGroups[groupId].docs = parsedDocs;
       } catch (err) {
 
       }
     }
 
-    const patternData = {
+    const componentData = {
       filename,
-      name: patternName,
+      name: componentName,
     };
 
 
     try {
-      const patternDocsPath = path.join(TEMPLATES_BASE_DIRECTORY, groupId, patternName + '.md');
-      const patternDocsContent = fs.readFileSync(patternDocsPath, 'utf8');
-      const parsedDocs = frontMatter(patternDocsContent);
+      const componentDocsPath = path.join(TEMPLATES_BASE_DIRECTORY, groupId, componentName + '.md');
+      const componentDocsContent = fs.readFileSync(componentDocsPath, 'utf8');
+      const parsedDocs = frontMatter(componentDocsContent);
 
       parsedDocs.body = marked(parsedDocs.body);
-      patternData.docs = parsedDocs;
+      componentData.docs = parsedDocs;
     } catch (err) {
 
     }
 
-    patternGroups[groupId].patterns.push(patternData);
+    componentGroups[groupId].components.push(componentData);
   }
 
   return {
-    byGroup: patternGroups,
-    byCategory: _.groupBy(patternGroups, (pattern) => pattern.category.humanized || 'No category')
+    byGroup: componentGroups,
+    byCategory: _.groupBy(componentGroups, (component) => component.category.humanized || 'No category')
   };
 }
 
