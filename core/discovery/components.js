@@ -24,7 +24,7 @@ function discover() {
 
   // Check if old `_patterns/` directory is still in use
   if (fs.existsSync(paths.content.templates.patterns)) {
-    console.log(chalk.white.bgRed.bold('This project still uses the old `_patterns/` directory. This directory has been renamed to `_components/`.\n'));
+    console.log(chalk.white.bgRed.bold('This project still uses the old `content/templates/_patterns/` directory.\nThis directory has been renamed to `content/templates/_components/`.\nPlease rename the folder in this project.\n'));
   }
 
   for (const file of files) {
