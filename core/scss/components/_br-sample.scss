@@ -96,3 +96,28 @@
   -moz-column-count: 3;
   column-count: 3;
 }
+
+/* Dark Bedrock UI variant
+   ========================================================================== */
+
+html.br-styleguide--dark body {
+  .br-sample-btn {
+    background: #555;
+    border-color: #666;
+    color: #fff;
+
+    &:hover {
+      background: #555;
+    }
+  }
+
+  .br-sample-markup {
+    background: #444;
+    border-color: #333;
+  }
+
+  .br-sample-content {
+    background: #333;
+    border-color: #444;
+  }
+}

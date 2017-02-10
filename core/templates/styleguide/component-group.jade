@@ -3,7 +3,7 @@ extends ../../../content/templates/_layouts/master
 include ../mixins/sample
 
 block append pageVariables
-    - var htmlClass = 'br-styleguide'
+    - var htmlClass = config.ui.dark ? 'br-styleguide br-styleguide--dark' : 'br-styleguide'
 
 block body
 

@@ -5,7 +5,7 @@ include ../mixins/color-overview
 include ../mixins/icon-overview
 
 block append pageVariables
-    - var htmlClass = 'br-styleguide'
+    - var htmlClass = config.ui.dark ? 'br-styleguide br-styleguide--dark' : 'br-styleguide'
 
 block body
 

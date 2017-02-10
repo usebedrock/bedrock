@@ -67,6 +67,22 @@ html.br-prototype-nav-is-open {
   padding: 0 0 12px;
 }
 
+/* Dark Bedrock UI variant
+   ========================================================================== */
+
+.br-prototype-nav--dark {
+  background-color: #333;
+  color: #fff;
+
+  .br-prototype-nav-main-heading {
+    color: #fff;
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
 /* Index page
    ========================================================================== */
 

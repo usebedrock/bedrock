@@ -9,6 +9,9 @@ module.exports = {
       'Components',
     ]
   },
+  ui: {
+    dark: false
+  },
   icons: {
     generateIconsFromSource: false,
     hasSvgIcons: true

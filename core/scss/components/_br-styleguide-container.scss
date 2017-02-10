@@ -75,3 +75,22 @@ html.br-styleguide body {
   font-weight: 700;
   margin: 0 0 12px;
 }
+
+/* Dark Bedrock UI variant
+   ========================================================================== */
+
+html.br-styleguide--dark body {
+  background: #333;
+  color: #fff;
+
+  .br-styleguide-content {
+    background: #333;
+    color: #fff;
+  }
+
+  .br-styleguide-navigation-holder {
+    a {
+      color: inherit;
+    }
+  }
+}
