@@ -19,7 +19,7 @@ const COMPONENT_CATEGORIES = {
 };
 
 function discover() {
-  const files = glob.sync(path.join(TEMPLATES_BASE_DIRECTORY, '**/*.jade'));
+  const files = glob.sync(path.join(TEMPLATES_BASE_DIRECTORY, '**/*.jade')).map(file => file.replace(/\//g, path.sep));
   let componentGroups = {};
 
   // Check if old `_patterns/` directory is still in use
@@ -28,8 +28,9 @@ function discover() {
   }
 
   for (const file of files) {
+    console.log(file, TEMPLATES_BASE_DIRECTORY)
     const filename = file.replace(TEMPLATES_BASE_DIRECTORY, '').replace('.jade', '');
-    const parts = filename.split('/');
+    const parts = filename.split(path.sep);
     const groupId = parts[0];
     const componentName = parts[1];
     const category = componentGroups[groupId];

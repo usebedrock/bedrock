@@ -9,11 +9,11 @@ const ICONS_DIRECTORY = paths.content.icons.sourceDirectory;
 function discover() {
   const svgIcons = glob.sync(path.join(ICONS_DIRECTORY, '*.svg'))
     .filter(file => file.indexOf('.svg') !== -1)
-    .map(filename => filename.replace(ICONS_DIRECTORY + '/', '').replace('.svg', ''));
+    .map(filename => path.parse(filename).name);
 
   const iconFontIcons = glob.sync(paths.content.iconFont.sourceFiles)
     .filter(file => file.indexOf('.svg') !== -1)
-    .map(filename => filename.split(/[\\|/]/).slice(-1).pop().split('.').slice(0, -1).join('.'));
+    .map(filename => path.parse(filename).name);
 
   return {
     svg: svgIcons,
