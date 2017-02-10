@@ -39,7 +39,10 @@ function getDefaultLocals() {
     if (!language || language === 'jade') {
       return jadeMarkup;
     } else if (language === 'html') {
-      return jade.compile(jadeMarkup, {
+      const indentedJadeMarkup = jadeMarkup.split('\n').map(line => `\t${line}`).join('\n');
+      const markupWithLayout = `extends /../core/templates/layouts/sample\n\nblock content\n${indentedJadeMarkup}`;
+
+      return jade.compile(markupWithLayout, {
         pretty: true,
         basedir: 'content',
         filename: componentFileLocation
