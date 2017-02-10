@@ -20,7 +20,6 @@ module.exports = function () {
     .pipe(sourcemaps.init())
     .pipe(sass())
     .on('start', function () {
-      console.log('START!');
     })
     .on('error', function (err) {
       notifier.notify({

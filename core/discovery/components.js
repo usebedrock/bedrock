@@ -28,7 +28,6 @@ function discover() {
   }
 
   for (const file of files) {
-    console.log(file, TEMPLATES_BASE_DIRECTORY)
     const filename = file.replace(TEMPLATES_BASE_DIRECTORY, '').replace('.jade', '');
     const parts = filename.split(path.sep);
     const groupId = parts[0];
