@@ -11,12 +11,12 @@ const templates = require('./core/tasks/templates');
 const copy = require('./core/tasks/copy');
 const watch = require('./core/tasks/watch');
 const server = require('./core/tasks/server');
-const linter = require('./core/tasks/linter');
+const jadeLinter = require('./core/tasks/jade-linter');
 const iconFont = require('./core/tasks/icon-font');
 
 gulp.task('sass', sass);
 gulp.task('server', server);
-gulp.task('lint', linter);
+gulp.task('linthtml', jadeLinter);
 gulp.task('copy:images', copy.images);
 gulp.task('copy:fonts', copy.fonts);
 gulp.task('copy:favicon', copy.favicon);
