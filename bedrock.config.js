@@ -1,7 +1,7 @@
 module.exports = {
   styleguide: {
     snippetLanguage: 'html',
-    colors: './content/scss/settings/_colors.scss',
+    colors: './content/scss/_settings.colors.scss',
     categoryOrder: [
       'Style guide',
       'Patterns',
