@@ -1,6 +1,6 @@
 include ../mixins/render-page-tree
 
-#__prototype-nav.br-prototype-nav(class= config.ui.dark ? 'br-prototype-nav--dark' : null)
+#__prototype-nav.br-prototype-nav(class= config.ui && config.ui.dark ? 'br-prototype-nav--dark' : null)
     .br-prototype-nav-inner
         h3.br-prototype-nav-main-heading Prototype navigation
         p.br-prototype-nav-text Press Ctrl + M to toggle this navigation.
