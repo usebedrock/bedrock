@@ -39,7 +39,7 @@ function getDefaultLocals() {
     if (!language || language === 'jade') {
       return jadeMarkup;
     } else if (language === 'html') {
-      const indentedJadeMarkup = jadeMarkup.split('\n').map(line => `   ${line}`).join('\n');
+      const indentedJadeMarkup = jadeMarkup.split('\n').map(line => `    ${line}`).join('\n');
       const markupWithLayout = `extends /../core/templates/layouts/sample\n\nblock content\n${indentedJadeMarkup}`;
 
       return jade.compile(markupWithLayout, {
