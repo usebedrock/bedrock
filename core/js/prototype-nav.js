@@ -1,6 +1,7 @@
 const $ = require('jquery');
 
-const ACTIVATION_KEYCODE = 77; // 'M' key
+const ACTIVATION_KEYCODE = 77; // 'M' key or 'B' key for Windows
+const ACTIVATION_KEYCODE_WINDOWS = 66; // 'M' key or 'B' key for Windows
 const ESC_KEYCODE = 27;
 const NAV_STATE_STORAGE_KEY = 'bedrock.prototypeNavState';
 
@@ -107,10 +108,10 @@ function toggleNavigation() {
 }
 
 $(window).on('keyup', function (e) {
-  if (e.keyCode === ESC_KEYCODE) {
+  if (e.keyCode === ESC_KEYCODE ) {
     closeNavigation();
   }
-  else if (e.ctrlKey && e.keyCode == ACTIVATION_KEYCODE) {
+  else if (e.ctrlKey && (e.keyCode == ACTIVATION_KEYCODE || e.keyCode == ACTIVATION_KEYCODE_WINDOWS)) {
     toggleNavigation();
   }
 });
