@@ -1,4 +1,5 @@
 const glob = require('glob');
+const chalk = require('chalk');
 const path = require('path');
 const express = require('express');
 const portfinder = require('portfinder');
@@ -82,10 +83,18 @@ module.exports = function (done) {
   });
 
   app.get('*', function (req, res) {
-    const viewName = req.path.replace('/', '').replace('.html', '');
-    renderView(req, res, viewName, {
-      pathname: viewName
-    });
+    if (req.path.includes('.html') || req.path === '/') {
+      const viewName = req.path.replace('/', '').replace('.html', '');
+      renderView(req, res, viewName, {
+        pathname: viewName
+      });
+    } else {
+      res.sendFile(path.join(__dirname, paths.compiled.path, req.path), function () {
+        console.log(`${chalk.red('The file')} ${chalk.red.bold(req.path)} ${chalk.red('does not exist.')}`);
+        console.log(`\tRequested from ${chalk.bold(req.header('Referer'))}`);
+        res.sendStatus(404);
+      });
+    }
   });
 
   portfinder.getPort((err, port) => {
