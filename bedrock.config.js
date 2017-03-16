@@ -1,7 +1,7 @@
 module.exports = {
   styleguide: {
     snippetLanguage: 'html',
-    colors: './content/scss/settings/_colors.scss',
+    colors: './content/scss/_settings.colors.scss',
     categoryOrder: [
       'Style guide',
       'Patterns',
@@ -13,7 +13,7 @@ module.exports = {
     dark: false
   },
   icons: {
-    generateIconsFromSource: false,
+    generateIconFont: false,
     hasSvgIcons: true
   },
   jade: {

@@ -28,7 +28,10 @@ module.exports = {
         if (extension === '.md') {
           parsedFile.body = marked(parsedFile.body);
         } else if (extension === '.jade') {
-          const compiler = jade.compile(parsedFile.body, Object.assign({}, config.jade, {
+          const indentedJadeMarkup = parsedFile.body.split('\n').map(line => `    ${line}`).join('\n');
+          const markupWithLayout = `extends /../core/templates/layouts/sample\n\nblock content\n${indentedJadeMarkup}`;
+
+          const compiler = jade.compile(markupWithLayout, Object.assign({}, config.jade, {
             filename: docPath
           }));
           parsedFile.body = compiler(Object.assign({}, locals.getDefaultLocals(), {

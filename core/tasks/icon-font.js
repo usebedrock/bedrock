@@ -15,7 +15,7 @@ const cmd = `fontcustom compile ${paths.content.iconFont.sourceDirectory} --name
 
 module.exports = function (done) {
 
-  if (!config.icons.generateIconsFromSource) {
+  if (!config.icons.generateIconFont) {
     return done();
   }
 
