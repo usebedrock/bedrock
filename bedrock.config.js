@@ -10,7 +10,7 @@ module.exports = {
     ]
   },
   icons: {
-    generateIconsFromSource: false,
+    generateIconFont: false,
     hasSvgIcons: true
   },
   jade: {
