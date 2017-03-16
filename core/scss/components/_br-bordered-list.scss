@@ -7,6 +7,7 @@
    ========================================================================== */
 
 $br-bordered-list-border-color:                  #DDD !default;
+$br-bordered-list-border-color-inverse:          rgba(#FFF,0.3) !default;
 
 // Padding
 $br-bordered-list-item-padding:                  4px !default;
@@ -51,6 +52,9 @@ $br-bordered-list-title-font-size:               15px  !default;
     a {
       text-decoration: none;
       border-bottom: 1px solid $br-bordered-list-border-color;
+      .br-styleguide--dark & {
+        border-color: $br-bordered-list-border-color-inverse;
+      }
     }
     a:hover {
       background: rgba(0,0,0,0.1);
