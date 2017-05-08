@@ -1,5 +1,6 @@
 ---
 title: Page 2
+category: Style guide
 order: 2
 ---
 
