@@ -1,7 +1,17 @@
 include ../mixins/render-page-tree
 
-#__prototype-nav.br-prototype-nav
+- var basePage;
+
+#__prototype-nav.br-prototype-nav(class=basePage && basePage.states ? '.br-prototype-nav--has-states' : null)
     .br-prototype-nav-inner
         h3.br-prototype-nav-main-heading Prototype navigation
         p.br-prototype-nav-text Press Ctrl + M to toggle this navigation.
         +renderPageTree
+
+    if basePage && basePage.states
+        .br-prototype-page-states
+            h3.br-prototype-nav-main-heading Page states for #{basePage.name}
+            ul
+                li: a(href=basePage.href) Base page
+                each state in basePage.states
+                    li: a(href=state.href)= state.name.replace(basePage.name + '--', '')
