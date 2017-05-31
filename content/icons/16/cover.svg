@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="12px" height="15px" viewBox="0 0 12 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>cover</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols---Navbars" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="top-bar-collections-overview" transform="translate(-743.000000, -17.000000)">
+            <g id="cover" transform="translate(743.000000, 17.000000)">
+                <rect id="Rectangle-1282" fill="#444B51" x="0" y="0" width="12" height="15" rx="1"></rect>
+                <polygon id="Rectangle-62" fill="#FFFFFF" points="11 10 11 14 7 14"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
