@@ -16,6 +16,7 @@ html.br-styleguide body {
   width: 100%;
   margin: 0;
   padding: 0;
+
   background: #FFF;
 }
 
@@ -72,25 +73,10 @@ html.br-styleguide body {
 .br-componentgroup-header,
 .br-documentation-header {
   font-size: 20px;
-  font-weight: 700;
+  font-weight: $br-heading-font-weight;
+  color: $br-color-headings;
+  @if $br-dark == true {
+    color: $br-color-headings-dark;
+  }
   margin: 0 0 12px;
-}
-
-/* Dark Bedrock UI variant
-   ========================================================================== */
-
-html.br-styleguide--dark body {
-  background: #333;
-  color: #fff;
-
-  .br-styleguide-content {
-    background: #333;
-    color: #fff;
-  }
-
-  .br-styleguide-navigation-holder {
-    a {
-      color: inherit;
-    }
-  }
 }
