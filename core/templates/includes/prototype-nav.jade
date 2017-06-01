@@ -11,7 +11,7 @@ include ../mixins/render-page-tree
     if basePage && basePage.states
         .br-prototype-page-states
             h3.br-prototype-nav-main-heading Page states for #{basePage.name}
-            ul
+            ul.br-bordered-list
                 li: a(href=basePage.href) Base page
                 each state in basePage.states
                     li: a(href=state.href)= state.name.replace(basePage.name + '--', '')
