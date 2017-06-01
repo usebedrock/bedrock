@@ -26,4 +26,7 @@ pre.br-typography-sample-code {
   border: 0;
   color: #999;
   white-space: pre-wrap;
+  .br-styleguide--dark & {
+    color: rgba(#FFF,0.5);
+  }
 }
