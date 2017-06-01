@@ -91,8 +91,14 @@
   padding: 0;
 }
 
-#icons .br-sample-content {
-  -webkit-column-count: 3;
-  -moz-column-count: 3;
-  column-count: 3;
+#icon-docs .br-sample-content {
+  column-count: 4;
+  > div {
+    break-inside: avoid;
+    text-align: center;
+    padding: 5px;
+    code {
+      font-size: 12px;
+    }
+  }
 }
