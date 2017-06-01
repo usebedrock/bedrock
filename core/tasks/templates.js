@@ -40,8 +40,7 @@ module.exports = {
           ])
           .pipe(data(function (file) {
             return Object.assign({}, getDefaultLocals(), {
-              componentGroup: defaultLocals.components.byGroup[componentGroup],
-              pathname: file.path.replace(path.join(process.cwd(), paths.content.templates.path), '').replace('.jade', ''),
+              componentGroup: defaultLocals.components.byGroup[componentGroup]
             });
           }))
           .pipe(gulpJade(config.jade))
@@ -57,9 +56,7 @@ module.exports = {
             paths.core.templates.styleguide.index
           ])
           .pipe(data(function (file) {
-            return Object.assign({}, getDefaultLocals(), {
-              pathname: file.path.replace(path.join(process.cwd(), paths.content.templates.path), '').replace('.jade', ''),
-            });
+            return getDefaultLocals();
           }))
           .pipe(gulpJade(config.jade))
           .pipe(prettify(config.prettify))
@@ -75,8 +72,7 @@ module.exports = {
         return gulp.src(paths.core.templates.styleguide.doc)
           .pipe(data(function (file) {
             return Object.assign({}, getDefaultLocals(), {
-              doc,
-              pathname: file.path.replace(path.join(process.cwd(), paths.content.templates.path), '').replace('.jade', ''),
+              doc
             });
           }))
           .pipe(gulpJade(config.jade))
