@@ -40,7 +40,7 @@ module.exports = {
     },
     icons: {
       sourceDirectory: path.join(contentPath, 'icons'),
-      sourceFiles: path.join(contentPath, 'icons', '**/*.svg')
+      sourceFiles: path.join(contentPath, 'icons', '*.svg')
     },
     iconFont: {
       sourceDirectory: path.join(contentPath, 'icon-font-source/'),
