@@ -1,10 +1,6 @@
 mixin renderPage(entry)
-    if !entry.path.includes('--')
-        - var entryPath = entry.path.replace(/\.jade|\.pug/, '');
-        if pathname === entryPath || pathname.indexOf(entryPath) > -1 || (pathname === '' && entryPath === 'index')
-            - basePage = entry;
-        li
-            a(href=entry.href)= entry.name
+    li
+        a(href=entry.href)= entry.name
 
 mixin renderDirectory(entry)
     li.br-tree-dir
