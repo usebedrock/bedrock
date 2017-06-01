@@ -39,8 +39,6 @@ function movePageStatesToParentPage(obj, index, collection) {
     return;
   }
 
-  console.log(obj.name.includes('--'), obj.name)
-
   if (obj.name.includes('--')) {
     const parentStateName = obj.name.split('--')[0];
     const parentState = collection.find(obj => obj.name === parentStateName);
