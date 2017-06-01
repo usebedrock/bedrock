@@ -7,7 +7,7 @@ mixin iconCategory(category, name, mode)
             a.br-sample-header-link(href="#icons") #
         .br-sample-content
             if mode === 'svg'
-                each icon in icons.svg['']
+                each icon in icons.svg[category]
                     div
                         +icon([category, icon.name].join('/'))
                         code= icon.name
