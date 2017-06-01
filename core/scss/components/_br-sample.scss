@@ -3,7 +3,7 @@
 
 .br-component-header {
   font-size: 24px;
-  font-weight: $br-heading-font-weight;
+  font-weight: 700;
 }
 
 /* br-sample
@@ -74,9 +74,6 @@
 .br-sample-header .br-sample-header-link {
   float: right;
   color: rgba(0,0,0,0.45);
-  @if $br-dark == true {
-    color: rgba(#FFF,0.45);
-  }
   font-size: 16px;
   margin: 10px 0;
   padding: 0 2px 0 0;
@@ -89,69 +86,13 @@
 .br-sample-header .br-sample-heading {
   float: left;
   font-size: 16px;
-  font-weight: $br-heading-font-weight;
+  font-weight: 700;
   margin: 10px 0;
   padding: 0;
-  color: $br-color-headings;
-  @if $br-dark == true {
-    color: $br-color-headings-dark;
-  }
 }
 
-#icon-docs .br-sample-content {
-  column-count: 4;
-  > div {
-    break-inside: avoid;
-    text-align: center;
-    padding: 5px;
-    code {
-      font-size: 12px;
-    }
-  }
+#icons .br-sample-content {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
 }
-
-
-/* Dark Bedrock UI variant
-   ========================================================================== */
-
-@if $br-dark == true {
-    
-  html.br-styleguide--dark body {
-    background: $br-background-dark;
-    color: $br-color-text-dark;
-
-    .br-sample-btn {
-      background: rgba(#FFF,0.1);
-      border-color: rgba(#FFF,0.2);
-      color: $br-color-headings-dark;
-      &:hover {
-        background: rgba(#FFF,0.3);
-      }
-    }
-
-    .br-sample-markup {
-      background: rgba(#FFF,0.1);
-      border-color: rgba(#FFF,0.2);
-    }
-
-    .br-sample-content {
-      background: $br-background-dark;
-      border-color: rgba(#FFF,0.2);
-    }
-
-    .br-styleguide-content {
-      background: $br-background-dark; // project specific
-    }
-
-    .br-styleguide-navigation-holder {
-      a {
-        color: inherit;
-      }
-    }
-  }
-
-  .br-styleguide-container code {
-    background: rgba(#FFF, 0.2);
-  }
-
-} 

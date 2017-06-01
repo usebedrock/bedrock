@@ -32,15 +32,11 @@ html.br-prototype-nav-is-open {
   z-index: 2000;
   transform: translateX(-100%);
   width: $br-prototype-nav-width;
-  overflow: hidden;
+  overflow-y: auto;
   font-size: 13px;
-  display: flex;
-  flex-direction: column;
 
   .br-prototype-nav-inner {
     padding: 20px;
-    overflow: hidden;
-    overflow-y: auto;
   }
 
   &.br-prototype-nav-open {
@@ -71,22 +67,6 @@ html.br-prototype-nav-is-open {
   padding: 0 0 12px;
 }
 
-/* Dark Bedrock UI variant
-   ========================================================================== */
-
-.br-prototype-nav--dark {
-  background-color: #333;
-  color: #fff;
-
-  .br-prototype-nav-main-heading {
-    color: #fff;
-  }
-
-  a {
-    color: inherit;
-  }
-}
-
 /* Index page
    ========================================================================== */
 
@@ -99,12 +79,4 @@ html.br-prototype-nav-is-open {
   li {
     break-inside: avoid;
   }
-}
-
-/* Page states
-   ========================================================================== */
-
-.br-prototype-page-states {
-  margin-top: auto;
-  padding: 20px;
 }

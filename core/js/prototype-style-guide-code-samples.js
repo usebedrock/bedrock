@@ -43,8 +43,7 @@ $codeBlocks.each(function () {
 
   let editorOptions = {
     value: code,
-    readOnly: true,
-    theme: 'monokai',
+    readOnly: true
   };
 
   switch (config.styleguide.snippetLanguage) {
