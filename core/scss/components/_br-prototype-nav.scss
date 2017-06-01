@@ -32,11 +32,15 @@ html.br-prototype-nav-is-open {
   z-index: 2000;
   transform: translateX(-100%);
   width: $br-prototype-nav-width;
-  overflow-y: auto;
+  overflow: hidden;
   font-size: 13px;
+  display: flex;
+  flex-direction: column;
 
   .br-prototype-nav-inner {
     padding: 20px;
+    overflow: hidden;
+    overflow-y: auto;
   }
 
   &.br-prototype-nav-open {
@@ -79,4 +83,13 @@ html.br-prototype-nav-is-open {
   li {
     break-inside: avoid;
   }
+}
+
+/* Page states
+   ========================================================================== */
+
+.br-prototype-page-states {
+  box-shadow: 2px 0 5px rgba(#000, 0.3);
+  margin-top: auto;
+  padding: 20px;
 }
