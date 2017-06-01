@@ -1,25 +1,19 @@
 include icon
 
-mixin iconCategory(category, name, mode)
-    .br-sample
+mixin iconsOverview(mode)
+    .br-sample(id="icons")
         .br-sample-header.br-sample-clearfix
-            h3.br-sample-heading= name
+            h3.br-sample-heading
+                | Icon list
             a.br-sample-header-link(href="#icons") #
         .br-sample-content
             if mode === 'svg'
-                each icon in icons.svg[category]
+                each icon in icons.svg
                     div
-                        +icon([category, icon.name].join('/'))
-                        code= icon.name
+                        +icon(icon)
+                        code= icon
             if mode === 'icon-font'
                 each icon in icons.iconFont
                     div
                         i.glyphicon(class="glyphicon-#{icon}")
                         code= icon
-
-mixin iconsOverview(mode)
-    +iconCategory('', 'Icons', mode)
-    if mode === 'svg'
-        each category, categoryKey in icons.svg
-            if categoryKey
-                +iconCategory(categoryKey, 'Icons/' + categoryKey, mode)

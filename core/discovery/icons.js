@@ -1,32 +1,22 @@
+'use strict';
+
 const path = require('path');
 const glob = require('glob');
-const groupBy = require('lodash/collection/groupBy');
-
 const paths = require('../paths');
 
-function isSvgFile(filename) {
-  return path.parse(filename).ext === '.svg';
-}
+const ICONS_DIRECTORY = paths.content.icons.sourceDirectory;
 
 function discover() {
-  const svgIcons = glob.sync(paths.content.icons.sourceFiles)
-    .filter(isSvgFile)
-    .map(filename => {
-      const parsedPath = path.parse(filename);
-      let category = parsedPath.dir.replace(`${paths.content.icons.sourceDirectory}`, '').replace('/', '');
-
-      return {
-        name: path.parse(filename).name,
-        category,
-      };
-    });
+  const svgIcons = glob.sync(path.join(ICONS_DIRECTORY, '*.svg'))
+    .filter(file => file.indexOf('.svg') !== -1)
+    .map(filename => path.parse(filename).name);
 
   const iconFontIcons = glob.sync(paths.content.iconFont.sourceFiles)
-    .filter(isSvgFile)
+    .filter(file => file.indexOf('.svg') !== -1)
     .map(filename => path.parse(filename).name);
 
   return {
-    svg: groupBy(svgIcons, 'category'),
+    svg: svgIcons,
     iconFont: iconFontIcons,
   }
 }
