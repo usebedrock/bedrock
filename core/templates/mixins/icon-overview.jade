@@ -1,21 +1,22 @@
 include icon
 
 mixin iconCategory(category, name, mode)
-    .br-sample
-        .br-sample-header.br-sample-clearfix
-            h3.br-sample-heading= name
-            a.br-sample-header-link(href="#icons") #
-        .br-sample-content
-            if mode === 'svg'
-                each icon in icons.svg[category]
-                    div
-                        +icon([category, icon.name].join('/'))
-                        code= icon.name
-            if mode === 'icon-font'
-                each icon in icons.iconFont
-                    div
-                        i.glyphicon(class="glyphicon-#{icon}")
-                        code= icon
+    if icons.svg[category]
+        .br-sample
+            .br-sample-header.br-sample-clearfix
+                h3.br-sample-heading= name
+                a.br-sample-header-link(href="#icons") #
+            .br-sample-content
+                if mode === 'svg'
+                    each icon in icons.svg[category]
+                        div
+                            +icon([category, icon.name].join('/'))
+                            code= icon.name
+                if mode === 'icon-font'
+                    each icon in icons.iconFont
+                        div
+                            i.glyphicon(class="glyphicon-#{icon}")
+                            code= icon
 
 mixin iconsOverview(mode)
     +iconCategory('', 'Icons', mode)
