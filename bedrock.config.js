@@ -10,7 +10,7 @@ module.exports = {
     ]
   },
   ui: {
-    dark: true
+    dark: false
   },
   icons: {
     generateIconFont: false,
