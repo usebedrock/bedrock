@@ -75,11 +75,11 @@ html.br-prototype-nav-is-open {
    ========================================================================== */
 
 .br-prototype-nav--dark {
-  background-color: #333;
-  color: #fff;
+  background-color: $br-background-dark;
+  color: $br-color-text-dark;
 
   .br-prototype-nav-main-heading {
-    color: #fff;
+    color: $br-color-headings-dark;
   }
 
   a {
