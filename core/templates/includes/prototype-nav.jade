@@ -1,9 +1,9 @@
 include ../mixins/render-page-tree
 
-- var basePage;
-- var classes: [ config.ui && config.ui.dark ? 'br-prototype-nav--dark' : null , basePage && basePage.states ? '.br-prototype-nav--has-states' : null]
+- var basePage
+- var navClasses = [ config.ui && config.ui.dark ? 'br-prototype-nav--dark' : null , basePage && basePage.states ? 'br-prototype-nav--has-states' : null]
 
-#__prototype-nav.br-prototype-nav(class=classes.join(" "))
+#__prototype-nav.br-prototype-nav(class=navClasses.join(" "))
     .br-prototype-nav-inner
         h3.br-prototype-nav-main-heading Prototype navigation
         p.br-prototype-nav-text Press Ctrl + M to toggle this navigation.
