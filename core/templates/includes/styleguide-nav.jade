@@ -9,7 +9,8 @@
                     each group in category
                         - var groupName = group.docs ? group.docs.attributes.title || group.group.id : group.group.id
                         li
-                            a(href="/styleguide/#{group.group.id}.html")= groupName
+                            a(href="/styleguide/#{group.group.id}.html" class='#{ "styleguide/"+group.group.id == pathname ? "br-bordered-list__link--active" : "" }')
+                                |  #{groupName}
 
         if docs.byCategory[docsCategoryName]
             h4.br-bordered-list-title= docsCategoryName
