@@ -1,5 +1,14 @@
 .br-styleguide-navigation-holder
     each docsCategoryName in config.styleguide.categoryOrder
+
+        if docs.byCategory[docsCategoryName]
+            h4.br-bordered-list-title= docsCategoryName
+            ul.br-bordered-list
+                each doc in docs.byCategory[docsCategoryName]
+                    li
+                        a(href="/styleguide/docs/#{doc.attributes.filename}.html", class='#{ "styleguide/docs/"+doc.attributes.filename == pathname ? "br-bordered-list__link--active" : "" }')
+                            | #{doc.attributes.title}
+
         if docsCategoryName === 'Components'
             h4.br-bordered-list-title Components
             each category, categoryName in components.byCategory
@@ -11,10 +20,3 @@
                         li
                             a(href="/styleguide/#{group.group.id}.html" class='#{ "styleguide/"+group.group.id == pathname ? "br-bordered-list__link--active" : "" }')
                                 |  #{groupName}
-
-        if docs.byCategory[docsCategoryName]
-            h4.br-bordered-list-title= docsCategoryName
-            ul.br-bordered-list
-                each doc in docs.byCategory[docsCategoryName]
-                    li: a(href="/styleguide/docs/#{doc.attributes.filename}.html")= doc.attributes.title
-
