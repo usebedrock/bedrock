@@ -10,18 +10,19 @@ h2.br-documentation-header Icons
 
 .br-content
 
-    h3 SVG icons
+    if config.icons.hasSvgIcons
+        h3 SVG icons
 
-    p
-        | The SVG icon system is based on directly embedding SVG files into the markup. Within Bedrock, we use Jade to render these SVG's instead of
-        | having to inline them. You can either inline them, or build a solution that does it for you.
+        p
+            | The SVG icon system is based on directly embedding SVG files into the markup. Within Bedrock, we use Jade to render these SVG's instead of
+            | having to inline them. You can either inline them, or build a solution that does it for you.
 
-    p
-        | The SVG content should be contained in a <code>.svg-icon</code> div that also get an icon-specific class based on its
-        | name (for example: <code>.svg-icon.svg-icon-add</code>. This allows us to style and colorize specific icons.
+        p
+            | The SVG content should be contained in a <code>.svg-icon</code> div that also get an icon-specific class based on its
+            | name (for example: <code>.svg-icon.svg-icon-add</code>. This allows us to style and colorize specific icons.
 
-    #icon-docs
-        +iconsOverview('svg')
+        #icon-docs
+            +iconsOverview('svg')
 
     if config.icons.generateIconFont
         h3 Icon font
