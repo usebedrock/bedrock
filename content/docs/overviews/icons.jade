@@ -22,11 +22,11 @@ h2.br-documentation-header Icons
             | name (for example: <code>.svg-icon.svg-icon-add</code>. This allows us to style and colorize specific icons.
 
         #icon-docs
-            +iconsOverview('svg')
+            +iconsOverview('svg', 'SVG icons')
 
     if config.icons.generateIconFont
         h3 Icon font
         p
             | The icon font system creates an icon font based on SVG images in the <code>content/icon-font-source/</code> directory.
 
-        +iconsOverview('icon-font')
+        +iconsOverview('icon-font', 'Icon font')
