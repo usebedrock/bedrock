@@ -1,3 +1,5 @@
+'use strict';
+
 const path = require('path');
 const glob = require('glob');
 const groupBy = require('lodash/collection/groupBy');
