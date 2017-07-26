@@ -29,6 +29,7 @@ html.br-prototype-nav-is-open {
   top: 0;
   bottom: 0;
   left: 0;
+  line-height: 1.5;
   z-index: 2000;
   transform: translateX(-100%);
   width: $br-prototype-nav-width;
