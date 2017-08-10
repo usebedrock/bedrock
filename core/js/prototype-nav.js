@@ -1,6 +1,7 @@
 const $ = require('jquery');
 
-const ACTIVATION_KEYCODE = 77; // 'M' key
+const ACTIVATION_KEYCODE = 77; // 'M' key or 'B' key for Windows
+const ACTIVATION_KEYCODE_WINDOWS = 66; // 'M' key or 'B' key for Windows
 const ESC_KEYCODE = 27;
 const NAV_STATE_STORAGE_KEY = 'bedrock.prototypeNavState';
 
@@ -24,6 +25,7 @@ try {
 $prototypeNav
   .find('.br-tree-dir-title')
   .each(function () {
+    let randomId = Math.floor(Math.random() * 1000)
     let moduleIds = $(this)
       .parentsUntil('.br-bordered-list')
       .find('.br-tree-dir-title')
@@ -35,7 +37,7 @@ $prototypeNav
     const indexOfClickedModule = moduleIds.findIndex(e => e === $(this).text());
     moduleIds = moduleIds.splice(0, indexOfClickedModule + 1);
 
-    $(this).attr('id', moduleIds.join('-'));
+    $(this).attr('id', moduleIds.join('-') + randomId);
   });
 
 /**
@@ -107,10 +109,10 @@ function toggleNavigation() {
 }
 
 $(window).on('keyup', function (e) {
-  if (e.keyCode === ESC_KEYCODE) {
+  if (e.keyCode === ESC_KEYCODE ) {
     closeNavigation();
   }
-  else if (e.ctrlKey && e.keyCode == ACTIVATION_KEYCODE) {
+  else if (e.ctrlKey && (e.keyCode == ACTIVATION_KEYCODE || e.keyCode == ACTIVATION_KEYCODE_WINDOWS)) {
     toggleNavigation();
   }
 });

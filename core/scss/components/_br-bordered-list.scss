@@ -7,6 +7,7 @@
    ========================================================================== */
 
 $br-bordered-list-border-color:                  #DDD !default;
+$br-bordered-list-border-color-inverse:          rgba(#FFF,0.2) !default;
 
 // Padding
 $br-bordered-list-item-padding:                  4px !default;
@@ -21,7 +22,7 @@ $br-bordered-list-title-font-size:               15px  !default;
    ========================================================================== */
 
 .br-bordered-list-title {
-  font-weight: 600;
+  font-weight: $br-heading-font-weight;
   padding: 0;
   margin: 0 0 12px;
   font-size: $br-bordered-list-title-font-size;
@@ -51,12 +52,22 @@ $br-bordered-list-title-font-size:               15px  !default;
     a {
       text-decoration: none;
       border-bottom: 1px solid $br-bordered-list-border-color;
+      .br-prototype-nav--dark &,
+      .br-styleguide--dark & {
+        border-color: $br-bordered-list-border-color-inverse;
+      }
     }
     a:hover {
       background: rgba(0,0,0,0.1);
+      .br-styleguide--dark & {
+        background: rgba(255,255,255,0.1);
+      }
     }
-    ul li:last-child a {
-      border: none;
+    a.br-bordered-list__link--active {
+      background: rgba(0,0,0,0.15);
+      .br-styleguide--dark & {
+        background: rgba(255,255,255,0.15);
+      }
     }
   }
 }

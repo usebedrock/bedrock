@@ -1,7 +1,10 @@
 ---
 title: Page 2
+category: Style guide
 order: 2
 ---
+
+## Page 2 title
 
 This page is here to illustrate how multiple page documentation works.
 

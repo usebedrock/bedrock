@@ -1,5 +1,6 @@
 ---
 title: Introduction
+category: Style guide
 order: 1
 ---
 

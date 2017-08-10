@@ -23,7 +23,7 @@ function mapChildren(children) {
 }
 
 function addPageInfo(page) {
-  page.href = '/' + page.path.replace('.jade', '.html').replace('index.html', '');
+  page.href = '/' + page.path.replace('.jade', '.html');
   page.name = page.name.replace('.jade', '');
   page.id = page.path.replace('.jade', '');
 
@@ -34,8 +34,30 @@ function addPageInfo(page) {
   return page;
 }
 
+function movePageStatesToParentPage(obj, index, collection) {
+  if (!obj) {
+    return;
+  }
+
+  if (obj.name.includes('--')) {
+    const parentStateName = obj.name.split('--')[0];
+    const parentState = collection.find(obj => obj.name === parentStateName);
+
+    // Add the state to the parent page
+    if (!parentState.states) {
+      parentState.states = [obj];
+    } else {
+      parentState.states.push(obj);
+    }
+  }
+
+  if (obj.children) {
+    obj.children.forEach(movePageStatesToParentPage);
+  }
+}
+
 function discover() {
-  return _.chain(dirTree.directoryTree(TEMPLATES_BASE_DIRECTORY, ['.jade']).children)
+  const pagesAndFoldersSortedByType = _.chain(dirTree.directoryTree(TEMPLATES_BASE_DIRECTORY, ['.jade']).children)
     .filter(obj => obj.path.charAt(0) !== '_')
     .map(obj => {
       obj = addPageInfo(obj);
@@ -47,7 +69,10 @@ function discover() {
       return obj;
     })
     .sortBy('type')
+    .forEach(movePageStatesToParentPage)
     .value();
+
+  return pagesAndFoldersSortedByType;
 }
 
 module.exports = {

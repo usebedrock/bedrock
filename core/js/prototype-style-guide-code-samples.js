@@ -40,11 +40,19 @@ $codeBlocks.each(function () {
   const code = $(this).text();
 
   $(this).empty();
-
-  let editorOptions = {
-    value: code,
-    readOnly: true
-  };
+  if ( config.ui.dark ) {
+    var editorOptions = {
+      value: code,
+      readOnly: true,
+      theme: 'monokai'
+    }
+  } else {
+    var editorOptions = {
+      value: code,
+      readOnly: true,
+      theme: 'default'
+    }
+  }
 
   switch (config.styleguide.snippetLanguage) {
     case 'jade':

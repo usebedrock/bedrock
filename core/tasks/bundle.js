@@ -30,7 +30,6 @@ function bundler() {
       this.emit('end');
     })
     .on('end', function () {
-      console.log('END!');
       if (this.err) {
         errors.updateError('js', {
           message: this.err.message,
