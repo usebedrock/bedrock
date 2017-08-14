@@ -13,6 +13,8 @@ let navState = {
 const $html = $('html');
 const $prototypeNav = $('#__prototype-nav');
 const $moduleLabels = $prototypeNav.find(`.br-tree-dir-title`);
+const $prototypeNavMainHeading = $('.br-prototype-nav-main-heading');
+const $prototypeNavMainHeadingIcon = $('.br-prototype-nav-main-heading-icon');
 
 try {
   const savedState = JSON.parse(localStorage.getItem(NAV_STATE_STORAGE_KEY));
@@ -39,6 +41,9 @@ $prototypeNav
 
     $(this).attr('id', moduleIds.join('-') + randomId);
   });
+
+  // Pass the content of the data-tooltip to svg-icon
+  $prototypeNavMainHeadingIcon.attr('data-tooltip', $prototypeNavMainHeading.data('tooltip'))
 
 /**
  * Closes a module based on ID.

@@ -59,10 +59,55 @@ html.br-prototype-nav-is-open {
 
 .br-prototype-nav-main-heading {
   color: #000;
+  display: flex;
   font-size: 15px;
   font-weight: 400;
+  justify-content: space-between;
   margin: 0;
   padding: 0 0 12px;
+}
+
+.br-prototype-nav-main-heading-icon {
+  cursor: pointer;
+  position: relative;
+
+  &:after,
+  &:before {
+    display: none;
+  }
+
+  &:after {
+    background-color: #000;
+    box-sizing: border-box;
+    color: #FFF;
+    content: attr(data-tooltip);
+    font-size: 12px;
+    padding: 4px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 25px;
+    width: calc(#{$br-prototype-nav-width} - 40px);
+  }
+
+  &:before {
+    border-color: transparent transparent #000 transparent;
+    border-style: solid;
+    border-width: 0 5px 5px 5px;
+    content: "";
+    height: 0;
+    position: absolute;
+    right: 3px;
+    top: 20px;
+    width: 0;
+  }
+
+  &:hover {
+    &:after,
+    &:before {
+      display: block;
+    }
+  }
 }
 
 .br-prototype-nav-sub-heading {
