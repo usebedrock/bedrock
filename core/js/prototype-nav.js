@@ -1,9 +1,10 @@
 const $ = require('jquery');
+const packageJson = require('../../package.json');
 
 const ACTIVATION_KEYCODE = 77; // 'M' key or 'B' key for Windows
 const ACTIVATION_KEYCODE_WINDOWS = 66; // 'M' key or 'B' key for Windows
 const ESC_KEYCODE = 27;
-const NAV_STATE_STORAGE_KEY = 'bedrock.prototypeNavState';
+const NAV_STATE_STORAGE_KEY = `bedrock.${packageJson.name}.prototypeNavState`;
 
 let navState = {
   isOpen: false,
