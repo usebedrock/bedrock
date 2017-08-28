@@ -6,7 +6,7 @@
             ul.br-bordered-list
                 each doc in docs.byCategory[docsCategoryName]
                     li
-                        a(href="/styleguide/docs/#{doc.attributes.filename}.html", class='#{ "styleguide/docs/"+doc.attributes.filename == pathname ? "br-bordered-list__link--active" : "" }')
+                        a(href=`/styleguide/docs/${doc.attributes.filename}.html`, class=`${ "styleguide/docs/" + doc.attributes.filename == pathname ? "br-bordered-list__link--active" : "" }`)
                             | #{doc.attributes.title}
 
         if docsCategoryName === 'Components' && Object.keys(components.byCategory).length > 0
@@ -18,5 +18,5 @@
                     each group in category
                         - var groupName = group.docs ? group.docs.attributes.title || group.group.id : group.group.id
                         li
-                            a(href="/styleguide/#{group.group.id}.html" class='#{ "styleguide/"+group.group.id == pathname ? "br-bordered-list__link--active" : "" }')
+                            a(href=`/styleguide/${group.group.id}.html` class=`${ "styleguide/" + group.group.id == pathname ? "br-bordered-list__link--active" : "" }`)
                                 |  #{groupName}

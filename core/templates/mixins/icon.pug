@@ -1,5 +1,5 @@
 mixin icon(name, extraClasses)
     if extraClasses
-        .svg-icon(class="svg-icon-#{name.replace('/', '-')} #{extraClasses}")!= renderSvgIcon(name)
+        .svg-icon(class=`svg-icon-${name.replace('/', '-')} ${extraClasses}`)!= renderSvgIcon(name)
     else
-        .svg-icon(class="svg-icon-#{name.replace('/', '-')}")!= renderSvgIcon(name)
+        .svg-icon(class=`svg-icon-${name.replace('/', '-')}`)!= renderSvgIcon(name)
