@@ -3,8 +3,13 @@
 const fs = require('fs');
 const _ = require('lodash');
 const paths = require('../paths');
+const config = require('../../bedrock.config');
 
 function discover() {
+  if (!config.styleguide) {
+    return [];
+  }
+
   const CATEGORY_REGEX = /\/\*\s(.*)/g;
 
   const scss = fs.readFileSync(paths.content.scss.colorsDefinition, 'utf-8');

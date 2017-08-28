@@ -13,6 +13,8 @@ const watch = require('./core/tasks/watch');
 const server = require('./core/tasks/server');
 const iconFont = require('./core/tasks/icon-font');
 
+const config = require('./bedrock.config');
+
 gulp.task('sass', sass);
 gulp.task('server', server);
 gulp.task('copy:images', copy.images);
@@ -23,7 +25,10 @@ gulp.task('copy:compiledToDist', copy.compiledToDist);
 gulp.task('bundle', bundle);
 gulp.task('icon-font', iconFont);
 
-gulp.task('templates:compile', ['templates:compile:content', 'templates:compile:styleguide', 'templates:compile:docs']);
+gulp.task('templates:compile', config.styleguide ?
+  ['templates:compile:content', 'templates:compile:styleguide', 'templates:compile:docs'] :
+  ['templates:compile:content']
+);
 gulp.task('templates:compile:content', templates.compile.content);
 gulp.task('templates:compile:styleguide', templates.compile.styleguide);
 gulp.task('templates:compile:docs', templates.compile.docs);
