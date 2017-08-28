@@ -1,10 +1,15 @@
 mixin renderPage(entry)
     if !entry.path.includes('--')
         - var entryPath = entry.path.replace(/\.jade|\.pug/, '');
+        - var isActive = false;
         if pathname === entryPath || pathname.indexOf(entryPath) > -1 || (pathname === '' && entryPath === 'index')
             - basePage = entry;
-        li
-            a(href=entry.href)= entry.name
+            - isActive = true;
+        li.br-tree-dir
+            a(href=entry.href, class=isActive ? 'br-bordered-list__link--active' : null)
+                = entry.name
+                if (entry.states)
+                    .br-tree-dir-state-count= entry.states.length
 
 mixin renderDirectory(entry)
     li.br-tree-dir
@@ -18,7 +23,8 @@ mixin renderDirectory(entry)
 
 mixin renderPageTree
     ul.br-bordered-list
-        li: a(href="/styleguide") Styleguide
+        if config.styleguide
+            li: a(href="/styleguide") Styleguide
         each entry in pages
             if entry.type === 'directory'
                 +renderDirectory(entry)

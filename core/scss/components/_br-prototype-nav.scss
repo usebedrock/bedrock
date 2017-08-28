@@ -86,6 +86,11 @@ html.br-prototype-nav-is-open {
   a {
     color: inherit;
   }
+
+  .br-tree-dir-state-count {
+    background-color: #555;
+    color: #fff;
+  }
 }
 
 /* Index page
@@ -109,4 +114,12 @@ html.br-prototype-nav-is-open {
   box-shadow: 2px 0 5px rgba(#000, 0.3);
   margin-top: auto;
   padding: 20px;
+}
+
+.br-tree-dir-state-count {
+  float: right;
+  padding: 1px 5px;
+  border-radius: 5px;
+  background-color: #eee;
+  font-size: 12px;
 }

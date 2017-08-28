@@ -1,5 +1,6 @@
 include ../mixins/render-page-tree
 
+// `basePage` is set in the `renderPageTree()` mixin, and then used in the navigation
 - var basePage
 - var navClasses = [ config.ui && config.ui.dark ? 'br-prototype-nav--dark' : null , basePage && basePage.states ? 'br-prototype-nav--has-states' : null]
 
@@ -13,6 +14,14 @@ include ../mixins/render-page-tree
         .br-prototype-page-states
             h3.br-prototype-nav-main-heading Page states
             ul.br-bordered-list
-                li: a(href=basePage.href) #{basePage.name}
+                - var basePagePath = basePage.path.replace(/\.jade|\.pug/, '');
+                - var isBasePageActive = pathname === basePagePath;
+
+                li: a(href=basePage.href, class=isBasePageActive ? 'br-bordered-list__link--active' : null)
+                    = basePage.name
+
                 each state in basePage.states
-                    li: a(href=state.href) #{state.name}
+                    - var statePagePath = state.path.replace(/\.jade|\.pug/, '');
+                    - var isStatePageActive = pathname === statePagePath;
+                    li: a(href=state.href, class=isStatePageActive ? 'br-bordered-list__link--active' : null)
+                        = state.name
