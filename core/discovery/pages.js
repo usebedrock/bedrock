@@ -72,7 +72,7 @@ function discover() {
     .forEach(movePageStatesToParentPage)
     .value();
 
-  return pagesAndFoldersSortedByType;
+  return pagesAndFoldersSortedByType.filter(p => !p.path.includes('--'));
 }
 
 module.exports = {
