@@ -9,7 +9,7 @@
                         a(href="/styleguide/docs/#{doc.attributes.filename}.html", class='#{ "styleguide/docs/"+doc.attributes.filename == pathname ? "br-bordered-list__link--active" : "" }')
                             | #{doc.attributes.title}
 
-        if docsCategoryName === 'Components'
+        if docsCategoryName === 'Components' && Object.keys(components.byCategory).length > 0
             h4.br-bordered-list-title Components
             each category, categoryName in components.byCategory
                 if Object.keys(components.byCategory).length > 1
