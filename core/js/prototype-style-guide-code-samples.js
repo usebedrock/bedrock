@@ -55,7 +55,7 @@ $codeBlocks.each(function () {
   }
 
   switch (config.styleguide.snippetLanguage) {
-    case 'jade':
+    case 'pug':
       editorOptions.mode = 'pug';
       break;
     case 'html':

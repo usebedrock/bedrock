@@ -39,10 +39,9 @@
     "gulp-data": "^1.2.0",
     "gulp-filter": "^3.0.1",
     "gulp-if": "^2.0.0",
-    "gulp-jade": "^1.1.0",
-    "gulp-jade-inheritance": "^0.5.3",
     "gulp-jsbeautifier": "^1.0.1",
     "gulp-postcss": "^6.0.1",
+    "gulp-pug": "^3.3.0",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
     "gulp-sass": "^2.0.4",
@@ -50,7 +49,6 @@
     "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.5",
     "inquirer": "^0.11.0",
-    "jade": "^1.11.0",
     "jquery": "^3.1.1",
     "js-beautify": "^1.5.10",
     "lodash": "^3.10.1",
@@ -64,5 +62,8 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.6.0"
+  },
+  "dependencies": {
+    "pug": "^2.0.0-rc.3"
   }
 }

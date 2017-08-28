@@ -14,14 +14,14 @@ include ../mixins/render-page-tree
         .br-prototype-page-states
             h3.br-prototype-nav-main-heading Page states
             ul.br-bordered-list
-                - var basePagePath = basePage.path.replace(/\.jade|\.pug/, '');
+                - var basePagePath = basePage.path.replace('.pug', '');
                 - var isBasePageActive = pathname === basePagePath;
 
                 li: a(href=basePage.href, class=isBasePageActive ? 'br-bordered-list__link--active' : null)
                     = basePage.name
 
                 each state in basePage.states
-                    - var statePagePath = state.path.replace(/\.jade|\.pug/, '');
+                    - var statePagePath = state.path.replace('.pug', '');
                     - var isStatePageActive = pathname === statePagePath;
                     li: a(href=state.href, class=isStatePageActive ? 'br-bordered-list__link--active' : null)
                         = state.name

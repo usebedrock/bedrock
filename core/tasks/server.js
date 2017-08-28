@@ -19,7 +19,7 @@ const errors = require('../util/errors');
 const app = express();
 
 app.use(express.static(paths.compiled.path));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 app.set('views', [
   path.join(process.cwd(), './content/templates'),
   path.join(process.cwd(), './core/templates')

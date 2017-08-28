@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const gulpJade = require('gulp-jade');
+const gulpPug = require('gulp-pug');
 const prettify = require('gulp-jsbeautifier');
 const notifier = require('node-notifier');
 const gutil = require('gulp-util');
@@ -8,7 +8,7 @@ const data = require('gulp-data');
 const filter = require('gulp-filter');
 const path = require('path');
 const fs = require('fs');
-const jade = require('jade');
+const pug = require('pug');
 const del = require('del');
 const es = require('event-stream');
 const config = require('../../bedrock.config');
@@ -41,10 +41,10 @@ module.exports = {
           .pipe(data(function (file) {
             return Object.assign({}, getDefaultLocals(), {
               componentGroup: defaultLocals.components.byGroup[componentGroup],
-              pathname: file.path.replace(path.join(process.cwd(), paths.content.templates.path), '').replace('.jade', ''),
+              pathname: file.path.replace(path.join(process.cwd(), paths.content.templates.path), '').replace('.pug', ''),
             });
           }))
-          .pipe(gulpJade(config.jade))
+          .pipe(gulpPug(config.pug))
           .pipe(prettify(config.prettify))
           .pipe(rename(function (path) {
             path.basename = componentGroup;
@@ -58,10 +58,10 @@ module.exports = {
           ])
           .pipe(data(function (file) {
             return Object.assign({}, getDefaultLocals(), {
-              pathname: file.path.replace(path.join(process.cwd(), paths.content.templates.path), '').replace('.jade', ''),
+              pathname: file.path.replace(path.join(process.cwd(), paths.content.templates.path), '').replace('.pug', ''),
             });
           }))
-          .pipe(gulpJade(config.jade))
+          .pipe(gulpPug(config.pug))
           .pipe(prettify(config.prettify))
           .pipe(gulp.dest(paths.dist.styleguide))
       );
@@ -76,10 +76,10 @@ module.exports = {
           .pipe(data(function (file) {
             return Object.assign({}, getDefaultLocals(), {
               doc,
-              pathname: file.path.replace(path.join(process.cwd(), paths.content.templates.path), '').replace('.jade', ''),
+              pathname: file.path.replace(path.join(process.cwd(), paths.content.templates.path), '').replace('.pug', ''),
             });
           }))
-          .pipe(gulpJade(config.jade))
+          .pipe(gulpPug(config.pug))
           .pipe(prettify(config.prettify))
           .pipe(rename(function (path) {
             path.basename = doc.attributes.filename;
@@ -98,14 +98,14 @@ module.exports = {
         .pipe(templateFilter)
         .pipe(data(function (file) {
           return Object.assign({}, getDefaultLocals(), {
-            filename: path.basename(file.path).replace('jade', 'html'),
-            pathname: file.path.replace(path.join(process.cwd(), paths.content.templates.path), '').replace('.jade', ''),
+            filename: path.basename(file.path).replace('pug', 'html'),
+            pathname: file.path.replace(path.join(process.cwd(), paths.content.templates.path), '').replace('.pug', ''),
           });
         }))
-        .pipe(gulpJade(config.jade))
+        .pipe(gulpPug(config.pug))
         .on('error', function (err) {
           notifier.notify({
-            title: 'Jade error',
+            title: 'Pug error',
             message: err.message
           });
           gutil.log(gutil.colors.red(err));

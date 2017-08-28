@@ -23,9 +23,9 @@ function mapChildren(children) {
 }
 
 function addPageInfo(page) {
-  page.href = '/' + page.path.replace('.jade', '.html');
-  page.name = page.name.replace('.jade', '');
-  page.id = page.path.replace('.jade', '');
+  page.href = '/' + page.path.replace('.pug', '.html');
+  page.name = page.name.replace('.pug', '');
+  page.id = page.path.replace('.pug', '');
 
   if (page.href === '') {
     page.href = '/';
@@ -57,7 +57,7 @@ function movePageStatesToParentPage(obj, index, collection) {
 }
 
 function discover() {
-  const pagesAndFoldersSortedByType = _.chain(dirTree.directoryTree(TEMPLATES_BASE_DIRECTORY, ['.jade']).children)
+  const pagesAndFoldersSortedByType = _.chain(dirTree.directoryTree(TEMPLATES_BASE_DIRECTORY, ['.pug']).children)
     .filter(obj => obj.path.charAt(0) !== '_')
     .map(obj => {
       obj = addPageInfo(obj);

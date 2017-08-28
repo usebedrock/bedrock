@@ -7,7 +7,7 @@ const path = require('path');
 const glob = require('glob');
 const _ = require('lodash');
 const paths = require('../paths');
-const jade = require('jade');
+const pug = require('pug');
 const beautify = require('js-beautify').html;
 const config = require('../../bedrock.config');
 const locals = require('../templates/locals');
@@ -15,7 +15,7 @@ const locals = require('../templates/locals');
 module.exports = {
   discover: function () {
     const docFiles = glob.sync(paths.content.docs)
-      .filter(g => path.parse(g).ext === '.jade' || path.parse(g).ext === '.md')
+      .filter(g => path.parse(g).ext === '.pug' || path.parse(g).ext === '.md')
       .map(function (docPath) {
         const parsedPath = path.parse(docPath);
         const fileContent = fs.readFileSync(docPath, 'utf8');
@@ -27,11 +27,11 @@ module.exports = {
 
         if (extension === '.md') {
           parsedFile.body = marked(parsedFile.body);
-        } else if (extension === '.jade') {
-          const indentedJadeMarkup = parsedFile.body.split('\n').map(line => `    ${line}`).join('\n');
-          const markupWithLayout = `extends /../core/templates/layouts/sample\n\nblock content\n${indentedJadeMarkup}`;
+        } else if (extension === '.pug') {
+          const indentedPugMarkup = parsedFile.body.split('\n').map(line => `    ${line}`).join('\n');
+          const markupWithLayout = `extends /../core/templates/layouts/sample\n\nblock content\n${indentedPugMarkup}`;
 
-          const compiler = jade.compile(markupWithLayout, Object.assign({}, config.jade, {
+          const compiler = pug.compile(markupWithLayout, Object.assign({}, config.pug, {
             filename: docPath
           }));
           parsedFile.body = compiler(Object.assign({}, locals.getDefaultLocals(), {

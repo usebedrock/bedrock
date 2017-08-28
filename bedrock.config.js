@@ -16,7 +16,7 @@ module.exports = {
     generateIconFont: false,
     hasSvgIcons: true
   },
-  jade: {
+  pug: {
     pretty: true,
     basedir: "./content"
   },

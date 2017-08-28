@@ -30,9 +30,9 @@ module.exports = {
     templates: {
       path: path.join(contentPath, 'templates/'),
       modulesPath: path.join(contentPath, 'templates/modules/'),
-      all: path.join(contentPath, 'templates/**/*.jade'),
-      baseTemplates: path.join(contentPath, 'templates/*.jade'),
-      moduleTemplates: path.join(contentPath, 'templates/modules/**/*.jade'),
+      all: path.join(contentPath, 'templates/**/*.pug'),
+      baseTemplates: path.join(contentPath, 'templates/*.pug'),
+      moduleTemplates: path.join(contentPath, 'templates/modules/**/*.pug'),
       patterns: path.join(contentPath, 'templates/_patterns/'),
       components: path.join(contentPath, 'templates/_components/'),
       data: path.join(contentPath, 'data/*')
@@ -57,10 +57,10 @@ module.exports = {
     },
     templates: {
       styleguide: {
-        index: path.join(corePath, 'templates/styleguide/index.jade'),
-        doc: path.join(corePath, 'templates/styleguide/doc.jade'),
-        colors: path.join(corePath, 'templates/styleguide/colors.jade'),
-        componentGroup: path.join(corePath, 'templates/styleguide/component-group.jade')
+        index: path.join(corePath, 'templates/styleguide/index.pug'),
+        doc: path.join(corePath, 'templates/styleguide/doc.pug'),
+        colors: path.join(corePath, 'templates/styleguide/colors.pug'),
+        componentGroup: path.join(corePath, 'templates/styleguide/component-group.pug')
       }
     }
   },

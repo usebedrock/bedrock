@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const jade = require('jade');
+const pug = require('pug');
 const config = require('../../bedrock.config');
 const paths = require('../paths');
 
@@ -33,16 +33,16 @@ function getDefaultLocals() {
   };
 
   locals.render = function (id, language) {
-    const componentFileLocation = path.join(paths.content.templates.components, id + '.jade');
-    const jadeMarkup = fs.readFileSync(componentFileLocation, 'utf8');
+    const componentFileLocation = path.join(paths.content.templates.components, id + '.pug');
+    const pugMarkup = fs.readFileSync(componentFileLocation, 'utf8');
 
-    if (!language || language === 'jade') {
-      return jadeMarkup;
+    if (!language || language === 'pug') {
+      return pugMarkup;
     } else if (language === 'html') {
-      const indentedJadeMarkup = jadeMarkup.split('\n').map(line => `    ${line}`).join('\n');
-      const markupWithLayout = `extends /../core/templates/layouts/sample\n\nblock content\n${indentedJadeMarkup}`;
+      const indentedPugMarkup = pugMarkup.split('\n').map(line => `    ${line}`).join('\n');
+      const markupWithLayout = `extends /../core/templates/layouts/sample\n\nblock content\n${indentedPugMarkup}`;
 
-      return jade.compile(markupWithLayout, {
+      return pug.compile(markupWithLayout, {
         pretty: true,
         basedir: 'content',
         filename: componentFileLocation

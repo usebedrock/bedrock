@@ -9,7 +9,7 @@ module.exports = function () {
       path.join(paths.compiled.path, '**/*'),
       '!**/*.map',
       paths.content.templates.all,
-      './core/templates/**/*.jade',
+      './core/templates/**/*.pug',
       paths.content.scss.colorsDefinition,
       paths.content.templates.data,
       paths.content.docs,

@@ -1,6 +1,6 @@
 mixin renderPage(entry)
     if !entry.path.includes('--')
-        - var entryPath = entry.path.replace(/\.jade|\.pug/, '');
+        - var entryPath = entry.path.replace('.pug', '');
         - var isActive = false;
         if pathname === entryPath || pathname.indexOf(entryPath) > -1 || (pathname === '' && entryPath === 'index')
             - basePage = entry;
@@ -13,7 +13,7 @@ mixin renderPage(entry)
 
 mixin renderDirectory(entry)
     li.br-tree-dir
-        h4.br-tree-dir-title= entry.name.replace('.jade', '')
+        h4.br-tree-dir-title= entry.name.replace('.pug', '')
         ul
             each subEntry in entry.children
                 if subEntry.type === 'directory'
