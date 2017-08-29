@@ -11,7 +11,8 @@ $br-prototype-nav-width: 250px;
    ========================================================================== */
 
 // We are supposing this is true within all projects
-body, html {
+html.br-styleguide,
+.br-styleguide body,  {
   margin: 0;
 }
 
