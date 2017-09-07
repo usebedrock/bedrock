@@ -22,8 +22,8 @@ module.exports = {
   },
   prettify: {
     logSuccess: false,
-      indentSize: 2,
-      unformatted: ['pre', 'textarea'],
-      extraLiners: ['body']
+    indentSize: 2,
+    unformatted: ['pre', 'textarea'],
+    extraLiners: ['body']
   },
 };
