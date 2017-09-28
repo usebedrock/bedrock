@@ -2,7 +2,7 @@
 
 Welcome to Bedrock.
 
-<img src="https://img.shields.io/github/downloads/atom/atom/latest/total.svg">
+<img src="https://img.shields.io/github/release/mono-company/bedrock.svg">
 
 Bedrock is a static site generator to easily make HTML prototypes. For more information, please check out [the Bedrock website](http://bedrock.mono.company/).
 
