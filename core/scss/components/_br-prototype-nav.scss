@@ -10,17 +10,16 @@ $br-prototype-nav-width: 250px;
 /* Sidebar
    ========================================================================== */
 
-// We are supposing this is true
-body, html {
+// We are supposing this is true within all projects
+html.br-styleguide,
+.br-styleguide body {
   margin: 0;
 }
 
 html.br-prototype-nav-is-open {
-  body {
-    position: relative;
-    left: $br-prototype-nav-width;
-    width: calc(100% - #{$br-prototype-nav-width});
-  }
+  position: relative;
+  left: $br-prototype-nav-width;
+  width: calc(100% - #{$br-prototype-nav-width});
 }
 
 .br-prototype-nav {
@@ -51,7 +50,12 @@ html.br-prototype-nav-is-open {
 }
 
 .br-prototype-nav-text {
-  color: #999;
+  margin: 0;
+  padding: 0 0 6px;
+  color: rgba(#000,0.5);
+  .br-prototype-nav--dark & {
+    color: rgba(#FFF,0.5);
+  }
 }
 
 /* Headings (both on index page and in sidebar)
@@ -62,14 +66,14 @@ html.br-prototype-nav-is-open {
   font-size: 15px;
   font-weight: 400;
   margin: 0;
-  padding: 0 0 12px;
+  padding: 0 0 6px;
 }
 
 .br-prototype-nav-sub-heading {
   font-size: 13px;
   font-weight: 400;
   margin: 0;
-  padding: 0 0 12px;
+  padding: 0 0 6px;
 }
 
 /* Dark Bedrock UI variant
@@ -88,8 +92,9 @@ html.br-prototype-nav-is-open {
   }
 
   .br-tree-dir-state-count {
+    text-align: center;
     background-color: #555;
-    color: #fff;
+    color: #FFF;
   }
 }
 
@@ -111,6 +116,7 @@ html.br-prototype-nav-is-open {
    ========================================================================== */
 
 .br-prototype-page-states {
+  background: rgba(#FFF,0.05);
   box-shadow: 2px 0 5px rgba(#000, 0.3);
   margin-top: auto;
   padding: 20px;
@@ -118,8 +124,8 @@ html.br-prototype-nav-is-open {
 
 .br-tree-dir-state-count {
   float: right;
-  padding: 1px 5px;
-  border-radius: 5px;
+  padding: 0 4px;
+  border-radius: 3px;
   background-color: #eee;
   font-size: 12px;
 }

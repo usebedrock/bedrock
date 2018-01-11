@@ -5,7 +5,7 @@ mixin sample(component, isLayoutClass, hideCodeSamples)
                 h3.br-sample-heading= component.docs.attributes.title || component.name
             else
                 h3.br-sample-heading= component.name
-            a.br-sample-header-link(href="#component-#{component.name}") #
+            a.br-sample-header-link(href="#component-"+component.name) #
         if component.docs
             .br-sample-documentation!= component.docs.body
         .br-sample-content!= render(component.filename, 'html')

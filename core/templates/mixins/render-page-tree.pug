@@ -2,7 +2,7 @@ mixin renderPage(entry)
     if !entry.path.includes('--')
         - var entryPath = entry.path.replace('.pug', '');
         - var isActive = false;
-        if pathname === entryPath || (pathname === '' && entryPath === 'index')
+        if pathname === entryPath || (entryPath && pathname.includes(entryPath)) || (pathname === '' && entryPath === 'index')
             - basePage = entry;
             - isActive = true;
         li.br-tree-dir
