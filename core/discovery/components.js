@@ -12,8 +12,6 @@ const paths = require('../paths');
 
 const TEMPLATES_BASE_DIRECTORY = paths.content.templates.components;
 
-const COMPONENT_CATEGORIES = config.styleguide.componentCategories;
-
 function discover() {
   const files = glob.sync(path.join(TEMPLATES_BASE_DIRECTORY, '**/*.pug')).map(file => file.replace(/\//g, path.sep));
   let componentGroups = {};
@@ -34,7 +32,7 @@ function discover() {
       componentGroups[groupId] = {
         category: {
           id: groupId.split('-')[0],
-          humanized: COMPONENT_CATEGORIES[groupId.split('-')[0]]
+          humanized: config.styleguide.componentCategories[groupId.split('-')[0]]
         },
         group: {
           id: groupId
