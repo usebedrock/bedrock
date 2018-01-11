@@ -7,7 +7,15 @@ module.exports = {
       'Patterns',
       'Overviews',
       'Components',
-    ]
+    ],
+    componentCategories: {
+      b: 'Bootstrap additions',
+      f: 'Foundation additions',
+      bc: 'Bootstrap custom components',
+      fc: 'Foundation custom components',
+      br: 'Bedrock components',
+      c: 'Custom components'
+    }
   },
   ui: {
     dark: false
