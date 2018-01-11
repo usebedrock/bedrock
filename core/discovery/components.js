@@ -13,7 +13,9 @@ const paths = require('../paths');
 const TEMPLATES_BASE_DIRECTORY = paths.content.templates.components;
 const COMPONENT_CATEGORIES = {
   b: 'Bootstrap additions',
+  f: 'Foundation additions',
   bc: 'Bootstrap custom components',
+  fc: 'Foundation custom components',
   br: 'Bedrock components',
   c: 'Custom components'
 };
