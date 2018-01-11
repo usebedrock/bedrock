@@ -1,6 +1,8 @@
 const path = require('path');
 const fs = require('fs');
 const pug = require('pug');
+const moment = require('moment');
+const marked = require('marked');
 const config = require('../../bedrock.config');
 const paths = require('../paths');
 
@@ -24,7 +26,9 @@ function getDefaultLocals() {
     pages: pages.discover(),
     icons: icons.discover(),
     config,
-    colorCategories: colors.discover()
+    colorCategories: colors.discover(),
+    moment: moment,
+    marked: marked
   };
 
   locals.renderSvgIcon = function (name) {

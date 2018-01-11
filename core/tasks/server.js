@@ -86,7 +86,9 @@ module.exports = function (done) {
     if (req.path.includes('.html') || req.path === '/') {
       const viewName = req.path.replace('/', '').replace('.html', '');
       renderView(req, res, viewName, {
-        pathname: viewName
+        pathname: viewName,
+        moment: require('moment'),
+        marked: require('marked')
       });
     } else {
       res.sendFile(path.join(__dirname, paths.compiled.path, req.path), function () {
