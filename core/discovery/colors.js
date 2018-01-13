@@ -21,7 +21,7 @@ function discover() {
     const colorLine = scssLine.split(':');
     let colorData = null;
 
-    if (colorLine.length === 2) {
+    if (colorLine.length === 2 && !colorLine[0].startsWith('//')) {
       const value = colorLine[1].trim().match(/(.+);/g)[0].replace(';', '');
 
       colorData = {
