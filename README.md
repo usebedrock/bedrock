@@ -23,24 +23,6 @@ Bedrock is a static site generator to easily make HTML prototypes. For more info
 
 See the README at https://github.com/mono-company/bedrock-cli .
 
-## Configuration
-
-The configuration lives in `bedrock.config.js`. Available options are:
-
-* `styleguide`
-    * `snippetLanguage`
-        * This modifies the language snippets shown in the styleguide. 
-        * `jade` or `html`
-    * `colors`
-        * path to the SCSS file specifying colors (for the color feature in the styleguide which shows the project's colors in a visual way)
-* `ui`
-    * `dark`
-      * This modifies the base color of the tree and styleguide. This is meant for projects that primarily have a dark "look" in general.
-* `icons`
-    * `hasSvgIcons`
-    * `generateIconFont`
-        * See "Using icon fonts"
-
 ## Using icon fonts
 
 * If you want to use icon fonts you need more dependencies than just node. Icon font generation is optional. Set `icons.generateIconFont` to `true` in `bedrock.config.js` to activate icon fonts.
