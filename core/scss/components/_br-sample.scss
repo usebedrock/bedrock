@@ -86,6 +86,13 @@
 .br-sample-documentation {
   padding: 0 0 1.2rem;
 
+  p {
+    &:only-child,
+    &:last-child {
+      margin: 0;
+    }
+  }
+
   ol,
   ul {
     counter-reset: list;
