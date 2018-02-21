@@ -24,7 +24,8 @@ table.br-typography-overview
             td
                 = sample.name
                 br
-                span.typography-sample-size= sample.size
+                span.typography-sample-size
+                    // Calculated by Javascript
             td.br-typography-sample(class=sample.extraClass)
                 .br-typography-sample-content!= sample.code
                 pre.br-typography-sample-code= sample.code
