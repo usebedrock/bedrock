@@ -86,6 +86,10 @@
 .br-sample-documentation {
   padding: 0 0 1.2rem;
 
+  &:empty {
+    display: none;
+  }
+
   p {
     &:only-child,
     &:last-child {
