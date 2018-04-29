@@ -2,4 +2,4 @@
 
 source "http://rubygems.org"
 
-gem 'fontcustom',  '1.3.8'
+gem 'fontcustom',  '2.0.0'
