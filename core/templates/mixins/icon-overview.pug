@@ -19,7 +19,7 @@ mixin iconCategory(category, name, mode)
             .br-sample-content
                 each icon in icons.iconFont
                     div
-                        i.glyphicon(class=`glyphicon-${icon}`)
+                        i.if(class=`if-${icon}`)
                         code= icon
 
 mixin iconsOverview(mode, name)

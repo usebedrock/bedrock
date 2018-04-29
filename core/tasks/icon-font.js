@@ -11,7 +11,7 @@ const browserSync = require('browser-sync');
 const FONT_NAME = 'icon-font';
 const TMP_DIRECTORY = './icon-font-tmp';
 
-const cmd = `fontcustom compile ${paths.content.iconFont.sourceDirectory} --name ${FONT_NAME} --selector=".glyphicon-{{glyph}}" -h -o ${TMP_DIRECTORY}`;
+const cmd = `fontcustom compile ${paths.content.iconFont.sourceDirectory} --name ${FONT_NAME} --selector=".if-{{glyph}}" -h -o ${TMP_DIRECTORY}`;
 
 module.exports = function (done) {
 
