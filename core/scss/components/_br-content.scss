@@ -8,7 +8,8 @@
   line-height: 1.5;
 
   p {
-    padding: 0 0 12px;
+    padding: 0;
+    margin: 0 0 1.2rem*$br-base-size-multiplier;
   }
 
   h1, h2, h3, h4 {
@@ -17,28 +18,45 @@
   }
 
   h1 {
-    padding: 0 0 10px;
+    padding: 0 0 1rem*$br-base-size-multiplier;
+    font-size: 3rem*$br-base-size-multiplier;
+    font-weight: $br-heading-font-weight;
   }
 
   h2 {
-    font-size: 24px;
-    font-weight: 700;
-    padding: 0 0 10px;
+    font-size: 2.4rem*$br-base-size-multiplier;
+    font-weight: $br-heading-font-weight;
+    padding: 0 0 1rem*$br-base-size-multiplier;
   }
 
   h3 {
-    font-size: 18px;
-    font-weight: 700;
-    padding: 0 0 10px;
+    font-size: 1.8rem*$br-base-size-multiplier;
+    font-weight: $br-heading-font-weight;
+    padding: 0 0 1rem*$br-base-size-multiplier;
+  }
+
+  p code {
+    background: $br-code-background;
+  }
+
+  pre {
+    background: $br-code-background;
+    padding: 1rem*$br-base-size-multiplier;
+    margin: 0 0 1rem*$br-base-size-multiplier;
   }
 
   h4 {
-    padding: 0 0 10px;
-    font-weight: 700;
+    padding: 0 0 1rem*$br-base-size-multiplier;
   }
 
-  ul, ol {
-    padding: 0 0 10px 20px;
+  ul {
+    padding: 0 0 1rem 3rem*$br-base-size-multiplier;
+    list-style: disc;
+  }
+  
+  ol {
+    padding: 0 0 1rem 3rem*$br-base-size-multiplier;
+    list-style: decimal;
   }
 
   code {

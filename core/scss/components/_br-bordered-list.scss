@@ -10,11 +10,11 @@ $br-bordered-list-border-color:                  #DDD !default;
 $br-bordered-list-border-color-inverse:          rgba(#FFF,0.2) !default;
 
 // Padding
-$br-bordered-list-item-padding:                  2px !default;
+$br-bordered-list-item-padding:                  0.2rem*$br-base-size-multiplier !default;
 
 // Font sizes
-$br-bordered-list-font-size:                     13px  !default;
-$br-bordered-list-title-font-size:               15px  !default;
+$br-bordered-list-font-size:                     1.3rem*$br-base-size-multiplier  !default;
+$br-bordered-list-title-font-size:               1.5rem*$br-base-size-multiplier !default;
 
 // Regular colors
 
@@ -24,7 +24,7 @@ $br-bordered-list-title-font-size:               15px  !default;
 .br-bordered-list-title {
   font-weight: $br-heading-font-weight;
   padding: 0;
-  margin: 0 0 12px;
+  margin: 0 0 1.2rem*$br-base-size-multiplier;
   font-size: $br-bordered-list-title-font-size;
   padding: $br-bordered-list-item-padding;
 }
@@ -37,9 +37,9 @@ $br-bordered-list-title-font-size:               15px  !default;
 
 .br-bordered-list {
   margin: 0;
-  padding: 0 0 10px;
+  padding: 0 0 1rem*$br-base-size-multiplier;
   ul {
-    padding: 0 0 0 10px;
+    padding: 0 0 0 1rem*$br-base-size-multiplier;
   }
   li {
     display: block;

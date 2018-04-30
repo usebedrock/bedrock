@@ -8,19 +8,19 @@
 
 .br-color-swatch-item {
   display: inline-block;
-  margin-right: 10px;
-  padding: 10px;
+  margin-right: 1rem*$br-base-size-multiplier;
+  padding: 1rem*$br-base-size-multiplier;
   text-align: center;
 }
 
 .br-color-swatch-preview {
-  width: 80px;
-  height: 50px;
-  margin-bottom: 5px;
+  width: 8rem*$br-base-size-multiplier;
+  height: 5rem*$br-base-size-multiplier;
+  margin-bottom: 0.5rem*$br-base-size-multiplier;
   display: inline-block;
 }
 
 .br-color-swatch-data {
   color: #888;
-  font-size: 11px;
+  font-size: 1.1rem*$br-base-size-multiplier;
 }

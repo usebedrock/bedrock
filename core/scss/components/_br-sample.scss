@@ -2,7 +2,7 @@
    ========================================================================== */
 
 .br-component-header {
-  font-size: 24px;
+  font-size: 2.4rem*$br-base-size-multiplier;
   font-weight: $br-heading-font-weight;
 }
 
@@ -23,10 +23,10 @@
   background: #FFF;
   border: 1px solid #CDCDCD;
   display: inline-block;
-  padding: 5px 8px;
-  border-radius: 4px;
-  margin: 0 0 10px;
-  font-size: 12px;
+  padding: 0.5rem*$br-base-size-multiplier 0.8rem*$br-base-size-multiplier;
+  border-radius: 0.4rem*$br-base-size-multiplier;
+  margin: 0 0 1rem*$br-base-size-multiplier;
+  font-size: 1.2rem*$br-base-size-multiplier;
   &:hover {
     background: #FFF;
   }
@@ -39,8 +39,8 @@
 .br-sample-copy-code-btn {
   position: absolute;
   z-index: 3;
-  top: 55px;
-  right: 10px;
+  top: 5.5rem*$br-base-size-multiplier;
+  right: 1rem*$br-base-size-multiplier;
   display: none;
   .br-sample-code:hover & {
     display: block;
@@ -48,10 +48,10 @@
 }
 
 .br-sample-markup {
-  font-size: 11px;
+  font-size: 1.1rem*$br-base-size-multiplier;
   background: #EEE;
   border: 1px solid #DDD;
-  padding: 10px;
+  padding: 1rem*$br-base-size-multiplier;
   position: relative;
   .CodeMirror {
     background: transparent;
@@ -60,9 +60,9 @@
 
 .br-sample-content {
   background: #FFF;
-  padding: 30px;
+  padding: 3rem*$br-base-size-multiplier;
   border: 1px solid #DDD;
-  margin: 0 0 10px;
+  margin: 0 0 1rem*$br-base-size-multiplier;
   position: relative;
   overflow: hidden;
   resize: vertical;
@@ -78,13 +78,13 @@
   .br-styleguide--dark & {
     color: rgba(#FFF,0.45);
   }
-  font-size: 16px;
-  margin: 10px 0;
-  padding: 0 2px 0 0;
+  font-size: 1.6rem*$br-base-size-multiplier;
+  margin: 1rem*$br-base-size-multiplier 0;
+  padding: 0 0.2rem*$br-base-size-multiplier 0 0;
 }
 
 .br-sample-documentation {
-  padding: 0 0 1.2rem;
+  padding: 0 0 1.2rem*$br-base-size-multiplier;
 
   &:empty {
     display: none;
@@ -100,7 +100,7 @@
   ol,
   ul {
     counter-reset: list;
-    padding-left: 2.4rem;
+    padding-left: 2.4rem*$br-base-size-multiplier;
   }
 
   li {
@@ -110,13 +110,13 @@
   ol li:before {
     counter-increment: list;
     content: counter(list) '.';
-    left: -2rem;
+    left: -2rem*$br-base-size-multiplier;
     position: absolute;
   }
 
   ul li:before {
     content: '•';
-    left: -1.6rem;
+    left: -1.6rem*$br-base-size-multiplier;
     position: absolute;
   }
 
@@ -131,15 +131,15 @@
   ul + ol,
   ol + p,
   ol + ul {
-    margin-top: 1.6rem;
+    margin-top: 1.6rem*$br-base-size-multiplier;
   }
 }
 
 .br-sample-header .br-sample-heading {
   float: left;
-  font-size: 16px;
+  font-size: 1.6rem*$br-base-size-multiplier;
   font-weight: $br-heading-font-weight;
-  margin: 10px 0;
+  margin: 1rem*$br-base-size-multiplier 0;
   padding: 0;
   color: $br-color-headings;
   .br-styleguide--dark & {

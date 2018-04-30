@@ -9,14 +9,14 @@
   }
 
   td {
-    padding: 10px 0;
+    padding: 1rem 0;
   }
 
   td:first-child {
     opacity: 0.5;
-    font-size: 11px;
-    padding-right: 40px;
-    min-width: 200px;
+    font-size: 1.1rem*$br-base-size-multiplier;
+    padding-right: 4rem*$br-base-size-multiplier;
+    min-width: 20rem*$br-base-size-multiplier;
   }
 }
 
@@ -25,6 +25,7 @@ pre.br-typography-sample-code {
   background: transparent;
   border: 0;
   color: #999;
+  font-family: monospace;
   white-space: pre-wrap;
   .br-styleguide--dark & {
     color: rgba(#FFF,0.5);

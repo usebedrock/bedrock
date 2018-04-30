@@ -5,7 +5,7 @@
 /* Variables
    ========================================================================== */
 
-$br-prototype-nav-width: 250px;
+$br-prototype-nav-width: 250px; // Keep this in px please, otherwise it gets buggy
 
 /* Sidebar
    ========================================================================== */
@@ -33,12 +33,12 @@ html.br-prototype-nav-is-open {
   transform: translateX(-100%);
   width: $br-prototype-nav-width;
   overflow: hidden;
-  font-size: 13px;
+  font-size: 1.3rem*$br-base-size-multiplier;
   display: flex;
   flex-direction: column;
 
   .br-prototype-nav-inner {
-    padding: 20px;
+    padding: 2rem*$br-base-size-multiplier;
     overflow: hidden;
     overflow-y: auto;
   }
@@ -51,7 +51,7 @@ html.br-prototype-nav-is-open {
 
 .br-prototype-nav-text {
   margin: 0;
-  padding: 0 0 6px;
+  padding: 0 0 0.6rem*$br-base-size-multiplier;
   color: rgba(#000,0.5);
   .br-prototype-nav--dark & {
     color: rgba(#FFF,0.5);
@@ -63,17 +63,17 @@ html.br-prototype-nav-is-open {
 
 .br-prototype-nav-main-heading {
   color: #000;
-  font-size: 15px;
+  font-size: 1.5rem*$br-base-size-multiplier;
   font-weight: 400;
   margin: 0;
-  padding: 0 0 6px;
+  padding: 0 0 0.6rem*$br-base-size-multiplier;
 }
 
 .br-prototype-nav-sub-heading {
-  font-size: 13px;
+  font-size: 1.3rem*$br-base-size-multiplier;
   font-weight: 400;
   margin: 0;
-  padding: 0 0 6px;
+  padding: 0 0 0.6rem*$br-base-size-multiplier;
 }
 
 /* Dark Bedrock UI variant
@@ -102,7 +102,7 @@ html.br-prototype-nav-is-open {
    ========================================================================== */
 
 .br-prototype-nav-index {
-  padding: 20px;
+  padding: 2rem*$br-base-size-multiplier;
 }
 
 .br-prototype-nav-index-cols {
@@ -117,15 +117,15 @@ html.br-prototype-nav-is-open {
 
 .br-prototype-page-states {
   background: rgba(#FFF,0.05);
-  box-shadow: 2px 0 5px rgba(#000, 0.3);
+  box-shadow: 0.2rem*$br-base-size-multiplier 0 0.5rem*$br-base-size-multiplier rgba(#000, 0.3);
   margin-top: auto;
-  padding: 20px;
+  padding: 2rem*$br-base-size-multiplier;
 }
 
 .br-tree-dir-state-count {
   float: right;
-  padding: 0 4px;
+  padding: 0 0.4rem*$br-base-size-multiplier;
   border-radius: 3px;
   background-color: #eee;
-  font-size: 12px;
+  font-size: 1.2rem*$br-base-size-multiplier;
 }

@@ -37,7 +37,7 @@ html.br-styleguide--dark body {
 
 .br-styleguide-navigation-holder {
   line-height: 1.5;
-  padding: 40px 20px;
+  padding: 4rem*$br-base-size-multiplier 2rem*$br-base-size-multiplier;
   a {
     color: inherit;
   }
@@ -56,7 +56,7 @@ html.br-styleguide--dark body {
   .br-styleguide--dark & {
     background: $br-background-dark;
   }
-  padding: 40px;
+  padding: 4rem*$br-base-size-multiplier;
   // Only init 2 columns and scroll from a certain mq
   @media (min-width: $br-switch-breakpoint) {
     height: 100%;
@@ -84,11 +84,11 @@ html.br-styleguide--dark body {
 
 .br-componentgroup-header,
 .br-documentation-header {
-  font-size: 20px;
+  font-size: 2rem*$br-base-size-multiplier;
   font-weight: $br-heading-font-weight;
   color: $br-color-headings;
   .br-styleguide--dark & {
     color: $br-color-headings-dark;
   }
-  margin: 0 0 12px;
+  margin: 0 0 1.2rem*$br-base-size-multiplier;
 }
