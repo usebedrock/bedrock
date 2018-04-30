@@ -109,6 +109,10 @@ function toggleNavigation() {
   navState.isOpen ? closeNavigation() : openNavigation();
 }
 
+$('.br-prototype-close-nav').on('click',function(e) {
+  closeNavigation();
+});
+
 $(window).on('keyup', function (e) {
   if (e.keyCode === ESC_KEYCODE ) {
     closeNavigation();

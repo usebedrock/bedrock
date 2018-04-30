@@ -7,7 +7,7 @@ include ../mixins/render-page-tree
 #__prototype-nav.br-prototype-nav(class=navClasses.join(" "))
     .br-prototype-nav-inner
         h3.br-prototype-nav-main-heading Prototype navigation
-        p.br-prototype-nav-text Press Ctrl + M to toggle this navigation.
+        p.br-prototype-nav-text Press Ctrl + M to toggle this navigation or click <a class="br-prototype-close-nav" href="#">here</a>.
         +renderPageTree
 
     if basePage && basePage.states
