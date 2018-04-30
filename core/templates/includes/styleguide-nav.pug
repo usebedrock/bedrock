@@ -10,7 +10,6 @@
                             | #{doc.attributes.title}
 
         if docsCategoryName === 'Components' && Object.keys(components.byCategory).length > 0
-            h4.br-bordered-list-title Components
             each category, categoryName in components.byCategory
                 if Object.keys(components.byCategory).length > 1
                     h4.br-bordered-list-title= categoryName
