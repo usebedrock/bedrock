@@ -1,5 +1,6 @@
 const $ = require('jquery');
 const packageJson = require('../../package.json');
+const config = require('../../bedrock.config');
 
 const ACTIVATION_KEYCODE = 77; // 'M' key or 'B' key for Windows
 const ACTIVATION_KEYCODE_WINDOWS = 66; // 'M' key or 'B' key for Windows
@@ -9,6 +10,7 @@ const NAV_STATE_STORAGE_KEY = `bedrock.${packageJson.name}.prototypeNavState`;
 let navState = {
   isOpen: false,
   closedModules: [],
+  langSelected: config.languages && config.languages.find((lang) => lang.default).id
 };
 
 const $html = $('html');
@@ -121,3 +123,30 @@ $(window).on('keyup', function (e) {
     toggleNavigation();
   }
 });
+
+
+/**
+ * Multilanguage logic
+ */
+ function displayLanguageLabels(lang) {
+  // Switch label on this page
+  $('[data-lang][data-lang!='+lang+']').css('display', 'none')
+  $('[data-lang='+lang+']').css('display', 'inline-block')
+ }
+
+ function checkLangSelected(lang) {
+  $('#'+lang+'.br-prototype-langselector').prop('checked', true);
+ }
+
+$('.br-prototype-langselector').on('change',function() {
+  var newLang = this.value;
+  // Switch label on this page
+  displayLanguageLabels(newLang)
+  // Persist language selection
+  navState.langSelected = newLang;
+  saveNavState();
+});
+
+// Execute on each page refresh
+checkLangSelected(navState.langSelected);
+displayLanguageLabels(navState.langSelected);
