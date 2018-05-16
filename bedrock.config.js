@@ -23,7 +23,8 @@ module.exports = {
   icons: {
     generateIconFont: false,
     hasSvgIcons: true,
-    baseClass: 'svg-icon'
+    svgIconClassPrefix: 'svg-icon',
+    iconFontClassPrefix: 'if'
   },
   pug: {
     pretty: true,

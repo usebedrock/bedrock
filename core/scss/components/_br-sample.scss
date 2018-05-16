@@ -151,7 +151,7 @@
   column-count: 4;
   > div {
     display: flex;
-    .svg-icon, .o-svg-icon {
+    .#{$br-svg-icon-class-prefix}, .o-svg-icon {
       flex-basis: 20%;
     }
     code {

@@ -11,6 +11,7 @@ h2.br-documentation-header Icons
 .br-content
 
     if config.icons.hasSvgIcons
+        - var svgIconClassPrefix = config.icons && config.icons.svgIconClassPrefix || 'svg-icon'
         h3 SVG icons
 
         p
@@ -18,8 +19,8 @@ h2.br-documentation-header Icons
             | having to inline them. You can either inline them, or build a solution that does it for you.
 
         p
-            | The SVG content should be contained in a <code>.svg-icon</code> div that also get an icon-specific class based on its
-            | name (for example: <code>.svg-icon.svg-icon-add</code>. This allows us to style and colorize specific icons.
+            | The SVG content should be contained in a <code>.#{svgIconClassPrefix}</code> div that also get an icon-specific class based on its
+            | name (for example: <code>.#{svgIconClassPrefix}.#{svgIconClassPrefix}-add</code>. This allows us to style and colorize specific icons.
 
         #icon-docs
             +iconsOverview('svg', 'SVG icons')
