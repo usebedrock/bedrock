@@ -1,5 +1,7 @@
+- const baseClass = config.icons && config.icons.baseClass || 'svg-icon'
+
 mixin icon(name, extraClasses)
     if extraClasses
-        .svg-icon(class=`svg-icon-${name.replace('/', '-')} ${extraClasses}`)!= renderSvgIcon(name)
+        div(class=`${baseClass} ${baseClass}-${name.replace('/', '-')} ${extraClasses}`)!= renderSvgIcon(name)
     else
-        .svg-icon(class=`svg-icon-${name.replace('/', '-')}`)!= renderSvgIcon(name)
+        div(class=`${baseClass} ${baseClass}-${name.replace('/', '-')}`)!= renderSvgIcon(name)
