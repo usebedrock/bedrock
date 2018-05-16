@@ -17,6 +17,14 @@ module.exports = {
       c: 'Custom components'
     }
   },
+  languages: [{
+    id: "langEn",
+    label: "English",
+    default: true
+  },{
+    id: "langFr",
+    label: "Français"
+  }],
   ui: {
     dark: false
   },
