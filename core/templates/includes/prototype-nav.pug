@@ -2,7 +2,7 @@ include ../mixins/render-page-tree
 
 //- `basePage` is set in the `renderPageTree()` mixin, and then used in the navigation
 - var basePage
-- var navClasses = [ config.ui && config.ui.dark ? 'br-prototype-nav--dark' : null , basePage && basePage.states ? 'br-prototype-nav--has-states' : null]
+- var navClasses = [ basePage && basePage.states ? 'br-prototype-nav--has-states' : null]
 
 #__prototype-nav.br-prototype-nav(class=navClasses.join(" "))
     .br-prototype-nav-inner

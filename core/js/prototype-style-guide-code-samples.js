@@ -41,8 +41,7 @@ if (config.styleguide) {
     const code = $(this).text();
     const editorOptions = {
       value: code,
-      readOnly: true,
-      theme: config.ui.dark ? 'monokai' : 'default',
+      readOnly: true
     };
 
     $(this).empty();

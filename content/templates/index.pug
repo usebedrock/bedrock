@@ -1,8 +1,5 @@
 extends /templates/_layouts/master
 
-block append pageVariables
-    - var htmlClass = config.ui && config.ui.dark ? 'br-prototype-nav--dark br-styleguide--dark' : ''
-
 include ../../core/templates/mixins/render-page-tree
 
 block body
