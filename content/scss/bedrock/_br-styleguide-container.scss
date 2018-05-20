@@ -20,11 +20,6 @@ html.br-styleguide body {
   background: #FFF;
 }
 
-html.br-styleguide--dark body {
-  background: $br-background-dark;
-  color: $br-color-text-dark;
-}
-
 .br-styleguide *,
 .br-styleguide *:before,
 .br-styleguide *:after {
@@ -53,9 +48,6 @@ html.br-styleguide--dark body {
 
 .br-styleguide-content {
   background: #FFF;
-  .br-styleguide--dark & {
-    background: $br-background-dark;
-  }
   padding: 4rem*$br-base-size-multiplier;
   // Only init 2 columns and scroll from a certain mq
   @media (min-width: $br-switch-breakpoint) {
@@ -87,8 +79,5 @@ html.br-styleguide--dark body {
   font-size: 2rem*$br-base-size-multiplier;
   font-weight: $br-heading-font-weight;
   color: $br-color-headings;
-  .br-styleguide--dark & {
-    color: $br-color-headings-dark;
-  }
   margin: 0 0 1.2rem*$br-base-size-multiplier;
 }

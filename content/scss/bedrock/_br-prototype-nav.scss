@@ -57,9 +57,6 @@ html.br-prototype-nav-is-open {
   margin: 0;
   padding: 0 0 0.6rem*$br-base-size-multiplier;
   color: rgba(#000,0.5);
-  .br-prototype-nav--dark & {
-    color: rgba(#FFF,0.5);
-  }
 }
 
 /* Headings (both on index page and in sidebar)
@@ -78,28 +75,6 @@ html.br-prototype-nav-is-open {
   font-weight: 400;
   margin: 0;
   padding: 0 0 0.6rem*$br-base-size-multiplier;
-}
-
-/* Dark Bedrock UI variant
-   ========================================================================== */
-
-.br-prototype-nav--dark {
-  background-color: $br-background-dark;
-  color: $br-color-text-dark;
-
-  .br-prototype-nav-main-heading {
-    color: $br-color-headings-dark;
-  }
-
-  a {
-    color: inherit;
-  }
-
-  .br-tree-dir-state-count {
-    text-align: center;
-    background-color: #555;
-    color: #FFF;
-  }
 }
 
 /* Index page
