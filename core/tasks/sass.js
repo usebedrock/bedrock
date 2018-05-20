@@ -4,9 +4,13 @@ const gutil = require('gulp-util');
 const notifier = require('node-notifier');
 const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss');
+const header = require('gulp-header');
 const autoprefixer = require('autoprefixer');
 const paths = require('../paths');
 const errors = require('../util/errors');
+const config = require('../../bedrock.config');
+
+var svgIconClassPrefix = config.icons && config.icons.svgIconClassPrefix || 'svg-icon'
 
 module.exports = function () {
   const processors = [
@@ -17,6 +21,8 @@ module.exports = function () {
       paths.content.scss.allMainFiles,
       paths.core.scss.prototype
     ])
+    // Inject config svgIconPrefix in scss
+    .pipe(header('$br-svg-icon-class-prefix: ' + svgIconClassPrefix + ';\n'))
     .pipe(sourcemaps.init())
     .pipe(sass())
     .on('start', function () {

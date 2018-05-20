@@ -11,6 +11,9 @@ mixin iconCategory(category, name, mode)
                     div
                         +icon([category, icon.name].join('/'))
                         code= icon.name
+
+    - var iconFontClassPrefix = config.icons && config.icons.iconFontClassPrefix || 'if';
+
     if mode === 'icon-font'
         .br-sample(id="icon-font")
             .br-sample-header.br-sample-clearfix
@@ -19,7 +22,7 @@ mixin iconCategory(category, name, mode)
             .br-sample-content
                 each icon in icons.iconFont
                     div
-                        i.if(class=`if-${icon}`)
+                        i(class=`${iconFontClassPrefix} ${iconFontClassPrefix}-${icon}`)
                         code= icon
 
 mixin iconsOverview(mode, name)
