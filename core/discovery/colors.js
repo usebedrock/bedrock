@@ -6,7 +6,8 @@ const paths = require('../paths');
 const config = require('../../bedrock.config');
 
 function discover() {
-  if (!config.styleguide) {
+
+  if (!config.styleguide.colors) {
     return [];
   }
 
