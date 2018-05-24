@@ -24,8 +24,7 @@ module.exports = {
       allMainFiles: path.join(contentPath, 'scss/*.scss'),
       base: path.join(contentPath, 'scss/base/'),
       custom: path.join(contentPath, 'scss/custom/'),
-      settings: path.join(contentPath, 'scss/settings/'),
-      colorsDefinition: config.styleguide ? config.styleguide.colors : null,
+      settings: path.join(contentPath, 'scss/settings/')
     },
     templates: {
       path: path.join(contentPath, 'templates/'),
