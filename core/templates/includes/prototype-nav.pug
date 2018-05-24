@@ -24,11 +24,10 @@ include ../mixins/render-page-tree
                 - var basePagePath = basePage.path.replace('.pug', '');
                 - var isBasePageActive = pathname === basePagePath;
 
-                li: a(href=basePage.href, class=isBasePageActive ? 'br-bordered-list__link--active' : null)
-                    = basePage.name
-
+                li: a(href=basePage.href, class=isBasePageActive ? 'br-bordered-list__link--active' : null) Base page
+                
                 each state in basePage.states
                     - var statePagePath = state.path.replace('.pug', '');
                     - var isStatePageActive = pathname === statePagePath;
                     li: a(href=state.href, class=isStatePageActive ? 'br-bordered-list__link--active' : null)
-                        = state.name
+                        = state.label

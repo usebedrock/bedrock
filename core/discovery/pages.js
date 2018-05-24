@@ -34,6 +34,13 @@ function addPageInfo(page) {
   return page;
 }
 
+// Format to a not technical friendly label
+// eg: form--error -> "Error"
+function formatPageStateLabel(stateName) {
+  var stateLabel = stateName.split("--")[1].split("-").join(" ");
+  return stateLabel.substr(0,1).toUpperCase() + stateLabel.substr(1);
+}
+
 function movePageStatesToParentPage(obj, index, collection) {
   if (!obj) {
     return;
@@ -42,6 +49,10 @@ function movePageStatesToParentPage(obj, index, collection) {
   if (obj.name.includes('--')) {
     const parentStateName = obj.name.split('--')[0];
     const parentState = collection.find(obj => obj.name === parentStateName);
+
+    // Format to a not technical friendly label
+    // eg: form--error -> "Error"
+    obj.label = formatPageStateLabel(obj.name)
 
     // Add the state to the parent page
     if (!parentState.states) {
