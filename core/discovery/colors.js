@@ -6,55 +6,28 @@ const paths = require('../paths');
 const config = require('../../bedrock.config');
 
 function discover() {
-  if (!config.styleguide) {
+  if (!config.styleguide && !config.styleguide.colors) {
     return [];
   }
 
-  const CATEGORY_REGEX = /\/\*\s(.*)/g;
+  let colors = JSON.parse(fs.readFileSync(config.styleguide.colors, 'utf8'));
+  // Remove the _comment of the 
+  colors = colors.filter((entry) => entry._comment === undefined)
 
-  const scss = fs.readFileSync(paths.content.scss.colorsDefinition, 'utf-8');
-  let colorCategories = [];
-  let currentCategory;
+  return colors;
+}
 
-  for (const scssLine of scss.split('\n')) {
-    const categoryData = CATEGORY_REGEX.exec(scssLine);
-    const colorLine = scssLine.split(':');
-    let colorData = null;
-
-    if (colorLine.length === 2  && !colorLine[0].startsWith('//') && !colorLine[0].startsWith('/*')) {
-      const value = colorLine[1].trim().match(/(.+);/g)[0].replace(';', '');
-
-      colorData = {
-        name: colorLine[0].trim(),
-        value
-      };
-    }
-
-    if (categoryData && categoryData[1].indexOf('===') === -1) {
-      currentCategory = categoryData[1];
-    }
-
-    if (currentCategory) {
-      var category = _.find(colorCategories, {name: currentCategory});
-
-      if (!category) {
-        category = {
-          name: currentCategory,
-          colors: []
-        };
-
-        colorCategories.push(category);
-      }
-
-      if (colorData) {
-        category.colors.push(colorData);
-      }
-    }
-  }
-
-  return colorCategories;
+function getSassVariableToInject() {
+  let sassVariables = "";
+  discover().map((colorCategory) => {
+    colorCategory.colors.map((color) => {
+      sassVariables += `${color.name}:${color.value};\n`
+    })
+  })
+  return sassVariables;
 }
 
 module.exports = {
-  discover: discover
+  discover: discover,
+  getSassVariableToInject: getSassVariableToInject
 };

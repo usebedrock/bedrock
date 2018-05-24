@@ -1,0 +1,30 @@
+[
+  {
+    "_comment": [
+      "These colors will be displayed in the styleguide",
+      "and injected as SASS variables for you to use",
+      "When changing values don't forget to restart bedrock"
+    ]
+  },
+  {
+    "name": "Category 1",
+    "colors": [{
+      "name": "$blue",
+      "value": "blue"
+      }, {
+      "name": "$gray",
+      "value": "#666"
+      }
+    ]
+  }, {
+    "name": "Category 2",
+    "colors": [{
+      "name": "$red",
+      "value": "#F00"
+      }, {
+      "name": "$soft-yellow",
+      "value": "#FFC"
+      }
+    ]
+  }
+]

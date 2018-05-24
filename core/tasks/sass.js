@@ -9,6 +9,7 @@ const autoprefixer = require('autoprefixer');
 const paths = require('../paths');
 const errors = require('../util/errors');
 const config = require('../../bedrock.config');
+const colors = require('../discovery/colors')
 
 var svgIconClassPrefix = config.icons && config.icons.svgIconClassPrefix || 'svg-icon'
 
@@ -23,6 +24,7 @@ module.exports = function () {
     ])
     // Inject config svgIconPrefix in scss
     .pipe(header('$br-svg-icon-class-prefix: ' + svgIconClassPrefix + ';\n'))
+    .pipe(header(colors.getSassVariableToInject()))
     .pipe(sourcemaps.init())
     .pipe(sass())
     .on('start', function () {
