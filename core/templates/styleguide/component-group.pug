@@ -4,6 +4,7 @@ include ../mixins/sample
 
 block append pageVariables
     - var htmlClass = config.ui && config.ui.dark ? 'br-styleguide br-styleguide--dark' : 'br-styleguide'
+    - var moduleTitle = componentGroup.docs && componentGroup.docs.attributes.title || componentGroup.group.id
 
 block body
 
@@ -11,10 +12,8 @@ block body
         include ../includes/styleguide-nav
 
         .br-styleguide-content
-            if !componentGroup.docs
-                h1.br-componentgroup-header= componentGroup.group.id
-            else
-                h1.br-componentgroup-header= componentGroup.docs.attributes.title || componentGroup.group.id
+            h1.br-componentgroup-header= moduleTitle
+            if componentGroup.docs
                 .br-content
                     != componentGroup.docs.body
 
