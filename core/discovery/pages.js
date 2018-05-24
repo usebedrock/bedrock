@@ -8,12 +8,12 @@ const paths = require('../paths');
 const TEMPLATES_BASE_DIRECTORY = paths.content.templates.path;
 const TEMPLATES_MODULE_DIRECTORY = paths.content.templates.modulesPath;
 
-function mapChildren(children) {
+function mapChildren(children, parent) {
   children = children.map((obj) => {
-    obj = addPageInfo(obj);
+    obj = addPageInfo(obj, parent);
 
     if (obj.children) {
-      mapChildren(obj.children);
+      mapChildren(obj.children, obj);
     }
 
     return obj;
@@ -22,10 +22,14 @@ function mapChildren(children) {
   return _.sortBy(children, 'type');
 }
 
-function addPageInfo(page) {
+function addPageInfo(page, parent) {
   page.href = '/' + page.path.replace('.pug', '.html');
   page.name = page.name.replace('.pug', '');
   page.id = page.path.replace('.pug', '');
+  // Copy array
+  page.parents = parent.parents.slice()
+  // Push current
+  page.parents.push(page.name);
 
   if (page.href === '') {
     page.href = '/';
@@ -71,10 +75,12 @@ function discover() {
   const pagesAndFoldersSortedByType = _.chain(dirTree.directoryTree(TEMPLATES_BASE_DIRECTORY, ['.pug']).children)
     .filter(obj => obj.path.charAt(0) !== '_')
     .map(obj => {
-      obj = addPageInfo(obj);
+      // Root item
+      obj.parents = []
+      obj = addPageInfo(obj, obj);
 
       if (obj.children) {
-        obj.children = mapChildren(obj.children);
+        obj.children = mapChildren(obj.children, obj);
       }
 
       return obj;
