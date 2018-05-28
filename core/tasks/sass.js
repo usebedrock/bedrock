@@ -9,20 +9,18 @@ const autoprefixer = require('autoprefixer');
 const paths = require('../paths');
 const errors = require('../util/errors');
 const config = require('../../bedrock.config');
+const merge2 = require('merge2')
 
 var svgIconClassPrefix = config.icons && config.icons.svgIconClassPrefix || 'svg-icon'
 
-module.exports = function () {
+function compileCSS(inputFiles, headerToInject = '') {
+
   const processors = [
     autoprefixer({browsers: ['last 2 versions']}) // IE10+
   ];
 
-  return gulp.src([
-      paths.content.scss.allMainFiles,
-      paths.core.scss.prototype
-    ])
-    // Inject config svgIconPrefix in scss
-    .pipe(header('$br-svg-icon-class-prefix: ' + svgIconClassPrefix + ';\n'))
+  return gulp.src(inputFiles)
+    .pipe(header(headerToInject))
     .pipe(sourcemaps.init())
     .pipe(sass())
     .on('start', function () {
@@ -47,5 +45,22 @@ module.exports = function () {
     })
     .pipe(postcss(processors))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(paths.compiled.css));
+    .pipe(gulp.dest(paths.compiled.css))
+}
+
+module.exports = function () {
+
+  let mainSCSSHeader = ''
+  if(config.icons.generateIconFont) {
+    mainSCSSHeader = '@import "settings/_icon-font";\n'
+  }
+
+  return merge2(compileCSS([
+        paths.content.scss.allMainFiles
+      ], mainSCSSHeader
+    ), compileCSS([
+        paths.core.scss.prototype
+      ], '$br-svg-icon-class-prefix: ' + svgIconClassPrefix + ';\n'
+    )
+  );
 };
