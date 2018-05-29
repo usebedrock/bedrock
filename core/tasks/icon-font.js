@@ -12,6 +12,8 @@ const FONT_NAME = 'icon-font';
 const TMP_DIRECTORY = './icon-font-tmp';
 
 const iconFontClassPrefix = config.icons && config.icons.iconFontClassPrefix || 'if';
+const destFolder = path.dirname(config.icons.iconFontPath)
+const fileName = path.basename(config.icons.iconFontPath, path.extname(config.icons.iconFontPath))
 
 const cmd = `fontcustom compile ${paths.content.iconFont.sourceDirectory} --name ${FONT_NAME} --selector=".${iconFontClassPrefix}-{{glyph}}" -h -o ${TMP_DIRECTORY}`;
 
@@ -30,11 +32,11 @@ module.exports = function (done) {
       gulp
         .src(path.join(TMP_DIRECTORY, FONT_NAME + '.css'))
         .pipe(rename(function (path) {
-          path.basename = '_icon-font';
+          path.basename = fileName;
           path.extname = '.scss';
         }))
         .pipe(replace('./', '/fonts/'))
-        .pipe(gulp.dest(paths.content.scss.settings)),
+        .pipe(gulp.dest(destFolder)),
       gulp.src([
           path.join(TMP_DIRECTORY, FONT_NAME + '.eot'),
           path.join(TMP_DIRECTORY, FONT_NAME + '.svg'),
