@@ -13,6 +13,7 @@ module.exports = {
       f: 'Foundation additions',
       bc: 'Bootstrap custom components',
       fc: 'Foundation custom components',
+      mdc: 'Material design components',
       br: 'Bedrock components',
       c: 'Custom components'
     }
