@@ -2,12 +2,10 @@ extends ../../../content/templates/_layouts/master
 
 include ../mixins/sample
 
-
-
 block append pageVariables
     - var htmlClass = config.ui && config.ui.dark ? 'br-styleguide br-styleguide--dark' : 'br-styleguide'
     - var pageTitle = componentGroup.docs && componentGroup.docs.attributes.title || componentGroup.group.id
-    - var moduleTitle = pageTitle + '- Styleguide'
+    - var moduleTitle = pageTitle + ' - Styleguide'
 
 block body
 
