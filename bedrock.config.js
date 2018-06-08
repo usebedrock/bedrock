@@ -17,9 +17,6 @@ module.exports = {
       c: 'Custom components'
     }
   },
-  ui: {
-    dark: false
-  },
   icons: {
     generateIconFont: false,
     hasSvgIcons: true,
