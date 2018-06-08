@@ -1,6 +1,5 @@
 .br-styleguide-navigation-holder
     each docsCategoryName in config.styleguide.categoryOrder
-
         if docs.byCategory[docsCategoryName]
             h4.br-bordered-list-title= docsCategoryName
             ul.br-bordered-list
@@ -13,6 +12,8 @@
             each category, categoryName in components.byCategory
                 if Object.keys(components.byCategory).length > 1
                     h4.br-bordered-list-title= categoryName
+                else
+                    h4.br-bordered-list-title Components
                 ul.br-bordered-list
                     each group in category
                         - var groupName = group.docs ? group.docs.attributes.title || group.group.id : group.group.id
