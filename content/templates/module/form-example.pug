@@ -3,24 +3,16 @@ extends /templates/_layouts/master
 block body
 
     if error
-        p(style="color: red") 
-            span(data-lang="langEn") Hey! Some fields were marked as invalid.
-            span(data-lang="langFr") Oups! Certain champs sont invalides.
+        p(style="color: red") Hey! Some fields were marked as invalid.
 
     p
-        label
-            span(data-lang="langEn") First Name
-            span(data-lang="langFr") Nom
+        label First Name
         input(type="text")
     p
-        label
-            span(data-lang="langEn") Last Name
-            span(data-lang="langFr") Prénom
+        label Last Name
         input(type="text")
     p
-        label
-            span(data-lang="langEn") Message
-            span(data-lang="langFr") Message
+        label Message
         textarea
 
     input(type="submit")
