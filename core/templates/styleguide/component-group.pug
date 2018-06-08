@@ -4,6 +4,8 @@ include ../mixins/sample
 
 block append pageVariables
     - var htmlClass = 'br-styleguide'
+    - var pageTitle = componentGroup.docs && componentGroup.docs.attributes.title || componentGroup.group.id
+    - var moduleTitle = pageTitle + ' - Styleguide'
 
 block body
 
@@ -11,13 +13,10 @@ block body
         include ../includes/styleguide-nav
 
         .br-styleguide-content
-            if !componentGroup.docs
-                h1.br-componentgroup-header= componentGroup.group.id
-            else
-                h1.br-componentgroup-header= componentGroup.docs.attributes.title || componentGroup.group.id
+            h1.br-componentgroup-header= pageTitle
+            if componentGroup.docs
                 .br-content
                     != componentGroup.docs.body
 
             each component in componentGroup.components
                 +sample(component)
-
