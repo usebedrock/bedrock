@@ -7,10 +7,6 @@
   In the styleguide sometimes we want to undo some of that for demonstrational purposes.
    ========================================================================== */
 
-.br-sample {
-  margin: 16px 0;
-}
-
 // Use a custom button for code copying since the default button in Vlaanderen's style is a bit too big and there is no “subtle button”
 .br-sample-show-code-btn,
 .br-sample-copy-code-btn {
@@ -22,6 +18,9 @@
 }
 
 
+/* Logo top left
+   ========================================================================== */
+
 h1.vi-vlaanderen{
   font-size: 2.2rem;
   margin-left: 10px;
@@ -29,10 +28,10 @@ h1.vi-vlaanderen{
 }
 
 .br-styleguide-navigation-holder .vi.vi-u-xl:before {
-    font-size: 4.2rem;
-    position: relative;
-    top: 10px;
-    left: -10px;
+  font-size: 4.2rem;
+  position: relative;
+  top: 10px;
+  left: -10px;
 }
 
 .br-styleguide-navigation-holder {
