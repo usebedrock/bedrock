@@ -1,3 +1,0 @@
----
-title: Alert with CTA
----

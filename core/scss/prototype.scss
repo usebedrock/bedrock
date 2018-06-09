@@ -63,7 +63,11 @@ $br-styleguide-content-padding: 3.2rem !default; // Only supply a single rem val
 
   .br-styleguide-navigation-holder {
     box-sizing: border-box;
-    padding: $br-styleguide-sidebar-padding*$br-base-size-multiplier;
+    padding:
+      $br-styleguide-content-padding*$br-base-size-multiplier
+      $br-styleguide-content-padding/2*$br-base-size-multiplier
+      $br-styleguide-content-padding*$br-base-size-multiplier
+      $br-styleguide-content-padding*$br-base-size-multiplier;
     // Only init 2 columns and scroll from a certain mq
     @media (min-width: $br-switch-breakpoint) {
       height: 100%;
@@ -81,7 +85,11 @@ $br-styleguide-content-padding: 3.2rem !default; // Only supply a single rem val
   .br-styleguide-content {
     background: #FFF;
     box-sizing: border-box;
-    padding: $br-styleguide-content-padding*$br-base-size-multiplier;
+    padding:
+      $br-styleguide-content-padding*$br-base-size-multiplier
+      $br-styleguide-content-padding*$br-base-size-multiplier
+      $br-styleguide-content-padding*$br-base-size-multiplier
+      $br-styleguide-content-padding/2*$br-base-size-multiplier;
     // Only init 2 columns and scroll from a certain mq
     @media (min-width: $br-switch-breakpoint) {
       height: 100%;

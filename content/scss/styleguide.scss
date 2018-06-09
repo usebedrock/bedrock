@@ -7,64 +7,116 @@
   In the styleguide sometimes we want to undo some of that for demonstrational purposes.
    ========================================================================== */
 
-// Use a custom button for code copying since the default button in Vlaanderen's style is a bit too big and there is no “subtle button”
-.br-sample-show-code-btn,
-.br-sample-copy-code-btn {
-  border: none;
-  background: $gray-light;
-  color: $gray-dark;
-  font-family: flanders-sans, sans-serif;
-  font-size: 1.4rem;
-}
-
-
-/* Logo top left
-   ========================================================================== */
-
-h1.vi-vlaanderen{
-  font-size: 2.2rem;
-  margin-left: 10px;
-  margin-bottom: 40px;
-}
-
-.br-styleguide-navigation-holder .vi.vi-u-xl:before {
-  font-size: 4.2rem;
-  position: relative;
-  top: 10px;
-  left: -10px;
-}
-
-.br-styleguide-navigation-holder {
-  
-  .drilldown a {
-    color: #333;
-    outline: 0;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-}
-
-.u-spacer-top--small {
-  margin-top: 2rem;
-}
-
-.drilldown__item--selected {
-    background: $gray-light;
-}
-
 
 .br-sample-markup {
-  background: rgba($gray-light, .5);
-  border: 1px solid $gray-light;
+  background: rgba($gray-200, .5);
+  border: 1px solid $gray-200;
 }
 
 .br-sample-content {
   background: #FFF;
-  border: 1px solid $gray-light;
+  border: 1px solid $gray-200;
 }
 
 .CodeMirror {
   font-size: 12px;
 }
+
+
+/* Make tooltips visible in styleguide
+   ========================================================================== */
+
+#component-b-tooltip {
+  .br-sample-content {
+    min-height: 100px;
+    .tooltip {;
+      position: relative;
+      display: inline-block;
+      margin: 10px 20px;
+      opacity: 1;
+    }
+    .arrow {
+      left: 50%;
+    }
+  }
+}
+
+/* Make popovers visible
+   ========================================================================== */
+
+div[id^="component-"] {
+  .popover {
+    position: relative;
+    display: block;
+    margin: 30px;
+  }
+}
+
+/* Make modals visible in styleguide
+   ========================================================================== */
+
+div[id^="component-"] {
+  .modal {
+    display: block;
+    opacity: 1;
+    position: static;
+
+    display: block;
+    top: auto;
+    left: auto;
+    right: auto;
+    margin: 20px;
+    padding: 20px;
+    z-index: 1;
+    max-width: 100%;
+  }
+}
+
+
+/* Expand dropdowns in some component examples
+   ========================================================================== */
+
+#component-01-dropdown,
+#component-02-dropdown-divider {
+  .dropdown {
+    > .dropdown-menu {
+      position: static;
+      display: block;
+      margin-bottom: 5px;
+      clear: left;
+    }
+    .btn {
+      float: left;
+    }
+  }
+}
+
+
+//
+// Left side navigation
+//
+
+.bd-toc {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bd-toc-link {
+  display: block;
+  padding: .25rem 1.5rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, .55);
+
+  &:hover {
+    color: rgba(0, 0, 0, .85);
+    text-decoration: none;
+  }
+}
+
+.bd-toc-item {
+  .active {
+    color: rgba(0, 0, 0, .85);
+  }
+}
+

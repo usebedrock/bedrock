@@ -1,0 +1,5 @@
+---
+title: Table
+---
+
+Table examples

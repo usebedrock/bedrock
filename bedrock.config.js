@@ -9,7 +9,7 @@ module.exports = {
     ],
     componentCategories: {
       c: 'Components',
-      org: 'Organisms',
+      b: 'Bootstrap components',
       aov: 'Overviews',
       u: 'Utilities'
     }
