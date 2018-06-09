@@ -5,7 +5,8 @@ module.exports = {
     categoryOrder: [
       'Style guide',
       'Design patterns',
-      'Components'
+      'Components',
+      'Material design components'
     ],
     componentCategories: {
       aov: 'Overviews',

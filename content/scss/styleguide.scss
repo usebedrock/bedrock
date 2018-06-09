@@ -29,3 +29,14 @@
     }
   }
 }
+
+.br-styleguide-navigation-holder .mdc-list-item {
+  padding: 0;
+}
+.br-styleguide-navigation-holder .mdc-list-item__text {
+  text-decoration: none;
+  color: $material-color-grey-900;
+  display: block;
+  padding: 1rem;
+  width: 100%;
+}
