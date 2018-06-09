@@ -5,13 +5,13 @@ module.exports = {
     categoryOrder: [
       'Style guide',
       'Design patterns',
-      'Components',
+      'Components'
     ],
     componentCategories: {
       c: 'Components',
       org: 'Organisms',
       aov: 'Overviews',
-      u: 'Utilities',
+      u: 'Utilities'
     }
   },
   icons: {
