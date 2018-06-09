@@ -4,7 +4,6 @@
 
 @import "vendor/codemirror";
 
-
 /* Variables
    ========================================================================== */
 
@@ -23,6 +22,14 @@ $br-color-text-dark: #DDD !default;
 $br-color-headings-dark: #FFF !default;
 
 $br-switch-breakpoint: 800px;
+
+$br-styleguide-content-width: 78% !default; // Only supply a single % value here
+$br-styleguide-sidebar-width: 22% !default; // Only supply a single % value here
+
+$br-styleguide-sidebar-padding: 3.2rem !default; // Only supply a single rem value here
+$br-styleguide-content-padding: 3.2rem !default; // Only supply a single rem value here
+
+@import "../../content/scss/br-variables-override";
 
 
 /* Basic setup
@@ -56,11 +63,15 @@ $br-switch-breakpoint: 800px;
 
   .br-styleguide-navigation-holder {
     box-sizing: border-box;
-    padding: 4rem*$br-base-size-multiplier 2rem*$br-base-size-multiplier;
+    padding:
+      $br-styleguide-content-padding*$br-base-size-multiplier
+      $br-styleguide-content-padding/2*$br-base-size-multiplier
+      $br-styleguide-content-padding*$br-base-size-multiplier
+      $br-styleguide-content-padding*$br-base-size-multiplier;
     // Only init 2 columns and scroll from a certain mq
     @media (min-width: $br-switch-breakpoint) {
       height: 100%;
-      width: 25%;
+      width: $br-styleguide-sidebar-width;
       float: left;
       overflow: auto;
       -webkit-overflow-scrolling: touch;
@@ -74,11 +85,15 @@ $br-switch-breakpoint: 800px;
   .br-styleguide-content {
     background: #FFF;
     box-sizing: border-box;
-    padding: 4rem*$br-base-size-multiplier;
+    padding:
+      $br-styleguide-content-padding*$br-base-size-multiplier
+      $br-styleguide-content-padding*$br-base-size-multiplier
+      $br-styleguide-content-padding*$br-base-size-multiplier
+      $br-styleguide-content-padding/2*$br-base-size-multiplier;
     // Only init 2 columns and scroll from a certain mq
     @media (min-width: $br-switch-breakpoint) {
       height: 100%;
-      width: 75%;
+      width: $br-styleguide-content-width;
       float: left;
       overflow: auto;
       -webkit-overflow-scrolling: touch;
@@ -222,7 +237,8 @@ html.br-prototype-nav-is-open {
   font-size: 1.2rem*$br-base-size-multiplier;
 }
 
-
+/* Utilities 
+   ========================================================================== */
 
 .br-reset-link-styling {
   text-decoration: none;
