@@ -6,9 +6,37 @@ include ../../../core/templates/mixins/styleguide-settings
 
 block pageVariables
     //- Use this block to append page variables in templates
-    - var projectTitle = "Bedrock"
+    - var projectTitle = "Bedrock + Material Design"
     - var htmlClass = ""
-    - var bodyClass = ""
+    - var bodyClass = "mdc-typography"
+
+block styleguideSettings
+    //- Styleguide layout system
+    //- Use your project's layout system for the style guide
+    
+    //- Styleguide classes - Buttons
+    //- Style buttons like your project's buttons
+    - var styleguideButtonClass = "mdc-button"
+
+    //-
+        Styleguide classes - Headings
+        Style headings in styleguide like your project's headings
+    - var styleguideBrandClass = "mdc-typography--headline4"
+    - var styleguideComponentGroupHeaderClass = "mdc-typography--headline4"
+    - var styleguideSampleHeadingClass = "mdc-typography--headline5"
+    - var styleguideComponentListingCategoryClass = "mdc-typography--headline6"
+
+    - var styleguideNavListTitleClass = "mdc-typography--headline6"
+    - var styleguideNavListClass = "mdc-list mdc-list--dense"
+    - var styleguideSampleClass = ""
+
+    - var styleguideNavListItemClass = "mdc-list-item"
+    - var styleguideNavListItemActiveClass = "mdc-list-item--selected"
+
+    - var styleguideNavListItemLinkClass = "mdc-list-item__text"
+    - var styleguideNavListItemLinkActiveClass = ""
+
+    - var styleguideNavigationHolderClass = ""
 
 doctype html
 html(lang='en' class=htmlClass ? htmlClass : '')

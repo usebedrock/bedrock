@@ -9,7 +9,7 @@ module.exports = {
     ],
     componentCategories: {
       aov: 'Overviews',
-      c: 'Components',
+      mdc: 'Material design components',
     }
   },
   icons: {

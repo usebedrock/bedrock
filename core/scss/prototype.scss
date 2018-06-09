@@ -407,19 +407,6 @@ html.br-prototype-nav-is-open {
   color: $br-color-headings;
 }
 
-#icon-docs .br-sample-content {
-  column-count: 4;
-  > div {
-    display: flex;
-    .#{$br-svg-icon-class-prefix}, .o-svg-icon {
-      flex-basis: 20%;
-    }
-    code {
-      flex-basis: 80%;
-    }
-  }
-}
-
 /* Color swatches
    ========================================================================== */
 

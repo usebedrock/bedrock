@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <path id="text-list-ordered-a" d="M3,4 L3,5 L4,5 L4,8.001 L5,8.001 L5,4 L3,4 Z M8,7.001 L21.999,7.001 L21.999,5 L8,5 L8,7.001 Z M3,10 L3,11 L4.8,11 L3,13.101 L3,14 L6,14 L6,13 L4.201,13 L6,10.9 L6,10 L3,10 Z M8,13 L21.999,13 L21.999,11 L8,11 L8,13 Z M3,16 L3,17 L5,17 L5,17.5 L4,17.5 L4,18.5 L5,18.5 L5,18.999 L3,18.999 L3,20 L6,20 L6,16 L3,16 Z M8,18.999 L21.999,18.999 L21.999,16.999 L8,16.999 L8,18.999 Z"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <use fill="#000" xlink:href="#text-list-ordered-a"/>
+  </g>
+</svg>

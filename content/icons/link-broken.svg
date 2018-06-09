@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>link-broken</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="link-broken" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M19.73,20 L18.73,21 L14.73,17 L13,17 L13,15.27 L10.73,13 L8,13 L8,11 L8.73,11 L6.64964869,8.91964869 C5.10412076,9.0940824 3.9,10.4084374 3.9,12 C3.9,13.71 5.29,15.1 7,15.1 L11,15.1 L11,17 L7,17 C4.24,17 2,14.76 2,12 C2,9.91139241 3.28275454,8.12056712 5.10289387,7.37289387 L2,4.27 L3,3.27 L19.73,20 Z M18.8971061,16.6271061 L17.3503513,15.0803513 C18.8958792,14.9059176 20.1,13.5915626 20.1,12 C20.1,10.29 18.71,8.9 17,8.9 L13,8.9 L13,7 L17,7 C19.76,7 22,9.24 22,12 C22,14.0886076 20.7172455,15.8794329 18.8971061,16.6271061 Z M15.27,13 L13.27,11 L16,11 L16,13 L15.27,13 Z M11,8.73 L9.27,7 L11,7 L11,8.73 Z" id="Icon" fill="#000000"></path>
+    </g>
+</svg>

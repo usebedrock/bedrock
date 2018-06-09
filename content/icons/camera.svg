@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>camera</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="camera" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M9,2 L7.17,4 L4,4 C2.9,4 2,4.9 2,6 L2,18 C2,19.1 2.9,20 4,20 L20,20 C21.1,20 22,19.1 22,18 L22,6 C22,4.9 21.1,4 20,4 L16.83,4 L15,2 L9,2 L9,2 Z M12,17 C9.24,17 7,14.76 7,12 C7,9.24 9.24,7 12,7 C14.76,7 17,9.24 17,12 C17,14.76 14.76,17 12,17 Z M12,15.2 C13.7673112,15.2 15.2,13.7673112 15.2,12 C15.2,10.2326888 13.7673112,8.8 12,8.8 C10.2326888,8.8 8.8,10.2326888 8.8,12 C8.8,13.7673112 10.2326888,15.2 12,15.2 Z" id="Icon" fill="#000000"></path>
+    </g>
+</svg>

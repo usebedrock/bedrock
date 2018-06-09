@@ -7,3 +7,25 @@
   In the styleguide sometimes we want to undo some of that for demonstrational purposes.
    ========================================================================== */
 
+
+#component-mdc-dialog .mdc-dialog {
+  position: static;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+
+#component-01-svg-icons {
+  .br-sample-content {
+    column-count: 4;
+    > div {
+      display: flex;
+      .#{$br-svg-icon-class-prefix}, .o-svg-icon {
+        flex-basis: 20%;
+      }
+      code {
+        flex-basis: 80%;
+      }
+    }
+  }
+}

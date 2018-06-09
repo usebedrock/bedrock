@@ -1,4 +1,25 @@
 // Start your CSS here
 
 @import "_colors";
-@import "_icon-font";
+//@import "_icon-font";
+
+
+
+@import "normalize";
+
+// Material components
+
+$mdc-theme-primary: $material-color-red-700;
+$mdc-theme-secondary: $material-color-blue-700;
+$mdc-theme-on-primary: white;
+$mdc-theme-on-secondary: white;
+
+@import "packages/mdc-theme/mdc-theme";
+@import "packages/mdc-button/mdc-button";
+@import "packages/mdc-card/mdc-card";
+@import "packages/mdc-form-field/mdc-form-field";
+@import "packages/mdc-checkbox/mdc-checkbox";
+@import "packages/mdc-chips/mdc-chips";
+@import "packages/mdc-list/mdc-list";
+@import "packages/mdc-layout-grid/mdc-layout-grid";
+@import "packages/mdc-typography/mdc-typography";

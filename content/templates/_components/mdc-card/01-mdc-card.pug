@@ -1,0 +1,26 @@
+.mdc-card.demo-card
+    a.mdc-card__primary-action(href="#")
+        .mdc-card__media.mdc-card__media--16-9.demo-card__media.demo-card__media--16-9
+        .demo-card__primary
+            h2.demo-card__title.mdc-typography--headline6 Our Changing planet
+            h3.demo-card__subtitle.mdc-typography--subtitle2 by Kurt Wagner
+                .demo-card__secondary.mdc-typography--body2 Visit ten places on our planet that are undergoing the biggest changes today.
+        .mdc-card__actions
+            .mdc-card__action-buttons
+                button.mdc-button.mdc-card__action.mdc-card__action--button Read
+                button.mdc-button.mdc-card__action.mdc-card__action--button Bookmark
+            .mdc-card__action-icons
+                button.mdc-icon-button.material-icons.mdc-card__action.mdc-card__action--icon(
+                    aria-pressed="false",
+                    aria-label="Add to favorites",
+                    title="Add to favorites",
+                    data-toggle-on-content="favorite",
+                    data-toggle-on-label="Remove from favorites",
+                    data-toggle-off-content="favorite_border",
+                    data-toggle-off-label="Add to favorites") favorite_border
+                button.mdc-icon-button.material-icons.mdc-card__action.mdc-card__action--icon(
+                    data-mdc-ripple-is-unbounded,
+                    title="Share") share
+                button.mdc-icon-button.material-icons.mdc-card__action.mdc-card__action--icon(
+                    data-mdc-ripple-is-unbounded,
+                    title="More options") more_vert

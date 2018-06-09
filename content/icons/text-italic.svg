@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <polygon id="text-italic-a" points="10 5.001 10 8.001 12.21 8.001 8.79 16 6 16 6 19 14.001 19 14.001 16 11.79 16 15.21 8.001 18 8.001 18 5.001"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <use fill="#000" xlink:href="#text-italic-a"/>
+  </g>
+</svg>
