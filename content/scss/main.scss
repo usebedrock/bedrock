@@ -1,14 +1,9 @@
 // Start your CSS here
 
 @import "_colors";
-//@import "_icon-font";
-
-
-
 @import "normalize";
 
 // Material components
-
 $mdc-theme-primary: $material-color-red-700;
 $mdc-theme-secondary: $material-color-blue-700;
 $mdc-theme-on-primary: white;

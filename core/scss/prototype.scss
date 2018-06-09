@@ -324,19 +324,19 @@ html.br-prototype-nav-is-open {
   }
 }
 
-.br-sample-footer {
-  position: relative;
+.br-sample-copy-code-btn {
+  position: absolute !important;
+  z-index: 3;
+  top: 1.5rem*$br-base-size-multiplier;
+  right: 1rem*$br-base-size-multiplier;
+  visibility: hidden;
+  .br-sample-code:hover & {
+    visibility: visible;
+  }
 }
 
-.br-sample-copy-code-btn {
-  position: absolute;
-  z-index: 3;
-  top: 5.5rem*$br-base-size-multiplier;
-  right: 1rem*$br-base-size-multiplier;
-  display: none;
-  .br-sample-code:hover & {
-    display: block;
-  }
+.br-sample-code {
+  position: relative;
 }
 
 .br-sample-markup {

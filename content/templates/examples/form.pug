@@ -1,0 +1,44 @@
+extends ../_layouts/master
+
+block body
+
+    .mdc-layout-grid
+        .mdc-layout-grid__inner
+
+            .mdc-layout-grid__cell
+                .mdc-card.demo-card
+                    section.mdc-card__supporting-text
+                        h2 Packaging info
+
+                        .mdc-form-field
+                            .mdc-text-field#demo-input-name(data-mdc-auto-init="MDCTextField")
+                                input.mdc-text-field__input(type="text")
+                                label.mdc-text-field__label(for="demo-input-name") Your name
+
+                        .mdc-form-field
+                            .mdc-text-field#demo-input-name(data-mdc-auto-init="MDCTextField")
+                                input.mdc-text-field__input(type="text")
+                                label.mdc-text-field__label(for="demo-input-name") Your name
+
+                        .mdc-form-field
+                            .mdc-text-field#demo-email(data-mdc-auto-init="MDCTextField")
+                                input.mdc-text-field__input(type="email")
+                                label.mdc-text-field__label(for="demo-input-email") Your e-mail
+
+                        .mdc-text-field.mdc-text-field--textarea
+                            textarea.mdc-text-field__input(rows="8" cols="40" id="demo-textarea")
+                            label.mdc-text-field__label(for="demo-textarea") Enter your message
+
+                        .mdc-form-field
+                            .mdc-checkbox
+                                input#option-1.mdc-checkbox__native-control(type="checkbox")
+                                .mdc-checkbox__background
+                                    svg.mdc-checkbox__checkmark(viewbox="0 0 24 24")
+                                        path.mdc-checkbox__checkmark__path(fill="none", stroke="white", d="M1.73,12.91 8.1,19.28 22.79,4.59")
+                                    .mdc-checkbox__mixedmark
+
+                            label(for="option-1") I would like to subscribe to the newsletter
+                        .btn-toolbar
+                            button.mdc-button.mdc-button--raised(data-mdc-auto-init="MDCRipple") Button
+                            button.mdc-button.mdc-button--raised(data-mdc-auto-init="MDCRipple") Upload files
+    

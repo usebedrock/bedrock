@@ -1,0 +1,38 @@
+extends ../_layouts/master
+
+block body
+
+    header.mdc-toolbar.demo-toolbar
+        .mdc-toolbar__row
+            section.mdc-toolbar__section.mdc-toolbar__section--align-start
+                a.material-icons.mdc-toolbar__menu-icon(href='#') menu
+                span.mdc-toolbar__title My movies
+            section.mdc-toolbar__section.mdc-toolbar__section--align-end(role='toolbar')
+                a.material-icons.mdc-toolbar__icon(href='#', aria-label='Download', alt='Download') file_download
+                a.material-icons.mdc-toolbar__icon(href='#', aria-label='Print this page', alt='Print this page') print
+                a.material-icons.mdc-toolbar__icon(href='#', aria-label='Bookmark this page', alt='Bookmark this page') bookmark
+
+    if empty
+        p There is no info yet.
+    else
+
+        // @todo Look up utility classes in MDL lib?
+        div(style="padding: 20px;")
+            table.mdl-data-table.mdl-js-data-table.mdl-data-table--selectable.mdl-shadow--2dp(style="width: 100%")
+                thead
+                    tr
+                        th.mdl-data-table__cell--non-numeric Name
+                        th.mdl-data-table__cell--non-numeric Rating
+                        th.mdl-data-table__cell--non-numeric Director
+                        th.mdl-data-table__cell--non-numeric Release date
+                each item in contentData.movies
+                    tbody
+                        tr
+                            td.mdl-data-table__cell--non-numeric #{item.name}
+                            td.mdl-data-table__cell--non-numeric #{item.rating}
+                            td.mdl-data-table__cell--non-numeric #{item.director}
+                            td.mdl-data-table__cell--non-numeric #{item.releaseDate}
+        // @todo some kind of grid system
+        div(style="padding: 0 20px;")
+            button.mdc-button(data-mdc-auto-init="MDCRipple") Next
+            button.mdc-button(data-mdc-auto-init="MDCRipple") Previous
