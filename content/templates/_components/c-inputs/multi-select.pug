@@ -1,0 +1,21 @@
+form(action="")
+    label.form__label(for="select-demo") Selecteer locaties
+    // javascript enriched multiselect component
+    .js-select
+        select#select-demo.select(multiple="" name="select-demo" data-multiselect="")
+            option(value="" data-placeholder="") -- multiselect component --
+            optgroup(label="Landen")
+                option(value="1" selected="") België
+                option(value="2") Nederland
+                option(value="3") Luxemburg
+                option(value="4") Frankrijk
+                option(value="5") Duitsland
+            optgroup(label="Steden")
+                option(value="6") Namen
+                option(value="7" selected="") Brussel
+                option(value="8") Ieper
+                option(value="9") Gent
+                option(value="10" selected="") Brugge
+                option(value="11") Roeselare
+                option(value="12") Kortrijk
+    // end component

@@ -1,0 +1,254 @@
+div(data-table="")
+    .data-table__actions.data-table__actions--top
+        .grid
+            .col--6-12.col--9-12--xs
+                ul.data-table__actions__list
+                    li.data-table__action
+                        .popover.popover--left.js-popover
+                            button.data-table__action__toggle.data-table__action__toggle--arrow.js-popover__toggle Downloaden
+                            ul.popover__content
+                                li
+                                    a.popover__link(href="#") PDF document
+                                li
+                                    a.popover__link(href="#") Excel document
+                                li
+                                    a.popover__link(href="#") CSV file
+                                li
+                                    a.popover__link(href="#") JSON file
+                    li.data-table__action(data-table-action="" data-show="false" aria-hidden="true")
+                        .popover.popover--left.js-popover
+                            button.data-table__action__toggle.data-table__action__toggle--arrow.js-popover__toggle Acties
+                            ul.popover__content
+                                li
+                                    a.popover__link(href="#") Aanpassen
+                                li
+                                    a.popover__link(href="#") Publiceren
+                                li
+                                    a.popover__link(href="#") Verwijderen
+            .col--6-12.col--3-12--xs
+                ul.data-table__actions__list.data-table__actions__list--right
+                    li.data-table__action
+                        button.data-table__action__toggle.data-table__action__toggle--contract-xs(type="button")
+                            i.vi.vi-list.vi-u-link(aria-hidden="true")
+                            span Lijstweergave
+                        // <a href="" class="data-table__action__toggle"><i aria-hidden="true" class="vi vi-diagram vi-u-link"></i>Hierarchische weergave</a>
+    .u-table-overflow
+        table.data-table
+            thead
+                tr.data-table__header
+                    th.data-table__header-title(style="width: 4%;")
+                        label.checkbox.checkbox--empty(for="checkbox-check-all")
+                            input#checkbox-check-all.checkbox__toggle(type="checkbox" name="checkbox" value="2" data-table-checkbox="" data-table-check-all="")
+                            span
+                            span.u-visually-hidden Selecteer alle rijen
+                    th.data-table__header-title(style="width: 10%;")
+                        a.data-table__header-title--sortable.data-table__header-title--sortable-active(href="#" title="sort")
+                            | Adres
+                            span.u-visually-hidden Aflopend sorteren
+                            i.data-table__header-title__sort-icon.vi.vi-u-link-after.vi-long-arrow
+                    th.data-table__header-title
+                        a.data-table__header-title--sortable.data-table__header-title--sortable-active(href="#" title="sort")
+                            | Postcode
+                            span.u-visually-hidden Oplopend sorteren
+                            i.data-table__header-title__sort-icon.vi.vi-u-link-after.vi-long-arrow.vi-u-180deg
+                    th.data-table__header-title
+                        a.data-table__header-title--sortable.data-table__header-title--sortable-active(href="#" title="sort")
+                            | Gemeente
+                    th.data-table__header-title
+                        a.data-table__header-title--sortable.data-table__header-title--sortable-active(href="#" title="sort")
+                            | Actief
+                    th.data-table__header-title
+                        a.data-table__header-title--sortable.data-table__header-title--sortable-active(href="#" title="sort")
+                            | Toggles
+                    th.data-table__header-title
+                        a.data-table__header-title--sortable.data-table__header-title--sortable-active(href="#" title="sort")
+                            | Acties
+                            span.u-visually-hidden Aflopend sorteren
+                            i.data-table__header-title__sort-icon.vi.vi-u-link-after.vi-long-arrow
+                    th.data-table__header-title
+                        a.data-table__header-title--sortable.data-table__header-title--sortable-active(href="#" title="sort")
+                            | Entiteitsvorm
+                            span.u-visually-hidden Aflopend sorteren
+                            i.data-table__header-title__sort-icon.vi.vi-u-link-after.vi-long-arrow
+            tbody
+                tr(data-table-selectable="")
+                    td
+                        label.checkbox.checkbox--empty
+                            input.checkbox__toggle(type="checkbox" name="checkbox" value="2" data-table-checkbox="")
+                            span
+                            span.u-visually-hidden Selecteer rij
+                    td OVO0000001
+                    td Vlaamse overheid
+                    td nvt
+                    td
+                        i.vi.vi-u-badge.vi-u-badge--positive.vi-u-badge--xxsmall.vi-check(aria-hidden="true")
+                        span.u-visually-hidden Actief
+                    td
+                        .checkbox--switch__wrapper
+                            input#toggle1.checkbox--switch(type="checkbox" name="toggle1" value="")
+                            label.checkbox--switch__label(for="toggle1")
+                                span.u-visually-hidden Switch toggle
+                    td VO
+                    td nvt
+                tr(data-table-selectable="")
+                    td
+                        label.checkbox.checkbox--empty
+                            input.checkbox__toggle(type="checkbox" name="checkbox" value="2" data-table-checkbox="")
+                            span
+                            span.u-visually-hidden Selecteer rij
+                    td OVO0000001
+                    td Vlaamse overheid
+                    td nvt
+                    td
+                        i.vi.vi-u-badge.vi-u-badge--positive.vi-u-badge--xxsmall.vi-check(aria-hidden="true")
+                        span.u-visually-hidden Actief
+                    td
+                        .checkbox--switch__wrapper
+                            input#toggle4.checkbox--switch(type="checkbox" name="toggle4" value="")
+                            label.checkbox--switch__label(for="toggle4")
+                                span.u-visually-hidden Switch toggle
+                    td VO
+                    td nvt
+                tr(data-table-selectable="")
+                    td
+                        label.checkbox.checkbox--empty
+                            input.checkbox__toggle(type="checkbox" name="checkbox" value="2" data-table-checkbox="")
+                            span
+                            span.u-visually-hidden Selecteer rij
+                    td OVO0000001
+                    td Vlaamse overheid
+                    td nvt
+                    td
+                        i.vi.vi-u-badge.vi-u-badge--positive.vi-u-badge--xxsmall.vi-check(aria-hidden="true")
+                        span.u-visually-hidden Actief
+                    td
+                        .checkbox--switch__wrapper
+                            input#toggle5.checkbox--switch(type="checkbox" name="toggle5" value="" checked="")
+                            label.checkbox--switch__label(for="toggle5")
+                                span.u-visually-hidden Switch toggle
+                    td VO
+                    td nvt
+                tr(data-table-selectable="")
+                    td
+                        label.checkbox.checkbox--empty
+                            input.checkbox__toggle(type="checkbox" name="checkbox" value="2" data-table-checkbox="")
+                            span
+                            span.u-visually-hidden Selecteer rij
+                    td OVO0000002
+                    td
+                        mark Vlaams
+                        |                   e Regering
+                        .pill Orgaan
+                    td nvt
+                    td(aria-label="Niet actief")
+                        i.vi.vi-u-badge.vi-u-badge--negative.vi-u-badge--xxsmall.vi-cross(aria-hidden="true")
+                        span.u-visually-hidden inactief
+                    td
+                        .checkbox--switch__wrapper
+                            input#toggle6.checkbox--switch(type="checkbox" name="toggle6" value="")
+                            label.checkbox--switch__label(for="toggle6")
+                                span.u-visually-hidden Switch toggle
+                    td VO
+                    td nvt
+                tr(data-table-selectable="")
+                    td
+                        label.checkbox.checkbox--empty
+                            input.checkbox__toggle(type="checkbox" name="checkbox" value="2" data-table-checkbox="")
+                            span
+                            span.u-visually-hidden Selecteer rij
+                    td OVO0000003
+                    td
+                        mark Vlaams
+                        |                   e Parlement
+                    td nvt
+                    td(aria-label="Niet actief")
+                    td
+                        .checkbox--switch__wrapper
+                            input#toggle11.checkbox--switch(type="checkbox" name="toggle11" value="")
+                            label.checkbox--switch__label(for="toggle11")
+                                span.u-visually-hidden Switch toggle
+                    td VO
+                    td nvt
+                tr(data-table-selectable="")
+                    td
+                        label.checkbox.checkbox--empty
+                            input.checkbox__toggle(type="checkbox" name="checkbox" value="2" data-table-checkbox="")
+                            span
+                            span.u-visually-hidden Selecteer rij
+                    td OVO0000004
+                    td
+                        mark Vlaams
+                        |                   e Politiezones
+                    td nvt
+                    td(aria-label="Niet actief")
+                    td
+                        .checkbox--switch__wrapper
+                            input#toggle12.checkbox--switch(type="checkbox" name="toggle12" value="")
+                            label.checkbox--switch__label(for="toggle12")
+                                span.u-visually-hidden Switch toggle
+                    td VO
+                    td nvt
+                tr(data-table-selectable="")
+                    td
+                        label.checkbox.checkbox--empty
+                            input.checkbox__toggle(type="checkbox" name="checkbox" value="2" data-table-checkbox="")
+                            span
+                            span.u-visually-hidden Selecteer rij
+                    td OVO0000005
+                    td
+                        | Ministeries van de
+                        mark Vlaams
+                        |                   e Gemeenschap
+                    td nvt
+                    td(aria-label="Niet actief")
+                    td
+                        .checkbox--switch__wrapper
+                            input#toggle13.checkbox--switch(type="checkbox" name="toggle13" value="")
+                            label.checkbox--switch__label(for="toggle13")
+                                span.u-visually-hidden Switch toggle
+                    td VO
+                    td nvt
+    .data-table__actions.data-table__actions--bottom
+        .grid
+            .col--6-12.col--8-12--s.col--1-1--xs
+                ul.data-table__actions__list
+                    li.data-table__action
+                        .popover.popover--left.js-popover
+                            button.data-table__action__toggle.data-table__action__toggle--arrow.js-popover__toggle Downloaden
+                            ul.popover__content
+                                li
+                                    a.popover__link(href="#") PDF document
+                                li
+                                    a.popover__link(href="#") Excel document
+                                li
+                                    a.popover__link(href="#") CSV file
+                                li
+                                    a.popover__link(href="#") JSON file
+                    li.data-table__action(data-table-action="" data-show="false" aria-hidden="true")
+                        .popover.popover--left.js-popover
+                            button.data-table__action__toggle.data-table__action__toggle--arrow.js-popover__toggle Acties
+                            ul.popover__content
+                                li
+                                    a.popover__link(href="#") Aanpassen
+                                li
+                                    a.popover__link(href="#") Publiceren
+                                li
+                                    a.popover__link(href="#") Verwijderen
+            .col--6-12.col--4-12--s.col--1-1--xs
+                .pager
+                    ul.pager__list.pager__list--right
+                        li.pager__element.u-hidden-mobile
+                            span.u-visually-hidden Rij 
+                            strong 11 - 20
+                            |  van 673
+                        li.pager__element
+                            a(href="")
+                                i.vi.vi-arrow.vi-u-180deg.vi-u-s(aria-hidden="true")
+                                |  vorige
+                                span.u-visually-hidden  10 rijen
+                        li.pager__element
+                            a(href="")
+                                | volgende
+                                span.u-visually-hidden  10 rijen
+                                i.vi.vi-arrow.vi-u-s(aria-hidden="true")
+// end component

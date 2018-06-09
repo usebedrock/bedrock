@@ -1,0 +1,47 @@
+// Subtitel "Contact" met Contact card
+.contact-card(itemscope='', itemtype='http://schema.org/GovernmentOrganization')
+    header
+        h1.contact-card__title(itemprop='name') Agentschap Overheidspersoneel (AgO)
+    .contact-card__content-wrapper
+        .contact-card__content.js-accordion__content
+            .contact-card__data
+                dl
+                    dt.contact-card__data__title Adres
+                    dd.contact-card__data__content
+                        div(itemprop='address', itemscope='', itemtype='http://schema.org/PostalAddress', data-lat='50.8626661', data-lng='4.3591373')
+                            .contact-card__data__name(itemprop='name') Ellipsgebouw
+                            div
+                                span(itemprop='streetAddress') Koning Albert II-laan 35 bus 12
+                            div
+                                span(itemprop='postalCode') 1030
+                                span(itemprop='addressLocality') Brussel
+                            div
+                                span(itemprop='addressCountry') België
+                    dt.contact-card__data__title Telefoon
+                    dd.contact-card__data__content(itemprop='telephone')
+                        a(href='tel:+32 800 20 555')
+                            | 0800
+                            | 20 555
+                    dt.contact-card__data__title Fax
+                    dd.contact-card__data__content(itemprop='faxNumber') 02 553 38 69
+                    dt.contact-card__data__title E-mail
+                    dd.contact-card__data__content
+                        ul
+                            li
+                                a(href='mailto:info@agentschapondernemen.be', itemprop='email') info@agentschapondernemen.be
+                    dt.contact-card__data__title Website
+                    dd.contact-card__data__content
+                        ul
+                            li
+                                a(href='http://www.agentschapondernemen.be', itemprop='url') http://www.agentschapondernemen.be
+            .contact-card__map(itemscope='', itemprop='hasMap', itemtype='http://schema.org/Map')
+                .map
+                    noscript
+                        .map__static-card
+                            a(href='https://maps.google.com?q=Koning%20Albert%20II-laan%2035%2C1030%20Brussel', target='_blank')
+                                img(itemprop='image', target='_blank', src='https://maps.google.com/maps/api/staticmap?center=50.8626661%2C4.3591373&zoom=15&sensor=false&markers=50.8626661%2C4.3591373&scale=1&key=AIzaSyB6bIbIEjYopAx44fVXA0SCun8FR3HvJkA&size=399x226&style=feature%3Aadministrative%7Celement%3Aall%7Cvisbility%3Aoff&style=feature%3Aadministrative%7Celement%3Alabels.text.fill%7Cvisibility%3Aon%7Ccolor%3A%23444444&style=feature%3Alandscape%7Celement%3Aall%7Cvisibility%3Aon%7Ccolor%3A%23ebecef&style=feature%3Apoi%7Celement%3Aall%7Cvisibility%3Aoff&style=feature%3Apoi.park%7Celement%3Aall%7Cvisibility%3Aon%7Ccolor%3A%23c4da7b&style=feature%3Aroad%7Celement%3Aall%7Csaturation%3A-100%7Clightness%3A50%7Cvisibility%3Asimplified%7Cgamma%3A1&style=feature%3Aroad%7Celement%3Ageometry%7Cvisibility%3Aoff&style=feature%3Aroad%7Celement%3Alabels%7Cvisibility%3Aoff&style=feature%3Aroad%7Celement%3Alabels.text%7Cgamma%3A0.54&style=feature%3Aroad.highway%7Celement%3Aall%7Cvisibility%3Asimplified&style=feature%3Aroad.highway%7Celement%3Ageometry%7Cvisibility%3Asimplified%7Ccolor%3A%23cbd2da&style=feature%3Aroad.highway.controlled_access%7Celement%3Aall%7Cvisibility%3Asimplified&style=feature%3Aroad.highway.controlled_access%7Celement%3Alabels.icon%7Cgamma%3A0.58&style=feature%3Aroad.arterial%7Celement%3Aall%7Cvisibility%3Asimplified&style=feature%3Aroad.arterial%7Celement%3Ageometry.fill%7Cvisibility%3Aon&style=feature%3Aroad.arterial%7Celement%3Ageometry.stroke%7Cvisibility%3Aon%7Ccolor%3A%23cbd2da&style=feature%3Aroad.arterial%7Celement%3Alabels.text.stroke%7Cvisibility%3Asimplified&style=feature%3Aroad.arterial%7Celement%3Alabels.icon%7Cvisibility%3Aoff&style=feature%3Aroad.local%7Celement%3Aall%7Cvisibility%3Asimplified&style=feature%3Aroad.local%7Celement%3Ageometry.fill%7Cvisibility%3Aon&style=feature%3Aroad.local%7Celement%3Ageometry.stroke%7Cvisibility%3Aon%7Cgamma%3A7.17%7Ccolor%3A%23cbd2da&style=feature%3Atransit%7Celement%3Aall%7Cvisibility%3Aoff&style=feature%3Awater%7Celement%3Aall%7Ccolor%3A%23bfdfe9%7Cvisibility%3Asimplified', alt='')
+                    .map__interactive-card.js-interactive-card(data-lat='50.8626661', data-lng='4.3591373')
+                    a.map__enlarge(href='https://maps.google.com?q=Koning%20Albert%20II-laan%2035%2C1030%20Brussel', target='_blank')
+                        span.u-hidden-text View in google maps
+            .contact-card__footer
+                a(href='#') Meer details

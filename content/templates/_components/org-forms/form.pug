@@ -1,0 +1,40 @@
+form.form(action='', data-validate-form='')
+    .form-grid.form-grid--is-stacked
+        .col--1-1
+            label.form__label(for='firstname')
+                | Voornaam 
+                span.form__annotation verplicht
+            input#firstname.input-field.input-field--block(type='text', name='')
+        .col--1-1
+            label.form__label(for='lastname')
+                | Naam 
+                span.form__annotation verplicht
+            input#lastname.input-field.input-field--block(type='text', name='')
+        .col--1-1
+            label.form__label.form__label--block(for='field-2')
+                | Email 
+                span.form__annotation verplicht
+            input#field-2.input-field.input-field--block(name='email-validation', data-required='true', data-validation-type='email', data-error-class='input-field--error', data-error-message='Dit is geen geldig e-mailadres', data-error-placeholder='email-validation-error', type='email')
+            .form__error(data-error-id='email-validation-error')
+        .col--1-1
+            label.form__label(for='phone') Telefoon
+            input#phone.input-field.input-field--block(type='text', name='')
+        .col--1-1
+            .form-grid.form-grid--is-stacked
+                .col--8-12.col--1-1--s
+                    label.form__label(for='street') Straat
+                    input#street.input-field.input-field--block(type='text', name='')
+                .col--2-12.col--1-2--s
+                    label.form__label(for='housenumber') Nummer
+                    input#housenumber.input-field.input-field--block(type='text', name='')
+                .col--2-12.col--1-2--s
+                    label.form__label(for='boxnumber') Bus
+                    input#boxnumber.input-field.input-field--block(type='text', name='')
+                .col--1-1
+                    label.form__label(for='zipcode') Postcode
+                    input#zipcode.input-field.input-field--block(type='text', name='')
+                .col--1-1
+                    label.form__label(for='city') Gemeente
+                    input#city.input-field.input-field--block(type='text', name='')
+        .col--1-1
+            input.button(type='submit', name='', value='Versturen')

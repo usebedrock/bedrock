@@ -4,17 +4,14 @@ module.exports = {
     colors: './content/scss/_colors.scss',
     categoryOrder: [
       'Style guide',
-      'Patterns',
-      'Overviews',
+      'Design patterns',
       'Components',
     ],
     componentCategories: {
-      b: 'Bootstrap additions',
-      f: 'Foundation additions',
-      bc: 'Bootstrap custom components',
-      fc: 'Foundation custom components',
-      br: 'Bedrock components',
-      c: 'Custom components'
+      c: 'Components',
+      org: 'Organisms',
+      aov: 'Overviews',
+      u: 'Utilities',
     }
   },
   icons: {

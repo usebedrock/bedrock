@@ -5,7 +5,7 @@ include ../../../core/templates/mixins/sample
 
 block pageVariables
     //- Use this block to append page variables in templates
-    - var projectTitle = "Bedrock"
+    - var projectTitle = "Vlaanderen Design System"
 
     - var htmlClass = ""
     - var bodyClass = ""
@@ -35,19 +35,23 @@ block pageVariables
     //-
         Styleguide classes - Headings
         Style headings in styleguide like your project's headings
-    - var styleguideBrandClass = ""
-    - var styleguideComponentGroupHeaderClass = ""
-    - var styleguideSampleHeadingClass = ""
-    - var styleguideComponentListingCategoryClass = ""
+    - var styleguideBrandClass = "vi vi-vlaanderen vi-u-xl u-spacer--small" // Usually h3
+    - var styleguideComponentGroupHeaderClass = "h2 u-spacer-top--small" // usually h1 or h2
+    - var styleguideSampleHeadingClass = "h4" // usually h3 or h4
 
-    - var styleguideNavListTitleClass = ""
-    - var styleguideNavListClass = ""
+    - var styleguideComponentListingCategoryClass = "h4" // usually h3 or h4
+
+    - var styleguideNavListTitleClass = "h6 u-spacer--small" // usually h4
+    - var styleguideNavListWrapperClass = "drilldown u-spacer--small"
+    - var styleguideNavListClass = "drilldown__list"
+
     - var styleguideSampleClass = ""
 
-    - var styleguideNavListItemLinkClass = ""
-    - var styleguideNavListItemLinkActiveClass = ""
     - var styleguideNavListItemActiveClass = ""
-    - var styleguideNavListItemClass = ""
+    - var styleguideNavListItemClass = "drilldown-list__item"
+
+    - var styleguideNavListItemLinkClass = "drilldown__item__cta"
+    - var styleguideNavListItemLinkActiveClass = "drilldown__item--selected"
 
     - var styleguideNavigationHolderClass = ""
 
@@ -64,6 +68,7 @@ html(lang='en' class=htmlClass ? htmlClass : '')
                 | #{moduleTitle} - #{projectTitle}
             else
                 | #{projectTitle}
+
 
         link(rel='stylesheet', href='/css/main.css')
         link(rel='stylesheet', href='/css/prototype.css')

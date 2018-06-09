@@ -1,0 +1,25 @@
+extends master
+
+block body
+    #vlaanderen-header(style='min-height:44px;;')
+        // insert your global header here
+        script(type='text/javascript', src='//widgets-dev.hbplus.be/widget/live/5ec9879de3e5488bba00a8c1c63b030e')
+        // end global header
+    // Start page content
+    .page
+        .layout.layout--wide
+            .skiplink
+                a(href='#main') Overslaan en naar de algemene inhoud gaan
+        // header here
+        // end header
+        #main.main-content(itemprop='mainContentOfPage', role='main', tabindex='-1')
+            .region
+                .layout.layout--wide
+                    block content
+                        // Add content here
+    // End page content
+    #vlaanderen-footer
+        // insert your Vlaanderen-footer-code here
+        script(type='text/javascript', src='//widgets-dev.hbplus.be/widget/live/70f9c938e7d94f4796131909296812c4')
+        // End global footer
+    script(src='https://dij151upo6vad.cloudfront.net/2.latest/js/vlaanderen-ui.js')
