@@ -1,23 +1,24 @@
 extends /templates/_layouts/master
 
 block append pageVariables
-    - var htmlClass = 'br-styleguide'
+    - var htmlClass = 'br-styleguide br-styleguide-default-styles-active'
     - var styleguideResetLinkStylingClass = "br-reset-link-styling"
 
 block body
 
-    .br-styleguide-container
-        .br-styleguide-navigation-holder(class=styleguideGridClass)
-            div(class=styleguideGridInnerClass)
-                div(class=styleguideGridCellClass+' '+styleguideLayoutTwoColumnsLeftClass)
-                    h1(class=styleguideBrandClass)
-                        a(href="/styleguide" class=styleguideResetLinkStylingClass) #{projectTitle}
+    .br-styleguide-container(class=styleguideGridClass)
+        .br-styleguide-container-inner(class=styleguideGridInnerClass)
+            .br-styleguide-navigation-holder(class=styleguideGridCellClass+' '+styleguideLayoutTwoColumnsLeftClass)
+                h1(class=styleguideBrandClass)
+                    a(href="/styleguide" class=styleguideResetLinkStylingClass) #{projectTitle}
 
-                    block nav
-                        include ../includes/styleguide-nav
+                block nav
+                    include ../includes/styleguide-nav
 
-        .br-styleguide-content(class=styleguideGridCellClass+' '+styleguideLayoutTwoColumnsRightClass)
+            .br-styleguide-content(class=styleguideGridCellClass+' '+styleguideLayoutTwoColumnsRightClass)
 
-            block content
-                block homeContent
-                    // Place style guide introduction here
+                block content
+                    block homeContent
+                        // Place style guide introduction here. By default redirects to first docs page.
+                        script.
+                            window.location = "/styleguide/docs/introduction.html"

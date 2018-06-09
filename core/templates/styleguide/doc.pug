@@ -4,6 +4,4 @@ block append pageVariables
     - var moduleTitle = doc.attributes.title + ' - Styleguide'
 
 block content
-
-    .br-content
-        div!= doc.body
+    != doc.body

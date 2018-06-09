@@ -8,7 +8,7 @@
 // Variables
 $br-heading-font-weight: 700 !default;
 
-$br-base-size-multiplier: 0.625 !default;
+$br-base-size-multiplier: 1 !default;
 
 $br-background: #FFF !default;
 $br-color-text: #333 !default;
@@ -24,88 +24,67 @@ $br-color-headings-dark: #FFF !default;
 
 $br-switch-breakpoint: 800px;
 
-// For our height calculations we are supposing body and html are 100% of the height
-html.br-styleguide {
+
+
+
+.br-styleguide-default-styles-active {
+  
   height: 100%;
-}
 
-html.br-styleguide body {
-  height: 100%;
-  overflow: visible !important; // Override any utility classes killing scroll
-  // Only kill the body scroll from a certain mq
-  @media (min-width: $br-switch-breakpoint) {
-    overflow: hidden;
-  }
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-
-  background: #FFF;
-}
-
-.br-styleguide *,
-.br-styleguide *:before,
-.br-styleguide *:after {
-  box-sizing: border-box;
-}
-
-.br-styleguide-container {
-  height: 100%;
-}
-
-.br-styleguide-navigation-holder {
-  line-height: 1.5;
-  padding: 4rem*$br-base-size-multiplier 2rem*$br-base-size-multiplier;
-  a {
-    color: inherit;
-  }
-  // Only init 2 columns and scroll from a certain mq
-  @media (min-width: $br-switch-breakpoint) {
+  body {
     height: 100%;
-    width: 20%;
-    float: left;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-}
-
-.br-styleguide-content {
-  background: #FFF;
-  padding: 4rem*$br-base-size-multiplier;
-  // Only init 2 columns and scroll from a certain mq
-  @media (min-width: $br-switch-breakpoint) {
+    overflow: visible !important; // Override any utility classes killing scroll
+    // Only kill the body scroll from a certain mq
+    @media (min-width: $br-switch-breakpoint) {
+      overflow: hidden;
+    }
     height: 100%;
-    width: 80%;
-    float: left;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    background: #FFF;
   }
-}
 
-/* Additions to styleguide
-   To make component code copy/pastable but still have ability to display elements
-   that are hidden by defaults or positioned by default in styleguide
-   ========================================================================== */
+  // Default style for 2 column layout in styleguide
 
-.br-styleguide-container {
-  // Bootstrap
-  .navbar-fixed-top {
-    position: static;
+  .br-styleguide-container {
+    height: 100%;
+    box-sizing: border-box;
   }
+
+  .br-styleguide-navigation-holder {
+    box-sizing: border-box;
+    padding: 4rem*$br-base-size-multiplier 2rem*$br-base-size-multiplier;
+    // Only init 2 columns and scroll from a certain mq
+    @media (min-width: $br-switch-breakpoint) {
+      height: 100%;
+      width: 25%;
+      float: left;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  
+  .br-styleguide-container-inner {
+    height: 100%;
+  }
+
+  .br-styleguide-content {
+    background: #FFF;
+    box-sizing: border-box;
+    padding: 4rem*$br-base-size-multiplier;
+    // Only init 2 columns and scroll from a certain mq
+    @media (min-width: $br-switch-breakpoint) {
+      height: 100%;
+      width: 75%;
+      float: left;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
 }
-
-/* Some typographical fixes
-   ========================================================================== */
-
-.br-componentgroup-header,
-.br-documentation-header {
-  font-size: 2rem*$br-base-size-multiplier;
-  font-weight: $br-heading-font-weight;
-  color: $br-color-headings;
-  margin: 0 0 1.2rem*$br-base-size-multiplier;
-}
-
 
 /* ==========================================================================
   br-prototype-nav
@@ -489,12 +468,13 @@ html.br-prototype-nav-is-open {
 
 .br-color-swatch-preview {
   width: 8rem*$br-base-size-multiplier;
-  height: 5rem*$br-base-size-multiplier;
+  height: 8rem*$br-base-size-multiplier;
+  border-radius: 100%;
   margin-bottom: 0.5rem*$br-base-size-multiplier;
   display: inline-block;
 }
 
 .br-color-swatch-data {
   color: #888;
-  font-size: 1.1rem*$br-base-size-multiplier;
+  font-size: 1.3rem*$br-base-size-multiplier;
 }
