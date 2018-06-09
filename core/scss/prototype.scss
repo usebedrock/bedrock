@@ -1,0 +1,500 @@
+/* ==========================================================================
+  Bedrock specific styles
+   ========================================================================== */
+
+@import "vendor/codemirror";
+
+
+// Variables
+$br-heading-font-weight: 700 !default;
+
+$br-base-size-multiplier: 0.625 !default;
+
+$br-background: #FFF !default;
+$br-color-text: #333 !default;
+$br-color-headings: #000 !default;
+
+$br-code-background: #F0F0F0 !default;
+
+$br-background-dark: #333 !default;
+$br-color-text-dark: #DDD !default;
+$br-color-headings-dark: #FFF !default;
+
+
+
+$br-switch-breakpoint: 800px;
+
+// For our height calculations we are supposing body and html are 100% of the height
+html.br-styleguide {
+  height: 100%;
+}
+
+html.br-styleguide body {
+  height: 100%;
+  overflow: visible !important; // Override any utility classes killing scroll
+  // Only kill the body scroll from a certain mq
+  @media (min-width: $br-switch-breakpoint) {
+    overflow: hidden;
+  }
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  background: #FFF;
+}
+
+.br-styleguide *,
+.br-styleguide *:before,
+.br-styleguide *:after {
+  box-sizing: border-box;
+}
+
+.br-styleguide-container {
+  height: 100%;
+}
+
+.br-styleguide-navigation-holder {
+  line-height: 1.5;
+  padding: 4rem*$br-base-size-multiplier 2rem*$br-base-size-multiplier;
+  a {
+    color: inherit;
+  }
+  // Only init 2 columns and scroll from a certain mq
+  @media (min-width: $br-switch-breakpoint) {
+    height: 100%;
+    width: 20%;
+    float: left;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+.br-styleguide-content {
+  background: #FFF;
+  padding: 4rem*$br-base-size-multiplier;
+  // Only init 2 columns and scroll from a certain mq
+  @media (min-width: $br-switch-breakpoint) {
+    height: 100%;
+    width: 80%;
+    float: left;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Additions to styleguide
+   To make component code copy/pastable but still have ability to display elements
+   that are hidden by defaults or positioned by default in styleguide
+   ========================================================================== */
+
+.br-styleguide-container {
+  // Bootstrap
+  .navbar-fixed-top {
+    position: static;
+  }
+}
+
+/* Some typographical fixes
+   ========================================================================== */
+
+.br-componentgroup-header,
+.br-documentation-header {
+  font-size: 2rem*$br-base-size-multiplier;
+  font-weight: $br-heading-font-weight;
+  color: $br-color-headings;
+  margin: 0 0 1.2rem*$br-base-size-multiplier;
+}
+
+
+/* ==========================================================================
+  br-prototype-nav
+   ========================================================================== */
+
+/* Variables
+   ========================================================================== */
+
+$br-prototype-nav-width: 250px; // Keep this in px please, otherwise it gets buggy
+
+/* Sidebar
+   ========================================================================== */
+
+// We are supposing this is true within all projects
+html.br-styleguide,
+.br-styleguide body {
+  margin: 0;
+}
+
+html.br-prototype-nav-is-open {
+  position: relative;
+  left: $br-prototype-nav-width;
+  width: calc(100% - #{$br-prototype-nav-width});
+}
+
+.br-prototype-nav {
+  background-color: #FFF;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  line-height: 1.5;
+  z-index: 2000;
+  transform: translateX(-100%);
+  width: $br-prototype-nav-width;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  .br-prototype-nav-inner {
+    padding: 2rem*$br-base-size-multiplier;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+
+  &.br-prototype-nav-open {
+    transform: translateX(0);
+    box-shadow: 2px 0 5px rgba(#000, 0.3);
+  }
+}
+
+.br-prototype-langselector {
+  margin-bottom: 10px;
+}
+
+.br-prototype-nav-text {
+  margin: 0;
+  padding: 0 0 0.6rem*$br-base-size-multiplier;
+  color: rgba(#000,0.5);
+  .br-prototype-nav--dark & {
+    color: rgba(#FFF,0.5);
+  }
+}
+
+/* Headings (both on index page and in sidebar)
+   ========================================================================== */
+
+.br-prototype-nav-main-heading {
+  color: #000;
+  font-size: 1.5rem*$br-base-size-multiplier;
+  font-weight: 700;
+  margin: 0;
+  padding: 0 0 0.6rem*$br-base-size-multiplier;
+}
+
+.br-prototype-nav-sub-heading {
+  font-size: 1.3rem*$br-base-size-multiplier;
+  font-weight: 400;
+  margin: 0;
+  padding: 0 0 0.6rem*$br-base-size-multiplier;
+}
+
+/* Dark Bedrock UI variant
+   ========================================================================== */
+
+.br-prototype-nav--dark {
+  background-color: $br-background-dark;
+  color: $br-color-text-dark;
+
+  .br-prototype-nav-main-heading {
+    color: $br-color-headings-dark;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  .br-tree-dir-state-count {
+    text-align: center;
+    background-color: #555;
+    color: #FFF;
+  }
+}
+
+/* Index page
+   ========================================================================== */
+
+.br-prototype-nav-index {
+  padding: 2rem*$br-base-size-multiplier;
+}
+
+.br-prototype-nav-index-cols {
+  column-count: 3;
+  li {
+    break-inside: avoid;
+  }
+}
+
+/* Page states
+   ========================================================================== */
+
+.br-prototype-page-states {
+  background: rgba(#FFF,0.05);
+  box-shadow: 0.2rem*$br-base-size-multiplier 0 0.5rem*$br-base-size-multiplier rgba(#000, 0.3);
+  margin-top: auto;
+  padding: 2rem*$br-base-size-multiplier;
+}
+
+.br-tree-dir-state-count {
+  float: right;
+  padding: 0 0.4rem*$br-base-size-multiplier;
+  border-radius: 3px;
+  background-color: #eee;
+  font-size: 1.2rem*$br-base-size-multiplier;
+}
+
+
+
+.br-reset-link-styling {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Expanded/collapsed states for directories
+   Only in side navigation
+   ========================================================================== */
+
+.br-bordered-list {
+  list-style: none;
+  padding: 0;
+}
+
+.br-prototype-nav {
+
+  .br-bordered-list ul {
+    padding: 0 0 0 1.8rem*$br-base-size-multiplier;
+    list-style: none;
+  }
+
+  .br-tree-dir {
+
+    .br-tree-dir-title {
+      margin: 0;
+      cursor: default;
+      font-weight: 400;
+
+      &:before {
+        content: '';
+        width: 0;
+        height: 0;
+        display: inline-block;
+        text-align: center;
+
+        // CSS triangle
+        border: 0;
+        border-left: 0.4rem*$br-base-size-multiplier solid transparent;
+        border-right: 0.4rem*$br-base-size-multiplier solid transparent;
+        border-top: 0.4rem*$br-base-size-multiplier solid #999;
+
+        margin-left: 0.2rem*$br-base-size-multiplier;
+        margin-right: 0.4rem*$br-base-size-multiplier;
+
+        position: relative;
+        top: -0.3rem*$br-base-size-multiplier;
+      }
+    }
+  }
+
+  .br-tree-dir--is-collapsed {
+    * {
+      display: none;
+    }
+
+    > .br-tree-dir-title {
+      display: block;
+
+      &:before {
+        // CSS triangle
+        border: 0;
+        border-top: 0.4rem solid transparent;
+        border-bottom: 0.4rem solid transparent;
+        border-left: 0.4rem solid #999;
+
+        margin-left: 0.35rem*$br-base-size-multiplier;
+        margin-right: 0.65rem*$br-base-size-multiplier;
+        top: 0;
+      }
+    }
+  }
+
+}
+
+
+/* br-component
+   ========================================================================== */
+
+.br-component-header {
+  font-size: 2.4rem*$br-base-size-multiplier;
+  font-weight: $br-heading-font-weight;
+}
+
+/* br-sample
+   ========================================================================== */
+
+.br-sample-clearfix:before,
+.br-sample-clearfix:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.br-sample-clearfix:after {
+  clear: both;
+}
+
+.br-sample-btn {
+  background: #FFF;
+  border: 1px solid #CDCDCD;
+  display: inline-block;
+  padding: 0.5rem*$br-base-size-multiplier 0.8rem*$br-base-size-multiplier;
+  border-radius: 0.4rem*$br-base-size-multiplier;
+  margin: 0 0 1rem*$br-base-size-multiplier;
+  font-size: 1.2rem*$br-base-size-multiplier;
+  &:hover {
+    background: #FFF;
+  }
+}
+
+.br-sample-footer {
+  position: relative;
+}
+
+.br-sample-copy-code-btn {
+  position: absolute;
+  z-index: 3;
+  top: 5.5rem*$br-base-size-multiplier;
+  right: 1rem*$br-base-size-multiplier;
+  display: none;
+  .br-sample-code:hover & {
+    display: block;
+  }
+}
+
+.br-sample-markup {
+  background: #EEE;
+  border: 1px solid #DDD;
+  padding: 1rem*$br-base-size-multiplier;
+  position: relative;
+  .CodeMirror {
+    background: transparent;
+  }
+}
+
+.br-sample-content {
+  background: #FFF;
+  padding: 3rem*$br-base-size-multiplier;
+  border: 1px solid #DDD;
+  margin: 0 0 1rem*$br-base-size-multiplier;
+  position: relative;
+  overflow: hidden;
+  resize: vertical;
+}
+
+.br-sample-content-is-layout {
+  min-height: 500px;
+}
+
+.br-sample-header .br-sample-header-link {
+  float: right;
+  color: rgba(0,0,0,0.45);
+  font-size: 1.6rem*$br-base-size-multiplier;
+  margin: 1rem*$br-base-size-multiplier 0;
+  padding: 0 0.2rem*$br-base-size-multiplier 0 0;
+}
+
+.br-sample-documentation {
+  padding: 0 0 1.2rem*$br-base-size-multiplier;
+
+  &:empty {
+    display: none;
+  }
+
+  p {
+    &:only-child,
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  ol,
+  ul {
+    counter-reset: list;
+    padding-left: 2.4rem*$br-base-size-multiplier;
+  }
+
+  li {
+    position: relative;
+  }
+
+  ol li:before {
+    counter-increment: list;
+    content: counter(list) '.';
+    left: -2rem*$br-base-size-multiplier;
+    position: absolute;
+  }
+
+  ul li:before {
+    content: '•';
+    left: -1.6rem*$br-base-size-multiplier;
+    position: absolute;
+  }
+
+  // Spacing between elements
+
+  p + p,
+  ul + ul,
+  ol + ol,
+  p + ul,
+  p + ol,
+  ul + p,
+  ul + ol,
+  ol + p,
+  ol + ul {
+    margin-top: 1.6rem*$br-base-size-multiplier;
+  }
+}
+
+.br-sample-header .br-sample-heading {
+  float: left;
+  margin: 1rem*$br-base-size-multiplier 0;
+  padding: 0;
+  color: $br-color-headings;
+}
+
+#icon-docs .br-sample-content {
+  column-count: 4;
+  > div {
+    display: flex;
+    .#{$br-svg-icon-class-prefix}, .o-svg-icon {
+      flex-basis: 20%;
+    }
+    code {
+      flex-basis: 80%;
+    }
+  }
+}
+
+/* Color swatches
+   ========================================================================== */
+
+.br-color-swatch-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.br-color-swatch-item {
+  display: inline-block;
+  margin-right: 1rem*$br-base-size-multiplier;
+  padding: 1rem*$br-base-size-multiplier;
+  text-align: center;
+}
+
+.br-color-swatch-preview {
+  width: 8rem*$br-base-size-multiplier;
+  height: 5rem*$br-base-size-multiplier;
+  margin-bottom: 0.5rem*$br-base-size-multiplier;
+  display: inline-block;
+}
+
+.br-color-swatch-data {
+  color: #888;
+  font-size: 1.1rem*$br-base-size-multiplier;
+}

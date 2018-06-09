@@ -1,7 +1,7 @@
 module.exports = {
   styleguide: {
     snippetLanguage: 'html',
-    colors: './content/scss/_settings.colors.scss',
+    colors: './content/scss/_colors.scss',
     categoryOrder: [
       'Style guide',
       'Patterns',
@@ -19,7 +19,7 @@ module.exports = {
   },
   icons: {
     generateIconFont: false,
-    iconFontPath: "./content/scss/settings/_icon-font.scss",
+    iconFontPath: "./content/scss/_icon-font.scss",
     hasSvgIcons: true,
     svgIconClassPrefix: 'svg-icon',
     iconFontClassPrefix: 'if'

@@ -1,22 +1,13 @@
-extends ../../../content/templates/_layouts/master
+extends index
 
-include ../mixins/sample
+block content
 
-block append pageVariables
-    - var htmlClass = 'br-styleguide'
-    - var pageTitle = componentGroup.docs && componentGroup.docs.attributes.title || componentGroup.group.id
-    - var moduleTitle = pageTitle + ' - Styleguide'
+    if !componentGroup.docs
+        h1.br-componentgroup-header(class=styleguideComponentGroupHeaderClass)= componentGroup.group.id
+    else
+        h1.br-componentgroup-header(class=styleguideComponentGroupHeaderClass)= componentGroup.docs.attributes.title || componentGroup.group.id
+        .br-content
+            != componentGroup.docs.body
 
-block body
-
-    .br-styleguide-container
-        include ../includes/styleguide-nav
-
-        .br-styleguide-content
-            h1.br-componentgroup-header= pageTitle
-            if componentGroup.docs
-                .br-content
-                    != componentGroup.docs.body
-
-            each component in componentGroup.components
-                +sample(component)
+    each component in componentGroup.components
+        +sample(component)

@@ -1,14 +1,9 @@
-extends ../../../content/templates/_layouts/master
+extends index
 
 block append pageVariables
-    - var htmlClass = 'br-styleguide'
     - var moduleTitle = doc.attributes.title + ' - Styleguide'
 
-block body
+block content
 
-    .br-styleguide-container
-        include ../includes/styleguide-nav
-
-        .br-styleguide-content
-            .br-content
-                div!= doc.body
+    .br-content
+        div!= doc.body
