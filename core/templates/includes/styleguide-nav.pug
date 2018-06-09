@@ -1,13 +1,14 @@
 div(class=styleguideNavigationHolderClass)
+
     each docsCategoryName in config.styleguide.categoryOrder
         if docs.byCategory[docsCategoryName]
             h4(class=styleguideNavListTitleClass)= docsCategoryName
-
-            ul(class=styleguideNavListClass)
-                each doc in docs.byCategory[docsCategoryName]
-                    li(class=styleguideNavListItemClass+' '+`${ "styleguide/docs/" + doc.attributes.filename == pathname ? styleguideNavListItemActiveClass : "" }`)
-                        a(href=`/styleguide/docs/${doc.attributes.filename}.html` class=styleguideNavListItemLinkClass+' '+`${ "styleguide/docs/" + doc.attributes.filename == pathname ? styleguideNavListItemLinkActiveClass : "" }`)
-                            | #{doc.attributes.title}
+            div(class=styleguideNavListWrapperClass)
+                ul(class=styleguideNavListClass)
+                    each doc in docs.byCategory[docsCategoryName]
+                        li(class=styleguideNavListItemClass+' '+`${ "styleguide/docs/" + doc.attributes.filename == pathname ? styleguideNavListItemActiveClass : "" }`)
+                            a(href=`/styleguide/docs/${doc.attributes.filename}.html` class=styleguideNavListItemLinkClass+' '+`${ "styleguide/docs/" + doc.attributes.filename == pathname ? styleguideNavListItemLinkActiveClass : "" }`)
+                                | #{doc.attributes.title}
 
         if docsCategoryName === 'Components' && Object.keys(components.byCategory).length > 0
             each category, categoryName in components.byCategory
@@ -15,10 +16,11 @@ div(class=styleguideNavigationHolderClass)
                     h4(class=styleguideNavListTitleClass)= categoryName
                 else
                     h4(class=styleguideNavListTitleClass) Components
-                ul(class=styleguideNavListClass)
-                    each group in category
-                        - var groupName = group.docs ? group.docs.attributes.title || group.group.id : group.group.id
-                        li(class=styleguideNavListItemClass+' '+`${ "styleguide/" + group.group.id == pathname ? styleguideNavListItemLinkActiveClass : "" }`)
-                            a(href=`/styleguide/${group.group.id}.html` class=styleguideNavListItemLinkClass+' '+`${ "styleguide/" + group.group.id == pathname ? styleguideNavListItemLinkActiveClass : "" }`)
-                                |  #{groupName}
+                div(class=styleguideNavListWrapperClass)
+                    ul(class=styleguideNavListClass)
+                        each group in category
+                            - var groupName = group.docs ? group.docs.attributes.title || group.group.id : group.group.id
+                            li(class=styleguideNavListItemClass+' '+`${ "styleguide/" + group.group.id == pathname ? styleguideNavListItemLinkActiveClass : "" }`)
+                                a(href=`/styleguide/${group.group.id}.html` class=styleguideNavListItemLinkClass+' '+`${ ("styleguide/" + group.group.id) == pathname ? styleguideNavListItemLinkActiveClass : "" }`)
+                                    |  #{groupName}
 
