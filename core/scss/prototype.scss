@@ -5,10 +5,12 @@
 @import "vendor/codemirror";
 
 
-// Variables
+/* Variables
+   ========================================================================== */
+
 $br-heading-font-weight: 700 !default;
 
-$br-base-size-multiplier: 1 !default;
+$br-base-size-multiplier: 0.625 !default;
 
 $br-background: #FFF !default;
 $br-color-text: #333 !default;
@@ -20,12 +22,11 @@ $br-background-dark: #333 !default;
 $br-color-text-dark: #DDD !default;
 $br-color-headings-dark: #FFF !default;
 
-
-
 $br-switch-breakpoint: 800px;
 
 
-
+/* Basic setup
+   ========================================================================== */
 
 .br-styleguide-default-styles-active {
   
@@ -309,6 +310,10 @@ html.br-prototype-nav-is-open {
 /* br-sample
    ========================================================================== */
 
+.br-sample {
+  padding: 1.2rem 0;
+}
+
 .br-sample-clearfix:before,
 .br-sample-clearfix:after {
   content: " "; /* 1 */
@@ -379,58 +384,6 @@ html.br-prototype-nav-is-open {
   padding: 0 0.2rem*$br-base-size-multiplier 0 0;
 }
 
-.br-sample-documentation {
-  padding: 0 0 1.2rem*$br-base-size-multiplier;
-
-  &:empty {
-    display: none;
-  }
-
-  p {
-    &:only-child,
-    &:last-child {
-      margin: 0;
-    }
-  }
-
-  ol,
-  ul {
-    counter-reset: list;
-    padding-left: 2.4rem*$br-base-size-multiplier;
-  }
-
-  li {
-    position: relative;
-  }
-
-  ol li:before {
-    counter-increment: list;
-    content: counter(list) '.';
-    left: -2rem*$br-base-size-multiplier;
-    position: absolute;
-  }
-
-  ul li:before {
-    content: '•';
-    left: -1.6rem*$br-base-size-multiplier;
-    position: absolute;
-  }
-
-  // Spacing between elements
-
-  p + p,
-  ul + ul,
-  ol + ol,
-  p + ul,
-  p + ol,
-  ul + p,
-  ul + ol,
-  ol + p,
-  ol + ul {
-    margin-top: 1.6rem*$br-base-size-multiplier;
-  }
-}
-
 .br-sample-header .br-sample-heading {
   float: left;
   margin: 1rem*$br-base-size-multiplier 0;
@@ -467,9 +420,8 @@ html.br-prototype-nav-is-open {
 }
 
 .br-color-swatch-preview {
-  width: 8rem*$br-base-size-multiplier;
-  height: 8rem*$br-base-size-multiplier;
-  border-radius: 100%;
+  width: 6rem*$br-base-size-multiplier;
+  height: 6rem*$br-base-size-multiplier;
   margin-bottom: 0.5rem*$br-base-size-multiplier;
   display: inline-block;
 }
