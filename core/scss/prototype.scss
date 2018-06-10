@@ -15,9 +15,11 @@ $br-background: #FFF !default;
 $br-color-text: #333 !default;
 $br-color-headings: #000 !default;
 
-$br-code-background: #F0F0F0 !default;
+$br-default-border-color: #DDD !default;
+$br-default-hover-bg-color: #F0F0F0 !default;
+$br-code-background: $br-default-hover-bg-color !default;
 $br-code-border-color: #DDD !default;
-$br-sample-border-color: #DDD !default;
+$br-sample-border-color: $br-default-border-color !default;
 
 $br-switch-breakpoint: 800px;
 
@@ -177,9 +179,6 @@ html.br-prototype-nav-is-open {
   margin: 0;
   padding: 0 0 0.6rem*$br-rem-multiplier;
   color: rgba(#000,0.5);
-  .br-prototype-nav--dark & {
-    color: rgba(#FFF,0.5);
-  }
 }
 
 /* Headings (both on index page and in sidebar)
@@ -482,24 +481,12 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
     a {
       text-decoration: none;
       border-bottom: 1px solid $br-bordered-list-border-color;
-      .br-prototype-nav--dark &,
-      .br-styleguide--dark & {
-        border-color: $br-bordered-list-border-color-inverse;
-      }
     }
     a:hover {
       background: rgba(0,0,0,0.1);
-      .br-prototype-nav--dark &,
-      .br-styleguide--dark & {
-        background: rgba(255,255,255,0.1);
-      }
     }
     a.br-bordered-list__link--active {
       background: rgba(0,0,0,0.15);
-      .br-prototype-nav--dark &,
-      .br-styleguide--dark & {
-        background: rgba(255,255,255,0.15);
-      }
     }
   }
 }
@@ -508,21 +495,21 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
    ========================================================================== */
 
 .br-bordered-list li a {
-  border-bottom: 1px solid #E9EDF1;
+  border-bottom: 1px solid $br-default-border-color;
   padding: 0.4rem*$br-rem-multiplier;
 
   &:hover {
-    background-color: #F2F5F9;
+    background-color: $br-default-hover-bg-color;
   }
 
   &.br-bordered-list__link--active {
-    background-color: #F2F5F9;
+    background-color: $br-default-hover-bg-color;
   }
 }
 
 .br-styleguide-navigation-holder {
   .br-bordered-list li a {
-    border-bottom: 1px solid #E9EDF1;
+    border-bottom: 1px solid $br-default-border-color;
 
     &:hover {
       background-color: #FFF;

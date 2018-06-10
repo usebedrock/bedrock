@@ -1,4 +1,5 @@
 @import "_colors";
+@import 'br-variables-override';
 
 /* ==========================================================================
   Style guide styles
@@ -6,7 +7,6 @@
   In the "real world" (e.g. the app itself) some HTML elements are hidden by default, or positioned in specific ways.
   In the styleguide sometimes we want to undo some of that for demonstrational purposes.
    ========================================================================== */
-
 
 .br-sample-markup {
   background: rgba($gray-200, .5);
@@ -21,7 +21,6 @@
 .CodeMirror {
   font-size: 12px;
 }
-
 
 /* Make tooltips visible in styleguide
    ========================================================================== */
@@ -91,10 +90,8 @@ div[id^="component-"] {
   }
 }
 
-
-//
-// Left side navigation
-//
+/* Left side navigation
+   ========================================================================== */
 
 .bd-toc {
   list-style: none;
@@ -119,4 +116,3 @@ div[id^="component-"] {
     color: rgba(0, 0, 0, .85);
   }
 }
-
