@@ -1,10 +1,10 @@
 include ../../../../core/templates/mixins/icon-overview
 
-if config.icons.hasSvgIcons
-    - var svgIconClassPrefix = config.icons && config.icons.svgIconClassPrefix || 'svg-icon'
-    h3 SVG icons
+div(class=styleguideRichContentClass)
 
-    p The SVG icon system is based on directly embedding SVG files into the markup. Within Bedrock, we use Pug to render these SVGs instead of having to inline them. Simply use <code>+icon('name')</code> to use an icon in a template. Here are the names:
+    if config.icons.hasSvgIcons
+        h2(class=styleguideComponentGroupHeaderClass) SVG icons
 
-    #icon-docs
-        +iconsOverview('svg', 'SVG icons')
+        #svg-icons
+            +iconsOverview('svg', 'SVG icons')
+

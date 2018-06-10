@@ -7,27 +7,32 @@
 /* Variables
    ========================================================================== */
 
-$br-heading-font-weight: 700 !default;
+$br-rem-multiplier: 0.625 !default;
 
-$br-base-size-multiplier: 0.625 !default;
+$br-heading-font-weight: 700 !default;
 
 $br-background: #FFF !default;
 $br-color-text: #333 !default;
 $br-color-headings: #000 !default;
 
 $br-code-background: #F0F0F0 !default;
-
-$br-background-dark: #333 !default;
-$br-color-text-dark: #DDD !default;
-$br-color-headings-dark: #FFF !default;
+$br-code-border-color: #DDD !default;
+$br-sample-border-color: #DDD !default;
 
 $br-switch-breakpoint: 800px;
 
-$br-styleguide-content-width: 78% !default; // Only supply a single % value here
 $br-styleguide-sidebar-width: 22% !default; // Only supply a single % value here
+$br-styleguide-content-width: (100% - $br-styleguide-sidebar-width);
 
-$br-styleguide-sidebar-padding: 3.2rem !default; // Only supply a single rem value here
-$br-styleguide-content-padding: 3.2rem !default; // Only supply a single rem value here
+$br-styleguide-sidebar-padding-top: 3.2rem*$br-rem-multiplier !default;
+$br-styleguide-sidebar-padding-right: 3.2rem*$br-rem-multiplier !default;
+$br-styleguide-sidebar-padding-bottom: 3.2rem*$br-rem-multiplier !default;
+$br-styleguide-sidebar-padding-left: 3.2rem*$br-rem-multiplier !default;
+
+$br-styleguide-content-padding-top: 3.2rem*$br-rem-multiplier !default;
+$br-styleguide-content-padding-right: 3.2rem*$br-rem-multiplier !default;
+$br-styleguide-content-padding-bottom: 3.2rem*$br-rem-multiplier !default;
+$br-styleguide-content-padding-left: 3.2rem*$br-rem-multiplier !default;
 
 @import "../../content/scss/br-variables-override";
 
@@ -38,13 +43,19 @@ $br-styleguide-content-padding: 3.2rem !default; // Only supply a single rem val
 .br-styleguide-default-styles-active {
   
   height: 100%;
+  position: static !important; // Override any “kill bouncy scroll” type code
+  @media (min-width: $br-switch-breakpoint) {
+    position: relative !important;
+  }
 
   body {
     height: 100%;
     overflow: visible !important; // Override any utility classes killing scroll
+    position: static !important; // Override any “kill bouncy scroll” type code
     // Only kill the body scroll from a certain mq
     @media (min-width: $br-switch-breakpoint) {
       overflow: hidden;
+      position: relative !important;
     }
     height: 100%;
     width: 100%;
@@ -64,10 +75,11 @@ $br-styleguide-content-padding: 3.2rem !default; // Only supply a single rem val
   .br-styleguide-navigation-holder {
     box-sizing: border-box;
     padding:
-      $br-styleguide-content-padding*$br-base-size-multiplier
-      $br-styleguide-content-padding/2*$br-base-size-multiplier
-      $br-styleguide-content-padding*$br-base-size-multiplier
-      $br-styleguide-content-padding*$br-base-size-multiplier;
+      $br-styleguide-sidebar-padding-top
+      $br-styleguide-sidebar-padding-right
+      $br-styleguide-sidebar-padding-bottom
+      $br-styleguide-sidebar-padding-left;
+
     // Only init 2 columns and scroll from a certain mq
     @media (min-width: $br-switch-breakpoint) {
       height: 100%;
@@ -86,10 +98,10 @@ $br-styleguide-content-padding: 3.2rem !default; // Only supply a single rem val
     background: #FFF;
     box-sizing: border-box;
     padding:
-      $br-styleguide-content-padding*$br-base-size-multiplier
-      $br-styleguide-content-padding*$br-base-size-multiplier
-      $br-styleguide-content-padding*$br-base-size-multiplier
-      $br-styleguide-content-padding/2*$br-base-size-multiplier;
+      $br-styleguide-content-padding-top
+      $br-styleguide-content-padding-right
+      $br-styleguide-content-padding-bottom
+      $br-styleguide-content-padding-left;
     // Only init 2 columns and scroll from a certain mq
     @media (min-width: $br-switch-breakpoint) {
       height: 100%;
@@ -141,15 +153,19 @@ html.br-prototype-nav-is-open {
   flex-direction: column;
 
   .br-prototype-nav-inner {
-    padding: 2rem*$br-base-size-multiplier;
+    padding: 2rem*$br-rem-multiplier;
     overflow: hidden;
     overflow-y: auto;
   }
 
   &.br-prototype-nav-open {
     transform: translateX(0);
-    box-shadow: 2px 0 5px rgba(#000, 0.3);
+    box-shadow: 0.2rem*$br-rem-multiplier 0 0.5rem*$br-rem-multiplier rgba(#000, 0.3);
   }
+}
+
+.br-prototype-lang {
+  font-size: 1.3rem*$br-rem-multiplier;
 }
 
 .br-prototype-langselector {
@@ -157,8 +173,9 @@ html.br-prototype-nav-is-open {
 }
 
 .br-prototype-nav-text {
+  font-size: 1.3rem*$br-rem-multiplier;
   margin: 0;
-  padding: 0 0 0.6rem*$br-base-size-multiplier;
+  padding: 0 0 0.6rem*$br-rem-multiplier;
   color: rgba(#000,0.5);
   .br-prototype-nav--dark & {
     color: rgba(#FFF,0.5);
@@ -170,46 +187,20 @@ html.br-prototype-nav-is-open {
 
 .br-prototype-nav-main-heading {
   color: #000;
-  font-size: 1.5rem*$br-base-size-multiplier;
   font-weight: 700;
   margin: 0;
-  padding: 0 0 0.6rem*$br-base-size-multiplier;
 }
 
 .br-prototype-nav-sub-heading {
-  font-size: 1.3rem*$br-base-size-multiplier;
   font-weight: 400;
   margin: 0;
-  padding: 0 0 0.6rem*$br-base-size-multiplier;
-}
-
-/* Dark Bedrock UI variant
-   ========================================================================== */
-
-.br-prototype-nav--dark {
-  background-color: $br-background-dark;
-  color: $br-color-text-dark;
-
-  .br-prototype-nav-main-heading {
-    color: $br-color-headings-dark;
-  }
-
-  a {
-    color: inherit;
-  }
-
-  .br-tree-dir-state-count {
-    text-align: center;
-    background-color: #555;
-    color: #FFF;
-  }
 }
 
 /* Index page
    ========================================================================== */
 
 .br-prototype-nav-index {
-  padding: 2rem*$br-base-size-multiplier;
+  padding: 2rem*$br-rem-multiplier;
 }
 
 .br-prototype-nav-index-cols {
@@ -224,17 +215,17 @@ html.br-prototype-nav-is-open {
 
 .br-prototype-page-states {
   background: rgba(#FFF,0.05);
-  box-shadow: 0.2rem*$br-base-size-multiplier 0 0.5rem*$br-base-size-multiplier rgba(#000, 0.3);
+  box-shadow: 0.2rem*$br-rem-multiplier 0 0.5rem*$br-rem-multiplier rgba(#000, 0.3);
   margin-top: auto;
-  padding: 2rem*$br-base-size-multiplier;
+  padding: 2rem*$br-rem-multiplier;
 }
 
 .br-tree-dir-state-count {
   float: right;
-  padding: 0 0.4rem*$br-base-size-multiplier;
+  padding: 0 0.4rem*$br-rem-multiplier;
   border-radius: 3px;
   background-color: #eee;
-  font-size: 1.2rem*$br-base-size-multiplier;
+  font-size: 1.2rem*$br-rem-multiplier;
 }
 
 /* Utilities 
@@ -257,7 +248,7 @@ html.br-prototype-nav-is-open {
 .br-prototype-nav {
 
   .br-bordered-list ul {
-    padding: 0 0 0 1.8rem*$br-base-size-multiplier;
+    padding: 0 0 0 1.8rem*$br-rem-multiplier;
     list-style: none;
   }
 
@@ -277,15 +268,15 @@ html.br-prototype-nav-is-open {
 
         // CSS triangle
         border: 0;
-        border-left: 0.4rem*$br-base-size-multiplier solid transparent;
-        border-right: 0.4rem*$br-base-size-multiplier solid transparent;
-        border-top: 0.4rem*$br-base-size-multiplier solid #999;
+        border-left: 0.4rem*$br-rem-multiplier solid transparent;
+        border-right: 0.4rem*$br-rem-multiplier solid transparent;
+        border-top: 0.4rem*$br-rem-multiplier solid #999;
 
-        margin-left: 0.2rem*$br-base-size-multiplier;
-        margin-right: 0.4rem*$br-base-size-multiplier;
+        margin-left: 0.2rem*$br-rem-multiplier;
+        margin-right: 0.4rem*$br-rem-multiplier;
 
         position: relative;
-        top: -0.3rem*$br-base-size-multiplier;
+        top: -0.3rem*$br-rem-multiplier;
       }
     }
   }
@@ -301,12 +292,12 @@ html.br-prototype-nav-is-open {
       &:before {
         // CSS triangle
         border: 0;
-        border-top: 0.4rem solid transparent;
-        border-bottom: 0.4rem solid transparent;
-        border-left: 0.4rem solid #999;
+        border-top: 0.4rem*$br-rem-multiplier solid transparent;
+        border-bottom: 0.4rem*$br-rem-multiplier solid transparent;
+        border-left: 0.4rem*$br-rem-multiplier solid #999;
 
-        margin-left: 0.35rem*$br-base-size-multiplier;
-        margin-right: 0.65rem*$br-base-size-multiplier;
+        margin-left: 0.35rem*$br-rem-multiplier;
+        margin-right: 0.65rem*$br-rem-multiplier;
         top: 0;
       }
     }
@@ -319,7 +310,7 @@ html.br-prototype-nav-is-open {
    ========================================================================== */
 
 .br-component-header {
-  font-size: 2.4rem*$br-base-size-multiplier;
+  font-size: 2.4rem*$br-rem-multiplier;
   font-weight: $br-heading-font-weight;
 }
 
@@ -327,7 +318,7 @@ html.br-prototype-nav-is-open {
    ========================================================================== */
 
 .br-sample {
-  padding: 1.2rem 0;
+  padding: 1.2rem*$br-rem-multiplier 0;
 }
 
 .br-sample-clearfix:before,
@@ -342,12 +333,12 @@ html.br-prototype-nav-is-open {
 
 .br-sample-btn {
   background: #FFF;
-  border: 1px solid #CDCDCD;
+  border: 1px solid $br-sample-border-color;
   display: inline-block;
-  padding: 0.5rem*$br-base-size-multiplier 0.8rem*$br-base-size-multiplier;
-  border-radius: 0.4rem*$br-base-size-multiplier;
-  margin: 0 0 1rem*$br-base-size-multiplier;
-  font-size: 1.2rem*$br-base-size-multiplier;
+  padding: 0.5rem*$br-rem-multiplier 0.8rem*$br-rem-multiplier;
+  border-radius: 0.4rem*$br-rem-multiplier;
+  margin: 0 0 1rem*$br-rem-multiplier;
+  font-size: 1.2rem*$br-rem-multiplier;
   &:hover {
     background: #FFF;
   }
@@ -360,8 +351,8 @@ html.br-prototype-nav-is-open {
 .br-sample-copy-code-btn {
   position: absolute;
   z-index: 3;
-  top: 5.5rem*$br-base-size-multiplier;
-  right: 1rem*$br-base-size-multiplier;
+  top: 5.5rem*$br-rem-multiplier;
+  right: 1rem*$br-rem-multiplier;
   display: none;
   .br-sample-code:hover & {
     display: block;
@@ -369,9 +360,9 @@ html.br-prototype-nav-is-open {
 }
 
 .br-sample-markup {
-  background: #EEE;
-  border: 1px solid #DDD;
-  padding: 1rem*$br-base-size-multiplier;
+  background: $br-code-background;
+  border: 1px solid $br-code-border-color;
+  padding: 1rem*$br-rem-multiplier;
   position: relative;
   .CodeMirror {
     background: transparent;
@@ -380,9 +371,9 @@ html.br-prototype-nav-is-open {
 
 .br-sample-content {
   background: #FFF;
-  padding: 3rem*$br-base-size-multiplier;
-  border: 1px solid #DDD;
-  margin: 0 0 1rem*$br-base-size-multiplier;
+  padding: 3rem*$br-rem-multiplier;
+  border: 1px solid $br-sample-border-color;
+  margin: 1rem*$br-rem-multiplier 0;
   position: relative;
   overflow: hidden;
   resize: vertical;
@@ -395,29 +386,16 @@ html.br-prototype-nav-is-open {
 .br-sample-header .br-sample-header-link {
   float: right;
   color: rgba(0,0,0,0.45);
-  font-size: 1.6rem*$br-base-size-multiplier;
-  margin: 1rem*$br-base-size-multiplier 0;
-  padding: 0 0.2rem*$br-base-size-multiplier 0 0;
+  font-size: 1.6rem*$br-rem-multiplier;
+  margin: 1rem*$br-rem-multiplier 0;
+  padding: 0 0.2rem*$br-rem-multiplier 0 0;
 }
 
 .br-sample-header .br-sample-heading {
   float: left;
-  margin: 1rem*$br-base-size-multiplier 0;
+  margin: 1rem*$br-rem-multiplier 0;
   padding: 0;
   color: $br-color-headings;
-}
-
-#icon-docs .br-sample-content {
-  column-count: 4;
-  > div {
-    display: flex;
-    .#{$br-svg-icon-class-prefix}, .o-svg-icon {
-      flex-basis: 20%;
-    }
-    code {
-      flex-basis: 80%;
-    }
-  }
 }
 
 /* Color swatches
@@ -430,19 +408,135 @@ html.br-prototype-nav-is-open {
 
 .br-color-swatch-item {
   display: inline-block;
-  margin-right: 1rem*$br-base-size-multiplier;
-  padding: 1rem*$br-base-size-multiplier;
+  margin-right: 1rem*$br-rem-multiplier;
+  padding: 1rem*$br-rem-multiplier;
   text-align: center;
 }
 
 .br-color-swatch-preview {
-  width: 6rem*$br-base-size-multiplier;
-  height: 6rem*$br-base-size-multiplier;
-  margin-bottom: 0.5rem*$br-base-size-multiplier;
+  width: 6rem*$br-rem-multiplier;
+  height: 6rem*$br-rem-multiplier;
+  margin-bottom: 0.5rem*$br-rem-multiplier;
   display: inline-block;
 }
 
 .br-color-swatch-data {
   color: #888;
-  font-size: 1.3rem*$br-base-size-multiplier;
+  font-size: 1.3rem*$br-rem-multiplier;
+}
+
+/* Typography
+   ========================================================================== */
+
+.br-typography-sample-size {
+  opacity: 0.4;
+}
+
+
+
+/* ==========================================================================
+  br-bordered-list
+   ========================================================================== */
+
+/* ==========================================================================
+  Variables
+   ========================================================================== */
+
+$br-heading-font-weight: 500 !default;
+$br-bordered-list-border-color:                  #DDD !default;
+$br-bordered-list-border-color-inverse:          rgba(#FFF,0.2) !default;
+
+// Padding
+$br-bordered-list-item-padding:                  0.2rem*$br-rem-multiplier !default;
+
+// Font sizes
+$br-bordered-list-font-size:                     1.3rem*$br-rem-multiplier  !default;
+$br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !default;
+
+// Regular colors
+
+/* Bordered list
+   ========================================================================== */
+
+.br-bordered-list-title {
+  font-weight: $br-heading-font-weight;
+  padding: 0;
+  margin: 0 0 1.2rem*$br-rem-multiplier;
+  font-size: $br-bordered-list-title-font-size;
+  padding: $br-bordered-list-item-padding;
+}
+
+.br-tree-dir-title {
+  margin: 0;
+  font-size: $br-bordered-list-font-size;
+  padding: $br-bordered-list-item-padding*2 $br-bordered-list-item-padding;
+}
+
+.br-bordered-list {
+  margin: 0;
+  padding: 0 0 1rem*$br-rem-multiplier;
+  ul {
+    padding: 0 0 0 1rem*$br-rem-multiplier;
+  }
+  li {
+    display: block;
+    a,
+    span.br-bordered-list-label {
+      padding: $br-bordered-list-item-padding;
+      font-size: $br-bordered-list-font-size;
+      display: block;
+    }
+    a {
+      text-decoration: none;
+      border-bottom: 1px solid $br-bordered-list-border-color;
+      .br-prototype-nav--dark &,
+      .br-styleguide--dark & {
+        border-color: $br-bordered-list-border-color-inverse;
+      }
+    }
+    a:hover {
+      background: rgba(0,0,0,0.1);
+      .br-prototype-nav--dark &,
+      .br-styleguide--dark & {
+        background: rgba(255,255,255,0.1);
+      }
+    }
+    a.br-bordered-list__link--active {
+      background: rgba(0,0,0,0.15);
+      .br-prototype-nav--dark &,
+      .br-styleguide--dark & {
+        background: rgba(255,255,255,0.15);
+      }
+    }
+  }
+}
+
+/* Improve styles for nav
+   ========================================================================== */
+
+.br-bordered-list li a {
+  border-bottom: 1px solid #E9EDF1;
+  padding: 0.4rem*$br-rem-multiplier;
+
+  &:hover {
+    background-color: #F2F5F9;
+  }
+
+  &.br-bordered-list__link--active {
+    background-color: #F2F5F9;
+  }
+}
+
+.br-styleguide-navigation-holder {
+  .br-bordered-list li a {
+    border-bottom: 1px solid #E9EDF1;
+
+    &:hover {
+      background-color: #FFF;
+    }
+
+    &.br-bordered-list__link--active {
+      background-color: #FFF;
+    }
+  }
 }
