@@ -1,0 +1,10 @@
+include ../../../../core/templates/mixins/icon-overview
+
+div(class=styleguideRichContentClass)
+
+    if config.icons.hasSvgIcons
+        h2(class=styleguideComponentGroupHeaderClass) SVG icons
+
+        #svg-icons
+            +iconsOverview('svg', 'SVG icons')
+

@@ -1,5 +1,3 @@
-include icon
-
 mixin iconCategory(category, name, mode)
     if icons.svg[category] && mode === 'svg'
         each icon in icons.svg[category]
@@ -21,3 +19,4 @@ mixin iconsOverview(mode, name)
         each category, categoryKey in icons.svg
             if categoryKey
                 +iconCategory(categoryKey, 'Icons/' + categoryKey, mode)
+

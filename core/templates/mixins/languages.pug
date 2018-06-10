@@ -1,0 +1,14 @@
+// Mixins to help with translation
+// @see https://bedrockapp.org/documentation/multi-language-support/
+
+// Translate 2 strings direct
+mixin translate(lang1, lang2)
+    span(data-lang="nl") #{lang1}
+    span(data-lang="fr") #{lang2}
+
+// Translate 2 strings with the help of a language file
+mixin translateD(dynamicLabel)
+    each item in contentData.translations
+        if dynamicLabel == item.label
+            span(data-lang="nl") #{item.translations.nl}
+            span(data-lang="fr") #{item.translations.fr}
