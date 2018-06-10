@@ -3,6 +3,7 @@ include ../../../core/templates/mixins/icon
 include ../../../core/templates/mixins/render-page-tree
 include ../../../core/templates/mixins/sample
 include ../../../core/templates/mixins/styleguide-settings
+include ../../../core/templates/mixins/languages
 
 block pageVariables
     //- Use this block to append page variables in templates
@@ -37,10 +38,9 @@ block pageVariables
     - var styleguideNavigationHolderClass = "mr-md-4"
 
 doctype html
-html(lang='en' class=htmlClass ? htmlClass : '')
+html(dir="ltr" lang="en" class=htmlClass ? htmlClass : '')
     head
         meta(charset='UTF-8')
-        meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
         meta(name="viewport", content="width=device-width, initial-scale=1")
         meta(name="robots", content="noindex")
 

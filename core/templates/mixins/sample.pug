@@ -7,7 +7,7 @@ mixin sample(component)
                 h3.br-sample-heading(class=styleguideSampleHeadingClass)= component.name
             a.br-sample-header-link(href="#component-"+component.name) #
         if component.docs
-            .br-sample-documentation!= component.docs.body
+            .br-sample-documentation(class=styleguideRichContentClass)!= component.docs.body
         .br-sample-content!= render(component.filename, 'html')
         .br-sample-footer
             if config.styleguide.snippetLanguage === 'html'

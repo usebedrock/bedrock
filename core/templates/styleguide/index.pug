@@ -2,20 +2,19 @@ extends /templates/_layouts/master
 
 block append pageVariables
     - var htmlClass = 'br-styleguide br-styleguide-default-styles-active'
-    - var styleguideResetLinkStylingClass = "br-reset-link-styling"
 
 block body
 
-    .br-styleguide-container(class=styleguideGridClass)
-        .br-styleguide-container-inner(class=styleguideGridInnerClass)
-            .br-styleguide-navigation-holder(class=styleguideGridCellClass+' '+styleguideLayoutTwoColumnsLeftClass)
+    .br-styleguide-container
+        .br-styleguide-container-inner
+            .br-styleguide-navigation-holder
                 h1(class=styleguideBrandClass)
-                    a(href="/styleguide" class=styleguideResetLinkStylingClass) #{projectTitle}
+                    a.br-reset-link-styling(href="/styleguide" class=styleguideResetLinkStylingClass) #{projectTitle}
 
                 block nav
                     include ../includes/styleguide-nav
 
-            .br-styleguide-content(class=styleguideGridCellClass+' '+styleguideLayoutTwoColumnsRightClass)
+            .br-styleguide-content
 
                 block content
                     block homeContent
