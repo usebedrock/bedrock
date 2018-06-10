@@ -1,5 +1,31 @@
 // Start your CSS here
 
+<<<<<<< HEAD
 @import "_colors";
 @import "_icon-font";
 
+=======
+@import "_reset";
+
+@import "_s-colors";
+@import "_s-variables";
+@import "_s-semantic-colors";
+
+@import "_e-base";
+
+@import "_o-icon-font";
+@import "_o-form-group";
+@import "_o-container";
+@import "_o-flex";
+@import "_o-grid";
+
+@import "_c-input";
+@import "_c-content";
+@import "_c-select";
+@import "_c-button";
+@import "_c-bordered-list";
+
+@import "_u-spacer";
+@import "_u-text";
+@import "_u-generic";
+>>>>>>> Improvements #content
