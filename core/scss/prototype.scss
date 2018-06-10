@@ -187,12 +187,7 @@ html.br-prototype-nav-is-open {
 
 .br-prototype-nav-main-heading {
   color: #000;
-  font-weight: 700;
-  margin: 0;
-}
-
-.br-prototype-nav-sub-heading {
-  font-weight: 400;
+  font-weight: $br-heading-font-weight;
   margin: 0;
 }
 
