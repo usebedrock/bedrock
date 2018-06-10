@@ -1,11 +1,5 @@
-<<<<<<< HEAD
 @import "_colors";
-=======
-@import '_s-colors';
-@import '_s-semantic-colors';
-@import '_s-variables';
 @import 'br-variables-override';
->>>>>>> Improvements
 
 /* ==========================================================================
   Style guide undo styles
@@ -13,55 +7,3 @@
   In the "real world" (e.g. the app itself) some HTML elements are hidden by default, or positioned in specific ways.
   In the styleguide sometimes we want to undo some of that for demonstrational purposes.
    ========================================================================== */
-
-<<<<<<< HEAD
-=======
-#component-01-svg-icons {
-  .br-sample-content {
-    flex-wrap: nowrap;
-    column-count: 4;
-    > div {
-      break-inside: avoid;
-      display: flex;
-      align-items: center;
-      .svg-icon, .o-svg-icon, .if {
-        flex-basis: 20%;
-      }
-      code {
-        flex-basis: 80%;
-      }
-    }
-
-    > div {
-      padding: 0.8rem 0;
-    }
-
-    code {
-      font-family: Consolas, Monaco, monospace;
-      font-size: 1.3rem;
-    }
-  }
-
-}
-
-/* Expose columns in grid documentation
-   ========================================================================== */
-
-.br-styleguide #component-01-o-grid [class*=o-grid-col] {
-  color: #FFF;
-  background: #4FB8D4;
-  margin-bottom: 1.6rem;
-  padding: 1rem;
-  text-align: center;
-}
-
-/* Color swatches tweak vs default
-   ========================================================================== */
-
-.br-color-swatch-preview {
-  width: 8rem*$br-rem-multiplier;
-  height: 8rem*$br-rem-multiplier;
-  border-radius: 100%;
-}
-
->>>>>>> Improvements
