@@ -13,8 +13,11 @@ $br-heading-font-weight: 700 !default;
 
 $br-background: #FFF !default;
 $br-code-background: #F0F0F0 !default;
+$br-default-border-color: #DDD !default;
+$br-default-hover-bg-color: #F0F0F0 !default;
+$br-code-background: $br-default-hover-bg-color !default;
 $br-code-border-color: #DDD !default;
-$br-sample-border-color: #DDD !default;
+$br-sample-border-color: $br-default-border-color !default;
 
 $br-switch-breakpoint: 800px;
 
@@ -492,21 +495,21 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
    ========================================================================== */
 
 .br-bordered-list li a {
-  border-bottom: 1px solid #E9EDF1;
+  border-bottom: 1px solid $br-default-border-color;
   padding: 0.4rem*$br-rem-multiplier;
 
   &:hover {
-    background-color: #F2F5F9;
+    background-color: $br-default-hover-bg-color;
   }
 
   &.br-bordered-list__link--active {
-    background-color: #F2F5F9;
+    background-color: $br-default-hover-bg-color;
   }
 }
 
 .br-styleguide-navigation-holder {
   .br-bordered-list li a {
-    border-bottom: 1px solid #E9EDF1;
+    border-bottom: 1px solid $br-default-border-color;
 
     &:hover {
       background-color: #FFF;
