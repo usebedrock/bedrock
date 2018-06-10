@@ -360,6 +360,7 @@ html.br-prototype-nav-is-open {
 }
 
 .br-sample-markup {
+  margin-top: 1rem*$br-rem-multiplier;
   background: $br-code-background;
   border: 1px solid $br-code-border-color;
   padding: 1rem*$br-rem-multiplier;
