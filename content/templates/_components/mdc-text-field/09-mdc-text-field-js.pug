@@ -1,0 +1,32 @@
+section#demo-text-field-wrapper
+    .mdc-text-field
+        input#full-func-text-field.mdc-text-field__input(type='text', aria-controls='my-text-field-helper-text', aria-describedby='my-text-field-helper-text')
+        label.mdc-floating-label(for='full-func-text-field') Email Address
+        .mdc-line-ripple
+    p#my-text-field-helper-text.mdc-text-field-helper-text(aria-hidden='true', style='display:none;')
+        | Helper Text (possibly validation message)
+div
+    input#disable(type='checkbox')
+    label(for='disable') Disabled
+div
+    input#rtl(type='checkbox')
+    label(for='rtl') RTL
+div
+    input#dense(type='checkbox')
+    label(for='dense') Dense
+div
+    input#required(type='checkbox')
+    label(for='required') Required
+div
+    input#alternate-colors(type='checkbox')
+    label(for='alternate-colors') Alternate Colors
+div
+    input#use-helper-text(type='checkbox')
+    label(for='use-helper-text') Use Helper Text
+div
+    input#persistent-helper-text(type='checkbox', disabled='')
+    label(for='persistent-helper-text') Make helper text persistent
+div
+    input#helper-text-as-validation(type='checkbox', disabled='')
+    label(for='helper-text-as-validation')
+        | Use helper text as validation message

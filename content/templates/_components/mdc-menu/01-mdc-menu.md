@@ -1,0 +1,5 @@
+---
+title: Menu
+---
+
+A menu.
