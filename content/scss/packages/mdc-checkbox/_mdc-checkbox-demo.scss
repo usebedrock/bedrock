@@ -14,13 +14,12 @@
 // limitations under the License.
 //
 
-@import "../../common";
 @import "../mdc-form-field/mdc-form-field";
 @import "../mdc-ripple/mixins";
 @import "../mdc-theme/color-palette";
 
 .demo-checkbox--custom-all {
-  $color: $material-color-red-500;
+  $color: $mdc-theme-primary;
 
   @include mdc-checkbox-focus-indicator-color($color);
   @include mdc-states($color);

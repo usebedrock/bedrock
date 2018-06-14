@@ -1,5 +1,5 @@
 ---
-title: Text Field - Leading/Trailing icons
+title: Icon Tab Labels
 ---
 
-A text field with leading/trailing icons.
+A tab with icon labels.
