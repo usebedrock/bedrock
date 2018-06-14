@@ -1,8 +1,8 @@
-# Bedrock
+# ![Bedrock](https://bedrockapp.org/wp-content/themes/bedrock/images/logo-black.svg)
 
 Welcome to Bedrock.
 
-<img src="https://img.shields.io/github/release/mono-company/bedrock.svg">
+![Bedrock Release](https://img.shields.io/github/release/usebedrock/bedrock.svg)
 
 Bedrock is a powerful tool that lets you prototype complex web applications and document design systems.
 
