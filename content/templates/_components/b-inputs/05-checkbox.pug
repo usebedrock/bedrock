@@ -1,13 +1,10 @@
 .custom-controls-stacked
-    label.custom-control.custom-checkbox
-        input.custom-control-input(name="checkbox" type="checkbox" checked)
-        span.custom-control-indicator
-        span.custom-control-description Checkbox option 1
-    label.custom-control.custom-checkbox
-        input.custom-control-input(name="checkbox" type="checkbox" checked)
-        span.custom-control-indicator
-        span.custom-control-description Checkbox option 2
-    label.custom-control.custom-checkbox
-        input.custom-control-input(name="checkbox" type="checkbox")
-        span.custom-control-indicator
-        span.custom-control-description Checkbox option 3
+    .custom-control.custom-checkbox
+        input.custom-control-input#customCheck1(type='checkbox' checked)
+        label.custom-control-label(for='customCheck1') Custom checkbox 1
+    .custom-control.custom-checkbox
+        input.custom-control-input#customCheck2(type='checkbox')
+        label.custom-control-label(for='customCheck2') Custom checkbox 2
+    .custom-control.custom-checkbox
+        input.custom-control-input#customCheck3(type='checkbox')
+        label.custom-control-label(for='customCheck3') Custom checkbox 3

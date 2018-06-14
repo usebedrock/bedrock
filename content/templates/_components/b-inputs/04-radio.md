@@ -1,5 +1,0 @@
----
-title: Radio
----
-
-Radio buttons.
