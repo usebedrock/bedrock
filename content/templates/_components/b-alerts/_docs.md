@@ -1,5 +1,4 @@
 ---
-title: Alert skins
+title: Alerts
 ---
 
-The different looks for alerts.

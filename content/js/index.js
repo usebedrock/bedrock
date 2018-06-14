@@ -4,6 +4,7 @@ window.$ = $;
 
 // Bootstrap bundle
 require('bootstrap/dist/js/bootstrap.bundle');
+require('holderjs');
 
 $(function() {
 
