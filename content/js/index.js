@@ -14,12 +14,6 @@ const chips = document.querySelectorAll('.mdc-chip-set');
 const checkboxes = document.querySelectorAll('.mdc-checkbox');
 
 function init() {
-  // Check if there are buttons on page
-  // Also able to write the code like this: (but the console.log is just for ref. for now)
-  //    if (buttons) {
-  //      handleMDCButton();
-  //    }
-
   handleMDCButton(buttons);
   handleMDCChips(chips);
   handleMDCCheckboxes(checkboxes);
