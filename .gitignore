@@ -8,3 +8,5 @@ icon-font-tmp
 content/scss/settings/_icon-font.scss
 compiled
 tmp
+.DS_Store
+yarn.lock

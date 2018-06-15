@@ -223,4 +223,7 @@ a.mdc-list-item {
   @include mdc-list-group-subheader-ink-color(text-primary-on-background);
 }
 
+@import "./mdc-list-demo";
+
+
 // postcss-bem-linter: end

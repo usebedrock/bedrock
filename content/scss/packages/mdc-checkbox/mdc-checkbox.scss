@@ -18,7 +18,6 @@
 @import "../mdc-ripple/mixins";
 @import "./mixins";
 @import "./variables";
-@import "./mdc-checkbox-demo";
 
 // postcss-bem-linter: define checkbox
 
@@ -132,5 +131,7 @@
     @include mdc-checkbox__mixedmark--indeterminate_;
   }
 }
+
+@import "./mdc-checkbox-demo";
 
 // postcss-bem-linter: end
