@@ -6,7 +6,16 @@ __tmp__
 Gemfile.lock
 icon-font-tmp
 content/scss/settings/_icon-font.scss
+.DS_Store
+package-lock.js
 compiled
+<<<<<<< HEAD
 tmp
+<<<<<<< HEAD
 .DS_Store
 yarn.lock
+=======
+>>>>>>> feature/materialdesignjs
+=======
+tmp
+>>>>>>> 426fe0d684c2ac1012739db1838e287f3021ff35
