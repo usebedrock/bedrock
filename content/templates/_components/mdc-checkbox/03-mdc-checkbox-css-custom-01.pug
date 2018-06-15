@@ -1,37 +1,9 @@
 .mdc-form-field
-    .mdc-checkbox.demo-checkbox--custom-all
-        input.mdc-checkbox__native-control(
-            type="checkbox",
-            id="basic-custom-checkbox-all_01")
-        .mdc-checkbox__background
-            svg.mdc-checkbox__checkmark(viewBox="0 0 24 24")
-                path.mdc-checkbox__checkmark-path(
-                    fill="none",
-                    stroke="white",
-                    d="M1.73,12.91 8.1,19.28 22.79,4.59")
-            .mdc-checkbox__mixedmark
-    label(for="basic-custom-checkbox-all_01") Custom checkbox 1
-    .mdc-checkbox.demo-checkbox--custom-all
-        input.mdc-checkbox__native-control(
-            type="checkbox",
-            id="basic-custom-checkbox-all_02")
-        .mdc-checkbox__background
-            svg.mdc-checkbox__checkmark(viewBox="0 0 24 24")
-                path.mdc-checkbox__checkmark-path(
-                    fill="none",
-                    stroke="white",
-                    d="M1.73,12.91 8.1,19.28 22.79,4.59")
-            .mdc-checkbox__mixedmark
-    label(for="basic-custom-checkbox-all_02") Custom checkbox 2
-    .mdc-checkbox.demo-checkbox--custom-all
-        input.mdc-checkbox__native-control(
-            type="checkbox",
-            id="basic-custom-checkbox-all_03")
-        .mdc-checkbox__background
-            svg.mdc-checkbox__checkmark(viewBox="0 0 24 24")
-                path.mdc-checkbox__checkmark-path(
-                    fill="none",
-                    stroke="white",
-                    d="M1.73,12.91 8.1,19.28 22.79,4.59")
-            .mdc-checkbox__mixedmark
-    label(for="basic-custom-checkbox-all_03") Custom checkbox 3
+    each item, index in ["Apples", "Bananas", "Pears"]
+        .mdc-checkbox.demo-checkbox--custom-all
+            input.mdc-checkbox__native-control(type="checkbox" id="basic-custom-checkbox-all-"+index)
+            .mdc-checkbox__background
+                svg.mdc-checkbox__checkmark(viewBox="0 0 24 24")
+                    path.mdc-checkbox__checkmark-path(fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59")
+                .mdc-checkbox__mixedmark
+        label(for="basic-custom-checkbox-all-"+index) #{item}
