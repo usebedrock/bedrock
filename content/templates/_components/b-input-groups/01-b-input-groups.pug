@@ -1,0 +1,23 @@
+.input-group.mb-3
+    .input-group-prepend
+        span.input-group-text#basic-addon1 @
+    input.form-control(type='text' placeholder='Username' aria-label='Username' aria-describedby='basic-addon1')
+.input-group.mb-3
+    input.form-control(type='text' placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby='basic-addon2')
+    .input-group-append
+        span.input-group-text#basic-addon2 @example.com
+label(for='basic-url') Your vanity URL
+.input-group.mb-3
+    .input-group-prepend
+        span.input-group-text#basic-addon3 https://example.com/users/
+    input.form-control#basic-url(type='text', aria-describedby='basic-addon3')
+.input-group.mb-3
+    .input-group-prepend
+        span.input-group-text $
+    input.form-control(type='text', aria-label='Amount (to the nearest dollar)')
+    .input-group-append
+        span.input-group-text .00
+.input-group
+    .input-group-prepend
+        span.input-group-text With textarea
+    textarea.form-control(aria-label='With textarea')
