@@ -1,6 +1,6 @@
 module.exports = {
   styleguide: {
-    snippetLanguage: 'html',
+    snippetLanguage: 'pug',
     colors: './content/scss/_colors.scss',
     categoryOrder: [
       'Style guide',
