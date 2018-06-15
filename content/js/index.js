@@ -2,10 +2,12 @@ require('../../core/js/index');
 
 // All @matial imports
 
-import {MDCRipple} from '@material/ripple/dist/mdc.ripple';
-import {MDCChipSet} from '@material/chips/dist/mdc.chips';
-import {MDCFormField} from '@material/form-field/dist/mdc.formField';
-import {MDCCheckbox} from '@material/checkbox/dist/mdc.checkbox';
+import { MDCRipple } from '@material/ripple/dist/mdc.ripple';
+import { MDCChipSet } from '@material/chips/dist/mdc.chips';
+import { MDCFormField } from '@material/form-field/dist/mdc.formField';
+import { MDCCheckbox } from '@material/checkbox/dist/mdc.checkbox';
+
+// import MDCDataTable from './_custom/dataTable';
 
 // Element variables
 
@@ -14,9 +16,16 @@ const chips = document.querySelectorAll('.mdc-chip-set');
 const checkboxes = document.querySelectorAll('.mdc-checkbox');
 
 function init() {
-  handleMDCButton(buttons);
-  handleMDCChips(chips);
-  handleMDCCheckboxes(checkboxes);
+  if (buttons) {
+    handleMDCButton(buttons);
+  }
+  if (chips) {
+    handleMDCChips(chips);
+  }
+  if (checkboxes) {
+    handleMDCCheckboxes(checkboxes);
+  }
+  // new MDCDataTable();
 }
 
 // General MDC Button function
@@ -41,9 +50,13 @@ function handleMDCChips(chipsEl) {
 function handleMDCCheckboxes(checkboxesEl) {
   [].forEach.call(checkboxesEl, function(checkbox) {
     const formField = checkbox.parentElement;
-    const formFieldInstance = new MDCFormField(formField);
-    const checkboxInstance = new MDCCheckbox(checkbox);
-    formFieldInstance.input = checkboxInstance;
+    if (formField) {
+      console.log('There\'s no form field!');
+    } else {
+      const formFieldInstance = new MDCFormField(formField);
+      const checkboxInstance = new MDCCheckbox(checkbox);
+      formFieldInstance.input = checkboxInstance;
+    }
   });
 };
 
