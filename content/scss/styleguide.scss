@@ -1,19 +1,24 @@
 @import "_colors";
 
 /* ==========================================================================
-  Style guide undo styles
+  Style guide styles
 
   In the "real world" (e.g. the app itself) some HTML elements are hidden by default, or positioned in specific ways.
   In the styleguide sometimes we want to undo some of that for demonstrational purposes.
    ========================================================================== */
 
+/* Dialog styles
+   ========================================================================== */
 
-#component-mdc-dialog .mdc-dialog {
-  position: static;
-  margin-top: 50px;
-  margin-bottom: 50px;
+#component-01-mdc-dialog-default,
+#component-02-mdc-dialog-scroll {
+    .br-sample-content {
+        padding: 5rem;
+    }
 }
 
+/* Icon styles
+   ========================================================================== */
 
 #component-01-svg-icons {
   .br-sample-content {
@@ -30,6 +35,9 @@
   }
 }
 
+/* List item (sidebar)
+   ========================================================================== */
+
 .br-styleguide-navigation-holder .mdc-list-item {
   padding: 0;
 }
@@ -41,7 +49,8 @@
   width: 100%;
 }
 
-// Demos
+/* Demos
+   ========================================================================== */
 
 @import "packages/mdc-card/mdc-card-demo";
 

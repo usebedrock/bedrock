@@ -54,14 +54,14 @@
   @include mdc-elevation(24);
   @include mdc-theme-prop(background-color, background);
 
-  display: inline-flex;
-  flex-direction: column;
+  // display: inline-flex;
+  // flex-direction: column;
   width: calc(100% - 30px);
   min-width: 640px;
   max-width: 865px;
-  transform: translateY(150px) scale(.8);
+  // transform: translateY(150px) scale(.8);
   border-radius: 2px;
-  opacity: 0;
+  // opacity: 0;
 
   @include mdc-rtl(".mdc-dialog") {
     text-align: right;
@@ -123,7 +123,7 @@
 }
 
 .mdc-dialog__action:not(:disabled) {
-  @include mdc-theme-prop(color, secondary);
+  @include mdc-theme-prop($mdc-theme-primary, $mdc-theme-secondary);
 }
 
 // TODO: Replace with breakpoint variable
@@ -171,3 +171,5 @@
 .mdc-dialog-scroll-lock {
   overflow: hidden;
 }
+
+@import "./mdc-dialog-demo";
