@@ -6,5 +6,6 @@ __tmp__
 Gemfile.lock
 icon-font-tmp
 content/scss/settings/_icon-font.scss
+.DS_Store
 compiled
 tmp
