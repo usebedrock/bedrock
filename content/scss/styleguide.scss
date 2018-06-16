@@ -20,18 +20,9 @@
 /* Icon styles
    ========================================================================== */
 
-#component-01-svg-icons {
-  .br-sample-content {
-    column-count: 4;
-    > div {
-      display: flex;
-      .#{$br-svg-icon-class-prefix}, .o-svg-icon {
-        flex-basis: 20%;
-      }
-      code {
-        flex-basis: 80%;
-      }
-    }
+#component-01-material-icons {
+  i.material-icons.mdc-button__icon {
+    margin: 10px;
   }
 }
 
