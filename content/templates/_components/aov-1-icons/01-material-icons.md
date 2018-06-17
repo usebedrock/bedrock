@@ -1,3 +1,3 @@
 ---
-title: SVG icons
+title: Material icons
 ---
