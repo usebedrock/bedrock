@@ -54,6 +54,10 @@
   box-sizing: content-box;
 }
 
+.br-styleguide-navigation-holder .mdc-typography--headline4 {
+  margin-bottom: 20px;
+}
+
 /* Typography table
    ========================================================================== */
 
@@ -62,6 +66,12 @@
   border-collapse: collapse;
   margin: 0;
   padding: 0;
+  
+  .mdc-typography--pre {
+    margin: 10px 0;
+    padding: 20px;
+    background: #EEE;
+  }
   td:first-child {
     width: 20%;
   }
