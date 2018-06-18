@@ -1,0 +1,150 @@
+//
+// Copyright 2017 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//       http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+@import "./mixins";
+
+.mdc-data-table {
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  white-space: nowrap;
+  font-size: 13px;
+  overflow-x: auto;
+  background-color: $mdc-theme-background;
+  @include mdc-theme-prop(color, text-primary-on-background);
+
+  &--select,
+  &--select-multiple {
+    tbody .mdc-data-table__row {
+      cursor: pointer;
+    }
+  }
+
+  &--select-multiple {
+    & .mdc-data-table__cell:first-of-type,
+    & .mdc-data-table__header:first-of-type {
+      // calculate correct width and padding for the checkbox to fit
+      padding: 0 (24px - 11px);
+      width: 24px * 2 + 18px;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  &__cell {
+    font-weight: 400;
+  }
+
+  &__cell,
+  &__header {
+    position: relative;
+    height: 48px;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 0 56px 0 0;
+    box-sizing: border-box;
+    vertical-align: middle;
+
+    &--numeric {
+      text-align: right;
+    }
+
+    &:first-of-type {
+      padding-left: 24px;
+    }
+
+    &:last-of-type {
+      padding-right: 24px;
+    }
+  }
+
+  &__header {
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0;
+    font-size: 12px;
+    @include mdc-theme-prop(color, text-secondary-on-background);
+
+    &--sortable {
+      user-select: none;
+      cursor: pointer;
+
+      &:before {
+        content: "";
+        font-family: 'Material Icons';
+        font-size: 16px;
+        margin-right: 5px;
+        vertical-align: sub;
+        display: inline-block;
+        font-feature-settings: 'liga';
+        transition: transform 0.2s ease;
+      }
+
+      &:hover:before {
+        @include mdc-theme-prop(color, text-icon-on-background);
+      }
+
+      &[aria-sort=ascending],
+      &[aria-sort=descending] {
+        @include mdc-theme-prop(color, text-primary-on-background);
+
+        &:before {
+          content: 'arrow_upward';
+        }
+      }
+
+      &[aria-sort=descending]:before {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+  // row in table header
+  thead .mdc-data-table__row {
+    position: relative;
+    height: 56px;
+    border-bottom: 1px solid;
+    @include mdc-theme-prop-alpha(border-color, $mdc-theme-background, 0.12)
+  }
+  // row in table body
+  tbody .mdc-data-table__row {
+    position: relative;
+    height: 48px;
+    overflow: hidden;
+    transition: background-color 0.15s linear;
+    border-bottom: 1px solid;
+    @include mdc-theme-prop-alpha(border-color, $mdc-theme-background, 0.12);
+
+    &:hover {
+      @include mdc-theme-prop-alpha(background-color, $mdc-theme-background, 0.07);
+    }
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    &--disabled {
+      pointer-events: none;
+    }
+
+    &--selected,
+    &:active {
+      @include mdc-theme-prop-alpha(background-color, $mdc-theme-background, 0.04);
+    }
+  }
+}
