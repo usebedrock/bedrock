@@ -6,7 +6,7 @@ import { MDCRipple } from '@material/ripple/dist/mdc.ripple';
 import { MDCChipSet } from '@material/chips/dist/mdc.chips';
 import { MDCFormField } from '@material/form-field/dist/mdc.formField';
 import { MDCCheckbox } from '@material/checkbox/dist/mdc.checkbox';
-import { MDCFloatingLabel } from '@material/floating-label/dist/mdc.floatingLabel.js';
+import { MDCFloatingLabel } from '@material/floating-label/dist/mdc.floatingLabel';
 
 // import MDCDataTable from './_custom/dataTable';
 
@@ -82,7 +82,14 @@ function handleRipple(elements) {
 
 function handleMDCFloatingLabels(floatingLabelsEl) {
   [].forEach.call(floatingLabelsEl, function(label) {
-    const floatingLabel = new MDCFloatingLabel(label);
+    const formField = label.parentElement;
+    if (formField) {
+      console.log('There\'s no form field!');
+    } else {
+      const formFieldInstance = new MDCFormField(formField);
+      const labelInstance = new MDCFloatingLabel(label);
+      formFieldInstance.input = labelInstance;
+    }
   });
 };
 
