@@ -45,8 +45,29 @@
 
 @import "packages/mdc-card/mdc-card-demo";
 
-
-
 .br-styleguide-content {
   box-sizing: content-box;
+}
+
+.mdc-typography-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  td:first-child {
+    width: 20%;
+  }
+  tr:last-child td {
+    border: none;
+  }
+  td, th {
+    padding-bottom: 30px;
+    padding-top: 30px;
+    border-bottom: 1px solid #DDD;
+    vertical-align: top;
+  }
+  pre {
+    white-space: pre-wrap;
+    font-size: 90%;
+  }
 }
