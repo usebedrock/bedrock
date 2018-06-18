@@ -54,7 +54,7 @@
   box-sizing: content-box;
 }
 
-/* Typography
+/* Typography table
    ========================================================================== */
 
 .mdc-typography-table {
@@ -77,5 +77,14 @@
   pre {
     white-space: pre-wrap;
     font-size: 90%;
+  }
+}
+
+/* Top app bar
+   ========================================================================== */
+
+#component-01-mdc-top-app-bar {
+  .mdc-top-app-bar {
+    position: static;
   }
 }

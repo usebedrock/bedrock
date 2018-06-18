@@ -4,35 +4,34 @@ block body
 
     .mdc-layout-grid
         .mdc-layout-grid__inner
+            .mdc-layout-grid__cell.mdc-layout-grid__cell--span-6
 
-            .mdc-layout-grid__cell
-                .mdc-card.demo-card
-                    section.mdc-card__supporting-text
-                        h2 Packaging info
+                .mdc-card(style="padding: 40px;")
 
-                        .mdc-text-field.mdc-text-field--outlined(data-mdc-auto-init="MDCTextField")
-                            input.mdc-text-field__input(type='text')
-                            label.mdc-floating-label Your Name
+                    h2.mdc-typography--headline5 Packaging info
 
-                        .mdc-form-field
-                            .mdc-text-field#demo-email(data-mdc-auto-init="MDCTextField")
-                                input.mdc-text-field__input(type="email")
-                                label.mdc-text-field__label(for="demo-input-email") Your e-mail
+                    .mdc-text-field.mdc-text-field--outlined(data-mdc-auto-init="MDCTextField")
+                        input.mdc-text-field__input(type='text')
+                        label.mdc-floating-label Your Name
 
-                        .mdc-text-field.mdc-text-field--textarea
-                            textarea.mdc-text-field__input(rows="8" cols="40" id="demo-textarea")
-                            label.mdc-text-field__label(for="demo-textarea") Enter your message
+                    .mdc-text-field.mdc-text-field--outlined(data-mdc-auto-init="MDCTextField")
+                        input.mdc-text-field__input(type='text')
+                        label.mdc-floating-label Your e-mail
 
-                        .mdc-form-field
-                            .mdc-checkbox
-                                input#option-1.mdc-checkbox__native-control(type="checkbox")
-                                .mdc-checkbox__background
-                                    svg.mdc-checkbox__checkmark(viewbox="0 0 24 24")
-                                        path.mdc-checkbox__checkmark__path(fill="none", stroke="white", d="M1.73,12.91 8.1,19.28 22.79,4.59")
-                                    .mdc-checkbox__mixedmark
+                    .mdc-text-field.mdc-text-field--textarea
+                        label.mdc-text-field__label(for="demo-textarea") Enter your message
+                        textarea.mdc-text-field__input(rows="8" cols="40")
 
-                            label(for="option-1") I would like to subscribe to the newsletter
-                        .btn-toolbar
-                            button.mdc-button.mdc-button--raised(data-mdc-auto-init="MDCRipple") Button
-                            button.mdc-button.mdc-button--raised(data-mdc-auto-init="MDCRipple") Upload files
-    
+                    .mdc-form-field
+                        .mdc-checkbox
+                            input.mdc-checkbox__native-control(type="checkbox" id="checkbox1")
+                            .mdc-checkbox__background
+                                svg.mdc-checkbox__checkmark(viewBox="0 0 24 24")
+                                    path.mdc-checkbox__checkmark-path(fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59")
+                                .mdc-checkbox__mixedmark
+                        label(for="checkbox1") I would like to subscribe to the newsletter
+
+                    // What is the class to put buttons next to each other?
+                    .mdc-toolbar
+                        button.mdc-button.mdc-button--raised(data-mdc-auto-init="MDCRipple") Cancel
+                        button.mdc-button.mdc-button--raised(data-mdc-auto-init="MDCRipple") Save
