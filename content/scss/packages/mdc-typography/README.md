@@ -62,7 +62,7 @@ We recommend you load Roboto from Google Fonts:
 ### Styles
 
 ```css
-@import "@material/typography/mdc-typography";
+@import "../mdc-typography/mdc-typography";
 ```
 
 ## Style Customization
@@ -132,7 +132,7 @@ $mdc-typography-styles-button: (
   text-transform: none,
 );
 
-@import "@material/button/mdc-button";
+@import "../mdc-button/mdc-button";
 ```
 
 Example: Overriding the global `font-family` property. 

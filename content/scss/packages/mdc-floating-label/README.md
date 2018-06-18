@@ -32,7 +32,7 @@ Floating labels display the type of input a field requires. Every Text Field and
 ### Styles
 
 ```scss
-@import "@material/floating-label/mdc-floating-label";
+@import "../mdc-floating-label/mdc-floating-label";
 ```
 
 ### JavaScript Instantiation

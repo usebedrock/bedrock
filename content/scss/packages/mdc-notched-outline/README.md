@@ -40,7 +40,7 @@ The notched outline is a border around all sides of either a Text Field or Selec
 ### Styles
 
 ```scss
-@import "@material/notched-outline/mdc-notched-outline";
+@import "../mdc-notched-outline/mdc-notched-outline";
 ```
 
 ### JavaScript Instantiation

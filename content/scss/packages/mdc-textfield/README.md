@@ -63,7 +63,7 @@ npm install @material/textfield
 ### Styles
 
 ```scss
-@import "@material/textfield/mdc-text-field";
+@import "../mdc-textfield/mdc-text-field";
 ```
 
 ### JavaScript Instantiation

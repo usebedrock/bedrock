@@ -67,7 +67,7 @@ npm install @material/select
 ### Styles
 
 ```scss
-@import "@material/select/mdc-select";
+@import "../mdc-select/mdc-select";
 ```
 
 ### JavaScript Instantiation

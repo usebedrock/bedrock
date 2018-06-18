@@ -30,7 +30,7 @@ Helper text gives context about a field’s input, such as how the input will be
 ### Styles
 
 ```scss
-@import "@material/textfield/helper-text/mdc-text-field-helper-text";
+@import "../mdc-textfield/helper-text/mdc-text-field-helper-text";
 ```
 
 ### JavaScript Instantiation

@@ -1,5 +1,0 @@
-@mixin mdc-theme-prop-alpha($property, $style, $alpha) {
-  $tone: mdc-theme-contrast-tone($style);
-  $tone-color: if($tone == dark, black, white);
-  #{$property}: rgba($tone-color, $alpha);
-}

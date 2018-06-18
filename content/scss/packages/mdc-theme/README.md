@@ -37,7 +37,7 @@ $mdc-theme-secondary: #feeae6;
 $mdc-theme-on-primary: #442b2d;
 $mdc-theme-on-secondary: #442b2d;
 
-@import "@material/button/mdc-button";
+@import "../mdc-button/mdc-button";
 ```
 
 We suggest you follow the Web Content Accessibility Guidelines 2.0 when picking the values for on-primary, on-secondary, etc. These values should be accessible on top of the corresponding value, e.g. primary and secondary.

@@ -54,7 +54,7 @@ npm install @material/top-app-bar
 ### Styles
 
 ```scss
-@import "@material/top-app-bar/mdc-top-app-bar";
+@import "../mdc-top-app-bar/mdc-top-app-bar";
 ```
 
 ### JavaScript Instantiation

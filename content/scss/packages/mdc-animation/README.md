@@ -32,7 +32,7 @@ npm install @material/animation
 We provide timing functions which you can use with the `animation` or `transition` CSS properties
 
 ```scss
-@import "@material/animation/variables";
+@import "../mdc-animation/variables";
 
 .my-element--animating {
   animation: foo-keyframe 175ms $mdc-animation-standard-curve-timing-function;
@@ -49,7 +49,7 @@ Variable | Description
 The following functions create transitions given `$name` and the `$duration`. You can also specify `$delay`, but the default is 0ms. `$name` can either refer to the keyframe, or to CSS property used in `transition`.
 
 ```scss
-@import "@material/animation/functions";
+@import "../mdc-animation/functions";
 
 .my-element {
   transition: mdc-animation-exit-permanent(/* $name: */ opacity, /* $duration: */ 175ms, /* $delay: */ 150ms);
@@ -65,7 +65,7 @@ The following functions create transitions given `$name` and the `$duration`. Yo
 
 
 ```scss
-@import "@material/animation/functions";
+@import "../mdc-animation/functions";
 
 @keyframes fade-in {
   from {

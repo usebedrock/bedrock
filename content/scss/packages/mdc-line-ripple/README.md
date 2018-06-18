@@ -32,7 +32,7 @@ The line ripple is used to highlight user-specified input above it. When a line 
 ### Styles
 
 ```scss
-@import "@material/line-ripple/mdc-line-ripple";
+@import "../mdc-line-ripple/mdc-line-ripple";
 ```
 
 ### JavaScript Instantiation

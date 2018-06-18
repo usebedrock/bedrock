@@ -166,7 +166,7 @@ elements:
 
 ### Styles
 ```css
-@import "@material/card/mdc-card";
+@import "../mdc-card/mdc-card";
 ```
 
 ### CSS Classes

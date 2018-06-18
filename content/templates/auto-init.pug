@@ -1,0 +1,8 @@
+extends /templates/_layouts/master
+
+block body
+    p Test
+    .mdc-text-field(data-mdc-auto-init='MDCTextField')
+        input.mdc-text-field__input#input(type='text')
+        label.mdc-floating-label(for='input') Input Label
+        .mdc-line-ripple

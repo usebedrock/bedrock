@@ -59,7 +59,7 @@ The HTML structure for a Standard Image List is as follows:
 ### Styles
 
 ```scss
-@import "@material/image-list/mdc-image-list";
+@import "../mdc-image-list/mdc-image-list";
 ```
 
 The HTML structure above would be combined with an invocation of the `mdc-image-list-standard-columns` mixin,

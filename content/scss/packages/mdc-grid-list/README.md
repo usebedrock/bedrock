@@ -87,7 +87,7 @@ overwrite the default value for your grid list:
 
   ```scss
   $mdc-grid-list-tile-width: 300px;
-  @import "@material/grid-list/mdc-grid-list";
+  @import "../mdc-grid-list/mdc-grid-list";
   ```
 
 3. Add own style to tile
