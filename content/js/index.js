@@ -6,6 +6,7 @@ import { MDCRipple } from '@material/ripple/dist/mdc.ripple';
 import { MDCChipSet } from '@material/chips/dist/mdc.chips';
 import { MDCFormField } from '@material/form-field/dist/mdc.formField';
 import { MDCCheckbox } from '@material/checkbox/dist/mdc.checkbox';
+import { MDCFloatingLabel } from '@material/floating-label/dist/mdc.floatingLabel.js';
 
 // import MDCDataTable from './_custom/dataTable';
 
@@ -14,6 +15,7 @@ import { MDCCheckbox } from '@material/checkbox/dist/mdc.checkbox';
 const buttons = document.querySelectorAll('.mdc-button');
 const chips = document.querySelectorAll('.mdc-chip-set');
 const checkboxes = document.querySelectorAll('.mdc-checkbox');
+const floatingLabels = document.querySelectorAll('.mdc-floating-label');
 
 function init() {
   if (buttons) {
@@ -25,18 +27,22 @@ function init() {
   if (checkboxes) {
     handleMDCCheckboxes(checkboxes);
   }
+  if (floatingLabels) {
+    handleMDCFloatingLabels(floatingLabels);
+  }
+  
   // new MDCDataTable();
 }
 
 // General MDC Button function
-// Add all functions related to MDC Button page
+// Add all functions related to MDC Buttons
 
 function handleMDCButton(buttonsEl) {
   handleRipple(buttonsEl);
 }
 
 // General MDC Chips function
-// Add all functions related to MDC Chips page
+// Add all functions related to MDC Chips
 
 function handleMDCChips(chipsEl) {
   for (var i = 0; i < chipsEl.length; i++) {
@@ -45,13 +51,13 @@ function handleMDCChips(chipsEl) {
 }
 
 // General MDC Checkboxes function
-// Add all functions related to MDC Checkboxes page
+// Add all functions related to MDC Checkboxes
 
 function handleMDCCheckboxes(checkboxesEl) {
   [].forEach.call(checkboxesEl, function(checkbox) {
     const formField = checkbox.parentElement;
     if (formField) {
-      console.log('There\'s no form field!');
+      console.log('There\'s no checkbox field!');
     } else {
       const formFieldInstance = new MDCFormField(formField);
       const checkboxInstance = new MDCCheckbox(checkbox);
@@ -70,6 +76,14 @@ function handleRipple(elements) {
       new MDCRipple(elements[i]);
     }
   }
+};
+
+// General MDC Floating labels function
+
+function handleMDCFloatingLabels(floatingLabelsEl) {
+  [].forEach.call(floatingLabelsEl, function(label) {
+    const floatingLabel = new MDCFloatingLabel(label);
+  });
 };
 
 init();
