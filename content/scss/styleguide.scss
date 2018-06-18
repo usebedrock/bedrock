@@ -69,3 +69,9 @@
     font-size: 90%;
   }
 }
+
+#component-01-mdc-dialog-default .mdc-dialog__surface,
+#component-02-mdc-dialog-scroll .mdc-dialog__surface {
+  opacity: 1;
+  transform: none;
+}
