@@ -2,6 +2,12 @@ extends ../_layouts/master
 
 block body
 
+
+    //
+        .mdc-text-field.mdc-text-field--fullwidth
+             input.mdc-text-field__input(type='text', placeholder='Full-Width Text Field', aria-label='Full-Width Text Field')
+
+
     .mdc-layout-grid
         .mdc-layout-grid__inner
             .mdc-layout-grid__cell.mdc-layout-grid__cell--span-6
@@ -9,18 +15,28 @@ block body
                 .mdc-card(style="padding: 40px;")
 
                     h2.mdc-typography--headline5 Packaging info
+                    
+                    .mdc-text-field.mdc-text-field--outlined(data-mdc-auto-init="MDCTextField")
+                        input#tf-outlined1.mdc-text-field__input(type='text')
+                        label.mdc-floating-label(for='tf-outlined1') Your Name
+                        .mdc-notched-outline
+                            svg
+                                path.mdc-notched-outline__path
+                        .mdc-notched-outline__idle
 
                     .mdc-text-field.mdc-text-field--outlined(data-mdc-auto-init="MDCTextField")
-                        input.mdc-text-field__input(type='text')
-                        label.mdc-floating-label Your Name
+                        input#tf-outlined2.mdc-text-field__input(type='text')
+                        label.mdc-floating-label(for='tf-outlined2') Your E-mail
+                        .mdc-notched-outline
+                            svg
+                                path.mdc-notched-outline__path
+                        .mdc-notched-outline__idle
 
-                    .mdc-text-field.mdc-text-field--outlined(data-mdc-auto-init="MDCTextField")
-                        input.mdc-text-field__input(type='text')
-                        label.mdc-floating-label Your e-mail
+                    br
 
                     .mdc-text-field.mdc-text-field--textarea
-                        label.mdc-text-field__label(for="demo-textarea") Enter your message
                         textarea.mdc-text-field__input(rows="8" cols="40")
+                        label.mdc-floating-label Enter your message
 
                     .mdc-form-field
                         .mdc-checkbox
@@ -32,6 +48,13 @@ block body
                         label(for="checkbox1") I would like to subscribe to the newsletter
 
                     // What is the class to put buttons next to each other?
-                    .mdc-toolbar
+                    style.
+                        .mdc-toolbar-demo {
+                            display: flex;
+                        }
+                        .mdc-toolbar-demo button {
+                            margin-right: 10px;
+                        }
+                    .mdc-toolbar-demo
                         button.mdc-button.mdc-button--raised(data-mdc-auto-init="MDCRipple") Cancel
                         button.mdc-button.mdc-button--raised(data-mdc-auto-init="MDCRipple") Save
