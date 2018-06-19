@@ -2,37 +2,76 @@ extends ../_layouts/master
 
 block body
 
+
+    //
+        .mdc-text-field.mdc-text-field--fullwidth
+             input.mdc-text-field__input(type='text', placeholder='Full-Width Text Field', aria-label='Full-Width Text Field')
+
+
     .mdc-layout-grid
         .mdc-layout-grid__inner
+            .mdc-layout-grid__cell.mdc-layout-grid__cell--span-6
 
-            .mdc-layout-grid__cell
-                .mdc-card.demo-card
-                    section.mdc-card__supporting-text
-                        h2 Packaging info
+                .mdc-card(style="padding: 40px;")
 
-                        .mdc-text-field.mdc-text-field--outlined(data-mdc-auto-init="MDCTextField")
-                            input.mdc-text-field__input(type='text')
-                            label.mdc-floating-label Your Name
+                    h2.mdc-typography--headline5 Form name
+                    
+                    .mdc-text-field.mdc-text-field--outlined(data-mdc-auto-init="MDCTextField")
+                        input#tf-outlined1.mdc-text-field__input(type='text')
+                        label.mdc-floating-label(for='tf-outlined1') Your Name
+                        .mdc-notched-outline
+                            svg
+                                path.mdc-notched-outline__path
+                        .mdc-notched-outline__idle
 
-                        .mdc-form-field
-                            .mdc-text-field#demo-email(data-mdc-auto-init="MDCTextField")
-                                input.mdc-text-field__input(type="email")
-                                label.mdc-text-field__label(for="demo-input-email") Your e-mail
+                    .mdc-text-field.mdc-text-field--outlined(data-mdc-auto-init="MDCTextField")
+                        input#tf-outlined2.mdc-text-field__input(type='text')
+                        label.mdc-floating-label(for='tf-outlined2') Your E-mail
+                        .mdc-notched-outline
+                            svg
+                                path.mdc-notched-outline__path
+                        .mdc-notched-outline__idle
 
-                        .mdc-text-field.mdc-text-field--textarea
-                            textarea.mdc-text-field__input(rows="8" cols="40" id="demo-textarea")
-                            label.mdc-text-field__label(for="demo-textarea") Enter your message
+                    br
 
-                        .mdc-form-field
-                            .mdc-checkbox
-                                input#option-1.mdc-checkbox__native-control(type="checkbox")
-                                .mdc-checkbox__background
-                                    svg.mdc-checkbox__checkmark(viewbox="0 0 24 24")
-                                        path.mdc-checkbox__checkmark__path(fill="none", stroke="white", d="M1.73,12.91 8.1,19.28 22.79,4.59")
-                                    .mdc-checkbox__mixedmark
+                    .mdc-select.mdc-select--outlined
+                        select.mdc-select__native-control
+                            option(value='', disabled='', selected='')
+                            option Option
+                            option Option
+                            option Option
+                            option Option
+                            option Option
+                        label.mdc-floating-label Options
+                        .mdc-notched-outline
+                            svg
+                                path.mdc-notched-outline__path
+                        .mdc-notched-outline__idle
 
-                            label(for="option-1") I would like to subscribe to the newsletter
-                        .btn-toolbar
-                            button.mdc-button.mdc-button--raised(data-mdc-auto-init="MDCRipple") Button
-                            button.mdc-button.mdc-button--raised(data-mdc-auto-init="MDCRipple") Upload files
-    
+                    br
+                    br
+
+                    .mdc-text-field.mdc-text-field--textarea
+                        textarea.mdc-text-field__input(rows="8" cols="40")
+                        label.mdc-floating-label Enter your message
+
+                    .mdc-form-field
+                        .mdc-checkbox
+                            input.mdc-checkbox__native-control(type="checkbox" id="checkbox1")
+                            .mdc-checkbox__background
+                                svg.mdc-checkbox__checkmark(viewBox="0 0 24 24")
+                                    path.mdc-checkbox__checkmark-path(fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59")
+                                .mdc-checkbox__mixedmark
+                        label(for="checkbox1") I would like to subscribe to the newsletter
+
+                    // What is the class to put buttons next to each other?
+                    style.
+                        .mdc-toolbar-demo {
+                            display: flex;
+                        }
+                        .mdc-toolbar-demo button {
+                            margin-right: 10px;
+                        }
+                    .mdc-toolbar-demo
+                        button.mdc-button.mdc-button--raised(data-mdc-auto-init="MDCRipple") Cancel
+                        button.mdc-button.mdc-button--raised(data-mdc-auto-init="MDCRipple") Save

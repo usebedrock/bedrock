@@ -17,6 +17,13 @@
     }
 }
 
+//  Make dialogs visible in styleguide
+#component-01-mdc-dialog-default .mdc-dialog__surface,
+#component-02-mdc-dialog-scroll .mdc-dialog__surface {
+  opacity: 1;
+  transform: none;
+}
+
 /* Icon styles
    ========================================================================== */
 
@@ -43,17 +50,28 @@
 /* Demos
    ========================================================================== */
 
-@import "packages/mdc-card/mdc-card-demo";
-
 .br-styleguide-content {
   box-sizing: content-box;
 }
+
+.br-styleguide-navigation-holder .mdc-typography--headline4 {
+  margin-bottom: 20px;
+}
+
+/* Typography table
+   ========================================================================== */
 
 .mdc-typography-table {
   width: 100%;
   border-collapse: collapse;
   margin: 0;
   padding: 0;
+  
+  .mdc-typography--pre {
+    margin: 10px 0;
+    padding: 20px;
+    background: #EEE;
+  }
   td:first-child {
     width: 20%;
   }
@@ -69,5 +87,14 @@
   pre {
     white-space: pre-wrap;
     font-size: 90%;
+  }
+}
+
+/* Top app bar
+   ========================================================================== */
+
+#component-01-mdc-top-app-bar {
+  .mdc-top-app-bar {
+    position: static;
   }
 }
