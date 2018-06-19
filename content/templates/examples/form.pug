@@ -14,7 +14,7 @@ block body
 
                 .mdc-card(style="padding: 40px;")
 
-                    h2.mdc-typography--headline5 Packaging info
+                    h2.mdc-typography--headline5 Form name
                     
                     .mdc-text-field.mdc-text-field--outlined(data-mdc-auto-init="MDCTextField")
                         input#tf-outlined1.mdc-text-field__input(type='text')
@@ -32,6 +32,23 @@ block body
                                 path.mdc-notched-outline__path
                         .mdc-notched-outline__idle
 
+                    br
+
+                    .mdc-select.mdc-select--outlined
+                        select.mdc-select__native-control
+                            option(value='', disabled='', selected='')
+                            option Option
+                            option Option
+                            option Option
+                            option Option
+                            option Option
+                        label.mdc-floating-label Options
+                        .mdc-notched-outline
+                            svg
+                                path.mdc-notched-outline__path
+                        .mdc-notched-outline__idle
+
+                    br
                     br
 
                     .mdc-text-field.mdc-text-field--textarea
