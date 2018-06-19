@@ -1,11 +1,12 @@
-.mdc-card.demo-card
+.mdc-card
+
     a.mdc-card__primary-action(href='#')
-        .mdc-card__media.mdc-card__media--16-9.demo-card__media.demo-card__media--16-9
-        .demo-card__primary
-            h2.demo-card__title.mdc-typography--headline6 Our Changing Planet
-            h3.demo-card__subtitle.mdc-typography--subtitle2 by Kurt Wagner
-        .demo-card__secondary.mdc-typography--body2
-            | Visit ten places on our planet that are undergoing the biggest changes today.
+        .mdc-card__media.mdc-card__media--16-9(style="background: url(http://placehold.it/1280x720) no-repeat; background-size: cover")
+    div(style="padding: 20px;")
+        h2.mdc-typography--headline6 Our Changing Planet
+        h3.mdc-typography--subtitle2 by Kurt Wagner
+        p.mdc-typography--body2  Visit ten places on our planet that are undergoing the biggest changes today.
+
     .mdc-card__actions
         .mdc-card__action-buttons
             button.mdc-button.mdc-card__action.mdc-card__action--button Read

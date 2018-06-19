@@ -1,21 +1,52 @@
 // Start your CSS here
-@import "normalize";
 @import "theme-styling";
 
-@import "packages/mdc-theme/mdc-theme";
-@import "packages/mdc-button/mdc-button";
-@import "packages/mdc-card/mdc-card";
-@import "packages/mdc-dialog/mdc-dialog";
-@import "packages/mdc-form-field/mdc-form-field";
-@import "packages/mdc-checkbox/mdc-checkbox";
-@import "packages/mdc-chips/mdc-chips";
-@import "packages/mdc-list/mdc-list";
-@import "packages/mdc-layout-grid/mdc-layout-grid";
-@import "packages/mdc-typography/mdc-typography";
-@import "packages/mdc-menu/mdc-menu";
-@import "packages/mdc-radio/mdc-radio";
-@import "packages/mdc-select/mdc-select";
-@import "packages/mdc-slider/mdc-slider";
-@import "packages/mdc-switch/mdc-switch";
-@import "packages/mdc-textfield/mdc-text-field";
-@import "packages/mdc-data-table/mdc-data-table";
+
+// Reset
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,main,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:"";content:none}table{border-collapse:collapse;border-spacing:0}
+
+
+// All packages from material-components-web
+// https://github.com/material-components/material-components-web
+@import "packages-official/mdc-button/mdc-button";
+@import "packages-official/mdc-card/mdc-card";
+@import "packages-official/mdc-checkbox/mdc-checkbox";
+@import "packages-official/mdc-chips/mdc-chips";
+@import "packages-official/mdc-dialog/mdc-dialog";
+@import "packages-official/mdc-drawer/mdc-drawer";
+@import "packages-official/mdc-elevation/mdc-elevation";
+@import "packages-official/mdc-fab/mdc-fab";
+@import "packages-official/mdc-floating-label/mdc-floating-label";
+@import "packages-official/mdc-form-field/mdc-form-field";
+@import "packages-official/mdc-grid-list/mdc-grid-list";
+@import "packages-official/mdc-icon-button/mdc-icon-button";
+@import "packages-official/mdc-icon-toggle/mdc-icon-toggle";
+@import "packages-official/mdc-image-list/mdc-image-list";
+@import "packages-official/mdc-layout-grid/mdc-layout-grid";
+@import "packages-official/mdc-line-ripple/mdc-line-ripple";
+@import "packages-official/mdc-linear-progress/mdc-linear-progress";
+@import "packages-official/mdc-list/mdc-list";
+@import "packages-official/mdc-menu/mdc-menu";
+@import "packages-official/mdc-notched-outline/mdc-notched-outline";
+@import "packages-official/mdc-radio/mdc-radio";
+@import "packages-official/mdc-ripple/mdc-ripple";
+@import "packages-official/mdc-select/mdc-select";
+@import "packages-official/mdc-shape/mdc-shape";
+@import "packages-official/mdc-slider/mdc-slider";
+@import "packages-official/mdc-snackbar/mdc-snackbar";
+@import "packages-official/mdc-switch/mdc-switch";
+@import "packages-official/mdc-tabs/mdc-tabs";
+@import "packages-official/mdc-textfield/mdc-text-field";
+@import "packages-official/mdc-theme/mdc-theme";
+@import "packages-official/mdc-toolbar/mdc-toolbar";
+@import "packages-official/mdc-top-app-bar/mdc-top-app-bar";
+@import "packages-official/mdc-typography/mdc-typography";
+
+// Unofficial
+@import "packages-unofficial/mdc-data-table/mdc-data-table";
+@import "packages-unofficial/mdc-loader/mdc-loader";
+
+.mdc-typography--pre {
+  font-family: monospace;
+  line-height: 1.3;
+}

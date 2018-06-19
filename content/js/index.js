@@ -2,10 +2,13 @@ require('../../core/js/index');
 
 // All @matial imports
 
-import { MDCRipple } from '@material/ripple/dist/mdc.ripple';
-import { MDCChipSet } from '@material/chips/dist/mdc.chips';
-import { MDCFormField } from '@material/form-field/dist/mdc.formField';
-import { MDCCheckbox } from '@material/checkbox/dist/mdc.checkbox';
+import {MDCRipple} from '@material/ripple/dist/mdc.ripple';
+import {MDCChipSet} from '@material/chips/dist/mdc.chips';
+import {MDCFormField} from '@material/form-field/dist/mdc.formField';
+import {MDCCheckbox} from '@material/checkbox/dist/mdc.checkbox';
+import {MDCTextField} from '@material/textfield/dist/mdc.textfield';
+import {MDCSelect} from '@material/select/dist/mdc.select';
+import {MDCSlider} from '@material/slider/dist/mdc.slider';
 
 // import MDCDataTable from './_custom/dataTable';
 
@@ -14,6 +17,9 @@ import { MDCCheckbox } from '@material/checkbox/dist/mdc.checkbox';
 const buttons = document.querySelectorAll('.mdc-button');
 const chips = document.querySelectorAll('.mdc-chip-set');
 const checkboxes = document.querySelectorAll('.mdc-checkbox');
+const textfields = document.querySelectorAll('.mdc-text-field');
+const selects = document.querySelectorAll('.mdc-select');
+const sliders = document.querySelectorAll('.mdc-slider');
 
 function init() {
   if (buttons) {
@@ -25,18 +31,26 @@ function init() {
   if (checkboxes) {
     handleMDCCheckboxes(checkboxes);
   }
-  // new MDCDataTable();
+  if (textfields) {
+    handleMDCTextFields(textfields);
+  }
+  if (selects) {
+    handleMDCSelects(selects);
+  }
+  if (sliders) {
+    handleMDCSliders(sliders);
+  }
 }
 
 // General MDC Button function
-// Add all functions related to MDC Button page
+// Add all functions related to MDC Buttons
 
 function handleMDCButton(buttonsEl) {
   handleRipple(buttonsEl);
 }
 
 // General MDC Chips function
-// Add all functions related to MDC Chips page
+// Add all functions related to MDC Chips
 
 function handleMDCChips(chipsEl) {
   for (var i = 0; i < chipsEl.length; i++) {
@@ -45,19 +59,43 @@ function handleMDCChips(chipsEl) {
 }
 
 // General MDC Checkboxes function
-// Add all functions related to MDC Checkboxes page
+// Add all functions related to MDC Checkboxes
 
 function handleMDCCheckboxes(checkboxesEl) {
   [].forEach.call(checkboxesEl, function(checkbox) {
     const formField = checkbox.parentElement;
-    if (formField) {
-      console.log('There\'s no form field!');
+    if (!formField) {
+      console.log('There\'s no checkbox field!');
     } else {
       const formFieldInstance = new MDCFormField(formField);
       const checkboxInstance = new MDCCheckbox(checkbox);
       formFieldInstance.input = checkboxInstance;
     }
   });
+};
+
+// General MDC Floating labels function
+
+function handleMDCTextFields(textfieldsEl) {
+  for (var i = 0; i < textfieldsEl.length; i++) {
+    new MDCTextField(textfieldsEl[i]);
+  }
+};
+
+// General MDC Selects function
+
+function handleMDCSelects(selectsEl) {
+  for (var i = 0; i < selectsEl.length; i++) {
+    new MDCSelect(selectsEl[i]);
+  }
+};
+
+// General MDC Sliders function
+
+function handleMDCSliders(slidersEl) {
+  for (var i = 0; i < slidersEl.length; i++) {
+    new MDCSlider(slidersEl[i]);
+  }
 };
 
 // Helper functions (reusable function)

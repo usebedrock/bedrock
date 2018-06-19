@@ -2,4 +2,4 @@
 title: Text fields
 ---
 
-Text fields allow users to input, edit, and select text.
+<p class="mdc-typography--body1">Text fields allow users to input, edit, and select text.

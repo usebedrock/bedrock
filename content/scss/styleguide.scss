@@ -1,20 +1,54 @@
 @import "_colors";
-
 /* ==========================================================================
   Style guide styles
 
   In the "real world" (e.g. the app itself) some HTML elements are hidden by default, or positioned in specific ways.
   In the styleguide sometimes we want to undo some of that for demonstrational purposes.
+
    ========================================================================== */
+/* Header styles
+   ========================================================================== */
+
+.br-componentgroup-header {
+  margin: 0 0 1.4rem;
+}
+
+.br-content {
+  margin: 0 0 3rem;
+}
+
+/* Component styles
+   ========================================================================== */
+
+.br-sample {
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.br-sample-heading {
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+.br-sample-documentation {
+  margin-bottom: 2rem;
+}
 
 /* Dialog styles
    ========================================================================== */
 
 #component-01-mdc-dialog-default,
 #component-02-mdc-dialog-scroll {
-    .br-sample-content {
-        padding: 5rem;
-    }
+  .br-sample-content {
+    padding: 5rem;
+  }
+}
+
+//  Make dialogs visible in styleguide
+#component-01-mdc-dialog-default .mdc-dialog__surface,
+#component-02-mdc-dialog-scroll .mdc-dialog__surface {
+  opacity: 1;
+  transform: none;
 }
 
 /* Icon styles
@@ -32,6 +66,7 @@
 .br-styleguide-navigation-holder .mdc-list-item {
   padding: 0;
 }
+
 .br-styleguide-navigation-holder .mdc-list-item__text {
   text-decoration: none;
   color: $material-color-grey-900;
@@ -42,11 +77,56 @@
 
 /* Demos
    ========================================================================== */
-
-@import "packages/mdc-card/mdc-card-demo";
-
-
-
 .br-styleguide-content {
   box-sizing: content-box;
+}
+
+.br-styleguide-navigation-holder .mdc-typography--headline4 {
+  margin-bottom: 20px;
+}
+
+/* Typography table
+   ========================================================================== */
+
+.mdc-typography-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+
+  .mdc-typography--pre {
+    margin: 10px 0;
+    padding: 20px;
+    background: #EEE;
+  }
+
+  td:first-child {
+    width: 20%;
+  }
+
+  tr:last-child td {
+    border: none;
+  }
+
+  td,
+  th {
+    padding-bottom: 30px;
+    padding-top: 30px;
+    border-bottom: 1px solid #DDD;
+    vertical-align: top;
+  }
+
+  pre {
+    white-space: pre-wrap;
+    font-size: 90%;
+  }
+}
+
+/* Top app bar
+   ========================================================================== */
+
+#component-01-mdc-top-app-bar {
+  .mdc-top-app-bar {
+    position: static;
+  }
 }

@@ -1,180 +1,32 @@
+mixin checkbox
+    .mdc-checkbox(data-mdc-auto-init='MDCCheckbox')
+        input.mdc-checkbox__native-control(type='checkbox', value='false')
+        .mdc-checkbox__background
+            svg.mdc-checkbox__checkmark(viewbox='0 0 24 24')
+                path.mdc-checkbox__checkmark-path(fill='none', stroke='white', d='M1.73,12.91 8.1,19.28 22.79,4.59')
+            .mdc-checkbox__mixedmark
+
+
 .mdc-data-table.mdc-data-table--select-multiple
     table.mdc-data-table__content
         thead
             tr.mdc-data-table__row
                 th.mdc-data-table__header.mdc-data-table__header--select
-                    .mdc-checkbox(data-mdc-auto-init='MDCCheckbox')
-                        input.mdc-checkbox__native-control(type='checkbox', value='false')
-                        .mdc-checkbox__background
-                            svg.mdc-checkbox__checkmark(viewbox='0 0 24 24')
-                                path.mdc-checkbox__checkmark-path(fill='none', stroke='white', d='M1.73,12.91 8.1,19.28 22.79,4.59')
-                            .mdc-checkbox__mixedmark
-                th.mdc-data-table__header Dessert (100g serving)
-                th.mdc-data-table__header.mdc-data-table__header--sortable.mdc-data-table__header--numeric Calories
-                th.mdc-data-table__header.mdc-data-table__header--sortable.mdc-data-table__header--numeric Fat (g)
-                th.mdc-data-table__header.mdc-data-table__header--sortable.mdc-data-table__header--numeric Carbs (g)
-                th.mdc-data-table__header.mdc-data-table__header--sortable.mdc-data-table__header--numeric Protein (g)
-                th.mdc-data-table__header.mdc-data-table__header--sortable.mdc-data-table__header--numeric Sodium (mg)
-                th.mdc-data-table__header.mdc-data-table__header--sortable.mdc-data-table__header--numeric Calcium (%)
-                th.mdc-data-table__header.mdc-data-table__header--sortable.mdc-data-table__header--numeric Iron (%)
+                    +checkbox
+                th.mdc-data-table__header Data header
+                th.mdc-data-table__header Data header
+                th.mdc-data-table__header Data header
+                th.mdc-data-table__header Data header
+                th.mdc-data-table__header Data header
+                th.mdc-data-table__header.mdc-data-table__header--sortable.mdc-data-table__header--numeric Numeric data
         tbody
-            tr.mdc-data-table__row
-                td.mdc-data-table__cell.mdc-data-table__cell--select
-                    .mdc-checkbox(data-mdc-auto-init='MDCCheckbox')
-                        input.mdc-checkbox__native-control(type='checkbox', value='false')
-                        .mdc-checkbox__background
-                            svg.mdc-checkbox__checkmark(viewbox='0 0 24 24')
-                                path.mdc-checkbox__checkmark-path(fill='none', stroke='white', d='M1.73,12.91 8.1,19.28 22.79,4.59')
-                            .mdc-checkbox__mixedmark
-                td.mdc-data-table__cell Frozen yoghurt
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 159
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 6
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 24
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 4
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 87
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 14%
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 1%
-            tr.mdc-data-table__row
-                td.mdc-data-table__cell.mdc-data-table__cell--select
-                    .mdc-checkbox(data-mdc-auto-init='MDCCheckbox')
-                        input.mdc-checkbox__native-control(type='checkbox', value='false')
-                        .mdc-checkbox__background
-                            svg.mdc-checkbox__checkmark(viewbox='0 0 24 24')
-                                path.mdc-checkbox__checkmark-path(fill='none', stroke='white', d='M1.73,12.91 8.1,19.28 22.79,4.59')
-                            .mdc-checkbox__mixedmark
-                td.mdc-data-table__cell Ice cream sandwich
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 237
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 9
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 37
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 4.3
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 129
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 8%
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 1%
-            tr.mdc-data-table__row
-                td.mdc-data-table__cell.mdc-data-table__cell--select
-                    .mdc-checkbox(data-mdc-auto-init='MDCCheckbox')
-                        input.mdc-checkbox__native-control(type='checkbox', value='false')
-                        .mdc-checkbox__background
-                            svg.mdc-checkbox__checkmark(viewbox='0 0 24 24')
-                                path.mdc-checkbox__checkmark-path(fill='none', stroke='white', d='M1.73,12.91 8.1,19.28 22.79,4.59')
-                            .mdc-checkbox__mixedmark
-                td.mdc-data-table__cell Eclair
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 262
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 16
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 24
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 6
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 337
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 6%
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 7%
-            tr.mdc-data-table__row
-                td.mdc-data-table__cell.mdc-data-table__cell--select
-                    .mdc-checkbox(data-mdc-auto-init='MDCCheckbox')
-                        input.mdc-checkbox__native-control(type='checkbox', value='false')
-                        .mdc-checkbox__background
-                            svg.mdc-checkbox__checkmark(viewbox='0 0 24 24')
-                                path.mdc-checkbox__checkmark-path(fill='none', stroke='white', d='M1.73,12.91 8.1,19.28 22.79,4.59')
-                            .mdc-checkbox__mixedmark
-                td.mdc-data-table__cell Cupcake
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 305
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 3.7
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 67
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 4.3
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 413
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 3%
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 8%
-            tr.mdc-data-table__row
-                td.mdc-data-table__cell.mdc-data-table__cell--select
-                    .mdc-checkbox(data-mdc-auto-init='MDCCheckbox')
-                        input.mdc-checkbox__native-control(type='checkbox', value='false')
-                        .mdc-checkbox__background
-                            svg.mdc-checkbox__checkmark(viewbox='0 0 24 24')
-                                path.mdc-checkbox__checkmark-path(fill='none', stroke='white', d='M1.73,12.91 8.1,19.28 22.79,4.59')
-                            .mdc-checkbox__mixedmark
-                td.mdc-data-table__cell Gingerbread
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 356
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 16
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 49
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 3.9
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 327
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 7%
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 16%
-            tr.mdc-data-table__row
-                td.mdc-data-table__cell.mdc-data-table__cell--select
-                    .mdc-checkbox(data-mdc-auto-init='MDCCheckbox')
-                        input.mdc-checkbox__native-control(type='checkbox', value='false')
-                        .mdc-checkbox__background
-                            svg.mdc-checkbox__checkmark(viewbox='0 0 24 24')
-                                path.mdc-checkbox__checkmark-path(fill='none', stroke='white', d='M1.73,12.91 8.1,19.28 22.79,4.59')
-                            .mdc-checkbox__mixedmark
-                td.mdc-data-table__cell Jelly bean
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 375
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 0
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 94
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 0
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 50
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 0%
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 0%
-            tr.mdc-data-table__row
-                td.mdc-data-table__cell.mdc-data-table__cell--select
-                    .mdc-checkbox(data-mdc-auto-init='MDCCheckbox')
-                        input.mdc-checkbox__native-control(type='checkbox', value='false')
-                        .mdc-checkbox__background
-                            svg.mdc-checkbox__checkmark(viewbox='0 0 24 24')
-                                path.mdc-checkbox__checkmark-path(fill='none', stroke='white', d='M1.73,12.91 8.1,19.28 22.79,4.59')
-                            .mdc-checkbox__mixedmark
-                td.mdc-data-table__cell Lollipop
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 392
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 0.2
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 98
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 0
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 38
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 0%
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 2%
-            tr.mdc-data-table__row
-                td.mdc-data-table__cell.mdc-data-table__cell--select
-                    .mdc-checkbox(data-mdc-auto-init='MDCCheckbox')
-                        input.mdc-checkbox__native-control(type='checkbox', value='false')
-                        .mdc-checkbox__background
-                            svg.mdc-checkbox__checkmark(viewbox='0 0 24 24')
-                                path.mdc-checkbox__checkmark-path(fill='none', stroke='white', d='M1.73,12.91 8.1,19.28 22.79,4.59')
-                            .mdc-checkbox__mixedmark
-                td.mdc-data-table__cell Honeycomb
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 408
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 3.2
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 87
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 6.5
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 562
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 0%
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 45%
-            tr.mdc-data-table__row
-                td.mdc-data-table__cell.mdc-data-table__cell--select
-                    .mdc-checkbox(data-mdc-auto-init='MDCCheckbox')
-                        input.mdc-checkbox__native-control(type='checkbox', value='false')
-                        .mdc-checkbox__background
-                            svg.mdc-checkbox__checkmark(viewbox='0 0 24 24')
-                                path.mdc-checkbox__checkmark-path(fill='none', stroke='white', d='M1.73,12.91 8.1,19.28 22.79,4.59')
-                            .mdc-checkbox__mixedmark
-                td.mdc-data-table__cell Donut
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 452
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 25
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 51
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 4.9
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 326
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 2%
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 22%
-            tr.mdc-data-table__row
-                td.mdc-data-table__cell.mdc-data-table__cell--select
-                    .mdc-checkbox(data-mdc-auto-init='MDCCheckbox')
-                        input.mdc-checkbox__native-control(type='checkbox', value='false')
-                        .mdc-checkbox__background
-                            svg.mdc-checkbox__checkmark(viewbox='0 0 24 24')
-                                path.mdc-checkbox__checkmark-path(fill='none', stroke='white', d='M1.73,12.91 8.1,19.28 22.79,4.59')
-                            .mdc-checkbox__mixedmark
-                td.mdc-data-table__cell Kitkat
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 518
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 26
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 65
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 7
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 54
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 12%
-                td.mdc-data-table__cell.mdc-data-table__cell--numeric 6%
+            each item in [1, 2, 3, 4, 5, 6]
+                tr.mdc-data-table__row
+                    td.mdc-data-table__cell.mdc-data-table__cell--select
+                        +checkbox
+                    td.mdc-data-table__cell Data value
+                    td.mdc-data-table__cell Data value
+                    td.mdc-data-table__cell Data value
+                    td.mdc-data-table__cell Data value
+                    td.mdc-data-table__cell Data value
+                    td.mdc-data-table__cell.mdc-data-table__cell--numeric 159
