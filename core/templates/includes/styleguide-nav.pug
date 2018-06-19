@@ -20,7 +20,7 @@ div(class=styleguideNavigationHolderClass)
                     ul(class=styleguideNavListClass)
                         each group in category
                             - var groupName = group.docs ? group.docs.attributes.title || group.group.id : group.group.id
-                            li(class=styleguideNavListItemClass+' '+`${ "styleguide/" + group.group.id == pathname ? styleguideNavListItemLinkActiveClass : "" }`)
+                            li(class=styleguideNavListItemClass+' '+`${ "styleguide/" + group.group.id == pathname ? styleguideNavListItemActiveClass : "" }`)
                                 a(href=`/styleguide/${group.group.id}.html` class=styleguideNavListItemLinkClass+' '+`${ ("styleguide/" + group.group.id) == pathname ? styleguideNavListItemLinkActiveClass : "" }`)
                                     |  #{groupName}
 
