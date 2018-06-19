@@ -44,6 +44,9 @@
 
 .br-sample-documentation {
   margin-bottom: 2rem;
+  &:empty {
+    margin: 0;
+  }
 }
 
 /* Dialog styles
