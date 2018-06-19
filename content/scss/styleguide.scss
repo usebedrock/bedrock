@@ -1,4 +1,6 @@
 @import "_colors";
+@import "packages-official/mdc-typography/mixins";
+
 /* ==========================================================================
   Style guide styles
 
@@ -77,6 +79,10 @@
   padding: 0;
 }
 
+.br-styleguide-brand-heading {
+  margin: 0 0 20px;
+}
+
 .br-styleguide-navigation-holder .mdc-list-item__text {
   text-decoration: none;
   color: $material-color-grey-900;
@@ -85,11 +91,17 @@
   width: 100%;
 }
 
+.br-sample-documentation,
+.br-content {
+  p {
+    @include mdc-typography(body1);
+  }
+}
 /* Demos
    ========================================================================== */
 
-.br-styleguide-navigation-holder .mdc-typography--headline4 {
-  margin-bottom: 20px;
+.br-docs-category-name {
+  margin: 10px 0;
 }
 
 /* Typography table
