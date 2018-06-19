@@ -1,4 +1,64 @@
-extends ../_layouts/master
+extends /templates/_layouts/master
+
+block append style
+    style.
+
+        body {
+            background: #FAFAFA; /* $material-color-grey-50 */
+        }
+
+        .c-form-group {
+            margin: 0;
+            width: 100%
+        }
+
+        .c-form-group .mdc-text-field,
+        .c-form-group .mdc-select {
+            width: 100%
+        }
+
+        .mdc-card {
+            padding: 40px;
+        }
+
+        .mdc-typography--headline5 {
+            margin: 0 0 20px;
+        }
+
+        .mdc-text-field--textarea {
+            width: 100%;
+        }
+
+        .mdc-checkbox-spacer-demo {
+            margin: 20px 0;
+        }
+
+        .mdc-checkbox-offset-demo {
+            position: relative;
+            bottom: 10px;
+            left: -10px;
+        }
+
+        .mdc-select {
+            /* Why does mdc-textfield have a default margin and mdc select not? */
+            margin-top: 16px;
+            margin-bottom: 8px;
+        }
+
+        /* Investigate if there is no button toolbar component? */
+
+        .mdc-toolbar-demo {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .mdc-toolbar-demo button {
+            margin-right: 10px;
+        }
+
+        .mdc-text-field--textarea:not(.mdc-text-field--disabled) {
+            border-color: rgba(0, 0, 0, 0.33);
+        }
 
 block body
 
@@ -56,64 +116,6 @@ block body
                                         path.mdc-checkbox__checkmark-path(fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59")
                                     .mdc-checkbox__mixedmark
                             label(for="checkbox1") I would like to subscribe to the newsletter
-
-                    // What is the class to put buttons next to each other?
-                    style.
-
-                        body {
-                            background: #FAFAFA; /* $material-color-grey-50 */
-                        }
-
-                        .c-form-group {
-                            margin: 0;
-                            width: 100%
-                        }
-
-                        .c-form-group .mdc-text-field,
-                        .c-form-group .mdc-select {
-                            width: 100%
-                        }
-
-                        .mdc-card {
-                            padding: 40px;
-                        }
-
-                        .mdc-typography--headline5 {
-                            margin: 0 0 20px;
-                        }
-
-                        .mdc-text-field--textarea {
-                            width: 100%;
-                        }
-
-                        .mdc-checkbox-spacer-demo {
-                            margin: 20px 0;
-                        }
-
-                        .mdc-checkbox-offset-demo {
-                            position: relative;
-                            bottom: 10px;
-                            left: -10px;
-                        }
-
-                        .mdc-select {
-                            /* Why does mdc-textfield have a default margin and mdc select not? */
-                            margin-top: 16px;
-                            margin-bottom: 8px;
-                        }
-
-                        /* Investigate if there is no button toolbar component? */
-
-                        .mdc-toolbar-demo {
-                            display: flex;
-                            justify-content: flex-end;
-                        }
-                        .mdc-toolbar-demo button {
-                            margin-right: 10px;
-                        }
-                        .mdc-text-field--textarea:not(.mdc-text-field--disabled) {
-                            border-color: rgba(0, 0, 0, 0.33);
-                        }
 
                     .mdc-toolbar-demo
                         button.mdc-button.mdc-button--text(data-mdc-auto-init="MDCRipple") Cancel
