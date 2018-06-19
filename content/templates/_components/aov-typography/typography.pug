@@ -1,0 +1,22 @@
+.c-content
+
+    - var shortContent = 'Lorem ipsum dolor sit amet';
+    - var longContent = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '.repeat(5).trim()
+    - var samples = [];
+    - samples.push({name: 'Content heading 1', code: '<h1 class="c-h1">' + shortContent + '</h1>', extraClass: contentClass})
+    - samples.push({name: 'Content heading 2',code: '<h2 class="c-h2">' + shortContent + '</h2>', extraClass: contentClass})
+    - samples.push({name: 'Content heading 3', code: '<h3 class="c-h3">' + shortContent + '</h3>', extraClass: contentClass})
+    - samples.push({name: 'Content heading 4', code: '<h4 class="c-h4">' + shortContent + '</h4>', extraClass: contentClass})
+    - samples.push({name: 'Content heading text', code: '<p>' + longContent + '</p>', extraClass: contentClass})
+    - samples.push({name: 'Blockquote', code: '<blockquote>' + longContent + '</blockquote>', extraClass: contentClass})
+
+    table.c-table.c-table.c-table--invisible
+        each sample in samples
+            tr
+                td.o-table-col-4
+                    = sample.name
+                    br
+                    span.br-typography-sample-size= sample.size
+                td.o-table-col-12
+                    .br-typography-sample-content!= sample.code
+                    pre= sample.code

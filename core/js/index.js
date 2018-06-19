@@ -9,3 +9,4 @@ require('./prototype-style-guide-typography');
 
 rememberScroll('#__prototype-nav');
 rememberScroll('.br-styleguide-content');
+rememberScroll('.br-styleguide-navigation-holder');

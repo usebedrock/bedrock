@@ -1,12 +1,18 @@
+//- Globally expose mixins without output, needed for prototypes
 include ../../../core/templates/mixins/icon
+include ../../../core/templates/mixins/render-page-tree
+include ../../../core/templates/mixins/sample
+include ../../../core/templates/mixins/styleguide-settings
+include ../../../core/templates/mixins/languages
 
 block pageVariables
     //- Use this block to append page variables in templates
-    - var projectTitle = "Project title"
-    - var moduleTitle = "Module"
+    - var projectTitle = "Bedrock"
+    - var htmlClass = ""
+    - var bodyClass = ""
 
 doctype html
-html(lang='en' class=htmlClass ? htmlClass : '')
+html(dir="ltr" lang="en" class=htmlClass ? htmlClass : '')
     head
         meta(charset='UTF-8')
         meta(name="viewport", content="width=device-width, initial-scale=1")

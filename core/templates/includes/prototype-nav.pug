@@ -6,7 +6,7 @@ include ../mixins/render-page-tree
 
 #__prototype-nav.br-prototype-nav(class=navClasses.join(" "))
     .br-prototype-nav-inner
-        h3.br-prototype-nav-main-heading Prototype navigation
+        h4.br-prototype-nav-main-heading Prototype navigation
         p.br-prototype-nav-text Press Ctrl + M to toggle this navigation or click <a class="br-prototype-close-nav" href="#">here</a>.
         
         if config.languages && config.languages.length > 1
@@ -20,7 +20,7 @@ include ../mixins/render-page-tree
     if basePage && basePage.states
         - var basePageParentsLabel = basePage.parents.join(" > ")
         .br-prototype-page-states
-            h3.br-prototype-nav-main-heading Page states for #{basePageParentsLabel}
+            h4.br-prototype-nav-main-heading Page states for #{basePageParentsLabel}
             ul.br-bordered-list
                 - var basePagePath = basePage.path.replace('.pug', '');
                 - var isBasePageActive = pathname === basePagePath;

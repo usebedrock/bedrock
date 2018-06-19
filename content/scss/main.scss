@@ -1,8 +1,3 @@
 // Start your CSS here
-// Set a path to colors in bedrock.config.js 
-@import "settings.colors";
-
-// Uncomment this line if you use an icon font
-// Feel free to delete if you are not using an icon font
-
-// @import "settings/icon-font";
+@import "_colors";
+@import "_icon-font";

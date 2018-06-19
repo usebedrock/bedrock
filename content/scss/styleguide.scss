@@ -1,19 +1,5 @@
-/* ==========================================================================
-  Bedrock specific styles
-   ========================================================================== */
-
-@import "bedrock/vendor/codemirror";
-
-@import "bedrock/br-variables";
-@import "bedrock/br-variables-override";
-
-@import "bedrock/br-styleguide-container";
-@import "bedrock/br-prototype-nav";
-@import "bedrock/br-color-swatches";
-@import "bedrock/br-sample";
-@import "bedrock/br-bordered-list";
-@import "bedrock/br-content";
-@import "bedrock/br-tree-dir";
+@import "_colors";
+@import 'br-variables-override';
 
 /* ==========================================================================
   Style guide undo styles
@@ -21,4 +7,3 @@
   In the "real world" (e.g. the app itself) some HTML elements are hidden by default, or positioned in specific ways.
   In the styleguide sometimes we want to undo some of that for demonstrational purposes.
    ========================================================================== */
-

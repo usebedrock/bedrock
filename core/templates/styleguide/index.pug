@@ -1,17 +1,23 @@
-extends ../../../content/templates/_layouts/master
-
-include ../mixins/sample
-include ../mixins/color-overview
-include ../mixins/icon-overview
+extends /templates/_layouts/master
 
 block append pageVariables
-    - var htmlClass = 'br-styleguide'
+    - var htmlClass = 'br-styleguide br-styleguide-default-styles-active'
 
 block body
 
     .br-styleguide-container
-        include ../includes/styleguide-nav
+        .br-styleguide-container-inner
+            .br-styleguide-navigation-holder
+                h1.br-styleguide-brand-heading(class=styleguideBrandClass)
+                    a.br-reset-link-styling(href="/styleguide" class=styleguideResetLinkStylingClass) #{projectTitle}
 
-        .br-styleguide-content
-            script.
-                window.location = "/styleguide/docs/introduction.html"
+                block nav
+                    include ../includes/styleguide-nav
+
+            .br-styleguide-content
+
+                block content
+                    block homeContent
+                        // Place style guide introduction here. By default redirects to first docs page.
+                        script.
+                            window.location = "/styleguide/docs/introduction.html"

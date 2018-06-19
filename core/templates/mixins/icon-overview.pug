@@ -1,29 +1,17 @@
-include icon
-
 mixin iconCategory(category, name, mode)
     if icons.svg[category] && mode === 'svg'
-        .br-sample(id="svg-icons")
-            .br-sample-header.br-sample-clearfix
-                h3.br-sample-heading= name
-                a.br-sample-header-link(href="#svg-icons") #
-            .br-sample-content
-                each icon in icons.svg[category]
-                    div
-                        +icon([category, icon.name].join('/'))
-                        code= icon.name
+        each icon in icons.svg[category]
+            div
+                +icon([category, icon.name].join('/'))
+                code= icon.name
 
     - var iconFontClassPrefix = config.icons && config.icons.iconFontClassPrefix || 'if';
 
     if mode === 'icon-font'
-        .br-sample(id="icon-font")
-            .br-sample-header.br-sample-clearfix
-                h3.br-sample-heading= name
-                a.br-sample-header-link(href="#icon-font") #
-            .br-sample-content
-                each icon in icons.iconFont
-                    div
-                        i(class=`${iconFontClassPrefix} ${iconFontClassPrefix}-${icon}`)
-                        code= icon
+        each icon in icons.iconFont
+            div
+                i(class=`${iconFontClassPrefix} ${iconFontClassPrefix}-${icon}`)
+                code= icon
 
 mixin iconsOverview(mode, name)
     +iconCategory('', name, mode)
@@ -31,3 +19,4 @@ mixin iconsOverview(mode, name)
         each category, categoryKey in icons.svg
             if categoryKey
                 +iconCategory(categoryKey, 'Icons/' + categoryKey, mode)
+
