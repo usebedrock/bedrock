@@ -93,7 +93,7 @@
 
 .br-sample-documentation,
 .br-content {
-  p {
+  p, li {
     @include mdc-typography(body1);
   }
 }
