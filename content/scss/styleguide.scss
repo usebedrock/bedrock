@@ -19,16 +19,6 @@
   margin: 0 0 3rem;
 }
 
-.br-list {
-  padding-left: 3rem;
-  list-style: initial;
-
-  & li {
-    margin: 1rem 0;
-    line-height: 1.5rem;
-  }
-}
-
 /* Component styles
    ========================================================================== */
 
@@ -94,12 +84,32 @@
   width: 100%;
 }
 
-.br-sample-documentation,
-.br-content {
+/* Rich text styling
+   ========================================================================== */
+
+.mdc-typography-general {
   p, li {
     @include mdc-typography(body1);
   }
+  p {
+    margin: 16px 0;
+  }
+  p:only-child {
+    margin: 0;
+  }
+  ul {
+    list-style: disc;
+  }
+  ul {
+    padding-left: 32px;
+  }
+  a {
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(#333,0.3);
+  }
 }
+
 /* Demos
    ========================================================================== */
 
