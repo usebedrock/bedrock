@@ -6,11 +6,13 @@ module.exports = {
       'Style guide',
       'Design patterns',
       'Components',
-      'Material design components'
+      'Material design components',
+      'Unofficial components'
     ],
     componentCategories: {
       aov: 'Overviews',
       mdc: 'Material design components',
+      uc: 'Unofficial components',
     }
   },
   icons: {
