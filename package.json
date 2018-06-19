@@ -74,6 +74,7 @@
     "@material/floating-label": "^0.36.0",
     "@material/form-field": "^0.36.0",
     "@material/ripple": "^0.36.0",
+    "@material/select": "^0.36.0",
     "@material/textfield": "^0.36.1",
     "material-components-web": "^0.36.0",
     "pug": "^2.0.0-rc.3"
