@@ -17,6 +17,16 @@
   margin: 0 0 3rem;
 }
 
+.br-list {
+  padding-left: 3rem;
+  list-style: initial;
+
+  & li {
+    margin: 1rem 0;
+    line-height: 1.5rem;
+  }
+}
+
 /* Component styles
    ========================================================================== */
 

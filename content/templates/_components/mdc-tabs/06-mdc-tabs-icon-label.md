@@ -1,5 +1,5 @@
 ---
-title: Preventing FOUC
+title: Icon Tab Labels And Title
 ---
 
-A text field that prevents FOUC.
+A tab with icon labels and text labels as titles.

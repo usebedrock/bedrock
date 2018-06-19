@@ -1,5 +1,11 @@
-.mdc-text-field.mdc-text-field--upgraded
-    input#fouc.mdc-text-field__input(type='text', value='Pre-filled value')
-    label.mdc-floating-label.mdc-floating-label--float-above(for='fouc')
-        | Label floating above
-    .mdc-line-ripple
+nav#icon-text-tab-bar.mdc-tab-bar.mdc-tab-bar--icons-with-text
+    a.mdc-tab.mdc-tab--with-icon-and-text.mdc-tab--active(href='#recents')
+        i.material-icons.mdc-tab__icon(aria-hidden='true') phone
+        span.mdc-tab__icon-text Recents
+    a.mdc-tab.mdc-tab--with-icon-and-text(href='#favorites')
+        i.material-icons.mdc-tab__icon(aria-hidden='true') favorite
+        span.mdc-tab__icon-text Favorites
+    a.mdc-tab.mdc-tab--with-icon-and-text(href='#nearby')
+        i.material-icons.mdc-tab__icon(aria-hidden='true') person_pin
+        span.mdc-tab__icon-text Nearby
+    span.mdc-tab-bar__indicator

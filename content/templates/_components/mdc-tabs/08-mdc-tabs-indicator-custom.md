@@ -1,5 +1,5 @@
 ---
-title: Full-Width Text Field and Textarea
+title: Custom Indicator colors
 ---
 
-A full-Width text field and textarea.
+A tab with custom indicator colors.

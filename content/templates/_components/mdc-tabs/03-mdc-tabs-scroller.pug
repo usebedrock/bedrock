@@ -1,9 +1,19 @@
-.mdc-text-field.mdc-text-field--outlined(data-demo-no-auto-js='')
-    input#tf-outlined-input.mdc-text-field__input(type='text', aria-controls='name-validation-message', aria-describedby='name-validation-message')
-    label.mdc-floating-label(for='tf-outlined-input') Your Name
-    .mdc-notched-outline
-        svg
-            path.mdc-notched-outline__path
-    .mdc-notched-outline__idle
-p#name-validation-message.mdc-text-field-helper-text.mdc-text-field-helper-text--validation-msg
-    | Helper Text (possibly validation message)
+#tab-bar-scroller.mdc-tab-bar-scroller
+    .mdc-tab-bar-scroller__indicator.mdc-tab-bar-scroller__indicator--back
+        a.mdc-tab-bar-scroller__indicator__inner.material-icons(href='#', aria-label='scroll back button')
+            | navigate_before
+    .mdc-tab-bar-scroller__scroll-frame
+        nav#scrollable-tab-bar.mdc-tab-bar.mdc-tab-bar-scroller__scroll-frame__tabs
+            a.mdc-tab.mdc-tab--active(href='#one') Item One
+            a.mdc-tab(href='#two') Item Two
+            a.mdc-tab(href='#three') Item Three
+            a.mdc-tab(href='#four') Item Four
+            a.mdc-tab(href='#five') Item Five
+            a.mdc-tab(href='#six') Item Six
+            a.mdc-tab(href='#seven') Item Seven
+            a.mdc-tab(href='#eight') Item Eight
+            a.mdc-tab(href='#nine') Item Nine
+            span.mdc-tab-bar__indicator
+    .mdc-tab-bar-scroller__indicator.mdc-tab-bar-scroller__indicator--forward
+        a.mdc-tab-bar-scroller__indicator__inner.material-icons(href='#', aria-label='scroll forward button')
+            | navigate_next

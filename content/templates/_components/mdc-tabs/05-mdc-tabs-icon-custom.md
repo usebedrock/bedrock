@@ -1,5 +1,5 @@
 ---
-title: Icon Tab Labels
+title: Custom Icon Tab Labels
 ---
 
-A tab with icon labels.
+A custom tab with icon labels.

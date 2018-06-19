@@ -1,0 +1,17 @@
+#dynamic-demo-toolbar.mdc-toolbar
+    .mdc-toolbar__row
+        .mdc-toolbar__section.mdc-toolbar__section--align-start
+            nav#dynamic-tab-bar.mdc-tab-bar.custom-indicator-tab-bar-in-toolbar(role='tablist')
+                a.mdc-tab.mdc-tab--active(role='tab', aria-controls='panel-1', href='#panel-1') Item One
+                a.mdc-tab(role='tab', aria-controls='panel-2', href='#panel-2') Item Two
+                a.mdc-tab(role='tab', aria-controls='panel-3', href='#panel-3') Item Three
+                span.mdc-tab-bar__indicator
+section
+    .panels
+        p#panel-1.panel.active(role='tabpanel', aria-hidden='false') Item One
+        p#panel-2.panel(role='tabpanel', aria-hidden='true') Item Two
+        p#panel-3.panel(role='tabpanel', aria-hidden='true') Item Three
+    .dots
+        a.dot.active(data-trigger='panel-1', href='#panel-1')
+        a.dot(data-trigger='panel-2', href='#panel-2')
+        a.dot(data-trigger='panel-3', href='#panel-3')

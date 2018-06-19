@@ -1,5 +1,5 @@
 ---
-title: Textarea
+title: Custom Icon Tab Labels And Title
 ---
 
-A textarea.
+A custom tab with icon labels and text labels as titles.

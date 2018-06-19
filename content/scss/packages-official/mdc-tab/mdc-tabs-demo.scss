@@ -1,0 +1,180 @@
+//
+// Copyright 2017 Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+@import "../mdc-tabs/tab/mixins";
+@import "../mdc-tabs/tab-bar/mixins";
+@import "../mdc-button/mdc-button";
+
+fieldset {
+  padding: 0 24px 16px;
+}
+
+fieldset .mdc-button {
+  margin: 16px;
+}
+
+.demo-header-toolbar {
+  z-index: 10;
+}
+
+.hero button {
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.demo-buttons {
+  padding: 40px 40px 0;
+}
+
+fieldset legend {
+  display: block;
+  padding: 64px 16px 24px;
+}
+
+.demo-tabs__scroller {
+  margin-top: 64px;
+  padding-bottom: 1px;
+}
+
+.demo-title {
+  padding: 0 40px 40px;
+}
+
+.mdc-tab-bar-scroller {
+  margin-bottom: 16px;
+}
+
+.demo-note {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #f2f2f2;
+}
+
+#dynamic-demo-toolbar h1 {
+  margin-left: 64px;
+}
+
+.panels {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+.panel {
+  display: none;
+}
+
+.panel.active {
+  display: block;
+}
+
+.dots {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 4px;
+  padding-bottom: 16px;
+}
+
+.dot {
+  margin: 0 4px;
+  border-radius: 50%;
+  border: 1px solid $mdc-theme-primary;
+  width: 20px;
+  height: 20px;
+}
+
+.dot:last-child {
+  margin-right: 0;
+}
+
+.dot.active {
+  background-color: $mdc-theme-primary;
+  border-color: $mdc-theme-primary;
+}
+
+.my-modified-toolbar-section {
+  position: absolute;
+  right: 0;
+  bottom: -16px;
+}
+
+[dir="rtl"] .my-modified-toolbar-section {
+  right: auto;
+  left: 0;
+}
+
+.custom-label-color-tab {
+  .mdc-tab:not(.mdc-tab--active) {
+    @include mdc-tab-label-ink-color($material-color-deep-purple-200);
+  }
+}
+
+.custom-label-color-tab {
+  .mdc-tab--active,
+  .mdc-tab:hover {
+    @include mdc-tab-label-ink-color($material-color-indigo-500);
+  }
+}
+
+.custom-icon-color-tab {
+  .mdc-tab:not(.mdc-tab--active) {
+    @include mdc-tab-icon-ink-color($material-color-deep-purple-200);
+  }
+}
+
+.custom-icon-color-tab {
+  .mdc-tab--active,
+  .mdc-tab:hover {
+    @include mdc-tab-icon-ink-color($material-color-indigo-500);
+  }
+}
+
+.custom-ink-color-tab {
+  .mdc-tab:not(.mdc-tab--active) {
+    @include mdc-tab-ink-color($material-color-deep-purple-200);
+  }
+}
+
+.custom-ink-color-tab {
+  .mdc-tab--active,
+  .mdc-tab:hover {
+    @include mdc-tab-ink-color($material-color-indigo-500);
+  }
+}
+
+.custom-indicator-tab-bar {
+  @include mdc-tab-bar-indicator-ink-color(primary);
+}
+
+.custom-indicator-tab-bar-in-toolbar,
+.custom-tab-bar-in-toolbar {
+  .mdc-tab:not(.mdc-tab--active) {
+    @include mdc-tab-ink-color(rgba(mdc-theme-prop-value(on-primary), 0.54));
+  }
+
+  .mdc-tab--active,
+  .mdc-tab:hover {
+    @include mdc-tab-ink-color(on-primary);
+  }
+}
+
+.custom-indicator-tab-bar-in-toolbar {
+  @include mdc-tab-bar-indicator-ink-color(secondary);
+}
+
+.custom-tab-bar-in-toolbar {
+  @include mdc-tab-bar-indicator-ink-color(on-primary);
+}

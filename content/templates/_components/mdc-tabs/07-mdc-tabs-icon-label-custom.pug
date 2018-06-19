@@ -1,4 +1,11 @@
-section#demo-text-field-textarea-wrapper
-    .mdc-text-field.mdc-text-field--textarea
-        textarea#textarea.mdc-text-field__input(rows='8', cols='40')
-        label.mdc-floating-label(for='textarea') Textarea Label
+nav#icon-text-tab-bar-custom-colors.custom-ink-color-tab.mdc-tab-bar.mdc-tab-bar--icons-with-text
+    a.mdc-tab.mdc-tab--with-icon-and-text.mdc-tab--active(href='#recents')
+        i.material-icons.mdc-tab__icon(aria-hidden='true') phone
+        span.mdc-tab__icon-text Recents
+    a.mdc-tab.mdc-tab--with-icon-and-text(href='#favorites')
+        i.material-icons.mdc-tab__icon(aria-hidden='true') favorite
+        span.mdc-tab__icon-text Favorites
+    a.mdc-tab.mdc-tab--with-icon-and-text(href='#nearby')
+        i.material-icons.mdc-tab__icon(aria-hidden='true') person_pin
+        span.mdc-tab__icon-text Nearby
+    span.mdc-tab-bar__indicator
