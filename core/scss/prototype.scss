@@ -153,7 +153,6 @@ html.br-prototype-nav-is-open {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  text-align: left; // In case someone sets text-align: center on body
 
   .br-prototype-nav-inner {
     padding: 2rem*$br-rem-multiplier;
@@ -346,7 +345,7 @@ html.br-prototype-nav-is-open {
 .br-sample-copy-code-btn {
   position: absolute;
   z-index: 3;
-  top: 5.5rem*$br-rem-multiplier;
+  top: 4.5rem*$br-rem-multiplier;
   right: 1rem*$br-rem-multiplier;
   display: none;
   .br-sample-code:hover & {

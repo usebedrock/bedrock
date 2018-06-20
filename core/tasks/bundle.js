@@ -18,7 +18,10 @@ const opts = _.assign({}, watchify.args, {
 function bundler() {
   var bundle = watchify(browserify(opts));
 
-  bundle.transform(babelify, {presets: ['es2015']});
+  bundle.transform(babelify, {
+    presets: ['es2015'],
+    plugins: ['transform-decorators-legacy', 'transform-class-properties']
+  });
 
   bundle.on('update', bundler);
   bundle.on('log', gutil.log);
