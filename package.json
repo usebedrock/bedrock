@@ -62,6 +62,7 @@
     "node-notifier": "^4.3.1",
     "portfinder": "^0.4.0",
     "postcss": "^5.0.10",
+    "pug": "^2.0.0-rc.3",
     "run-sequence": "^1.2.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
@@ -81,5 +82,5 @@
     "material-components-web": "^0.36.0",
     "pug": "^2.0.0-rc.3"
   },
-  "bedrockVersion": "1.9.0"
+  "bedrockVersion": "1.10.2"
 }

@@ -12,7 +12,9 @@ $br-rem-multiplier: 0.625 !default;
 $br-heading-font-weight: 700 !default;
 
 $br-background: #FFF !default;
-$br-code-background: #F0F0F0 !default;
+$br-color-text: #333 !default;
+$br-color-headings: #000 !default;
+
 $br-default-border-color: #DDD !default;
 $br-default-hover-bg-color: #F0F0F0 !default;
 $br-code-background: $br-default-hover-bg-color !default;
@@ -186,7 +188,6 @@ html.br-prototype-nav-is-open {
   color: #000;
   font-weight: $br-heading-font-weight;
   margin: 0;
-  padding: 0 0 0.6rem*$br-base-size-multiplier;
 }
 
 /* Index page
@@ -337,19 +338,19 @@ html.br-prototype-nav-is-open {
   }
 }
 
-.br-sample-copy-code-btn {
-  position: absolute !important;
-  z-index: 3;
-  top: 1.5rem*$br-base-size-multiplier;
-  right: 1rem*$br-base-size-multiplier;
-  visibility: hidden;
-  .br-sample-code:hover & {
-    visibility: visible;
-  }
+.br-sample-footer {
+  position: relative;
 }
 
-.br-sample-code {
-  position: relative;
+.br-sample-copy-code-btn {
+  position: absolute;
+  z-index: 3;
+  top: 4.5rem*$br-rem-multiplier;
+  right: 1rem*$br-rem-multiplier;
+  display: none;
+  .br-sample-code:hover & {
+    display: block;
+  }
 }
 
 .br-sample-markup {
@@ -405,7 +406,6 @@ html.br-prototype-nav-is-open {
   margin-right: 1rem*$br-rem-multiplier;
   padding: 1rem*$br-rem-multiplier;
   text-align: center;
-  width: 20rem*$br-base-size-multiplier;
 }
 
 .br-color-swatch-preview {
