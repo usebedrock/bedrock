@@ -153,7 +153,7 @@ html.br-prototype-nav-is-open {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-
+  text-align: left;
   .br-prototype-nav-inner {
     padding: 2rem*$br-rem-multiplier;
     overflow: hidden;
