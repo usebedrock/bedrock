@@ -1,7 +1,16 @@
 extends /templates/_layouts/master
 
+block append headerStyles
+    style.
+        .br-image-example {
+            max-width: 500px;
+            margin: 40px auto;
+        }
+
 block body
 
-    h1 Image example
+    .br-image-example
 
-    img(src="images/avatar.svg" width="200")
+        h1 Image example
+
+        img(src="images/avatar.svg" width="200")

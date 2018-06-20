@@ -1,29 +1,35 @@
 extends /templates/_layouts/master
 
+block append headerStyles
+    style.
+        .br-data-example {
+            max-width: 500px;
+            margin: 40px auto;
+        }
+
 block body
 
-    //- Load the array
+    .br-data-example
+        h1 JSON Data
 
-    h1 JSON Data
+        p JSON data is loaded by placing the JSON file in the content/data folder.
 
-    p JSON data is loaded by placing the JSON file in the content/data folder.
+        pre= JSON.stringify(contentData.exampleJson, null, 2)
 
-    pre= JSON.stringify(contentData.exampleJson, null, 2)
+        h1 Loop examples
 
-    h1 Loop examples
-
-    h2 Looping an array
-    ul
-        each person in contentData.exampleArray
-            li
-                span= person.id
-                span Hello, my name is #{person.firstName} #{person.lastName}!
-
-    h2 Looping an object
-
-    each type, typeName in contentData.exampleObject
+        h2 Looping an array
         ul
-            li= typeName
+            each person in contentData.exampleArray
+                li
+                    span= person.id
+                    span Hello, my name is #{person.firstName} #{person.lastName}!
+
+        h2 Looping an object
+
+        each type, typeName in contentData.exampleObject
             ul
-                each product in type
-                    li= product
+                li= typeName
+                ul
+                    each product in type
+                        li= product

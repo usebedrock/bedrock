@@ -2,6 +2,15 @@ extends /templates/_layouts/master
 
 include ../../core/templates/mixins/render-page-tree
 
+block append headerStyles
+    style.
+        .br-index {
+            padding: 20px;
+        }
+
 block body
-    div(style="padding: 20px;")
+    
+    .br-index
+        p Prototype pages:
         +renderPageTree
+        p Press Ctrl + M to see a page listing when you are inside a page.

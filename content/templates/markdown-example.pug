@@ -1,23 +1,34 @@
 extends /templates/_layouts/master
 
 block append pageVariables
-    - var myContent = '# I am a heading'
+    - var myContent = '### I am a 3rd level heading'
+
+block append headerStyles
+    style.
+        .br-markdown-example {
+            max-width: 500px;
+            margin: 40px auto;
+        }
 
 block body
 
-    //- Load the array
+    .br-markdown-example
 
-    h1 Markdown Data
+        h1 Markdown Data
 
-    p You can use markdown in templates by using the marked filter.
+        p You can use markdown in templates by using the marked filter.
 
-    p As an example, make put your markdown in a variable.
+        p As an example, make put your markdown in a variable.
 
-    pre.
-        block append pageVariables
-            - var myContent = '# I am a heading'
+        pre.
+            block append pageVariables
+                - var myContent = '### I am a 3rd level heading'
 
-    p Then render it with the following code:
+        p Then render it with the following code:
 
-    pre.
-      div!= marked(myContent)
+        pre.
+            div!= marked(myContent)
+    
+        p Example output:
+
+        div!= marked(myContent)

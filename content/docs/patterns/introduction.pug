@@ -4,6 +4,29 @@ category: Style guide
 order: 1
 ---
 
-p Welcome to the application styleguide.
+style.
+    .br-demo-content {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    .br-demo-content-inner {
+        max-width: 660px;
+        margin: 0 auto;
+    }
+    
+.br-demo-content
+    .br-demo-content-inner
+        p Welcome to the application styleguide.
 
-p This guide was created to provide a set of guidelines on how what your application should look like visually, to improve consistency across applications, to provide reusable code and to uncover maintenance issues.
+        p You are looking at a bare bones install of Bedrock. If you are wondering why it's not very pretty, it's because the styling depends on <strong>you</strong>.
+
+        p This page is supposed to contain some content on why the styleguide exists. You can view examples of “real” style guides here:
+
+        ul
+            li: a(href="http://bs4base.bedrockapp.org/") Bedrock + Bootstrap 4
+            li: a(href="http://materialbase.bedrockapp.org/") Bedrock + Material design
+
+        p This part of the codebase is more like a unit test for people who develop Bedrock, or for someone who wants to make their own custom Bedrock base. Feel free to delete this template and enter your own styleguide introduction.
+
+

@@ -4,14 +4,19 @@
   or the color component in styleguide won't regenerate automatically anymore.
  ========================================================================== */
 
-/* Category 1
+/* Grays
  ========================================================================== */
 
 $black: #000;
 $gray: #666;
+$gray-light: #999;
+$gray-lighter: #BBB;
+$gray-lightest: #EEE;
 
-/* Category 2
+/* Key colors
  ========================================================================== */
 
 $red: #F00;
-$soft-yellow: #FFC;
+$yellow: #FFFF00;
+$blue: #0000FF;
+$green: #008000;
