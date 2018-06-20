@@ -79,8 +79,7 @@
     "@material/slider": "^0.36.0",
     "@material/tabs": "^0.36.0",
     "@material/textfield": "^0.36.1",
-    "material-components-web": "^0.36.0",
-    "pug": "^2.0.0-rc.3"
+    "material-components-web": "^0.36.0"
   },
   "bedrockVersion": "1.10.2"
 }
