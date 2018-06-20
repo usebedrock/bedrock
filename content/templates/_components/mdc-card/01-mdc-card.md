@@ -1,5 +1,0 @@
----
-title: Card
----
-
-A card.

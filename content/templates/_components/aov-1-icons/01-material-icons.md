@@ -1,3 +1,0 @@
----
-title: Material icons
----

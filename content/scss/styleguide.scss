@@ -1,4 +1,6 @@
 @import "_colors";
+@import "packages-official/mdc-typography/mixins";
+
 /* ==========================================================================
   Style guide styles
 
@@ -17,16 +19,6 @@
   margin: 0 0 3rem;
 }
 
-.br-list {
-  padding-left: 3rem;
-  list-style: initial;
-
-  & li {
-    margin: 1rem 0;
-    line-height: 1.5rem;
-  }
-}
-
 /* Component styles
    ========================================================================== */
 
@@ -42,6 +34,9 @@
 
 .br-sample-documentation {
   margin-bottom: 2rem;
+  &:empty {
+    margin: 0;
+  }
 }
 
 /* Dialog styles
@@ -64,7 +59,7 @@
 /* Icon styles
    ========================================================================== */
 
-#component-01-material-icons {
+.br-sample-content {
   i.material-icons.mdc-button__icon {
     margin: 10px;
   }
@@ -77,6 +72,10 @@
   padding: 0;
 }
 
+.br-styleguide-brand-heading {
+  margin: 0 0 20px;
+}
+
 .br-styleguide-navigation-holder .mdc-list-item__text {
   text-decoration: none;
   color: $material-color-grey-900;
@@ -85,14 +84,37 @@
   width: 100%;
 }
 
-/* Demos
+/* Rich text styling
    ========================================================================== */
-.br-styleguide-content {
-  box-sizing: content-box;
+
+.mdc-typography-general {
+  p, li {
+    @include mdc-typography(body1);
+  }
+  p {
+    margin: 16px 0;
+  }
+  p:only-child {
+    margin: 0;
+  }
+  ul {
+    list-style: disc;
+  }
+  ul {
+    padding-left: 32px;
+  }
+  a {
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(#333,0.3);
+  }
 }
 
-.br-styleguide-navigation-holder .mdc-typography--headline4 {
-  margin-bottom: 20px;
+/* Demos
+   ========================================================================== */
+
+.br-docs-category-name {
+  margin: 10px 0;
 }
 
 /* Typography table
@@ -139,4 +161,12 @@
   .mdc-top-app-bar {
     position: static;
   }
+}
+
+/* Link styling nav
+   ========================================================================== */
+
+.br-bordered-list li a {
+  color: #333;
+  padding: 8px;
 }
