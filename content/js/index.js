@@ -27,30 +27,14 @@ const tabbars = document.querySelectorAll('.mdc-tab-bar')
 const tabbarsscrollers = document.querySelectorAll('.mdc-tab-bar-scroller');
 
 function init() {
-  if (buttons) {
-    handleMDCButton(buttons);
-  }
-  if (chips) {
-    handleMDCChips(chips);
-  }
-  if (checkboxes) {
-    handleMDCCheckboxes(checkboxes);
-  }
-  if (textfields) {
-    handleMDCTextFields(textfields);
-  }
-  if (selects) {
-    handleMDCSelects(selects);
-  }
-  if (sliders) {
-    handleMDCSliders(sliders);
-  }
-  if (tabbars) {
-    handleMDCTabBars(tabbars);
-  }
-  if (tabbarsscrollers) {
-    handleMDCTabBarScrollers(tabbarsscrollers);
-  }
+  handleMDCButton(buttons);
+  handleMDCChips(chips);
+  handleMDCCheckboxes(checkboxes);
+  handleMDCTextFields(textfields);
+  handleMDCSelects(selects);
+  handleMDCSliders(sliders);
+  handleMDCTabBars(tabbars);
+  handleMDCTabBarScrollers(tabbarsscrollers);
 }
 
 // General MDC Button function
