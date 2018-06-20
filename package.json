@@ -59,13 +59,14 @@
     "node-notifier": "^4.3.1",
     "portfinder": "^0.4.0",
     "postcss": "^5.0.10",
-    "pug": "^2.0.3",
     "run-sequence": "^1.2.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.6.0"
+    "watchify": "^3.6.0",
+    "pug": "^2.0.3"
   },
   "dependencies": {
+    "pug": "^2.0.0-rc.3",
     "autosize": "^4.0.0",
     "bootstrap": "4.1.1",
     "holderjs": "^2.9.4",

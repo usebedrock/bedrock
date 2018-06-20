@@ -2,7 +2,7 @@ div(class=styleguideNavigationHolderClass)
 
     each docsCategoryName in config.styleguide.categoryOrder
         if docs.byCategory[docsCategoryName]
-            h4(class=styleguideNavListTitleClass)= docsCategoryName
+            h4.br-docs-category-name(class=styleguideNavListTitleClass)= docsCategoryName
             div(class=styleguideNavListWrapperClass)
                 ul(class=styleguideNavListClass)
                     each doc in docs.byCategory[docsCategoryName]
@@ -13,14 +13,14 @@ div(class=styleguideNavigationHolderClass)
         if docsCategoryName === 'Components' && Object.keys(components.byCategory).length > 0
             each category, categoryName in components.byCategory
                 if Object.keys(components.byCategory).length > 1
-                    h4(class=styleguideNavListTitleClass)= categoryName
+                    h4.br-docs-category-name(class=styleguideNavListTitleClass)= categoryName
                 else
-                    h4(class=styleguideNavListTitleClass) Components
+                    h4.br-docs-category-name(class=styleguideNavListTitleClass) Components
                 div(class=styleguideNavListWrapperClass)
                     ul(class=styleguideNavListClass)
                         each group in category
                             - var groupName = group.docs ? group.docs.attributes.title || group.group.id : group.group.id
-                            li(class=styleguideNavListItemClass+' '+`${ "styleguide/" + group.group.id == pathname ? styleguideNavListItemLinkActiveClass : "" }`)
+                            li(class=styleguideNavListItemClass+' '+`${ "styleguide/" + group.group.id == pathname ? styleguideNavListItemActiveClass : "" }`)
                                 a(href=`/styleguide/${group.group.id}.html` class=styleguideNavListItemLinkClass+' '+`${ ("styleguide/" + group.group.id) == pathname ? styleguideNavListItemLinkActiveClass : "" }`)
                                     |  #{groupName}
 
