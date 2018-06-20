@@ -54,8 +54,9 @@ html(dir="ltr" lang="en" class=htmlClass ? htmlClass : '')
         link(rel='stylesheet', href='/css/prototype.css')
         link(rel='stylesheet', href='/css/styleguide.css')
 
-        block style
-            // Add style block here
+        block headerStyles
+            // Add styles to header here
+
     body(class=bodyClass ? bodyClass : '')
 
         block body
@@ -64,3 +65,6 @@ html(dir="ltr" lang="en" class=htmlClass ? htmlClass : '')
 
         = "\n"
         script(src='/js/bundle.js')
+
+        block footerScripts
+            // Add scripts here
