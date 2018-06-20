@@ -2,6 +2,7 @@
   Bedrock specific styles
    ========================================================================== */
 
+@import "../../content/scss/br-variables-override";
 @import "vendor/codemirror";
 
 /* Variables
@@ -171,7 +172,7 @@ html.br-prototype-nav-is-open {
 }
 
 .br-prototype-langselector {
-  margin-bottom: 10px;
+  margin-bottom: 1rem*$br-rem-multiplier;
 }
 
 .br-prototype-nav-text {

@@ -1,4 +1,10 @@
 /* ==========================================================================
-  Style guide settings
+  Variables override
+  Overide variables set in core/scss/prototype.scss with your own
    ========================================================================== */
 
+// Example: your code is pixel based, use $br-rem-multiplier of 0.625
+// $br-rem-multiplier: 1;
+
+// Example: your code is rem-based, where 1rem = 10px, use $br-rem-multiplier of 1
+$br-rem-multiplier: 0.625;
