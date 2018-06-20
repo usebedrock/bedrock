@@ -18,6 +18,7 @@ import {MDCTabBarScroller, MDCTabBarFoundationScroller} from '@material/tabs/dis
 // Element variables
 
 const buttons = document.querySelectorAll('.mdc-button');
+const iconbuttons = document.querySelectorAll('.mdc-icon-button');
 const chips = document.querySelectorAll('.mdc-chip-set');
 const checkboxes = document.querySelectorAll('.mdc-checkbox');
 const textfields = document.querySelectorAll('.mdc-text-field');
@@ -27,7 +28,6 @@ const tabbars = document.querySelectorAll('.mdc-tab-bar')
 const tabbarsscrollers = document.querySelectorAll('.mdc-tab-bar-scroller');
 
 function init() {
-  handleMDCButton(buttons);
   handleMDCChips(chips);
   handleMDCCheckboxes(checkboxes);
   handleMDCTextFields(textfields);
@@ -35,13 +35,9 @@ function init() {
   handleMDCSliders(sliders);
   handleMDCTabBars(tabbars);
   handleMDCTabBarScrollers(tabbarsscrollers);
-}
 
-// General MDC Button function
-// Add all functions related to MDC Buttons
-
-function handleMDCButton(buttonsEl) {
-  handleRipple(buttonsEl);
+  handleMDCRipple(buttons);
+  // handleMDCRipple(iconbuttons);
 }
 
 // General MDC Chips function
@@ -107,7 +103,7 @@ function handleMDCTabBarScrollers(tabbarsscrollersEl) {
 
 // Helper functions (reusable function)
 
-function handleRipple(elements) {
+function handleMDCRipple(elements) {
   if (!elements) {
     console.log('There are no elements that are fit for ripple effect');
   } else {
