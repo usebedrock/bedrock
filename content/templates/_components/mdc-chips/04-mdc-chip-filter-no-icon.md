@@ -1,5 +1,5 @@
 ---
-title: No filter icon chip
+title: Choice chip without icon
 ---
 
-A no filter icon chip.
+A chip can be chosen and a checkmark gets added upon choosing.

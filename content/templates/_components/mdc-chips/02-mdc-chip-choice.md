@@ -2,4 +2,4 @@
 title: Choice chip
 ---
 
-A choice chip.
+The user can make a choice.

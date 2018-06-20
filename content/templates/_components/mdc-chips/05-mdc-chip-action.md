@@ -2,4 +2,4 @@
 title: Action chip
 ---
 
-A action chip.
+A chip containing an action.
