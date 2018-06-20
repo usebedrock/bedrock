@@ -1,0 +1,182 @@
+extends /templates/_layouts/master
+
+block append style
+    style.
+        :root {
+          --jumbotron-padding-y: 3rem;
+        }
+
+        .jumbotron {
+          padding-top: var(--jumbotron-padding-y);
+          padding-bottom: var(--jumbotron-padding-y);
+          margin-bottom: 0;
+          background-color: #fff;
+        }
+        @media (min-width: 768px) {
+          .jumbotron {
+            padding-top: calc(var(--jumbotron-padding-y) * 2);
+            padding-bottom: calc(var(--jumbotron-padding-y) * 2);
+          }
+        }
+
+        .jumbotron p:last-child {
+          margin-bottom: 0;
+        }
+
+        .jumbotron-heading {
+          font-weight: 300;
+        }
+
+        .jumbotron .container {
+          max-width: 40rem;
+        }
+
+        footer {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+        }
+
+        footer p {
+          margin-bottom: .25rem;
+        }
+
+        .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+block body
+    header
+        .collapse.bg-dark#navbarHeader
+            .container
+                .row
+                    .col-sm-8.col-md-7.py-4
+                        h4.text-white About
+                        p.text-muted Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.
+                    .col-sm-4.offset-md-1.py-4
+                        h4.text-white Contact
+                        ul.list-unstyled
+                            li
+                                a.text-white(href='#') Follow on Twitter
+                            li
+                                a.text-white(href='#') Like on Facebook
+                            li
+                                a.text-white(href='#') Email me
+        .navbar.navbar-dark.bg-dark.box-shadow
+            .container.d-flex.justify-content-between
+                a.navbar-brand.d-flex.align-items-center(href='#')
+                    svg.mr-2(xmlns='http://www.w3.org/2000/svg', width='20', height='20', viewBox='0 0 24 24', fill='none', stroke='currentColor', stroke-width='2', stroke-linecap='round', stroke-linejoin='round')
+                        path(d='M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z')
+                        circle(cx='12', cy='13', r='4')
+                    strong Album
+                button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarHeader', aria-controls='navbarHeader', aria-expanded='false', aria-label='Toggle navigation')
+                    span.navbar-toggler-icon
+    main(role='main')
+        section.jumbotron.text-center
+            .container
+                h1.jumbotron-heading Album example
+                p.lead.text-muted Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.
+                p
+                    a.btn.btn-primary.my-2(href='#') Main call to action
+                    a.btn.btn-secondary.my-2(href='#') Secondary action
+        .album.py-5.bg-light
+            .container
+                .row
+                    .col-md-4
+                        .card.mb-4.box-shadow
+                            img.card-img-top(data-src='holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail', alt='Card image cap')
+                            .card-body
+                                p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                                .d-flex.justify-content-between.align-items-center
+                                    .btn-group
+                                        button.btn.btn-sm.btn-outline-secondary(type='button') View
+                                        button.btn.btn-sm.btn-outline-secondary(type='button') Edit
+                                    small.text-muted 9 mins
+                    .col-md-4
+                        .card.mb-4.box-shadow
+                            img.card-img-top(data-src='holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail', alt='Card image cap')
+                            .card-body
+                                p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                                .d-flex.justify-content-between.align-items-center
+                                    .btn-group
+                                        button.btn.btn-sm.btn-outline-secondary(type='button') View
+                                        button.btn.btn-sm.btn-outline-secondary(type='button') Edit
+                                    small.text-muted 9 mins
+                    .col-md-4
+                        .card.mb-4.box-shadow
+                            img.card-img-top(data-src='holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail', alt='Card image cap')
+                            .card-body
+                                p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                                .d-flex.justify-content-between.align-items-center
+                                    .btn-group
+                                        button.btn.btn-sm.btn-outline-secondary(type='button') View
+                                        button.btn.btn-sm.btn-outline-secondary(type='button') Edit
+                                    small.text-muted 9 mins
+                    .col-md-4
+                        .card.mb-4.box-shadow
+                            img.card-img-top(data-src='holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail', alt='Card image cap')
+                            .card-body
+                                p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                                .d-flex.justify-content-between.align-items-center
+                                    .btn-group
+                                        button.btn.btn-sm.btn-outline-secondary(type='button') View
+                                        button.btn.btn-sm.btn-outline-secondary(type='button') Edit
+                                    small.text-muted 9 mins
+                    .col-md-4
+                        .card.mb-4.box-shadow
+                            img.card-img-top(data-src='holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail', alt='Card image cap')
+                            .card-body
+                                p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                                .d-flex.justify-content-between.align-items-center
+                                    .btn-group
+                                        button.btn.btn-sm.btn-outline-secondary(type='button') View
+                                        button.btn.btn-sm.btn-outline-secondary(type='button') Edit
+                                    small.text-muted 9 mins
+                    .col-md-4
+                        .card.mb-4.box-shadow
+                            img.card-img-top(data-src='holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail', alt='Card image cap')
+                            .card-body
+                                p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                                .d-flex.justify-content-between.align-items-center
+                                    .btn-group
+                                        button.btn.btn-sm.btn-outline-secondary(type='button') View
+                                        button.btn.btn-sm.btn-outline-secondary(type='button') Edit
+                                    small.text-muted 9 mins
+                    .col-md-4
+                        .card.mb-4.box-shadow
+                            img.card-img-top(data-src='holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail', alt='Card image cap')
+                            .card-body
+                                p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                                .d-flex.justify-content-between.align-items-center
+                                    .btn-group
+                                        button.btn.btn-sm.btn-outline-secondary(type='button') View
+                                        button.btn.btn-sm.btn-outline-secondary(type='button') Edit
+                                    small.text-muted 9 mins
+                    .col-md-4
+                        .card.mb-4.box-shadow
+                            img.card-img-top(data-src='holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail', alt='Card image cap')
+                            .card-body
+                                p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                                .d-flex.justify-content-between.align-items-center
+                                    .btn-group
+                                        button.btn.btn-sm.btn-outline-secondary(type='button') View
+                                        button.btn.btn-sm.btn-outline-secondary(type='button') Edit
+                                    small.text-muted 9 mins
+                    .col-md-4
+                        .card.mb-4.box-shadow
+                            img.card-img-top(data-src='holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail', alt='Card image cap')
+                            .card-body
+                                p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                                .d-flex.justify-content-between.align-items-center
+                                    .btn-group
+                                        button.btn.btn-sm.btn-outline-secondary(type='button') View
+                                        button.btn.btn-sm.btn-outline-secondary(type='button') Edit
+                                    small.text-muted 9 mins
+    footer.text-muted
+        .container
+            p.float-right
+                a(href='#') Back to top
+            p Album example is © Bootstrap, but please download and customize it for yourself!
+            p
+                | New to Bootstrap?
+                a(href='../../') Visit the homepage
+                | or read our
+                a(href='../../getting-started/') getting started guide
+                | .
