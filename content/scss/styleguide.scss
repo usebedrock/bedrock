@@ -163,10 +163,29 @@
   }
 }
 
+
+#component-01-mdc-menu {
+  .br-sample-content {
+    height: 300px;
+  }
+}
+
 /* Link styling nav
    ========================================================================== */
 
 .br-bordered-list li a {
   color: #333;
   padding: 8px;
+}
+
+
+/* Expose columns in grid documentation
+   ========================================================================== */
+
+[class*=mdc-layout-grid__cell] {
+  color: #FFF;
+  background: #4FB8D4;
+  margin-bottom: 1.6rem;
+  padding: 1rem;
+  text-align: center;
 }
