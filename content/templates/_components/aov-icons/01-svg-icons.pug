@@ -1,3 +1,7 @@
-include ../../../../core/templates/mixins/icon-overview
-
-+iconsOverview('svg', 'SVG icons')
+each category, id in icons.svg
+    if id
+        h3 #{id}
+    each icon in category
+        .svg-icon
+            +icon(icon.category+'/'+icon.name)
+            p #{icon.name}
