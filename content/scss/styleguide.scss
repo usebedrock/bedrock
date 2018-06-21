@@ -182,7 +182,7 @@
 /* Expose columns in grid documentation
    ========================================================================== */
 
-[class*=mdc-layout-grid__cell] {
+.br-sample-content [class*=mdc-layout-grid__cell] {
   color: #FFF;
   background: #4FB8D4;
   margin-bottom: 1.6rem;
