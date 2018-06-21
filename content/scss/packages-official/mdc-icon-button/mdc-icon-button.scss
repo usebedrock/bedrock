@@ -29,4 +29,9 @@
   pointer-events: none;
 }
 
+.mdc-icon-button::before, .mdc-icon-button::after {
+  top: 0 !important;
+  left: 0 !important;
+}
+
 // postcss-bem-linter: end

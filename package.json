@@ -74,6 +74,7 @@
     "@material/chips": "^0.36.0",
     "@material/floating-label": "^0.36.0",
     "@material/form-field": "^0.36.0",
+    "@material/icon-button": "^0.36.0",
     "@material/ripple": "^0.36.0",
     "@material/select": "^0.36.0",
     "@material/slider": "^0.36.0",

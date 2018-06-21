@@ -37,7 +37,7 @@ function init() {
   handleMDCTabBarScrollers(tabbarsscrollers);
 
   handleMDCRipple(buttons);
-  // handleMDCRipple(iconbuttons);
+  handleMDCRipple(iconbuttons);
 }
 
 // General MDC Chips function
