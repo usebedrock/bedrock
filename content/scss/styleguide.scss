@@ -1,5 +1,6 @@
 @import "_colors";
 @import "packages-official/mdc-typography/mixins";
+@import "theme-styling";
 
 /* ==========================================================================
   Style guide styles
@@ -184,7 +185,7 @@
 
 .br-sample-content [class*=mdc-layout-grid__cell] {
   color: #FFF;
-  background: #4FB8D4;
+  background: $mdc-theme-primary;
   margin-bottom: 1.6rem;
   padding: 1rem;
   text-align: center;
