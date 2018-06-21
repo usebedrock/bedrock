@@ -43,7 +43,7 @@ $br-styleguide-content-padding-left: 3.2rem*$br-rem-multiplier !default;
    ========================================================================== */
 
 .br-styleguide-default-styles-active {
-  
+
   height: 100%;
   position: static !important; // Override any “kill bouncy scroll” type code
   @media (min-width: $br-switch-breakpoint) {
@@ -91,7 +91,7 @@ $br-styleguide-content-padding-left: 3.2rem*$br-rem-multiplier !default;
       -webkit-overflow-scrolling: touch;
     }
   }
-  
+
   .br-styleguide-container-inner {
     height: 100%;
   }
@@ -222,7 +222,7 @@ html.br-prototype-nav-is-open {
   font-size: 1.2rem*$br-rem-multiplier;
 }
 
-/* Utilities 
+/* Utilities
    ========================================================================== */
 
 .br-reset-link-styling {
@@ -397,13 +397,18 @@ html.br-prototype-nav-is-open {
    ========================================================================== */
 
 .br-color-swatch-list {
+  display: flex;
+	flex-wrap: wrap;
+	margin-left: -10px;
+	margin-top: -10px;
   list-style-type: none;
   padding: 0;
 }
 
 .br-color-swatch-item {
-  display: inline-block;
-  margin-right: 1rem*$br-rem-multiplier;
+	flex: 0 0 100px;
+  box-sizing: border-box;
+  margin: 1rem*$br-rem-multiplier;
   padding: 1rem*$br-rem-multiplier;
   text-align: center;
 }
