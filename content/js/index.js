@@ -53,9 +53,16 @@ function handleMDCChips(chipsEl) {
 // Add all functions related to MDC Checkboxes
 
 function handleMDCCheckboxes(checkboxesEl) {
-  for (var i = 0; i < checkboxesEl.length; i++) {
-    new MDCCheckbox(checkboxesEl[i]);
-  }
+  [].forEach.call(checkboxesEl, function(checkbox) {
+    const formField = checkbox.parentElement;
+    if (!formField) {
+      console.log('There\'s no checkbox field!');
+    } else {
+      const formFieldInstance = new MDCFormField(formField);
+      const checkboxInstance = new MDCCheckbox(checkbox);
+      formFieldInstance.input = checkboxInstance;
+    }
+  });
 };
 
 // General MDC Floating labels function
