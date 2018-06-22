@@ -18,6 +18,7 @@ import {MDCTabBarScroller, MDCTabBarFoundationScroller} from '@material/tabs/dis
 // Element variables
 
 const buttons = document.querySelectorAll('.mdc-button');
+const fabs = document.querySelectorAll('.mdc-fab');
 const iconbuttons = document.querySelectorAll('.mdc-icon-button');
 const chips = document.querySelectorAll('.mdc-chip-set');
 const checkboxes = document.querySelectorAll('.mdc-checkbox');
@@ -38,6 +39,7 @@ function init() {
 
   handleMDCRipple(buttons);
   handleMDCRipple(iconbuttons);
+  handleMDCRipple(fabs);
 }
 
 // General MDC Chips function
