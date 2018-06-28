@@ -82,5 +82,5 @@
     "@material/textfield": "^0.36.1",
     "material-components-web": "^0.36.0"
   },
-  "bedrockVersion": "1.10.2"
+  "bedrockVersion": "1.10.3"
 }
