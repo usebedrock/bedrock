@@ -28,7 +28,6 @@ try {
 $prototypeNav
   .find('.br-tree-dir-title')
   .each(function () {
-    let randomId = Math.floor(Math.random() * 1000)
     let moduleIds = $(this)
       .parentsUntil('.br-bordered-list')
       .find('.br-tree-dir-title')
@@ -40,7 +39,7 @@ $prototypeNav
     const indexOfClickedModule = moduleIds.findIndex(e => e === $(this).text());
     moduleIds = moduleIds.splice(0, indexOfClickedModule + 1);
 
-    $(this).attr('id', moduleIds.join('-') + randomId);
+    $(this).attr('id', moduleIds.join('-'));
   });
 
 /**
