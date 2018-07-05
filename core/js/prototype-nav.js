@@ -39,6 +39,11 @@ $prototypeNav
     const indexOfClickedModule = moduleIds.findIndex(e => e === $(this).text());
     moduleIds = moduleIds.splice(0, indexOfClickedModule + 1);
 
+    // Replace space by -
+    moduleIds = moduleIds.map((moduleId) => {
+      return moduleId.split(" ").join("-")
+    })
+
     $(this).attr('id', moduleIds.join('-'));
   });
 
