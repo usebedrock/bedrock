@@ -54,7 +54,9 @@ function closeModule(moduleId) {
   $(`#${moduleId}`).parents('.br-tree-dir').first()
     .addClass('br-tree-dir--is-collapsed');
 
-  navState.closedModules.push(moduleId);
+  if(navState.closedModules.indexOf(moduleId) === -1) {
+    navState.closedModules.push(moduleId);
+  }
 }
 
 /**
