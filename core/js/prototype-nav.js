@@ -30,14 +30,11 @@ $prototypeNav
   .each(function () {
     let moduleIds = $(this)
       .parentsUntil('.br-bordered-list')
-      .find('.br-tree-dir-title')
+      .children('.br-tree-dir-title')
       .map(function () {
         return $(this).text();
       })
       .get();
-
-    const indexOfClickedModule = moduleIds.findIndex(e => e === $(this).text());
-    moduleIds = moduleIds.splice(0, indexOfClickedModule + 1);
 
     // Replace space by -
     moduleIds = moduleIds.map((moduleId) => {
