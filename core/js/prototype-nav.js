@@ -28,19 +28,20 @@ try {
 $prototypeNav
   .find('.br-tree-dir-title')
   .each(function () {
-    let randomId = Math.floor(Math.random() * 1000)
     let moduleIds = $(this)
       .parentsUntil('.br-bordered-list')
-      .find('.br-tree-dir-title')
+      .children('.br-tree-dir-title')
       .map(function () {
         return $(this).text();
       })
       .get();
 
-    const indexOfClickedModule = moduleIds.findIndex(e => e === $(this).text());
-    moduleIds = moduleIds.splice(0, indexOfClickedModule + 1);
+    // Replace space by -
+    moduleIds = moduleIds.map((moduleId) => {
+      return moduleId.split(" ").join("-")
+    })
 
-    $(this).attr('id', moduleIds.join('-') + randomId);
+    $(this).attr('id', moduleIds.join('-'));
   });
 
 /**
@@ -50,7 +51,9 @@ function closeModule(moduleId) {
   $(`#${moduleId}`).parents('.br-tree-dir').first()
     .addClass('br-tree-dir--is-collapsed');
 
-  navState.closedModules.push(moduleId);
+  if(navState.closedModules.indexOf(moduleId) === -1) {
+    navState.closedModules.push(moduleId);
+  }
 }
 
 /**
