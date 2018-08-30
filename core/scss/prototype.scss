@@ -370,7 +370,8 @@ html.br-prototype-nav-is-open {
   border: 1px solid $br-sample-border-color;
   margin: 1rem*$br-rem-multiplier 0;
   position: relative;
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: scroll;
   resize: vertical;
 }
 
