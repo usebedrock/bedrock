@@ -8,8 +8,9 @@ block body
     .br-styleguide-container
         .br-styleguide-container-inner
             .br-styleguide-navigation-holder
-                h1.br-styleguide-brand-heading(class=styleguideBrandClass)
-                    a.br-reset-link-styling(href="/styleguide" class=styleguideResetLinkStylingClass) #{projectTitle}
+                unless styleguideHideBrand
+                    h1.br-styleguide-brand-heading(class=styleguideBrandClass)
+                        a.br-reset-link-styling(href="/styleguide" class=styleguideResetLinkStylingClass) #{projectTitle}
 
                 block nav
                     include ../includes/styleguide-nav
