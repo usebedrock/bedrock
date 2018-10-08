@@ -43,4 +43,4 @@ Bedrock is MIT licensed.
 
 ## Credits
 
-Bedrock was made by the team at [Mono](http://mono.company) with most major contributions by [Thomas Tuts](http://thomastuts.com/).
+Bedrock was made by the team at [Mono](https://mono.company). Bedrock was initially written by [Thomas Tuts](http://thomastuts.com/).
