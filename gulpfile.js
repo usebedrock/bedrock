@@ -15,6 +15,7 @@ const iconFont = require('./core/tasks/icon-font');
 
 const config = require('./bedrock.config');
 
+gulp.task('templates:clean', templates.clean);
 gulp.task('sass', sass);
 gulp.task('server', server);
 gulp.task('copy:images', copy.images);
@@ -36,7 +37,7 @@ gulp.task('templates:compile:docs', templates.compile.docs);
 gulp.task('watch', watch);
 
 gulp.task('copy', ['copy:images', 'copy:fonts', 'copy:resources', 'copy:favicon']);
-gulp.task('compile-all', ['icon-font', 'bundle', 'sass', 'copy']);
+gulp.task('compile-all', ['templates:clean','icon-font', 'bundle', 'sass', 'copy']);
 
 gulp.task('build', function () {
   runSequence(

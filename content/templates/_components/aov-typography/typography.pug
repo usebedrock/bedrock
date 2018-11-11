@@ -1,5 +1,3 @@
-.c-content
-
     - var shortContent = 'Lorem ipsum dolor sit amet';
     - var longContent = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '.repeat(5).trim()
     - var samples = [];
@@ -13,10 +11,10 @@
     table.table
         each sample in samples
             tr
-                td.o-table-col-4
+                td
                     = sample.name
                     br
                     span.br-typography-sample-size= sample.size
-                td.o-table-col-12
+                td
                     .br-typography-sample-content!= sample.code
                     pre= sample.code

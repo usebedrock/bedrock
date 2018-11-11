@@ -15,8 +15,7 @@ function discover() {
     .filter(isSvgFile)
     .map(filename => {
       const parsedPath = path.parse(filename);
-      let category = parsedPath.dir.replace(`${paths.content.icons.sourceDirectory}`, '').replace('/', '');
-
+      let category = parsedPath.dir.replace(paths.content.icons.sourceDirectory.replace(/\\/g, '/'), '').replace('/', '');
       return {
         name: path.parse(filename).name,
         category,

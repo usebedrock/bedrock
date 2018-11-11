@@ -2,6 +2,7 @@
   Bedrock specific styles
    ========================================================================== */
 
+@import "../../content/scss/br-variables-override";
 @import "vendor/codemirror";
 
 /* Variables
@@ -34,7 +35,7 @@ $br-styleguide-sidebar-padding-left: 3.2rem*$br-rem-multiplier !default;
 $br-styleguide-content-padding-top: 3.2rem*$br-rem-multiplier !default;
 $br-styleguide-content-padding-right: 3.2rem*$br-rem-multiplier !default;
 $br-styleguide-content-padding-bottom: 3.2rem*$br-rem-multiplier !default;
-$br-styleguide-content-padding-left: 3.2rem*$br-rem-multiplier !default;
+$br-styleguide-content-padding-left: 6.4rem*$br-rem-multiplier !default;
 
 @import "../../content/scss/br-variables-override";
 
@@ -153,7 +154,7 @@ html.br-prototype-nav-is-open {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-
+  text-align: left;
   .br-prototype-nav-inner {
     padding: 2rem*$br-rem-multiplier;
     overflow: hidden;
@@ -171,7 +172,7 @@ html.br-prototype-nav-is-open {
 }
 
 .br-prototype-langselector {
-  margin-bottom: 10px;
+  margin-bottom: 1rem*$br-rem-multiplier;
 }
 
 .br-prototype-nav-text {
@@ -370,7 +371,8 @@ html.br-prototype-nav-is-open {
   border: 1px solid $br-sample-border-color;
   margin: 1rem*$br-rem-multiplier 0;
   position: relative;
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: scroll;
   resize: vertical;
 }
 
