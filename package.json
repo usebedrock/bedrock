@@ -70,18 +70,18 @@
     "watchify": "^3.6.0"
   },
   "dependencies": {
-    "@material/button": "^0.36.0",
-    "@material/checkbox": "^0.36.0",
-    "@material/chips": "^0.36.0",
-    "@material/floating-label": "^0.36.0",
-    "@material/form-field": "^0.36.0",
-    "@material/icon-button": "^0.36.0",
-    "@material/ripple": "^0.36.0",
-    "@material/select": "^0.36.0",
-    "@material/slider": "^0.36.0",
-    "@material/tabs": "^0.36.0",
-    "@material/textfield": "^0.36.1",
-    "material-components-web": "^0.36.0"
+    "@material/button": "^0.41.0",
+    "@material/checkbox": "^0.41.0",
+    "@material/chips": "^0.41.0",
+    "@material/floating-label": "^0.41.0",
+    "@material/form-field": "^0.41.0",
+    "@material/icon-button": "^0.41.0",
+    "@material/ripple": "^0.41.0",
+    "@material/select": "^0.41.0",
+    "@material/slider": "^0.41.0",
+    "@material/tabs": "^0.41.0",
+    "@material/textfield": "^0.41.0",
+    "material-components-web": "^0.41.0"
   },
   "bedrockVersion": "1.10.3"
 }
