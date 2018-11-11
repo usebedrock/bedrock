@@ -27,7 +27,7 @@
     "babel-preset-es2015": "^6.0.15",
     "babelify": "^7.2.0",
     "browser-sync": "^2.9.11",
-    "browserify": "^12.0.1",
+    "browserify": "^16.2.3",
     "chalk": "^1.1.3",
     "clipboard": "^1.5.3",
     "codemirror": "^5.18.2",
