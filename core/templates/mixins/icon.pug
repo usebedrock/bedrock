@@ -1,7 +1,6 @@
 mixin icon(name, extraClasses)
     - var svgIconClassPrefix = config.icons && config.icons.svgIconClassPrefix || 'svg-icon'
-    
-    if extraClasses
-        div(class=`${svgIconClassPrefix} ${svgIconClassPrefix}-${name.replace('/', '-')} ${extraClasses}`)!= renderSvgIcon(name)
-    else
-        div(class=`${svgIconClassPrefix} ${svgIconClassPrefix}-${name.replace('/', '-')}`)!= renderSvgIcon(name)
+    - var isMulticolor = name.indexOf('multicolor/') > -1
+    - var additionalClasses = `${extraClasses || ''} ${isMulticolor ? 'o-svg-icon-multicolor' : ''}`;
+
+    div(class=`${svgIconClassPrefix} ${svgIconClassPrefix}-${name.replace('/', '-')} ${additionalClasses}`)!= renderSvgIcon(name)

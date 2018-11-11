@@ -1,23 +1,24 @@
-# Bedrock
+# ![Bedrock](https://bedrockapp.org/wp-content/themes/bedrock/images/logo-black.svg)
 
 Welcome to Bedrock.
 
-<img src="https://img.shields.io/github/release/mono-company/bedrock.svg">
+![Bedrock Release](https://img.shields.io/github/release/usebedrock/bedrock.svg)
 
-Bedrock is a static site generator to easily make HTML prototypes. For more information, please check out [the Bedrock website](http://bedrock.mono.company/).
+Bedrock is a powerful tool that lets you prototype complex web applications and document design systems.
+
+For the full documentation, please check out [the Bedrock website](https://bedrockapp.org/).
 
 ## Basic installation & first run
 
-* First, make sure you have Node 6.3.1 installed. You can find the latest version of Node at [Nodejs.org](https://nodejs.org/en/).
-* You need to have `gulp` installed globally to use Bedrock. `npm install -g gulp`.
+* First, make sure you have Node 8.3 or later installed. You can find the latest version of Node at [Nodejs.org](https://nodejs.org/en/).
 * Install the project's dependencies:
   * `npm install`
-* Run `gulp` to start your project.
+* Run `npm start` to start your project.
 
 ## Major commands
 
-* `gulp`: runs the prototype
-* `gulp build`: create a build (which ends up in the `dist` folder) that can be deployed to a server
+* `npm start`: runs the prototype
+* `npm run build`: create a build (which ends up in the `dist` folder) that can be deployed to a server
 
 ## Upgrading bedrock
 
@@ -41,4 +42,4 @@ Bedrock is MIT licensed.
 
 ## Credits
 
-Bedrock was made by the team at [Mono](http://mono.company) with most major contributions by [Thomas Tuts](http://thomastuts.com/).
+Bedrock was made by the team at [Mono](https://mono.company). Bedrock was initially written by [Thomas Tuts](http://thomastuts.com/).
