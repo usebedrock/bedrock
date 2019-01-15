@@ -2,7 +2,7 @@
 
 const path = require('path');
 const glob = require('glob');
-const groupBy = require('lodash/collection/groupBy');
+const _ = require('lodash');
 
 const paths = require('../paths');
 
@@ -27,7 +27,7 @@ function discover() {
     .map(filename => path.parse(filename).name);
 
   return {
-    svg: groupBy(svgIcons, 'category'),
+    svg: _.groupBy(svgIcons, 'category'),
     iconFont: iconFontIcons,
   }
 }

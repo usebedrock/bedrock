@@ -3,7 +3,7 @@
 const path = require('path');
 const glob = require('glob');
 const gutil = require('gulp-util');
-const _camelCase = require('lodash/string/camelCase');
+const _ = require('lodash');
 
 const DATA_DIRECTORY = 'content/data/';
 
@@ -23,7 +23,7 @@ function discover() {
 
   for (const filepath of dataFilePaths) {
     const fileName = path.parse(filepath).name;
-    const camelCasedName = _camelCase(fileName);
+    const camelCasedName = _.camelCase(fileName);
 
     try {
       data[camelCasedName] = require(path.join(process.cwd(), filepath));
