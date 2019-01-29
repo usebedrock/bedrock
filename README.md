@@ -10,7 +10,7 @@ For the full documentation, please check out [the Bedrock website](https://bedro
 
 ## Basic installation & first run
 
-* First, make sure you have Node 8.3 or later installed. You can find the latest version of Node at [Nodejs.org](https://nodejs.org/en/).
+* First, make sure you have Node 10 or later installed. You can find the latest version of Node at [Nodejs.org](https://nodejs.org/en/). Go for the LTS version.
 * Install the project's dependencies:
   * `npm install`
 * Run `npm start` to start your project.
