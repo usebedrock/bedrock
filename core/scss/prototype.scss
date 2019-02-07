@@ -522,3 +522,17 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
     }
   }
 }
+
+/* Category
+   ========================================================================== */
+
+.br-sample-category {
+  background: #EEE;
+  display: inline-block;
+  border-radius: 12px;
+  padding: 0.2rem 1.1rem;
+  font-size: 90%;
+  margin-left: 1rem;
+  position: relative;
+  top: 1rem;
+}
