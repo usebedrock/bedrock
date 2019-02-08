@@ -14,6 +14,11 @@ module.exports = {
      *  Determines language of code snippets in styleguide
     */
     snippetLanguage: 'html',
+    /**
+     *  search [boolean]
+     *  Feature flag for search feature
+    */
+    search: true,
    /**
     *  Path to colors SCSS
     *  We use regexes to parse this file to show the colors in styleguide
