@@ -22,20 +22,21 @@ $br-code-background: $br-default-hover-bg-color !default;
 $br-code-border-color: #DDD !default;
 $br-sample-border-color: $br-default-border-color !default;
 
+$br-styleguide-sidebar-bg-color: #F5F5F5 !default;
+
 $br-switch-breakpoint: 800px;
 
 $br-styleguide-sidebar-width: 22% !default; // Only supply a single % value here
-$br-styleguide-content-width: (100% - $br-styleguide-sidebar-width);
 
-$br-styleguide-sidebar-padding-top: 3.2rem*$br-rem-multiplier !default;
-$br-styleguide-sidebar-padding-right: 3.2rem*$br-rem-multiplier !default;
-$br-styleguide-sidebar-padding-bottom: 3.2rem*$br-rem-multiplier !default;
-$br-styleguide-sidebar-padding-left: 3.2rem*$br-rem-multiplier !default;
+$br-styleguide-sidebar-padding-top: 2.4rem*$br-rem-multiplier !default;
+$br-styleguide-sidebar-padding-right: 2.4rem*$br-rem-multiplier !default;
+$br-styleguide-sidebar-padding-bottom: 2.4rem*$br-rem-multiplier !default;
+$br-styleguide-sidebar-padding-left: 2.4rem*$br-rem-multiplier !default;
 
-$br-styleguide-content-padding-top: 3.2rem*$br-rem-multiplier !default;
-$br-styleguide-content-padding-right: 3.2rem*$br-rem-multiplier !default;
-$br-styleguide-content-padding-bottom: 3.2rem*$br-rem-multiplier !default;
-$br-styleguide-content-padding-left: 6.4rem*$br-rem-multiplier !default;
+$br-styleguide-content-padding-top: 2.4rem*$br-rem-multiplier !default;
+$br-styleguide-content-padding-right: 2.4rem*$br-rem-multiplier !default;
+$br-styleguide-content-padding-bottom: 2.4rem*$br-rem-multiplier !default;
+$br-styleguide-content-padding-left: 4.8rem*$br-rem-multiplier !default;
 
 @import "../../content/scss/br-variables-override";
 
@@ -44,7 +45,7 @@ $br-styleguide-content-padding-left: 6.4rem*$br-rem-multiplier !default;
    ========================================================================== */
 
 .br-styleguide-default-styles-active {
-  
+
   height: 100%;
   position: static !important; // Override any “kill bouncy scroll” type code
   @media (min-width: $br-switch-breakpoint) {
@@ -55,24 +56,10 @@ $br-styleguide-content-padding-left: 6.4rem*$br-rem-multiplier !default;
     height: 100%;
     overflow: visible !important; // Override any utility classes killing scroll
     position: static !important; // Override any “kill bouncy scroll” type code
-    // Only kill the body scroll from a certain mq
-    @media (min-width: $br-switch-breakpoint) {
-      overflow: hidden;
-      position: relative !important;
-    }
-    height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
-
     background: #FFF;
-  }
-
-  // Default style for 2 column layout in styleguide
-
-  .br-styleguide-container {
-    height: 100%;
-    box-sizing: border-box;
   }
 
   .br-styleguide-navigation-holder {
@@ -82,21 +69,8 @@ $br-styleguide-content-padding-left: 6.4rem*$br-rem-multiplier !default;
       $br-styleguide-sidebar-padding-right
       $br-styleguide-sidebar-padding-bottom
       $br-styleguide-sidebar-padding-left;
-
-    // Only init 2 columns and scroll from a certain mq
-    @media (min-width: $br-switch-breakpoint) {
-      height: 100%;
-      width: $br-styleguide-sidebar-width;
-      float: left;
-      overflow: auto;
-      -webkit-overflow-scrolling: touch;
-    }
   }
   
-  .br-styleguide-container-inner {
-    height: 100%;
-  }
-
   .br-styleguide-content {
     background: #FFF;
     box-sizing: border-box;
@@ -105,14 +79,6 @@ $br-styleguide-content-padding-left: 6.4rem*$br-rem-multiplier !default;
       $br-styleguide-content-padding-right
       $br-styleguide-content-padding-bottom
       $br-styleguide-content-padding-left;
-    // Only init 2 columns and scroll from a certain mq
-    @media (min-width: $br-switch-breakpoint) {
-      height: 100%;
-      width: $br-styleguide-content-width;
-      float: left;
-      overflow: auto;
-      -webkit-overflow-scrolling: touch;
-    }
   }
 
 }
@@ -535,4 +501,99 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
   margin: 0 0 0 1rem;
   position: relative;
   top: 0.7rem;
+}
+
+
+/* ==========================================================================
+  Grid layout
+   ========================================================================== */
+
+.br-styleguide-navigation-holder {
+  border-right: 1px solid $br-default-border-color;
+  background: #F5F5F5;
+  @media (min-width: $br-switch-breakpoint) {
+    overflow: auto;
+  }
+}
+
+.br-styleguide-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem 2.4rem;
+  background: #F5F5F5;
+  border-right: 1px solid $br-default-border-color;
+}
+
+.br-styleguide-navigation-holder {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+}
+
+.br-styleguide-search {
+  padding: 1.2rem 2.4rem;
+  background: #F5F5F5;
+  border-top: 1px solid $br-default-border-color;
+  border-bottom: 1px solid $br-default-border-color;
+  border-right: 1px solid $br-default-border-color;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  input {
+    width: 100%;
+  }
+}
+
+@media (min-width: $br-switch-breakpoint) {
+  .br-styleguide-content {
+    overflow: scroll;
+  }
+}
+
+.br-styleguide-container {
+  height: 100%;
+  display: grid;
+    grid-template-areas:
+           "header"
+           "search"
+           "content"
+           "sidebar";
+  
+  @media (min-width: $br-switch-breakpoint) {
+    
+    grid-template-columns: $br-styleguide-sidebar-width auto;
+    grid-template-rows: 60px 60px auto;
+    grid-template-areas:
+           "header content content"
+           "search content content"
+           "sidebar content content";
+  }
+
+  .br-styleguide-header {
+    grid-area: header;
+  }
+  
+  .br-styleguide-search {
+    grid-area: search;
+  }
+
+  .br-styleguide-navigation-holder {
+    grid-area: sidebar;
+  }
+
+  .br-styleguide-content {
+    grid-area: content;
+  }
+}
+
+
+
+.br-styleguide-navigation-holder {
+  border-right: 1px solid $br-default-border-color;
+  background: $br-styleguide-sidebar-bg-color;
+}
+
+.br-styleguide-brand-heading {
+  font-size: 24px;
+  margin: 0;
 }

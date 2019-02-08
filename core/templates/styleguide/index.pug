@@ -6,19 +6,25 @@ block append pageVariables
 block body
 
     .br-styleguide-container
-        .br-styleguide-container-inner
-            .br-styleguide-navigation-holder
-                unless styleguideHideBrand
-                    h1.br-styleguide-brand-heading(class=styleguideBrandClass)
-                        a.br-reset-link-styling(href="/styleguide" class=styleguideResetLinkStylingClass) #{projectTitle}
 
-                block nav
-                    include ../includes/styleguide-nav
+        .br-styleguide-header
+            unless styleguideHideBrand
+                h1.br-styleguide-brand-heading(class=styleguideBrandClass)
+                    a.br-reset-link-styling(href="/styleguide" class=styleguideResetLinkStylingClass) #{projectTitle}
 
-            .br-styleguide-content
-                .br-styleguide-content-inner
-                    block content
-                        block homeContent
-                            // Place style guide introduction here. By default redirects to first docs page.
-                            script.
-                                window.location = "/styleguide/docs/introduction.html"
+        .br-styleguide-search
+            if config.styleguide.search
+                input#styleguideSearch(type="search" placeholder="Search components..." class=styleguideInputClass)
+
+        .br-styleguide-navigation-holder
+
+            block nav
+                include ../includes/styleguide-nav
+
+        .br-styleguide-content
+            .br-styleguide-content-inner
+                block content
+                    block homeContent
+                        // Place style guide introduction here. By default redirects to first docs page.
+                        script.
+                            window.location = "/styleguide/docs/introduction.html"

@@ -19,24 +19,24 @@ module.exports = {
      *  Feature flag for search feature
     */
     search: true,
-   /**
-    *  Path to colors SCSS
-    *  We use regexes to parse this file to show the colors in styleguide
-   */
+    /**
+     *  Path to colors SCSS
+     *  We use regexes to parse this file to show the colors in styleguide
+    */
     colors: './content/scss/_colors.scss',
-   /**
-    *  categoryOrder
-    *  Determines the order of documentation categories
-   */
+    /**
+     *  categoryOrder
+     *  Determines the order of documentation categories
+    */
     categoryOrder: [
       'Style guide',
       'Design patterns',
       'Components'
     ],
-   /**
-    * componentCategories
-    * The prefix on folder names in /components determines the category
-   */
+    /**
+     * componentCategories
+     * The prefix on folder names in /components determines the category
+    */
     componentCategories: {
       aov: 'Overviews',
       c: 'Components',
