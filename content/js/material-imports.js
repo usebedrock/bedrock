@@ -7,6 +7,7 @@ import {MDCCheckbox} from '@material/checkbox/dist/mdc.checkbox';
 import {MDCTextField} from '@material/textfield/dist/mdc.textfield';
 import {MDCSelect} from '@material/select/dist/mdc.select';
 import {MDCSlider} from '@material/slider/dist/mdc.slider';
+import {MDCSwitch} from '@material/switch/dist/mdc.switch';
 import {MDCTab, MDCTabFoundation} from '@material/tabs/dist/mdc.tabs';
 import {MDCTabBar, MDCTabBarFoundation} from '@material/tabs/dist/mdc.tabs';
 import {MDCTabBarScroller, MDCTabBarFoundationScroller} from '@material/tabs/dist/mdc.tabs';
@@ -21,6 +22,7 @@ const checkboxes = document.querySelectorAll('.mdc-checkbox');
 const textfields = document.querySelectorAll('.mdc-text-field');
 const selects = document.querySelectorAll('.mdc-select');
 const sliders = document.querySelectorAll('.mdc-slider');
+const switches = document.querySelectorAll('.mdc-switch');
 const tabbars = document.querySelectorAll('.mdc-tab-bar')
 const tabbarsscrollers = document.querySelectorAll('.mdc-tab-bar-scroller');
 
@@ -30,9 +32,9 @@ function init() {
   handleMDCTextFields(textfields);
   handleMDCSelects(selects);
   handleMDCSliders(sliders);
+  handleMDCSwitches(switches);
   handleMDCTabBars(tabbars);
   handleMDCTabBarScrollers(tabbarsscrollers);
-
   handleMDCRipple(buttons);
   handleMDCRipple(iconbuttons);
   handleMDCRipple(fabs);
@@ -77,6 +79,12 @@ function handleMDCSelects(selectsEl) {
 function handleMDCSliders(slidersEl) {
   for (var i = 0; i < slidersEl.length; i++) {
     new MDCSlider(slidersEl[i]);
+  }
+};
+
+function handleMDCSwitches(switchesEl) {
+  for (var i = 0; i < switchesEl.length; i++) {
+    new MDCSwitch(switchesEl[i]);
   }
 };
 
