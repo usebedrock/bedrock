@@ -24,7 +24,9 @@ module.exports = function () {
     // Inject config svgIconPrefix in scss
     .pipe(header('$br-svg-icon-class-prefix: ' + svgIconClassPrefix + ';\n'))
     .pipe(sourcemaps.init())
-    .pipe(sass())
+    .pipe(sass({
+      includePaths: ['node_modules']
+    }))
     .on('start', function () {
     })
     .on('error', function (err) {

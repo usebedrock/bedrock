@@ -1,7 +1,6 @@
 'use strict';
 
 const gulp = require('gulp');
-const inquirer = require('inquirer');
 const runSequence = require('run-sequence');
 
 const browserSync = require('./core/tasks/browser-sync');

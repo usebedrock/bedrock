@@ -44,7 +44,7 @@ $br-styleguide-content-padding-left: 6.4rem*$br-rem-multiplier !default;
    ========================================================================== */
 
 .br-styleguide-default-styles-active {
-
+  
   height: 100%;
   position: static !important; // Override any “kill bouncy scroll” type code
   @media (min-width: $br-switch-breakpoint) {
@@ -92,7 +92,7 @@ $br-styleguide-content-padding-left: 6.4rem*$br-rem-multiplier !default;
       -webkit-overflow-scrolling: touch;
     }
   }
-
+  
   .br-styleguide-container-inner {
     height: 100%;
   }
@@ -223,7 +223,7 @@ html.br-prototype-nav-is-open {
   font-size: 1.2rem*$br-rem-multiplier;
 }
 
-/* Utilities
+/* Utilities 
    ========================================================================== */
 
 .br-reset-link-styling {
@@ -399,18 +399,13 @@ html.br-prototype-nav-is-open {
    ========================================================================== */
 
 .br-color-swatch-list {
-  display: flex;
-	flex-wrap: wrap;
-	margin-left: -10px;
-	margin-top: -10px;
   list-style-type: none;
   padding: 0;
 }
 
 .br-color-swatch-item {
-	flex: 0 0 100px;
-  box-sizing: border-box;
-  margin: 1rem*$br-rem-multiplier;
+  display: inline-block;
+  margin-right: 1rem*$br-rem-multiplier;
   padding: 1rem*$br-rem-multiplier;
   text-align: center;
 }
@@ -526,4 +521,18 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
       background-color: #FFF;
     }
   }
+}
+
+/* Category
+   ========================================================================== */
+
+.br-sample-category {
+  background: #EEE;
+  display: inline-block;
+  border-radius: 12px;
+  padding: 0.2rem 0.8rem;
+  font-size: 90%;
+  margin: 0 0 0 1rem;
+  position: relative;
+  top: 0.7rem;
 }
