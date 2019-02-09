@@ -4,8 +4,23 @@ category: Style guide
 order: 1
 ---
 
-div(style='display: flex; height: 100%; align-items: center;')
-    div(style="display: flex; margin: 0 8rem; align-items: center;")
+style.
+    body, html, .br-styleguide-content-inner {
+        height: 100%;
+    }
+    .br-demo-content {
+        height: 100%;
+        display: flex;
+    }
+    .br-demo-content-inner {
+        max-width: 660px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+    }
+
+.br-demo-content
+    .br-demo-content-inner
         .mdc-typography-general
             p Welcome to the component styleguide of Bedrock + Material Design.
             p This repository aims to document an HTML/CSS/JS implementation of Google's Material design, within the context of Bedrock, an open source tool for creating advanced HTML prototypes and documenting design systems.
