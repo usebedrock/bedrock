@@ -3,6 +3,8 @@ mixin sample(component)
         .br-sample-header.br-sample-clearfix
             if component.docs
                 h3.br-sample-heading(class=styleguideSampleHeadingClass)= component.docs.attributes.title || component.name
+                if component.docs.attributes.source
+                    p.br-sample-category=component.docs.attributes.source
             else
                 h3.br-sample-heading(class=styleguideSampleHeadingClass)= component.name
             a.br-sample-header-link(href="#component-"+component.name) #
