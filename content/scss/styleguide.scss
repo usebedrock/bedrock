@@ -177,7 +177,7 @@
    ========================================================================== */
 
 .br-styleguide-content-inner {
-  max-width: 63rem;
+  max-width: 80rem;
   margin: 0 auto;
 }
 
@@ -186,25 +186,27 @@
 }
 
 .br-docs-category-name {
-  padding: 1.6rem 4rem;
-  font-weight: 600;
+  padding: 1.6rem 3.2rem;
 }
 
 .c-styleguide-list {
   margin: 0;
 
-  li a {
-    padding: 1.6rem 6.4rem;
-    color: $color-gray-600;
-    &:hover {
+  li {
+    border-left: .4rem solid transparent;
+    a {
+      padding: 0.8rem 2.8rem;
       color: $color-gray-600;
-      background-color: $color-gray-50;
+      &:hover {
+        color: $color-gray-600;
+        background-color: #FFF;
+      }
     }
   }
 
   li.c-styleguide-list__item--active {
-    border-left: 4px solid $color-primary;
-    background-color: $color-gray-50;
+    border-left: .4rem solid $color-primary;
+    background-color: #FFF;
 
     a {
       color: $color-primary;
