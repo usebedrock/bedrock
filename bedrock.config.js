@@ -40,6 +40,8 @@ module.exports = {
     componentCategories: {
       aov: 'Overviews',
       c: 'Components',
+      o: 'Objects',
+      u: 'Utilities'
     }
   },
   /**
