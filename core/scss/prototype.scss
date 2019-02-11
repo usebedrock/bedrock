@@ -510,7 +510,7 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
 
 .br-styleguide-navigation-holder {
   border-right: 1px solid $br-default-border-color;
-  background: #F5F5F5;
+  background: $br-styleguide-sidebar-bg-color;
   @media (min-width: $br-switch-breakpoint) {
     overflow: auto;
   }
@@ -520,7 +520,7 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
   display: flex;
   justify-content: space-between;
   padding: 1.2rem 2.4rem;
-  background: #F5F5F5;
+  background: $br-styleguide-sidebar-bg-color;
   border-right: 1px solid $br-default-border-color;
 }
 
@@ -532,7 +532,7 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
 
 .br-styleguide-search {
   padding: 1.2rem 2.4rem;
-  background: #F5F5F5;
+  background: $br-styleguide-sidebar-bg-color;
   border-top: 1px solid $br-default-border-color;
   border-bottom: 1px solid $br-default-border-color;
   border-right: 1px solid $br-default-border-color;
@@ -584,16 +584,4 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
   .br-styleguide-content {
     grid-area: content;
   }
-}
-
-
-
-.br-styleguide-navigation-holder {
-  border-right: 1px solid $br-default-border-color;
-  background: $br-styleguide-sidebar-bg-color;
-}
-
-.br-styleguide-brand-heading {
-  font-size: 24px;
-  margin: 0;
 }
