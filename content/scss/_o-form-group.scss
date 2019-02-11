@@ -1,0 +1,117 @@
+/* ==========================================================================
+  Component: Form group
+  ---
+  Wrapping component for a label and an input control
+   ========================================================================== */
+
+/* Variables
+   ========================================================================== */
+
+$o-form-group-spacing: $g-base-font-size;
+$c-input-label-color: $color-gray-700;
+$o-form-group-spacer-unit: 0.8rem !default;
+$o-form-group-label-font-weight: $g-headings-font-weight !default;
+
+/* o-form-group
+   Group within a form that defines a layout
+   ========================================================================== */
+
+.o-form-group-layout--standard {
+  
+  .o-form-group {
+    margin-bottom: $o-form-group-spacer-unit*2;
+  }
+
+  .o-form-group__controls {
+    flex: 1 1 auto;
+  }
+
+  .o-form-group__label {
+    padding: $o-form-group-spacing/2 0;
+
+    color: $c-input-label-color;
+    flex: none;
+    font-size: $g-base-font-size;
+    font-weight: $o-form-group-label-font-weight;
+    display: block;
+
+  }
+
+}
+
+/* o-form-horizontal
+   Affect form groups
+   ========================================================================== */
+
+.o-form-group-layout--horizontal {
+
+  .o-form-group {
+    display: flex;
+    align-items: center;
+    margin: $o-form-group-spacing/2 0;
+  }
+
+  .o-form-group__label {
+    display: block;
+    width: 19.2rem;
+    font-weight: $g-headings-font-weight;
+  }
+
+}
+
+.o-form-group-layout--inline {
+  display: flex;
+  .o-form-group__label {
+    white-space: nowrap;
+  }
+  .o-form-group {
+    display: flex;
+    flex: 1 0 auto;
+    align-items: center;
+    margin-left: .8rem;
+    &:first-child {
+      margin: 0;
+    }
+    .o-form-group__controls {
+      flex: 1 0 auto;
+    }
+  }
+  .o-form-group__label {
+    font-weight: $g-headings-font-weight;
+    margin-right: .8rem;
+  }
+}
+
+/* Temporary fix c-box newsletter
+   ========================================================================== */
+
+
+.o-form-group-layout--inline-responsive {
+  display: flex;
+  flex-wrap: wrap;
+
+  .o-form-group__label {
+    white-space: nowrap;
+  }
+  .o-form-group {
+    display: flex;
+    flex: 1 0 auto;
+    align-items: center;
+    margin-left: .8rem;
+    &:first-child {
+      margin: 0;
+    }
+    .o-form-group__controls {
+      flex: 1 0 auto;
+    }
+    @media (max-width: $g-bp1) {
+      flex-direction: column;
+      align-items: stretch;
+      margin: 1rem 0;
+    }
+  }
+  .o-form-group__label {
+    font-weight: $g-headings-font-weight;
+    margin-right: .8rem;
+  }
+}

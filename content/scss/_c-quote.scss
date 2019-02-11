@@ -1,0 +1,54 @@
+/* ==========================================================================
+  Component: quote
+   ========================================================================== */
+
+.c-quote {
+  margin: 4rem 0;
+}
+
+.c-quote__text {
+  color: #000;
+  font-size: 2.2rem;
+  letter-spacing: -0.05rem;
+  line-height: 3.2rem;
+  margin: 0 0 2.4rem 0;
+
+  &:before {
+    content: '\201C';
+    position: absolute;
+    transform: translateX(-150%);
+  }
+
+  &:after {
+    content: '\201D';
+  }
+}
+
+.c-quote--long .c-quote__text {
+  font-size: 1.8rem;
+  letter-spacing: 0;
+}
+
+.c-quote__author {
+  align-items: center;
+  color: $color-gray-500;
+  display: flex;
+  font-size: 1.6rem;
+  font-style: normal;
+  line-height: 2.4rem;
+  text-transform: uppercase;
+}
+
+.c-quote .c-avatar {
+  margin-right: 1.2rem;
+}
+
+@media (max-width: 400px) {
+  .c-quote__text {
+    font-size: 2rem;
+  }
+
+  .c-quote__author {
+    font-size: 1.5rem;
+  }
+}

@@ -23,7 +23,7 @@ module.exports = {
      *  Path to colors SCSS
      *  We use regexes to parse this file to show the colors in styleguide
     */
-    colors: './content/scss/_colors.scss',
+    colors: './content/scss/_s-colors.scss',
     /**
      *  categoryOrder
      *  Determines the order of documentation categories

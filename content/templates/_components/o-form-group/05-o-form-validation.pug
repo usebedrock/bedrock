@@ -1,0 +1,41 @@
+.o-form-group-layout.o-form-group-layout--standard
+
+    .o-form-group.o-form-group--error
+        label.o-form-group__label(for="nameId") Name
+        .o-form-group__controls
+            input.c-input(type="email" value="John Doe" id="nameId")
+            .c-form-help-text.c-form-help-text--error Please enter a valid name
+    .o-form-group.o-form-group--error
+        label.o-form-group__label(for="emailId") Email address
+        .o-form-group__controls
+            input.c-input(type="email" value="user@name.com" id="emailId")
+            .c-form-help-text.c-form-help-text--error Please enter a valid e-mail address
+
+    .o-form-group.o-form-group--error
+        label.o-form-group__label Value
+        .o-form-group__controls
+            .c-radio-group.c-radio-group--inline
+                .c-radio
+                    label
+                        input(type="radio" name="radio12")
+                        | Inline Value 1
+                .c-radio
+                    label
+                        input(type="radio" name="radio12")
+                        | Inline Value 2
+                .c-radio
+                    label
+                        input(type="radio" name="radio12" checked)
+                        | Inline Value 3
+            .c-form-help-text.c-form-help-text--error Please enter another option.
+
+    .o-form-group.o-form-group--error
+        label.o-form-group__label(for="selectId") Preference
+        .c-select-holder
+            select.c-select(id="selectId")
+                option Option A
+                option Option B
+                option Option C
+
+    .o-form-group
+        input.c-button.c-button--primary(type="submit" value="Save")

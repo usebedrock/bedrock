@@ -1,0 +1,16 @@
+/* ==========================================================================
+  c-image-grid
+   ========================================================================== */
+
+.c-image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  img {
+    display: block;
+  }
+  .c-image-grid__item {
+    margin: 1rem;
+  }
+  
+}

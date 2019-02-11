@@ -1,0 +1,60 @@
+/* ==========================================================================
+  c-tag
+   ========================================================================== */
+
+.c-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  li {
+    margin: 0.4rem;
+  }
+}
+
+.c-tag {
+  background-color: $color-gray-100;
+  border: 1px solid $color-gray-100;
+  border-radius: 2.4rem;
+  padding: 0.3rem 1.6rem;
+  display: flex;
+  align-items: center;
+
+  // Label
+  .c-tag__label {
+    white-space: nowrap;
+    flex: 1 1 100%;
+  }
+  
+}
+
+.c-tag--simple {
+  display: inline-block;
+}
+
+.c-tag > a { // Close button
+  border-radius: 100%;
+  background: $color-gray-200;
+  color: #FFF;
+  text-align: center;
+  flex: 1 1 100%;
+  border: none;
+  width: 1.8rem;
+  height: 1.8rem;
+  line-height: 1.8rem;
+  position: relative;
+  left: 0.5rem;
+  .o-svg-icon {
+    margin: 0 auto;
+    display: block;
+    width: 1.8rem;
+    height: 1.8rem;
+    line-height: 1.8rem;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    background: $color-red-500;
+    text-decoration: none;
+    color: #FFF;
+    box-shadow: 0 0 0 2px #FFF;
+  }
+}

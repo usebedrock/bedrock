@@ -1,0 +1,16 @@
+/* ==========================================================================
+  Progress bar that changes width AND color using a CSS variable
+  By Lea verou - http://dabblet.com/gist/9ef99ce3555ba569c24c7532ef37dc9a
+   ========================================================================== */
+
+.c-progress-bar {
+  display: flex;
+  height: 0.8rem;
+  background: $color-gray-100;
+}
+
+.c-progress-bar:before {
+  content: "";
+  width: calc(var(--value) * 100%);
+  background: hsl(calc(var(--value) * 90), 50%, 50%);
+}

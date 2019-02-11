@@ -1,0 +1,237 @@
+/* ==========================================================================
+  Component: Checkbox and Radio
+  ---
+  Custom styling for checkboxes and radio buttons.
+   ========================================================================== */
+
+/* Variables
+   ========================================================================== */
+
+$c-checkbox-input-border-color: $color-gray-400 !default;
+
+$c-checkbox-input-border: 1px solid $c-checkbox-input-border-color !default;
+$c-radio-input-border: 1px solid $c-checkbox-input-border-color !default;
+
+$c-checkbox-input-border-radius: 3px !default;
+
+$c-checkbox-size: 1.6rem !default;
+$c-checkbox-small-size: 1.2rem !default;
+$c-radio-size: 1.6rem !default;
+$c-radio-dot-size: $c-radio-size / 2 !default;
+
+$c-checkbox-icon-size: 1.6rem !default;
+
+$c-checkbox-background-color: #FFF !default;
+$c-radio-background-color: #FFF !default;
+
+$c-checkbox-spacing: 0.8rem !default;
+$c-radio-spacing: 0.8rem !default;
+
+$c-checkbox-spacing-inline: 0.8rem !default;
+$c-radio-spacing-inline: 0.8rem !default;
+
+$c-checkbox-checked-color: $color-primary !default;
+$c-radio-checked-color: $color-primary !default;
+
+/* Spacing/Grouping
+   ========================================================================== */
+
+.o-form-group .c-checkbox,
+.o-form-group .c-radio,
+.c-checkbox-group .c-checkbox,
+.c-radio-group .c-radio {
+  padding: 0.8rem 0;
+}
+
+/* Labels
+   ========================================================================== */
+
+.c-checkbox,
+.c-radio {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+
+  label {
+    display: flex;
+    flex: 1 1 auto;
+    line-height: $c-checkbox-size;
+    width: 100%;
+  }
+}
+
+/* Shared styles
+   ========================================================================== */
+
+.c-checkbox input[type='checkbox'],
+.c-radio input[type='radio'] {
+  flex: none;
+  -webkit-appearance: none; // Only disable appearance on webkit, Firefox can't properly restyle checkboxes
+  vertical-align: top;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+  }
+}
+
+.c-checkbox input[type='checkbox']:checked,
+.c-checkbox input[type='checkbox'][data-indeterminate]:checked,
+.c-radio input[type='radio']:checked {
+  border-color: $c-checkbox-checked-color;
+
+  &:before {
+    opacity: 1;
+  }
+}
+
+/* Custom focus outline
+   ========================================================================== */
+
+.c-checkbox input[type='checkbox']:focus,
+.c-checkbox input[type='checkbox']:active,
+.c-radio input[type='radio']:active,
+.c-radio input[type='radio']:focus {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba($c-checkbox-input-border-color, .5);
+  border-color: $c-checkbox-input-border-color;
+  transition: 0.14s box-shadow ease-in-out;
+}
+
+/* Checkbox specific
+   @todo document disabled and indeterminate state
+   ========================================================================== */
+
+.c-checkbox input[type='checkbox'] {
+  background: $c-checkbox-background-color;
+  border: $c-checkbox-input-border;
+  border-radius: $c-checkbox-input-border-radius;
+  height: $c-checkbox-size;
+  width: $c-checkbox-size;
+  margin: 0 $c-checkbox-spacing 0 0;
+
+  &:before {
+    width: 16px;
+    height: 16px;
+    left: ($c-checkbox-size - $c-checkbox-icon-size - 0.2rem) / 2;
+    top: ($c-checkbox-size - $c-checkbox-icon-size - 0.2rem) / 2;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path fill="none" d="M0 0h16v16H0z"/><clipPath id="a"><path d="M0 0h16v16H0z"/></clipPath><g clip-path="url(#a)"><path d="M11.69 4.675l-.443.424L6.77 9.575 4.752 7.558l-.442-.422L3.445 8l.423.442 2.46 2.46.442.423.442-.423 4.92-4.92.423-.442-.865-.865z" fill="#fff"/></g></svg>') no-repeat;
+    opacity: 0;
+    transition: all 0.14s;
+    transition-property: opacity;
+  }
+
+  &[data-indeterminate]:before {
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path id="Rectangle" d="M12,8c0,-0.552 -0.448,-1 -1,-1l-6,0c-0.552,0 -1,0.448 -1,1c0,0.552 0.448,1 1,1l6,0c0.552,0 1,-0.448 1,-1Z" style="fill:#fff;"/></svg>') no-repeat;
+  }
+}
+
+.c-checkbox input[type='checkbox'][disabled] {
+  border: $c-checkbox-input-border;
+
+  &:checked:before {
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path fill="none" d="M0 0h16v16H0z"/><clipPath id="a"><path d="M0 0h16v16H0z"/></clipPath><g clip-path="url(#a)"><path d="M11.69 4.675l-.443.424L6.77 9.575 4.752 7.558l-.442-.422L3.445 8l.423.442 2.46 2.46.442.423.442-.423 4.92-4.92.423-.442-.865-.865z" fill="#{$c-checkbox-input-border}"/></g></svg>') no-repeat;
+  }
+}
+
+.c-checkbox input[type='checkbox'][disabled]:not(:checked) {
+  &:before {
+    border-radius: 1px;
+    width: 10px;
+    height: 10px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: $c-checkbox-input-border;
+    opacity: 1;
+  }
+}
+
+.c-checkbox input[type='checkbox']:checked:not([disabled]),
+.c-checkbox input[type='checkbox'][data-indeterminate]:checked:not([disabled]) {
+  background-color: $c-checkbox-checked-color;
+}
+
+/* Radio specific
+   @todo document disabled state
+   ========================================================================== */
+
+.c-radio input[type='radio'] {
+  background: $c-radio-background-color;
+  border: $c-radio-input-border;
+  border-radius: 100%;
+  height: $c-radio-size;
+  width: $c-radio-size;
+  margin: 0 $c-radio-spacing 0 0;
+}
+
+.c-radio input[type='radio']:checked,
+.c-radio input[type='radio'][disabled] {
+  &:before {
+    background: $c-radio-checked-color;
+    height: $c-radio-dot-size;
+    width: $c-radio-dot-size;
+    top: ($c-radio-size - $c-radio-dot-size - 0.2rem) / 2;
+    left: ($c-radio-size - $c-radio-dot-size - 0.2rem) / 2;
+    border-radius: 100%;
+  }
+}
+
+.c-radio input[type='radio'][disabled] {
+  border-color: $c-radio-input-border;
+
+  &:before {
+    background: #FFF;
+  }
+
+  &:checked:before {
+    background: $c-radio-input-border;
+  }
+}
+
+/* Inline checkbox and Radio
+   ========================================================================== */
+
+.c-radio-group--inline {
+  .c-radio {
+    display: inline-block;
+    height: $c-radio-size;
+    margin-right: $c-radio-spacing-inline;
+  }
+}
+
+.c-checkbox-group--inline {
+  .c-checkbox {
+    display: inline-block;
+    height: $c-checkbox-size;
+    margin-right: $c-checkbox-spacing-inline;
+  }
+}
+
+/* Checkbox / Radio without label
+   @todo document this
+   ========================================================================== */
+
+.c-checkbox--no-label {
+  display: inline-block;
+
+  input[type='checkbox'] {
+    margin: 0;
+  }
+}
+
+.c-radio--no-label {
+  display: inline-block;
+
+  input[type='radio'] {
+    margin: 0;
+  }
+}
+
+/* Checkbox Subgroup
+   ========================================================================== */
+
+.c-checkbox-subgroup {
+  margin: 0.8rem 0 0 2.4rem;
+}

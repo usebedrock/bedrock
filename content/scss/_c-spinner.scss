@@ -1,0 +1,97 @@
+/* ==========================================================================
+  Component: spinner
+  ---
+  A loading indicator.
+   ========================================================================== */
+
+/* Variables
+   ========================================================================== */
+
+$c-spinner-container-width: 2rem;
+$c-spinner-bar-width: 0.1rem;
+$c-spinner-bar-height: 0.5rem;
+
+$c-spinner-large-container-width: 4rem;
+$c-spinner-large-bar-width: 0.2rem;
+$c-spinner-large-bar-height: 1rem;
+
+/* Animations
+   ========================================================================== */
+
+@keyframes cSpinnerFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Component
+   ========================================================================== */
+
+.c-spinner {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto; // Center when placed in a button
+  width: $c-spinner-container-width;
+  height: $c-spinner-container-width;
+  text-indent: 999em;
+
+  &.c-spinner--large {
+    width: $c-spinner-large-container-width;
+    height: $c-spinner-large-container-width;
+  }
+
+  &.c-spinner--white {
+    .c-spinner__bar {
+      background: white;
+    }
+  }
+
+}
+
+.c-spinner__bar {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: ($c-spinner-container-width/2 - $c-spinner-bar-width);
+  width: $c-spinner-bar-width;
+  height: $c-spinner-bar-height;
+  border-radius: 4px;
+  background: rgba(#000,0.6);
+  transform-origin: 50% $c-spinner-container-width/2; /* container height / 2 */
+
+  .c-spinner--large & {
+    left: ($c-spinner-large-container-width/2 - $c-spinner-large-bar-width);
+    width: $c-spinner-large-bar-width;
+    height: $c-spinner-large-bar-height;
+    transform-origin: 50% $c-spinner-large-container-width/2; /* container height / 2 */
+  }
+
+}
+
+.c-spinner__bar {
+  animation: cSpinnerFade 1s infinite linear;
+}
+
+$spinCount: 0;
+$spinTotal: 12;
+
+@while $spinCount < $spinTotal {
+
+  .c-spinner .c-spinner__bar:nth-child(#{$spinCount+1}) {
+    transform: rotate(#{$spinCount*30}deg);
+    animation-delay: $spinCount / $spinTotal * 1s;
+  }
+
+  $spinCount: $spinCount + 1;
+
+}
+
+// When spinner meets buttons
+
+.c-button--primary .c-spinner__bar,
+.c-alert--floating .c-spinner__bar {
+  background: #FFF;
+}

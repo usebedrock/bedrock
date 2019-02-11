@@ -1,0 +1,170 @@
+/* ==========================================================================
+  Component: Buttons
+  ---
+  This code is about button layout.
+   ========================================================================== */
+
+/* Variables
+   ========================================================================== */
+
+// Border radius
+$c-button-border-radius: 0.3rem !default;
+
+// Sizes (heights)
+
+$c-button-height: 3.6rem !default;
+$c-button-height-small: 2.8rem !default;
+
+// Font size
+
+$c-button-font-size: 1.5rem;
+$c-button-font-size-small: 1.3rem;
+
+// Line height
+
+$c-button-line-height: 2.4rem;
+$c-button-line-height-small: 1.8rem;
+
+// Horizontal padding (border included)
+
+$c-button-padding-horizontal: 2rem !default;
+$c-button-padding-horizontal-small: 1rem !default;
+
+// Spacing between icon and label
+
+$c-button-icon-spacing: 0.4rem !default;
+$c-button-icon-spacing-small: 0 !default;
+
+
+/* Default size
+   ========================================================================== */
+
+.c-button {
+  appearance: none; // Fix for Mobile Safari
+  text-decoration: none; // to reset <a> element
+  cursor: pointer;
+  vertical-align: middle;
+  border-radius: $c-button-border-radius;
+  padding: (($c-button-height - $c-button-line-height) / 2) $c-button-padding-horizontal;
+  font-size: $c-button-font-size;
+  text-align: center;
+  align-items: center;
+  font-weight: 400;
+}
+
+a.c-button {
+  display: inline-flex;
+  justify-content: center;
+}
+
+button.c-button {
+  appearance: none;
+  margin: 0;
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}
+
+.c-button .c-button__content {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.c-button__label {
+  line-height: $c-button-line-height;
+  white-space: nowrap;
+}
+
+.o-svg-icon + .c-button__label,
+.c-button__label + .o-svg-icon, {
+  margin-left: $c-button-icon-spacing;
+}
+
+.c-button:not(.c-button--icon) .o-svg-icon:first-child {
+  margin-left: -0.4rem;
+}
+
+.c-button:not(.c-button--icon) .o-svg-icon:last-child {
+  margin-right: -0.4rem;
+}
+
+/* Small size
+   ========================================================================== */
+
+.c-button--small {
+  font-size: $c-button-font-size-small;
+  padding: (($c-button-height-small - $c-button-line-height-small) / 2) $c-button-padding-horizontal-small;
+
+  .c-button__label {
+    line-height: $c-button-line-height-small;
+  }
+
+  .o-svg-icon {
+    height: $c-button-line-height-small;
+    width: $c-button-line-height-small;
+  }
+
+  .o-svg-icon + .c-button__label,
+  .c-button__label + .o-svg-icon {
+    margin-left: $c-button-icon-spacing-small;
+  }
+
+  &.c-button--icon {
+    padding: ($c-button-height-small - $c-button-line-height-small) /2;
+  }
+}
+
+/* Icon-only Button (Square)
+   ========================================================================== */
+
+.c-button--icon {
+  padding: ($c-button-height - $c-button-line-height)/2;
+}
+
+.c-button--small.c-button--icon {
+  padding: ($c-button-height-small - $c-button-line-height-small)/2;;
+}
+
+/* Block button
+   ========================================================================== */
+
+.c-button--block {
+  width: 100%;
+  text-align: center;
+}
+
+/* Link button
+   ========================================================================== */
+
+.c-button--link {
+  padding-left: 0;
+  padding-right: 0;
+  font-weight: 600;
+  text-decoration: none;
+  &:hover,
+  &:active,
+  &:hover svg *,
+  &:active svg * {
+    color: darken($color-primary, 15%);
+  }
+}
+
+/* File button
+   ---
+   Hide an input type file inside a button that is fully clickable
+   ========================================================================== */
+
+.c-button--file {
+  position: relative;
+  input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.0001;
+  }
+}

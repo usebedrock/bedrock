@@ -1,0 +1,128 @@
+/* ==========================================================================
+  Component: Avatar
+  ---
+  A profile image for users. When there is no image, display the initials of the user.
+   ========================================================================== */
+
+/* Variables
+   ========================================================================== */
+
+$c-avatar-default-bg:   $color-brand-blue !default;
+$c-avatar-dimensions:   3.2rem !default;
+$c-avatar-dimensions-s: 2.4rem !default;
+$c-avatar-dimensions-l: 9.6rem !default;
+
+/* Component
+   ========================================================================== */
+
+.c-avatar {
+  width: $c-avatar-dimensions;
+  height: $c-avatar-dimensions;
+  min-width: $c-avatar-dimensions;
+  min-height: $c-avatar-dimensions;
+  line-height: $c-avatar-dimensions;
+  border-radius: 50%;
+  text-align: center;
+  background-color: $c-avatar-default-bg;
+  color: #FFF;
+  display: inline-block;
+}
+
+.c-avatar--small {
+  width: $c-avatar-dimensions-s;
+  height: $c-avatar-dimensions-s;
+  min-width: $c-avatar-dimensions-s;
+  min-height: $c-avatar-dimensions-s;
+  line-height: $c-avatar-dimensions-s;
+  font-size: 80%;
+  .o-svg-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    position: relative;
+    top: -0.1rem;
+  }
+}
+
+.c-avatar--large {
+  width: $c-avatar-dimensions-l;
+  height: $c-avatar-dimensions-l;
+  min-width: $c-avatar-dimensions-l;
+  min-height: $c-avatar-dimensions-l;
+  background-color: $color-gray-200;
+  .o-svg-icon {
+    width: 5.6rem;
+    height: 5.6rem;
+    position: relative;
+    top: 1rem;
+  }
+}
+
+.c-avatar img {
+  border-radius: 50%;
+}
+
+.c-avatar-and-text {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+
+  .c-avatar-and-text__text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .c-avatar-and-text__text p {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .c-avatar {
+    margin-right: 1.6rem;
+  }
+
+  .c-avatar.c-avatar--small {
+    margin-right: 1.2rem;
+  }
+}
+
+// Reverse order option
+/*
+.c-avatar--multiple {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  .c-avatar {
+    position: relative;
+    margin-left: -1.6rem;
+    border: 1px solid white;
+    z-index: 1;
+  }
+}
+*/
+
+.c-avatar--multiple {
+  margin-left: 1.6rem;
+  .c-avatar {
+    position: relative;
+    margin-left: -1.6rem;
+    border: 1px solid white;
+  }
+  .c-avatar:nth-child(1) {
+    z-index: 4;
+  }
+  .c-avatar:nth-child(2) {
+    z-index: 3;
+  }
+  .c-avatar:nth-child(3) {
+    z-index: 2;
+  }
+  .c-avatar:nth-child(4) {
+    z-index: 1;
+  }
+  .c-avatar-tooltip {
+    margin-left: 0rem;
+    margin-bottom: 3.2rem;
+    border: none;
+    background-color: $color-gray-400;
+  }
+}

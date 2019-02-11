@@ -1,0 +1,36 @@
+---
+title: BEM notation
+category: Basics
+order: 2
+---
+
+.c-content
+
+    h2 BEM notation
+
+    .u-spacer-top.u-spacer-bottom
+
+        p The Jungle Design System uses a combination of the BEM naming convention and the Inverted Triangle CSS architecture in order to have a maintainable, readable and scalable code structure.
+
+        h3 BEM
+
+        p BEM stands for Block Element Modifier and it categorizes the code into three groups:
+        p Blocks which are a standalone entities that are meaningful on their own, for example c-menu.
+        p Elements which are part of a block and have no standalone meaning and are semantically tied to a block, for example c-menu__item.
+        p Modifiers which are variants or flags on a block or element and are used to change the appearance or behavior, for example c-menu--disabled.
+        p The BEM naming convention helps to see how classes are related to each other.
+
+
+        h3 Namespacing and ITCSS
+
+        p The Jungle Design System uses namespacing which means that every class in the codebase is prefixed with a certain string to explain what the code does and to avoid style leakage.
+        p The namespaces are also used to separate the code base into different layers and this is where ITCSS comes into place.
+        p The different layers that you find within the  ITCSS architecture are, in the following order:
+        p <strong>Settings</strong>,which are used with preprocessors and contain font, colors variables. The namespace used here is s-.
+        p <strong>Tools</strong>, which is a layer used for mixins and functions.
+        p In the <strong>generic</strong> layer you can find ground-zero styles like resets, normalize styles and box-sizing. This is the first layer which generates actual CSS and is prefixed with s-.
+        p <strong>Base</strong> which styles bare, unclassed HTML elements to redefine the default styling from browsers.
+        p <strong>Objects</strong>, which is a layer used for undecorated design patterns, it is prefixed with o-.
+        p <strong>Components</strong>, which is used to style specific UI components, here you will find the majority of the code and classes within this layer are prefixed with c-.
+        p <strong>Utilities</strong>, which are helper and override styles and namespaced with u-.
+        p The codebase of Jungle is structured in this order so that it is ordered from generic to explicit styles, low-specificity to more specificity (ID selectors are avoided as much as possible) and far reaching to local styles, which makes the framework scalable and maintainable.

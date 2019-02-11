@@ -1,0 +1,38 @@
+.c-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
+  grid-gap: 2.4rem;
+}
+
+.c-grid-item {
+  a {
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      color: #000;
+      transition: 0.18s color ease-in;
+      img {
+        transition: 0.18s opacity ease-in;
+        opacity: 0.8;
+      }
+    }
+  }
+  img {
+    width: 100%;
+  }
+}
+
+.c-grid-item__title {
+  font-size: 1.6rem;
+  font-family: $g-headings-font-family;
+  font-weight: $g-headings-font-weight;
+}
+
+.c-grid-item__desc {
+  font-weight: 400;
+  color: $color-gray-400;
+}
+
+.c-grid-item__date {
+  opacity: 0.5;
+}

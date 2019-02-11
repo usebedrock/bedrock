@@ -1,0 +1,43 @@
+/* ==========================================================================
+  USPs usp & grid
+   ========================================================================== */
+
+.c-usp-grid {
+  columns: 32rem;
+  column-gap: 4rem;
+}
+
+.c-usp {
+  text-align: center;
+  padding: 2.4rem 0;
+}
+
+.c-usp__icon {
+  background: #3A586F;
+
+  width: 4rem;
+  height: 4rem;
+  @media (min-width: $g-bp2) {
+    width: 8rem;
+    height: 8rem;
+  }
+  border-radius: 100%;
+  margin: 0 auto 2.4rem;
+  display: flex;
+  img {
+    margin: auto;
+    width: 2.4rem;
+    height: 2.4rem;
+    @media (min-width: $g-bp2) {
+      width: 4.8rem;
+      height: 4.8rem;
+    }
+  }
+}
+
+.c-usp__title {
+  margin: 1.6rem 0;
+  font-weight: 500;
+  font-family: $g-headings-font-family;
+  font-size: 2.1rem;
+}

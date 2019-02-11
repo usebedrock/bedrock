@@ -1,0 +1,227 @@
+/* ==========================================================================
+  Component: table
+  ---
+  Table styling
+   ========================================================================== */
+
+/* Variables
+   ========================================================================== */
+
+$c-table-background-color: #FFF !default;
+$c-table-border-color: $color-gray-150 !default;
+$c-table-row-odd-color: $color-gray-50 !default;
+$c-table-row-selected-color: #FFF !default;
+$c-table-row-selected-bg: $color-primary !default;
+
+/* Component
+   ========================================================================== */
+
+.c-table {
+  a {
+    font-weight: $g-headings-font-weight;
+  }
+}
+
+.c-table {
+  width: 100%;
+
+  th, td {
+    text-align: left;
+  }
+
+  td,
+  th {
+    text-align: left;
+    padding: 0.8rem 0;
+    vertical-align: top;
+    position: relative;
+  }
+
+  th {
+    font-weight: 500;
+  }
+
+}
+
+.c-table--styled {
+
+  th {
+    font-weight: 500;
+    
+  }
+
+  th {
+    border-bottom: 0.2rem solid $c-table-border-color;
+    vertical-align: top;
+  }
+
+  td {
+    border-bottom: 0.1rem solid $c-table-border-color;
+  }
+  
+  tr:last-child {
+    td {
+      border: none;
+    }
+  }
+
+  td,
+  th {
+    text-align: left;
+    padding: 1.6rem;
+    position: relative;
+  }
+
+  td .c-button,
+  th .c-button {
+    margin-bottom: -0.8rem;
+    margin-top: -0.8rem;
+  }
+
+  td input[type=checkbox]{
+    margin: 0 auto;
+  }
+}
+
+.c-table--bordered {
+  border: 1px solid $c-table-border-color;
+  border-radius: 0.3rem;
+  border-collapse: separate;
+}
+
+.c-table--nowrap {
+  th,
+  td {
+    white-space: nowrap;
+  }
+}
+
+.c-table--align-middle {
+  td {
+    vertical-align: middle;
+  }
+}
+
+.c-table__row--selected {
+
+  td {
+    background-color: $color-gray-100;
+    border-color: $color-gray-300;
+  }
+
+}
+
+.c-table--striped {
+  tbody tr:nth-child(even) {
+    background: $c-table-row-odd-color;
+  }
+}
+
+.c-table--no-margin {
+  margin: 0;
+}
+
+.c-table--align-middle {
+  td {
+    vertical-align: middle;
+  }
+}
+
+.c-table--horizontal {
+  th {
+    width: 18rem;
+  }
+}
+
+/* Invisible table structure
+   ========================================================================== */
+
+.c-table.c-table--invisible {
+  border: 0;
+  width: 100%;
+  
+  tr th,
+  tr td {
+    border: 0;
+    padding-left: 0;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+  }
+}
+
+/* Table column widths
+   ========================================================================== */
+
+$tableColCount: 16;
+$i: 1;
+
+@while $i < $tableColCount {
+  .o-table-col-#{$i} {
+    width: #{$i / $tableColCount * 100%};
+  }
+
+  $i: $i + 1;
+}
+
+/* Untable a table
+   ========================================================================== */
+
+.c-table--untable {
+  tr {
+    display: block;
+    th {
+      display: block;
+    }
+    td {
+      display: block;
+    }
+  }
+  @media (min-width: $g-bp2) {
+    tr {
+      display: table-row;
+      th {
+        display: table-cell;
+      }
+      td {
+        display: table-cell;
+      }
+    }
+  }
+}
+
+/* Responsive table 
+   Adapted from Bootstrap 4
+   ========================================================================== */
+
+.c-table-responsive {
+
+  border: 1px solid $c-table-border-color;
+  border-radius: 0.3rem;
+
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar; // See https://github.com/twbs/bootstrap/pull/10057
+
+  // Prevent double border on horizontal scroll due to use of `display: block;`
+  > .c-table--bordered {
+    border: 0;
+  }
+}
+
+/* Card + table context
+   ========================================================================== */
+
+.c-card .c-table {
+  background: #FFF;
+  tr td {
+    padding: 1.6rem;
+  }
+  tr td:first-child {
+    padding-left: 2.4rem;
+  }
+  tr td:last-child {
+    padding-right: 2.4rem;
+  }
+}

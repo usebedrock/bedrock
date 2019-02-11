@@ -1,0 +1,65 @@
+/* ==========================================================================
+    Component: Tabs
+    ---
+    Top navigation (usually inside of a toolbar)
+   ========================================================================== */
+
+/* Variables
+   ========================================================================== */
+
+$c-tabs-item-color: rgba(#000,0.4) !default;
+$c-tabs-item-active-color: $color-gray-800 !default;
+$c-tabs-item-border-color: $color-gray-200 !default;
+$c-tabs-item-hover-border-color: $color-gray-200 !default;
+
+/* Component
+   ========================================================================== */
+
+.c-tabs {
+  display: flex;
+  position: relative;
+  flex: 1;
+  height: 100%;
+  height: 4.8rem;
+}
+
+.c-tabs__item {
+  color: $c-tabs-item-color;
+  padding: 1.2rem;
+  font-weight: 500;
+  transition: color 0.1s linear;
+  display: flex;
+  align-items: center;
+
+  .o-svg-icon {
+    margin-right: 1rem;
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  &:hover {
+    color: $c-tabs-item-active-color;
+  }
+  
+  &:focus {
+    color: $c-tabs-item-active-color;
+  }
+
+  &.c-tabs__item--active {
+    box-shadow: inset 0 -0.2rem 0 $color-primary;
+    color: $c-tabs-item-active-color;
+    font-weight: $g-headings-font-weight;
+    position: relative; // makes box-shadow to be on top of the global border
+    z-index: $g-c-tabs-z;
+  }
+}
+
+.c-tabs.c-tabs--bottom-border:after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  box-shadow: inset 0 -0.1rem 0 $color-gray-200;
+  position: absolute;
+  bottom: 0;
+}

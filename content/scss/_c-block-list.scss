@@ -1,0 +1,64 @@
+/* ==========================================================================
+    Component: Block list
+    @todo document this
+   ========================================================================== */
+
+.c-bl-list {
+  border-radius: 0.5rem;
+  border: 0.1rem solid $color-gray-300;
+  background-color: white;
+}
+
+.c-bl-list__item {
+  display: block;
+  padding: 2.4rem;
+  border-bottom: 0.1rem solid $color-gray-300;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.c-bl-list__item-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.c-bl-list__item-info {
+  flex: 1;
+}
+
+.c-bl-list__item-image {
+  width: 12rem;
+  height: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    max-width: 100%;
+    height: 100%;
+  }
+}
+
+.c-bl-list__item-header {
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.c-bl-list__item-title {
+  font-weight: 500;
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.c-bl-list__item-description span {
+  font-size: 1.4rem;
+  color:  $color-gray-500;
+}
+
+.c-bl-list__item-cta {
+  color:  $color-gray-600;
+}

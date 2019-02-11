@@ -1,0 +1,37 @@
+/* ==========================================================================
+  c-footer
+ ========================================================================== */
+
+.c-footer {
+  color: rgba(255,255,255, 0.6);
+  background-color: #000000;
+  height: 4.8rem;
+  font-size: 1.4rem;
+
+  .c-nav-footer {
+    border-left: 2px solid rgba(255,255,255, 0.6);
+    padding-left: 2.4rem
+  }
+
+  /* Override heights of c-toolbar, c-navbar of 6.4rem */
+  .c-toolbar,
+  .c-navbar {
+    height: 4.8rem;
+  }
+}
+
+.c-footer a {
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+  &:hover {
+    color: #fff;
+  }
+}
+
+@media (max-width: 700px) {
+  .c-footer {
+    .c-nav-footer {
+      padding-left: 1.6rem;
+    }
+  }
+}

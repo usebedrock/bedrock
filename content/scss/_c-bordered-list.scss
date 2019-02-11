@@ -1,0 +1,25 @@
+/* ==========================================================================
+    Component: Bordered list
+   ========================================================================== */
+
+.c-bordered-list {
+  a, span {
+    display: block;
+    padding: .8rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  li {
+    border-bottom: .1rem solid mix($color-gray-100, $color-gray-150);
+    &:last-child {
+      border: none;
+    }
+  }
+}
+
+.c-bordered-list--direct-padding li {
+  padding: .8rem;
+}

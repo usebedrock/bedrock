@@ -1,0 +1,160 @@
+/* ==========================================================================
+  c-content
+  ---
+  Usage: wrap a .c-content class around content to turn it into rich text.
+
+  .c-h1, .c-h2, .c-body-1, c-body 2
+  ---
+  Usage: use these classes to style individual components like their rich text equivalent
+   ========================================================================== */
+
+.c-h1, .c-h2, .c-h3, .c-h4,
+.c-content h1,
+.c-content h2,
+.c-content h3,
+.c-content h4 {
+  color: $g-headings-color;
+}
+
+.c-h1, .c-content h1 {
+  font-family: $g-headings-font-family;
+  font-weight: $g-headings-font-weight;
+  font-size: 3.2rem;
+  margin: 0 0 3.2rem;
+  line-height: 1.25;
+}
+
+.c-h2, .c-content h2 {
+  font-family: $g-headings-font-family;
+  font-weight: $g-headings-font-weight;
+  font-size: 2.4rem;
+  margin: 0 0 2.4rem;
+  line-height: 1.3;
+}
+
+.c-h3, .c-content h3 {
+  font-family: $g-headings-font-family;
+  font-weight: $g-headings-font-weight;
+  font-size: 2rem;
+  margin: 0 0 1.6rem;
+  line-height: 1.4;
+}
+
+.c-h4, .c-content h4 {
+  font-family: $g-base-font-family;
+  font-size: $g-base-font-size;
+  font-weight: $g-headings-font-weight;
+  margin: 0 0 0.8rem;
+}
+
+.c-body-1 {
+  font-size: $g-base-font-size;
+  margin: 1.5rem 0;
+}
+
+.c-body-2 {
+  font-size: 1.3rem;
+  margin: 1.3rem 0;
+}
+
+.c-content {
+
+  p {
+    margin: 1.5rem 0;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  dl {
+    border: 1px solid $color-gray-100;
+    border-radius: .3rem;
+    overflow: hidden;
+    padding: 1.2rem;
+    margin: 1.5rem 0;
+    dt {
+      float: left;
+      width: 30%;
+      clear: left;
+      font-weight: $g-headings-font-weight;
+    }
+    dd {
+      float: left;
+      width: 70%;
+    }
+  }
+
+  ul, ol {
+    padding-left: 3rem;
+    margin: 1.5rem 0;
+    ul, ol {
+      margin: 0;
+    }
+  }
+
+  ul {
+    list-style: square;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  blockquote {
+    font-style: italic;
+    padding-left: 1.5rem;
+    margin-left: 0.2rem;
+    border-left: .4rem solid $color-brand-blue;
+  }
+
+  table {
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+
+  table td,
+  table th {
+    padding: 0.8rem;
+  }
+
+  table th {
+    border-bottom: 0.2rem solid $color-gray-200;
+    font-weight: $g-headings-font-weight;
+    text-align: left;
+  }
+
+  table td {
+    border-bottom: 1px solid $color-gray-100;
+  }
+
+  strong {
+    font-weight: $g-headings-font-weight;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .c-button {
+    text-decoration: none;
+  }
+
+  pre {
+    background: $color-gray-50;
+    border: 2px solid $color-gray-100;
+    border-radius: 0.3rem;
+    padding: 0.8rem;
+    margin: 0 0 3.2rem;
+    white-space: pre-wrap;
+  }
+
+  pre, code {
+    font-family: $g-code-font-family;
+  }
+
+  code {
+    font-size: 90%;
+  }
+
+}

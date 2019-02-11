@@ -1,0 +1,75 @@
+/* ==========================================================================
+   Elements: Base
+   ---
+   Only use elements without selectors when really necessary.
+   ========================================================================== */
+
+$base-line-height: 1.5 !default;
+$base-color: $color-gray-700 !default;
+$g-base-background: #FFF !default;
+
+/* Elements
+   ========================================================================== */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 54.16%; // 13px
+  @media (min-width: $g-bp3) {
+    font-size: 58.33%; // 14px
+  }
+  @media (min-width: $g-bp4) {
+    font-size: 62.5%; // Base 10
+  }
+}
+
+body {
+  font-family: $g-base-font-family;
+  font-size: $g-base-font-size;
+  line-height: $base-line-height;
+  color: $base-color;
+  background: $g-base-background;
+}
+
+body.c-body-compensate-header {
+  margin: $g-bar-size-regular 0 0;
+}
+
+
+img,
+video {
+  max-width: 100%;
+}
+
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+}
+
+em, i {
+  font-style: italic;
+}
+
+strong, b {
+  font-weight: $g-headings-font-weight;
+}
+
+/* Required fields
+   ========================================================================== */
+
+abbr[title] {
+  text-decoration: none;
+  opacity: 0.5;
+}

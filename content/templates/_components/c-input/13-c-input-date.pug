@@ -1,0 +1,88 @@
+.o-form-group-layout.o-form-group-layout--standard(style="height: 450px; width: 240px;")
+    .o-form-group
+        label.o-form-group__label(for="dateId") Date
+        .o-form-group__controls
+            .c-input-with-icon
+                input.c-input(type="text" value="12/05/2018" data-dropdown="datepicker" id="dateId")
+                +icon('calendar')
+        .c-menu(id="datepicker")
+            .c-navbar.c-navbar--auto.c-navbar--bordered-bottom
+                .u-spacer-s
+                    .c-toolbar.c-toolbar--auto
+                        .c-toolbar__left
+                            .c-toolbar__item
+                                button.c-button.c-button--borderless.c-button--icon
+                                    .c-button__content
+                                        +icon('arrows/chevron-left')
+                                        .u-sr-accessible Previous month
+                        .c-toolbar__center.c-toolbar__center--interactive
+                            .c-toolbar__center-inner
+                                .c-toolbar__item
+                                    h2.c-toolbar__title February
+                                .c-toolbar__item
+                                    button.c-button.c-button--link(data-dropdown="dropdownMonth")
+                                        .c-button__content
+                                            .c-button__label 2018
+                                            +icon('arrows/caret-down')
+                                    .c-menu(id="dropdownMonth" style="height: 250px; overflow: scroll")
+                                        each item in contentData.years
+                                            a.c-menu__item(href="#")
+                                                .c-menu__label #{item}
+                        .c-toolbar__right
+                            .c-toolbar__item
+                                button.c-button.c-button--borderless.c-button--icon
+                                    .c-button__content
+                                        +icon('arrows/chevron-right')
+                                        .u-sr-accessible Next month
+            .u-spacer-s
+                table.c-datepicker-table
+                    thead
+                        tr
+                            th: span M
+                            th: span D
+                            th: span W
+                            th: span D
+                            th: span V
+                            th: span Z
+                            th: span Z
+                    tbody
+                        tr
+                            td
+                            td
+                            td
+                            td: a(href="#") 1
+                            td: a(href="#") 2
+                            td: a(href="#") 3
+                            td: a(href="#") 4
+                        tr
+                            td: a(href="#") 5
+                            td: a(href="#") 6
+                            td: a(href="#") 7
+                            td: a(href="#") 8
+                            td: a(href="#") 9
+                            td: a(href="#") 10
+                            td: a(href="#") 11
+                        tr
+                            td: a(href="#") 12
+                            td: a(href="#") 13
+                            td: a(href="#") 14
+                            td: a(href="#") 15
+                            td: a(href="#") 16
+                            td: a(href="#") 17
+                            td.c-datepicker-today: a(href="#") 18
+                        tr
+                            td: a(href="#") 19
+                            td: a(href="#") 20
+                            td: a(href="#") 21
+                            td: a(href="#") 22
+                            td: a(href="#") 23
+                            td: a(href="#") 24
+                            td: a(href="#") 25
+                        tr
+                            td: a(href="#") 26
+                            td: a(href="#") 27
+                            td: a(href="#") 28
+                            td
+                            td
+                            td
+                            td

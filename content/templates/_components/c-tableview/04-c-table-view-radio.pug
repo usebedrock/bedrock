@@ -1,0 +1,25 @@
+-
+    var groupName = "radios"
+    var obj = 
+      [
+          {
+              "value": "Title",
+              "name": "radio-1"
+          },
+          {
+              "value": "Title 2",
+              "name": "radio-2"
+          },
+          {
+              "value": "Title 3",
+              "name": "radio-3"
+          },
+       ]
+
+each val in obj
+    .c-table-view
+        label.c-table-view__item
+            .c-table-view__item__left-accessory
+                .c-radio
+                    input(type="radio", name=groupName id=obj.name)
+                    | #{val.value}

@@ -1,0 +1,19 @@
+/* ==========================================================================
+    Component: Bordered list horizontal
+   ========================================================================== */
+
+.c-bordered-list-horizontal {
+
+  display: flex;
+
+  li {
+    border-right: 0.1rem solid $color-gray-200;
+    &:last-child {
+      border: none;
+    }
+    a, span {
+      display: block;
+      padding: .4rem 0.8rem;
+    }
+  }
+}

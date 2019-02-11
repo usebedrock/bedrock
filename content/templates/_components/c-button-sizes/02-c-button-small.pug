@@ -1,0 +1,45 @@
+include ../../../../core/templates/mixins/icon
+
+.u-spacer
+    .c-button-toolbar
+        button.c-button.c-button--default.c-button--small
+            .c-button__content
+                .c-button__label Regular button
+        button.c-button.c-button--primary.c-button--small
+            .c-button__content
+                .c-button__label Primary button
+        button.c-button.c-button--default.c-button--icon.c-button--small(aria-label="Add")
+            .c-button__content
+                +icon('add')
+        button.c-button.c-button--default.c-button--small
+            .c-button__content
+                +icon('add')
+                .c-button__label Label
+        button.c-button.c-button--default.c-button--small
+            .c-button__content
+                +icon('add')
+                .c-button__label Label
+                +icon('arrows/caret-down')
+        button.c-button.c-button--default.c-button--small
+            .c-button__content
+                .c-button__label Label
+                +icon('arrows/caret-down')
+
+.u-spacer
+    .c-button-toolbar
+        a.c-button.c-button--default.c-button--small(href="#")
+            .c-button__label Regular button
+        a.c-button.c-button--primary.c-button--small(href="#")
+            .c-button__label Primary button
+        a.c-button.c-button--default.c-button--icon.c-button--small(href="#")
+            +icon('add')
+        a.c-button.c-button--default.c-button--small(href="#")
+            +icon('add')
+            .c-button__label Label
+        a.c-button.c-button--default.c-button--small(href="#")
+            +icon('add')
+            .c-button__label Label
+            +icon('arrows/caret-down')
+        a.c-button.c-button--default.c-button--small(href="#")
+            .c-button__label Label
+            +icon('arrows/caret-down')

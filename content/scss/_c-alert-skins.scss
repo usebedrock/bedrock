@@ -1,0 +1,29 @@
+/* ==========================================================================
+  Alert skins
+  ---
+  Rules of this file: you CAN'T touch the box model here, just colors.
+   ========================================================================== */
+
+/* Variables
+   ========================================================================== */
+
+$c-dark-alert-bg-color: $color-gray-700 !default;
+
+/* Component
+   ========================================================================== */
+
+.c-alert {
+  background: #FFF;
+  border-radius: 0.3rem;
+  border: 1px solid $color-gray-100;
+}
+
+.c-alert--dark {
+  border: none;
+  background: $c-dark-alert-bg-color;
+  color: #FFF;
+  a {
+    color: #FFF;
+    border-bottom: 1px solid rgba(#FFF,0.5);
+  }
+}

@@ -1,0 +1,14 @@
+/* ==========================================================================
+  Component: c-filtering-notification
+   ========================================================================== */
+
+.c-filtering-notification {
+  display: flex;
+  background-color: #E4F1F1; // TODO COLOR not in colors @Wolfr
+  border: 1px solid #81F1EA; // TODO COLOR not in colors @Wolfr
+  box-shadow: 0px 0px 0.8rem rgba(0, 0, 0, 0.2);
+  padding: 1.6rem 2.4rem;
+  align-items: center;
+  justify-content: space-between;
+}
+

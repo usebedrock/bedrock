@@ -1,0 +1,12 @@
+// Toolbar code
+.c-toolbar
+    .c-toolbar__left
+        .c-toolbar__item
+            h2.c-toolbar__title Modal title
+    .c-toolbar__right
+        .c-toolbar__item
+            .c-button-toolbar
+                button.c-button.c-button--borderless(data-modal-close)
+                    .c-button__content
+                        +icon('close')
+                        .u-sr-accessible Cancel

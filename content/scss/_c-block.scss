@@ -1,0 +1,72 @@
+/* ==========================================================================
+  Content blocks - general code
+   ========================================================================== */
+
+/* Block spacing
+   ========================================================================== */
+
+.o-container-vertical--padding-small {
+   padding: 2.4rem 0;
+}
+
+.o-container-vertical { // Standard padding
+   padding: 3.6rem 0;
+}
+
+.o-container-vertical--padding-medium {
+   padding: 4.8rem 0;
+}
+
+.o-container-vertical--padding-large {
+   padding: 6.4rem 0;
+}
+
+/* Block backgrounds
+   ========================================================================== */
+
+.o-container-vertical--bg-alt {
+   background: $color-gray-50;
+}
+
+/* ==========================================================================
+  Block types
+   ========================================================================== */
+
+/* Block type: intro
+   ========================================================================== */
+
+.o-container-vertical-intro__intro {
+  font-size: 1.8rem;
+  color: $color-gray-500;
+  text-align: center;
+}
+
+/* Block type: title
+   ========================================================================== */
+
+.o-container-vertical-title__title {
+  text-align: center;
+  font-size: 4.8rem;
+  font-weight: $g-headings-font-weight;
+  font-family: $g-headings-font-family;
+}
+
+/* Block type: subtitle
+   ========================================================================== */
+
+.o-container-vertical-subtitle__title {
+  font-size: 3.2rem;
+  font-weight: $g-headings-font-weight;
+  font-family: $g-headings-font-family;
+}
+
+/* Block type: anchor list
+   ========================================================================== */
+
+.o-container-vertical-anchor-list__list {
+  text-align: center;
+  li {
+    display: inline-block;
+    margin: 1rem;
+  }
+}

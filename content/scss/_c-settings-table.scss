@@ -1,0 +1,24 @@
+/* ==========================================================================
+  Component: c-settings-box
+   ========================================================================== */
+
+.c-settings-table {
+  display: flex;
+}
+
+.c-settings-table__column {
+  display: flex;
+  flex-direction: column;
+  margin-right: 4rem;
+}
+
+.c-settings-table__item:not(:last-child) {
+  margin-bottom: 2.8rem;
+}
+
+.c-settings-table__item--bold {
+  color: $color-gray-600;
+  font-weight: 500;
+}
+
+

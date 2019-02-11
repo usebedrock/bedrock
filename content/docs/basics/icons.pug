@@ -1,0 +1,33 @@
+---
+title: Icons
+category: Basics
+order: 5
+---
+
+.c-content
+    h1 Icons
+
+    .c-styleguide-svg-icons
+        each category, id in icons.svg
+            if id
+                .u-spacer-top-l
+                    h4.c-h4 #{id}
+            else
+                h4.c-h4 base folder
+            .c-styleguide-svg-icons__category
+                each icon in category
+                    .c-styleguide-svg-icon
+                        .c-styleguide-svg-icon__sample
+                            +icon(icon.category+'/'+icon.name)
+                        .c-styleguide-svg-icon__code
+                            code #{icon.name}
+
+    h2 Bedrock specific
+
+    p The SVG icon system is based on directly embedding SVG files into the markup. Within Bedrock, we use Pug to render these SVG's instead of having to inline them.
+    p To render an icon in a prototype, use the mixin:
+    pre
+        code +icon('name')
+    p If it is contained in a folder, reference the folder name:
+    pre
+        code +icon('multicolor/name')

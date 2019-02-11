@@ -1,0 +1,22 @@
+/* ==========================================================================
+  Wysiwyg
+  ---
+  A rich textarea
+   ========================================================================== */
+
+.c-wysiwyg-toolbar {
+  background: #FFF;
+  padding: 0.8rem;
+  border: 0.1rem solid $color-gray-150;
+  border-bottom: none;
+  border-radius-bottom-left: $c-input-border-radius;
+  border-radius-top-left: $c-input-border-radius;
+  .c-button {
+    border-radius: none;
+  }
+}
+
+.c-wysiwyg-toolbar + textarea {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

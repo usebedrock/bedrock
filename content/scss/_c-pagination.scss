@@ -1,0 +1,30 @@
+/* ==========================================================================
+  c-pagination
+  Pagination component
+   ========================================================================== */
+
+.c-pagination {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.c-pagination__pages {
+  display: flex;
+  margin-right: 2.4rem;
+  margin-left: 2.4rem;
+}
+
+.c-pagination__btn {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  
+  &:hover,&.c-pagination__btn--active {
+    background-color: $color-gray-100
+  }
+}

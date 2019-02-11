@@ -1,0 +1,112 @@
+/**
+ * Utility: Generic
+ * ===
+ * Set of generic helping classes
+ */
+
+.u-maximize-height {
+  height: 100% !important;
+}
+
+.u-maximize-width {
+  width: 100% !important;
+}
+
+.u-float-right {
+  float: right !important;
+}
+
+.u-center-m {
+  margin: 0 auto !important;
+}
+
+.u-nowrap {
+  white-space: nowrap !important;
+}
+
+.u-position-relative {
+  position: relative !important;
+}
+
+.u-position-absolute {
+  position: absolute !important;
+}
+
+.u-ta-center {
+  text-align: center !important;
+}
+
+.u-hidden {
+  display: none !important;
+}
+
+.u-opacity-50 {
+  opacity: 0.5;
+}
+
+.u-scroll {
+  overflow: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.u-overflow-hidden,
+.u-kill-scroll {
+  overflow: hidden !important;
+}
+
+.u-m0 {
+  margin: 0 !important;
+}
+
+.u-sr-accessible {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.u-sr-accessible-table-cell {
+  display: flex; // Take out of regular table context
+  position: absolute;
+  left: -10000px;
+  top: -10000px;
+  width: 0;
+  height: 1px;
+  overflow: hidden;
+  padding: 0 !important;
+  background: #FFF;
+  margin: 0 !important;
+}
+
+.u-limit-width {
+  max-width: 60rem;
+}
+
+.u-text-editable {
+  border-bottom: 1px dotted #666;
+  cursor: pointer;
+}
+
+.u-remove-link-styling a,
+.u-remove-link-styling {
+  color: $color-gray-700;
+}
+
+
+// Sticky footer with flexbox
+// https://css-tricks.com/couple-takes-sticky-footer/#article-header-id-3 
+
+.u-body-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.u-content-flex {
+  flex: 1 0 auto;
+}
+
+.u-footer-flex {
+  flex-shrink: 0;
+}

@@ -1,0 +1,42 @@
+/* ==========================================================================
+  Component: navbar
+  ---
+  A container for navigational elements
+   ========================================================================== */
+
+.c-navbar {
+  padding: 0 $o-grid-column-gap/2;
+  height: $g-bar-size-regular;
+  width: 100%;
+}
+
+.c-navbar--auto {
+  height: auto;
+}
+
+.c-navbar--white {
+  background: #FFF;
+}
+
+.c-navbar--bg-alt {
+  background: $color-gray-50;
+}
+
+.c-navbar--fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $g-c-global-navbar-z;
+  box-shadow: 0 0 .8rem 0 rgba($color-gray-500, .35);
+}
+
+/* Bordered equivalents
+   ========================================================================== */
+
+.c-navbar--bordered-top {
+  border-top: 0.1rem solid $color-gray-150;
+}
+
+.c-navbar--bordered-bottom {
+  border-bottom: 0.1rem solid $color-gray-150;
+}

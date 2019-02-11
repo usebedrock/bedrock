@@ -1,0 +1,24 @@
+div(style="height: 150px;")
+    button.c-button.c-button--default(data-dropdown="dropdownMenuIcons" data-dropdown-autosize="true")
+        .c-button__content
+            .c-button__label Open dropdown
+            +icon('arrows/caret-down')
+
+.c-menu(id="dropdownMenuIcons")
+    a.c-menu__item(href="#")
+        .c-menu__label 
+            +icon('more-horizontal')                                           
+            | Item A
+    a.c-menu__item(href="#")
+        .c-menu__label 
+            +icon('more-horizontal')                                           
+            | Item B
+    a.c-menu__item(href="#")
+        .c-menu__label 
+            +icon('more-horizontal')                                           
+            | Item C
+    .c-menu__divider
+    a.c-menu__item(href="#")
+        .c-menu__label 
+            +icon('more-horizontal')                                           
+            | Extra item

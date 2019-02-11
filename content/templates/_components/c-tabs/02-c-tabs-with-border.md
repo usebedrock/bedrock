@@ -1,0 +1,3 @@
+---
+title: Tabs with border
+---

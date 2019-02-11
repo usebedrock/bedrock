@@ -1,0 +1,29 @@
+button.c-button.c-button--default(data-modal="modal1")
+    .c-button__content
+        .c-button__label Open default modal
+
+.c-modal-context(id="modal1")
+    .c-modal
+        .c-modal__header.c-modal__header--bordered
+            .c-toolbar.c-toolbar--spaced
+                .c-toolbar__left
+                    .c-toolbar__item
+                        h2.c-modal__title Modal Window
+                .c-toolbar__item
+                    button.c-button.c-button--borderless.c-button--icon(data-modal-close)
+                        .c-button__content
+                            +icon('close')
+
+        .c-modal__body
+            p It doesn't matter where this modal occurs in the source code, JS automatically moves it to the root.
+        .c-modal__footer.c-modal__footer--bordered
+            .c-toolbar.c-toolbar--spaced
+                .c-toolbar__right
+                    .c-toolbar__item
+                        .c-button-toolbar
+                            button.c-button.c-button--default(data-modal-close)
+                                .c-button__content
+                                    .c-button__label Cancel
+                            button.c-button.c-button--primary(data-modal-close)
+                                .c-button__content
+                                    .c-button__label OK

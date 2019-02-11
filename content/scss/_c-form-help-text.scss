@@ -1,0 +1,22 @@
+/* ==========================================================================
+  c-form-help-text
+  ---
+  Help text + Errors on forms
+   ========================================================================== */
+
+.c-form-help-text {
+  color: $color-gray-400;
+  display: block;
+  font-size: 1.3rem;
+  .c-input + & {
+    margin-top: 0.4rem;
+  }
+}
+
+.c-form-help-text--error {
+  color: $color-red-500;
+}
+
+.c-form-help-text + .c-form-help-text {
+  margin-top: 0.4rem;
+}

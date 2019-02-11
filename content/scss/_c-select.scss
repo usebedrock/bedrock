@@ -1,0 +1,42 @@
+/* ==========================================================================
+  Component: Select
+  ---
+  Styles for basic <select>
+   ========================================================================== */
+
+/* Component
+   ========================================================================== */
+
+.c-select {
+  @include textfield-transition;
+  appearance: none;
+  background: $c-input-bg-color; // We use properties from textfield here
+  border: 1px solid $c-input-border-color;
+  border-radius: $c-input-border-radius; // We use properties from textfield here
+  font-size: inherit;
+  height: 4rem;
+  padding: $c-input-padding;
+  width: 100%;
+
+  @include textfield-focus;
+
+}
+
+// A wrapper, so we can position a CSS created arrow
+.c-select-holder {
+  position: relative;
+  &:after {
+    pointer-events: none;
+    content: ' ';
+    position: absolute;
+    right: 1rem;
+    top: 1.7rem;
+    width: 0;
+    height: 0;
+    border-width: 1rem;
+    border: 0.5rem solid $color-gray-500;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+  }
+}

@@ -1,0 +1,40 @@
+/* ==========================================================================
+  Component: c-languages (switcher)
+   ========================================================================== */
+
+.c-languages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-languages--s {
+  font-size: 1.4rem;
+
+  .c-languages__separator-inner,.c-languages__separator {
+    height: 1.4rem;
+  }
+}
+
+.c-languages__item {
+  color:  $color-gray-300;
+}
+
+.c-languages__item--active {
+  color: $color-gray-600;
+}
+
+.c-languages__separator {
+  width: 1px;
+  height: 3.3rem;
+  position: relative;
+  overflow: hidden;
+  margin: 1.3rem 1.7rem 1.3rem;
+}
+
+.c-languages__separator-inner {
+  position: absolute;
+  width:100%;
+  height: 3.3rem;
+  background: $color-gray-300;
+}

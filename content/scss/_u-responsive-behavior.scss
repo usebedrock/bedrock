@@ -1,0 +1,54 @@
+/* ==========================================================================
+  Responsive behavior
+   ========================================================================== */
+
+/* Responsive vehavior for main nav
+   ========================================================================== */
+
+$main-nav-switch-bp-1: 600px;
+$main-nav-switch-bp-2: 1100px;
+
+.u-mq-switch-main-nav-very-little-space {
+  display: none;
+  @media (max-width: $main-nav-switch-bp-1 - 1) {
+    display: block;
+  }
+}
+
+.u-mq-switch-main-nav-little-space {
+  display: none;
+  @media (min-width: $main-nav-switch-bp-1) {
+    display: block;
+  }
+  @media (min-width: $main-nav-switch-bp-2) {
+    display: none;
+  }
+}
+
+.u-mq-switch-main-nav-has-space {
+  display: none;
+  @media (min-width: $main-nav-switch-bp-2) {
+    display: block;
+  }
+}
+
+.u-mq-switch-main-nav-user-dropdown {
+  display: none;
+  @media (min-width: $main-nav-switch-bp-1) {
+    display: block;
+  }
+}
+
+.u-mq-switch-main-nav-notifications {
+  display: none;
+  @media (min-width: 450px) {
+    display: block;
+  }
+}
+
+.u-mq-switch-main-nav-authentication {
+  display: none;
+  @media (min-width: 450px) {
+    display: block;
+  }
+}

@@ -1,0 +1,13 @@
+// Toolbar code
+.c-toolbar
+    .c-toolbar__left
+        .c-toolbar__item
+            include /templates/_components/c-brand/01-c-brand
+
+    .c-toolbar__right
+        .c-toolbar__item
+            .c-button-toolbar
+                button.c-button.c-button--primary
+                    .c-button__content
+                        +icon('add')
+                        .c-button__label New item

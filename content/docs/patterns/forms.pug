@@ -1,0 +1,59 @@
+---
+title: Forms
+category: Design patterns
+order: 2
+---
+
+.c-content
+
+    h1 Forms & form validation
+
+    h2 Types
+
+    h3 Standard form
+
+    p A standard form has labels that are top aligned. A form field must always have a visible label.
+
+    figure.u-spacer-top-l.u-spacer-bottom-l
+        .br-sample.u-p-0
+            .br-sample-content
+                include /templates/_components/o-form-group/03-o-form-grid
+        figcaption.c-body-2.u-text-muted Regular grid form, see this <a href="/styleguide/o-form-group.html#component-03-o-form-grid">pattern</a>.
+
+    h3 Horizontal form
+
+    p Use horizontal forms only when you run out of space.
+
+    figure.u-spacer-top-l.u-spacer-bottom-l
+        .br-sample.u-p-0
+            .br-sample-content
+                include /templates/_components/o-form-group/02-o-form-horizontal
+        figcaption.c-body-2.u-text-muted Horizontal form, see this <a href="/styleguide/o-form-group.html#component-02-o-form-horizontal">pattern</a>.
+
+    h3 Inline form
+
+    p The system also provides styles for inline forms:
+
+    figure.u-spacer-top-l.u-spacer-bottom-l
+        .br-sample.u-p-0
+            .br-sample-content
+                include /templates/_components/o-form-group/04-o-form-inline
+        figcaption.c-body-2.u-text-muted Inline form, see this <a href="/styleguide/o-form-group.html#component-04-o-form-inline">pattern</a>.
+    
+    h2 Form validation
+
+    p When you validate a form, show a global message in the messaging stack. Individual fields can be marked as invalid as well.
+
+    figure.u-spacer-top-l.u-spacer-bottom-l
+        .br-sample.u-p-0
+            .br-sample-content
+                include /templates/_components/o-form-group/05-o-form-validation
+        figcaption.c-body-2.u-text-muted Validated form, see this <a href="/styleguide/o-form-group.html#component-05-o-form-validation">pattern</a>.
+
+    h2 Extra form guidelines
+
+    ul
+        li The label needs to be tied to the form field (use the <code>for=""</code> attribute and an id for accessibility reasons)
+        li Forms must be keyboard accessible
+        li Test your forms using the keyboard
+        li Never remove focus outline states in CSS

@@ -1,0 +1,106 @@
+/* ==========================================================================
+   Component: Menu
+   ---
+  Dropdown menu
+   ========================================================================== */
+
+/* Variables
+   ========================================================================== */
+
+$g-c-menu-z: 60 !default;
+
+/* Component
+   ========================================================================== */
+
+.c-menu {
+  background: #FFF;
+  border: 1px solid $color-gray-200;
+  border-radius: 0.3rem;
+  box-shadow: 0 2px 20px 0 rgba($g-text-color, 0.1), 0 1px 3px 0 rgba($g-text-color, 0.1);
+  color: $g-text-color;
+  min-width: 10rem;
+  opacity: 0;
+  padding: 0.4rem 0;
+  position: absolute;
+  visibility: hidden;
+  z-index: $g-c-menu-z;
+}
+
+.c-menu.c-menu--visible.js-no-action {
+  position: static;
+}
+
+.c-menu--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.c-menu__item {
+  color: inherit;
+  display: flex;
+  padding: 0.8rem 1.6rem;
+  position: relative;
+
+  &:hover {
+    background-color: $color-gray-50;
+  }
+
+  &.c-menu__item--large {
+    flex-direction: column;
+    white-space: normal;
+  }
+
+  &.c-menu__item--center {
+    align-items: center; 
+  }
+}
+
+.c-menu__item--nowrap {
+  white-space: nowrap;
+}
+
+
+.c-menu__item--selected {
+  font-weight: 600;
+}
+
+.c-menu__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  .o-svg-icon {
+    margin-right: 1rem;
+  }
+}
+
+.c-menu__divider {
+  border-top: 0.1rem solid $color-gray-200;
+  display: block;
+  margin-top: 0.4rem;
+  padding-top: 0.4rem;
+}
+
+
+.c-menu__icon {
+  opacity: 0.5;
+  margin-right: 0.5rem;
+  .c-menu__item:hover & {
+    opacity: 1;
+  }
+}
+
+.c-menu--search-result {
+  .c-menu__item {
+    justify-content: space-between;
+  }
+
+  .c-menu__tag {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: $color-gray-300;
+  }
+
+  .c-menu__footer {
+    padding: 1.6rem 2.4rem;
+  }
+}

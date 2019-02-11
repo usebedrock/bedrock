@@ -1,0 +1,99 @@
+---
+title: Cards
+category: Design patterns
+order: 4
+---
+
+.c-content
+
+    h1 Cards
+
+    p A card is a common UI pattern. A card can hold information. Cards are used to separate page content into logical sections. A card can consist of a card header, a card body, and a card footer.
+
+    p This is the simplest card possible:
+
+.br-sample
+    .br-sample-content
+        .c-card
+            .c-card__body
+                p Card content
+
+.c-content
+    p A card usually has a header:
+
+.br-sample
+    .br-sample-content
+        .c-card
+            .c-card__header
+                h3.c-card__title Title of the card
+            .c-card__body
+                p Card content
+
+.c-content
+    p Multiple card bodies are also possible.
+
+.br-sample
+    .br-sample-content
+        .c-card
+            .c-card__header
+                h3.c-card__title Title of the card
+            .c-card__body
+                p Card body 1
+            .c-card__body
+                p Card body 2
+
+.c-content
+    p You can swap out a card body with a table (without its table heading section), but only if the table data is clear enough on its own.
+
+.br-sample
+    .br-sample-content
+        .c-card
+            .c-card__header
+                h3.c-card__title Title of the card
+            table.c-table.c-table--styled.c-table--bordered
+                tbody
+                    tr
+                        td Data
+                        td Data
+                        td Data
+                    tr
+                        td Data
+                        td Data
+                        td Data
+                    tr
+                        td Data
+                        td Data
+                        td Data
+
+.c-content
+    p Use a toolbar within a card to position controls:
+
+.br-sample
+    .br-sample-content
+        .c-card
+            .c-card__header
+                // Toolbar as it might appear in a card
+                .c-toolbar
+                    .c-toolbar__left
+                        .c-toolbar__item
+                            h2.c-toolbar__title Card title
+                    .c-toolbar__right
+                        .c-toolbar__item
+                            a.c-button.c-button--default.c-button--icon(href="#")
+                                +icon('edit')
+                                .u-sr-accessible Bewerk
+
+            table.c-table.c-table--styled.c-table--bordered
+                tbody
+                    tr
+                        td Data
+                        td Data
+                        td Data
+                    tr
+                        td Data
+                        td Data
+                        td Data
+                    tr
+                        td Data
+                        td Data
+                        td Data

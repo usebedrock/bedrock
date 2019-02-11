@@ -1,0 +1,46 @@
+---
+title: Messaging
+category: Design patterns
+order: 3
+---
+
+.c-content
+
+    h1 Messaging
+
+    p Giving user interface feedback is critical. In order for a user to move through a user interface in a confident manner, feedback must be provided during every user interaction.
+
+    p We use different types of feedback in response to different situations.
+
+    h2 What to do when....
+
+    .u-spacer-top.u-spacer-bottom
+        h3 The interface is loading
+
+        p We use the spinner component to show that the user has to wait a bit.
+
+        figure
+            .br-sample.u-p-0
+                .br-sample-content
+                    include /templates/_components/c-spinner/01-c-spinner
+            figcaption.c-body-2.u-text-muted Spinner component, see this <a href="/styleguide/c-spinner.html">page</a> for extended documentation.
+
+    .u-spacer-top.u-spacer-bottom
+
+        h3 An error occurs
+
+        p We add a floating alert to the <em>messaging stack</em>.
+
+        figure
+            .br-sample.u-p-0
+                .br-sample-content
+                    include /templates/_components/c-alert-types/02-c-alert-floating.pug
+            figcaption.c-body-2.u-text-muted Floating alerts, see this <a href="/styleguide/c-alert-types.html">page</a> for component code.
+
+    .u-spacer-top.u-spacer-bottom
+
+        h3 Something got saved correctly
+
+        p We add a success message to the messaging stack, that fades out automatically.
+        
+        p For a demo of the messaging stack, see <a href="/demos/alert-stack-demo.html">here</a>.

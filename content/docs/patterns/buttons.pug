@@ -1,0 +1,43 @@
+---
+title: Buttons
+category: Design patterns
+order: 4
+---
+
+.c-content
+
+    h1 Buttons
+
+    h2 Button importance
+
+    p When constructing a page layout, consider the visual weight of its different elements. For buttons, use no more than a single primary button per “page”. Consider the importance of actions in choosing between the different button styles.
+
+    figure.u-spacer-top-l.u-spacer-bottom-l
+        .br-sample.u-p-0
+            .br-sample-content
+                .c-button-toolbar
+                    button.c-button.c-button--primary
+                        .c-button__content
+                            .c-button__label Primary label
+                    button.c-button.c-button--default
+                        .c-button__content
+                            .c-button__label Secondary label
+        figcaption.c-body-2.u-text-muted Primary and secondary buttons.
+
+    h2 Destructive actions
+
+    p When an action is destructive (i.e. the action will cause something to be deleted), use the warning color. Within a regular screen, use the danger on hover button style. In a modal context, like a confirmation dialog, directly use the danger style.
+
+    figure.u-spacer-top-l.u-spacer-bottom-l
+        .br-sample.u-p-0
+            .br-sample-content
+                .c-button-toolbar
+                    button.c-button.c-button--danger
+                        .c-button__content
+                            .c-button__label Delete
+                    button.c-button.c-button--danger-hover
+                        .c-button__content
+                            .c-button__label Delete
+        figcaption.c-body-2.u-text-muted 1. Danger button 2. Danger on hover button
+
+    p For the complete documentation, see the <a href="styleguide/c-button-sizes.html">button sizes</a>, <a href="styleguide/c-button-types.html">types</a> and <a href="styleguide/c-button-skins.html">skins</a> pages.

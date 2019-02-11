@@ -1,0 +1,20 @@
+table.c-table.c-table--styled.c-table--bordered
+    thead
+        tr
+            th Data
+            th Data
+            th Data
+            th
+                // Actions
+    tbody
+        each item in [1, 2, 3, 4]
+            tr
+                td Data
+                td Data
+                td Data
+                td
+                    .c-button-toolbar
+                        a.c-button.c-button--icon.c-button--borderless(href="#")
+                            .c-button__content
+                                +icon('arrows/chevron-right')
+                                .u-sr-accessible Bekijk detail

@@ -1,0 +1,7 @@
+.c-table-view
+    each val in ['Item', 'Item 2', 'Item 3']
+        label.c-table-view__item
+            .c-table-view__item__left-accessory
+                .c-checkbox
+                    input(type="checkbox")
+                    | #{val}

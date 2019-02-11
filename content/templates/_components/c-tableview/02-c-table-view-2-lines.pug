@@ -1,0 +1,22 @@
+-
+    var obj = 
+      [
+          {
+              "line1": "Title",
+              "line2": "Subtitle"
+          },
+          {
+              "line1": "Title 2",
+              "line2": "Subtitle"
+          }
+       ]
+
+.c-table-view
+    each val in obj
+        a.c-table-view__item.c-table-view__item--type-link(href="#")
+            .c-table-view__item__left-accessory
+                h3.c-table-view__item__heading #{val.line1}
+                p.c-table-view__text #{val.line2}
+            .c-table-view__item__right-accessory
+                .u-opacity-50
+                    +icon('arrows/chevron-right')

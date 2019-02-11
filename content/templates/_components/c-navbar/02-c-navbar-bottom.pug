@@ -1,0 +1,41 @@
+div(style="margin-top: 120px;")
+    .c-navbar.c-navbar--bordered-top
+        .c-toolbar
+            .c-toolbar__left
+                .c-toolbar__item
+                    .c-button-toolbar
+                        button.c-button.c-button--default
+                            .c-button__content
+                                .c-button__label Button content
+                        button.c-button.c-button--default
+                            .c-button__content
+                                .c-button__label Button content
+                .c-toolbar__item
+                    .c-button-toolbar
+                        button.c-button.c-button--default(data-dropdown="dropupMenu" data-dropdown-autosize="true" data-dropdown-placement="top-start")
+                            .c-button__content
+                                .c-button__label Open dropup
+                                +icon('arrows/caret-up')
+                            .c-menu(id="dropupMenu")
+                                a.c-menu__item(href="#")
+                                    .c-menu__label Item A
+                                a.c-menu__item(href="#")
+                                    .c-menu__label Item B
+                                a.c-menu__item(href="#")
+                                    .c-menu__label Item C
+                                .c-menu__divider
+                                a.c-menu__item(href="#")
+                                    .c-menu__label Extra Item
+            .c-toolbar__right
+                .c-toolbar__item
+                    .c-button-toolbar
+                        button.c-button.c-button--default
+                            .c-button__content
+                                +icon('edit')
+                                .c-button__label Edit Y
+                        button.c-button.c-button--default
+                            .c-button__content
+                                +icon('edit')
+                                .c-button__label Edit X
+
+

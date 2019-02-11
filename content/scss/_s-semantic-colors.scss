@@ -1,0 +1,9 @@
+/* Repeat color variables for semantic mapping
+   For example, you can use this file to globally change the colors of primary buttons and links;
+  these are usually mapped to $color-primary at the component level.
+
+  This is in a separate file because _settings.color.scss is being used to generate documentation
+  about the colors, and we technically cannot read variables that reference other variables.
+ ========================================================================== */
+
+$color-primary: $color-brand-blue;

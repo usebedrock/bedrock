@@ -1,0 +1,115 @@
+/* ==========================================================================
+  Grid
+  ---
+  Basic flex-based grid system
+  Based on flexbox and calc()
+  Support:
+     * IE10 and up
+     * Edge, Chrome, Safari, Firefox (except very old versions)
+   ========================================================================== */
+
+$o-grid-columns: 12 !default;
+$o-grid-column-gap: 2.4rem !default;
+
+$o-grid-bp1: 400px;
+$o-grid-bp2: 600px;
+$o-grid-bp3: 900px;
+$o-grid-bp4: 1200px;
+
+.o-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -($o-grid-column-gap / 2);
+  margin-right: -($o-grid-column-gap / 2);
+}
+
+/* Grid columns (default)
+   ========================================================================== */
+
+[class*='o-grid-col'] {
+  flex: 1 0 calc(100% - #{$o-grid-column-gap});
+  min-width: 0;
+  margin-left: $o-grid-column-gap / 2;
+  margin-right: $o-grid-column-gap / 2;
+}
+
+// Activate columns regardless of breakpoint
+$i: 0;
+
+@while($i < $o-grid-columns) {
+  .o-grid-col-#{$i + 1} {
+    width: calc(#{( ( $i + 1 ) / $o-grid-columns ) * 100}% - #{$o-grid-column-gap});
+    flex: 1 1 auto;
+  }
+  $i: $i + 1;
+}
+
+// Activate columns only from breakpoint 1
+$i: 0;
+
+@media (min-width: $o-grid-bp1) {
+
+  [class*='o-grid-col-bp1-'] {
+      flex: 1 1 auto;
+  }
+
+  @while($i < $o-grid-columns) {
+    .o-grid-col-bp1-#{$i + 1} {
+      width: calc(#{( ( $i + 1 ) / $o-grid-columns ) * 100}% - #{$o-grid-column-gap});
+    }
+    $i: $i + 1;
+  }
+}
+
+// Activate columns only from breakpoint 2
+$i: 0;
+
+@media (min-width: $o-grid-bp2) {
+  
+  [class*='o-grid-col-bp2-'] {
+      flex: 1 1 auto;
+  }
+  
+  @while($i < $o-grid-columns) {
+    .o-grid-col-bp2-#{$i + 1} {
+      width: calc(#{( ( $i + 1 ) / $o-grid-columns ) * 100}% - #{$o-grid-column-gap});
+    }
+    $i: $i + 1;
+  }
+}
+
+$i: 0;
+
+// Activate columns only from breakpoint 3
+@media (min-width: $o-grid-bp3) {
+  
+  [class*='o-grid-col-bp3-'] {
+      flex: 1 1 auto;
+  }
+  
+  @while($i < $o-grid-columns) {
+    .o-grid-col-bp3-#{$i + 1} {
+      width: calc(#{( ( $i + 1 ) / $o-grid-columns ) * 100}% - #{$o-grid-column-gap});
+    }
+    $i: $i + 1;
+  }
+}
+
+/* Grid columns (modifiers)
+   ========================================================================== */
+
+.o-grid--no-wrap {
+  flex-wrap: nowrap;
+}
+
+.o-grid-col-static {
+  flex: none;
+}
+
+.o-grid-col-flex {
+  flex: 1 1 auto;
+}
+
+.o-grid--reverse {
+  flex-direction: row-reverse;
+}

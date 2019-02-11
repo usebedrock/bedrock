@@ -1,3 +1,112 @@
-// Start your CSS here
-@import "_colors";
-@import "_icon-font";
+/* ==========================================================================
+  Stylesheet for Jungle
+  ITCSS + BEM
+  ---
+  This SCSS code is inspired by BEM (Block Element Modifier) and ITCSS (Inverted Triangle CSS) methodologies.
+  For BEM Please refer to http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+  For ITCSS Please refer to https://speakerdeck.com/dafed/managing-css-projects-with-itcss
+   ========================================================================== */
+
+/* Settings: preprocessor variables, colors, global settings
+   ========================================================================== */
+
+@import "_s-colors";
+@import "_s-fonts";
+@import "_s-semantic-colors";
+@import "_s-variables";
+
+/* Generic: CSS reset, box-sizing, global CSS tweaks
+   ========================================================================== */
+
+@import "_reset";
+
+/* Elements: element selectors, CMS-generated content
+   ========================================================================== */
+
+@import "_e-base";
+
+/* Objects: layout-related CSS, grid, SVG icons frame, flexbox classes
+   ========================================================================== */
+
+@import "_o-svg-icon";
+@import "_o-form-group";
+@import "_o-container";
+@import "_o-flex";
+@import "_o-grid";
+
+/* Components: separately styled components (buttons, form inputs, toolbars...)
+   ========================================================================== */
+
+@import "_c-accordion";
+@import "_c-alert-skins";
+@import "_c-alert";
+@import "_c-avatar";
+@import "_c-badge";
+@import "_c-bordered-list-horizontal";
+@import "_c-bordered-list";
+@import "_c-box";
+@import "_c-brand";
+@import "_c-button-group";
+@import "_c-button-skins";
+@import "_c-button-toolbar";
+@import "_c-button";
+@import "_c-card";
+@import "_c-checkbox-radio";
+@import "_c-content";
+@import "_c-cta";
+@import "_c-datepicker";
+@import "_c-filter-dropdown";
+@import "_c-footer";
+@import "_c-form-help-text";
+@import "_c-grid";
+@import "_c-header";
+@import "_c-hr";
+@import "_c-image-grid";
+@import "_c-image";
+@import "_c-input";
+@import "_c-menu";
+@import "_c-modal";
+@import "_c-nav";
+@import "_c-navbar";
+@import "_c-notification";
+@import "_c-onboarding";
+@import "_c-pagination";
+@import "_c-progress-bar";
+@import "_c-quote";
+@import "_c-search-result";
+@import "_c-select";
+@import "_c-settings-table";
+@import "_c-social";
+@import "_c-spinner";
+@import "_c-stats";
+@import "_c-table-view";
+@import "_c-table";
+@import "_c-tabs";
+@import "_c-tags";
+@import "_c-toggle";
+@import "_c-toolbar";
+@import "_c-tooltip";
+@import "_c-video-wrapper";
+@import "_c-wysiwyg";
+
+
+/* Vendor
+   3rd party code
+   ========================================================================== */
+
+@import "_v-tags-input";
+
+/* Utilities: specific helper classes, overrides
+   ========================================================================== */
+
+@import "_u-bg";
+@import "_u-generic";
+@import "_u-spacer";
+@import "_u-responsive-behavior";
+@import "_u-text";
+@import "_u-display";
+
+/* Trumps
+   ========================================================================== */
+
+@import "_t-mq-debug"; // Remove in production

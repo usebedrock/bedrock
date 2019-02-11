@@ -1,0 +1,43 @@
+// @see https://github.com/developit/tags-input
+// Modified version of tags
+
+.tags-input {
+  @extend .c-input;
+  padding: 0;
+  line-height: 2rem;
+  display: flex;
+  .tag {
+    @extend .c-tag;
+    flex: 0 1 auto;
+    white-space: nowrap;
+    margin: 0.2rem 0 0.2rem 0.2rem;
+    
+    &.selected {
+      background-color: #FFF;
+      border: 1px solid $color-gray-200;
+    }
+    &.dupe {
+      transform: scale3d(1.2,1.2,1.2);
+      background-color: $color-red-500;
+      border: 1px solid $color-red-500;
+      color: #FFF;
+    }
+  }
+
+  input {
+    appearance: none !important;
+    display: inline-block !important;
+    padding: .6rem;
+    margin: 0 !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    font: inherit !important;
+    font-size: 100% !important;
+    outline: none !important;
+  }
+
+  .selected ~ input {
+    opacity: 0.3;
+  }
+}

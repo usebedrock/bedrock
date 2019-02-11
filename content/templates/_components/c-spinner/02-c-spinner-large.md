@@ -1,0 +1,3 @@
+---
+title: Large spinner
+---

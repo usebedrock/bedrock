@@ -7,9 +7,20 @@ include ../../../core/templates/mixins/languages
 
 block pageVariables
     //- Use this block to append page variables in templates
-    - var projectTitle = "Bedrock"
+    - var projectTitle = "Jungle"
     - var htmlClass = ""
     - var bodyClass = ""
+
+block append styleguideSettings
+    - var styleguideBrandClass = "c-h2"
+    - var styleguideComponentGroupHeaderClass = "c-h2"
+    - var styleguideSampleHeadingClass = "c-h3"
+    - var styleguideComponentListingCategoryClass = "c-h3"
+    - var styleguideRichContentClass = "c-content"
+    - var styleguideNavListTitleClass = "c-h4 u-spacer-top"
+    - var styleguideNavListClass = "c-styleguide-list"
+    - var styleguideNavListItemActiveClass = "c-styleguide-list__item--active"
+    - var styleguideInputClass = "c-input"
 
 doctype html
 html(dir="ltr" lang="en" class=htmlClass ? htmlClass : '')

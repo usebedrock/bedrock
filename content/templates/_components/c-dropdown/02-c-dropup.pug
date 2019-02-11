@@ -1,0 +1,16 @@
+div(style="height: 150px;")
+    button.c-button.c-button--default(data-dropdown="dropupMenu" data-dropdown-autosize="true" data-dropdown-placement="top-start")
+        .c-button__content
+            .c-button__label Open dropup
+            +icon('arrows/caret-up')
+
+.c-menu(id="dropupMenu")
+    a.c-menu__item(href="#")
+        .c-menu__label Item A
+    a.c-menu__item(href="#")
+        .c-menu__label Item B
+    a.c-menu__item(href="#")
+        .c-menu__label Item C
+    .c-menu__divider
+    a.c-menu__item(href="#")
+        .c-menu__label Extra Item

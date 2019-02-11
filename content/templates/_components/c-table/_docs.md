@@ -1,0 +1,5 @@
+---
+title: Tables
+---
+
+Data tables.

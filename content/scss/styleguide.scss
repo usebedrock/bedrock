@@ -1,25 +1,257 @@
-@import "_colors";
 @import 'br-variables-override';
 
 /* ==========================================================================
-  Style guide styles
+  Style guide undo styles
+
+  In the "real world" (e.g. the app itself) some HTML elements are hidden by default, or positioned in specific ways.
+  In the styleguide sometimes we want to undo some of that for demonstrational purposes.
    ========================================================================== */
 
-/*
+/* Settings: preprocessor variables, colors, global settings
+   ========================================================================== */
 
-  In the "real world" (e.g. the app itself) some HTML elements are hidden by default,
-  or positioned in specific ways. In the styleguide sometimes we want to undo some of
-  that for demonstrational purposes. This is the location where would you write such code.
+@import '_s-colors';
+@import '_s-semantic-colors';
+@import '_s-variables';
 
-  The idea is that the code that you write here never makes it to the final app. It's only
-  purpose is to make the style guide look good.
 
-  You can target a component with #component-{component-name} e.g. when a component
-  folder is called 01-my-component you can target it with #component-01-my-component.
-  
-  It's interesting to know that the box that contains the component is called .br-sample-content.
 
-  Sometimes you want to set a height on this or targets its children etc.
-*/
 
-// Here is an example of a style to make the style guide look better
+/* Code button
+   We use a separate style to have a subtle button
+   ========================================================================== */
+
+.br-sample-show-code-btn {
+  color: $color-gray-500;
+  appearance: none;
+  font-size: 12px;
+  border: none;
+  padding: 0;
+  &:focus {
+    color: $color-primary;
+    outline: 2px solid rgba($color-primary,.33);
+  }
+}
+
+/* Styling for grid documentation
+   ========================================================================== */
+
+.br-styleguide #component-01-o-grid [class*=o-grid-col] {
+  color: #FFF;
+  background: $color-gray-500;
+  margin-bottom: 1.6rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+
+/* Inverse
+   ========================================================================== */
+
+#component-06-c-button-borderless-inverse .br-sample-content {
+  background: $color-gray-800;
+}
+
+/* Color swatches (for colors documentation)
+   ========================================================================== */
+
+.c-swatch-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.c-swatch {
+  margin: 0 2.4rem 2.4rem 0;
+}
+
+.c-swatch__block {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 0.3rem;
+  margin-bottom: 0.4rem;
+}
+
+.c-swatch__info {
+  font-size: 1.4rem;
+}
+.c-swatch__color-name {
+  font-weight: 600;
+}
+.c-swatch__color-hex {
+  color: $color-gray-400;
+}
+
+/* Styling for icon documentation
+   ========================================================================== */
+
+.c-styleguide-svg-icons {
+  border: 0.1rem solid #E5E5E5;
+  padding: 2.4rem;
+  margin-bottom: 4rem;
+}
+
+.c-styleguide-svg-icons__category {
+  flex-wrap: nowrap;
+  column-count: 4;
+}
+
+.c-styleguide-svg-icon {
+  break-inside: avoid;
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 0;
+  /* .svg-icon, .o-svg-icon, .if {
+    flex-basis: 20%;
+  }*/
+  code {
+    font-family: $g-base-font-family;
+    /* flex-basis: 80%; */
+    font-size: 1.2rem;
+    background: none;
+    padding: 0;
+  }
+}
+
+/* Improve styles for nav (overwrite some Bedrock defaults)
+   ========================================================================== */
+
+.br-bordered-list {
+  li a,
+  .br-tree-dir h4 {
+    padding: .6rem;
+  }
+  li a {
+    &:hover {
+      background-color: $color-gray-100;
+    }
+    &.br-bordered-list__link--active {
+      background-color: $color-gray-100;
+    }
+  }
+}
+
+/* Styleguide nav
+   =====================================================================  */
+
+.br-styleguide-navigation-holder {
+  background-color: white;
+  border-right: 2px solid $color-gray-50;
+}
+
+/* Floating alert - undo fixed positioning in styleguide context
+   ========================================================================== */
+
+.br-styleguide .c-alert--floating {
+  position: static;
+  left: 0;
+  transform: none;
+  animation: none;
+}
+
+/* Styleguide list
+   ========================================================================== */
+
+.c-styleguide-list {
+  margin-left: 1rem;
+  li {
+    &:first-child {
+      padding-top: .2rem;
+    }
+  }
+  li a {
+    display: block;
+    padding: .8rem 0;
+    color: $color-gray-400;
+    &:hover {
+      color: $color-primary;
+    }
+  }
+  li.c-styleguide-list__item--active a {
+    color: $color-gray-900;
+  }
+}
+
+
+/* ==========================================================================
+    Jungle docs styling
+   ========================================================================== */
+
+.br-styleguide-content-inner {
+  max-width: 63rem;
+  margin: 0 auto;
+}
+
+.br-styleguide-default-styles-active .br-styleguide-navigation-holder {
+  padding: 0 !important;
+}
+
+.br-docs-category-name {
+  padding: 1.6rem 4rem;
+  font-weight: 600;
+}
+
+.c-styleguide-list {
+  margin: 0;
+
+  li a {
+    padding: 1.6rem 6.4rem;
+    color: $color-gray-600;
+    &:hover {
+      color: $color-gray-600;
+      background-color: $color-gray-50;
+    }
+  }
+
+  li.c-styleguide-list__item--active {
+    border-left: 4px solid $color-primary;
+    background-color: $color-gray-50;
+
+    a {
+      color: $color-primary;
+    }
+  }
+}
+
+/* Styling for icon documentation
+   ========================================================================== */
+
+.c-styleguide-svg-icons {
+  border: 0;
+  padding: 0;
+  margin-bottom: 4rem;
+}
+
+.c-styleguide-svg-icons__category {
+  flex-wrap: wrap;
+  column-count: 4;
+
+}
+
+@media (max-width: 700px) {
+  .c-styleguide-svg-icons__category {
+    column-count: 2;
+  }
+}
+
+.c-styleguide-svg-icon {
+  break-inside: avoid;
+  padding: 0.8rem 0;
+  display: block;
+
+  .c-styleguide-svg-icon__sample {
+    width: 8rem;
+    height: 8rem;
+    background: $color-gray-50;
+    border-radius: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  code {
+    font-family: $g-base-font-family;
+    font-size: 1.4rem;
+    background: none;
+    padding: 0;
+  }
+}

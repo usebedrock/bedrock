@@ -1,0 +1,16 @@
+/* ==========================================================================
+  Component: c-box
+   ========================================================================== */
+
+.c-box {
+  padding: 3.2rem;
+  background-color: $color-gray-50;
+  border-radius: 0.3rem;
+  *:first-child {
+    margin-top: 0;
+  }
+}
+
+.c-box--padding-small {
+  padding: 2.4rem;
+}

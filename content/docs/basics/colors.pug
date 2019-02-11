@@ -1,0 +1,45 @@
+---
+title: Colors
+category: Basics
+order: 3
+---
+
+.c-content
+
+    h2 Colors
+
+    .u-spacer-top.u-spacer-bottom
+        h3 Primary UI colors
+
+        .c-swatch-list
+            each color in contentData.colors
+                if color.category == "Primary"
+                    .c-swatch
+                        .c-swatch__block(style="background: #"+color.code+";")
+                        .c-swatch__info
+                            .c-swatch__color-name #{color.name}
+                            .c-swatch__color-hex ##{color.code}
+
+    .u-spacer-top.u-spacer-bottom
+        h3 Secondary UI colors
+
+        .c-swatch-list
+            each color in contentData.colors
+                if color.category == "Secondary"
+                    .c-swatch
+                        .c-swatch__block(style="background: #"+color.code+";")
+                        .c-swatch__info
+                            .c-swatch__color-name #{color.name}
+                            .c-swatch__color-hex ##{color.code}
+
+    .u-spacer-top.u-spacer-bottom
+        h3 Grays
+
+        .c-swatch-list
+            each color in contentData.colors
+                if color.category == "Grays"
+                    .c-swatch
+                        .c-swatch__block(style="background: #"+color.code+";")
+                        .c-swatch__info
+                            .c-swatch__color-name #{color.name}
+                            .c-swatch__color-hex ##{color.code}

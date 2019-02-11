@@ -1,0 +1,49 @@
+---
+title: Toolbars
+category: Design patterns
+order: 4
+---
+
+.c-content
+
+    h1 Toolbars, buttons and cards
+
+    h2 Toolbars
+
+    p The toolbar is meant as a generic construct to position tools. It provides a structure where you can position items on the left, in the center and on the right. The toolbar construct is used in many parts of the user interface: modals, panels, navbars and popovers all use the toolbar component to position elements in a consistent way.
+    
+    p The toolbar requires a parent <code>.c-toolbar</code> div that contains children that define the positioning: <code>.c-toolbar__left</code>, <code>.c-toolbar__right</code> and <code>.c-toolbar__center</code>.
+
+    figure
+        .br-sample.u-p-0
+            .br-sample-content
+                .c-toolbar
+                    .c-toolbar__left
+                        .c-toolbar__item
+                            p I am an item on the left
+                    .c-toolbar__center
+                        .c-toolbar__center-inner
+                            .c-toolbar__item
+                                p I am an item in the middle
+                    .c-toolbar__right
+                        .c-toolbar__item
+                            p I am an item on the right
+        figcaption.c-body-2.u-text-muted See component: <a href="/styleguide/c-toolbar.html">toolbar</a>
+
+    p Position every child of left, right or middle inside a <code>.c-toolbar__item</code> div.
+    figure
+        .br-sample.u-p-0
+            .br-sample-content
+                .c-toolbar
+                    .c-toolbar__left
+                        .c-toolbar__item
+                            p Item left 1
+                        .c-toolbar__item
+                            p Item left 2
+                    .c-toolbar__right
+                        .c-toolbar__item
+                            p Item right 1
+                        .c-toolbar__item
+                            p Item right 2
+        figcaption.c-body-2.u-text-muted See component: <a href="/styleguide/c-toolbar.html">toolbar</a>
+

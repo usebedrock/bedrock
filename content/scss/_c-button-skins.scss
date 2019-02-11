@@ -1,0 +1,175 @@
+/* ==========================================================================
+  Component: Button Skins
+  ---
+  Rules of this file: you CAN'T touch the box model here, just colors.
+   ========================================================================== */
+
+/* Variables
+   ========================================================================== */
+
+$c-button-text-color: $g-text-color !default;
+$c-button-hover-border-color: $color-gray-100 !default;
+$c-button-outline-color: $color-primary !default;
+$c-button-focus-ring-color: $color-primary !default;
+$c-button-link-color: $color-primary !default;
+
+.c-button {
+  transition: 0.18s background ease-in;
+}
+
+/* Primary
+   ========================================================================== */
+
+.c-button.c-button--primary {
+  border: none;
+  background: $color-primary;
+  color: #FFF;
+
+  svg * {
+    fill: #FFF;
+  }
+
+  &:hover,
+  &:active,
+  &.c-button--active,
+  &:active:focus,
+  &.c-button--active:focus {
+    background: darken($color-primary, 15%);
+  }
+
+}
+
+/* Default
+   ========================================================================== */
+
+.c-button.c-button--default {
+  border: none;
+  background: $color-gray-100;
+  color: $color-gray-700;
+
+  &:hover,
+  &:active,
+  &.c-button--active,
+  &:active:focus,
+  &.c-button--active:focus {
+    background: $color-gray-200;
+  }
+
+
+}
+/* Danger
+   ========================================================================== */
+
+.c-button.c-button--danger {
+  border: none;
+  background: $color-red-500;
+  color: #FFF;
+
+  svg * {
+    fill: #FFF;
+  }
+
+  &:active,
+  &.c-button--active,
+  &:active:focus,
+  &.c-button--active:focus {
+    background: darken($color-red-500, 10%);
+  }
+
+}
+
+
+/* Danger hover
+   ========================================================================== */
+
+.c-button.c-button--danger-hover {
+  border: none;
+  background: $color-gray-100;
+  color: $color-gray-700;
+
+  svg * {
+    fill: $c-button-text-color;
+  }
+
+  &:active,
+  &:hover,
+  &.c-button--active,
+  &:active:focus,
+  &.c-button--active:focus {
+    background: $color-red-500;
+    color: #FFF;
+    box-shadow: inset 0 0 0 0.1rem $color-red-500;
+    transition: box-shadow 0.18s ease-in-out, background 0.18s ease-in-out, color 0.18s ease-in-out;
+    svg * {
+      fill: #FFF;
+    }
+  }
+
+}
+
+/* Borderless
+   ========================================================================== */
+
+.c-button.c-button--borderless {
+  color: $c-button-text-color;
+  background: none;
+  border: 0;
+
+  &:hover {
+    box-shadow: inset 0 0 0 0.1rem $c-button-hover-border-color;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:active,
+  &.c-button--active,
+  &:active:focus,
+  &.c-button--active:focus {
+    background: $color-gray-100;
+    box-shadow: inset 0 0 0 0.1rem $c-button-hover-border-color;
+  }
+
+}
+
+/* Borderless
+   ========================================================================== */
+
+.c-button.c-button--borderless-i {
+  color: rgba(#FFF,0.5);
+  background: none;
+  border: 0;
+
+  &:hover {
+    box-shadow: inset 0 0 0 0.1rem rgba(#FFF,0.25);
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:active,
+  &.c-button--active,
+  &:active:focus,
+  &.c-button--active:focus {
+    background: rgba(#FFF,0.1);
+    box-shadow: inset 0 0 0 0.1rem rgba(#FFF,0.25);
+  }
+
+}
+
+/* Shared disabled state for all buttons
+   ========================================================================== */
+
+.c-button.c-button--primary,
+.c-button.c-button--default,
+.c-button.c-button--danger,
+.c-button.c-button--danger-hover {
+  &:disabled,
+  &.c-button--disabled {
+    background: $color-gray-50;
+    color: $color-gray-150;
+    pointer-events: none;
+  }
+}

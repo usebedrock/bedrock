@@ -1,0 +1,160 @@
+/* ==========================================================================
+  Component: Toolbar
+  ---
+  Component for aligning multiple sub components on a horizontal axis
+   ========================================================================== */
+
+/* Variables
+   ========================================================================== */
+
+$c-toolbar-item-spacing: 1.6rem !default;
+$c-toolbar-main-border-color: $color-gray-200 !default;
+
+/* Component
+   ========================================================================== */
+
+.c-toolbar {
+  width: 100%;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-around;
+  height: $g-bar-size-regular;
+}
+
+.c-toolbar--medium {
+  height: $g-bar-size-medium;
+}
+
+.c-toolbar--spaced {
+  padding: 0 2.4rem;
+}
+
+.c-toolbar--auto {
+  height: auto;
+}
+
+.c-toolbar__left {
+  z-index: $g-c-local-toolbar-z; // Left and right should have higher z-index than center; if the elements overlap, there is a bigger chance we can still tap the action most likely contained on the left or right end
+  justify-content: flex-start;
+  .c-toolbar__item {
+    margin-right: $c-toolbar-item-spacing;
+    &:only-child {
+      margin: 0;
+    }
+  }
+}
+
+.c-toolbar__right {
+  z-index: $g-c-local-toolbar-z; // Left and right should have higher z-index than center; if the elements overlap, there is a bigger chance we can still tap the action most likely contained on the left or right end
+  justify-content: flex-end;
+  .c-toolbar__item {
+    margin-left: $c-toolbar-item-spacing;
+    &:only-child {
+      margin: 0;
+    }
+  }
+}
+
+.c-toolbar__left,
+.c-toolbar__right {
+  flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.c-toolbar__item {
+  position: relative;
+}
+
+.c-toolbar__center {
+  position: absolute;
+  margin-left: 50%;
+  left: 0;
+}
+
+.c-toolbar__center-inner {
+  margin-left: -50%;
+  display: flex;
+  flex: 1 0 auto;
+  align-items: center;
+  .c-toolbar__item {
+    margin: 0 $c-toolbar-item-spacing/2;
+    &:only-child {
+      margin: 0;
+    }
+  }
+}
+
+.c-toolbar__center--interactive {
+  z-index: $g-c-local-toolbar-middle-z; // If our middle element is interactive (rare) we can specifiy this
+}
+
+// For some cases you need to set -100% to actually center the item
+.c-toolbar__center-inner--alt {
+  margin-left: -100%;
+}
+
+/* Specific children
+   ========================================================================== */
+
+.c-toolbar__title {
+  font-weight: $g-headings-font-weight;
+  font-size: 1.8rem;
+}
+
+.c-toolbar__dropdown {
+  display: block;
+  .o-svg-icon {
+    color: $color-gray-700;
+    .c-navbar--inverse & {
+      color: #FFF;
+    }
+  }
+}
+
+/* Justified toolbar
+   ========================================================================== */
+
+.c-toolbar__justified {
+  flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+  .c-toolbar__item {
+    margin-right: $c-toolbar-item-spacing;
+  }
+}
+
+.c-toolbar__item--stretch {
+  flex: 1;
+}
+
+.c-toolbar__justified {
+  .c-toolbar__item:last-child {
+    margin: 0;
+  }
+}
+
+
+/* Drop columns on request
+   ========================================================================== */
+
+@media (max-width: $g-bp2 - 1) {
+
+  .c-toolbar.c-toolbar--drop-columns-low-mq {
+    height: auto;
+    flex-wrap: wrap;
+    .c-toolbar__left,
+    .c-toolbar__right {
+      min-height: $g-bar-size-medium;
+    }
+    .c-toolbar__right {
+      justify-content: flex-start;
+      .c-toolbar__item {
+        margin-left: 0;
+        margin-right: 1.6rem;
+      }
+    }
+  }
+
+}

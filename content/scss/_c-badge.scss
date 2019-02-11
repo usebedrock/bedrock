@@ -1,0 +1,36 @@
+/* ==========================================================================
+  Component: Badge
+  ---
+  A badge. Use to display textual information in a different way than just text.
+   ========================================================================== */
+
+/* Mixins
+   ========================================================================== */
+
+@mixin badge-variant($background-color, $text-color, $border-color) {
+  background-color: $background-color;
+  color: $text-color;
+  border: 1px solid $border-color;
+}
+
+/* Component
+   ========================================================================== */
+
+.c-badge {
+  border-radius: 0.3rem;
+  padding: 0.2rem 0.5rem;
+  display: inline-block;
+  font-size: 1.4rem;
+}
+
+.c-badge--default {
+  @include badge-variant(#FFF, $color-gray-400, $color-gray-200);
+}
+
+.c-badge--success {
+  @include badge-variant($color-green-500, #FFF, $color-green-500);
+}
+
+.c-badge--error {
+  @include badge-variant($color-red-500, #FFF, $color-red-500);
+}

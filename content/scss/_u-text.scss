@@ -1,0 +1,56 @@
+/* ==========================================================================
+  Utility: Text
+  ===
+  Text-related utility classes
+   ========================================================================== */
+
+/* Variables
+   ========================================================================== */
+
+$u-text-muted-color: $g-text-color !default;
+$u-text-muted-color: $color-gray-500 !default;
+$u-text-success-color: $color-green-500 !default;
+$u-text-primary-color: $color-brand-blue !default;
+$u-text-danger-color: $color-red-500 !default;
+
+/* Utilities
+   ========================================================================== */
+
+.u-text-muted {
+  color: $u-text-muted-color;
+}
+
+.u-text-primary {
+  color: $u-text-primary-color;
+}
+
+.u-text-success {
+  color: $u-text-success-color;
+  .o-svg-icon {
+    color: $u-text-success-color;
+  }
+}
+
+.u-text-danger {
+  color: $u-text-danger-color;
+}
+
+.u-text-bold {
+  font-weight: $g-headings-font-weight;
+}
+
+.u-text-center {
+  text-align: center !important;
+}
+
+.u-text-right {
+  text-align: right !important;
+}
+
+.u-text-hidden {
+  display: none;
+}
+
+.u-text-uc {
+  text-transform: uppercase;
+}

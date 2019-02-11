@@ -1,0 +1,43 @@
+/* ==========================================================================
+  c-social
+ ========================================================================== */
+
+.c-social {
+  margin-left: auto;
+  li {
+    display: inline-block;
+    padding: 0.8rem;
+  }
+
+  li + li {
+    margin-left: 0.8rem;
+  }
+}
+
+.c-social-mobile {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.2rem;
+
+  li {
+    display: inline-block;
+    padding: 1.2rem 1.2rem;
+  }
+
+  li + li {
+    margin-left: 0.8rem;
+  }
+}
+
+.c-social__item {
+  .o-svg-icon svg * {
+    width: 3.2rem;
+    height: 3.2rem;
+    fill: $color-gray-800;
+  }
+
+  &:hover svg *,
+  &:active svg * {
+    fill: $color-primary;
+  }
+}

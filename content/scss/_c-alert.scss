@@ -1,0 +1,81 @@
+/* ==========================================================================
+  Component: Alert
+  ---
+  Use alerts for messaging across the application.
+  ---
+  Rules of this file: this file is ONLY for layout, please see alert-skins.scss for colors
+   ========================================================================== */
+
+/* Component
+   ========================================================================== */
+
+.c-alert {
+  padding: 1.2rem 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .o-svg-icon-close {
+    cursor: pointer;
+  }
+}
+
+.c-alert__body {
+  display: flex;
+  align-items: center;
+}
+
+.c-alert--floating {
+  border-radius: 3px;
+  display: flex;
+  padding: 1.6rem;
+  transform: translateX(-50%);
+  z-index: 100;
+  min-width: 15rem;
+}
+
+.c-alert-stack {
+  position: fixed;
+  left: 1.2rem;
+  bottom: 1.2rem;
+  .c-alert {
+    max-width: 30rem;
+  }
+}
+
+.c-alert-stack li {
+  margin-top: 1.2rem;
+}
+
+/* Animation 
+   ========================================================================== */
+
+.c-alert--floating--animate-in {
+  animation: 0.3s ease-in 0.2s both floating-alert-in;
+}
+
+.c-alert--floating--animate-out {
+  animation: 0.3s ease-out 0.2s both floating-alert-out;
+}
+
+@keyframes floating-alert-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes floating-alert-out {
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-1rem);
+  }
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}

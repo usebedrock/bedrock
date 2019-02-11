@@ -1,0 +1,68 @@
+/* ==========================================================================
+  Component: card
+   ========================================================================== */
+
+/* Variables
+   ========================================================================== */
+
+$c-card-padding-horizontal: 2.4rem !default;
+$c-card-padding-vertical: 2.4rem !default;
+$c-card-border-color: $color-gray-150 !default;
+$c-card-border-radius: 0.3rem !default;
+
+/* Component
+   ========================================================================== */
+
+.c-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.c-card__title {
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: $color-gray-900;
+}
+
+.c-card__header {
+  align-items: center;
+  display: flex;
+  height: 5.6rem;
+}
+
+.c-card__body {
+  border: 0.1rem solid $c-card-border-color;
+  background: #FFF;
+  padding: $c-card-padding-vertical $c-card-padding-horizontal;
+  &:only-child {
+    border-radius: $c-card-border-radius;
+  }
+}
+
+.c-card__header + .c-card__body:last-child {
+  border-radius: $c-card-border-radius;
+}
+
+.c-card__body h3:first-child {
+  margin-top: 0;
+}
+
+.c-card__body + .c-card__body {
+  border-top: none;
+  padding: $c-card-padding-vertical $c-card-padding-horizontal;
+  border-bottom-left-radius: $c-card-border-radius;
+  border-bottom-right-radius: $c-card-border-radius;
+}
+
+// Class needed to have correct rounded corners on cards with multiple card bodies
+.c-card--multiple-bodies .c-card__header + .c-card__body {
+  border-top-left-radius: $c-card-border-radius;
+  border-top-right-radius: $c-card-border-radius;
+}
+
+.c-card__body--spaced-out-x {
+  padding: $c-card-padding-vertical $c-card-padding-horizontal*3;
+  & + .c-card__body--spaced-out-x {
+    padding: $c-card-padding-vertical $c-card-padding-horizontal*3;
+  }
+}

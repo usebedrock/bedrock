@@ -1,0 +1,21 @@
+/* ==========================================================================
+    Component: Stats
+    @todo document this
+   ========================================================================== */
+
+.c-stats {
+    display: flex;
+    width: 100%;
+    margin-bottom: 1.6rem;
+    list-style: none !important;
+    padding-left :0 !important;
+
+    li {
+        margin-right: 1rem;
+    }
+
+    .o-svg-icon { 
+        padding-right: 0.5rem;
+    }
+
+}

@@ -1,10 +1,34 @@
+@import "_s-colors";
+
 /* ==========================================================================
-  Variables override
-  Overide variables set in core/scss/prototype.scss with your own
+  Style guide settings
    ========================================================================== */
 
-// Example: your code is pixel based, use $br-rem-multiplier of 0.625
-// $br-rem-multiplier: 1;
+$br-rem-multiplier: 1;
+$br-heading-font-weight: 500;
 
-// Example: your code is rem-based, where 1rem = 10px, use $br-rem-multiplier of 1
-$br-rem-multiplier: 0.625;
+$br-styleguide-sidebar-width: 25%;
+$br-styleguide-content-width: (100% - $br-styleguide-sidebar-width);
+
+$br-styleguide-sidebar-padding-top: 3.2rem*$br-rem-multiplier;
+$br-styleguide-sidebar-padding-right: 3.2rem*$br-rem-multiplier;
+$br-styleguide-sidebar-padding-bottom: 3.2rem*$br-rem-multiplier;
+$br-styleguide-sidebar-padding-left: 3.2rem*$br-rem-multiplier;
+
+$br-styleguide-content-padding-top: 3.2rem*$br-rem-multiplier;
+$br-styleguide-content-padding-right: 3.2rem*$br-rem-multiplier;
+$br-styleguide-content-padding-bottom: 3.2rem*$br-rem-multiplier;
+$br-styleguide-content-padding-left: 3.2rem*$br-rem-multiplier;
+
+$br-prototype-nav-width: 250px; // Keep this in px please, otherwise it gets buggy
+
+
+/* Better display for modals when prototype nav is open
+   ========================================================================== */
+
+.br-prototype-nav-is-open .c-modal-context {
+  left: $br-prototype-nav-width;
+  width: calc(100% - #{$br-prototype-nav-width});
+}
+
+$br-styleguide-sidebar-bg-color: $color-gray-50;

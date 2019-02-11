@@ -1,0 +1,127 @@
+/* ==========================================================================
+  Component: Text Field
+  ---
+  Styles for text inputs
+   ========================================================================== */
+
+/* Variables
+   ========================================================================== */
+
+$c-input-border-radius: 0.3rem !default;
+$c-input-dark-text-color: $color-gray-600 !default;
+$c-input-focus-icon-color: $color-gray-600 !default;
+$c-input-bg-color: #fff !default;
+$c-input-border-color: $color-gray-150 !default;
+$c-input-readonly-border-color: $color-gray-150 !default;
+$c-input-accent-color: $color-soft-blue !default;
+$c-input-error-accent-color: $color-red-500 !default;
+$c-input-padding: 0.8rem !default;
+
+/* Mixins
+   ========================================================================== */
+
+@mixin textfield-focus {
+  &:focus {
+    outline: 0;
+    border-color: $c-input-accent-color;
+    box-shadow: inset 0 0 0 0.1rem $c-input-accent-color;
+  }
+}
+
+@mixin textfield-transition {
+  transition: all 0.15s ease-in-out;
+}
+
+/* Component
+   ========================================================================== */
+
+.c-input {
+  border-radius: $c-input-border-radius;
+  background: $c-input-bg-color;
+  border: 1px solid $c-input-border-color;
+  font-size: inherit;
+  height: 3.6rem;
+  padding: $c-input-padding;
+  width: 100%;
+  appearance: none;
+  @include textfield-transition;
+  @include textfield-focus;
+
+  &[disabled] {
+    background: $color-gray-100;
+  }
+}
+
+.o-form-group--error {
+  border-color: $c-input-error-accent-color;
+
+  &:focus {
+    outline: 0;
+    border-color: $c-input-error-accent-color;
+    box-shadow: 0 0 0 2px rgba($c-input-error-accent-color, 0.2);
+  }
+}
+
+textarea.c-input {
+  height: auto;
+  line-height: 1.5;
+}
+
+// Heights (for textareas)
+textarea.c-input--h-small { height: 12rem; }
+textarea.c-input--h-medium { height: 16rem; }
+textarea.c-input--h-large { height: 20rem; }
+
+// Widths
+.c-input--w-xsmall { width: 4rem; }
+.c-input--w-small { width: 9.6rem; }
+.c-input--w-medium { width: 16rem; }
+.c-input--w-large { width: 44rem; }
+
+.c-input[readonly] {
+  background-color: $c-input-readonly-border-color;
+}
+
+.c-input--code {
+  font-family: $g-code-font-family;
+  line-height: 2.4rem;
+  font-size: 85%;
+}
+
+/* Input With Icon
+   ========================================================================== */
+
+.c-input-with-icon {
+  display: block;
+  position: relative;
+
+  .c-input {
+    padding-left: 3rem;
+  }
+
+  .o-svg-icon {
+    left: 0.8rem;
+    opacity: 0.5;
+    position: absolute;
+    top: 0.9rem;
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+}
+
+.c-input-group {
+  display: flex;
+  align-items: flex-start;
+}
+
+.c-input-group__item {
+  flex: 1;
+}
+
+/* Input group append
+   ========================================================================== */
+
+.c-input-group__append {
+  height: 3.6rem;
+  margin-left: 1rem;
+}
