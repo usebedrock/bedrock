@@ -14,8 +14,8 @@
   border: 1px solid $c-input-border-color;
   border-radius: $c-input-border-radius; // We use properties from textfield here
   font-size: inherit;
-  height: 4rem;
-  padding: $c-input-padding;
+  height: 3.6rem;
+  padding: 0.8rem 2.8rem 0.8rem 0.8rem;
   width: 100%;
 
   @include textfield-focus;
