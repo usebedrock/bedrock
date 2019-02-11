@@ -84,6 +84,7 @@
     "@material/slider": "^0.44.0",
     "@material/tabs": "^0.44.0",
     "@material/textfield": "^0.44.0",
+    "@material/typography": "^0.44.0",
     "material-components-web": "^0.44.0"
   },
   "bedrockVersion": "1.14.1"
