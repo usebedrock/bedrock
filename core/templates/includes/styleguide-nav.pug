@@ -11,8 +11,8 @@
                                 a(href=`/styleguide/docs/${doc.attributes.filename}.html` class=styleguideNavListItemLinkClass+' '+`${ "styleguide/docs/" + doc.attributes.filename == pathname ? styleguideNavListItemLinkActiveClass : "" }`)
                                     | #{doc.attributes.title}
         if docsCategoryName === 'Components' && Object.keys(components.byCategory).length > 0
-            .br-docs-category
-                each category, categoryName in components.byCategory
+            each category, categoryName in components.byCategory
+                .br-docs-category
                     if Object.keys(components.byCategory).length > 1
                         h4.br-docs-category-name(class=styleguideNavListTitleClass)= categoryName
                     else
