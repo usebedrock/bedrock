@@ -4,7 +4,7 @@
         if docs.byCategory[docsCategoryName]
             .br-docs-category
                 h4.br-docs-category-name(class=styleguideNavListTitleClass)= docsCategoryName
-                div(class=styleguideNavListWrapperClass)
+                .br-docs-category-list-wrapper(class=styleguideNavListWrapperClass)
                     ul(class=styleguideNavListClass)
                         each doc in docs.byCategory[docsCategoryName]
                             li(class=styleguideNavListItemClass+' '+`${ "styleguide/docs/" + doc.attributes.filename == pathname ? styleguideNavListItemActiveClass : "" }`)
@@ -17,7 +17,7 @@
                         h4.br-docs-category-name(class=styleguideNavListTitleClass)= categoryName
                     else
                         h4.br-docs-category-name(class=styleguideNavListTitleClass) Components
-                    div(class=styleguideNavListWrapperClass)
+                    .br-docs-category-list-wrapper(class=styleguideNavListWrapperClass)
                         ul(class=styleguideNavListClass)
                             each group in category
                                 - var groupName = group.docs ? group.docs.attributes.title || group.group.id : group.group.id
