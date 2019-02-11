@@ -34,6 +34,7 @@ $o-form-group-label-font-weight: $g-headings-font-weight !default;
     font-size: $g-base-font-size;
     font-weight: $o-form-group-label-font-weight;
     display: block;
+    font-weight: 600;
 
   }
 
@@ -54,7 +55,7 @@ $o-form-group-label-font-weight: $g-headings-font-weight !default;
   .o-form-group__label {
     display: block;
     width: 19.2rem;
-    font-weight: $g-headings-font-weight;
+    font-weight: $o-form-group-label-font-weight;
   }
 
 }
@@ -73,45 +74,19 @@ $o-form-group-label-font-weight: $g-headings-font-weight !default;
       margin: 0;
     }
     .o-form-group__controls {
-      flex: 1 0 auto;
+      flex: 1 1 auto;
     }
   }
   .o-form-group__label {
-    font-weight: $g-headings-font-weight;
+    font-weight: $o-form-group-label-font-weight;
     margin-right: .8rem;
   }
-}
 
-/* Temporary fix c-box newsletter
-   ========================================================================== */
-
-
-.o-form-group-layout--inline-responsive {
-  display: flex;
-  flex-wrap: wrap;
-
-  .o-form-group__label {
-    white-space: nowrap;
-  }
-  .o-form-group {
-    display: flex;
+  .o-form-group--inline-grow {
     flex: 1 0 auto;
-    align-items: center;
-    margin-left: .8rem;
-    &:first-child {
-      margin: 0;
-    }
-    .o-form-group__controls {
-      flex: 1 0 auto;
-    }
-    @media (max-width: $g-bp1) {
-      flex-direction: column;
-      align-items: stretch;
-      margin: 1rem 0;
-    }
   }
-  .o-form-group__label {
-    font-weight: $g-headings-font-weight;
-    margin-right: .8rem;
+
+  .o-form-group--inline-shrink {
+    flex: 0 1 auto;
   }
 }
