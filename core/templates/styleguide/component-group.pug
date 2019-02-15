@@ -13,5 +13,10 @@ block content
         .br-content(class=styleguideRichContentClass)
             != componentGroup.docs.body
 
+    if componentGroup.docs.attributes.reference
+        p
+            a(href=componentGroup.docs.attributes.reference)
+                | View reference documentation
+
     each component in componentGroup.components
         +sample(component)
