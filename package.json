@@ -1,6 +1,6 @@
 {
   "name": "bedrock",
-  "version": "1.15.0",
+  "version": "1.16.0",
   "description": "Static site generator to easily make HTML prototypes",
   "main": "gulpfile.js",
   "scripts": {
@@ -34,7 +34,7 @@
     "codemirror": "^5.18.2",
     "del": "^2.0.2",
     "directory-tree": "^0.1.1",
-    "event-stream": "^3.3.2",
+    "event-stream": "^3.3.4",
     "express": "^4.16.3",
     "faker": "^3.0.1",
     "front-matter": "^2.0.5",
