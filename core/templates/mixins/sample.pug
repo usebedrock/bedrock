@@ -10,7 +10,7 @@ mixin sample(component)
             a.br-sample-header-link(href="#component-"+component.name) #
         if component.docs
             .br-sample-documentation(class=styleguideRichContentClass)!= component.docs.body
-        .br-sample-content!= render(component.filename, 'html')
+        .br-sample-content!= renderCode(component.filename, 'html')
         .br-sample-footer
             if config.styleguide.snippetLanguage === 'html'
                 button.br-sample-show-code-btn(class=styleguideButtonClass) Show HTML code
@@ -19,6 +19,6 @@ mixin sample(component)
             .br-sample-code
                 button.br-sample-copy-code-btn(class=styleguideButtonClass) Copy to clipboard
                 if config.styleguide.snippetLanguage === 'html'
-                    pre.br-sample-markup= render(component.filename, 'html')
+                    pre.br-sample-markup= renderCode(component.filename, 'html')
                 if config.styleguide.snippetLanguage === 'pug'
-                    pre.br-sample-markup= render(component.filename, 'pug')
+                    pre.br-sample-markup= renderCode(component.filename, 'pug')

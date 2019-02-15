@@ -66,6 +66,7 @@ module.exports = {
    *  Unlikely that you need to change this
   */
   prettify: {
+    inline: '',
     logSuccess: false,
     indentSize: 2,
     unformatted: ['pre', 'textarea'],
