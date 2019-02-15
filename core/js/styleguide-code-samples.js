@@ -2,14 +2,60 @@ const $ = require('jquery');
 const Clipboard = require('clipboard');
 const Codemirror = require('codemirror');
 const config = require('../../bedrock.config');
-require('codemirror/mode/javascript/javascript');
+//require('codemirror/mode/javascript/javascript');
 require('codemirror/mode/pug/pug');
 require('codemirror/mode/xml/xml');
 
+const $codeHolders = $('.br-sample-code');
+const $codeBlocks = $('.br-sample-markup');
+
 if (config.styleguide) {
-  const $codeBlocks = $('.br-sample-code .br-sample-markup');
-  const $codeButtons = $('.br-sample-show-code-btn');
-  const $copyButtons = $('.br-sample-copy-code-btn');
+
+  /* Init code blocks
+     ========================================================================== */
+
+  $codeBlocks.each(function () {
+
+    if ($(this).hasClass('br-sample-markup-html')) {
+      var mode = 'xml'
+    } else {
+      var mode = 'pug'
+    }
+
+    const editorOptions = {
+      value: $(this).text(),
+      readOnly: true,
+      mode: mode
+    };
+
+    $(this).empty();
+    $(this).editor = Codemirror(this, editorOptions);
+  });
+
+  /* Button logic: be able to show both Pug and HTML at the same time
+     ========================================================================== */
+
+  $codeHolders.hide();
+
+  $('.br-sample-show-code-btn-html').on('click', function(e) {
+    if ($(this).parents('.br-sample').find('.br-sample-code-html').is(':visible')) {
+        $(this).parents('.br-sample').find('.br-sample-code-html').hide();
+    } else {
+      $(this).parents('.br-sample').find('.br-sample-code-html').show();
+    }
+  });
+
+  $('.br-sample-show-code-btn-pug').on('click', function(e) {
+    if ($(this).parents('.br-sample').find('.br-sample-code-pug').is(':visible')) {
+        $(this).parents('.br-sample').find('.br-sample-code-pug').hide();
+    } else {
+      $(this).parents('.br-sample').find('.br-sample-code-pug').show();
+    }
+  });
+
+  /* Save text to clipboard
+     ========================================================================== */
+
   const clipboard = new Clipboard('.br-sample-copy-code-btn', {
     text: function (trigger) {
       const originalButtonText = $(trigger).text();
@@ -26,36 +72,4 @@ if (config.styleguide) {
     }
   });
 
-// Hide on init
-  $codeBlocks.hide();
-
-  $codeButtons.on('click', function () {
-    const $codeBlock = $(this).parents('.br-sample').find('.br-sample-markup');
-    $codeBlock.toggle();
-    $codeBlock.find('.CodeMirror').each(function (i, el) {
-      el.CodeMirror.refresh();
-    });
-  });
-
-  $codeBlocks.each(function () {
-    const code = $(this).text();
-    const editorOptions = {
-      value: code,
-      readOnly: true
-    };
-
-    $(this).empty();
-
-    switch (config.styleguide.snippetLanguage) {
-      case 'pug':
-        editorOptions.mode = 'pug';
-        break;
-      case 'html':
-        editorOptions.mode = 'xml';
-        editorOptions.htmlMode = true;
-        break;
-    }
-
-    $(this).editor = Codemirror(this, editorOptions);
-  });
 }

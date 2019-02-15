@@ -10,11 +10,6 @@ module.exports = {
   */
   styleguide: {
     /**
-     *  snippetLanguage {html, pug}
-     *  Determines language of code snippets in styleguide
-    */
-    snippetLanguage: 'html',
-    /**
      *  search [boolean]
      *  Feature flag for search feature
     */

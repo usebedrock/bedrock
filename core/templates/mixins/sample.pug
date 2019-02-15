@@ -12,13 +12,12 @@ mixin sample(component)
             .br-sample-documentation(class=styleguideRichContentClass)!= component.docs.body
         .br-sample-content!= renderCode(component.filename, 'html')
         .br-sample-footer
-            if config.styleguide.snippetLanguage === 'html'
-                button.br-sample-show-code-btn(class=styleguideButtonClass) Show HTML code
-            if config.styleguide.snippetLanguage === 'pug'
-                button.br-sample-show-code-btn(class=styleguideButtonClass) Show Pug code
-            .br-sample-code
+            button.br-sample-show-code-btn.br-sample-show-code-btn-html(class=styleguideButtonClass) Show HTML code
+            button.br-sample-show-code-btn.br-sample-show-code-btn-pug(class=styleguideButtonClass) Show Pug code
+
+            .br-sample-code.br-sample-code-html
                 button.br-sample-copy-code-btn(class=styleguideButtonClass) Copy to clipboard
-                if config.styleguide.snippetLanguage === 'html'
-                    pre.br-sample-markup= renderCode(component.filename, 'html')
-                if config.styleguide.snippetLanguage === 'pug'
-                    pre.br-sample-markup= renderCode(component.filename, 'pug')
+                pre.br-sample-markup.br-sample-markup-html= renderCode(component.filename, 'html')
+            .br-sample-code.br-sample-code-pug
+                button.br-sample-copy-code-btn(class=styleguideButtonClass) Copy to clipboard
+                pre.br-sample-markup.br-sample-markup-pug= renderCode(component.filename, 'pug')

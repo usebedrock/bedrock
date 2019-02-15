@@ -306,10 +306,16 @@ html.br-prototype-nav-is-open {
   position: relative;
 }
 
+/* Code related
+   ========================================================================== */
+
+.br-sample-code {
+  position: relative;
+}
 .br-sample-copy-code-btn {
   position: absolute;
   z-index: 3;
-  top: 4.5rem*$br-rem-multiplier;
+  top: 1rem*$br-rem-multiplier;
   right: 1rem*$br-rem-multiplier;
   display: none;
   .br-sample-code:hover & {
@@ -322,7 +328,6 @@ html.br-prototype-nav-is-open {
   background: $br-code-background;
   border: 1px solid $br-code-border-color;
   padding: 1rem*$br-rem-multiplier;
-  position: relative;
   .CodeMirror {
     background: transparent;
   }
