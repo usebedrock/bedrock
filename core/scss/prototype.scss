@@ -70,7 +70,7 @@ $br-styleguide-content-padding-left: 4.8rem*$br-rem-multiplier !default;
       $br-styleguide-sidebar-padding-bottom
       $br-styleguide-sidebar-padding-left;
   }
-  
+
   .br-styleguide-content {
     background: #FFF;
     box-sizing: border-box;
@@ -189,7 +189,7 @@ html.br-prototype-nav-is-open {
   font-size: 1.2rem*$br-rem-multiplier;
 }
 
-/* Utilities 
+/* Utilities
    ========================================================================== */
 
 .br-reset-link-styling {
@@ -489,7 +489,8 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
   }
 }
 
-/* Category
+/* Category markers (on components)
+   To use: add “source: unofficial” to YAML front matter in component .md file
    ========================================================================== */
 
 .br-sample-category {
@@ -503,6 +504,19 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
   top: 0.7rem;
 }
 
+/* Category markers (in sidebar)
+   Use case: determine which “official” components contain custom code
+   To use: add containsCustom: true to YAML front matter in _docs.md file on component level
+   ========================================================================== */
+
+.br-docs-category-marker-custom {
+  background: #CCC;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  float: right;
+  margin-top: 4px;
+}
 
 /* ==========================================================================
   Grid layout
@@ -558,9 +572,9 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
            "search"
            "content"
            "sidebar";
-  
+
   @media (min-width: $br-switch-breakpoint) {
-    
+
     grid-template-columns: $br-styleguide-sidebar-width auto;
     grid-template-rows: 60px 60px auto;
     grid-template-areas:
@@ -572,7 +586,7 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
   .br-styleguide-header {
     grid-area: header;
   }
-  
+
   .br-styleguide-search {
     grid-area: search;
   }
