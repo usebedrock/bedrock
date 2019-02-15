@@ -36,7 +36,7 @@ function getDefaultLocals() {
     return fs.readFileSync(svgFileLocation, 'utf8');
   };
 
-  locals.render = function (id, language) {
+  locals.renderCode = function (id, language) {
     const componentFileLocation = path.join(paths.content.templates.components, id + '.pug');
     const pugMarkup = fs.readFileSync(componentFileLocation, 'utf8');
 
