@@ -599,3 +599,12 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
     grid-area: content;
   }
 }
+
+/* Component group header
+   ========================================================================== */
+
+.br-componentgroup-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
