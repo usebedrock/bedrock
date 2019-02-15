@@ -5,8 +5,8 @@
 
 module.exports = {
   /**
-   *  Styleguide generation: existence of this section 
-   *  determines whether the styleguide gets generated 
+   *  Styleguide generation: existence of this section
+   *  determines whether the styleguide gets generated
   */
   styleguide: {
     /**
@@ -66,6 +66,7 @@ module.exports = {
    *  Unlikely that you need to change this
   */
   prettify: {
+    inline: '',
     logSuccess: false,
     indentSize: 2,
     unformatted: ['pre', 'textarea'],
