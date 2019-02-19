@@ -35,7 +35,12 @@ module.exports = {
       moduleTemplates: path.join(contentPath, 'templates/modules/**/*.pug'),
       patterns: path.join(contentPath, 'templates/_patterns/'),
       components: path.join(contentPath, 'templates/_components/'),
+      allComponents: path.join(contentPath, 'templates/_components/**/*.pug'),
       data: path.join(contentPath, 'data/*')
+    },
+    linter: {
+      path: path.join(contentPath, 'linter/'),
+      tests: path.join(contentPath, 'linter/**/*.js'),
     },
     js: {
       entryFile: path.join(contentPath, 'js/index.js')
