@@ -16,10 +16,14 @@
 
   You can target a component with #component-{component-name} e.g. when a component
   folder is called 01-my-component you can target it with #component-01-my-component.
-  
+
   It's interesting to know that the box that contains the component is called .br-sample-content.
 
   Sometimes you want to set a height on this or targets its children etc.
 */
 
 // Here is an example of a style to make the style guide look better
+
+.br-styleguide-brand-heading {
+  margin: 0;
+}
