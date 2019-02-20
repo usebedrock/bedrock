@@ -1,6 +1,6 @@
 {
   "name": "bedrock",
-  "version": "1.16.0",
+  "version": "1.16.2",
   "description": "Static site generator to easily make HTML prototypes",
   "main": "gulpfile.js",
   "scripts": {
@@ -69,7 +69,7 @@
     "run-sequence": "^1.2.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.6.0"
+    "watchify": "^3.11.1"
   },
   "dependencies": {}
 }
