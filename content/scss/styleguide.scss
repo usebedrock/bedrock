@@ -48,13 +48,14 @@
   .br-sample-content {
     padding: 5rem;
   }
-}
-
-//  Make dialogs visible in styleguide
-#component-01-mdc-dialog-default .mdc-dialog__surface,
-#component-02-mdc-dialog-scroll .mdc-dialog__surface {
-  opacity: 1;
-  transform: none;
+  .mdc-dialog {
+    position: static;
+    display: block;
+  }
+  .mdc-dialog__container {
+      opacity: 1;
+      transform: none;
+  }
 }
 
 /* Icon styles
