@@ -77,5 +77,6 @@
     "bootstrap": "4.2.1",
     "holderjs": "^2.9.6",
     "popper.js": "^1.14.3"
-  }
+  },
+  "bedrockVersion": "1.16.0"
 }
