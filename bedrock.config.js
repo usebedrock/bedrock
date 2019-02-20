@@ -30,6 +30,8 @@ module.exports = {
     */
     categoryOrder: [
       'Style guide',
+      'Basics',
+      'Overviews',
       'Design patterns',
       'Components'
     ],
@@ -38,7 +40,6 @@ module.exports = {
      * The prefix on folder names in /components determines the category
     */
     componentCategories: {
-      aov: 'Overviews',
       c: 'Components',
       o: 'Objects',
       u: 'Utilities'
