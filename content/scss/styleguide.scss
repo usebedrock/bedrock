@@ -14,9 +14,6 @@
 @import '_s-semantic-colors';
 @import '_s-variables';
 
-
-
-
 /* Code button
    We use a separate style to have a subtle button
    ========================================================================== */
@@ -24,13 +21,31 @@
 .br-sample-show-code-btn {
   color: $color-gray-500;
   appearance: none;
-  font-size: 12px;
+  font-size: 1.2rem;
   border: none;
   padding: 0;
   &:focus {
     color: $color-primary;
-    outline: 2px solid rgba($color-primary,.33);
+    outline: 0.2rem solid rgba($color-primary,.33);
   }
+}
+
+.br-sample-copy-code-btn {
+  color: $color-gray-900;
+  appearance: none;
+  font-size: 1.3rem;
+  border: 1px solid $color-gray-200;
+  padding: 1rem;
+  background: rgba(#FFF,0.5);
+  border-radius: 0.4rem;
+  &:focus {
+    color: $color-primary;
+    outline: 0.2rem solid rgba($color-primary,.33);
+  }
+}
+
+.br-sample-show-code-btn-html {
+  margin-right: 1rem;
 }
 
 /* Styling for grid documentation
