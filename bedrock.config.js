@@ -5,12 +5,17 @@
 
 module.exports = {
   /**
-   *  Styleguide generation: existence of this section 
-   *  determines whether the styleguide gets generated 
+   *  Styleguide generation: existence of this section
+   *  determines whether the styleguide gets generated
   */
   styleguide: {
-    snippetLanguage: 'html',
     colors: './content/scss/_colors.scss',
+    /**
+     *  search [boolean]
+     *  Feature flag for search feature
+    */
+    search: true,
+
    /**
     *  categoryOrder
     *  Determines the order of documentation categories
