@@ -9,12 +9,15 @@ block body
 
         .br-styleguide-header
             unless styleguideHideBrand
-                h1.br-styleguide-brand-heading(class=styleguideBrandClass)
-                    a.br-reset-link-styling(href="/styleguide" class=styleguideResetLinkStylingClass) #{projectTitle}
-        
+                if styleguideLogoAsImage
+                    img.br-styleguide-logo(src=styleguideLogoAsImagePath alt=styleguideLogoAsImageAlt width=styleguideLogoAsImageForceWidth)
+                else
+                    h1.br-styleguide-brand-heading(class=styleguideBrandClass)
+                        a.br-reset-link-styling(href="/styleguide" class=styleguideResetLinkStylingClass) #{projectTitle}
+
         if config.styleguide.search
             .br-styleguide-search
-                input#styleguideSearch(type="search" placeholder="Search components..." class=styleguideInputClass)
+                input#styleguideSearch(type="search" placeholder=styleguideSearchPlaceholderString class=styleguideInputClass)
 
         .br-styleguide-navigation-holder
 

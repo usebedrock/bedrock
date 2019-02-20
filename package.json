@@ -76,5 +76,6 @@
     "popper.js": "^1.14.4",
     "@shopify/draggable": "^1.0.0-beta.8",
     "tags-input": "^1.1.1"
-  }
+  },
+  "bedrockVersion": "1.16.2"
 }

@@ -38,6 +38,8 @@ $br-styleguide-content-padding-right: 2.4rem*$br-rem-multiplier !default;
 $br-styleguide-content-padding-bottom: 2.4rem*$br-rem-multiplier !default;
 $br-styleguide-content-padding-left: 4.8rem*$br-rem-multiplier !default;
 
+$br-prototype-nav-width: 250px; // Keep this in px please, otherwise it gets buggy
+
 @import "../../content/scss/br-variables-override";
 
 
@@ -70,7 +72,7 @@ $br-styleguide-content-padding-left: 4.8rem*$br-rem-multiplier !default;
       $br-styleguide-sidebar-padding-bottom
       $br-styleguide-sidebar-padding-left;
   }
-  
+
   .br-styleguide-content {
     background: #FFF;
     box-sizing: border-box;
@@ -86,11 +88,6 @@ $br-styleguide-content-padding-left: 4.8rem*$br-rem-multiplier !default;
 /* ==========================================================================
   br-prototype-nav
    ========================================================================== */
-
-/* Variables
-   ========================================================================== */
-
-$br-prototype-nav-width: 250px; // Keep this in px please, otherwise it gets buggy
 
 /* Sidebar
    ========================================================================== */
@@ -189,7 +186,7 @@ html.br-prototype-nav-is-open {
   font-size: 1.2rem*$br-rem-multiplier;
 }
 
-/* Utilities 
+/* Utilities
    ========================================================================== */
 
 .br-reset-link-styling {
@@ -309,10 +306,16 @@ html.br-prototype-nav-is-open {
   position: relative;
 }
 
+/* Code related
+   ========================================================================== */
+
+.br-sample-code {
+  position: relative;
+}
 .br-sample-copy-code-btn {
   position: absolute;
   z-index: 3;
-  top: 4.5rem*$br-rem-multiplier;
+  top: 1rem*$br-rem-multiplier;
   right: 1rem*$br-rem-multiplier;
   display: none;
   .br-sample-code:hover & {
@@ -325,7 +328,6 @@ html.br-prototype-nav-is-open {
   background: $br-code-background;
   border: 1px solid $br-code-border-color;
   padding: 1rem*$br-rem-multiplier;
-  position: relative;
   .CodeMirror {
     background: transparent;
   }
@@ -339,7 +341,7 @@ html.br-prototype-nav-is-open {
   position: relative;
   overflow-y: hidden;
   overflow-x: scroll;
-  resize: vertical;
+  resize: both;
 }
 
 .br-sample-content-is-layout {
@@ -489,7 +491,8 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
   }
 }
 
-/* Category
+/* Category markers (on components)
+   To use: add “source: unofficial” to YAML front matter in component .md file
    ========================================================================== */
 
 .br-sample-category {
@@ -503,6 +506,19 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
   top: 0.7rem;
 }
 
+/* Category markers (in sidebar)
+   Use case: determine which “official” components contain custom code
+   To use: add containsCustom: true to YAML front matter in _docs.md file on component level
+   ========================================================================== */
+
+.br-docs-category-marker-custom {
+  background: #CCC;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  float: right;
+  margin-top: 4px;
+}
 
 /* ==========================================================================
   Grid layout
@@ -519,7 +535,7 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
 .br-styleguide-header {
   display: flex;
   justify-content: space-between;
-  padding: 1.2rem 2.4rem;
+  padding: 1.5rem;
   background: $br-styleguide-sidebar-bg-color;
   border-right: 1px solid $br-default-border-color;
 }
@@ -531,7 +547,7 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
 }
 
 .br-styleguide-search {
-  padding: 1.2rem 2.4rem;
+  padding: 1.5rem;
   background: $br-styleguide-sidebar-bg-color;
   border-top: 1px solid $br-default-border-color;
   border-bottom: 1px solid $br-default-border-color;
@@ -558,11 +574,11 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
            "search"
            "content"
            "sidebar";
-  
+
   @media (min-width: $br-switch-breakpoint) {
-    
+
     grid-template-columns: $br-styleguide-sidebar-width auto;
-    grid-template-rows: 60px 60px auto;
+    grid-template-rows: auto auto 1fr;
     grid-template-areas:
            "header content content"
            "search content content"
@@ -572,7 +588,7 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
   .br-styleguide-header {
     grid-area: header;
   }
-  
+
   .br-styleguide-search {
     grid-area: search;
   }
@@ -584,4 +600,13 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
   .br-styleguide-content {
     grid-area: content;
   }
+}
+
+/* Component group header
+   ========================================================================== */
+
+.br-componentgroup-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
