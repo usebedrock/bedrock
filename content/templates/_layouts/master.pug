@@ -24,8 +24,9 @@ block append styleguideSettings
     - var styleguideLogoAsImage = true
     - var styleguideLogoAsImagePath = '/images/jungle-logo.svg'
     - var styleguideLogoAsImageAlt = "Jungle"
-    - var styleguideLogoAsImageForceWidth = "210"
-
+    - var styleguideLogoAsImageForceWidth = "130"
+    - var styleguideLogoHasLink = true
+    - var styleguideLogoLinkHref = "/"
 doctype html
 html(dir="ltr" lang="en" class=htmlClass ? htmlClass : '')
     head
@@ -49,8 +50,6 @@ html(dir="ltr" lang="en" class=htmlClass ? htmlClass : '')
     body(class=bodyClass ? bodyClass : '')
 
         block body
-
-        include ../../../core/templates/includes/prototype-nav
 
         = "\n"
         script(src='/js/bundle.js')

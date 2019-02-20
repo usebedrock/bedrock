@@ -1,0 +1,38 @@
+/* ==========================================================================
+  c-usp
+ ========================================================================== */
+
+.c-usp-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -2.8rem;
+  margin-right: -2.8rem;
+}
+
+.c-usp {
+  display: flex;
+  align-items: flex-start;
+  flex: 1 1 auto;
+  margin: 0 2.8rem 4rem;
+  @media (min-width: 700px) {
+    flex: 0 1 calc(50% - 5.6rem);
+  }
+}
+
+.c-usp__icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-right: 2.4rem;
+  border-radius: 0.2rem;
+  background: $color-primary-yellow;
+
+  svg {
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    left: -1.6rem;
+    top: -1.6rem;
+
+    color: $color-gray-800;
+  }
+}

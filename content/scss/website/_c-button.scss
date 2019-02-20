@@ -1,0 +1,131 @@
+/* ==========================================================================
+  c-button
+ ========================================================================== */
+
+.c-button {
+  appearance: none; // Fix for Mobile Safari
+  text-decoration: none; // to reset <a> element
+  cursor: pointer;
+  border-radius: 0.3rem;
+  padding: 0 2.4rem;
+  height: 4rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-align: center;
+  align-items: center;
+}
+
+a.c-button {
+  display: inline-flex;
+  justify-content: center;
+}
+
+.c-button.c-button--primary {
+  border: none;
+  background: $color-primary-green;
+  color: #FFF;
+
+  svg * {
+    fill: #FFF;
+  }
+
+  &:hover,
+  &:active,
+  &.c-button--active,
+  &:active:focus,
+  &.c-button--active:focus {
+    background: darken($color-primary-green, 15%);
+  }
+}
+
+.c-button.c-button--secondary {
+  border: 2px solid $color-primary-green;
+  background: none;
+  color: $color-primary-green;
+
+  svg * {
+    fill: $color-primary-green;
+  }
+
+  &:hover,
+  &:active,
+  &.c-button--active,
+  &:active:focus,
+  &.c-button--active:focus,
+  &:hover svg *,
+  &:active svg * {
+    color: #fff;
+    fill: #fff;
+    border: none;
+    background: darken($color-primary-green, 15%);
+  }
+}
+
+button.c-button {
+  appearance: none;
+  margin: 0;
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}
+
+.c-button .c-button__content {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.c-button__label {
+  white-space: nowrap;
+}
+
+.o-svg-icon + .c-button__label,
+.c-button__label + .o-svg-icon, {
+  margin-left: 0.8rem;
+}
+
+.c-button:not(.c-button--icon) .o-svg-icon:first-child {
+  margin-left: -0.4rem;
+}
+
+.c-button:not(.c-button--icon) .o-svg-icon:last-child {
+  margin-right: -0.4rem;
+}
+
+/* c-button-link
+  ========================================================================== */
+
+.c-button-link {
+  color: $color-primary-green;
+  .o-svg-icon svg * {
+    fill: $color-primary-green;
+  }
+  &:hover,
+  &:active,
+  &.c-button--active,
+  &:active:focus,
+  &.c-button--active:focus,
+  &:hover svg *,
+  &:active svg * {
+    fill: darken($color-primary-green, 15%);
+    color: darken($color-primary-green, 15%);
+  }
+}
+
+/* c-button toolbar
+  ========================================================================== */
+
+.c-button-toolbar {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -0.4rem;
+  margin-right: -0.4rem;
+
+  .c-button {
+    margin: 0.4rem;
+  }
+}
+

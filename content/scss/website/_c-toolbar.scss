@@ -1,0 +1,38 @@
+/* ==========================================================================
+  c-toolbar
+ ========================================================================== */
+
+ .c-toolbar {
+  width: 100%;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.c-toolbar__left,
+.c-toolbar__right {
+  flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.c-toolbar__left {
+  justify-content: flex-start;
+  .c-toolbar__item {
+    margin-right: 2.4rem;
+    &:only-child {
+      margin: 0;
+    }
+  }
+}
+
+.c-toolbar__right {
+  justify-content: flex-end;
+  .c-toolbar__item {
+    margin-left: 2.4rem;
+    &:only-child {
+      margin: 0;
+    }
+  }
+}

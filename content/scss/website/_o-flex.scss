@@ -1,0 +1,80 @@
+/* ==========================================================================
+    Object: Flex
+    ---
+    Object to make a container use flexbox
+   ========================================================================== */
+
+/* Variables
+   ========================================================================== */
+
+$o-flex-gutter-width: 0.8rem !default;
+
+/* Utility classes
+   ========================================================================== */
+
+.o-flex {
+  display: flex;
+}
+
+.o-flex--vertical {
+  flex-direction: column;
+}
+
+.o-flex--vertical-center {
+  align-items: center;
+}
+
+.o-flex--horizontal-center {
+  justify-content: center;
+}
+
+.o-flex--center {
+  justify-content: center;
+  align-items: center;
+}
+
+.o-flex--justify-between {
+  justify-content: space-between;
+}
+
+.o-flex--justify-around {
+  justify-content: space-around;
+}
+
+.o-flex--justify-end {
+  justify-content: flex-end;
+}
+
+.o-flex--align-start {
+  align-items: flex-start;
+}
+
+.o-flex--align-baseline {
+  align-items: baseline;
+}
+.o-flex--wrap {
+  flex-wrap: wrap;
+}
+
+.o-flex--spaced {
+  & > *:not(:last-child) {
+    margin-right: $o-flex-gutter-width;
+  }
+}
+
+.o-flex--spaced-wide {
+  & > *:not(:last-child) {
+    margin-right: $o-flex-gutter-width * 2;
+  }
+}
+
+/* Flexible items
+   ========================================================================== */
+
+.o-flex__item {
+  flex: 1;
+}
+
+.o-flex__item--shrink {
+  flex: 0 1 0%;
+}

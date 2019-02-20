@@ -72,9 +72,10 @@
     "watchify": "^3.6.0"
   },
   "dependencies": {
-    "autosize": "^4.0.2",
-    "popper.js": "^1.14.4",
     "@shopify/draggable": "^1.0.0-beta.8",
+    "autosize": "^4.0.2",
+    "jungle-css": "^1.0.0",
+    "popper.js": "^1.14.4",
     "tags-input": "^1.1.1"
   },
   "bedrockVersion": "1.16.2"

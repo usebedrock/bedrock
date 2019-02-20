@@ -10,7 +10,11 @@ block body
         .br-styleguide-header
             unless styleguideHideBrand
                 if styleguideLogoAsImage
-                    img.br-styleguide-logo(src=styleguideLogoAsImagePath alt=styleguideLogoAsImageAlt width=styleguideLogoAsImageForceWidth)
+                    if styleguideLogoHasLink
+                        a(href=styleguideLogoLinkHref)
+                            img.br-styleguide-logo(src=styleguideLogoAsImagePath alt=styleguideLogoAsImageAlt width=styleguideLogoAsImageForceWidth)
+                    else
+                        img.br-styleguide-logo(src=styleguideLogoAsImagePath alt=styleguideLogoAsImageAlt width=styleguideLogoAsImageForceWidth)
                 else
                     h1.br-styleguide-brand-heading(class=styleguideBrandClass)
                         a.br-reset-link-styling(href="/styleguide" class=styleguideResetLinkStylingClass) #{projectTitle}

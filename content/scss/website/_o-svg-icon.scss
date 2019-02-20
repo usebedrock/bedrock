@@ -1,0 +1,17 @@
+/* ==========================================================================
+  o-svg-icon
+ ========================================================================== */
+
+.o-svg-icon {
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  vertical-align: middle;
+
+  svg {
+    display: block;
+    height: 100%;
+    width: 100%;
+    fill: $color-gray-800;
+  }
+}

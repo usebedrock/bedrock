@@ -6,10 +6,10 @@ Check out the <a href="https://github.com/mono-company/jungle-css">jungle-css pa
 
 How to use:
 
-    npm i jungle --save
+    npm i jungle-css --save
 
 In your SCSS file:
 
-    @import "node_modules/jungle-css/scss/jungle"
+    @import "node_modules/jungle-css/scss/jungle";
 
 

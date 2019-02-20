@@ -1,0 +1,58 @@
+/* ==========================================================================
+  c-hero
+ ========================================================================== */
+
+.c-hero {
+   padding: 5.6rem 0;
+   display: flex;
+   flex-direction: row-reverse;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   align-items: center;
+
+  .c-hero__content {
+    width: 40%;
+  }
+
+  .c-hero__image {
+    width: 60%;
+    position: relative;
+    left: 10rem;
+
+    img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  .c-hero__subtitle {
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.07rem;
+    color: $color-primary-green;
+  }
+
+}
+
+@media(max-width: 700px) {
+  .c-hero {
+    padding: 0;
+    text-align: center;
+    margin: 0 auto;
+
+    .c-hero__image {
+      width: 70%;
+      margin: 0 auto;
+      left: 0;
+      padding-bottom: 4rem;
+    }
+
+    .c-hero__content {
+      width: 100%;
+    }
+
+    .c-button-toolbar {
+      justify-content: center;
+    }
+  }
+}

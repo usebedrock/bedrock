@@ -1,0 +1,59 @@
+/* ==========================================================================
+  Stylesheet for Jungle
+  ITCSS + BEM
+  ---
+  This SCSS code is inspired by BEM (Block Element Modifier) and ITCSS (Inverted Triangle CSS) methodologies.
+  For BEM Please refer to http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+  For ITCSS Please refer to https://speakerdeck.com/dafed/managing-css-projects-with-itcss
+   ========================================================================== */
+
+/* Settings: preprocessor variables, colors, global settings
+   ========================================================================== */
+
+@import "_s-colors";
+@import "_s-fonts";
+
+/* Generic: CSS reset, box-sizing, global CSS tweaks
+   ========================================================================== */
+
+@import "_normalize";
+
+/* Elements: element selectors, CMS-generated content
+   ========================================================================== */
+
+@import "_e-base";
+
+/* Objects: layout-related CSS, grid, SVG icons frame, flexbox classes
+   ========================================================================== */
+
+@import "_o-container";
+@import "_o-flex";
+@import "_o-grid";
+@import "_o-svg-icon";
+
+/* Components: separately styled components (buttons, form inputs, toolbars...)
+   ========================================================================== */
+
+@import "_c-blog";
+@import "_c-brand";
+@import "_c-button";
+@import "_c-content";
+@import "_c-footer";
+@import "_c-header";
+@import "_c-hero";
+@import "_c-main";
+@import "_c-nav";
+@import "_c-social";
+@import "_c-toolbar";
+@import "_c-usp";
+
+
+    /* Utilities: specific helper classes, overrides
+========================================================================== */
+
+@import "_u-generic";
+@import "_u-spacer";
+
+/* Trumps
+   ========================================================================== */
+

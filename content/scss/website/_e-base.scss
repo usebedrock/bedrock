@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Elements: Base
+   ---
+   Only use elements without selectors when really necessary.
+   ========================================================================== */
+
+$base-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !default;
+$base-font-size: 1.6rem !default;
+$base-line-height: 1.5 !default;
+$base-color: #000;
+$g-base-background: #FFF !default;
+$g-bp1: 400px;
+$g-bp2: 700px;
+$g-bp3: 900px;
+$g-bp4: 1200px;
+
+/* Elements
+   ========================================================================== */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 54.16%; // 13px
+  @media (min-width: $g-bp3) {
+    font-size: 58.33%; // 14px
+  }
+  @media (min-width: $g-bp4) {
+    font-size: 62.5%; // Base 10
+  }
+}
+
+body {
+  font-family: "Inter UI", "Roboto", Arial, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  color: $color-gray-700;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+a {
+  color: $color-primary-green;
+  text-decoration: none;
+}
+
+em, i {
+  font-style: italic;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+/*strong, b {
+  font-weight: $g-headings-font-weight;
+}*/

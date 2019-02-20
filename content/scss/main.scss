@@ -1,4 +1,8 @@
 /* ==========================================================================
+  Start code for Jungle development
+   ========================================================================== */
+
+/* ==========================================================================
   Stylesheet for Jungle
   ITCSS + BEM
   ---
@@ -101,3 +105,67 @@
    ========================================================================== */
 
 @import "_t-mq-debug"; // Remove in production
+
+
+
+// @import "node_modules/jungle-css/scss/jungle";
+
+
+
+/* ==========================================================================
+  Start code for Jungle website
+   ========================================================================== */
+
+/* ==========================================================================
+  Stylesheet for Jungle website
+   ========================================================================== */
+
+/* Settings: preprocessor variables, colors, global settings
+   ========================================================================== */
+
+@import "website/_s-colors";
+@import "website/_s-fonts";
+
+/* Generic: CSS reset, box-sizing, global CSS tweaks
+   ========================================================================== */
+
+@import "website/_normalize";
+
+/* Elements: element selectors, CMS-generated content
+   ========================================================================== */
+
+//@import "website/_e-base";
+
+/* Objects: layout-related CSS, grid, SVG icons frame, flexbox classes
+   ========================================================================== */
+
+@import "website/_o-container";
+@import "website/_o-flex";
+@import "website/_o-grid";
+@import "website/_o-svg-icon";
+
+/* Components: separately styled components (buttons, form inputs, toolbars...)
+   ========================================================================== */
+
+@import "website/_c-blog";
+@import "website/_c-brand";
+//@import "website/_c-button";
+//@import "website/_c-content";
+@import "website/_c-footer";
+@import "website/_c-header";
+@import "website/_c-hero";
+@import "website/_c-main";
+@import "website/_c-nav";
+@import "website/_c-social";
+//@import "website/_c-toolbar";
+@import "website/_c-usp";
+
+
+    /* Utilities: specific helper classes, overrides
+========================================================================== */
+
+@import "website/_u-generic";
+@import "website/_u-spacer";
+
+/* Trumps
+   ========================================================================== */
