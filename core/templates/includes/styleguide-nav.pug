@@ -1,26 +1,29 @@
-div(class=styleguideNavigationHolderClass)
+.br-styleguide-nav-holder(class=styleguideNavigationHolderClass)
 
     each docsCategoryName in config.styleguide.categoryOrder
         if docs.byCategory[docsCategoryName]
-            h4.br-docs-category-name(class=styleguideNavListTitleClass)= docsCategoryName
-            div(class=styleguideNavListWrapperClass)
-                ul(class=styleguideNavListClass)
-                    each doc in docs.byCategory[docsCategoryName]
-                        li(class=styleguideNavListItemClass+' '+`${ "styleguide/docs/" + doc.attributes.filename == pathname ? styleguideNavListItemActiveClass : "" }`)
-                            a(href=`/styleguide/docs/${doc.attributes.filename}.html` class=styleguideNavListItemLinkClass+' '+`${ "styleguide/docs/" + doc.attributes.filename == pathname ? styleguideNavListItemLinkActiveClass : "" }`)
-                                | #{doc.attributes.title}
-
+            .br-docs-category
+                h4.br-docs-category-name(class=styleguideNavListTitleClass)= docsCategoryName
+                .br-docs-category-list-wrapper(class=styleguideNavListWrapperClass)
+                    ul(class=styleguideNavListClass)
+                        each doc in docs.byCategory[docsCategoryName]
+                            li(class=styleguideNavListItemClass+' '+`${ "styleguide/docs/" + doc.attributes.filename == pathname ? styleguideNavListItemActiveClass : "" }`)
+                                a(href=`/styleguide/docs/${doc.attributes.filename}.html` class=styleguideNavListItemLinkClass+' '+`${ "styleguide/docs/" + doc.attributes.filename == pathname ? styleguideNavListItemLinkActiveClass : "" }`)
+                                    | #{doc.attributes.title}
         if docsCategoryName === 'Components' && Object.keys(components.byCategory).length > 0
             each category, categoryName in components.byCategory
-                if Object.keys(components.byCategory).length > 1
-                    h4.br-docs-category-name(class=styleguideNavListTitleClass)= categoryName
-                else
-                    h4.br-docs-category-name(class=styleguideNavListTitleClass) Components
-                div(class=styleguideNavListWrapperClass)
-                    ul(class=styleguideNavListClass)
-                        each group in category
-                            - var groupName = group.docs ? group.docs.attributes.title || group.group.id : group.group.id
-                            li(class=styleguideNavListItemClass+' '+`${ "styleguide/" + group.group.id == pathname ? styleguideNavListItemActiveClass : "" }`)
-                                a(href=`/styleguide/${group.group.id}.html` class=styleguideNavListItemLinkClass+' '+`${ ("styleguide/" + group.group.id) == pathname ? styleguideNavListItemLinkActiveClass : "" }`)
-                                    |  #{groupName}
+                .br-docs-category
+                    if Object.keys(components.byCategory).length > 1
+                        h4.br-docs-category-name(class=styleguideNavListTitleClass)= categoryName
+                    else
+                        h4.br-docs-category-name(class=styleguideNavListTitleClass) Components
+                    .br-docs-category-list-wrapper(class=styleguideNavListWrapperClass)
+                        ul(class=styleguideNavListClass)
+                            each group in category
+                                - var groupName = group.docs ? group.docs.attributes.title || group.group.id : group.group.id
+                                li(class=styleguideNavListItemClass+' '+`${ "styleguide/" + group.group.id == pathname ? styleguideNavListItemActiveClass : "" }`)
+                                    a(href=`/styleguide/${group.group.id}.html` class=styleguideNavListItemLinkClass+' '+`${ ("styleguide/" + group.group.id) == pathname ? styleguideNavListItemLinkActiveClass : "" }`)
+                                        |  #{groupName}
+                                        if group.docs.attributes.containsCustom
+                                            .br-docs-category-marker-custom
 

@@ -5,6 +5,7 @@ const moment = require('moment');
 const marked = require('marked');
 const config = require('../../bedrock.config');
 const paths = require('../paths');
+const beautify = require('js-beautify').html;
 
 function getDefaultLocals() {
   delete require.cache[require.resolve('../discovery/pages')];
@@ -36,20 +37,28 @@ function getDefaultLocals() {
     return fs.readFileSync(svgFileLocation, 'utf8');
   };
 
-  locals.render = function (id, language) {
+  locals.renderCode = function (id, language) {
     const componentFileLocation = path.join(paths.content.templates.components, id + '.pug');
     const pugMarkup = fs.readFileSync(componentFileLocation, 'utf8');
 
     if (!language || language === 'pug') {
       return pugMarkup;
     } else if (language === 'html') {
+
       const indentedPugMarkup = pugMarkup.split('\n').map(line => `    ${line}`).join('\n');
       const markupWithLayout = `extends /../core/templates/layouts/sample\n\nblock content\n${indentedPugMarkup}`;
-      return pug.compile(markupWithLayout, {
+
+      // First compile Pug
+      var a = pug.compile(markupWithLayout, {
         pretty: true,
         basedir: 'content',
         filename: componentFileLocation
       })(locals);
+
+      // Then beautify with JS beautify settings
+      var b = beautify(a, config.prettify);
+      return b;
+
     }
   };
 

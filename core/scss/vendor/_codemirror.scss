@@ -1,5 +1,6 @@
 // Adjusted to use rem instead of px
 
+$br-switch-breakpoint: 800px;
 /* BASICS */
 
 .CodeMirror {
@@ -275,8 +276,13 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
   font-family: inherit;
   font-size: inherit;
   margin: 0;
-  white-space: pre;
-  word-wrap: normal;
+  
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  @media (min-width: $br-switch-breakpoint) {
+    white-space: pre;
+    word-wrap: normal;
+  }
   line-height: inherit;
   color: inherit;
   z-index: 2;

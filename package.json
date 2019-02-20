@@ -1,7 +1,7 @@
 {
-  "name": "bedrock",
-  "version": "1.11.0",
-  "description": "Static site generator to easily make HTML prototypes",
+  "name": "bedrock-material-base",
+  "version": "1.0.0",
+  "description": "Bedrock Material Base",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -87,5 +87,5 @@
     "@material/typography": "^0.44.0",
     "material-components-web": "^0.44.0"
   },
-  "bedrockVersion": "1.14.1"
+  "bedrockVersion": "1.16.0"
 }
