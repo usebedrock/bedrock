@@ -68,9 +68,11 @@ module.exports = {
    *  Unlikely that you need to change this
   */
   prettify: {
+    preserveNewlines: true,
+    inline: '',
     logSuccess: false,
-    indentSize: 2,
     unformatted: ['pre', 'textarea'],
     extraLiners: ['body']
   },
+
 };
