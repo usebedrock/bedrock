@@ -5,8 +5,8 @@
 
 module.exports = {
   /**
-   *  Styleguide generation: existence of this section 
-   *  determines whether the styleguide gets generated 
+   *  Styleguide generation: existence of this section
+   *  determines whether the styleguide gets generated
   */
   styleguide: {
     /**
@@ -14,6 +14,7 @@ module.exports = {
      *  Determines language of code snippets in styleguide
     */
     snippetLanguage: 'html',
+    search: true,
    /**
     *  Path to colors SCSS
     *  We use regexes to parse this file to show the colors in styleguide
