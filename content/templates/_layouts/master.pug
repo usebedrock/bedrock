@@ -11,6 +11,10 @@ block pageVariables
     - var htmlClass = ""
     - var bodyClass = ""
 
+block append styleguideSettings
+    - var styleguideLogoAsImage = true
+    - var styleguideLogoAsImagePath = "/images/bedrock-logo-black.svg"
+
 doctype html
 html(dir="ltr" lang="en" class=htmlClass ? htmlClass : '')
     head
