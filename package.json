@@ -87,5 +87,5 @@
     "@material/typography": "^0.44.0",
     "material-components-web": "^0.44.0"
   },
-  "bedrockVersion": "1.16.0"
+  "bedrockVersion": "1.16.2"
 }

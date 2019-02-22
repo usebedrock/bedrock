@@ -8,12 +8,12 @@ block body
     .br-styleguide-container
 
         .br-styleguide-header
-            unless styleguideHideBrand
-                if styleguideLogoAsImage
+            if styleguideLogoAsImage
+                a(href=styleguideBrandLink?styleguideBrandLink:"")
                     img.br-styleguide-logo(src=styleguideLogoAsImagePath alt=styleguideLogoAsImageAlt width=styleguideLogoAsImageForceWidth)
-                else
-                    h1.br-styleguide-brand-heading(class=styleguideBrandClass)
-                        a.br-reset-link-styling(href="/styleguide" class=styleguideResetLinkStylingClass) #{projectTitle}
+            else
+                h1.br-styleguide-brand-heading(class=styleguideBrandClass)
+                    a.br-reset-link-styling(href=styleguideBrandLink?styleguideBrandLink:"/styleguide" class=styleguideResetLinkStylingClass) #{projectTitle}
 
         if config.styleguide.search
             .br-styleguide-search
@@ -21,7 +21,6 @@ block body
                     include /templates/_includes/styleguide-search-custom-template
                 else
                     input#styleguideSearch(type="search" placeholder=styleguideSearchPlaceholderString class=styleguideInputClass)
-
 
         .br-styleguide-navigation-holder
 
