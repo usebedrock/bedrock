@@ -16,7 +16,9 @@ block body
                     a.br-reset-link-styling(href=styleguideBrandLink?styleguideBrandLink:"/styleguide" class=styleguideResetLinkStylingClass) #{projectTitle}
 
         if config.styleguide.search
-            .br-styleguide-search
+            if styleguideSearchCustomTemplate
+                include /templates/_includes/styleguide-search-custom-template
+            else
                 input#styleguideSearch(type="search" placeholder=styleguideSearchPlaceholderString class=styleguideInputClass)
 
         .br-styleguide-navigation-holder
