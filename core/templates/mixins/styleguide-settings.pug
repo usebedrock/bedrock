@@ -2,8 +2,12 @@ block styleguideSettings
 
     //-
         Styleguide styling
-        In this file, insert the classes that you use for buttons, headings and
-        lists to make your styleguide styled by your project's styles. Meta, right?
+        This file serves as:
+        * The documentation of the different styleguide options
+        * Do not directly modify this file. Instead, add a section where you overwrite the variables in one of your layout templates
+        * To do so, append the block styleguideSettings, usually in master.pug:
+              block append styleguideSettings
+                   - var myOverride = "This is my override"
 
     //-
         Styleguide classes - Buttons
