@@ -8,16 +8,22 @@ block body
     .br-styleguide-container
 
         .br-styleguide-header
-            unless styleguideHideBrand
+            if styleguideBrandCustomTemplate
+                include ../../../content/docs/templates/styleguide-custom-brand-template
+            else
                 if styleguideLogoAsImage
-                    img.br-styleguide-logo(src=styleguideLogoAsImagePath alt=styleguideLogoAsImageAlt width=styleguideLogoAsImageForceWidth)
+                    a(href=styleguideBrandLink?styleguideBrandLink:"")
+                        img.br-styleguide-logo(src=styleguideLogoAsImagePath alt=styleguideLogoAsImageAlt width=styleguideLogoAsImageForceWidth)
                 else
                     h1.br-styleguide-brand-heading(class=styleguideBrandClass)
-                        a.br-reset-link-styling(href="/styleguide" class=styleguideResetLinkStylingClass) #{projectTitle}
+                        a.br-reset-link-styling(href=styleguideBrandLink?styleguideBrandLink:"/styleguide" class=styleguideResetLinkStylingClass) #{projectTitle}
 
         if config.styleguide.search
             .br-styleguide-search
-                input#styleguideSearch(type="search" placeholder=styleguideSearchPlaceholderString class=styleguideInputClass)
+                if styleguideSearchCustomTemplate
+                    include ../../../content/docs/templates/styleguide-custom-search-template
+                else
+                    input#styleguideSearch(type="search" placeholder=styleguideSearchPlaceholderString class=styleguideInputClass)
 
         .br-styleguide-navigation-holder
 
