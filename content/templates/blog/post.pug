@@ -1,0 +1,47 @@
+extends /templates/_layouts/default
+
+block content
+
+    main.c-main
+        section.o-container-vertical
+            .o-container--small
+                .u-spacer-bottom
+                    a.c-button-link(href="../templates/blog-overview.html")
+                        .o-flex.o-flex--vertical-center
+                            .u-spacer-right
+                                .o-svg-icon
+                                    svg(width="24" height="24" viewbox="0 0 24 24")
+                                        path(d="M19 13H5C4.448 13 4 12.552 4 12C4 11.448 4.448 11 5 11H19C19.553 11 20 11.448 20 12C20 12.552 19.553 13 19 13Z")
+                                        path(d="M12 20C11.744 20 11.488 19.902 11.293 19.707L4.29301 12.707C3.90201 12.316 3.90201 11.684 4.29301 11.293L11.293 4.29301C11.684 3.90201 12.316 3.90201 12.707 4.29301C13.098 4.68401 13.098 5.31601 12.707 5.70701L6.41401 12L12.707 18.293C13.098 18.684 13.098 19.316 12.707 19.707C12.512 19.902 12.256 20 12 20Z")
+                            span.u-text-bold Back to overview
+                article.c-blog
+                    .u-text-uppercase Johan Ronsse
+                    .u-text-uppercase.u-text-secondary July 27, 2019
+                    h2.c-blog__title Time for a new quality CSS framework
+                    .c-content
+                        p There are two main schools of thought in CSS frameworks.
+                        p There is the old guard (Foundation/Bootstrap) that is good for entry level work/learning but gives problem on bigger projects due to style leakage and not enough strictness in namespacing.
+                        p  There is a new logic with utility classes (which might get recompiled to a file that only uses these classes). The logic behind this might be sensible but it is too complicated, especially when considering reusing the utility class logic across multiple projects (answer: it doesn’t work).
+                        p  Next to this there is a clear movement to “componentisation” in CSS. The workflow around MVVM frameworks (Vue and Angular) and React all have their ways to prevent style leakage. There are projects like styled-components that make sure that styles don’t leak outside of components.
+                        p  However these projects assume a full-on Javascript dev environment (node) and are too heavy handed. They re-implements parts of CSS and forego the strengths of native CSS.
+                        p It’s very painful to see a re-implementation of CSS in JS that only supports parts of CSS. That means you will eventually be stuck if you go down this route.
+                        p We have always liked a “pick and choose” approach for components. In Bootstrap for example you can take parts out of it that you don’t use (Jumbotron, Badges etc.) and the framework will still function.
+                        p However, Bootstrap suffers from overly complex code. Some parts of Bootstrap feel like somebody wanted to use every language feature of Sass just because they could. In our code we try to avoid mixing and variable mapping because it just leads to difficult to read code.
+                        p In the end if you are trying to debug something you will end up reading the source that generated the code. If the source code is too complex that is no good.
+                        p One can wonder: why use a framework at all? There are of course several reasons. In a “real project” you never have enough time to to the deep work that is necessary to provide a quality user interface.
+                        p If the framework is already focussed on performance and accessibility and used in the right manner, it will help a project tremendously.
+                        p In my opinion, there is space in the “CSS framework market” for a great BEM/ITCSS framework that is well documented, namespaced and tested. What do you think?
+                a.c-button.c-button--secondary
+                    .c-button__label
+                        | Go to Github discussion
+                    svg.o-svg-icon(width="24" height="24" viewbox="0 0 24 24")
+                        path(d="M19 13H5C4.448 13 4 12.552 4 12C4 11.448 4.448 11 5 11H19C19.553 11 20 11.448 20 12C20 12.552 19.553 13 19 13Z")
+                        path(d="M12 20C11.744 20 11.488 19.902 11.293 19.707C10.902 19.316 10.902 18.684 11.293 18.293L17.586 12L11.293 5.70701C10.902 5.31601 10.902 4.68401 11.293 4.29301C11.684 3.90201 12.316 3.90201 12.707 4.29301L19.707 11.293C20.098 11.684 20.098 12.316 19.707 12.707L12.707 19.707C12.512 19.902 12.256 20 12 20Z")
+        section.o-container-vertical
+            .o-container--small
+                .c-author
+                    .c-content
+                        h4 About the author
+                        img.c-author__avatar(src="../images/author.png" alt="Author blog post")
+                        p
+                            | Johan Ronsse is an interface designer who is trying to find the balance between aesthetics and usability. He tweets as @wolfr_2.

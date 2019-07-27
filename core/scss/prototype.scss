@@ -13,8 +13,6 @@ $br-rem-multiplier: 0.625 !default;
 $br-heading-font-weight: 700 !default;
 
 $br-background: #FFF !default;
-$br-color-text: #333 !default;
-$br-color-headings: #000 !default;
 
 $br-default-border-color: #DDD !default;
 $br-default-hover-bg-color: #F0F0F0 !default;
@@ -360,7 +358,6 @@ html.br-prototype-nav-is-open {
   float: left;
   margin: 1rem*$br-rem-multiplier 0;
   padding: 0;
-  color: $br-color-headings;
 }
 
 /* Color swatches
