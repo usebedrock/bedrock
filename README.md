@@ -1,4 +1,5 @@
 # ![Bedrock](https://bedrockapp.org/wp-content/themes/bedrock/images/logo-black.svg)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fusebedrock%2Fbedrock.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fusebedrock%2Fbedrock?ref=badge_shield)
 
 Welcome to Bedrock.
 
@@ -94,6 +95,9 @@ We have used Bedrock on Windows successfully though. If you encounter any Window
 ## License
 
 Bedrock is MIT licensed.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fusebedrock%2Fbedrock.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fusebedrock%2Fbedrock?ref=badge_large)
 
 ## Credits
 
