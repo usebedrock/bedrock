@@ -16,9 +16,9 @@ function autoHumanizedName(filename) {
   let fileNameParts = filename.split("-");
   let humanizedNameParts = [];
   let humanizedName = '';
-  fileNameParts.forEach((fileNamePart) => {
-    // If is not a number
-    if(!(/^\d+$/.test(fileNamePart))) {
+  fileNameParts.forEach((fileNamePart, index) => {
+    // If is not a number and not the first file name part
+    if( (!(/^\d+$/.test(fileNamePart))) || !(index == 0)) {
       // If is not a component category
       if(Object.keys(config.styleguide.componentCategories).indexOf(fileNamePart) === -1) {
         humanizedNameParts.push(fileNamePart);
@@ -26,7 +26,7 @@ function autoHumanizedName(filename) {
     }
   })
 
-  // Final name 
+  // Final name
   humanizedName = humanizedNameParts.join(" ");
   // Capitalize first letter
   return humanizedName.substr(0,1).toUpperCase() + humanizedName.substr(1);
@@ -40,7 +40,7 @@ function discover() {
   if (fs.existsSync(paths.content.templates.patterns)) {
     console.log(chalk.white.bgRed.bold('This project still uses the old `content/templates/_patterns/` directory.\nThis directory has been renamed to `content/templates/_components/`.\nPlease rename the folder in this project.\n'));
   }
-  
+
   if (!config.styleguide) {
     return [];
   }
