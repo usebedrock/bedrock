@@ -4,7 +4,7 @@ include ../mixins/render-page-tree
 - var basePage
 - var navClasses = [ basePage && basePage.states ? 'br-prototype-nav--has-states' : null]
 
-#__prototype-nav.br-prototype-nav(class=navClasses.join(" "))
+#__prototype-nav.br-prototype-nav(aria-hidden="true" class=navClasses.join(" "))
     .br-prototype-nav-inner
         h4.br-prototype-nav-main-heading Prototype navigation
         p.br-prototype-nav-text Press Ctrl + M to toggle this navigation or click <a class="br-prototype-close-nav" href="#">here</a>.
