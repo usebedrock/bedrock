@@ -47,6 +47,7 @@ $prototypeNav
 /**
  * Closes a module based on ID.
  */
+
 function closeModule(moduleId) {
   $(`#${moduleId}`).parents('.br-tree-dir').first()
     .addClass('br-tree-dir--is-collapsed');
@@ -59,6 +60,7 @@ function closeModule(moduleId) {
 /**
  * Opens a module based on ID.
  */
+
 function openModule(moduleId) {
   $(`#${moduleId}`).parents('.br-tree-dir').first()
     .removeClass('br-tree-dir--is-collapsed');
@@ -69,6 +71,7 @@ function openModule(moduleId) {
 /**
  * Determines whether to close or open a module, and then saves the state.
  */
+
 function toggleModule(moduleId) {
   const isClosed = $(`#${moduleId}`).parents('.br-tree-dir').first().hasClass('br-tree-dir--is-collapsed');
   isClosed ? openModule(moduleId) : closeModule(moduleId);
@@ -78,6 +81,7 @@ function toggleModule(moduleId) {
 /**
  * Set up listener for module title clicks.
  */
+
 $moduleLabels.on('click', function () {
   const moduleId = $(this).attr('id');
   toggleModule(moduleId);
