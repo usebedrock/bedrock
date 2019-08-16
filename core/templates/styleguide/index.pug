@@ -7,28 +7,30 @@ block body
 
     .br-styleguide-container
 
-        .br-styleguide-header
-            if styleguideBrandCustomTemplate
-                include ../../../content/docs/templates/styleguide-custom-brand-template
-            else
-                if styleguideLogoAsImage
-                    a(href=styleguideBrandLink?styleguideBrandLink:"")
-                        img.br-styleguide-logo(src=styleguideLogoAsImagePath alt=styleguideLogoAsImageAlt width=styleguideLogoAsImageForceWidth)
+        .br-styleguide-navigation-wrapper-ie
+
+            .br-styleguide-header
+                if styleguideBrandCustomTemplate
+                    include ../../../content/docs/templates/styleguide-custom-brand-template
                 else
-                    h1.br-styleguide-brand-heading(class=styleguideBrandClass)
-                        a.br-reset-link-styling(href=styleguideBrandLink?styleguideBrandLink:"/styleguide" class=styleguideResetLinkStylingClass) #{projectTitle}
+                    if styleguideLogoAsImage
+                        a(href=styleguideBrandLink?styleguideBrandLink:"")
+                            img.br-styleguide-logo(src=styleguideLogoAsImagePath alt=styleguideLogoAsImageAlt width=styleguideLogoAsImageForceWidth)
+                    else
+                        h1.br-styleguide-brand-heading(class=styleguideBrandClass)
+                            a.br-reset-link-styling(href=styleguideBrandLink?styleguideBrandLink:"/styleguide" class=styleguideResetLinkStylingClass) #{projectTitle}
 
-        if config.styleguide.search
-            .br-styleguide-search
-                if styleguideSearchCustomTemplate
-                    include ../../../content/docs/templates/styleguide-custom-search-template
-                else
-                    input#styleguideSearch(type="search" placeholder=styleguideSearchPlaceholderString class=styleguideInputClass)
+            if config.styleguide.search
+                .br-styleguide-search
+                    if styleguideSearchCustomTemplate
+                        include ../../../content/docs/templates/styleguide-custom-search-template
+                    else
+                        input#styleguideSearch(type="search" placeholder=styleguideSearchPlaceholderString class=styleguideInputClass)
 
-        .br-styleguide-navigation-holder
+            .br-styleguide-navigation-holder
 
-            block nav
-                include ../includes/styleguide-nav
+                block nav
+                    include ../includes/styleguide-nav
 
         .br-styleguide-content
             .br-styleguide-content-inner
