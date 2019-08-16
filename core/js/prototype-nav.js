@@ -102,6 +102,7 @@ function saveNavState() {
 
 function openNavigation() {
   $prototypeNav.addClass('br-prototype-nav-open');
+  $prototypeNav.attr('aria-hidden', 'false');
   $html.addClass('br-prototype-nav-is-open');
   navState.isOpen = true;
   saveNavState();
@@ -110,6 +111,7 @@ function openNavigation() {
 function closeNavigation() {
   $prototypeNav.removeClass('br-prototype-nav-open');
   $html.removeClass('br-prototype-nav-is-open');
+  $prototypeNav.attr('aria-hidden', 'true');
   navState.isOpen = false;
   saveNavState();
 }
