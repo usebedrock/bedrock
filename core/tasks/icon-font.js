@@ -15,7 +15,7 @@ const iconFontClassPrefix = config.icons && config.icons.iconFontClassPrefix || 
 const destFolder = path.dirname(config.icons.iconFontPath)
 const fileName = path.basename(config.icons.iconFontPath, path.extname(config.icons.iconFontPath))
 
-const cmd = `fontcustom compile ${paths.content.iconFont.sourceDirectory} --name ${FONT_NAME} --selector=".${iconFontClassPrefix}-{{glyph}}" -h -o ${TMP_DIRECTORY}`;
+const cmd = `npx icon-font-generator ${paths.content.iconFont.sourceDirectory}/*.svg -n ${FONT_NAME} -o ${TMP_DIRECTORY} --html false -j false -p ${iconFontClassPrefix} --normalize --height 768 --types woff,woff2`;
 
 module.exports = function (done) {
 
@@ -38,10 +38,8 @@ module.exports = function (done) {
         .pipe(replace('./', '/fonts/'))
         .pipe(gulp.dest(destFolder)),
       gulp.src([
-          path.join(TMP_DIRECTORY, FONT_NAME + '.eot'),
-          path.join(TMP_DIRECTORY, FONT_NAME + '.svg'),
-          path.join(TMP_DIRECTORY, FONT_NAME + '.ttf'),
-          path.join(TMP_DIRECTORY, FONT_NAME + '.woff')
+          path.join(TMP_DIRECTORY, FONT_NAME + '.woff'),
+          path.join(TMP_DIRECTORY, FONT_NAME + '.woff2')
         ])
         .pipe(gulp.dest(paths.compiled.fonts)),
     ];
