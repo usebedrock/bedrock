@@ -80,7 +80,7 @@ function discover() {
       obj = addPageInfo(obj, obj);
 
       if (obj.children) {
-        obj.children = mapChildren(obj.children, obj);
+        obj.children = mapChildren(obj.children, obj).filter(child => !child.name.startsWith('_'));
       }
 
       return obj;

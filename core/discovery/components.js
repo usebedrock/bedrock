@@ -53,6 +53,10 @@ function discover() {
     const componentName = parts[1];
     const category = componentGroups[groupId];
 
+    if (componentName.startsWith('_')) {
+      return;
+    }
+
     if (!category) {
       componentGroups[groupId] = {
         category: {
