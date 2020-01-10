@@ -33,7 +33,7 @@ module.exports = {
     });
   },
   compile: {
-    styleguide() {
+    styleguide(done) {
       const defaultLocals = getDefaultLocals();
 
       const tasks = Object.keys(defaultLocals.components.byGroup).map(componentGroup => {
@@ -68,9 +68,13 @@ module.exports = {
           .pipe(gulp.dest(paths.dist.styleguide))
       );
 
-      return es.merge.apply(null, tasks);
+      const stream = es.merge.apply(null, tasks);
+
+      stream.on('end', done);
+
+      return stream;
     },
-    docs() {
+    docs(done) {
       const defaultLocals = getDefaultLocals();
 
       const tasks = defaultLocals.docs.allDocs.map(doc => {
@@ -89,7 +93,11 @@ module.exports = {
           .pipe(gulp.dest(paths.dist.docs));
       });
 
-      return es.merge.apply(null, tasks);
+      const stream = es.merge.apply(null, tasks);
+
+      stream.on('end', done);
+
+      return stream;
     },
     content() {
       const templateFilter = filter(function (file) {
