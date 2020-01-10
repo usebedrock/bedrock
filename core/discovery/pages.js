@@ -72,7 +72,9 @@ function movePageStatesToParentPage(obj, index, collection) {
 }
 
 function discover() {
-  const pagesAndFoldersSortedByType = _.chain(dirTree.directoryTree(TEMPLATES_BASE_DIRECTORY, ['.pug']).children)
+  const pagesAndFoldersSortedByType = _.chain(dirTree(TEMPLATES_BASE_DIRECTORY, {
+    extensions: /.pug/
+  }).children)
     .filter(obj => obj.path.charAt(0) !== '_')
     .map(obj => {
       // Root item
