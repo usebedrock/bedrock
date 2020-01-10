@@ -10,7 +10,7 @@ module.exports = function () {
     .pipe(bro({
       debug: true,
       transform: [
-        babelify.configure({ presets: ['es2015'] }),
+        babelify.configure({ presets: ['@babel/preset-env'] }),
       ]
     }))
     .pipe(rename('bundle.js'))
