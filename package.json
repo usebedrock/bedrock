@@ -20,9 +20,9 @@
   },
   "homepage": "https://github.com/mono-company/bedrock#readme",
   "devDependencies": {
-    "autoprefixer": "^6.0.3",
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
+    "autoprefixer": "^9.7.3",
     "babelify": "^7.2.0",
     "browser-sync": "^2.26.7",
     "browserify": "^16.2.3",
