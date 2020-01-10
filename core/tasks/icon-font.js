@@ -4,9 +4,10 @@ const replace = require('gulp-replace');
 const path = require('path');
 const es = require('event-stream');
 const exec = require('child_process').exec;
+const browserSync = require('browser-sync');
+const mkdirp = require('mkdirp');
 const paths = require('../paths');
 const config = require('../../bedrock.config');
-const browserSync = require('browser-sync');
 
 const FONT_NAME = 'icon-font';
 const TMP_DIRECTORY = './icon-font-tmp';
@@ -22,6 +23,8 @@ module.exports = function (done) {
   if (!config.icons.generateIconFont) {
     return done();
   }
+
+  mkdirp.sync(TMP_DIRECTORY);
 
   exec(cmd, function (err, stdout, stderr) {
     if (stdout.includes('error')) {
