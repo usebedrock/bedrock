@@ -26,29 +26,22 @@ gulp.task('bundle', bundle);
 gulp.task('icon-font', iconFont);
 gulp.task('lint', linter);
 
-gulp.task('templates:compile', config.styleguide ?
-  ['templates:compile:content', 'templates:compile:styleguide', 'templates:compile:docs'] :
-  ['templates:compile:content']
-);
 gulp.task('templates:compile:content', templates.compile.content);
 gulp.task('templates:compile:styleguide', templates.compile.styleguide);
 gulp.task('templates:compile:docs', templates.compile.docs);
 
+gulp.task('templates:compile', config.styleguide ?
+  gulp.parallel('templates:compile:content', 'templates:compile:styleguide', 'templates:compile:docs') :
+  'templates:compile:content'
+);
+
 gulp.task('watch', watch);
+gulp.task('copy', gulp.parallel('copy:images', 'copy:fonts', 'copy:resources', 'copy:favicon'));
+gulp.task('compile-all', gulp.parallel('templates:clean','icon-font', 'bundle', 'sass', 'copy'));
 
-gulp.task('copy', ['copy:images', 'copy:fonts', 'copy:resources', 'copy:favicon']);
-gulp.task('compile-all', ['templates:clean','icon-font', 'bundle', 'sass', 'copy']);
-
-gulp.task('build', function () {
-  runSequence(
-    ['compile-all', 'templates:compile'],
-    'copy:compiledToDist',
-    function () {
-      console.log('------------\n');
-      console.log('Build finished. Compiled files can be found in the dist/ directory.');
-      process.exit(0);
-    }
-  )
+gulp.task('build', gulp.series('compile-all', 'templates:compile'), 'copy:compiledToDist', function (done) {
+  console.log('------------\n');
+  console.log('Build finished. Compiled files can be found in the dist/ directory.');
+  process.exit(0);
 });
-gulp.task('browser-sync', ['server', 'compile-all', 'watch'], browserSync);
-gulp.task('default', ['browser-sync']);
+gulp.task('default', gulp.parallel('server', 'compile-all', 'watch', browserSync));
