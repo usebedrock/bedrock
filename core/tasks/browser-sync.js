@@ -1,7 +1,7 @@
 const browserSync = require('browser-sync');
 const path = require('path');
 const paths = require('../paths');
-const config = require('../../bedrock.config');
+const config = require('../discovery/config');
 
 module.exports = function () {
   return browserSync.init({

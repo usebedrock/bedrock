@@ -9,7 +9,7 @@ const _ = require('lodash');
 const paths = require('../paths');
 const pug = require('pug');
 const beautify = require('js-beautify').html;
-const config = require('../../bedrock.config');
+const config = require('./config');
 const locals = require('../templates/locals');
 
 module.exports = {

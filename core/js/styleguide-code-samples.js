@@ -1,7 +1,7 @@
 const $ = require('jquery');
 const Clipboard = require('clipboard');
 const Codemirror = require('codemirror');
-const config = require('../../bedrock.config');
+const config = require('../discovery/config');
 //require('codemirror/mode/javascript/javascript');
 require('codemirror/mode/pug/pug');
 require('codemirror/mode/xml/xml');

@@ -1,7 +1,7 @@
 'use strict';
 
 const path = require('path');
-const config = require('./../bedrock.config');
+const config = require('./discovery/config');
 
 const contentPath = 'content/';
 const corePath = 'core/';
