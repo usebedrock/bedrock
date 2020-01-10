@@ -69,4 +69,8 @@ module.exports = {
     unformatted: ['pre', 'textarea'],
     extraLiners: ['body']
   },
+
+  express: {
+    port: 8000,
+  },
 };

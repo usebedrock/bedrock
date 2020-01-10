@@ -99,11 +99,8 @@ module.exports = function (done) {
     }
   });
 
-  portfinder.getPort((err, port) => {
-    app.listen(port, function () {
-      global.expressPort = port;
-      console.log(`Express server listening on port ${port}`);
-      done();
-    });
+  app.listen(config.express.port, function () {
+    console.log(`Express server listening on port ${config.express.port}`);
+    done();
   });
 };
