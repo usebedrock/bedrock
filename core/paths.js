@@ -43,7 +43,8 @@ module.exports = {
       tests: path.join(contentPath, 'linter/**/*.js'),
     },
     js: {
-      entryFile: path.join(contentPath, 'js/index.js')
+      entryFile: path.join(contentPath, 'js/index.js'),
+      allFiles: path.join(contentPath, 'js/**/*.js'),
     },
     icons: {
       sourceDirectory: path.join(contentPath, 'icons'),
