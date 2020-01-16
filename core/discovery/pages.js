@@ -75,7 +75,7 @@ function discover() {
   const pagesAndFoldersSortedByType = _.chain(dirTree(TEMPLATES_BASE_DIRECTORY, {
     extensions: /.pug/
   }).children)
-    .filter(obj => obj.path.charAt(0) !== '_')
+    .filter(obj => !obj.name.startsWith('_'))
     .map(obj => {
       // Root item
       obj.parents = []
