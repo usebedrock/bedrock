@@ -1,1 +1,1 @@
-require('../../core/js/index');
+import '../../core/js/index';
