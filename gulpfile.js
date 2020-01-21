@@ -11,7 +11,6 @@ const copy = require('./core/tasks/copy');
 const watch = require('./core/tasks/watch');
 const server = require('./core/tasks/server');
 const iconFont = require('./core/tasks/icon-font');
-const linter = require('./core/tasks/linter');
 const config = require('./bedrock.config');
 
 gulp.task('templates:clean', templates.clean);
@@ -24,7 +23,6 @@ gulp.task('copy:resources', copy.resources);
 gulp.task('copy:compiledToDist', copy.compiledToDist);
 gulp.task('bundle', bundle);
 gulp.task('icon-font', iconFont);
-gulp.task('lint', linter);
 
 gulp.task('templates:compile', config.styleguide ?
   ['templates:compile:content', 'templates:compile:styleguide', 'templates:compile:docs'] :
