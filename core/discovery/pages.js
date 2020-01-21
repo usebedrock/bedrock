@@ -10,6 +10,7 @@ const TEMPLATES_MODULE_DIRECTORY = paths.content.templates.modulesPath;
 
 function mapChildren(children, parent) {
   children = children.map((obj) => {
+    obj.path = obj.path.replace(TEMPLATES_BASE_DIRECTORY, '');
     obj = addPageInfo(obj, parent);
 
     if (obj.children) {
@@ -79,6 +80,7 @@ function discover() {
     .map(obj => {
       // Root item
       obj.parents = []
+      obj.path = obj.path.replace(TEMPLATES_BASE_DIRECTORY, '');
       obj = addPageInfo(obj, obj);
 
       if (obj.children) {
