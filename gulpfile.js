@@ -39,7 +39,7 @@ gulp.task('watch', watch);
 gulp.task('copy', gulp.parallel('copy:images', 'copy:fonts', 'copy:resources', 'copy:favicon'));
 gulp.task('compile-all', gulp.parallel('templates:clean','icon-font', 'bundle', 'sass', 'copy'));
 
-gulp.task('build', gulp.series('compile-all', 'templates:compile'), 'copy:compiledToDist', function (done) {
+gulp.task('build', gulp.series('compile-all', 'templates:compile', 'copy:compiledToDist'), function (done) {
   console.log('------------\n');
   console.log('Build finished. Compiled files can be found in the dist/ directory.');
   process.exit(0);
