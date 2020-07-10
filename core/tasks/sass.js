@@ -14,7 +14,7 @@ var svgIconClassPrefix = config.icons && config.icons.svgIconClassPrefix || 'svg
 
 module.exports = function () {
   const processors = [
-    autoprefixer({browsers: ['last 2 versions']}) // IE10+
+    autoprefixer()
   ];
 
   return gulp.src([
