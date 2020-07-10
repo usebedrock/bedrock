@@ -1,5 +1,5 @@
 The MIT License (MIT)
-Copyright (c) <2015-2018> <Mono Company BVBA>
+Copyright (c) <2015-2020> <Mono Company BVBA>
 
 This license pertains to Bedrock, the software, as described on http://bedrock.mono.company, NOT to any content created with Bedrock.
 
