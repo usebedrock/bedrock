@@ -56,7 +56,7 @@
     "icon-font-generator": "^2.1.10",
     "jquery": "^3.4.1",
     "js-beautify": "^1.10.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "marked": "^0.8.0",
     "mkdirp": "^0.5.1",
     "moment": "^2.20.1",
