@@ -54,7 +54,7 @@
     "gulp-util": "^3.0.7",
     "gulp-watch": "^5.0.1",
     "icon-font-generator": "^2.1.10",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "js-beautify": "^1.10.2",
     "lodash": "^4.17.15",
     "marked": "^0.8.0",
