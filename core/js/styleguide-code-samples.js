@@ -1,10 +1,10 @@
-const $ = require('jquery');
-const Clipboard = require('clipboard');
-const Codemirror = require('codemirror');
-const config = require('../discovery/config');
-//require('codemirror/mode/javascript/javascript');
-require('codemirror/mode/pug/pug');
-require('codemirror/mode/xml/xml');
+import $ from 'jquery';
+import Clipboard from 'clipboard';
+import Codemirror from 'codemirror';
+import 'codemirror/mode/pug/pug';
+import 'codemirror/mode/xml/xml';
+
+import config from '../discovery/config';
 
 const $codeHolders = $('.br-sample-code');
 const $codeBlocks = $('.br-sample-markup');

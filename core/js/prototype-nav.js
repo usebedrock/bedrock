@@ -1,6 +1,7 @@
-const $ = require('jquery');
-const packageJson = require('../../package.json');
-const config = require('../discovery/config');
+import $ from 'jquery';
+
+import packageJson from '../../package.json';
+import config from '../discovery/config';
 
 const ACTIVATION_KEYCODE = 77; // 'M' key or 'B' key for Windows
 const ACTIVATION_KEYCODE_WINDOWS = 66; // 'M' key or 'B' key for Windows
