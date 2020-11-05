@@ -10,6 +10,7 @@ const TEMPLATES_MODULE_DIRECTORY = paths.content.templates.modulesPath;
 
 function mapChildren(children, parent) {
   children = children.map((obj) => {
+    obj.path = obj.path.replace(TEMPLATES_BASE_DIRECTORY, '');
     obj = addPageInfo(obj, parent);
 
     if (obj.children) {
@@ -72,11 +73,14 @@ function movePageStatesToParentPage(obj, index, collection) {
 }
 
 function discover() {
-  const pagesAndFoldersSortedByType = _.chain(dirTree.directoryTree(TEMPLATES_BASE_DIRECTORY, ['.pug']).children)
-    .filter(obj => obj.path.charAt(0) !== '_')
+  const pagesAndFoldersSortedByType = _.chain(dirTree(TEMPLATES_BASE_DIRECTORY, {
+    extensions: /.pug/
+  }).children)
+    .filter(obj => !obj.name.startsWith('_'))
     .map(obj => {
       // Root item
       obj.parents = []
+      obj.path = obj.path.replace(TEMPLATES_BASE_DIRECTORY, '');
       obj = addPageInfo(obj, obj);
 
       if (obj.children) {

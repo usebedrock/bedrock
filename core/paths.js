@@ -1,7 +1,7 @@
 'use strict';
 
 const path = require('path');
-const config = require('./../bedrock.config');
+const config = require('./discovery/config');
 
 const contentPath = 'content/';
 const corePath = 'core/';
@@ -39,7 +39,8 @@ module.exports = {
       data: path.join(contentPath, 'data/*')
     },
     js: {
-      entryFile: path.join(contentPath, 'js/index.js')
+      entryFile: path.join(contentPath, 'js/index.js'),
+      allFiles: path.join(contentPath, 'js/**/*.js'),
     },
     icons: {
       sourceDirectory: path.join(contentPath, 'icons'),
