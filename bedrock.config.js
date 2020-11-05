@@ -47,30 +47,5 @@ module.exports = {
     iconFontPath: "./content/scss/_icon-font.scss",
     svgIconClassPrefix: 'o-svg-icon',
     iconFontClassPrefix: 'if'
-  },
-  /**
-   *  Pug config
-   *  Unlikely that you need to change this
-  */
-  pug: {
-    pretty: true,
-    basedir: "./content"
-  },
-  /**
-   *  Prettify config
-   *  Unlikely that you need to change this
-  */
-  prettify: {
-    indentWithTabs: true,
-    preserveNewlines: true,
-    inline: '',
-    logSuccess: false,
-    indentSize: 2,
-    unformatted: ['pre', 'textarea'],
-    extraLiners: ['body']
-  },
-
-  express: {
-    port: 8000,
-  },
+  }
 };
