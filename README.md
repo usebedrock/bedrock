@@ -10,7 +10,7 @@ For the full documentation, please check out [the Bedrock website](https://bedro
 
 ## Basic requirements
 
-* First, make sure you have Node 10 or later installed. You can find the latest version of Node at [Nodejs.org](https://nodejs.org/en/). Go for the LTS version.
+* First, make sure you have Node 14 or later installed. You can find the latest version of Node at [Nodejs.org](https://nodejs.org/en/). Go for the LTS version.
 
 ## Using Bedrock to make prototypes
 
