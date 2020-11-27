@@ -26,25 +26,6 @@ Here is the series of commands to use:
     npm install
     npm start
 
-## Bedrock bases
-
-For the Bootstrap 4 base, use the following commands:
-
-    npm i -g degit
-    degit usebedrock/bedrock#bootstrap4base my-bootstrap-project
-    cd my-bootstrap-project/
-    npm install
-    npm start
-
-For Material design, use the following:
-
-    npm i -g degit
-    degit usebedrock/bedrock#materialbase my-material-project
-    cd my-material-project/
-    npm install
-    npm start
-
-
 ## Contributing to the Bedrock project
 
 Read the active issues on <a href="https://github.com/usebedrock/bedrock/issues">Github</a>.
