@@ -36,7 +36,6 @@ $br-styleguide-content-padding-right: 2.4rem*$br-rem-multiplier !default;
 $br-styleguide-content-padding-bottom: 2.4rem*$br-rem-multiplier !default;
 $br-styleguide-content-padding-left: 4.8rem*$br-rem-multiplier !default;
 
-$br-prototype-nav-width: 250px; // Keep this in px please, otherwise it gets buggy
 
 @import "../../content/scss/br-variables-override";
 
@@ -47,15 +46,11 @@ $br-prototype-nav-width: 250px; // Keep this in px please, otherwise it gets bug
 .br-styleguide-default-styles-active {
 
   height: 100%;
-  position: static !important; // Override any “kill bouncy scroll” type code
-  @media (min-width: $br-switch-breakpoint) {
-    position: relative !important;
-  }
+  position: static;
 
   body {
     height: 100%;
     overflow: visible !important; // Override any utility classes killing scroll
-    position: static !important; // Override any “kill bouncy scroll” type code
     width: 100%;
     margin: 0;
     padding: 0;
@@ -96,24 +91,29 @@ html.br-styleguide,
   margin: 0;
 }
 
+.br-prototype-wrapper {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.br-prototype-content {
+  height: 100%;
+  flex: 1 1 100%;
+  overflow: auto;
+}
+
 html.br-prototype-nav-is-open {
   position: relative;
-  left: $br-prototype-nav-width;
-  width: calc(100% - #{$br-prototype-nav-width});
 }
 
 .br-prototype-nav {
   background-color: #FFF;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
   line-height: 1.5;
   z-index: 2000;
-  transform: translateX(-100%);
-  width: $br-prototype-nav-width;
+  width: 250px;
   overflow: hidden;
-  display: flex;
+  display: none;
   flex-direction: column;
   text-align: left;
   .br-prototype-nav-inner {
@@ -123,7 +123,7 @@ html.br-prototype-nav-is-open {
   }
 
   &.br-prototype-nav-open {
-    transform: translateX(0);
+    display: block;
     box-shadow: 0.2rem*$br-rem-multiplier 0 0.5rem*$br-rem-multiplier rgba(#000, 0.3);
   }
 }
@@ -565,6 +565,7 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
 
 
 .br-styleguide-container {
+  flex: 1 1 100%;
   height: 100%;
   display: flex;
 

@@ -37,9 +37,11 @@ html(dir="ltr" lang="en" class=htmlClass ? htmlClass : '')
 
     body(class=bodyClass ? bodyClass : '')
 
-        block body
+        .br-prototype-wrapper
+            include ../../../core/templates/includes/prototype-nav
+            .br-prototype-content
+                block body
 
-        include ../../../core/templates/includes/prototype-nav
 
         = "\n"
         script(src='/js/bundle.js')
