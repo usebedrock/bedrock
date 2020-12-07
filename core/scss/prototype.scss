@@ -116,6 +116,7 @@ html.br-prototype-nav-is-open {
   display: none;
   flex-direction: column;
   text-align: left;
+  height: 100%;
   .br-prototype-nav-inner {
     padding: 2rem*$br-rem-multiplier;
     overflow: hidden;
@@ -123,7 +124,7 @@ html.br-prototype-nav-is-open {
   }
 
   &.br-prototype-nav-open {
-    display: block;
+    display: flex;
     box-shadow: 0.2rem*$br-rem-multiplier 0 0.5rem*$br-rem-multiplier rgba(#000, 0.3);
   }
 }
