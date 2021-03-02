@@ -1,6 +1,6 @@
 {
   "name": "bedrock",
-  "version": "1.26.2",
+  "version": "1.26.3",
   "description": "Static site generator to easily make HTML prototypes",
   "main": "gulpfile.js",
   "scripts": {
