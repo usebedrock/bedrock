@@ -331,7 +331,7 @@ html.br-prototype-nav-is-open {
   margin: 1rem*$br-rem-multiplier 0;
   position: relative;
   overflow-y: hidden;
-  overflow-x: scroll;
+  overflow-x: auto;
   resize: both;
 }
 
