@@ -16,7 +16,7 @@ const iconFontClassPrefix = config.icons && config.icons.iconFontClassPrefix || 
 const destFolder = path.dirname(config.icons.iconFontPath)
 const fileName = path.basename(config.icons.iconFontPath, path.extname(config.icons.iconFontPath))
 
-const cmd = `npx icon-font-generator ${paths.content.iconFont.sourceDirectory}/*.svg -n ${FONT_NAME} -o ${TMP_DIRECTORY} --html false -j false -p ${iconFontClassPrefix} --normalize --height 768 --types woff,woff2`;
+const cmd = `npx icon-font-generator ${paths.content.iconFont.sourceDirectory}/*.svg -n ${FONT_NAME} -o ${TMP_DIRECTORY} --html false -j false -p ${iconFontClassPrefix} --normalize --height 768 --descent 128 --types woff,woff2`;
 
 module.exports = function (done) {
 
