@@ -23,3 +23,11 @@ block content
 
     each component in componentGroup.components
         +sample(component)
+
+    if componentGroup.docsFooter
+        .br-componentgroup-footer-wrapper
+            if componentGroup.docsFooter.attributes
+                h1.br-componentgroup-footer(class=styleguideComponentGroupHeaderClass)= componentGroup.docsFooter.attributes.title || ""
+
+            .br-content(class=styleguideRichContentClass)
+                != componentGroup.docsFooter.body
