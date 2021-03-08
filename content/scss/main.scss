@@ -7,3 +7,13 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+
+// Default styles powered by https://watercss.kognise.dev/
+// Feel free to remove this line, this just to give default Bedrock a nicer look.
+// Typically you will use your own CSS framework.
+@import "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css";
+
+body {
+  max-width: none; // override a default style of water
+}
