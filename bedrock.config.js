@@ -35,6 +35,7 @@ module.exports = {
     componentCategories: {
       aov: 'Overviews',
       c: 'Components',
+      cc: 'Custom components category',
     }
   },
   /**

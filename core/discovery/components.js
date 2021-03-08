@@ -111,6 +111,18 @@ function discover() {
     }
 
     componentGroups[groupId].components.push(componentData);
+
+    try {
+      const docsPath = path.join(TEMPLATES_BASE_DIRECTORY, groupId, '_docs-footer.md');
+      const docsContent = fs.readFileSync(docsPath, 'utf8');
+      const parsedDocs = frontMatter(docsContent);
+
+      parsedDocs.body = marked(parsedDocs.body);
+      componentGroups[groupId].docsFooter = parsedDocs;
+    } catch (err) {
+
+    }
+
   }
 
   return {
