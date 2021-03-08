@@ -362,8 +362,9 @@ html.br-prototype-nav-is-open {
 }
 
 .br-color-swatch-item {
+  min-width: 150px;
   display: inline-block;
-  margin-right: 1rem*$br-rem-multiplier;
+  margin: 0 1rem*$br-rem-multiplier 1rem*$br-rem-multiplier 0;
   padding: 1rem*$br-rem-multiplier;
   text-align: center;
 }
