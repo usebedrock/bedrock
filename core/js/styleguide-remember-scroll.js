@@ -15,11 +15,6 @@ for (var selector in scrollPositions) {
   $(selector).scrollTop(+scrollPositions[selector]);
 }
 
-// Export function to store selector in map
-module.exports = function (selector) {
-  scrollPositions[selector] = $(selector).scrollTop() || 0;
-};
-
 // Save positions on unload
 window.onbeforeunload = function () {
   for (var selector in scrollPositions) {
@@ -27,3 +22,7 @@ window.onbeforeunload = function () {
   }
   sessionStorage.setItem(SCROLL_STORAGE_KEY, JSON.stringify(scrollPositions));
 };
+
+export default function (selector) {
+  scrollPositions[selector] = $(selector).scrollTop() || 0;
+}

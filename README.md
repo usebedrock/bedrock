@@ -10,7 +10,7 @@ For the full documentation, please check out [the Bedrock website](https://bedro
 
 ## Basic requirements
 
-* First, make sure you have Node 10 or later installed. You can find the latest version of Node at [Nodejs.org](https://nodejs.org/en/). Go for the LTS version.
+* First, make sure you have Node 14 or later installed. You can find the latest version of Node at [Nodejs.org](https://nodejs.org/en/). Go for the LTS version.
 
 ## Using Bedrock to make prototypes
 
@@ -25,25 +25,6 @@ Here is the series of commands to use:
     cd my-bedrock-project/
     npm install
     npm start
-
-## Bedrock bases
-
-For the Bootstrap 4 base, use the following commands:
-
-    npm i -g degit
-    degit usebedrock/bedrock#bootstrap4base my-bootstrap-project
-    cd my-bootstrap-project/
-    npm install
-    npm start
-
-For Material design, use the following:
-
-    npm i -g degit
-    degit usebedrock/bedrock#materialbase my-material-project
-    cd my-material-project/
-    npm install
-    npm start
-
 
 ## Contributing to the Bedrock project
 

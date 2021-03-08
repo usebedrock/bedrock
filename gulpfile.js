@@ -30,7 +30,7 @@ gulp.task('templates:compile:docs', templates.compile.docs);
 
 gulp.task('templates:compile', config.styleguide ?
   gulp.parallel('templates:compile:content', 'templates:compile:styleguide', 'templates:compile:docs') :
-  'templates:compile:content'
+  gulp.series('templates:compile:content')
 );
 
 gulp.task('watch', watch);
