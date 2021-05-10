@@ -133,30 +133,3 @@ $(window).on('keyup', function (e) {
     toggleNavigation();
   }
 });
-
-
-/**
- * Multilanguage logic
- */
- function displayLanguageLabels(lang) {
-  // Switch label on this page
-  $('[data-lang][data-lang!='+lang+']').css('display', 'none')
-  $('[data-lang='+lang+']').css('display', 'inline-block')
- }
-
- function checkLangSelected(lang) {
-  $('#'+lang+'.br-prototype-langselector').prop('checked', true);
- }
-
-$('.br-prototype-langselector').on('change',function() {
-  var newLang = this.value;
-  // Switch label on this page
-  displayLanguageLabels(newLang)
-  // Persist language selection
-  navState.langSelected = newLang;
-  saveNavState();
-});
-
-// Execute on each page refresh
-checkLangSelected(navState.langSelected);
-displayLanguageLabels(navState.langSelected);
