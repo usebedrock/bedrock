@@ -18,11 +18,9 @@ const paths = require('../paths');
 const locals = require('../templates/locals');
 const docs = require('../discovery/docs');
 
-
 function getDefaultLocals() {
   const defaultLocals = locals.getDefaultLocals();
   defaultLocals.docs = docs.discover();
-
   return defaultLocals;
 }
 
