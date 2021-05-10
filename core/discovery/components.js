@@ -98,7 +98,6 @@ function discover() {
       }
     };
 
-
     try {
       const componentDocsPath = path.join(TEMPLATES_BASE_DIRECTORY, groupId, componentName + '.md');
       const componentDocsContent = fs.readFileSync(componentDocsPath, 'utf8');
