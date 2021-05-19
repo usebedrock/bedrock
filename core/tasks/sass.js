@@ -18,7 +18,7 @@ module.exports = function () {
   ];
 
   return gulp.src([
-      paths.content.scss.allMainFiles,
+      paths.content.scss.all,
       paths.core.scss.prototype
     ])
     // Inject config svgIconPrefix in scss
