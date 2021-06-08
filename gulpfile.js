@@ -22,7 +22,8 @@ gulp.task('copy:favicon', copy.favicon);
 gulp.task('copy:resources', copy.resources);
 gulp.task('copy:scripts', copy.scripts);
 gulp.task('copy:compiledToDist', copy.compiledToDist);
-gulp.task('bundle', bundle);
+gulp.task('bundle:clientBundle', bundle.clientBundle);
+gulp.task('bundle:prototypeBundle', bundle.prototypeBundle);
 gulp.task('icon-font', iconFont);
 
 gulp.task('templates:compile:content', templates.compile.content);
@@ -36,7 +37,7 @@ gulp.task('templates:compile', config.styleguide ?
 
 gulp.task('watch', watch);
 gulp.task('copy', gulp.parallel('copy:images', 'copy:fonts', 'copy:resources', 'copy:scripts', 'copy:favicon'));
-gulp.task('compile-all', gulp.parallel('templates:clean','icon-font', 'bundle', 'sass', 'copy'));
+gulp.task('compile-all', gulp.parallel('templates:clean','icon-font', 'bundle:clientBundle', 'bundle:prototypeBundle', 'sass', 'copy'));
 
 gulp.task('build', gulp.series('compile-all', 'templates:compile', 'copy:compiledToDist'), function (done) {
   console.log('------------\n');
