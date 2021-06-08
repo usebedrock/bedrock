@@ -30,7 +30,7 @@
     "chalk": "^3.0.0",
     "cheerio": "^1.0.0-rc.5",
     "clipboard": "^1.5.3",
-    "codemirror": "^5.59.4",
+    "codemirror": "^5.61.1",
     "del": "^5.1.0",
     "directory-tree": "^2.2.7",
     "event-stream": "^4.0.1",
@@ -62,7 +62,8 @@
     "natives": "^1.1.6",
     "node-notifier": "^6.0.0",
     "postcss": "^7.0.35",
-    "pug": "^2.0.4",
+    "prismjs": "^1.23.0",
+    "pug": "^3.0.2",
     "run-sequence": "^2.2.1"
   },
   "dependencies": {}
