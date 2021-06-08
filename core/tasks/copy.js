@@ -15,6 +15,10 @@ module.exports = {
     return gulp.src(paths.content.assets.resources)
       .pipe(gulp.dest(paths.compiled.assets.resources));
   },
+  scripts() {
+    return gulp.src(paths.content.js.separated)
+      .pipe(gulp.dest(paths.compiled.js));
+  },
   favicon() {
     return gulp.src(paths.content.assets.favicon)
       .pipe(gulp.dest(paths.compiled.path));
