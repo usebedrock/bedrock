@@ -41,6 +41,7 @@ module.exports = {
     js: {
       entryFile: path.join(contentPath, 'js/index.js'),
       allFiles: path.join(contentPath, 'js/**/*.js'),
+      separated: path.join(contentPath, 'js/*.js')
     },
     icons: {
       sourceDirectory: path.join(contentPath, 'icons'),
