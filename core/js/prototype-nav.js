@@ -14,9 +14,10 @@ let navState = {
   langSelected: config.languages && config.languages.find((lang) => lang.default).id
 };
 
-const $html = $('html');
-const $prototypeNav = $('#__prototype-nav');
-const $moduleLabels = $prototypeNav.find(`.br-tree-dir-title`);
+const $html = document.documentElement;
+const $prototypeNav = document.getElementById('__prototype-nav');
+const $moduleLabels = document.querySelector('__prototype-nav').querySelectorAll('.br-tree-dir-title')
+
 
 try {
   const savedState = JSON.parse(localStorage.getItem(NAV_STATE_STORAGE_KEY));
@@ -26,24 +27,27 @@ try {
 }
 
 // Set up unique IDs for all module titles
-$prototypeNav
-  .find('.br-tree-dir-title')
-  .each(function () {
-    let moduleIds = $(this)
-      .parentsUntil('.br-bordered-list')
-      .children('.br-tree-dir-title')
-      .map(function () {
-        return $(this).text();
-      })
-      .get();
+$moduleLabels.forEach(item =>  myFunc(currentValue, index) ){
+ console.log("Array Current Index is: " + index + " :: Value is: " + currentValue + item); 
+});
 
-    // Replace space by -
-    moduleIds = moduleIds.map((moduleId) => {
-      return moduleId.split(" ").join("-")
-    })
 
-    $(this).attr('id', moduleIds.join('-'));
-  });
+  // .each(function () {
+  //   let moduleIds = $(this)
+  //     .parentsUntil('.br-bordered-list')
+  //     .children('.br-tree-dir-title')
+  //     .map(function () {
+  //       return $(this).text();
+  //     })
+  //     .get();
+  //
+  //   // Replace space by -
+  //   moduleIds = moduleIds.map((moduleId) => {
+  //     return moduleId.split(" ").join("-")
+  //   })
+  //
+  //   $(this).attr('id', moduleIds.join('-'));
+  // });
 
 /**
  * Closes a module based on ID.
@@ -51,7 +55,7 @@ $prototypeNav
 
 function closeModule(moduleId) {
   $(`#${moduleId}`).parents('.br-tree-dir').first()
-    .addClass('br-tree-dir--is-collapsed');
+    .classList.add('br-tree-dir--is-collapsed');
 
   if(navState.closedModules.indexOf(moduleId) === -1) {
     navState.closedModules.push(moduleId);
@@ -83,10 +87,7 @@ function toggleModule(moduleId) {
  * Set up listener for module title clicks.
  */
 
-$moduleLabels.on('click', function () {
-  const moduleId = $(this).attr('id');
-  toggleModule(moduleId);
-});
+//$moduleLabels.addEventListener('click', function() { let moduleId = $(this).attr('id'); toggleModule(moduleId); }, false);
 
 // Handle state on page load: open/close nav and close saved modules
 if (navState.isOpen) {
@@ -102,17 +103,17 @@ function saveNavState() {
 }
 
 function openNavigation() {
-  $prototypeNav.addClass('br-prototype-nav-open');
-  $prototypeNav.attr('aria-hidden', 'false');
-  $html.addClass('br-prototype-nav-is-open');
+  $prototypeNav.classList.add('br-prototype-nav-open');
+  $prototypeNav.setAttribute('aria-hidden', 'false');
+  $html.classList.add('br-prototype-nav-is-open');
   navState.isOpen = true;
   saveNavState();
 }
 
 function closeNavigation() {
-  $prototypeNav.removeClass('br-prototype-nav-open');
-  $html.removeClass('br-prototype-nav-is-open');
-  $prototypeNav.attr('aria-hidden', 'true');
+  $prototypeNav.classList.remove('br-prototype-nav-open');
+  $html.classList.remove('br-prototype-nav-is-open');
+  $prototypeNav.setAttribute('aria-hidden', 'true');
   navState.isOpen = false;
   saveNavState();
 }
@@ -121,15 +122,13 @@ function toggleNavigation() {
   navState.isOpen ? closeNavigation() : openNavigation();
 }
 
-$('.br-prototype-close-nav').on('click',function(e) {
-  closeNavigation();
-});
+document.querySelector('.br-prototype-close-nav').addEventListener('click', closeNavigation, false);
 
-$(window).on('keyup', function (e) {
+window.addEventListener('keyup', function(e) {
   if (e.keyCode === ESC_KEYCODE ) {
     closeNavigation();
   }
   else if (e.ctrlKey && (e.keyCode == ACTIVATION_KEYCODE || e.keyCode == ACTIVATION_KEYCODE_WINDOWS)) {
     toggleNavigation();
   }
-});
+}, false);
