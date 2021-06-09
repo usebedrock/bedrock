@@ -16,5 +16,3 @@ on_resize(function() {
 });
 
 calculateFontSizes();
-
-
