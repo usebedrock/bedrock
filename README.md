@@ -20,8 +20,7 @@ We recommend using <a href="https://github.com/Rich-Harris/degit">degit</a> to b
 
 Here is the series of commands to use:
 
-    npm i -g degit
-    degit usebedrock/bedrock my-bedrock-project
+    npx degit usebedrock/bedrock my-bedrock-project
     cd my-bedrock-project/
     npm install
     npm start
