@@ -25,9 +25,7 @@ try {
 
 // Set up unique IDs for all module titles
 moduleLabels.forEach(function (element) {
-  const moduleId = element.innerText.split(' ').join('-');
-
-  element.setAttribute('id', moduleId.join('-'));
+  element.setAttribute('id', element.innerText.split(' ').join('-'));
 });
 
 /**
