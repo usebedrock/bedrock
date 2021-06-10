@@ -25,14 +25,7 @@ try {
 
 // Set up unique IDs for all module titles
 moduleLabels.forEach(function (element) {
-  let moduleId = [].slice
-    .call(
-      element.parentElement.querySelectorAll('.br-tree-dir-title')
-    )
-    .map(function (title) {
-      // Replace space by -
-      return title.innerText.split(' ').join('-');
-    });
+  const moduleId = element.innerText.split(' ').join('-');
 
   element.setAttribute('id', moduleId.join('-'));
 });
