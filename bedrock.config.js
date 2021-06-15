@@ -8,6 +8,7 @@ module.exports = {
    *  Styleguide generation: existence of this section
    *  determines whether the styleguide gets generated
   */
+  purgeCSS: true,
   styleguide: {
     /**
      *  search [boolean]
