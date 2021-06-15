@@ -8,7 +8,7 @@ include ../_mixins/all
 
 block pageVariables
     //- Use this block to append page variables in templates
-    - var projectTitle = "Bedrock"
+    - var projectTitle = "Bedrock - Tailwind"
     - var htmlClass = ""
     - var bodyClass = ""
 
@@ -35,6 +35,21 @@ html(dir="ltr" lang="en" class=htmlClass ? htmlClass : '')
 
         block headerStyles
             // Nothing yet
+
+        block styleguideSettings
+            - var styleguideButtonClass = 'inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover_bg-gray-50 focus_outline-none focus_ring-2 focus_ring-offset-2 focus_ring-indigo-500'
+            - var styleguideBrandLink = "/styleguide"
+            - var styleguideComponentGroupHeaderClass = 'text-2xl font-medium py-6'
+            - var styleguideSampleHeadingClass = 'text-lg font-medium py-6'
+            - var styleguideComponentListingCategoryClass = 'text-lg font-medium py-6'
+            - var styleguideNavListTitleClass = 'text-base font-medium py-6'
+            - var styleguideNavListItemClass = 'p-2'
+            - var styleguideNavListItemLinkClass = 'text-gray-500'
+            - var styleguideNavListItemLinkActiveClass = 'text-indigo-500'
+            - var styleguideInputClass = 'p-2 max-w-lg block w-full shadow-sm focus_ring-indigo-500 focus_border-indigo-500 sm_max-w-xs sm_text-sm border-gray-300 rounded-md'
+            - var styleguideSearchPlaceholderString = "Search components..."
+            - var styleguideSearchCustomTemplate = false
+            - var styleguideBrandCustomTemplate = true
 
     body(class=bodyClass ? bodyClass : '')
 

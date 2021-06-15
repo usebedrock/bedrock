@@ -9,17 +9,13 @@ module.exports = {
    *  determines whether the styleguide gets generated
   */
   purgeCSS: true,
+  cssCompiler: 'postcss',
   styleguide: {
     /**
      *  search [boolean]
      *  Feature flag for search feature
     */
     search: true,
-    /**
-     *  Path to colors SCSS
-     *  We use regexes to parse this file to show the colors in styleguide
-    */
-    colors: './content/scss/_colors.scss',
     /**
      *  categoryOrder
      *  Determines the order of documentation categories

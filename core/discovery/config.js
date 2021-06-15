@@ -32,6 +32,7 @@ const DEFAULT_CONFIG = {
     extraLiners: ['body']
   },
   purgeCSS: false,
+  cssCompiler: 'scss',
   express: {
     port: 8000,
   },

@@ -12,15 +12,14 @@ const config = require('../discovery/config');
 
 var svgIconClassPrefix = config.icons && config.icons.svgIconClassPrefix || 'svg-icon'
 
+const compileTargets = config.cssCompiler == 'postcss' ? paths.core.scss.prototype : [paths.content.scss.all, paths.core.scss.prototype];
+
 module.exports = function () {
   const processors = [
     autoprefixer()
   ];
 
-  return gulp.src([
-      paths.content.scss.all,
-      paths.core.scss.prototype
-    ])
+  return gulp.src(compileTargets)
     // Inject config svgIconPrefix in scss
     .pipe(header('$br-svg-icon-class-prefix: ' + svgIconClassPrefix + ';\n'))
     .pipe(sourcemaps.init())

@@ -18,6 +18,9 @@ module.exports = {
       resources: path.join(contentPath, 'resources/**/*'),
       favicon: path.join(contentPath, 'favicon*')
     },
+    postcss: {
+      all: path.join(contentPath, 'postcss/**/*.css')
+    },
     scss: {
       all: path.join(contentPath, 'scss/**/*.scss'),
       main: path.join(contentPath, 'scss/main.scss'),
