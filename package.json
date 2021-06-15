@@ -61,7 +61,7 @@
     "moment": "^2.29.1",
     "natives": "^1.1.6",
     "node-notifier": "^6.0.0",
-    "postcss": "^7.0.35",
+    "postcss": "^7.0.36",
     "pug": "^2.0.4",
     "run-sequence": "^2.2.1"
   },
