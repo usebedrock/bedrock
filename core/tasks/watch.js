@@ -13,6 +13,7 @@ module.exports = function () {
   gulp.watch(paths.content.iconFont.sourceFiles, gulp.series('icon-font'));
   gulp.watch(paths.content.icons.sourceFiles, browserSync.reload());
   gulp.watch(paths.content.js.allFiles, gulp.series('bundle:clientBundle'));
+  gulp.watch(paths.content.js.separated, gulp.series('copy:scripts'));
   gulp.watch(paths.core.js.allFiles, gulp.series('bundle:prototypeBundle'));
 
 };
