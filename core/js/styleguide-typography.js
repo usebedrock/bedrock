@@ -1,12 +1,10 @@
-import $ from 'jquery';
-
-const $typographyEntries = $('#component-typography tbody tr');
+const typographyEntries = document.querySelectorAll('#component-typography tbody tr');
 
 function calculateFontSizes() {
-  $typographyEntries.each(function () {
-    const $fontSizeInfo = $(this).find('.br-typography-sample-size');
-    const fontSizeForElement = $(this).find('.br-typography-sample-content').children().first().css('font-size');
-    $fontSizeInfo.text(fontSizeForElement);
+  typographyEntries.forEach(function (element) {
+    const fontSizeInfo = element.querySelector('.br-typography-sample-size');
+    const fontSizeForElement = getComputedStyle(element.querySelector('.br-typography-sample-content').children[0])['font-size'];
+    fontSizeInfo.innerText = fontSizeForElement;
   });
 }
 

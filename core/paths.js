@@ -54,6 +54,10 @@ module.exports = {
   },
   core: {
     path: corePath,
+    js: {
+      entryFile: path.join(corePath, 'js/index.js'),
+      allFiles: path.join(corePath, 'js/**/*.js')
+    },
     scss: {
       all: path.join(corePath, 'scss/**/*.scss'),
       prototype: path.join(corePath, 'scss/prototype.scss')
