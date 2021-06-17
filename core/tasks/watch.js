@@ -6,6 +6,7 @@ module.exports = function () {
   global.isWatching = true;
 
   gulp.watch([paths.content.scss.all, paths.core.scss.all], gulp.series('sass'));
+  gulp.watch([paths.content.postcss.all], gulp.series('postcss'));
   gulp.watch(paths.content.assets.images, gulp.series('copy:images'));
   gulp.watch(paths.content.assets.favicon, gulp.series('copy:favicon'));
   gulp.watch(paths.content.assets.fonts, gulp.series('copy:fonts'));

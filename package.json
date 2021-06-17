@@ -1,6 +1,6 @@
 {
   "name": "bedrock",
-  "version": "1.32.0",
+  "version": "1.33.0",
   "description": "Static site generator to easily make HTML prototypes",
   "main": "gulpfile.js",
   "scripts": {
@@ -22,6 +22,7 @@
   "devDependencies": {
     "@babel/core": "^7.13.8",
     "@babel/preset-env": "^7.13.9",
+    "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^9.8.6",
     "babelify": "^10.0.0",
     "browser-sync": "^2.26.14",
@@ -45,8 +46,9 @@
     "gulp-header": "^2.0.9",
     "gulp-jade-recursive": "^1.0.1",
     "gulp-jsbeautifier": "^3.0.1",
-    "gulp-postcss": "^8.0.0",
+    "gulp-postcss": "^9.0.0",
     "gulp-pug": "^4.0.1",
+    "gulp-purgecss": "^4.0.3",
     "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.1.0",
@@ -61,9 +63,11 @@
     "moment": "^2.29.1",
     "natives": "^1.1.6",
     "node-notifier": "^6.0.0",
-    "postcss": "^7.0.35",
+    "postcss": "^8.3.4",
+    "postcss-import": "^14.0.2",
     "pug": "^2.0.4",
-    "run-sequence": "^2.2.1"
+    "run-sequence": "^2.2.1",
+    "tailwindcss": "^2.1.4"
   },
   "dependencies": {}
 }

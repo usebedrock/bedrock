@@ -1,0 +1,26 @@
+/* ==========================================================================
+  Style guide styles
+   ========================================================================== */
+
+/*
+
+  In the "real world" (e.g. the app itself) some HTML elements are hidden by default,
+  or positioned in specific ways. In the styleguide sometimes we want to undo some of
+  that for demonstrational purposes. This is the location where would you write such code.
+
+  The idea is that the code that you write here never makes it to the final app. It's only
+  purpose is to make the style guide look good.
+
+  You can target a component with #component-{component-name} e.g. when a component
+  folder is called 01-my-component you can target it with #component-01-my-component.
+
+  It's interesting to know that the box that contains the component is called .br-sample-content.
+
+  Sometimes you want to set a height on this or targets its children etc.
+*/
+
+/* Here is an example of a style to make the style guide look bette r*/
+
+.br-styleguide-brand-heading {
+  margin: 0;
+}

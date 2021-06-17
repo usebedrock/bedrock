@@ -44,6 +44,10 @@ $br-styleguide-content-padding-left: 4.8rem*$br-rem-multiplier !default;
 /* Basic setup
    ========================================================================== */
 
+html, body {
+  height: 100%;
+}
+
 .br-styleguide-default-styles-active {
 
   height: 100%;
