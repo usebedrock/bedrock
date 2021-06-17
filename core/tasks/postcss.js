@@ -4,7 +4,6 @@ const postcss = require('gulp-postcss');
 // Plugins
 const autoprefixer = require('autoprefixer');
 const atImport = require("postcss-import");
-const tailwind = require("tailwindcss");
 
 const paths = require('../paths');
 const config = require('../../bedrock.config');
@@ -12,7 +11,7 @@ const { content } = require('../paths');
 
 module.exports = function () {
 
-  var plugins = [ atImport, tailwind, autoprefixer ];
+  var plugins = [ atImport, autoprefixer ];
 
   if (config.cssCompiler == 'postcss') {
     return gulp.src(paths.content.postcss.allMainFiles)

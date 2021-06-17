@@ -1,6 +1,14 @@
-@import "./components/button.css";
-@import "./components/table.css";
+/* This is a test if imports work */
+@import "./component/test.css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* This is a test if vendor prefixes work */
+.x-button {
+  appearance: none;
+}
+
+/* Add your custom HTML/CSS here... */
