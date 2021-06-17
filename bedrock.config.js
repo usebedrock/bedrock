@@ -4,7 +4,7 @@
 */
 
 module.exports = {
-  purgeCSS: false,
+  purgeCSS: true,
   cssCompiler: 'postcss',
   /**
    *  Styleguide generation: existence of this section

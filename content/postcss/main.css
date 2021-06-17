@@ -11,4 +11,8 @@ html, body {
   appearance: none;
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Add your custom HTML/CSS here... */
