@@ -12,9 +12,14 @@ const server = require('./core/tasks/server');
 const iconFont = require('./core/tasks/icon-font');
 const config = require('./bedrock.config');
 const sass = require('./core/tasks/sass');
-const purge = require('./core/tasks/purge');
 const postcss = require('./core/tasks/postcss');
+
+// Optional tasks: Purge CSS and minify CSS
+const purge = require('./core/tasks/purge');
 const minifyCSS = require('./core/tasks/minify-css');
+
+// Execute this task instead of optional tasks
+const dummy = require('./core/tasks/dummy');
 
 gulp.task('templates:clean', templates.clean);
 gulp.task('sass', sass);
@@ -22,6 +27,7 @@ gulp.task('postcss', postcss);
 gulp.task('minifyCSS', minifyCSS);
 gulp.task('purgeCSS', purge);
 gulp.task('server', server);
+gulp.task('dummy', dummy);
 gulp.task('copy:images', copy.images);
 gulp.task('copy:fonts', copy.fonts);
 gulp.task('copy:favicon', copy.favicon);
@@ -43,9 +49,9 @@ gulp.task('templates:compile', config.styleguide ?
 
 gulp.task('watch', watch);
 gulp.task('copy', gulp.parallel('copy:images', 'copy:fonts', 'copy:resources', 'copy:scripts', 'copy:favicon'));
-gulp.task('compile-all', gulp.parallel('templates:clean','icon-font', 'bundle:clientBundle', 'bundle:prototypeBundle', 'postcss', 'sass', 'copy'));
+gulp.task('compile-all', gulp.parallel('templates:clean', 'icon-font', 'bundle:clientBundle', 'bundle:prototypeBundle', 'sass', 'postcss', 'copy'));
 
-gulp.task('build', config.purgeCSS ?  gulp.series('compile-all', 'templates:compile', 'copy:compiledToDist', 'purgeCSS', 'minifyCSS') : gulp.series('compile-all', 'templates:compile', 'copy:compiledToDist', 'minifyCSS'), function (done) {
+gulp.task('build', gulp.series('compile-all', 'templates:compile', 'copy:compiledToDist', config.purgeCSS ? 'purgeCSS' : 'dummy', config.minifyCSS ? 'minifyCSS': 'dummy'), function (done) {
   console.log('------------\n');
   console.log('Build finished. Compiled files can be found in the dist/ directory.');
   process.exit(0);

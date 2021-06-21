@@ -8,7 +8,7 @@ module.exports = function (done) {
   if (bedrockConfig.minifyCSS == true) {
     return gulp.src(paths.dist.css.allFiles)
       .pipe(cleanCSS({compatibility: 'ie8'}))
-      .pipe(gulp.dest(paths.dist.css.mainPath));
+      .pipe(gulp.dest(paths.dist.css.mainPath))
   } else {
     done();
     return false;

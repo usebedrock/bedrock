@@ -1,5 +1,8 @@
-/* This is a test if imports work */
-@import "./component/test.css";
+/* Default styles powered by https://watercss.kognise.dev/ */
+/* Feel free to remove this line, this is just here to give the default Bedrock setup a nicer look.*/
+
+/* You will almost always use your own CSS framework in pratice.*/
+@import "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css";
 
 html, body {
   margin: 0;
@@ -7,6 +10,7 @@ html, body {
 }
 
 /* This is a test if vendor prefixes work */
+/* Feel free to delete this in your project */
 .x-button {
   appearance: none;
 }
