@@ -5,7 +5,10 @@ const postcss = require('gulp-postcss');
 
 const paths = require('../paths');
 const bedrockConfig = require('../../bedrock.config');
-const postCSSPluginConfig = require('../../postcss.config');
+
+if (bedrockConfig.cssCompiler == 'postcss') {
+  const postCSSPluginConfig = require('../../postcss.config');
+}
 
 const { content } = require('../paths');
 
