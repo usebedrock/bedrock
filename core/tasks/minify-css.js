@@ -5,7 +5,7 @@ const bedrockConfig = require('../../bedrock.config');
 
 module.exports = function (done) {
 
-  if (bedrockConfig.minifyCSS == true) {
+  if (bedrockConfig.css.minify == true) {
     return gulp.src(paths.dist.css.allFiles)
       .pipe(cleanCSS({compatibility: 'ie8'}))
       .pipe(gulp.dest(paths.dist.css.mainPath))

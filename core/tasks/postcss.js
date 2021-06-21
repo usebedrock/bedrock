@@ -6,13 +6,13 @@ const postcss = require('gulp-postcss');
 const paths = require('../paths');
 const bedrockConfig = require('../../bedrock.config');
 
-if (bedrockConfig.cssCompiler == 'postcss') {
+if (bedrockConfig.css.compiler == 'postcss') {
   var postCSSPluginConfig = require('../../postcss.config');
 }
 
 module.exports = function (done) {
 
-  if (bedrockConfig.cssCompiler == 'postcss') {
+  if (bedrockConfig.css.compiler == 'postcss') {
     return gulp.src(paths.content.postcss.allMainFiles)
         .pipe(postcss(postCSSPluginConfig))
         .on('error', (err) => console.error(err))

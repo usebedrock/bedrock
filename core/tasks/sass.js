@@ -13,9 +13,9 @@ const config = require('../../bedrock.config');
 var svgIconClassPrefix = config.icons && config.icons.svgIconClassPrefix || 'svg-icon'
 
 
-if (config.cssCompiler == "postcss") {
+if (config.css.compiler == "postcss") {
   var sources = [paths.core.scss.prototype]
-} else if (config.cssCompiler == "scss") {
+} else if (config.css.compiler == "scss") {
   var sources = [paths.content.scss.all, paths.core.scss.prototype]
 } else {
   console.error("Please provide a CSS compiler");

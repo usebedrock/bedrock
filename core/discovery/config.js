@@ -31,8 +31,10 @@ const DEFAULT_CONFIG = {
     unformatted: ['pre', 'textarea'],
     extraLiners: ['body']
   },
-  purgeCSS: false,
-  cssCompiler: 'scss',
+  css: {
+    purge: false,
+    compiler: 'scss'
+  },
   express: {
     port: 8000,
   },
