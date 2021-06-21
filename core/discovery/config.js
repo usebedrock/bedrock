@@ -35,6 +35,9 @@ const DEFAULT_CONFIG = {
     purge: false,
     compiler: 'scss'
   },
+  js: {
+    minify: false
+  },
   express: {
     port: 8000,
   },

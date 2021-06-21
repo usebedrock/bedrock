@@ -5,9 +5,12 @@
 */
 
 module.exports = {
+  js: {
+    minify: true
+  },
   css: {
-    purge: false,
+    purge: true,
     compiler: 'postcss',
-    minify: false
+    minify: true
   }
 };
