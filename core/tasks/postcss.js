@@ -7,10 +7,8 @@ const paths = require('../paths');
 const bedrockConfig = require('../../bedrock.config');
 
 if (bedrockConfig.cssCompiler == 'postcss') {
-  const postCSSPluginConfig = require('../../postcss.config');
+  var postCSSPluginConfig = require('../../postcss.config');
 }
-
-const { content } = require('../paths');
 
 module.exports = function () {
 
