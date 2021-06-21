@@ -10,7 +10,7 @@ if (bedrockConfig.cssCompiler == 'postcss') {
   var postCSSPluginConfig = require('../../postcss.config');
 }
 
-module.exports = function () {
+module.exports = function (done) {
 
   if (bedrockConfig.cssCompiler == 'postcss') {
     return gulp.src(paths.content.postcss.allMainFiles)
@@ -18,6 +18,7 @@ module.exports = function () {
         .on('error', (err) => console.error(err))
         .pipe(gulp.dest(paths.compiled.css));
   } else {
+    done();
     return false;
   }
 
