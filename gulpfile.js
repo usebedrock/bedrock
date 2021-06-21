@@ -10,7 +10,7 @@ const copy = require('./core/tasks/copy');
 const watch = require('./core/tasks/watch');
 const server = require('./core/tasks/server');
 const iconFont = require('./core/tasks/icon-font');
-const config = require('./bedrock.config');
+const config = require('./core/discovery/config');
 const sass = require('./core/tasks/sass');
 const postcss = require('./core/tasks/postcss');
 

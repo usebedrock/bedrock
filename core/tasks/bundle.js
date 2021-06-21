@@ -5,7 +5,7 @@ const babelify = require('babelify');
 const terser = require('gulp-terser');
 const gulpif = require('gulp-if');
 const paths = require('../paths');
-const bedrockConfig = require('../../bedrock.config');
+const config = require('../discovery/config');
 
 let babelConfig = {
   transform: [
@@ -18,14 +18,14 @@ module.exports = {
     return gulp.src(paths.content.js.entryFile)
       .pipe(bro(babelConfig))
       .pipe(rename('bundle-client.js'))
-      .pipe(gulpif(bedrockConfig.js.minify,terser()))
+      .pipe(gulpif(config.js.minify,terser()))
       .pipe(gulp.dest(paths.compiled.js))
   },
   prototypeBundle() {
     return gulp.src(paths.core.js.entryFile)
       .pipe(bro(babelConfig))
       .pipe(rename('bundle-prototype.js'))
-      .pipe(gulpif(bedrockConfig.js.minify,terser()))
+      .pipe(gulpif(config.js.minify,terser()))
       .pipe(gulp.dest(paths.compiled.js))
   }
 };

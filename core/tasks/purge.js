@@ -4,7 +4,7 @@ const paths = require('../paths');
 
 module.exports = function (done) {
 
-  if (bedrockConfig.css.purge == true) {
+  if (config.css.purge == true) {
     return gulp.src(paths.dist.path+'/**/*.css')
       .pipe(purgecss({
         content: [paths.dist.path+'**/*.html']

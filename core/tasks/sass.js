@@ -8,7 +8,7 @@ const header = require('gulp-header');
 const autoprefixer = require('autoprefixer');
 const paths = require('../paths');
 const errors = require('../util/errors');
-const config = require('../../bedrock.config');
+const config = require('../discovery/config');
 
 var svgIconClassPrefix = config.icons && config.icons.svgIconClassPrefix || 'svg-icon'
 
