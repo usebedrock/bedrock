@@ -8,19 +8,25 @@ const header = require('gulp-header');
 const autoprefixer = require('autoprefixer');
 const paths = require('../paths');
 const errors = require('../util/errors');
-const config = require('../discovery/config');
+const config = require('../../bedrock.config');
 
 var svgIconClassPrefix = config.icons && config.icons.svgIconClassPrefix || 'svg-icon'
+
+
+if (config.cssCompiler == "postcss") {
+  var sources = [paths.core.scss.prototype]
+} else if (config.cssCompiler == "scss") {
+  var sources = [paths.content.scss.all, paths.core.scss.prototype]
+} else {
+  console.error("Please provide a CSS compiler");
+}
 
 module.exports = function () {
   const processors = [
     autoprefixer()
   ];
 
-  return gulp.src([
-      paths.content.scss.all,
-      paths.core.scss.prototype
-    ])
+  return gulp.src(sources)
     // Inject config svgIconPrefix in scss
     .pipe(header('$br-svg-icon-class-prefix: ' + svgIconClassPrefix + ';\n'))
     .pipe(sourcemaps.init())
