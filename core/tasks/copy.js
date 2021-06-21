@@ -16,7 +16,7 @@ module.exports = {
       .pipe(gulp.dest(paths.compiled.assets.resources));
   },
   scripts() {
-    return gulp.src(paths.content.js.separated)
+    return gulp.src([paths.content.js.separated, '!'+paths.content.js.entryFile])
       .pipe(gulp.dest(paths.compiled.js));
   },
   favicon() {
