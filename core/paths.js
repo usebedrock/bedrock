@@ -94,7 +94,10 @@ module.exports = {
     fonts: path.join(distPath, 'fonts/'),
     modules: path.join(distPath, 'modules/'),
     js: path.join(distPath, 'js/'),
-    css: path.join(distPath, 'css/'),
+    css: {
+      mainPath: path.join(distPath, 'css/'),
+      allFiles: path.join(contentPath, 'css/**/*.css'),
+    },
     styleguide: path.join(distPath, 'styleguide/'),
     docs: path.join(distPath, 'styleguide/docs/'),
     assets: {
