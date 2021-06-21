@@ -3,8 +3,9 @@ const DEFAULT_CONFIG = {
     minify: false
   },
   css: {
-    purge: false,
-    compiler: 'scss'
+    compiler: 'scss',
+    minify: false,
+    purge: false
   },
   styleguide: {
     search: true,
