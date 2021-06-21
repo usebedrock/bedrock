@@ -1,4 +1,11 @@
 const DEFAULT_CONFIG = {
+  js: {
+    minify: false
+  },
+  css: {
+    purge: false,
+    compiler: 'scss'
+  },
   styleguide: {
     search: true,
     colors: './content/scss/_colors.scss',
@@ -30,13 +37,6 @@ const DEFAULT_CONFIG = {
     indentSize: 2,
     unformatted: ['pre', 'textarea'],
     extraLiners: ['body']
-  },
-  css: {
-    purge: false,
-    compiler: 'scss'
-  },
-  js: {
-    minify: false
   },
   express: {
     port: 8000,
