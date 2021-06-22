@@ -64,4 +64,5 @@ module.exports = {
     svgIconClassPrefix: 'o-svg-icon',
     iconFontClassPrefix: 'if'
   },
+  testValueOnlyInConfig: 'yo2'
 };

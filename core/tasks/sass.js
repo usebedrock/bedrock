@@ -12,7 +12,6 @@ const config = require('../discovery/config');
 
 var svgIconClassPrefix = config.icons && config.icons.svgIconClassPrefix || 'svg-icon'
 
-
 if (config.css.compiler == "postcss") {
   var sources = [paths.core.scss.prototype]
 } else if (config.css.compiler == "scss") {

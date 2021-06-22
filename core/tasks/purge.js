@@ -1,10 +1,12 @@
 const gulp = require('gulp');
 const purgecss = require('gulp-purgecss');
 const paths = require('../paths');
+const config = require('../discovery/config');
+const prodConfig = require('../discovery/prod-config');
 
 module.exports = function (done) {
 
-  if (config.css.purge == true) {
+  if (config.css.purge == true || prodConfig.css.purge == true) {
     return gulp.src(paths.dist.path+'/**/*.css')
       .pipe(purgecss({
         content: [paths.dist.path+'**/*.html']

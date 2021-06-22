@@ -11,6 +11,7 @@ const watch = require('./core/tasks/watch');
 const server = require('./core/tasks/server');
 const iconFont = require('./core/tasks/icon-font');
 const config = require('./core/discovery/config');
+const prodConfig = require('./core/discovery/prod-config');
 const sass = require('./core/tasks/sass');
 const postcss = require('./core/tasks/postcss');
 
@@ -51,9 +52,18 @@ gulp.task('watch', watch);
 gulp.task('copy', gulp.parallel('copy:images', 'copy:fonts', 'copy:resources', 'copy:scripts', 'copy:favicon'));
 gulp.task('compile-all', gulp.parallel('templates:clean', 'icon-font', 'bundle:clientBundle', 'bundle:prototypeBundle', 'sass', 'postcss', 'copy'));
 
-gulp.task('build', gulp.series('compile-all', 'templates:compile', 'copy:compiledToDist', config.purgeCSS ? 'purgeCSS' : 'dummy', config.minifyCSS ? 'minifyCSS': 'dummy'), function (done) {
+gulp.task('build', gulp.series('compile-all', 'templates:compile', 'copy:compiledToDist', config.css.purge ? 'purgeCSS' : 'dummy', config.css.minify ? 'minifyCSS': 'dummy'), function (done) {
   console.log('------------\n');
   console.log('Build finished. Compiled files can be found in the dist/ directory.');
   process.exit(0);
 });
+
+console.log(prodConfig);
+console.log(prodConfig.purgeCSS);
+gulp.task('build-prod', gulp.series('compile-all', 'templates:compile', 'copy:compiledToDist', prodConfig.css.purge ? 'purgeCSS' : 'dummy', prodConfig.css.minify ? 'minifyCSS' : 'dummy'), function (done) {
+  console.log('------------\n');
+  console.log('Production build finished. Compiled files can be found in the dist/ directory.');
+  process.exit(0);
+});
+
 gulp.task('default', gulp.parallel('server', 'compile-all', 'watch', browserSync));
