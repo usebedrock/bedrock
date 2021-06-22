@@ -1,11 +1,16 @@
 const gulp = require('gulp');
 const postcss = require('gulp-postcss');
 
-// Plugins
-
 const paths = require('../paths');
-const config = require('../discovery/config');
 
+let config;
+if (process.env.NODE_ENV == "production") {
+  config = require('../discovery/prod-config');
+} else {
+  config = require('../discovery/config');
+}
+
+// Plugins
 if (config.css.compiler == 'postcss') {
   var postCSSPluginConfig = require('../../postcss.config');
 }

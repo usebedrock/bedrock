@@ -7,7 +7,13 @@ const exec = require('child_process').exec;
 const browserSync = require('browser-sync');
 const mkdirp = require('mkdirp');
 const paths = require('../paths');
-const config = require('../discovery/config');
+
+let config;
+if (process.env.NODE_ENV == "production") {
+  config = require('../discovery/prod-config');
+} else {
+  config = require('../discovery/config');
+}
 
 const FONT_NAME = 'icon-font';
 const TMP_DIRECTORY = './icon-font-tmp';

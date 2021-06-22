@@ -10,8 +10,16 @@ const copy = require('./core/tasks/copy');
 const watch = require('./core/tasks/watch');
 const server = require('./core/tasks/server');
 const iconFont = require('./core/tasks/icon-font');
-const config = require('./core/discovery/config');
-const prodConfig = require('./core/discovery/prod-config');
+
+// Configs
+let config;
+if (process.env.NODE_ENV == "production") {
+  config = require('./core/discovery/prod-config');
+} else {
+  config = require('./core/discovery/config');
+}
+
+// Sass is used to render core templates so is needed, even if you use postcss in your content part
 const sass = require('./core/tasks/sass');
 const postcss = require('./core/tasks/postcss');
 
@@ -55,14 +63,6 @@ gulp.task('compile-all', gulp.parallel('templates:clean', 'icon-font', 'bundle:c
 gulp.task('build', gulp.series('compile-all', 'templates:compile', 'copy:compiledToDist', config.css.purge ? 'purgeCSS' : 'dummy', config.css.minify ? 'minifyCSS': 'dummy'), function (done) {
   console.log('------------\n');
   console.log('Build finished. Compiled files can be found in the dist/ directory.');
-  process.exit(0);
-});
-
-console.log(prodConfig);
-console.log(prodConfig.purgeCSS);
-gulp.task('build-prod', gulp.series('compile-all', 'templates:compile', 'copy:compiledToDist', prodConfig.css.purge ? 'purgeCSS' : 'dummy', prodConfig.css.minify ? 'minifyCSS' : 'dummy'), function (done) {
-  console.log('------------\n');
-  console.log('Production build finished. Compiled files can be found in the dist/ directory.');
   process.exit(0);
 });
 

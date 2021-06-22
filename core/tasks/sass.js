@@ -8,7 +8,13 @@ const header = require('gulp-header');
 const autoprefixer = require('autoprefixer');
 const paths = require('../paths');
 const errors = require('../util/errors');
-const config = require('../discovery/config');
+
+let config;
+if (process.env.NODE_ENV == "production") {
+  config = require('../discovery/prod-config');
+} else {
+  config = require('../discovery/config');
+}
 
 var svgIconClassPrefix = config.icons && config.icons.svgIconClassPrefix || 'svg-icon'
 

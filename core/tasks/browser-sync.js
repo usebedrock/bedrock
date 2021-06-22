@@ -1,7 +1,13 @@
 const browserSync = require('browser-sync');
 const path = require('path');
 const paths = require('../paths');
-const config = require('../discovery/config');
+
+let config;
+if (process.env.NODE_ENV == "production") {
+  config = require('../discovery/prod-config');
+} else {
+  config = require('../discovery/config');
+}
 
 module.exports = function () {
   return browserSync.init({

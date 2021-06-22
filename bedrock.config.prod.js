@@ -1,6 +1,8 @@
 /**
  * Bedrock production configuration
- * This object will get merged into the bedrock config object
+ * ---
+ * This object will get merged into the bedrock config object and contains specific values for production
+ * Use `NODE_ENV=production npm run build` to run a production build
 */
 
 module.exports = {
@@ -13,5 +15,4 @@ module.exports = {
     purge: true,
     compiler: 'scss'
   },
-  testValueOnlyInProdConfig: 'yo'
 };

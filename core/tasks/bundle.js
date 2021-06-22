@@ -5,8 +5,13 @@ const babelify = require('babelify');
 const terser = require('gulp-terser');
 const gulpif = require('gulp-if');
 const paths = require('../paths');
-const config = require('../discovery/config');
-const prodConfig = require('../discovery/prod-config');
+
+let config;
+if (process.env.NODE_ENV == "production") {
+  config = require('../discovery/prod-config');
+} else {
+  config = require('../discovery/config');
+}
 
 let babelConfig = {
   transform: [
@@ -20,7 +25,6 @@ module.exports = {
       .pipe(bro(babelConfig))
       .pipe(rename('bundle-client.js'))
       .pipe(gulpif(config.js.minify,terser()))
-      .pipe(gulpif(prodConfig.js.minify,terser()))
       .pipe(gulp.dest(paths.compiled.js))
   },
   prototypeBundle() {
@@ -28,7 +32,6 @@ module.exports = {
       .pipe(bro(babelConfig))
       .pipe(rename('bundle-prototype.js'))
       .pipe(gulpif(config.js.minify,terser()))
-      .pipe(gulpif(prodConfig.js.minify,terser()))
       .pipe(gulp.dest(paths.compiled.js))
   }
 };

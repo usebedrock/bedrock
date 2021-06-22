@@ -1,21 +1,13 @@
 /**
  * Bedrock configuration
- * If no file exists, uses the default config object in `core/discovery/config.js`
- * For docs, see https://bedrockapp.org/documentation/configuration/
+ * For docs, see https://bedrockapp.org/documentation/configuration/ 
+ * Inline docs available in the default config object
 */
 
 module.exports = {
-  /**
-   *  Page tree generation: existence of this section
-   *  determines whether the page tree gets generated
-  */
   pageTree: {
     layoutStyle: 'sidebar' // 'sidebar' or 'fixed'
   },
-  /**
-   * CSS and JS minification
-   * Adjust these values to set up your project for production or dev
-  */
   js: {
     minify: false
   },
@@ -24,45 +16,15 @@ module.exports = {
     minify: false,
     purge: false
   },
-  /**
-   *  Styleguide generation: existence of this section
-   *  determines whether the styleguide gets generated
-  */
   styleguide: {
-    /**
-     *  search [boolean]
-     *  Feature flag for search feature
-    */
-    search: true,
-    colors: './content/scss/_colors.scss',
-    /**
-     *  categoryOrder
-     *  Determines the order of documentation categories
-    */
     categoryOrder: [
       'Style guide',
       'Design patterns',
       'Components'
     ],
-    /**
-     * componentCategories
-     * The prefix on folder names in /components determines the category
-    */
     componentCategories: {
       aov: 'Overviews',
       c: 'Components',
     }
   },
-  /**
-   *  Icon
-   *  Set up whether Bedrock should generate icon fonts
-   *  Set up CSS classnames for SVG icons and icon font
-  */
-  icons: {
-    generateIconFont: false,
-    iconFontPath: "./content/scss/_icon-font.scss",
-    svgIconClassPrefix: 'o-svg-icon',
-    iconFontClassPrefix: 'if'
-  },
-  testValueOnlyInConfig: 'yo2'
 };

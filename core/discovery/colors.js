@@ -3,7 +3,13 @@
 const fs = require('fs');
 const _ = require('lodash');
 const paths = require('../paths');
-const config = require('./config');
+
+let config;
+if (process.env.NODE_ENV == "production") {
+  config = require('./prod-config');
+} else {
+  config = require('./config');
+}
 
 function discover() {
 
