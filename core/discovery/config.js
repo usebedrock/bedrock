@@ -1,4 +1,7 @@
 const DEFAULT_CONFIG = {
+  pageTree: {
+    layoutStyle: 'sidebar'
+  },
   js: {
     minify: false
   },

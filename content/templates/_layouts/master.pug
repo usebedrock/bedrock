@@ -45,10 +45,16 @@ html(dir="ltr" lang="en" class=htmlClass ? htmlClass : '')
 
     body(class=bodyClass ? bodyClass : '')
 
-        .br-prototype-wrapper
-            include ../../../core/templates/includes/prototype-nav
-            .br-prototype-content
-                block body
+        if config.pageTree && config.pageTree.layoutStyle == 'sidebar'
+            .br-prototype-wrapper
+                include ../../../core/templates/includes/prototype-nav
+                .br-prototype-content
+                    block body
+        else
+            block body
+            if config.pageTree && config.pageTree.layoutStyle == 'fixed'
+                .br-pagetree-fixed-wrapper
+                    include ../../../core/templates/includes/prototype-nav
 
         = "\n"
         script(src='/js/bundle-prototype.js')

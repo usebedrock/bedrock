@@ -39,6 +39,17 @@ $br-styleguide-content-padding-left: 4.8rem*$br-rem-multiplier !default;
 
 @import "../../content/scss/br-variables-override";
 
+
+/* Fixed layout
+   ========================================================================== */
+
+.br-pagetree-fixed-wrapper {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+}
+
 /* Basic setup
    ========================================================================== */
 
