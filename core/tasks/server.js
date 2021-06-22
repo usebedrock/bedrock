@@ -3,6 +3,7 @@ const path = require('path');
 const express = require('express');
 const beautify = require('js-beautify').html;
 const _ = require('lodash');
+const htmlmin = require('htmlmin');
 
 let config;
 if (process.env.NODE_ENV == "production") {
@@ -42,8 +43,11 @@ function renderView(req, res, viewName, customLocals) {
           res.send(`<pre>${err}</pre>`);
         }
       } else {
-        html = beautify(html, config.prettify);
-
+        if (config.html.minify) {
+          html = htmlmin(html);
+        } else {
+            html = beautify(html, config.beautifier);
+        }
         res.send(html);
       }
     });

@@ -2,14 +2,17 @@
  * Bedrock configuration
  * For docs, see https://bedrockapp.org/documentation/configuration/ 
  * Inline docs available in the default config object
-*/
+ */
 
 module.exports = {
   pageTree: {
-    layoutStyle: 'sidebar' // 'sidebar' or 'fixed'
+    layoutStyle: 'sidebar'
   },
   js: {
     minify: false
+  },
+  html: {
+    minify: true
   },
   css: {
     compiler: 'scss',

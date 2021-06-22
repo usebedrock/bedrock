@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 const gulpPug = require('gulp-pug');
-const prettify = require('gulp-jsbeautifier');
+const beautifier = require('gulp-jsbeautifier');
 const notifier = require('node-notifier');
 const gutil = require('gulp-util');
 const rename = require('gulp-rename');
@@ -13,6 +13,8 @@ const moment = require('moment');
 const marked = require('marked');
 const del = require('del');
 const es = require('event-stream');
+const gulpif = require('gulp-if');
+const htmlmin = require('gulp-htmlmin');
 
 let config;
 if (process.env.NODE_ENV == "production") {
@@ -24,6 +26,7 @@ if (process.env.NODE_ENV == "production") {
 const paths = require('../paths');
 const locals = require('../templates/locals');
 const docs = require('../discovery/docs');
+var log = require('fancy-log');
 
 function getDefaultLocals() {
   const defaultLocals = locals.getDefaultLocals();
@@ -52,7 +55,8 @@ module.exports = {
             });
           }))
           .pipe(gulpPug(config.pug))
-          .pipe(prettify(config.prettify))
+          .pipe(beautifier(config.beautifier))
+          .pipe(gulpif(config.html.minify, htmlmin({ collapseWhitespace: true })))
           .pipe(rename(function (path) {
             path.basename = componentGroup;
           }))
@@ -69,7 +73,10 @@ module.exports = {
             });
           }))
           .pipe(gulpPug(config.pug))
-          .pipe(prettify(config.prettify))
+          .pipe(beautifier(config.beautifier))
+          .on('end', function(){ log(config.html.minify); })
+          .on('end', function(){ log(htmlmin); })
+          .pipe(gulpif(config.html.minify, htmlmin({ collapseWhitespace: true })))
           .pipe(gulp.dest(paths.dist.styleguide))
       );
 
@@ -91,10 +98,11 @@ module.exports = {
             });
           }))
           .pipe(gulpPug(config.pug))
-          .pipe(prettify(config.prettify))
           .pipe(rename(function (path) {
             path.basename = doc.attributes.filename;
           }))
+          .pipe(beautifier(config.beautifier))
+          .pipe(gulpif(config.html.minify, htmlmin({ collapseWhitespace: true })))
           .pipe(gulp.dest(paths.dist.docs));
       });
 
@@ -127,7 +135,9 @@ module.exports = {
           gutil.beep();
           this.emit('end');
         })
-        .pipe(prettify(config.prettify))
+        .pipe(beautifier(config.beautifier))
+        //.pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(gulpif(config.html.minify, htmlmin({ collapseWhitespace: true })))
         .pipe(gulp.dest(paths.dist.path));
     }
   }

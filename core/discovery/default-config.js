@@ -11,16 +11,20 @@ const defaultConfig = {
     layoutStyle: 'sidebar'
   },
   /**
-   * CSS and JS minification
-   * Adjust these values to set up your project for production or dev
+   * CSS, JS and HTML build options
+   * Adjust these values to set up your project for production or dev;
+   * use `bedrock.config.prod.js` for production settings and `bedrock.config.js` for dev settings
    */
-  js: {
-    minify: false
-  },
   css: {
     compiler: 'scss',
     minify: false,
     purge: false
+  },
+  js: {
+    minify: false
+  },
+  html: {
+    minify: false,
   },
   /**
    *  Styleguide generation: existence of this section
@@ -63,17 +67,12 @@ const defaultConfig = {
     iconFontClassPrefix: 'if'
   },
   pug: {
-    pretty: true,
+    pretty: false,
     basedir: "./content"
   },
-  prettify: {
-    indentWithTabs: true,
-    preserveNewlines: true,
-    inline: '',
-    logSuccess: false,
-    indentSize: 2,
-    unformatted: ['pre', 'textarea'],
-    extraLiners: ['body']
+  beautifier: {
+    indent_char: " ",
+    indent_size: 4,
   },
   express: {
     port: 8000,

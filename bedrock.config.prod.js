@@ -17,4 +17,7 @@ module.exports = {
     purge: true,
     compiler: 'scss'
   },
+  html: {
+    minify: true
+  }
 };
