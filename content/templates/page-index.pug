@@ -1,0 +1,16 @@
+extends /templates/_layouts/master
+
+include ../../core/templates/mixins/render-page-tree
+
+block append headerStyles
+    style.
+        .br-index {
+            padding: 20px;
+        }
+
+block body
+    
+    .br-index
+        p Prototype pages:
+        +renderPageTree
+        p Press Ctrl + M to toggle the listing of pages on any page.
