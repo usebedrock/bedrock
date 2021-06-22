@@ -1,5 +1,9 @@
 const defaultConfig = {
   /**
+   *  Don't index (hide prototypes from search engines)
+   */
+  noIndex: true,
+  /**
    *  Page tree generation: existence of this section
    *  determines whether the page tree gets generated
    */
