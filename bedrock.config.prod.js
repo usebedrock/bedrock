@@ -7,6 +7,7 @@
 
 module.exports = {
   pageTree: false,
+  styleguide: false,
   js: {
     minify: true
   },

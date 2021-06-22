@@ -57,7 +57,9 @@ html(dir="ltr" lang="en" class=htmlClass ? htmlClass : '')
                     include ../../../core/templates/includes/prototype-nav
 
         = "\n"
-        script(src='/js/bundle-prototype.js')
+
+        if ( config.styleguide || config.pageTree)
+            script(src='/js/bundle-prototype.js')
         script(src='/js/bundle-client.js')
 
         block footerScripts
