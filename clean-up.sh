@@ -7,9 +7,8 @@ rm ./content/data/example-json.json
 rm ./content/data/example-array.js
 rm ./content/icons/16/check.svg
 rm ./content/icons/ctrl/example.svg
-rm ./content/templates/page-states-example/form-example.pug
-rm ./content/templates/page-states-example/form-example--error.pug
-rm ./content/templates/examples/*
+rm -rf ./content/templates/page-states-example/
+rm -rf ./content/templates/
 rm ./content/images/avatar.svg
 rm -rf ./content/icon-font-source
 rm ./content/docs/patterns/doc-example.pug

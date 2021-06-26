@@ -1,0 +1,38 @@
+.t-button {
+  @apply border
+         inline-flex
+         items-center
+         px-3
+         py-2
+         text-sm
+         leading-4
+         font-medium
+         rounded-md
+         focus_outline-none
+         focus_ring-2
+         focus_ring-offset-2
+         focus_ring-blue-500;
+}
+
+.t-button-secondary {
+  @apply border
+         border-gray-300
+         text-gray-700
+         bg-white
+         hover_bg-gray-50
+}
+
+.t-button-primary {
+  @apply border
+         border-blue-700
+         bg-blue-700
+         text-white
+         hover_bg-blue-600;
+}
+
+
+.t-button-block {
+  @apply w-full
+         flex
+         justify-center;
+}

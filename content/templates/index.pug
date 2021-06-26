@@ -1,4 +1,18 @@
 extends /templates/_layouts/master
 
+block append headerStyles
+    style.
+        html, body {
+            height: 100%;
+        }
+        body {
+            display: flex;
+        }
+        .welcome {
+            margin: auto;
+        }
+
 block body
-    p Welcome to Bedrock. This is your homepage. Go to <code>/content/templates/index.pug</code> to find this file and start editing your project.
+    .welcome.prose
+      p Welcome to the Bedrock Tailwind starter based on Bedrock 1.38. This is your homepage.
+      p Go to <code>/content/templates/index.pug</code> to find this file and start editing your project.

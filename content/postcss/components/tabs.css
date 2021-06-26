@@ -1,0 +1,20 @@
+.t-tab {
+  @apply py-4
+        px-1
+        border-b-2
+        font-medium
+        text-sm;
+}
+
+.t-tab.t-tab-active {
+  @apply border-blue-500
+         text-blue-600
+         whitespace-nowrap;
+}
+
+.t-tab.t-tab-default {
+  @apply border-transparent
+         text-gray-500
+         hover_text-gray-700
+         hover_border-gray-300;
+}

@@ -1,0 +1,3 @@
+.t-alert .o-svg-icon svg * {
+  @apply fill-current
+}

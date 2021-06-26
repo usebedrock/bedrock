@@ -1,0 +1,15 @@
+.t-input {
+  @apply appearance-none
+         block
+         w-full
+         px-3
+         py-2
+         border
+         border-gray-300
+         rounded-md
+         shadow-sm
+         placeholder-gray-400
+         focus_outline-none
+         focus_ring-blue-500
+         focus_border-blue-500
+}

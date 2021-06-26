@@ -1,7 +1,8 @@
-each category, id in icons.svg
+.grid.grid-cols-3.gap-4
+  each category, id in icons.svg
     if id
-        h3 #{id}
+      h3 #{id}
     each icon in category
-        .svg-icon
-            +icon(icon.category+'/'+icon.name)
-            p #{icon.name}
+      .svg-icon.flex
+        +icon(icon.category+'/'+icon.name)
+        p.pl-4 #{icon.name}

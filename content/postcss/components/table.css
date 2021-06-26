@@ -1,0 +1,34 @@
+.t-table-heading-in-body {
+  @apply px-6
+         py-4
+         whitespace-nowrap
+         text-sm
+         font-medium
+         text-gray-900;
+}
+
+.t-table-heading {
+  @apply px-6
+         py-4
+         whitespace-nowrap
+         text-sm
+         font-medium
+         text-gray-900;
+}
+
+.t-table-cell {
+  @apply px-6
+         py-4
+         whitespace-nowrap
+         text-sm
+         text-gray-500;
+}
+
+.t-table-heading {
+  @apply px-6
+         py-3
+         text-left
+         text-sm
+         font-medium
+         text-gray-500
+}

@@ -69,7 +69,9 @@
     "postcss": "^8.3.4",
     "postcss-import": "^14.0.2",
     "pug": "^2.0.4",
-    "run-sequence": "^2.2.1"
+    "run-sequence": "^2.2.1",
+    "@tailwindcss/typography": "^0.4.1",
+    "tailwindcss": "^2.2.0"
   },
   "dependencies": {}
 }

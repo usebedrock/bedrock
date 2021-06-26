@@ -1,0 +1,16 @@
+.t-panel-header {
+  @apply border-t
+         border-l
+         border-r
+         p-4
+         rounded-tl
+         rounded-tr
+}
+
+.t-panel-body {
+  @apply border
+         p-4
+         rounded-bl
+         rounded-br
+         text-gray-600
+}

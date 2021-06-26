@@ -18,13 +18,25 @@ block pageVariables
 block append styleguideSettings
     - var styleguideLogoAsImage = true
     - var styleguideLogoAsImagePath = "/images/bedrock-logo-black.svg"
+    - var styleguideButtonClass = 'inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover_bg-gray-50 focus_outline-none focus_ring-2 focus_ring-offset-2 focus_ring-blue-500'
+    - var styleguideBrandLink = "/styleguide"
+    - var styleguideComponentGroupHeaderClass = 'text-2xl font-medium py-6'
+    - var styleguideSampleHeadingClass = 'text-lg font-medium py-6'
+    - var styleguideComponentListingCategoryClass = 'text-lg font-medium py-6'
+    - var styleguideNavListTitleClass = 'text-base font-medium py-6'
+    - var styleguideNavListItemClass = 'p-2'
+    - var styleguideNavListItemLinkClass = 'text-gray-500'
+    - var styleguideNavListItemLinkActiveClass = 'text-blue-500'
+    - var styleguideInputClass = 'p-2 max-w-lg block w-full shadow-sm focus_ring-blue-500 focus_border-blue-500 sm_max-w-xs sm_text-sm border-gray-300 rounded-md'
+    - var styleguideSearchPlaceholderString = "Search components..."
+
 
 doctype html
 html(dir="ltr" lang="en" class=htmlClass ? htmlClass : '')
     head
         meta(charset="utf-8")
         meta(name="viewport" content="width=device-width, initial-scale=1")
-        
+
         if config.noIndex
             meta(name="robots" content="noindex")
 

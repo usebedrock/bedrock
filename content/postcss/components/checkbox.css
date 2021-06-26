@@ -1,0 +1,8 @@
+.t-checkbox {
+  @apply h-4
+         w-4
+         text-blue-600
+         focus_ring-blue-500
+         border-gray-300
+         rounded
+}

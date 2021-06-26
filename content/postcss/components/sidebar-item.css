@@ -1,0 +1,30 @@
+.t-sidebar-item {
+  @apply group
+         flex
+         items-center
+         mx-3
+         p-2
+         text-sm
+         font-medium;
+}
+
+.t-sidebar-item.active {
+  @apply text-gray-800
+          bg-gray-50;
+}
+
+.t-sidebar-item.default {
+  @apply text-gray-600;
+}
+
+.t-sidebar-item-icon-wrap {
+  @apply text-gray-500
+         mr-3
+         flex-shrink-0
+         h-6
+         w-6;
+}
+
+.t-sidebar-item.active .t-sidebar-item-icon-wrap {
+  @apply text-gray-800 
+}
