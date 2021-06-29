@@ -1,10 +1,21 @@
 const gulp = require('gulp');
-const bro = require('gulp-bro');
+
+const browserify = require('browserify');
+
 const rename = require('gulp-rename');
 const babelify = require('babelify');
+
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
+
 const terser = require('gulp-terser');
 const gulpif = require('gulp-if');
 const paths = require('../paths');
+
+var log = require('gulplog');
+
+
+const babelConfig = require('../../babel.config.json');
 
 let config;
 if (process.env.NODE_ENV == "production") {
@@ -13,23 +24,19 @@ if (process.env.NODE_ENV == "production") {
   config = require('../discovery/config');
 }
 
-let babelConfig = {
-  transform: [
-    babelify.configure({ presets: ['@babel/preset-env'] }),
-  ]
-}
+var b = browserify(babelConfig);
 
 module.exports = {
   clientBundle() {
-    return gulp.src(paths.content.js.entryFile)
-      .pipe(bro(babelConfig))
+    return b.bundle()
+      .pipe(gulp.src(paths.content.js.entryFile))
       .pipe(rename('bundle-client.js'))
       .pipe(gulpif(config.js.minify,terser()))
       .pipe(gulp.dest(paths.compiled.js))
   },
   prototypeBundle() {
-    return gulp.src(paths.core.js.entryFile)
-      .pipe(bro(babelConfig))
+    return b.bundle()
+      .pipe(gulp.src(paths.core.js.entryFile))
       .pipe(rename('bundle-prototype.js'))
       .pipe(gulpif(config.js.minify,terser()))
       .pipe(gulp.dest(paths.compiled.js))

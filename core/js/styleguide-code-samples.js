@@ -1,6 +1,10 @@
 import Clipboard from 'clipboard';
+import Prism from 'prismjs';
 import config from '../discovery/config';
 
+Prism.highlightAll();
+
+console.log(Prism);
 // Initial hide of all code
 var markupBoxes = document.querySelectorAll('.br-sample-code');
 
