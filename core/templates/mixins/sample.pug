@@ -16,8 +16,10 @@ mixin sample(component)
             button.br-sample-show-code-btn.br-sample-show-code-btn-pug(class=styleguideButtonClass) Show Pug code
 
             .br-sample-code.br-sample-code-html
-                button.br-sample-copy-code-btn(class=styleguideButtonClass) Copy to clipboard
-                pre.br-sample-markup.br-sample-markup-html= renderCode(component.filename, 'html')
+                // button.br-sample-copy-code-btn(class=styleguideButtonClass) Copy to clipboard
+                pre.br-sample-markup.br-sample-markup-html
+                    code.language-xml= renderCode(component.filename, 'html')
             .br-sample-code.br-sample-code-pug
-                button.br-sample-copy-code-btn(class=styleguideButtonClass) Copy to clipboard
-                pre.br-sample-markup.br-sample-markup-pug= renderCode(component.filename, 'pug')
+                // button.br-sample-copy-code-btn(class=styleguideButtonClass) Copy to clipboard
+                pre.br-sample-markup.br-sample-markup-pug
+                    code.language-pug= renderCode(component.filename, 'pug')

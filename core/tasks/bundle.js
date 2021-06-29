@@ -12,9 +12,6 @@ const terser = require('gulp-terser');
 const gulpif = require('gulp-if');
 const paths = require('../paths');
 
-var log = require('gulplog');
-
-
 const babelConfig = require('../../babel.config.json');
 
 let config;
@@ -24,20 +21,19 @@ if (process.env.NODE_ENV == "production") {
   config = require('../discovery/config');
 }
 
-var b = browserify(babelConfig);
+var b = browserify({ entries: paths.content.js.entryFile }).transform("babelify", babelConfig);
+var c = browserify({ entries: paths.core.js.entryFile }).transform("babelify", babelConfig);
 
 module.exports = {
   clientBundle() {
     return b.bundle()
-      .pipe(gulp.src(paths.content.js.entryFile))
-      .pipe(rename('bundle-client.js'))
+      .pipe(source('bundle-client.js'))
       .pipe(gulpif(config.js.minify,terser()))
       .pipe(gulp.dest(paths.compiled.js))
   },
   prototypeBundle() {
-    return b.bundle()
-      .pipe(gulp.src(paths.core.js.entryFile))
-      .pipe(rename('bundle-prototype.js'))
+    return c.bundle()
+      .pipe(source('bundle-prototype.js'))
       .pipe(gulpif(config.js.minify,terser()))
       .pipe(gulp.dest(paths.compiled.js))
   }

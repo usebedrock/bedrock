@@ -1,10 +1,10 @@
 import Clipboard from 'clipboard';
 import Prism from 'prismjs';
+//Prism.manual = true;
+
 import config from '../discovery/config';
 
-Prism.highlightAll();
 
-console.log(Prism);
 // Initial hide of all code
 var markupBoxes = document.querySelectorAll('.br-sample-code');
 
@@ -42,27 +42,26 @@ function toggleCode(sample, language, event) {
 
 }
 
-
 /* Save text to clipboard
    ========================================================================== */
 
-if (config.styleguide) {
-
-  const clipboard = new Clipboard('.br-sample-copy-code-btn', {
-    text: function (trigger) {
-      console.log(trigger);
-      const originalButtonText = trigger.innerHTML;
-
-      trigger.setAttribute('disabled', true);
-      trigger.innerHTML = 'Copied!';
-
-      setTimeout(function () {
-        trigger.innerHTML = originalButtonText;
-        trigger.removeAttribute('disabled')
-      }, 1500);
-
-      return trigger.nextSibling.innerHTML.replaceAll('&lt;','<').replaceAll('&gt;','>');
-    }
-  });
-
-}
+// if (config.styleguide) {
+//
+//   const clipboard = new Clipboard('.br-sample-copy-code-btn', {
+//     text: function (trigger) {
+//       console.log(trigger);
+//       const originalButtonText = trigger.innerHTML;
+//
+//       trigger.setAttribute('disabled', true);
+//       trigger.innerHTML = 'Copied!';
+//
+//       setTimeout(function () {
+//         trigger.innerHTML = originalButtonText;
+//         trigger.removeAttribute('disabled')
+//       }, 1500);
+//
+//       return trigger.nextSibling.innerHTML.replaceAll('&lt;','<').replaceAll('&gt;','>');
+//     }
+//   });
+//
+// }
