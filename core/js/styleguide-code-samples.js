@@ -1,7 +1,6 @@
 import Clipboard from 'clipboard';
 import config from '../discovery/config';
 
-
 // Initial hide of all code
 var markupBoxes = document.querySelectorAll('.br-sample-code');
 
@@ -40,24 +39,25 @@ function toggleCode(sample, language, event) {
 }
 
 
-if (config.styleguide) {
+/* Save text to clipboard
+   ========================================================================== */
 
-  /* Save text to clipboard
-     ========================================================================== */
+if (config.styleguide) {
 
   const clipboard = new Clipboard('.br-sample-copy-code-btn', {
     text: function (trigger) {
-      const originalButtonText = $(trigger).text();
+      console.log(trigger);
+      const originalButtonText = trigger.innerHTML;
 
-      $(trigger).prop('disabled', true);
-      $(trigger).text('Copied!');
+      trigger.setAttribute('disabled', true);
+      trigger.innerHTML = 'Copied!';
 
       setTimeout(function () {
-        $(trigger).text(originalButtonText);
-        $(trigger).prop('disabled', false);
+        trigger.innerHTML = originalButtonText;
+        trigger.removeAttribute('disabled')
       }, 1500);
 
-      return $(trigger).siblings('.br-sample-markup').find('.CodeMirror').get(0).CodeMirror.getValue();
+      return trigger.nextSibling.innerHTML.replaceAll('&lt;','<').replaceAll('&gt;','>');
     }
   });
 
