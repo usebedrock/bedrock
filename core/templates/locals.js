@@ -4,6 +4,17 @@ const pug = require('pug');
 const moment = require('moment');
 const marked = require('marked');
 
+const {default: html2jsx} = require('html2jsx')
+
+const jsdom = require('jsdom')
+
+const {JSDOM} = jsdom;
+const { window } = new JSDOM();
+const { document } = (new JSDOM('')).window;
+global.document = document;
+
+
+
 let config;
 if (process.env.NODE_ENV == "production") {
   config = require('../discovery/prod-config');
@@ -45,6 +56,7 @@ function getDefaultLocals() {
   };
 
   locals.renderCode = function (id, language) {
+
     const componentFileLocation = path.join(paths.content.templates.components, id + '.pug');
     const pugMarkup = fs.readFileSync(componentFileLocation, 'utf8');
 
@@ -66,6 +78,9 @@ function getDefaultLocals() {
       var b = beautify(a, config.prettify);
       return b;
 
+    } else if (language == "jsx") {
+      return pugMarkup;
+      
     }
   };
 

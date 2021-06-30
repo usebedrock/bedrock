@@ -18,6 +18,7 @@ samples.forEach((sample) => {
 
   var localHTMLButton = sample.querySelector('.br-sample-show-code-btn-html');
   var localPugButton = sample.querySelector('.br-sample-show-code-btn-pug');
+  var localJsxButton = sample.querySelector('.br-sample-show-code-btn-jsx');
 
   // Set event listeners
   if(localHTMLButton) {
@@ -26,6 +27,10 @@ samples.forEach((sample) => {
 
   if(localPugButton) {
       localPugButton.addEventListener('click', () => toggleCode(sample, "pug", event), false);
+  }
+
+  if(localJsxButton) {
+      localJsxButton.addEventListener('click', () => toggleCode(sample, "jsx", event), false);
   }
 
 });
