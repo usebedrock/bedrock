@@ -4,7 +4,7 @@
   ],
   "plugins": [
     ["prismjs", {
-        "languages": ["markup", "pug"],
+        "languages": ["markup", "pug", "jsx"],
         "theme": "ghcolors"
     }]
   ]

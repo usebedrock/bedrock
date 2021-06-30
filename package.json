@@ -61,6 +61,7 @@
     "gulp-terser": "^2.0.1",
     "gulp-util": "^3.0.7",
     "gulplog": "^1.0.0",
+    "html-to-jsx": "0.0.4",
     "html2jsx": "^0.1.0",
     "icon-font-generator": "^2.1.11",
     "jquery": "^3.6.0",
