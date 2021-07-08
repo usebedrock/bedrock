@@ -57,12 +57,6 @@ module.exports = function (done) {
     });
   });
 
-  app.get('/styleguide/colors.html', function (req, res) {
-    renderView(req, res, 'styleguide/colors', {
-      pathname: 'styleguide/colors'
-    });
-  });
-
   app.get('/styleguide/docs/:doc', function (req, res) {
     const docFilename = req.params.doc.replace('.html', '');
     const doc = _.find(docs.discover().allDocs, doc => doc.attributes.filename === docFilename);
