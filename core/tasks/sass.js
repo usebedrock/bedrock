@@ -19,9 +19,9 @@ if (process.env.NODE_ENV == "production") {
 var svgIconClassPrefix = config.icons && config.icons.svgIconClassPrefix || 'svg-icon'
 
 if (config.css.compiler == "postcss") {
-  var sources = [paths.core.scss.prototype]
+  var sources = [paths.core.scss.prototype, paths.core.scss.prism]
 } else if (config.css.compiler == "scss") {
-  var sources = [paths.content.scss.all, paths.core.scss.prototype]
+  var sources = [paths.content.scss.all]
 } else {
   console.error("Please provide a CSS compiler");
 }
