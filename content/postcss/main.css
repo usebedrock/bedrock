@@ -1,0 +1,27 @@
+/* Default styles powered by https://watercss.kognise.dev/ */
+/* Feel free to remove this line, this is just here to give the default Bedrock setup a nicer look.*/
+
+/* You will almost always use your own CSS framework in pratice.*/
+@import "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css";
+
+/* Make sure the Bedrock prototype wrapper looks good. */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* Negate a default style from water.css */
+body {
+  max-width: none;
+}
+
+/* This is a test if vendor prefixes work */
+/* Feel free to delete this in your project */
+.x-button {
+  appearance: none;
+}
+
+/* Add your custom HTML/CSS here... */
+

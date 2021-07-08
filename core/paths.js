@@ -1,7 +1,13 @@
 'use strict';
 
 const path = require('path');
-const config = require('./discovery/config');
+
+let config;
+if (process.env.NODE_ENV == "production") {
+  config = require('./discovery/prod-config');
+} else {
+  config = require('./discovery/config');
+}
 
 const contentPath = 'content/';
 const corePath = 'core/';
@@ -17,6 +23,10 @@ module.exports = {
       fonts: path.join(contentPath, 'fonts/**/*'),
       resources: path.join(contentPath, 'resources/**/*'),
       favicon: path.join(contentPath, 'favicon*')
+    },
+    postcss: {
+      all: path.join(contentPath, 'postcss/**/*.css'),
+      allMainFiles: path.join(contentPath, 'postcss/*.css'),
     },
     scss: {
       all: path.join(contentPath, 'scss/**/*.scss'),
@@ -90,7 +100,10 @@ module.exports = {
     fonts: path.join(distPath, 'fonts/'),
     modules: path.join(distPath, 'modules/'),
     js: path.join(distPath, 'js/'),
-    css: path.join(distPath, 'css/'),
+    css: {
+      mainPath: path.join(distPath, 'css/'),
+      allFiles: path.join(distPath, 'css/**/*.css'),
+    },
     styleguide: path.join(distPath, 'styleguide/'),
     docs: path.join(distPath, 'styleguide/docs/'),
     assets: {
