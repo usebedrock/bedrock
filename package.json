@@ -68,7 +68,7 @@
     "node-notifier": "^6.0.0",
     "postcss": "^8.3.4",
     "postcss-import": "^14.0.2",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "run-sequence": "^2.2.1"
   },
   "dependencies": {}
