@@ -38,6 +38,7 @@
     "chalk": "^3.0.0",
     "cheerio": "^1.0.0-rc.10",
     "clipboard": "^1.5.3",
+    "commander": "^2.20.3",
     "del": "^5.1.0",
     "directory-tree": "^2.2.7",
     "event-stream": "^4.0.1",

@@ -13,4 +13,7 @@ program
   .command('build', 'Build a static site');
 
 program
+  .command('content', 'Commands related to the main site content');
+
+program
   .parse(process.argv);
