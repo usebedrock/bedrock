@@ -19,4 +19,7 @@ program
   .command('styleguide', 'Commands related to the styleguide content');
 
 program
+  .command('components', 'Commands related to the styleguide components');
+
+program
   .parse(process.argv);

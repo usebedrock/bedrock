@@ -108,6 +108,7 @@ module.exports = {
     },
     styleguide: path.join(distPath, config.styleguide.url),
     docs: path.join(distPath, config.styleguide.url+'/docs/'),
+    partials: path.join(distPath, 'styleguide/partials/'),
     assets: {
       images: path.join(distPath, 'images/'),
       fonts: path.join(distPath, 'fonts/'),
