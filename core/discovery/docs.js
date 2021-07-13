@@ -6,18 +6,12 @@ const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
 const _ = require('lodash');
-const paths = require('../paths');
 const pug = require('pug');
 const beautify = require('js-beautify').html;
 
-let config;
-if (process.env.NODE_ENV == "production") {
-  config = require('./prod-config');
-} else {
-  config = require('./config');
-}
-
+const config = require('./config');
 const locals = require('../templates/locals');
+const paths = require('../paths');
 
 module.exports = {
   discover: function () {

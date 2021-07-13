@@ -4,13 +4,7 @@ const express = require('express');
 const beautify = require('js-beautify').html;
 const _ = require('lodash');
 
-let config;
-if (process.env.NODE_ENV == "production") {
-  config = require('../discovery/prod-config');
-} else {
-  config = require('../discovery/config');
-}
-
+const config = require('../discovery/config');
 const components = require('../discovery/components');
 const docs = require('../discovery/docs');
 const paths = require('../paths');

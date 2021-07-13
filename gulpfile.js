@@ -12,12 +12,7 @@ const server = require('./core/tasks/server');
 const iconFont = require('./core/tasks/icon-font');
 
 // Configs
-let config;
-if (process.env.NODE_ENV == "production") {
-  config = require('./core/discovery/prod-config');
-} else {
-  config = require('./core/discovery/config');
-}
+const config = require('./core/discovery/config');
 
 // Sass is used to render core templates so is needed, even if you use postcss in your content part
 const sass = require('./core/tasks/sass');

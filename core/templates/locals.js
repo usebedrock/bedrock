@@ -4,13 +4,7 @@ const pug = require('pug');
 const moment = require('moment');
 const marked = require('marked');
 
-let config;
-if (process.env.NODE_ENV == "production") {
-  config = require('../discovery/prod-config');
-} else {
-  config = require('../discovery/config');
-}
-
+const config = require('../discovery/config');
 const paths = require('../paths');
 const beautify = require('js-beautify').html;
 

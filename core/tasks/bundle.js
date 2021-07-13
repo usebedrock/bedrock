@@ -4,14 +4,9 @@ const rename = require('gulp-rename');
 const babelify = require('babelify');
 const terser = require('gulp-terser');
 const gulpif = require('gulp-if');
-const paths = require('../paths');
 
-let config;
-if (process.env.NODE_ENV == "production") {
-  config = require('../discovery/prod-config');
-} else {
-  config = require('../discovery/config');
-}
+const config = require('../discovery/config');
+const paths = require('../paths');
 
 let babelConfig = {
   transform: [
