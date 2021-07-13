@@ -13,6 +13,9 @@ program
   .command('build', 'Build a static site');
 
 program
+  .command('config', 'Report the configuration');
+
+program
   .command('content', 'Commands related to the main site content');
 
 program

@@ -1,0 +1,21 @@
+#! /usr/bin/env node
+
+'use strict';
+
+const program = require('commander');
+const glob = require('glob');
+const gulp = require('gulp');
+const path = require('path');
+
+const templates = require('../tasks/templates');
+const paths = require('../paths');
+
+const config = require('../discovery/config');
+
+program
+  .action(() => {
+    console.log(config)
+  });
+
+program
+  .parse(process.argv);
