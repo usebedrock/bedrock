@@ -16,4 +16,7 @@ program
   .command('content', 'Commands related to the main site content');
 
 program
+  .command('styleguide', 'Commands related to the styleguide content');
+
+program
   .parse(process.argv);
