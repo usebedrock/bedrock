@@ -71,7 +71,7 @@ const defaultConfig = {
     preserveNewlines: true,
     inline: '',
     logSuccess: false,
-    indentSize: 2,
+    indentSize: 4,
     unformatted: ['pre', 'textarea'],
     extraLiners: ['body']
   },
