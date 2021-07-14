@@ -49,6 +49,12 @@ const defaultConfig = {
     componentCategories: {
       aov: 'Overviews',
       c: 'Components',
+    },
+    /**
+     * Code samples
+     */
+    codeSamples: {
+      jsx: false
     }
   },
   /**
