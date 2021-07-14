@@ -1,6 +1,7 @@
 import Clipboard from 'clipboard';
 import Prism from 'prismjs';
-//Prism.manual = true;
+import 'prismjs/plugins/filter-highlight-all/prism-filter-highlight-all';
+Prism.plugins.filterHighlightAll.reject.addSelector('.br-copy-paste');
 
 import config from '../discovery/config';
 
