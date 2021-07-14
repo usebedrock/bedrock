@@ -65,6 +65,7 @@ module.exports = {
     },
     scss: {
       all: path.join(corePath, 'scss/**/*.scss'),
+      prism: path.join(corePath, 'scss/prism-styleguide.scss'),
       prototype: path.join(corePath, 'scss/prototype.scss')
     },
     templates: {
