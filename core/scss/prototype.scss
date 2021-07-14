@@ -328,9 +328,6 @@ html.br-prototype-nav-is-open {
   background: $br-code-background;
   border: 1px solid $br-code-border-color;
   padding: 1rem*$br-rem-multiplier;
-  .CodeMirror {
-    background: transparent;
-  }
 }
 
 .br-sample-content {
