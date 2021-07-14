@@ -66,7 +66,7 @@ if (config.styleguide) {
         trigger.removeAttribute('disabled')
       }, 1500);
 
-      return trigger.nextSibling.querySelector('.br-copy-paste').innerHTML.replaceAll('&lt;','<').replaceAll('&gt;','>');
+      return trigger.nextElementSibling.querySelector('.br-copy-paste').innerHTML.replaceAll('&lt;','<').replaceAll('&gt;','>');
     }
   });
 
