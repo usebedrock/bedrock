@@ -50,23 +50,23 @@ function toggleCode(sample, language, event) {
 /* Save text to clipboard
    ========================================================================== */
 
-// if (config.styleguide) {
-//
-//   const clipboard = new Clipboard('.br-sample-copy-code-btn', {
-//     text: function (trigger) {
-//       console.log(trigger);
-//       const originalButtonText = trigger.innerHTML;
-//
-//       trigger.setAttribute('disabled', true);
-//       trigger.innerHTML = 'Copied!';
-//
-//       setTimeout(function () {
-//         trigger.innerHTML = originalButtonText;
-//         trigger.removeAttribute('disabled')
-//       }, 1500);
-//
-//       return trigger.nextSibling.innerHTML.replaceAll('&lt;','<').replaceAll('&gt;','>');
-//     }
-//   });
-//
-// }
+if (config.styleguide) {
+
+  const clipboard = new Clipboard('.br-sample-copy-code-btn', {
+    text: function (trigger) {
+
+      const originalButtonText = trigger.innerHTML;
+
+      trigger.setAttribute('disabled', true);
+      trigger.innerHTML = 'Copied!';
+
+      setTimeout(function () {
+        trigger.innerHTML = originalButtonText;
+        trigger.removeAttribute('disabled')
+      }, 1500);
+
+      return trigger.nextSibling.querySelector('.br-copy-paste').innerHTML.replaceAll('&lt;','<').replaceAll('&gt;','>');
+    }
+  });
+
+}

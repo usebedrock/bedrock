@@ -359,6 +359,13 @@ html.br-prototype-nav-is-open {
   padding: 0;
 }
 
+/* Hide the 2nd render of code, so that we can paste it cleanly without Prism's classes
+   ========================================================================== */
+
+.br-copy-paste {
+  display: none;
+}
+
 /* Color swatches
    ========================================================================== */
 
@@ -632,3 +639,4 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
   align-items: center;
 }
 /* purgecss end ignore */
+
