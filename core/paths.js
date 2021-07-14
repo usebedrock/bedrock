@@ -60,7 +60,8 @@ module.exports = {
   core: {
     path: corePath,
     js: {
-      entryFile: path.join(corePath, 'js/index.js'),
+      prototypeNavEntryFile: path.join(corePath, 'js/prototype-nav.js'),
+      styleguideEntryFile: path.join(corePath, 'js/styleguide.js'),
       allFiles: path.join(corePath, 'js/**/*.js')
     },
     scss: {

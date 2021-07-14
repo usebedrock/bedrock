@@ -15,8 +15,11 @@ const paths = require('../paths');
 const babelConfig = require('../../babel.config.json');
 const config = require('../discovery/config');
 
+const glob = require('glob');
+
 var b = browserify({ entries: paths.content.js.entryFile }).transform("babelify", babelConfig);
-var c = browserify({ entries: paths.core.js.entryFile }).transform("babelify", babelConfig);
+var selectedCoreJSFiles = glob.sync(paths.core.js.styleguideEntryFile, paths.core.js.prototypeNavEntryFile);
+var c = browserify({ entries: selectedCoreJSFiles }).transform("babelify", babelConfig);
 
 module.exports = {
   clientBundle() {
