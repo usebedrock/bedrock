@@ -25,9 +25,6 @@ module.exports = {
     componentCategories: {
       aov: 'Overviews',
       c: 'Components',
-    },
-    codeSamples: {
-      jsx: true
     }
   },
 };
