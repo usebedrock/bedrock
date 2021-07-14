@@ -85,7 +85,8 @@ function getDefaultLocals() {
         filename: componentFileLocation
       })(locals);
 
-      const reactFunctionBegin = `export default function Example() {
+      const reactFunctionBegin = `{/* Note that this is merely a starting point for a real React component */}
+export default function Example() {
   return (`
 
       const reactFunctionEnd = `
