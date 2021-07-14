@@ -1,13 +1,8 @@
 const gulp = require('gulp');
 const cleanCSS = require('gulp-clean-css');
-const paths = require('../paths');
 
-let config;
-if (process.env.NODE_ENV == "production") {
-  config = require('../discovery/prod-config');
-} else {
-  config = require('../discovery/config');
-}
+const config = require('../discovery/config');
+const paths = require('../paths');
 
 module.exports = function (done) {
 
