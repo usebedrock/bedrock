@@ -17,21 +17,29 @@ const config = require('../discovery/config');
 
 const glob = require('glob');
 
-var b = browserify({ entries: paths.content.js.entryFile }).transform("babelify", babelConfig);
-var selectedCoreJSFiles = glob.sync(paths.core.js.styleguideEntryFile, paths.core.js.prototypeNavEntryFile);
-var c = browserify({ entries: selectedCoreJSFiles }).transform("babelify", babelConfig);
+var clientEntryFile = browserify({ entries: paths.content.js.entryFile }).transform("babelify", babelConfig);
+
+var styleguideEntryFile = browserify({ entries: paths.core.js.styleguideEntryFile }).transform("babelify", babelConfig);
+var prototypeNavEntryFile = browserify({ entries: paths.core.js.prototypeNavEntryFile }).transform("babelify", babelConfig);
 
 module.exports = {
   clientBundle() {
-    return b.bundle()
+    return clientEntryFile.bundle()
       .pipe(source('bundle-client.js'))
       .pipe(gulpif(config.js.minify,terser()))
       .pipe(gulp.dest(paths.compiled.js))
   },
-  prototypeBundle() {
-    return c.bundle()
-      .pipe(source('bundle-prototype.js'))
+  corePrototypeNavBundle() {
+    return prototypeNavEntryFile.bundle()
+      .pipe(source('core-prototype-nav.js'))
+      .pipe(gulpif(config.js.minify,terser()))
+      .pipe(gulp.dest(paths.compiled.js))
+  },
+  coreStyleguideBundle() {
+    return styleguideEntryFile.bundle()
+      .pipe(source('core-style-guide.js'))
       .pipe(gulpif(config.js.minify,terser()))
       .pipe(gulp.dest(paths.compiled.js))
   }
+
 };

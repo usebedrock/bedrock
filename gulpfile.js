@@ -39,7 +39,8 @@ gulp.task('copy:resources', copy.resources);
 gulp.task('copy:scripts', copy.scripts);
 gulp.task('copy:compiledToDist', copy.compiledToDist);
 gulp.task('bundle:clientBundle', bundle.clientBundle);
-gulp.task('bundle:prototypeBundle', bundle.prototypeBundle);
+gulp.task('bundle:corePrototypeNavBundle', bundle.corePrototypeNavBundle);
+gulp.task('bundle:coreStyleguideBundle', bundle.coreStyleguideBundle);
 gulp.task('icon-font', iconFont);
 
 gulp.task('templates:compile:content', templates.compile.content);
@@ -53,7 +54,7 @@ gulp.task('templates:compile', config.styleguide ?
 
 gulp.task('watch', watch);
 gulp.task('copy', gulp.parallel('copy:images', 'copy:fonts', 'copy:resources', 'copy:scripts', 'copy:favicon'));
-gulp.task('compile-all', gulp.parallel('templates:clean', 'icon-font', 'bundle:clientBundle', 'bundle:prototypeBundle', 'sass', 'postcss', 'copy'));
+gulp.task('compile-all', gulp.parallel('templates:clean', 'icon-font', 'bundle:clientBundle', config.pageTree ? 'bundle:corePrototypeNavBundle' : 'dummy', config.styleguide ? 'bundle:coreStyleguideBundle' : 'dummy', 'sass', 'postcss', 'copy'));
 
 gulp.task('build', gulp.series('compile-all', 'templates:compile', 'copy:compiledToDist', config.css.purge ? 'purgeCSS' : 'dummy', config.css.minify ? 'minifyCSS': 'dummy'), function (done) {
   console.log('------------\n');

@@ -15,6 +15,6 @@ module.exports = function () {
   gulp.watch(paths.content.icons.sourceFiles, browserSync.reload());
   gulp.watch(paths.content.js.allFiles, gulp.series('bundle:clientBundle'));
   gulp.watch(paths.content.js.separated, gulp.series('copy:scripts'));
-  gulp.watch(paths.core.js.allFiles, gulp.series('bundle:prototypeBundle'));
+  gulp.watch(paths.core.js.allFiles, gulp.parallel('bundle:coreStyleguideBundle', 'bundle:corePrototypeNavBundle'));
 
 };

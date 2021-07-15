@@ -24,7 +24,7 @@ html(dir="ltr" lang="en" class=htmlClass ? htmlClass : '')
     head
         meta(charset="utf-8")
         meta(name="viewport" content="width=device-width, initial-scale=1")
-        
+
         if config.noIndex
             meta(name="robots" content="noindex")
 
@@ -62,8 +62,11 @@ html(dir="ltr" lang="en" class=htmlClass ? htmlClass : '')
 
         = "\n"
 
-        if ( config.styleguide || config.pageTree)
-            script(src='/js/bundle-prototype.js')
+        if (config.styleguide)
+            script(src='/js/core-style-guide.js')
+        if (config.pageTree)
+            script(src='/js/core-prototype-nav.js')
+
         script(src='/js/bundle-client.js')
 
         block footerScripts
