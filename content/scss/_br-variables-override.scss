@@ -1,6 +1,8 @@
 /* ==========================================================================
   Variables override
   Overide variables set in core/scss/prototype.scss with your own
+
+  Warning: do not delete this file! Even if you use postcss, it needs to exist, because the styleguide's CSS was written using SCSS.
    ========================================================================== */
 
 // Example: your code is pixel based, use $br-rem-multiplier of 0.625

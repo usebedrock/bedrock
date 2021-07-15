@@ -1,6 +1,3 @@
-@import "_colors";
-@import 'br-variables-override';
-
 /* ==========================================================================
   Style guide styles
    ========================================================================== */
@@ -22,7 +19,7 @@
   Sometimes you want to set a height on this or targets its children etc.
 */
 
-// Here is an example of a style to make the style guide look better
+/* Here is an example of a style to make the style guide look better */
 
 .br-styleguide-brand-heading {
   margin: 0;
