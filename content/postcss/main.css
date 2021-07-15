@@ -1,8 +1,12 @@
-/* Default styles powered by https://watercss.kognise.dev/ */
-/* Feel free to remove this line, this is just here to give the default Bedrock setup a nicer look.*/
+/* Start your CSS here */
+/* You can remove all of the default CSS here if you want to and replace it by your own. */
 
-/* You will almost always use your own CSS framework in pratice.*/
+/* Feel free to remove the line below, this is just here to give the default Bedrock setup a nicer look.*/
 @import "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css";
+/* You will almost always use your own CSS framework in pratice.*/
+
+/* If you do not use an icon font, feel free to delete line below */
+@import "icon-font";
 
 /* Make sure the Bedrock prototype wrapper looks good. */
 html, body {
