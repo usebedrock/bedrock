@@ -6,6 +6,7 @@ __tmp__
 Gemfile.lock
 icon-font-tmp
 content/scss/settings/_icon-font.scss
+content/postcss/icon-font.css
 compiled
 tmp
 .bedrock-tmp
