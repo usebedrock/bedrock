@@ -1,7 +1,6 @@
 import $ from 'jquery';
 
 import packageJson from '../../package.json';
-import config from '../discovery/config';
 
 const ACTIVATION_KEYCODE = 77; // 'M' key or 'B' key for Windows
 const ACTIVATION_KEYCODE_WINDOWS = 66; // 'M' key or 'B' key for Windows
@@ -10,8 +9,7 @@ const NAV_STATE_STORAGE_KEY = `bedrock.${packageJson.name}.prototypeNavState`;
 
 let navState = {
   isOpen: false,
-  closedModules: [],
-  langSelected: config.languages && config.languages.find((lang) => lang.default).id
+  closedModules: []
 };
 
 const $html = $('html');

@@ -3,9 +3,6 @@ import Prism from 'prismjs';
 import 'prismjs/plugins/filter-highlight-all/prism-filter-highlight-all';
 Prism.plugins.filterHighlightAll.reject.addSelector('.br-copy-paste');
 
-import config from '../discovery/config';
-
-
 // Initial hide of all code
 var markupBoxes = document.querySelectorAll('.br-sample-code');
 
@@ -37,9 +34,9 @@ samples.forEach((sample) => {
 });
 
 function toggleCode(sample, language, event) {
-  
+
   var parentBlock = sample.querySelector('.br-sample-code-'+language);
-  
+
   if (parentBlock.style.display == 'none') {
     parentBlock.style.display = 'block';
   } else {
@@ -51,23 +48,19 @@ function toggleCode(sample, language, event) {
 /* Save text to clipboard
    ========================================================================== */
 
-if (config.styleguide) {
+const clipboard = new Clipboard('.br-sample-copy-code-btn', {
+  text: function (trigger) {
 
-  const clipboard = new Clipboard('.br-sample-copy-code-btn', {
-    text: function (trigger) {
+    const originalButtonText = trigger.innerHTML;
 
-      const originalButtonText = trigger.innerHTML;
+    trigger.setAttribute('disabled', true);
+    trigger.innerHTML = 'Copied!';
 
-      trigger.setAttribute('disabled', true);
-      trigger.innerHTML = 'Copied!';
+    setTimeout(function () {
+      trigger.innerHTML = originalButtonText;
+      trigger.removeAttribute('disabled')
+    }, 1500);
 
-      setTimeout(function () {
-        trigger.innerHTML = originalButtonText;
-        trigger.removeAttribute('disabled')
-      }, 1500);
-
-      return trigger.nextElementSibling.querySelector('.br-copy-paste').innerHTML.replaceAll('&lt;','<').replaceAll('&gt;','>');
-    }
-  });
-
-}
+    return trigger.nextElementSibling.querySelector('.br-copy-paste').innerHTML.replaceAll('&lt;','<').replaceAll('&gt;','>');
+  }
+});
