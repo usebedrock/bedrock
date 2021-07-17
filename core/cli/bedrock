@@ -1,0 +1,16 @@
+#! /usr/bin/env node
+
+'use strict';
+
+const program = require('commander');
+
+const cliVersion = require('../../package.json').version;
+
+program
+  .version(cliVersion, '-v, --version');
+
+program
+  .command('build', 'Build a static site');
+
+program
+  .parse(process.argv);

@@ -1,0 +1,17 @@
+#! /usr/bin/env node
+
+'use strict';
+
+const program = require('commander');
+const gulp = require('gulp');
+
+const defineGulpTasks = require('../tasks/gulpfile');
+
+program
+  .action(() => {
+    defineGulpTasks();
+    gulp.series('build')();
+  });
+
+program
+  .parse(process.argv);
