@@ -21,6 +21,8 @@
   },
   "homepage": "https://bedrockapp.org",
   "devDependencies": {
+  },
+  "dependencies": {
     "@babel/core": "^7.14.6",
     "@babel/preset-env": "^7.14.5",
     "autoprefixer": "^9.8.6",
@@ -81,6 +83,5 @@
     "through2": "^4.0.2",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
-  },
-  "dependencies": {}
+  }
 }
