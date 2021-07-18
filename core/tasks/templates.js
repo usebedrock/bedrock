@@ -45,7 +45,7 @@ module.exports = {
 
       const tasks = Object.keys(defaultLocals.components.byGroup).map(componentGroup => {
         return gulp.src([
-            path.join(bedrockDir, paths.core.templates.styleguide.componentGroup)
+            paths.core.templates.styleguide.componentGroup
           ])
           .pipe(data(function (file) {
             return Object.assign({}, getDefaultLocals(), {
@@ -63,7 +63,7 @@ module.exports = {
 
       tasks.push(
         gulp.src([
-            path.join(bedrockDir, paths.core.templates.styleguide.index)
+            paths.core.templates.styleguide.index
           ])
           .pipe(data(function (file) {
             return Object.assign({}, getDefaultLocals(), {
@@ -86,7 +86,7 @@ module.exports = {
 
       const tasks = defaultLocals.docs.allDocs.map(doc => {
         return gulp.src(
-            path.join(bedrockDir, paths.core.templates.styleguide.doc)
+            paths.core.templates.styleguide.doc
 	  )
           .pipe(data(function (file) {
             return Object.assign({}, getDefaultLocals(), {
