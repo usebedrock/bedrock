@@ -19,6 +19,9 @@ program
   .command('content', 'Commands related to the main site content');
 
 program
+  .command('serve', 'Run a development server');
+
+program
   .command('styleguide', 'Commands related to the styleguide content');
 
 program
