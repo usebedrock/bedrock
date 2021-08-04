@@ -9,6 +9,9 @@
     "build": "gulp build",
     "build-prod": "NODE_ENV=production gulp build"
   },
+  "bin": {
+    "bedrock": "./core/cli/bedrock"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/usebedrock/bedrock.git"
