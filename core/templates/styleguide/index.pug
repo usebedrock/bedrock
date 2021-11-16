@@ -18,7 +18,7 @@ block body
                             img.br-styleguide-logo(src=styleguideLogoAsImagePath alt=styleguideLogoAsImageAlt width=styleguideLogoAsImageForceWidth)
                     else
                         h1.br-styleguide-brand-heading(class=styleguideBrandClass)
-                            a.br-reset-link-styling(href=styleguideBrandLink?styleguideBrandLink:"/styleguide" class=styleguideResetLinkStylingClass) #{projectTitle}
+                            a.br-reset-link-styling(href=styleguideBrandLink?styleguideBrandLink:config.styleguide.url class=styleguideResetLinkStylingClass) #{projectTitle}
 
             if config.styleguide.search
                 .br-styleguide-search
