@@ -1,27 +1,44 @@
-var styleguideSearchDomEl =  document.getElementById('styleguideSearch');
+var searchDomEl = document.getElementById("styleguideSearch");
 
-if (typeof(styleguideSearchDomEl) != 'undefined' && styleguideSearchDomEl != null) {
-  styleguideSearchDomEl.addEventListener("input", function (e) { const inputVal = e.target.value.toUpperCase() })
+var inputVal = "";
+
+if (typeof searchDomEl != "undefined" && searchDomEl != null) {
+    searchDomEl.addEventListener("input", function (e) {
+        inputVal = e.target.value.toUpperCase();
+        filter();
+        hideHeaders();
+    });
 }
 
-let docsCategories = document.getElementsByClassName("br-docs-category")
+function filter() {
+    document.querySelectorAll(".br-docs-category").forEach((item) => {
+        item.querySelectorAll("li a").forEach((item) => {
+            const txtValue = item.textContent.toUpperCase();
 
-Array.from(docsCategories).forEach(docItem => {
+            if (txtValue.indexOf(inputVal) > -1) {
+                item.parentElement.style.display = "";
+            } else {
+                item.parentElement.style.display = "none";
+            }
+        });
+    });
+}
 
-  docItem.querySelectorAll(".br-docs-category-list-wrapper li a").each(function (el) {
-    const txtValue = el.textContent.toUpperCase();
-    if (txtValue.indexOf(inputVal) > -1) {
-      docItem.style.display = "";
-    } else {
-      docItem.style.display = "none";
-    }
-  });
+// Check if all list items are hidden, if that's the case, then hide the header as well
 
-  docItem.style.display = "";
+function hideHeaders() {
+    var parents = document.querySelectorAll(".br-docs-category");
+    parents.forEach((parent) => {
+        if (
+            parent.querySelectorAll(".br-docs-category-list-wrapper li").length ==
+            parent.querySelectorAll(".br-docs-category-list-wrapper li[style='display: none;']")
+                .length
+        ) {
+            parent.style.display = "none";
+        } else {
+            parent.style.display = "block";
+        }
+    });
+}
 
-  if (docItem.querySelectorAll("li:hidden").length == docItem.getElementsByTagName('li').length) {
-      docItem.style.display = "none";
-    }
-  }
 
-});
