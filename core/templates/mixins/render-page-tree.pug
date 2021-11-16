@@ -1,10 +1,11 @@
 mixin renderPage(entry)
+    - var entryPath = entry.path.replace('.pug', '');
+    - var isActive = false
+    if pathname === entryPath || (entryPath && pathname.includes(entryPath))
+        - basePage = entry
+    if pathname === entryPath || (entryPath && pathname === entryPath)
+        - isActive = true
     if !entry.path.includes('--')
-        - var entryPath = entry.path.replace('.pug', '');
-        - var isActive = false;
-        if pathname === entryPath || (entryPath && pathname.includes(entryPath)) || (pathname === '' && entryPath === 'index')
-            - basePage = entry;
-            - isActive = true;
         li.br-tree-dir
             a(href=entry.href, class=isActive ? 'br-bordered-list__link--active' : null)
                 = entry.name
