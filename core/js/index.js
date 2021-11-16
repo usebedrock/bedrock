@@ -1,5 +1,3 @@
-import $ from 'jquery';
-
 import './prototype-nav';
 import './styleguide-code-samples';
 import './styleguide-typography';
