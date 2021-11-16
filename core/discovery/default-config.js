@@ -27,6 +27,7 @@ const defaultConfig = {
    *  determines whether the styleguide gets generated
    */
   styleguide: {
+    pageTitle: 'Styleguide',
     url: '/styleguide',
     /**
      *  search [boolean]

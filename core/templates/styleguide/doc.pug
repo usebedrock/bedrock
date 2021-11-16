@@ -1,7 +1,7 @@
 extends index
 
 block append pageVariables
-    - var moduleTitle = doc.attributes.title + ' - Styleguide'
+    - var moduleTitle = doc.attributes.title + ' - ' + config.styleguide.pageTitle
 
 block content
     != doc.body
