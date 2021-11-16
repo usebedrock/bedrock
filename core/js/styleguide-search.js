@@ -1,27 +1,44 @@
-document
-  .getElementById("styleguideSearch")
-  .addEventListener("input", function (e) {
-    const inputVal = e.target.value.toUpperCase();
-    document
-      .getElementsByClassName("br-docs-category")
-      .forEach(function (docItem) {
-        docItem
-          .querySelectorAll(".br-docs-category-list-wrapper li a")
-          .each(function (el) {
-            const txtValue = el.textContent.toUpperCase();
-            if (txtValue.indexOf(inputVal) > -1) {
-              docItem.style.display = "";
-            } else {
-              docItem.style.display = "none";
-            }
-          });
+var searchDomEl = document.getElementById("styleguideSearch");
 
-        docItem.style.display = "";
+var inputVal = "";
+
+if (typeof searchDomEl != "undefined" && searchDomEl != null) {
+    searchDomEl.addEventListener("input", function (e) {
+        inputVal = e.target.value.toUpperCase();
+        filter();
+        hideHeaders();
+    });
+}
+
+function filter() {
+    document.querySelectorAll(".br-docs-category").forEach((item) => {
+        item.querySelectorAll("li a").forEach((item) => {
+            const txtValue = item.textContent.toUpperCase();
+
+            if (txtValue.indexOf(inputVal) > -1) {
+                item.parentElement.style.display = "";
+            } else {
+                item.parentElement.style.display = "none";
+            }
+        });
+    });
+}
+
+// Check if all list items are hidden, if that's the case, then hide the header as well
+
+function hideHeaders() {
+    var parents = document.querySelectorAll(".br-docs-category");
+    parents.forEach((parent) => {
         if (
-          docItem.querySelectorAll("li:hidden").length ==
-          docItem.getElementsByTagName('li').length
+            parent.querySelectorAll(".br-docs-category-list-wrapper li").length ==
+            parent.querySelectorAll(".br-docs-category-list-wrapper li[style='display: none;']")
+                .length
         ) {
-          docItem.style.display = "none";
+            parent.style.display = "none";
+        } else {
+            parent.style.display = "block";
         }
-      });
-  });
+    });
+}
+
+

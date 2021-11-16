@@ -1,5 +1,4 @@
 const SCROLL_STORAGE_KEY = 'bedrock.scrollPos';
-const $ = require('jquery');
 
 let scrollPositions;
 
@@ -12,17 +11,19 @@ try {
 
 // Set scroll positions for saved selectors
 for (var selector in scrollPositions) {
-  $(selector).scrollTop(+scrollPositions[selector]);
+  document.querySelector(selector).scrollTop = scrollPositions[selector];
 }
 
 // Save positions on unload
 window.onbeforeunload = function () {
   for (var selector in scrollPositions) {
-    scrollPositions[selector] = $(selector).scrollTop() || 0;
+    scrollPositions[selector] = document.querySelector(selector).scrollTop || 0;
   }
   sessionStorage.setItem(SCROLL_STORAGE_KEY, JSON.stringify(scrollPositions));
 };
 
-export default function (selector) {
-  scrollPositions[selector] = $(selector).scrollTop() || 0;
+function rememberScroll(selector) {
+  scrollPositions[selector] = document.querySelector(selector).scrollTop || 0;
 }
+
+rememberScroll('.br-styleguide-navigation-holder');
