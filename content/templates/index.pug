@@ -1,4 +1,23 @@
 extends /templates/_layouts/master
 
+block append headerStyles
+    style.
+        .br-homepage {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .br-homepage-inner {
+            max-width: 660px;
+            margin: 0 auto;
+            line-height: 1.5;
+            text-align: center;
+        }
+
 block body
-    p Welcome to Bedrock. This is your homepage. Go to <code>/content/templates/index.pug</code> to find this file and start editing your project.
+    .br-homepage
+        .br-homepage-inner
+            p
+                img(src="images/bedrock-logo-black.svg")
+            p Welcome to Bedrock. This is your homepage. Go to <code>/content/templates/index.pug</code> to find this file and start editing your project.
+            p Hit Ctrl + M (or alternatively Ctrl + B) to view the page tree.

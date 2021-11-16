@@ -1,9 +1,12 @@
+const path = require('path');
+
 const defaultConfig = require('./default-config');
 
 let config = {...defaultConfig};
 
 try {
-  const projectConfig = require('../../bedrock.config');
+  const projectConfigPath = path.join(process.cwd(), 'bedrock.config');
+  const projectConfig = require(projectConfigPath);
   config = {...config, ...projectConfig};
 } catch (err) {
   console.log(err);
@@ -13,7 +16,8 @@ try {
 
 if (process.env.NODE_ENV == "production") {
   try {
-    const projectConfig = require('../../bedrock.config.prod');
+    const projectConfigPath = path.join(process.cwd(), 'bedrock.config.prod');
+    const projectConfig = require(projectConfigPath);
     config = {...config, ...projectConfig};
   } catch (err) {
     console.log(err);
