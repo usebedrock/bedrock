@@ -10,8 +10,7 @@ const NAV_STATE_STORAGE_KEY = `bedrock.${packageJson.name}.prototypeNavState`;
 
 let navState = {
   isOpen: false,
-  closedModules: [],
-  langSelected: config.languages && config.languages.find((lang) => lang.default).id
+  closedModules: []
 };
 
 const $html = $('html');
