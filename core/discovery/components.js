@@ -8,13 +8,7 @@ const frontMatter = require('front-matter');
 const marked = require('marked');
 const chalk = require('chalk');
 
-let config;
-if (process.env.NODE_ENV == "production") {
-  config = require('./prod-config');
-} else {
-  config = require('./config');
-}
-
+const config = require('./config');
 const paths = require('../paths');
 
 const TEMPLATES_BASE_DIRECTORY = paths.content.templates.components;

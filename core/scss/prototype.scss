@@ -4,7 +4,6 @@
    ========================================================================== */
 
 @import "../../content/scss/br-variables-override";
-@import "vendor/codemirror";
 
 /* Variables
    ========================================================================== */
@@ -48,6 +47,7 @@ $br-styleguide-content-padding-left: 4.8rem*$br-rem-multiplier !default;
   right: 0;
   bottom: 0;
   height: 100vh;
+  z-index: 3000;
 }
 
 /* Basic setup
@@ -329,9 +329,6 @@ html.br-prototype-nav-is-open {
   background: $br-code-background;
   border: 1px solid $br-code-border-color;
   padding: 1rem*$br-rem-multiplier;
-  .CodeMirror {
-    background: transparent;
-  }
 }
 
 .br-sample-content {
@@ -361,6 +358,13 @@ html.br-prototype-nav-is-open {
   float: left;
   margin: 1rem*$br-rem-multiplier 0;
   padding: 0;
+}
+
+/* Hide the 2nd render of code, so that we can paste it cleanly without Prism's classes
+   ========================================================================== */
+
+.br-copy-paste {
+  display: none;
 }
 
 /* Color swatches
@@ -636,3 +640,4 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
   align-items: center;
 }
 /* purgecss end ignore */
+

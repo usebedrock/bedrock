@@ -14,10 +14,22 @@ mixin sample(component)
         .br-sample-footer
             button.br-sample-show-code-btn.br-sample-show-code-btn-html(class=styleguideButtonClass) Show HTML code
             button.br-sample-show-code-btn.br-sample-show-code-btn-pug(class=styleguideButtonClass) Show Pug code
+            if config.styleguide.codeSamples.jsx
+                button.br-sample-show-code-btn.br-sample-show-code-btn-jsx(class=styleguideButtonClass) Show JSX code
 
             .br-sample-code.br-sample-code-html
                 button.br-sample-copy-code-btn(class=styleguideButtonClass) Copy to clipboard
-                pre.br-sample-markup.br-sample-markup-html= renderCode(component.filename, 'html')
+                pre.br-sample-markup.br-sample-markup-html
+                    code.language-xml= renderCode(component.filename, 'html')
+                    code.br-copy-paste= renderCode(component.filename, 'html')
             .br-sample-code.br-sample-code-pug
                 button.br-sample-copy-code-btn(class=styleguideButtonClass) Copy to clipboard
-                pre.br-sample-markup.br-sample-markup-pug= renderCode(component.filename, 'pug')
+                pre.br-sample-markup.br-sample-markup-pug
+                    code.language-pug= renderCode(component.filename, 'pug')
+                    code.br-copy-paste= renderCode(component.filename, 'pug')
+            if config.styleguide.codeSamples.jsx
+                .br-sample-code.br-sample-code-jsx
+                    button.br-sample-copy-code-btn(class=styleguideButtonClass) Copy to clipboard
+                    pre.br-sample-markup.br-sample-markup-jsx
+                        code.language-jsx= renderCode(component.filename, 'jsx')
+                        code.br-copy-paste= renderCode(component.filename, 'jsx')

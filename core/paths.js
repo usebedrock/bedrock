@@ -2,12 +2,7 @@
 
 const path = require('path');
 
-let config;
-if (process.env.NODE_ENV == "production") {
-  config = require('./discovery/prod-config');
-} else {
-  config = require('./discovery/config');
-}
+const config = require('./discovery/config');
 
 const contentPath = 'content/';
 const corePath = 'core/';
@@ -70,6 +65,7 @@ module.exports = {
     },
     scss: {
       all: path.join(corePath, 'scss/**/*.scss'),
+      prism: path.join(corePath, 'scss/prism-styleguide.scss'),
       prototype: path.join(corePath, 'scss/prototype.scss')
     },
     templates: {

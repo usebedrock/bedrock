@@ -17,6 +17,8 @@ module.exports = {
     purge: false
   },
   styleguide: {
+    search: true,
+    colors: './content/scss/_colors.scss',
     categoryOrder: [
       'Style guide',
       'Design patterns',
@@ -25,6 +27,9 @@ module.exports = {
     componentCategories: {
       aov: 'Overviews',
       c: 'Components',
+    },
+    codeSamples: {
+      jsx: false
     }
   },
 };

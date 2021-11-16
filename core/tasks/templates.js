@@ -13,14 +13,9 @@ const moment = require('moment');
 const marked = require('marked');
 const del = require('del');
 const es = require('event-stream');
+const through = require('through2');
 
-let config;
-if (process.env.NODE_ENV == "production") {
-  config = require('../discovery/prod-config');
-} else {
-  config = require('../discovery/config');
-}
-
+const config = require('../discovery/config');
 const paths = require('../paths');
 const locals = require('../templates/locals');
 const docs = require('../discovery/docs');

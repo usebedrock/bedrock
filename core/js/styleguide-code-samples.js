@@ -1,74 +1,72 @@
-import $ from 'jquery';
 import Clipboard from 'clipboard';
-import Codemirror from 'codemirror';
-import 'codemirror/mode/pug/pug';
-import 'codemirror/mode/xml/xml';
+import Prism from 'prismjs';
+import 'prismjs/plugins/filter-highlight-all/prism-filter-highlight-all';
+Prism.plugins.filterHighlightAll.reject.addSelector('.br-copy-paste');
 
 import config from '../discovery/config';
 
-const $codeHolders = $('.br-sample-code');
-const $codeBlocks = $('.br-sample-markup');
+
+// Initial hide of all code
+var markupBoxes = document.querySelectorAll('.br-sample-code');
+
+markupBoxes.forEach((item) => {
+ item.style.display = 'none'
+});
+
+var samples = document.querySelectorAll('.br-sample');
+
+samples.forEach((sample) => {
+
+  var localHTMLButton = sample.querySelector('.br-sample-show-code-btn-html');
+  var localPugButton = sample.querySelector('.br-sample-show-code-btn-pug');
+  var localJsxButton = sample.querySelector('.br-sample-show-code-btn-jsx');
+
+  // Set event listeners
+  if(localHTMLButton) {
+      localHTMLButton.addEventListener('click', () => toggleCode(sample, "html", event), false);
+  }
+
+  if(localPugButton) {
+      localPugButton.addEventListener('click', () => toggleCode(sample, "pug", event), false);
+  }
+
+  if(localJsxButton) {
+      localJsxButton.addEventListener('click', () => toggleCode(sample, "jsx", event), false);
+  }
+
+});
+
+function toggleCode(sample, language, event) {
+  
+  var parentBlock = sample.querySelector('.br-sample-code-'+language);
+  
+  if (parentBlock.style.display == 'none') {
+    parentBlock.style.display = 'block';
+  } else {
+    parentBlock.style.display = 'none';
+  }
+
+}
+
+/* Save text to clipboard
+   ========================================================================== */
 
 if (config.styleguide) {
 
-  /* Init code blocks
-     ========================================================================== */
-
-  $codeBlocks.each(function () {
-
-    if ($(this).hasClass('br-sample-markup-html')) {
-      var mode = 'xml'
-    } else {
-      var mode = 'pug'
-    }
-
-    const editorOptions = {
-      value: $(this).text(),
-      readOnly: true,
-      mode: mode
-    };
-
-    $(this).empty();
-    $(this).editor = Codemirror(this, editorOptions);
-  });
-
-  /* Button logic: be able to show both Pug and HTML at the same time
-     ========================================================================== */
-
-  $codeHolders.hide();
-
-  $('.br-sample-show-code-btn-html').on('click', function(e) {
-    if ($(this).parents('.br-sample').find('.br-sample-code-html').is(':visible')) {
-        $(this).parents('.br-sample').find('.br-sample-code-html').hide();
-    } else {
-      $(this).parents('.br-sample').find('.br-sample-code-html').show();
-    }
-  });
-
-  $('.br-sample-show-code-btn-pug').on('click', function(e) {
-    if ($(this).parents('.br-sample').find('.br-sample-code-pug').is(':visible')) {
-        $(this).parents('.br-sample').find('.br-sample-code-pug').hide();
-    } else {
-      $(this).parents('.br-sample').find('.br-sample-code-pug').show();
-    }
-  });
-
-  /* Save text to clipboard
-     ========================================================================== */
-
   const clipboard = new Clipboard('.br-sample-copy-code-btn', {
     text: function (trigger) {
-      const originalButtonText = $(trigger).text();
 
-      $(trigger).prop('disabled', true);
-      $(trigger).text('Copied!');
+      const originalButtonText = trigger.innerHTML;
+
+      trigger.setAttribute('disabled', true);
+      trigger.innerHTML = 'Copied!';
 
       setTimeout(function () {
-        $(trigger).text(originalButtonText);
-        $(trigger).prop('disabled', false);
+        trigger.innerHTML = originalButtonText;
+        trigger.removeAttribute('disabled')
       }, 1500);
 
-      return $(trigger).siblings('.br-sample-markup').find('.CodeMirror').get(0).CodeMirror.getValue();
+      return trigger.nextElementSibling.querySelector('.br-copy-paste').innerHTML.replaceAll('&lt;','<').replaceAll('&gt;','>');
     }
   });
 

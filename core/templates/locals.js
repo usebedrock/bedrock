@@ -3,16 +3,14 @@ const fs = require('fs');
 const pug = require('pug');
 const moment = require('moment');
 const marked = require('marked');
+const htmlToJSX = require('html-to-jsx');
 
-let config;
-if (process.env.NODE_ENV == "production") {
-  config = require('../discovery/prod-config');
-} else {
-  config = require('../discovery/config');
-}
-
+const config = require('../discovery/config');
 const paths = require('../paths');
-const beautify = require('js-beautify').html;
+const beautifyHTML = require('js-beautify').html;
+
+function indentCode(code) { return code.split('\n').map(line => `    ${line}`).join('\n'); }
+
 
 function getDefaultLocals() {
   delete require.cache[require.resolve('../discovery/pages')];
@@ -45,6 +43,7 @@ function getDefaultLocals() {
   };
 
   locals.renderCode = function (id, language) {
+
     const componentFileLocation = path.join(paths.content.templates.components, id + '.pug');
     const pugMarkup = fs.readFileSync(componentFileLocation, 'utf8');
 
@@ -52,7 +51,7 @@ function getDefaultLocals() {
       return pugMarkup;
     } else if (language === 'html') {
 
-      const indentedPugMarkup = pugMarkup.split('\n').map(line => `    ${line}`).join('\n');
+      const indentedPugMarkup = indentCode(pugMarkup);
       const markupWithLayout = `extends /../core/templates/layouts/sample\n\nblock content\n${indentedPugMarkup}`;
 
       // First compile Pug
@@ -63,8 +62,33 @@ function getDefaultLocals() {
       })(locals);
 
       // Then beautify with JS beautify settings
-      var b = beautify(a, config.prettify);
+      var b = beautifyHTML(a, config.prettify);
       return b;
+
+    } else if (language == "jsx") {
+
+      // I know we are repeating 8 lines of code from above, could be made more DRY
+
+      const indentedPugMarkup = pugMarkup.split('\n').map(line => `    ${line}`).join('\n');
+      const markupWithLayout = `extends /../core/templates/layouts/sample\n\nblock content\n${indentedPugMarkup}`;
+
+      // First compile Pug
+      var compiledPug = pug.compile(markupWithLayout, {
+        pretty: true,
+        basedir: 'content',
+        filename: componentFileLocation
+      })(locals);
+
+      const reactFunctionBegin = `{/* Note that this is merely a starting point for a real React component */}
+export default function Example() {
+  return (`
+
+      const reactFunctionEnd = `
+  )
+}`
+
+      let reactCodeExample = reactFunctionBegin + indentCode(htmlToJSX(compiledPug)) + reactFunctionEnd;
+      return reactCodeExample;
 
     }
   };
