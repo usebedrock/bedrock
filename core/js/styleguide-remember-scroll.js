@@ -11,7 +11,13 @@ try {
 
 // Set scroll positions for saved selectors
 for (var selector in scrollPositions) {
-  document.querySelector(selector).scrollTop = scrollPositions[selector];
+  
+  var element =  document.querySelector(selector);
+  if (typeof(element) != 'undefined' && element != null)
+  {
+    document.querySelector(selector).scrollTop = scrollPositions[selector];
+  }
+
 }
 
 // Save positions on unload
@@ -23,5 +29,11 @@ window.onbeforeunload = function () {
 };
 
 export default function (selector) {
-  scrollPositions[selector] = document.querySelector(selector).scrollTop || 0;
+  
+  var element =  document.querySelector(selector);
+  if (typeof(element) != 'undefined' && element != null)
+  {
+    scrollPositions[selector] = document.querySelector(selector).scrollTop || 0;
+  }
+  
 }
