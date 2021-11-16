@@ -4,7 +4,13 @@ const express = require('express');
 const beautify = require('js-beautify').html;
 const _ = require('lodash');
 
-const config = require('../discovery/config');
+let config;
+if (process.env.NODE_ENV == "production") {
+  config = require('../discovery/prod-config');
+} else {
+  config = require('../discovery/config');
+}
+
 const components = require('../discovery/components');
 const docs = require('../discovery/docs');
 const paths = require('../paths');
@@ -45,13 +51,13 @@ function renderView(req, res, viewName, customLocals) {
 }
 
 module.exports = function (done) {
-  app.get('/styleguide', function (req, res) {
+  app.get(config.styleguide.url, function (req, res) {
     renderView(req, res, 'styleguide/index', {
       pathname: 'styleguide/index'
     });
   });
 
-  app.get('/styleguide/docs/:doc', function (req, res) {
+  app.get(config.styleguide.url+'/docs/:doc', function (req, res) {
     const docFilename = req.params.doc.replace('.html', '');
     const doc = _.find(docs.discover().allDocs, doc => doc.attributes.filename === docFilename);
 
@@ -61,7 +67,7 @@ module.exports = function (done) {
     });
   });
 
-  app.get('/styleguide/:group', function (req, res) {
+  app.get(config.styleguide.url+'/:group', function (req, res) {
     const componentGroups = components.discover();
     const componentGroup = req.params.group.replace('.html', '');
 

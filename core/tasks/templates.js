@@ -28,7 +28,7 @@ function getDefaultLocals() {
 
 module.exports = {
   clean(done) {
-    del(['./dist/**.html', './dist/modules', './dist/styleguide']).then(function () {
+    del(['./dist/**.html', './dist/modules', './dist/'+config.styleguide.url]).then(function () {
       done();
     });
   },
