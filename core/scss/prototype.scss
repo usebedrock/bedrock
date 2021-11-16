@@ -639,5 +639,19 @@ $br-bordered-list-title-font-size:               1.5rem*$br-rem-multiplier !defa
   justify-content: space-between;
   align-items: center;
 }
-/* purgecss end ignore */
 
+/* Home page
+   ========================================================================== */
+
+.br-demo-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.br-demo-content-inner {
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+/* purgecss end ignore */

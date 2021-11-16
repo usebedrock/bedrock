@@ -7,8 +7,8 @@
                 .br-docs-category-list-wrapper(class=styleguideNavListWrapperClass)
                     ul(class=styleguideNavListClass)
                         each doc in docs.byCategory[docsCategoryName]
-                            li(class=styleguideNavListItemClass+' '+`${ "styleguide/docs/" + doc.attributes.filename == pathname ? styleguideNavListItemActiveClass : "" }`)
-                                a(href=`/styleguide/docs/${doc.attributes.filename}.html` class=styleguideNavListItemLinkClass+' '+`${ "styleguide/docs/" + doc.attributes.filename == pathname ? styleguideNavListItemLinkActiveClass : "" }`)
+                            li(class=styleguideNavListItemClass+' '+`${ config.styleguide.url+"/docs/" + doc.attributes.filename == pathname ? styleguideNavListItemActiveClass : "" }`)
+                                a(href=config.styleguide.url+`/docs/${doc.attributes.filename}.html` class=styleguideNavListItemLinkClass+' '+`${ config.styleguide.url+"/docs/" + doc.attributes.filename == pathname ? styleguideNavListItemLinkActiveClass : "" }`)
                                     | #{doc.attributes.title}
         if docsCategoryName === 'Components' && Object.keys(components.byCategory).length > 0
             each category, categoryName in components.byCategory
@@ -21,8 +21,8 @@
                         ul(class=styleguideNavListClass)
                             each group in category
                                 - var groupName = group.docs ? group.docs.attributes.title || group.group.id : group.group.id
-                                li(class=styleguideNavListItemClass+' '+`${ "styleguide/" + group.group.id == pathname ? styleguideNavListItemActiveClass : "" }`)
-                                    a(href=`/styleguide/${group.group.id}.html` class=styleguideNavListItemLinkClass+' '+`${ ("styleguide/" + group.group.id) == pathname ? styleguideNavListItemLinkActiveClass : "" }`)
+                                li(class=styleguideNavListItemClass+' '+`${ config.styleguide.url+"/" + group.group.id == pathname ? styleguideNavListItemActiveClass : "" }`)
+                                    a(href=config.styleguide.url+`/${group.group.id}.html` class=styleguideNavListItemLinkClass+' '+`${ (config.styleguide.url+"/" + group.group.id) == pathname ? styleguideNavListItemLinkActiveClass : "" }`)
                                         |  #{groupName}
                                         if group.docs.attributes.containsCustom
                                             .br-docs-category-marker-custom
