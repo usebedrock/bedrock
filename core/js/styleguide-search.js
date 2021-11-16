@@ -1,28 +1,27 @@
-import $ from 'jquery';
+var styleguideSearchDomEl =  document.getElementById('styleguideSearch');
 
-$('#styleguideSearch').on('input', function(e) {
+if (typeof(styleguideSearchDomEl) != 'undefined' && styleguideSearchDomEl != null) {
+  styleguideSearchDomEl.addEventListener("input", function (e) { const inputVal = e.target.value.toUpperCase() })
+}
 
-  var inputVal = $(this).val().toUpperCase();
+let docsCategories = document.getElementsByClassName("br-docs-category")
 
-  $('.br-docs-category').each(function() {
+Array.from(docsCategories).forEach(docItem => {
 
-    $(this).find('.br-docs-category-list-wrapper li a').each(function() {
-
-        var txtValue = $(this).text().toUpperCase();
-        if (txtValue.indexOf(inputVal) > -1) {
-          $(this).parent().show();
-        } else {
-          $(this).parent().hide();
-        }
-
-    });
-
-    $(this).show();
-    if( $(this).find('li:hidden').length == $(this).find('li').length ) {
-        $(this).hide();
+  docItem.querySelectorAll(".br-docs-category-list-wrapper li a").each(function (el) {
+    const txtValue = el.textContent.toUpperCase();
+    if (txtValue.indexOf(inputVal) > -1) {
+      docItem.style.display = "";
+    } else {
+      docItem.style.display = "none";
     }
-
   });
 
-});
+  docItem.style.display = "";
 
+  if (docItem.querySelectorAll("li:hidden").length == docItem.getElementsByTagName('li').length) {
+      docItem.style.display = "none";
+    }
+  }
+
+});
