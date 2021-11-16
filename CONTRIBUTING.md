@@ -9,3 +9,7 @@ Are you a dev with JS and node.js experience or willing to learn through contrib
 ### Policy
 
 We will not tolerate any harmful conduct and aim to create a nice open source community space to work in.
+
+### Pull requests
+
+Please direct your PRs to the `development` branch.

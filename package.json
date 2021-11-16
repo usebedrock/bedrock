@@ -1,6 +1,6 @@
 {
   "name": "bedrock",
-  "version": "1.38.1",
+  "version": "1.39.1",
   "description": "Static site generator to easily make HTML prototypes",
   "main": "gulpfile.js",
   "scripts": {
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mono-company/bedrock.git"
+    "url": "git+https://github.com/usebedrock/bedrock.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mono-company/bedrock/issues"
+    "url": "https://github.com/usebedrock/bedrock/issues"
   },
-  "homepage": "https://github.com/mono-company/bedrock#readme",
+  "homepage": "https://bedrockapp.org",
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@babel/preset-env": "^7.14.5",

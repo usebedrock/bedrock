@@ -8,13 +8,7 @@ include ../mixins/render-page-tree
     .br-prototype-nav-inner
         h4.br-prototype-nav-main-heading Prototype navigation
         p.br-prototype-nav-text Press Ctrl + M to toggle this navigation or click <a class="br-prototype-close-nav" href="#">here</a>.
-        block prototypeNavAdditionalText
 
-        if config.languages && config.languages.length > 1
-            p.br-prototype-nav-text Language selection:
-            each lang in config.languages
-                input(class='br-prototype-langselector',type='radio', name='lang', id=lang.id, value=lang.id, checked=lang.default===true)
-                label(for=lang.id)= lang.label
         #br-page-tree
             +renderPageTree
 
