@@ -29,6 +29,12 @@ const defaultConfig = {
   styleguide: {
     url: '/styleguide',
     /**
+     *  overrideStyleguideTemplates [boolean]
+     *  Make Bedrock use the current directory's styleguide
+     *  templates instead of Bedrock's core styleguide templates.
+    */
+    overrideStyleguideTemplates: false,
+    /**
      *  search [boolean]
      *  Feature flag for search feature
     */

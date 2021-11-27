@@ -18,6 +18,7 @@ module.exports = {
   },
   styleguide: {
     url: '/styleguide',
+    overrideStyleguideTemplates: false,
     search: true,
     colors: './content/scss/_colors.scss',
     categoryOrder: [

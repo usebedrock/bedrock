@@ -10,6 +10,11 @@ const absoluteCorePath = __dirname;
 const compiledPath = 'tmp/';
 const distPath = 'dist/';
 
+const styleguideTemplatesPath =
+  config.styleguide.overrideStyleguideTemplates
+  ? path.join(contentPath, 'templates/_styleguide')
+  : path.join(absoluteCorePath, 'templates/styleguide');
+
 module.exports = {
   content: {
     path: contentPath,
@@ -71,10 +76,10 @@ module.exports = {
     },
     templates: {
       styleguide: {
-        index: path.join(absoluteCorePath, 'templates/styleguide/index.pug'),
-        doc: path.join(absoluteCorePath, 'templates/styleguide/doc.pug'),
-        colors: path.join(absoluteCorePath, 'templates/styleguide/colors.pug'),
-        componentGroup: path.join(absoluteCorePath, 'templates/styleguide/component-group.pug')
+        index: path.join(styleguideTemplatesPath, 'index.pug'),
+        doc: path.join(styleguideTemplatesPath, 'doc.pug'),
+        colors: path.join(styleguideTemplatesPath, 'colors.pug'),
+        componentGroup: path.join(styleguideTemplatesPath, 'component-group.pug')
       }
     }
   },
