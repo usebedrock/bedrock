@@ -24,7 +24,7 @@ mixin renderDirectory(entry)
 mixin renderPageTree
     ul.br-bordered-list
         if config.styleguide
-            li: a(href="/styleguide") Styleguide
+            li: a(href=config.styleguide.url) Styleguide
         each entry in pages
             if entry.type === 'directory'
                 +renderDirectory(entry)
