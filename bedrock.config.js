@@ -19,7 +19,7 @@ module.exports = {
   styleguide: {
     title: 'Styleguide'
     url: '/styleguide',
-    overrideStyleguideTemplates: false,
+    homepage: '/styleguide/docs/introduction.html',
     search: true,
     colors: './content/scss/_colors.scss',
     categoryOrder: [
