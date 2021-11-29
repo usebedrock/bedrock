@@ -26,4 +26,8 @@ function rememberScroll(selector) {
   scrollPositions[selector] = document.querySelector(selector).scrollTop || 0;
 }
 
-rememberScroll('.br-styleguide-navigation-holder');
+var element = document.querySelector('.br-styleguide-navigation-holder');
+if (typeof(element) != 'undefined' && element != null)
+{
+  rememberScroll('.br-styleguide-navigation-holder');
+}
