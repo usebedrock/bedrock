@@ -18,7 +18,7 @@ module.exports = {
     purge: false
   },
   styleguide: {
-    title: 'Styleguide'
+    title: 'Styleguide',
     url: '/styleguide',
     homepage: '/styleguide/docs/introduction.html',
     overrideStyleguideTemplates: false,
