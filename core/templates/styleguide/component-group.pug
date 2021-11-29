@@ -2,7 +2,7 @@ extends index
 
 block append pageVariables
     - var pageTitle = componentGroup.docs && componentGroup.docs.attributes.title || componentGroup.group.id
-    - var moduleTitle = pageTitle + ' - Styleguide'
+    - var moduleTitle = pageTitle + ' - ' + config.styleguide.title
 
 block content
 
