@@ -6,7 +6,8 @@
 
 module.exports = {
   pageTree: {
-    layoutStyle: 'sidebar' // 'sidebar' or 'fixed'
+    layoutStyle: 'sidebar',
+    title: 'Prototype nav'
   },
   js: {
     minify: false
