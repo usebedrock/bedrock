@@ -16,8 +16,6 @@ See https://bedrock-monocompany.vercel.app/ . Try to hit Ctrl + M to see the pag
 
 * First, make sure you have Node 14 or later installed. You can find the latest version of Node at [Nodejs.org](https://nodejs.org/en/). Go for the LTS version.
 
-## Using Bedrock to make prototypes
-
 ## Create your first prototype
 
 We recommend using <a href="https://github.com/Rich-Harris/degit">degit</a> to be able to grab a Bedrock install without actually cloning the project repository (see: Contributing to Bedrock).
@@ -48,7 +46,7 @@ Make sure to make a branch for yourself - and if you have something meaningful t
 ## Major commands
 
 * `npm start`: runs the prototype
-* `npm run build`: create a build (which ends up in the `dist` folder) that can be deployed to a server
+* `npm run build`: create a build (which ends up in the `dist` folder) that can be deployed to a web server
 
 ## Upgrading bedrock
 
