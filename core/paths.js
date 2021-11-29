@@ -10,10 +10,9 @@ const absoluteCorePath = __dirname;
 const compiledPath = 'tmp/';
 const distPath = 'dist/';
 
-const styleguideTemplatesPath =
-  config.styleguide.overrideStyleguideTemplates
-  ? path.join(contentPath, 'templates/_styleguide')
-  : path.join(absoluteCorePath, 'templates/styleguide');
+const styleguideTemplatesPath = path.join(
+  config.styleguide.overrideStyleguideTemplates ? contentPath : absoluteCorePath,
+  'templates/_styleguide');
 
 module.exports = {
   content: {
@@ -66,13 +65,13 @@ module.exports = {
   core: {
     path: corePath,
     js: {
-      entryFile: path.join(corePath, 'js/index.js'),
-      allFiles: path.join(corePath, 'js/**/*.js')
+      entryFile: path.join(absoluteCorePath, 'js/index.js'),
+      allFiles: path.join(absoluteCorePath, 'js/**/*.js')
     },
     scss: {
       all: path.join(corePath, 'scss/**/*.scss'),
-      prism: path.join(corePath, 'scss/prism-styleguide.scss'),
-      prototype: path.join(corePath, 'scss/prototype.scss')
+      prism: path.join(absoluteCorePath, 'scss/prism-styleguide.scss'),
+      prototype: path.join(absoluteCorePath, 'scss/prototype.scss')
     },
     templates: {
       styleguide: {
@@ -108,6 +107,7 @@ module.exports = {
     },
     styleguide: path.join(distPath, config.styleguide.url),
     docs: path.join(distPath, config.styleguide.url+'/docs/'),
+    partials: path.join(distPath, 'styleguide/partials/'),
     assets: {
       images: path.join(distPath, 'images/'),
       fonts: path.join(distPath, 'fonts/'),

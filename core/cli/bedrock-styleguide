@@ -1,0 +1,33 @@
+#! /usr/bin/env node
+
+'use strict';
+
+const program = require('commander');
+const glob = require('glob');
+const gulp = require('gulp');
+const path = require('path');
+
+const templates = require('../tasks/templates');
+const paths = require('../paths');
+
+program
+  .command('build')
+  .description('Build the style guide, using the styleguide and docs Pug templates')
+  .action(function () {
+    gulp.task('templates:compile:docs', templates.compile.docs);
+    gulp.task('templates:compile:styleguide', templates.compile.styleguide);
+    gulp.parallel('templates:compile:docs', 'templates:compile:styleguide')();
+  });
+
+program
+  .action(() => {
+    program.help()
+  });
+
+if (process.argv.length === 2) {
+  program.help();
+  process.exit();
+}
+
+program
+  .parse(process.argv);

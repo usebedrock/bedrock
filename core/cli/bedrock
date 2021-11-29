@@ -1,0 +1,31 @@
+#! /usr/bin/env node
+
+'use strict';
+
+const program = require('commander');
+
+const cliVersion = require('../../package.json').version;
+
+program
+  .version(cliVersion, '-v, --version');
+
+program
+  .command('build', 'Build a static site');
+
+program
+  .command('config', 'Report the configuration');
+
+program
+  .command('content', 'Commands related to the main site content');
+
+program
+  .command('serve', 'Run a development server');
+
+program
+  .command('styleguide', 'Commands related to the styleguide content');
+
+program
+  .command('components', 'Commands related to the styleguide components');
+
+program
+  .parse(process.argv);

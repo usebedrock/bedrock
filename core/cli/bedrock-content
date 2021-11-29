@@ -1,0 +1,40 @@
+#! /usr/bin/env node
+
+'use strict';
+
+const program = require('commander');
+const glob = require('glob');
+const gulp = require('gulp');
+
+const templates = require('../tasks/templates');
+const paths = require('../paths');
+
+program
+  .command('list')
+  .description('List the Pug templates under content/templates/')
+  .action(function () {
+    // glob.sync() is what gulp.src() uses, but the
+    // task filters paths starting with an underscore...
+    console.log(glob.sync(paths.content.templates.all));
+  });
+
+program
+  .command('build')
+  .description('Build the Pug templates under content/temlates/')
+  .action(function () {
+    gulp.task('templates:compile:content', templates.compile.content);
+    gulp.series('templates:compile:content')();
+  });
+
+program
+  .action(() => {
+    program.help()
+  });
+
+if (process.argv.length === 2) {
+  program.help();
+  process.exit();
+}
+
+program
+  .parse(process.argv);

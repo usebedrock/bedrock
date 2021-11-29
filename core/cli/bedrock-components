@@ -1,0 +1,49 @@
+#! /usr/bin/env node
+
+'use strict';
+
+const program = require('commander');
+const glob = require('glob');
+const gulp = require('gulp');
+const path = require('path');
+
+const templates = require('../tasks/templates');
+const paths = require('../paths');
+
+
+program
+  .command('list')
+  .description('List the Pug templates under content/templates/_components')
+  .action(function () {
+    // glob.sync() is what gulp.src() uses, but the
+    console.log(glob.sync(paths.content.templates.allComponents, '**/*.pug'));
+  });
+
+program
+  .command('build')
+  .description('Build the component Pug templates')
+  .action(function () {
+    gulp.task('templates:compile:styleguide', templates.compile.styleguide);
+    gulp.series('templates:compile:styleguide')();
+  });
+
+program
+  .command('partials')
+  .description('Build the component Pug templates as partial HTML')
+  .action(function () {
+    gulp.task('templates:compile:partials', templates.compile.partials);
+    gulp.series('templates:compile:partials')();
+  });
+
+program
+  .action(() => {
+    program.help()
+  });
+
+if (process.argv.length === 2) {
+  program.help();
+  process.exit();
+}
+
+program
+  .parse(process.argv);
