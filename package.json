@@ -1,5 +1,5 @@
 {
-  "name": "bedrock",
+  "name": "bedrockapp",
   "version": "1.41.0",
   "description": "Static site generator to easily make HTML prototypes",
   "main": "gulpfile.js",
