@@ -10,10 +10,9 @@ const absoluteCorePath = __dirname;
 const compiledPath = 'tmp/';
 const distPath = 'dist/';
 
-const styleguideTemplatesPath =
-  config.styleguide.overrideStyleguideTemplates
-  ? path.join(contentPath, 'templates/_styleguide')
-  : path.join(absoluteCorePath, 'templates/styleguide');
+const styleguideTemplatesPath = path.join(
+  config.styleguide.overrideStyleguideTemplates ? contentPath : absoluteCorePath,
+  'templates/_styleguide');
 
 module.exports = {
   content: {
