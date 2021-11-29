@@ -8,6 +8,10 @@ Bedrock is a powerful tool that lets you prototype complex web applications and 
 
 For the full documentation, please check out [the Bedrock website](https://bedrockapp.org/).
 
+## Demo
+
+See https://bedrock-monocompany.vercel.app/ . Try to hit Ctrl + M to see the page tree; and navigate to https://bedrock-monocompany.vercel.app/styleguide/docs/introduction.html 
+
 ## Basic requirements
 
 * First, make sure you have Node 14 or later installed. You can find the latest version of Node at [Nodejs.org](https://nodejs.org/en/). Go for the LTS version.
