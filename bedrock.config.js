@@ -17,6 +17,7 @@ module.exports = {
     purge: false
   },
   styleguide: {
+    title: 'Styleguide'
     url: '/styleguide',
     overrideStyleguideTemplates: false,
     search: true,

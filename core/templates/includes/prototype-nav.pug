@@ -6,7 +6,7 @@ include ../mixins/render-page-tree
 
 #__prototype-nav.br-prototype-nav(aria-hidden="true" class=navClasses.join(" "))
     .br-prototype-nav-inner
-        h4.br-prototype-nav-main-heading Prototype navigation
+        h4.br-prototype-nav-main-heading #{config.pageTree.title ? config.pageTree.title : 'Prototype navigation'}
         p.br-prototype-nav-text Press Ctrl + M to toggle this navigation or click <a class="br-prototype-close-nav" href="#">here</a>.
 
         #br-page-tree
