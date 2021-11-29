@@ -8,7 +8,8 @@ const defaultConfig = {
    *  determines whether the page tree gets generated
    */
   pageTree: {
-    layoutStyle: 'sidebar'
+    layoutStyle: 'sidebar',
+    title: 'Prototype navigation'
   },
   /**
    * CSS and JS minification
@@ -27,6 +28,7 @@ const defaultConfig = {
    *  determines whether the styleguide gets generated
    */
   styleguide: {
+    title: 'Styleguide',
     url: '/styleguide',
     /**
      *  search [boolean]
