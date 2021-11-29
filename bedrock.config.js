@@ -17,8 +17,9 @@ module.exports = {
     purge: false
   },
   styleguide: {
-    title: 'Styleguide'
+    title: 'Styleguide',
     url: '/styleguide',
+    homepage: '/styleguide/docs/introduction.html',
     search: true,
     colors: './content/scss/_colors.scss',
     categoryOrder: [

@@ -30,6 +30,7 @@ const defaultConfig = {
   styleguide: {
     title: 'Styleguide',
     url: '/styleguide',
+    homepage: '/styleguide/docs/introduction.html',
     /**
      *  search [boolean]
      *  Feature flag for search feature
