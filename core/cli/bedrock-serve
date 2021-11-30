@@ -1,0 +1,18 @@
+#! /usr/bin/env node
+
+'use strict';
+
+const program = require('commander');
+const gulp = require('gulp');
+
+const browserSync = require('../tasks/browser-sync');
+const defineGulpTasks = require('../tasks/gulpfile');
+
+program
+  .action(() => {
+    defineGulpTasks();
+    gulp.parallel('server', 'compile-all', 'watch', browserSync)();
+  });
+
+program
+  .parse(process.argv);

@@ -1,6 +1,6 @@
 {
-  "name": "bedrock",
-  "version": "1.40.0",
+  "name": "bedrockapp",
+  "version": "1.41.2",
   "description": "Static site generator to easily make HTML prototypes",
   "main": "gulpfile.js",
   "scripts": {
@@ -8,6 +8,9 @@
     "start": "gulp",
     "build": "gulp build",
     "build-prod": "NODE_ENV=production gulp build"
+  },
+  "bin": {
+    "bedrock": "./core/cli/bedrock"
   },
   "repository": {
     "type": "git",
@@ -20,7 +23,8 @@
     "url": "https://github.com/usebedrock/bedrock/issues"
   },
   "homepage": "https://bedrockapp.org",
-  "devDependencies": {
+  "devDependencies": {},
+  "dependencies": {
     "@babel/core": "^7.14.6",
     "@babel/preset-env": "^7.14.5",
     "autoprefixer": "^9.8.6",
@@ -33,6 +37,7 @@
     "chalk": "^3.0.0",
     "cheerio": "^1.0.0-rc.10",
     "clipboard": "^1.5.3",
+    "commander": "^2.20.3",
     "del": "^5.1.0",
     "directory-tree": "^2.2.7",
     "event-stream": "^4.0.1",
@@ -80,6 +85,5 @@
     "through2": "^4.0.2",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
-  },
-  "dependencies": {}
+  }
 }
