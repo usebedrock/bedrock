@@ -3,8 +3,6 @@
   Bedrock specific styles
    ========================================================================== */
 
-@import "../../content/scss/br-variables-override";
-
 /* Variables
    ========================================================================== */
 
@@ -35,8 +33,6 @@ $br-styleguide-content-padding-top: 2.4rem*$br-rem-multiplier !default;
 $br-styleguide-content-padding-right: 2.4rem*$br-rem-multiplier !default;
 $br-styleguide-content-padding-bottom: 2.4rem*$br-rem-multiplier !default;
 $br-styleguide-content-padding-left: 4.8rem*$br-rem-multiplier !default;
-
-@import "../../content/scss/br-variables-override";
 
 
 /* Fixed layout
