@@ -15,8 +15,14 @@ const paths = require('../paths');
 const babelConfig = require('../../babel.config.json');
 const config = require('../discovery/config');
 
-var b = browserify({ entries: paths.content.js.entryFile }).transform("babelify", babelConfig);
-var c = browserify({ entries: paths.core.js.entryFile }).transform("babelify", babelConfig);
+var b = browserify({ entries: paths.content.js.entryFile })
+  .transform("babelify", babelConfig);
+var c = browserify({ entries: paths.core.js.entryFile })
+  // Make sure the Bedrock configuration file is part of the bundle, even if
+  // Browserify doesn't find it by looking at `require()` calls. And expose
+  // that configuration using a custom dependency name.
+  .add('./bedrock.config.js', {expose: 'bedrock.config'})
+  .transform("babelify", babelConfig);
 
 module.exports = {
   clientBundle() {
