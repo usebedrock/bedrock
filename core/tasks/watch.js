@@ -3,7 +3,6 @@ const browserSync = require('browser-sync');
 const paths = require('../paths');
 
 module.exports = function () {
-  global.isWatching = true;
 
   gulp.watch([paths.content.scss.all, paths.core.scss.all], gulp.series('sass'));
   gulp.watch([paths.content.postcss.all], gulp.series('postcss'));
