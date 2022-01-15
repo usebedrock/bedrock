@@ -67,7 +67,7 @@
     "js-beautify": "^1.14.0",
     "jsdom": "^16.6.0",
     "lodash": "^4.17.21",
-    "marked": "^0.8.2",
+    "marked": "^4.0.10",
     "mkdirp": "^0.5.1",
     "moment": "^2.29.1",
     "natives": "^1.1.6",
