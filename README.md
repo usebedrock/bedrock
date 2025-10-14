@@ -1,3 +1,7 @@
+---
+**⚠️ If it wasn't obvious from the inactivity, this project is unmaintained. We recently also closed down the documentation website. If you were a Bedrock user, thanks for using our project! We are keeping the code and repo online for anyone who has to figure out how to get an old Bedrock prototype working.**
+---
+
 # ![Bedrock](https://bedrockapp.org/wp-content/themes/bedrock/images/logo-black.svg)
 
 Welcome to Bedrock.
