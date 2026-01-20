@@ -74,7 +74,7 @@
     "node-notifier": "^6.0.0",
     "postcss": "^8.3.4",
     "postcss-import": "^14.0.2",
-    "prismjs": "^1.24.0",
+    "prismjs": "^1.27.0",
     "pug": "^2.0.4",
     "run-sequence": "^2.2.1",
     "through2": "^4.0.2",
