@@ -29,7 +29,7 @@
     "babelify": "^10.0.0",
     "browser-sync": "^2.26.14",
     "browserify": "^16.5.2",
-    "cached-path-relative": ">=1.0.2",
+    "cached-path-relative": ">=1.1.0",
     "chalk": "^3.0.0",
     "cheerio": "^1.0.0-rc.10",
     "clipboard": "^1.5.3",
