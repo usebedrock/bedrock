@@ -25,6 +25,8 @@ function mapChildren(children, parent) {
 
 function addPageInfo(page, parent) {
   page.href = '/' + page.path.replace('.pug', '.html');
+  // TODO This function seems to be called too many times.
+  // console.log(page.href);
   page.name = page.name.replace('.pug', '');
   page.id = page.path.replace('.pug', '');
   // Copy array

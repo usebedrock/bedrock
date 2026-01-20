@@ -6,8 +6,13 @@ const config = require('./discovery/config');
 
 const contentPath = 'content/';
 const corePath = 'core/';
+const absoluteCorePath = __dirname;
 const compiledPath = 'tmp/';
 const distPath = 'dist/';
+
+const styleguideTemplatesPath = path.join(
+  config.styleguide.overrideStyleguideTemplates ? contentPath : absoluteCorePath,
+  'templates/_styleguide');
 
 module.exports = {
   content: {
@@ -60,20 +65,20 @@ module.exports = {
   core: {
     path: corePath,
     js: {
-      entryFile: path.join(corePath, 'js/index.js'),
-      allFiles: path.join(corePath, 'js/**/*.js')
+      entryFile: path.join(absoluteCorePath, 'js/index.js'),
+      allFiles: path.join(absoluteCorePath, 'js/**/*.js')
     },
     scss: {
       all: path.join(corePath, 'scss/**/*.scss'),
-      prism: path.join(corePath, 'scss/prism-styleguide.scss'),
-      prototype: path.join(corePath, 'scss/prototype.scss')
+      prism: path.join(absoluteCorePath, 'scss/prism-styleguide.scss'),
+      prototype: path.join(absoluteCorePath, 'scss/prototype.scss')
     },
     templates: {
       styleguide: {
-        index: path.join(corePath, 'templates/styleguide/index.pug'),
-        doc: path.join(corePath, 'templates/styleguide/doc.pug'),
-        colors: path.join(corePath, 'templates/styleguide/colors.pug'),
-        componentGroup: path.join(corePath, 'templates/styleguide/component-group.pug')
+        index: path.join(styleguideTemplatesPath, 'index.pug'),
+        doc: path.join(styleguideTemplatesPath, 'doc.pug'),
+        colors: path.join(styleguideTemplatesPath, 'colors.pug'),
+        componentGroup: path.join(styleguideTemplatesPath, 'component-group.pug')
       }
     }
   },
@@ -102,6 +107,7 @@ module.exports = {
     },
     styleguide: path.join(distPath, config.styleguide.url),
     docs: path.join(distPath, config.styleguide.url+'/docs/'),
+    partials: path.join(distPath, 'styleguide/partials/'),
     assets: {
       images: path.join(distPath, 'images/'),
       fonts: path.join(distPath, 'fonts/'),

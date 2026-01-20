@@ -4,9 +4,22 @@ const defaultConfig = require('./default-config');
 
 let config = {...defaultConfig};
 
+
+// The `require()` logic must be a bit different depending on if we are running
+// our code in Node, or in the browser. See below.
+let inNodeJS = typeof window === 'undefined';
+
 try {
+  // If we're running the code in Node, we can lookup the Bedrock configuration
+  // file from the current working directory (where `bedrock build` is run).
+  // If we're running the code in the browser, this is done from the
+  // bundle-prototype.js file, which is the result of Browserify. To do its
+  // magic, Browserify statically follows `require()` calls, but it is confused
+  // by the dynamic cwd-based path. Instead, we expose the configuration file
+  // through a specific name 'bedrock-config` (and not something like
+  // './bedrock-config' or '../../bedrock-config'). See core/tasks/bundle.js.
   const projectConfigPath = path.join(process.cwd(), 'bedrock.config');
-  const projectConfig = require(projectConfigPath);
+  const projectConfig = inNodeJS ? require(projectConfigPath) : require('bedrock.config');
   config = {...config, ...projectConfig};
 } catch (err) {
   console.log(err);
